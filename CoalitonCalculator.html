@@ -62,7 +62,7 @@
         }
 
         td{
-            border:solid;
+            border:"solid";
         }
 
         .PollRow{
@@ -79,7 +79,8 @@
 </head>
 <body>
     <div>
-      <h2>Click on a party to add the to a coaliton.</h2>
+      <h2>Schmillies Australian Coaliton Calculator</h2>
+      <h3>Click on a party to add the to a coaliton.</h3>
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
         <div id="TopRow" style="height:50%;">
@@ -104,7 +105,7 @@
                     <h3>Majority Needed <b id="Threshold">50+1</b> </h3>
                     <h3>Current Amount <b id="CurrentValue">0</b> </h3>
              </div>
-                <div class="col-md-3 Poll" style="height:40%">
+                <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
                     <h3>
                         Based on Poll:
                     </h3>
@@ -270,7 +271,7 @@
         PartyIDs.forEach(Party => {
             count += PartyData[Party];
         })
-        document.getElementById("CurrentValue").innerText = count;
+        parseInt(document.getElementById("CurrentValue").innerText = count);
         if (MajorityNumber < count) {
             return true;
         }
