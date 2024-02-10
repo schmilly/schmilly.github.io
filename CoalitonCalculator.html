@@ -115,7 +115,7 @@
                 </div>
             </div>
     </div>
-    <div id="BoxesContainer" style="padding:1%;">
+    <div id="BoxesContainer" style="padding:1%;border">
       <div id="PartyRow1" class="PartyRow">
       </div>
       <div id="PartyRow2" class="PartyRow">
@@ -165,12 +165,6 @@
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", getPartyCount);
     }
-    var PollingRows = document.getElementsByClassName("PollRow");
-    for (var i = 0; i < PollingRows.length; i++) {
-        PollingRows[i].addEventListener("click", ClickPoll);
-    }
-
-
     function clearPage(){
       let ClearedRows = '<div id="PartyRow1" class="PartyRow"></div><div id="PartyRow2" class="PartyRow"></div><div id="PartyRow3" class="PartyRow"> </div>'
       document.getElementById("BoxesContainer").innerHTML = ClearedRows;
@@ -187,7 +181,12 @@
         }
         document.getElementById("PartyRow"+Row).innerHTML += PollBox;
         BoxCount = BoxCount + 1;
-      } 
+      }
+      var ChangeVar = document.getElementsByClassName("Update")
+      for (var i = 0; i < ChangeVar.length; i++) {
+        ChangeVar[i].addEventListener("change", getPartyCount);
+    }
+
     }
     function grabPolling() {
         for (var i = 0; i < PollingData.length; i++) {
@@ -250,8 +249,7 @@
         createPage();
         UpdateDisplayValues();
         ChartUpdate();
-
-    }
+    };
 
     function getPartyCount() {
         for (var i = 0; i < PartyCount; i++) {
