@@ -1,0 +1,16 @@
+<div class="col-md-1">
+    <input type="text" id="1Party" class="Update Name" />
+</div>
+<div class="col-md-1">
+    <input type="number" id="1Label" class="Count Update" />
+</div>
+<div class="col-md-1">
+    <input type="color" id="1PartyColor" class="Update Color" />
+</div>
+
+      <div id="PartyRow1" class="PartyRow">
+      </div>
+      <div id="PartyRow2" class="PartyRow">
+      </div>
+      <div id="PartyRow3" class="PartyRow">
+    </div>

@@ -39,6 +39,15 @@
             width: 100%;
         }
 
+        input {
+          width:120%
+        }
+
+        .Color{
+          width:50%;
+          padding:5px;
+        }
+
         div {
         }
 
@@ -72,10 +81,10 @@
     <div>
       <h2>Click on a party to add the to a coaliton.</h2>
     </div>
-    <div class="container-fluid" style="width:100%;padding:2px;">
-        <div id="TopRow" style="height:50%">
+    <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
+        <div id="TopRow" style="height:50%;">
             <div class="col-md-4">
-                <canvas style="width:40%" id="SmoothCircle"></canvas>
+                <canvas style="width:50%" id="SmoothCircle"></canvas>
             </div>
             <div class="col-md-3">
                 <h3 class="scrollable">
@@ -105,58 +114,15 @@
                     </div>
                 </div>
             </div>
-            <div id="PartyRow1" class="PartyRow">
-                <div class="row-2">
-                    <div class="col-md-2">
-                        <input type="text" id="1Party" class="Update Name" />
-                    </div>
-                    <div class="col-md-1">
-                        <input type="color" id="1PartyColor" class="Update Color" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" id="2Party" class="Update Name" />
-                    </div>
-                    <div class="col-md-1">
-                        <input type="color" id="2PartyColor" class="Update Color" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" id="3Party" class="Update Name" />
-                    </div>
-                    <div class="col-md-1">
-                        <input type="color" id="3PartyColor" class="Update Color" />
-                    </div>
-                    <div class="col-md-2">
-                        <input type="text" id="4Party" class="Update Name" />
-                    </div>
-                    <div class="col-md-1">
-                        <input type="color" id="4PartyColor" class="Update Color" />
-                    </div>
-                </div>
-                <div class="row-3">
-                    <div class="col-md-3">
-                        <input type="number" id="1Label" class="Count Update" />
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" id="2Label" class="Count Update" />
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" id="3Label" class="Count Update" />
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" id="4Label" class="Count Update" />
-                    </div>
-                </div>
-            </div>
-            <div id="PartyRow2" class="PartyRow">
-                <div class="row-4" id="PartyRow2-1">
-                    <div class="Button col-md-3">
-                        <button id="addParty" type="button">+</button>
-                    </div>
-                </div>
-                <div class="row-5" id="PartyRow2-2">
-                </div>
-            </div>
-        </div>
+    </div>
+    <div id="BoxesContainer" style="padding:1%;">
+      <div id="PartyRow1" class="PartyRow">
+      </div>
+      <div id="PartyRow2" class="PartyRow">
+      </div>
+      <div id="PartyRow3" class="PartyRow">
+    </div>
+    </div>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -170,13 +136,13 @@
     var colors = [PartyColor.Labor, PartyColor.Liberal, PartyColor.Nationals, PartyColor.Greens];
     var Selected = [];
     var Majority = 50;
-
+    var Row = 1;
      SmoothChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: PrtyLabels,
             datasets: [{
-                label: '%',
+                label: 'Count',
                 data: PartyData,
                 borderWidth: 1,
                 backgroundColor: colors
@@ -190,6 +156,11 @@
         }
      });
 
+
+    createPage();
+    grabPolling();
+    UpdateDisplayValues();
+   
     var ChangeVar = document.getElementsByClassName("Update")
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", getPartyCount);
@@ -199,9 +170,25 @@
         PollingRows[i].addEventListener("click", ClickPoll);
     }
 
-    grabPolling();
-    UpdateDisplayValues();
 
+    function clearPage(){
+      let ClearedRows = '<div id="PartyRow1" class="PartyRow"></div><div id="PartyRow2" class="PartyRow"></div><div id="PartyRow3" class="PartyRow"> </div>'
+      document.getElementById("BoxesContainer").innerHTML = ClearedRows;
+    }
+
+    function createPage(){
+      var BoxCount = 0;
+      Row = 1;
+      for (var i = 0; i < PartyCount; i++){
+        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" id="'+ i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="'+ i + 'PartyColor" class="Update Color" /></div>'
+        if (BoxCount > 4){
+          BoxCount = 0;
+          Row = Row+1;
+        }
+        document.getElementById("PartyRow"+Row).innerHTML += PollBox;
+        BoxCount = BoxCount + 1;
+      } 
+    }
     function grabPolling() {
         for (var i = 0; i < PollingData.length; i++) {
             let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td>                 <td class="Level">' + PollingData[i].Level + '</td> </tr>'
@@ -258,18 +245,22 @@
         PrtyLabels = PollingData[PollNumber].PartyLabels;
         colors = PollingData[PollNumber].PartyColor;
         Type = PollingData[PollNumber].Level;
+        PartyCount = PollingData[PollNumber].Count;
+        clearPage();
+        createPage();
         UpdateDisplayValues();
         ChartUpdate();
+
     }
 
     function getPartyCount() {
         for (var i = 0; i < PartyCount; i++) {
-            var ID = (i + 1) + "Label";
+            var ID = i + "Label";
             PartyData[i] = document.getElementById(ID).value;
         }
         for (var i = 0; i < PrtyLabels.length; i++) {
-            ID = (i + 1) + "Party";
-            IDColor = (i + 1) + "PartyColor";
+            ID = i + "Party";
+            IDColor = i + "PartyColor";
             PrtyLabels[i] = document.getElementById(ID).value;
             colors[i] = document.getElementById(IDColor).value;
         }
@@ -279,7 +270,7 @@
     function MajortiyCheck(PartyIDs, MajorityNumber) {
         var count = 0;
         PartyIDs.forEach(Party => {
-            count = count + PartyData[Party];
+            count += PartyData[Party];
         })
         document.getElementById("CurrentValue").innerText = count;
         if (MajorityNumber < count) {
@@ -310,6 +301,7 @@
     }
 
     function UpdateDisplayValues() {
+        
         document.getElementById("Type").innerText = Type;
 
         document.getElementById("elementList").innerHTML = "";
