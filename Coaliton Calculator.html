@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Coalition Builder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body {
+            color: black;
+            font-family: 'Segoe UI';
+        }
+
+        h3 {
+            color: black;
+            text-align: left;
+            vertical-align: top;
+            font-size: 20px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        h2 {
+            font-family: 'Segoe UI Light';
+            text-align: center;
+        }
+
+        button {
+            padding: 5px;
+            font-size: 30px;
+            height: 100%;
+            width: 100%;
+        }
+
+        div {
+        }
+
+        .Button{
+            grid-row: 1/2;
+            padding:5px;
+        }
+
+        .scrollable{
+            height: 100px;
+            overflow-y:auto;
+        }
+
+        td{
+            border:solid;
+        }
+
+        .PollRow{
+            background-color: #ffff;
+        }
+        .PollRow:hover{
+            background-color: #b6ff00;
+        }
+
+        .SeatMode{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="width:100%;height:1080px;padding:2px;">
+        <div id="TopRow" styke="height:30%">
+            <div class="col-md-4">
+                <canvas style="width:50%" id="SmoothCircle"></canvas>
+            </div>
+            <div class="col-md-3">
+                <h3 class="scrollable">
+                    Selected Parties: <b id="elementList"></b>
+                </h3>
+                <h3>
+                    Majority: <b id="Majority">false</b>
+                </h3>
+                <h3>
+                    Type: <b id="Type"></b>
+                </h3>
+            </div>
+            <div class="col-md-1">
+                <button onclick="buttonClear()">Clear</button>
+            </div>
+            <div class="col-md-1">
+                    <h3>Majority Needed <b id="Threshold">50+1</b> </h3>
+                    <h3>Current Amount <b id="CurrentValue">0</b> </h3>
+             </div>
+                <div class="col-md-3 Poll" style="height:40%">
+                    <h3>
+                        Based on Poll:
+                    </h3>
+                    <div class="scrollable" style="height:200px">
+                        <table id="pollingData" style="width:100%;height:30px">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="PartyRow1" class="PartyRow">
+                <div class="row-2">
+                    <div class="col-md-2">
+                        <input type="text" id="1Party" class="Update Name" />
+                    </div>
+                    <div class="col-md-1">
+                        <input type="color" id="1PartyColor" class="Update Color" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="2Party" class="Update Name" />
+                    </div>
+                    <div class="col-md-1">
+                        <input type="color" id="2PartyColor" class="Update Color" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="3Party" class="Update Name" />
+                    </div>
+                    <div class="col-md-1">
+                        <input type="color" id="3PartyColor" class="Update Color" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" id="4Party" class="Update Name" />
+                    </div>
+                    <div class="col-md-1">
+                        <input type="color" id="4PartyColor" class="Update Color" />
+                    </div>
+                </div>
+                <div class="row-3">
+                    <div class="col-md-3">
+                        <input type="number" id="1Label" class="Count Update" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="2Label" class="Count Update" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="3Label" class="Count Update" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="4Label" class="Count Update" />
+                    </div>
+                </div>
+            </div>
+            <div id="PartyRow2" class="PartyRow">
+                <div class="row-4" id="PartyRow2-1">
+                    <div class="Button col-md-3">
+                        <button id="addParty" type="button">+</button>
+                    </div>
+                </div>
+                <div class="row-5" id="PartyRow2-2">
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./polling.js"></script>
+<script>
+    const ctx = document.getElementById('SmoothCircle');
+    var Type = "None"
+    var PartyCount = 4;
+    var PartyData = [25, 25, 25, 25];
+    var PrtyLabels = [PrtyNme.ALP,PrtyNme.Lib ,PrtyNme.Nat, PrtyNme.Grn];
+    var colors = [PartyColor.Labor, PartyColor.Liberal, PartyColor.Nationals, PartyColor.Greens];
+    var Selected = [];
+    var Majority = 50;
+
+     SmoothChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: PrtyLabels,
+            datasets: [{
+                label: '%',
+                data: PartyData,
+                borderWidth: 1,
+                backgroundColor: colors
+            }]
+        },
+        options: {
+            rotation: -90,
+            circumference: 180,
+            maintainAspectRatio: false,
+            onClick: handleChartClick,
+        }
+     });
+
+    var ChangeVar = document.getElementsByClassName("Update")
+    for (var i = 0; i < ChangeVar.length; i++) {
+        ChangeVar[i].addEventListener("change", getPartyCount);
+    }
+    var PollingRows = document.getElementsByClassName("PollRow");
+    for (var i = 0; i < PollingRows.length; i++) {
+        PollingRows[i].addEventListener("click", ClickPoll);
+    }
+
+    grabPolling();
+    UpdateDisplayValues();
+
+    function grabPolling() {
+        for (var i = 0; i < PollingData.length; i++) {
+            let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td>                 <td class="Level">' + PollingData[i].Level + '</td> </tr>'
+            document.getElementById("pollingData").innerHTML+= RowHTML;
+        };
+    }
+
+    // Function to handle chart click
+    function handleChartClick(event, elements) {
+        if (elements.length > 0) {
+            // Get the index of the clicked element
+            var clickedIndex = elements[0].index;
+
+            var remove = false;
+            for (var i = 0; i < Selected.length; i++) {
+                if (Selected[i] == clickedIndex) {
+                    arrayFilter = Selected.filter(function (letter) {
+                        return letter !== clickedIndex;
+                    })
+                    Selected = arrayFilter
+                    remove = true;
+                    clear();
+                    break;
+                }
+            }
+
+            if (!remove) {
+                Selected.push(clickedIndex)
+                // Get the label or any other information you need from the clicked element
+                var clickedLabel = PrtyLabels[clickedIndex];
+
+                addElementToList(clickedLabel);
+            }
+            else {
+                Selected.forEach(Value => {
+                    var Label = PrtyLabels[Value];
+                    addElementToList(Label);
+                });
+            }
+        }
+        ChartUpdate();
+    }
+
+    function addElementToList(element) {
+        var list = document.getElementById('elementList');
+        var listItem = document.createElement('li');
+        listItem.textContent = element;
+        list.appendChild(listItem);
+    }
+
+    function clickPoll(PollId) {
+        var PollNumber = PollId.split('_')[1];
+        PartyData = PollingData[PollNumber].PartyData;
+        PrtyLabels = PollingData[PollNumber].PartyLabels;
+        colors = PollingData[PollNumber].PartyColor;
+        Type = PollingData[PollNumber].Level;
+        UpdateDisplayValues();
+        ChartUpdate();
+    }
+
+    function getPartyCount() {
+        for (var i = 0; i < PartyCount; i++) {
+            var ID = (i + 1) + "Label";
+            PartyData[i] = document.getElementById(ID).value;
+        }
+        for (var i = 0; i < PrtyLabels.length; i++) {
+            ID = (i + 1) + "Party";
+            IDColor = (i + 1) + "PartyColor";
+            PrtyLabels[i] = document.getElementById(ID).value;
+            colors[i] = document.getElementById(IDColor).value;
+        }
+        ChartUpdate();
+    };
+
+    function MajortiyCheck(PartyIDs, MajorityNumber) {
+        var count = 0;
+        PartyIDs.forEach(Party => {
+            count += PartyData[Party];
+        })
+        document.getElementById("CurrentValue").innerText = count;
+        if (MajorityNumber < count) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function buttonClear() {
+        Selected = [];
+        clear();
+        ChartUpdate();
+    }
+
+    function clear() {
+        var list = document.getElementById('elementList');
+        list.innerHTML = "";
+    }
+
+    function ChartUpdate() {
+        document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
+        SmoothChart.data.datasets[0].data = PartyData;
+        SmoothChart.data.labels = PrtyLabels;
+        SmoothChart.data.datasets[0].backgroundColor = colors;
+        SmoothChart.update();
+    }
+
+    function UpdateDisplayValues() {
+        document.getElementById("Type").innerText = Type;
+
+        document.getElementById("elementList").innerHTML = "";
+
+        var Count = document.getElementsByClassName("Count");
+        for (var i = 0; i < Count.length; i++) {
+            Count[i].value = PartyData[i];
+        }
+        var Name = document.getElementsByClassName("Name");
+        for (var i = 0; i < Name.length; i++) {
+            Name[i].value = PrtyLabels[i];
+        }
+        var LSColors = document.getElementsByClassName("Color");
+        for (var i = 0; i < LSColors.length; i++) {
+            LSColors[i].value = colors[i];
+        }
+
+        Selected = [];
+    }
+
+    function addParty(Name, Count, Colour) {
+        PrtyLabels.push(Name);
+        PartyData.push(Count);
+        colors.push(Colour);
+        getPartyCount();
+    }
+
+    function ChangeAll(Labels, Counts, Colours) {
+        PrtyLabels = Labels;
+        PartyData = Counts;
+        colors = Colours;
+        UpdateDisplayValues();
+    }
+
+    function PlusButton(ElementID) {
+        addParty("", 0, "#FFFFF");
+
+
+    }
+
+</script>
