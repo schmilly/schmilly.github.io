@@ -69,10 +69,13 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid" style="width:100%;height:1080px;padding:2px;">
-        <div id="TopRow" styke="height:30%">
+    <div>
+      <h2>Click on a party to add the to a coaliton.</h2>
+    </div>
+    <div class="container-fluid" style="width:100%;padding:2px;">
+        <div id="TopRow" style="height:50%">
             <div class="col-md-4">
-                <canvas style="width:50%" id="SmoothCircle"></canvas>
+                <canvas style="width:40%" id="SmoothCircle"></canvas>
             </div>
             <div class="col-md-3">
                 <h3 class="scrollable">
@@ -276,7 +279,7 @@
     function MajortiyCheck(PartyIDs, MajorityNumber) {
         var count = 0;
         PartyIDs.forEach(Party => {
-            count += PartyData[Party];
+            count = count + PartyData[Party];
         })
         document.getElementById("CurrentValue").innerText = count;
         if (MajorityNumber < count) {
