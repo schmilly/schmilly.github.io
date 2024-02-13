@@ -160,12 +160,13 @@
     var Type = "None"
     var PartyCount = 4;
     var PartyData = [25, 25, 25, 25];
+    var SeatCount = [5, 5, 5, 5];
     var PrtyLabels = [PrtyNme.ALP, PrtyNme.Lib, PrtyNme.Nat, PrtyNme.Grn];
     var colors = [PartyColor.Labor, PartyColor.Liberal, PartyColor.Nationals, PartyColor.Greens];
     var Selected = [];
-    var SeatMajority = 50;
+    var SeatMajority = 10;
     var Row = 1;
-    var CurrentTotal = 100;
+    var CurrentTotal = 1;
     var Seat = 0;
     //0 for % mode, 1 for Seat Mode
 
@@ -188,7 +189,7 @@
         }
     };
 
-    ParlimentData = generateParlimentdata(colors, PrtyLabels, PartyData, PartyCount);
+    ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
     var HighChartsData = {
         chart: {
             type: 'item'

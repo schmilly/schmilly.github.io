@@ -1,7 +1,7 @@
 PartyColor = {
     "Labor": "#f54245",
     "Liberal": "#1a75ff",
-    "LiberalNat": "#0033cc",
+    "LiberalNat": "#40798C",
     "LNParty":"#0066ff",
     "Greens": "#42f575",
     "Nationals": "#009933",
@@ -45,7 +45,9 @@ PollingData =
         "Count": 5,
         "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.OaI],
         "PartyData": [31, 27, 15, 20, 7],
-        "PartyColor": [PartyColor.Liberal, PartyColor.Labor, PartyColor.Greens, PartyColor.JaquieLambie,  PartyColor.Other]
+        "PartyColor": [PartyColor.Liberal, PartyColor.Labor, PartyColor.Greens, PartyColor.JaquieLambie, PartyColor.Other]
+        "SeatProj": [11, 10, 6, 1],
+        "SeatMajor": 12
     },
     {
         "Date": "2024-01-15",

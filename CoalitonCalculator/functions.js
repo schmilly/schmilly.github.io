@@ -5,6 +5,61 @@ for (var i = 0; i < ChangeVar.length; i++) {
 function clearPage() {
     let ClearedRows = '<div id="PartyRow1" class="PartyRow"></div><div id="PartyRow2" class="PartyRow"></div><div id="PartyRow3" class="PartyRow"> </div>'
     document.getElementById("BoxesContainer").innerHTML = ClearedRows;
+};
+
+function setSmoothData() {
+    SmoothData = {
+        type: 'doughnut',
+        data: {
+            labels: PrtyLabels,
+            datasets: [{
+                label: 'Count',
+                data: PartyData,
+                borderWidth: 1,
+                backgroundColor: colors
+            }]
+        },
+        options: {
+            rotation: -90,
+            circumference: 180,
+            maintainAspectRatio: false,
+            onClick: handleChartClick,
+        }
+    };
+};
+
+function setSeatData() {
+    ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
+    HighChartsData = {
+        chart: {
+            type: 'item'
+        },
+        title: {
+            text: 'Distribution of seats'
+        },
+        series: [{
+            name: 'Representatives',
+            keys: ['name', 'y', 'color'],
+            data: ParlimentData,
+            dataLabels: {
+                enabled: false,
+            },
+
+            // Circular options
+            startAngle: -90,
+            endAngle: 90
+        }],
+
+        plotOptions: {
+            series: {
+                states: {
+                    inactive: {
+                        opacity: 1
+                    }
+                }
+            }
+        }
+    };
 }
 
 function createPage() {
@@ -104,6 +159,7 @@ function clickPoll(PollId) {
     colors = PollingData[PollNumber].PartyColor;
     Type = PollingData[PollNumber].Level;
     PartyCount = PollingData[PollNumber].Count;
+    SeatCount = PollingData[PollNumber].SeatProj;
     clearPage();
     createPage();
     UpdateDisplayValues();
@@ -151,6 +207,7 @@ function clear() {
 
 function ChartUpdate() {
     document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
+
     if (Seat) {
         ParlimentData = generateParlimentdata(colors, PrtyLabels, PartyData, PartyCount);
         Highcharts.chart('container', HighChartsData);
@@ -207,10 +264,12 @@ function PlusButton(ElementID) {
 function RenderChart() {
     if (Seat) {
         SmoothChart.destroy();
+        setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         Highcharts.chart('container', HighChartsData);
     }
     else {
+        setSmoothData();
         document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
     };
