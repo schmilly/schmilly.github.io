@@ -66,7 +66,7 @@ function createPage() {
     var BoxCount = 0;
     Row = 1;
     for (var i = 0; i < PartyCount; i++) {
-        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" id="' + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="' + i + 'PartyColor" class="Update Color" /></div>'
+        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" id="' + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="' + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'+i+'Checkbox" class="Update checkbox"></div>'
         if (BoxCount > 4) {
             BoxCount = 0;
             Row = Row + 1;
@@ -87,7 +87,7 @@ function createPage() {
 }
 function grabPolling() {
     for (var i = 0; i < PollingData.length; i++) {
-        let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td>                 <td class="Level">' + PollingData[i].Level + '</td> </tr>'
+        let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td> <td class="Level">' + PollingData[i].Level + '</td> </tr>'
         document.getElementById("pollingData").innerHTML += RowHTML;
     };
 }
@@ -169,7 +169,8 @@ function clickPoll(PollId) {
 function getPartyCount() {
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
-        PartyData[i] = document.getElementById(ID).value;
+        if (seat) { Data = SeatCount[i] }
+        else { PartyData[i] = document.getElementById(ID).value; };
     }
     for (var i = 0; i < PrtyLabels.length; i++) {
         ID = i + "Party";
@@ -209,8 +210,8 @@ function ChartUpdate() {
     document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
 
     if (Seat) {
-        ParlimentData = generateParlimentdata(colors, PrtyLabels, PartyData, PartyCount);
-        Highcharts.chart('container', HighChartsData);
+        setSeatData();
+        Highcharts.update();
     }
     else {
         SmoothChart.data.datasets[0].data = PartyData;
@@ -228,7 +229,12 @@ function UpdateDisplayValues() {
 
     var Count = document.getElementsByClassName("Count");
     for (var i = 0; i < Count.length; i++) {
-        Count[i].value = PartyData[i];
+        if (Seat) {
+            Count[i].value = SeatCount[i];
+        }
+        else {
+            Count[i].value = PartyData[i];
+        }
     }
     var Name = document.getElementsByClassName("Name");
     for (var i = 0; i < Name.length; i++) {
@@ -267,11 +273,13 @@ function RenderChart() {
         setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         Highcharts.chart('container', HighChartsData);
+        UpdateDisplayValues();
     }
     else {
         setSmoothData();
         document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
+        UpdateDisplayValues();
     };
 }
 function ChangeMode() {
