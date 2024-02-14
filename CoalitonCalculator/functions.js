@@ -4,57 +4,13 @@ function clearPage() {
 };
 
 function setSmoothData() {
-    SmoothData = {
-        type: 'doughnut',
-        data: {
-            labels: PrtyLabels,
-            datasets: [{
-                label: 'Count',
-                data: PartyData,
-                borderWidth: 1,
-                backgroundColor: colors
-            }]
-        },
-        options: {
-            rotation: -90,
-            circumference: 180,
-            maintainAspectRatio: false,
-            onClick: handleChartClick,
-        }
-    };
+    SmoothData.data.lables = PrtyLabels;
+    SmoothData.data.datasets[0].data = PartyData;
+    SmoothData.data.datasets[0].backgroundColor = colors;
 };
 
 function setSeatData() {
-    ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
-    HighChartsData = {
-        chart: {
-            type: 'item',
-        },
-        title: {
-            text: 'Distribution of seats'
-        },
-        series: [{
-            name: 'Representatives',
-            keys: ['name', 'y', 'color'],
-            data: ParlimentData,
-            dataLabels: {
-                enabled: false,
-            },
-
-            // Circular options
-            startAngle: -90,
-            endAngle: 90
-        }],
-        plotOptions: {
-            series: {
-                states: {
-                    inactive: {
-                        opacity: 1
-                    }
-                }
-            }
-        }
-    };
+    HighChartsData.series[0].data = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
 }
 
 function createPage() {
@@ -199,7 +155,7 @@ function ChartUpdate() {
     if (Seat) {
         var Majority = SeatMajority;
         setSeatData();
-        SeatChart = Highcharts.chart('container', HighChartsData);
+        SeatChart.series[0].data.update(ParlimentData);
     }
     else {
         var Majority = 50;

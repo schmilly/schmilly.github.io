@@ -17,9 +17,11 @@
             font-family: 'Segoe UI';
         }
 
+
+
         h3 {
             color: black;
-            text-align: left;
+            text-align: center;
             vertical-align: top;
             font-size: 20px;
             padding: 5px;
@@ -33,7 +35,7 @@
 
         button {
             padding: 5px;
-            font-size: 30px;
+            font-size: 25px;
             height: 100%;
             width: 100%;
         }
@@ -50,7 +52,6 @@
         }
 
         .Button {
-            grid-row: 1/2;
             padding: 5px;
         }
 
@@ -74,7 +75,6 @@
         .highcharts-figure,
         .highcharts-data-table table {
             max-width: 100%;
-            min-height: 0;
         }
     </style>
 </head>
@@ -83,8 +83,8 @@
         <h2>Schmillies Tasmanian Coaliton Calculator</h2>
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
-        <div id="TopRow" class="row" style="height:50%;">
-            <div class="col-md-4">
+        <div id="TopRow" class="row" >
+            <div class="col-md-4" style="border-style:solid;height:50%;">
                 <div id="ChartID">
                     <canvas style="width:50%" id="SmoothCircle">
                     </canvas>
@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-1">
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
-                <h3>Current Amount <br /> <b id="CurrentValue">0</b> </h3>
+                <h3>Currently Selected <br /> <b id="CurrentValue">0</b> </h3>
                 <h3>
                     Majority: <br /> <b id="Majority">false</b>
                 </h3>
@@ -107,9 +107,10 @@
                 </h3>
             </div>
             <div class="col-md-2">
-                <button onclick="buttonClear()">Clear</button>
-                <button onclick="ChangeMode()">Change Mode</button>
+                <button onclick="ChangeMode()">Change Mode <br /> <sub>Seat/% Mode</sub></button>
                 <button onclick="getPartyCount()">Refresh Data</button>
+                <button onclick="buttonClear()">Clear</button>
+
             </div>
             <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
                 <h3>
@@ -170,7 +171,7 @@
         data: {
             labels: PrtyLabels,
             datasets: [{
-                label: 'Count',
+                label: '%',
                 data: PartyData,
                 borderWidth: 1,
                 backgroundColor: colors
@@ -181,19 +182,25 @@
             circumference: 180,
             maintainAspectRatio: false,
             onClick: handleChartClick,
+            plugins: {
+                legend: {
+                    position: "bottom",
+                }
+            }
         }
     };
 
     ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
     var HighChartsData = {
         chart: {
-            type: 'item'
+            height: '100%',
+            type: 'item',
         },
         title: {
-            text: 'Distribution of seats'
+            text: "",
         },
         series: [{
-            name: 'Representatives',
+            name: 'Seats',
             keys: ['name', 'y', 'color'],
             data: ParlimentData,
             dataLabels: {
@@ -204,7 +211,6 @@
             startAngle: -90,
             endAngle: 90
         }],
-
         plotOptions: {
             series: {
                 states: {
@@ -213,7 +219,14 @@
                     }
                 }
             }
-        }
+        },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['25%', '145%'],
+        size: 300
+    }]
     };
 
     createPage();
