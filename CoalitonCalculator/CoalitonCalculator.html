@@ -74,7 +74,6 @@
         .highcharts-figure,
         .highcharts-data-table table {
             max-width: 100%;
-            max-height: 10px;
             min-height: 0;
         }
     </style>
@@ -84,7 +83,7 @@
         <h2>Schmillies Tasmanian Coaliton Calculator</h2>
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
-        <div id="TopRow" style="height:50%;">
+        <div id="TopRow" class="row" style="height:50%;">
             <div class="col-md-4">
                 <div id="ChartID">
                     <canvas style="width:50%" id="SmoothCircle">
@@ -123,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div id="BoxesContainer" style="padding:1%;border">
+    <div id="BoxesContainer" class="row" style="padding:1%;border">
         <div id="PartyRow1" class="PartyRow">
         </div>
         <div id="PartyRow2" class="PartyRow">
@@ -131,17 +130,16 @@
         <div id="PartyRow3" class="PartyRow">
         </div>
     </div>
-    <p>
-        <b> Known Bugs: </b>
-        <ul>
-            <li>- Seat mode broken, currently does not interact with coaltion, unable to click on parties to add them to coaliton</li>
-            <li>- Seat mode takes up way too much of table and leaves large white space</li>
-            <li>- This bug list causes rendering issues when not on divisble by 4 count of parties</li>
-            <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
-            <li>- All data is currently fictonal</li>
-        </ul>
-        If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
-    </p>
+    <div class="row"><div style="padding-left: 10%;" class="col">
+    <b> Known Bugs: </b>
+    <ul>
+        <li>- Seat mode broken, currently does not interact with coaltion, unable to click on parties to add them to coaliton</li>
+        <li>- Seat mode takes up way too much of table and leaves large white space</li>
+        <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
+    </ul>
+    If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
+    </div>
+    </div>
 </body>
 </html>
 <script src="./polling.js"></script>
