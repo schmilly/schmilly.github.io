@@ -16,5 +16,6 @@ Still a work in progress.
 - [ ] Clean up look
 - - [ ] Move off basic layout and on to Flex Box
 - [ ] Add geographical map mode 
+- [ ] Optimise for Mobile Usage
 
 please report any issues or suggestions to schmilly@proton.me

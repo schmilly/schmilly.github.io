@@ -14,12 +14,11 @@
     <style>
         body {
             color: black;
-            font-family: 'Segoe UI';
+            font-family: 'Tahoma';
         }
 
-
-
         h3 {
+            font-family: 'Tahoma';
             color: black;
             text-align: center;
             vertical-align: top;
@@ -29,8 +28,13 @@
         }
 
         h2 {
-            font-family: 'Segoe UI Light';
+            font-family: 'Brush Script MT';
             text-align: center;
+            font-size: 50px;
+        }
+
+        b {
+            font-family: 'Tahoma';
         }
 
         button {
@@ -84,7 +88,10 @@
 </head>
 <body>
     <div>
-        <h2>Schmillies Tasmanian Coaliton Calculator</h2>
+        <h2>Schmillies Tasmanian Coaliton Calculator 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Tasmania_location_map_alt.png" 
+             style="height:55px;" />
+             </h2> 
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
         <div id="TopRow" class="row" >
@@ -98,9 +105,8 @@
             <div class="col-md-1">
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
                 <h3>Currently Selected <br /> <b id="CurrentValue">0</b> </h3>
-                <h3>
-                    Majority: <br /> <b id="Majority">false</b>
-                </h3>
+                <h3>Majority: <br /> <b id="Majority">false</b></h3>
+                <h3>Total:</h3><input id="MaxTotal" type="text"/>
             </div>
             <div class="col-md-2">
                 <h3>
@@ -113,7 +119,7 @@
             <div class="col-md-2">
                 <button onclick="ChangeMode()"><text>Mode Change</text> <br/> <text class="small" >Toggle between Seat Mode and % Mode</text></button>
                 <button onclick="getPartyCount()">Refresh Data</button>
-                <button onclick="buttonClear()">Clear</button>
+                <button onclick="buttonClear()">Clear</button> 
 
             </div>
             <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
