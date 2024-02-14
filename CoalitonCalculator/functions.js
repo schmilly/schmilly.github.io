@@ -155,7 +155,9 @@ function ChartUpdate() {
     if (Seat) {
         var Majority = SeatMajority;
         setSeatData();
-        SeatChart.series[0].data.update(ParlimentData);
+        ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
+        HighChartsData.series[0].data = ParlimentData;
+        SeatChart.series[0].update({ data: ParlimentData }, true);
     }
     else {
         var Majority = 50;
