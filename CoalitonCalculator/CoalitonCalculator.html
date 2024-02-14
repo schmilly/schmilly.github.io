@@ -55,7 +55,7 @@
         }
 
         .scrollable {
-            height: 100px;
+            height: 100%;
             overflow-y: auto;
         }
 
@@ -74,39 +74,43 @@
         .highcharts-figure,
         .highcharts-data-table table {
             max-width: 100%;
-            max-height: 100%;
-            height: 100%;
+            max-height: 10px;
+            min-height: 0;
         }
     </style>
 </head>
 <body>
     <div>
         <h2>Schmillies Tasmanian Coaliton Calculator</h2>
-        <h3>Click on a party to add the to a coaliton.</h3>
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
         <div id="TopRow" style="height:50%;">
-            <div class="col-md-4" id="ChartID">
-                <canvas style="width:50%" id="SmoothCircle">
-                </canvas>
+            <div class="col-md-4">
+                <div id="ChartID">
+                    <canvas style="width:50%" id="SmoothCircle">
+                    </canvas>
+                </div>
+                <h3>Click on a party to add the to a coaliton.</h3>
+            </div>
+            <div class="col-md-1">
+                <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
+                <h3>Current Amount <br /> <b id="CurrentValue">0</b> </h3>
+                <h3>
+                    Majority: <br /> <b id="Majority">false</b>
+                </h3>
             </div>
             <div class="col-md-2">
+                <h3>
+                    <b>Type:</b><br /> <text id="Type"></text>
+                </h3>
                 <h3 class="scrollable">
                     Selected Parties: <b id="elementList"></b>
-                </h3>
-                <h3>
-                    Type: <b id="Type"></b>
                 </h3>
             </div>
             <div class="col-md-2">
                 <button onclick="buttonClear()">Clear</button>
                 <button onclick="ChangeMode()">Change Mode</button>
-            </div>
-            <div class="col-md-1">
-                <h3>Majority Needed <br/> <b id="Threshold">50</b> </h3>
-                <h3>Current Amount <br/> <b id="CurrentValue">0</b> </h3>
-                <h3>Majority: <br/> <b id="Majority">false</b>
-                </h3>
+                <button onclick="getPartyCount()">Refresh Data</button>
             </div>
             <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
                 <h3>
@@ -130,7 +134,7 @@
     <p>
         <b> Known Bugs: </b>
         <ul>
-            <li>- Seat mode broken, does not update based on changed inputs</li>
+            <li>- Seat mode broken, currently does not interact with coaltion, unable to click on parties to add them to coaliton</li>
             <li>- Seat mode takes up way too much of table and leaves large white space</li>
             <li>- This bug list causes rendering issues when not on divisble by 4 count of parties</li>
             <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>

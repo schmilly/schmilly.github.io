@@ -19,7 +19,7 @@ PrtyNme = {
     "LNP": "Liberal-National Party",
     "One": "One Nation",
     "Oth": "Other",
-    "Ind": "independent",
+    "Ind": "Independent",
     "OaI": "Others/independents",
     "JLP": "Jaquie Lambie Party",
     "KAP": "Katter Australia Party",
@@ -36,7 +36,7 @@ PollingData =
             "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind],
             "PartyData": [31, 27, 15, 20, 7],
             "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind],
-            "SeatProj": [11,10,6,7,1],
+            "SeatProj": [ 11, 10, 6, 7, 1],
             "SeatMajor": 18
         }
     ]

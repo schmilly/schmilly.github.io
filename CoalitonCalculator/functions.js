@@ -74,7 +74,8 @@ function createPage() {
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", getPartyCount);
     }
-}
+};
+
 function grabPolling() {
     for (var i = 0; i < PollingData.length; i++) {
         let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td> <td class="Level">' + PollingData[i].Level + '</td> </tr>'
@@ -157,8 +158,8 @@ function clickPoll(PollId) {
 function getPartyCount() {
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
-        if (Seat) { Data = SeatCount[i] }
-        else { PartyData[i] = document.getElementById(ID).value; };
+        if (Seat) { SeatCount[i] = Number(document.getElementById(ID).value) }
+        else { PartyData[i] = Number(document.getElementById(ID).value); };
     }
     for (var i = 0; i < PrtyLabels.length; i++) {
         ID = i + "Party";
@@ -198,7 +199,7 @@ function ChartUpdate() {
     if (Seat) {
         var Majority = SeatMajority;
         setSeatData();
-        Highcharts.update();
+        SeatChart = Highcharts.chart('container', HighChartsData);
     }
     else {
         var Majority = 50;
@@ -260,7 +261,7 @@ function RenderChart() {
         SmoothChart.destroy();
         setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
-        Highcharts.chart('container', HighChartsData);
+        SeatChart = Highcharts.chart('container', HighChartsData);
         document.getElementById("Threshold").innerText = SeatMajority;
     }
     else {

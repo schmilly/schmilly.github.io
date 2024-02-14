@@ -14,6 +14,7 @@ Still a work in progress.
 - [ ] Add "seat mode" and "% mode"
 - - In early stages, still working on
 - [ ] Clean up look
+- - [ ] Move off basic layout and on to Flex Box
 - [ ] Add geographical map mode 
 
 please report any issues or suggestions to schmilly@proton.me
