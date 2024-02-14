@@ -1,7 +1,3 @@
-var ChangeVar = document.getElementsByClassName("Update")
-for (var i = 0; i < ChangeVar.length; i++) {
-    ChangeVar[i].addEventListener("change", getPartyCount);
-}
 function clearPage() {
     let ClearedRows = '<div id="PartyRow1" class="PartyRow"></div><div id="PartyRow2" class="PartyRow"></div><div id="PartyRow3" class="PartyRow"> </div>'
     document.getElementById("BoxesContainer").innerHTML = ClearedRows;
@@ -32,7 +28,7 @@ function setSeatData() {
     ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
     HighChartsData = {
         chart: {
-            type: 'item'
+            type: 'item',
         },
         title: {
             text: 'Distribution of seats'
@@ -49,7 +45,6 @@ function setSeatData() {
             startAngle: -90,
             endAngle: 90
         }],
-
         plotOptions: {
             series: {
                 states: {
@@ -75,14 +70,9 @@ function createPage() {
         BoxCount = BoxCount + 1;
     }
     var ChangeVar = document.getElementsByClassName("Update")
+    RenderChart();
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", getPartyCount);
-    }
-    if (Seat) {
-
-    }
-    else {
-        RenderChart();
     }
 }
 function grabPolling() {
@@ -97,7 +87,6 @@ function handleChartClick(event, elements) {
     if (elements.length > 0) {
         // Get the index of the clicked element
         var clickedIndex = elements[0].index;
-
         var remove = false;
         for (var i = 0; i < Selected.length; i++) {
             if (Selected[i] == clickedIndex) {
@@ -115,7 +104,6 @@ function handleChartClick(event, elements) {
             Selected.push(clickedIndex)
             // Get the label or any other information you need from the clicked element
             var clickedLabel = PrtyLabels[clickedIndex];
-
             addElementToList(clickedLabel);
         }
         else {
@@ -169,7 +157,7 @@ function clickPoll(PollId) {
 function getPartyCount() {
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
-        if (seat) { Data = SeatCount[i] }
+        if (Seat) { Data = SeatCount[i] }
         else { PartyData[i] = document.getElementById(ID).value; };
     }
     for (var i = 0; i < PrtyLabels.length; i++) {
@@ -184,7 +172,7 @@ function getPartyCount() {
 function MajortiyCheck(PartyIDs, MajorityNumber) {
     var count = 0;
     PartyIDs.forEach(Party => {
-        count += parseInt(PartyData[Party]);
+        count += PartyData[Party];
     })
     document.getElementById("CurrentValue").innerText = count;
     if (MajorityNumber < count) {
@@ -207,24 +195,24 @@ function clear() {
 }
 
 function ChartUpdate() {
-    document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
-
     if (Seat) {
+        var Majority = SeatMajority;
         setSeatData();
         Highcharts.update();
     }
     else {
+        var Majority = 50;
         SmoothChart.data.datasets[0].data = PartyData;
         SmoothChart.data.labels = PrtyLabels;
         SmoothChart.data.datasets[0].backgroundColor = colors;
         SmoothChart.update();
     }
+    document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
 }
 
 function UpdateDisplayValues() {
 
     document.getElementById("Type").innerText = Type;
-
     document.getElementById("elementList").innerHTML = "";
 
     var Count = document.getElementsByClassName("Count");
@@ -246,8 +234,8 @@ function UpdateDisplayValues() {
     }
 
     Selected = [];
+    document.getElementById("CurrentValue").innerHTML = 0;
 }
-
 
 function addParty(Name, Count, Colour) {
     PrtyLabels.push(Name);
@@ -273,14 +261,15 @@ function RenderChart() {
         setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         Highcharts.chart('container', HighChartsData);
-        UpdateDisplayValues();
+        document.getElementById("Threshold").innerText = SeatMajority;
     }
     else {
         setSmoothData();
         document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
-        UpdateDisplayValues();
+        document.getElementById("Threshold").innerText = 50;
     };
+    UpdateDisplayValues();
 }
 function ChangeMode() {
     Seat = !Seat;

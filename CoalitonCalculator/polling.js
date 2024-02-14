@@ -1,14 +1,14 @@
 PartyColor = {
-    "Labor": "#f54245",
-    "Liberal": "#1a75ff",
-    "LiberalNat": "#40798C",
-    "LNParty":"#0066ff",
-    "Greens": "#42f575",
-    "Nationals": "#009933",
-    "OneNation": "#ffff99",
-    "Other": "#e8e3d3",
-    "Indipednt": "#fffff",
-    "JaquieLambie": "#f5c842"
+    "ALP": "#f54245",
+    "Lib": "#56638A",
+    "LaP": "#40798C",
+    "LNP":"#0066ff",
+    "Grn": "#42f575",
+    "Nat": "#009933",
+    "One": "#ffff99",
+    "OaI": "#e8e3d3",
+    "Ind": "#EDE7E3",
+    "JLP": "#f5c842"
 }
 
 PrtyNme = {
@@ -19,8 +19,8 @@ PrtyNme = {
     "LNP": "Liberal-National Party",
     "One": "One Nation",
     "Oth": "Other",
-    "Ind": "Indipendent",
-    "OaI": "Others/Indipendents",
+    "Ind": "independent",
+    "OaI": "Others/independents",
     "JLP": "Jaquie Lambie Party",
     "KAP": "Katter Australia Party",
     "Nat": "Nationals"
@@ -29,36 +29,14 @@ PrtyNme = {
 PollingData =
     [
         {
-            "Date": "2024-01-15",
-            "Company": "Horizon Polling",
-            "Level": "Federal",
-            "Count": 4,
-            "PartyLabels": [PrtyNme.LaP, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.Oth],
-            "PartyData": [36, 34, 12, 18],
-            "PartyColor": [PartyColor.LiberalNat, PartyColor.Labor, PartyColor.Greens, PartyColor.Other],
-            "SeatProj": [9, 11, 5, 2],
-            "SeatMajor": 10
-        },
-        {
-            "Date": "2024-01-20",
-            "Company": "Eagle Eye Analytics",
-            "Level": "Federal",
+            "Date": "2024-01-10",
+            "Company": "You Gov",
+            "Level": "Tasmanian State",
             "Count": 5,
-            "PartyLabels": [PrtyNme.LaP, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.Oth],
-            "PartyData": [37, 32, 16, 15],
-            "PartyColor": [PartyColor.LiberalNat, PartyColor.Labor, PartyColor.Greens, PartyColor.Other],
-            "SeatProj": [10, 10, 7, 1],
-            "SeatMajor": 11
-        },
-        {
-            "Date": "2024-01-25",
-            "Company": "Delta Strategies",
-            "Level": "Federal",
-            "Count": 4,
-            "PartyLabels": [PrtyNme.LaP, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.Oth],
-            "PartyData": [35, 33, 13, 19],
-            "PartyColor": [PartyColor.LiberalNat, PartyColor.Labor, PartyColor.Greens, PartyColor.Other],
-            "SeatProj": [9, 11, 6, 1],
-            "SeatMajor": 11
+            "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind],
+            "PartyData": [31, 27, 15, 20, 7],
+            "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind],
+            "SeatProj": [11,10,6,7,1],
+            "SeatMajor": 18
         }
     ]

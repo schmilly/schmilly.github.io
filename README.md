@@ -2,9 +2,7 @@
 
 My personal web page, couple different projecst under this. 
 
-## Coalition Calculator Project
-
-** PLEASE NOTE ALL POLLING DATA IN CURRENT VERSION IS FICTONAL**
+## Tasmania Coalition Calculator Project
 
 Created on Request of 6news Australia
 
@@ -12,8 +10,9 @@ Still a work in progress.
 
 ### To Do:
 - [X] Make data appear dynamically instead of statically
-- [ ] Make data non fictonal 
+- [X] Make data non fictonal 
 - [ ] Add "seat mode" and "% mode"
+- - In early stages, still working on
 - [ ] Clean up look
 - [ ] Add geographical map mode 
 

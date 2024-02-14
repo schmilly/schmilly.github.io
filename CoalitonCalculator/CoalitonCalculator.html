@@ -81,7 +81,7 @@
 </head>
 <body>
     <div>
-        <h2>Schmillies Australian Coaliton Calculator</h2>
+        <h2>Schmillies Tasmanian Coaliton Calculator</h2>
         <h3>Click on a party to add the to a coaliton.</h3>
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
@@ -95,9 +95,6 @@
                     Selected Parties: <b id="elementList"></b>
                 </h3>
                 <h3>
-                    Majority: <b id="Majority">false</b>
-                </h3>
-                <h3>
                     Type: <b id="Type"></b>
                 </h3>
             </div>
@@ -106,9 +103,10 @@
                 <button onclick="ChangeMode()">Change Mode</button>
             </div>
             <div class="col-md-1">
-                <h3>Majority Needed <b id="Threshold">50</b> </h3>
-                <h3>Current Amount <b id="CurrentValue">0</b> </h3>
-                <h3>Total <b id="CurrentTotal">0</b></h3>
+                <h3>Majority Needed <br/> <b id="Threshold">50</b> </h3>
+                <h3>Current Amount <br/> <b id="CurrentValue">0</b> </h3>
+                <h3>Majority: <br/> <b id="Majority">false</b>
+                </h3>
             </div>
             <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
                 <h3>
@@ -129,19 +127,17 @@
         <div id="PartyRow3" class="PartyRow">
         </div>
     </div>
-    <div>
-        <b> **PLESE NOTE ALL DATA IS TEST DATA AND FICTONAL, NOT TO BE USED AS COMMONTRY ON REAL WORLD DATA** </b> <br/>
-        Known Bugs:
+    <p>
+        <b> Known Bugs: </b>
         <ul>
             <li>- Seat mode broken, does not update based on changed inputs</li>
             <li>- Seat mode takes up way too much of table and leaves large white space</li>
-            <li>- Majority Calculation is completely broken. Straight up doesn't work</li>
             <li>- This bug list causes rendering issues when not on divisble by 4 count of parties</li>
             <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
             <li>- All data is currently fictonal</li>
         </ul>
         If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
-    </div>
+    </p>
 </body>
 </html>
 <script src="./polling.js"></script>
@@ -154,14 +150,14 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script>
     var ctx = document.getElementById('SmoothCircle');
-    var Type = "None"
-    var PartyCount = 4;
-    var PartyData = [25, 25, 25, 25];
-    var SeatCount = [5, 5, 5, 5];
-    var PrtyLabels = [PrtyNme.ALP, PrtyNme.Lib, PrtyNme.Nat, PrtyNme.Grn];
-    var colors = [PartyColor.Labor, PartyColor.Liberal, PartyColor.Nationals, PartyColor.Greens];
+    var Type = PollingData[0].Level;
+    var PartyCount = PollingData[0].Count;
+    var PartyData = PollingData[0].PartyData;
+    var SeatCount = PollingData[0].SeatProj;
+    var PrtyLabels = PollingData[0].PartyLabels;
+    var colors = PollingData[0].PartyColor;
+    var SeatMajority = PollingData[0].SeatMajor;
     var Selected = [];
-    var SeatMajority = 10;
     var Row = 1;
     var CurrentTotal = 1;
     var Seat = 0;
@@ -221,5 +217,4 @@
     createPage();
     grabPolling();
     UpdateDisplayValues();
-
 </script>
