@@ -3,6 +3,19 @@ function clearPage() {
     document.getElementById("BoxesContainer").innerHTML = ClearedRows;
 };
 
+function LockCheck() {
+    // Get the checkbox
+    var checkBox = document.getElementById("CheckBox");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+        CountLock = 1;
+    } else {
+        CountLock = 0;
+    }
+    getPartyCount();
+} 
+
 function setSmoothData() {
     SmoothData.data.lables = PrtyLabels;
     SmoothData.data.datasets[0].data = PartyData;
@@ -26,7 +39,6 @@ function createPage() {
         BoxCount = BoxCount + 1;
     }
     var ChangeVar = document.getElementsByClassName("Update")
-    RenderChart();
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", getPartyCount);
     }
@@ -116,56 +128,91 @@ function clickPoll(PollId) {
     TotalSeat = ArraySum(PollingData[0].SeatProj);
     clearPage();
     createPage();
-    UpdateDisplayValues();
+    PullPageValues();
     ChartUpdate();
-};
-
-function lockCount() {
-    CountLock = !(CountLock);
-    CountCheck();
 };
 
 //Function returns 0 if fine, if not returns number of seats difference between Current count and Count max
 function CountCheck() {
     if (CountLock) {
         var Count = 0;
-        var CountMax = 0;
         if (Seat) {
-            Count = TotalSeat;
-            CountMax = SeatMax;
+            Count = ArraySum(SeatCount);
         }
         else {
-            Count = TotalPrim;
-            CounMax = 100;
-        }
-
-        if (Count != Seatmax) {
-            return Count - CountMax;
-        }
-        else { return 0; }
+            Count = ArraySum(PartyData);
+        };
+        return Count - Max;
     };
     return 0;
 }
 
 function getPartyCount() {
+    var lockvalue = -1;
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
         var TempVariable = 0;
-        if (Seat) { TempVariable = Number(document.getElementById(ID).value) }
-        else { TempVariable = Number(document.getElementById(ID).value); };
-        if (TempVariable != PartyData[i]){
-            console.log(CountCheck);
+        var Count = 0;
+        if (Seat) {
+            TempVariable = Number(document.getElementById(ID).value)
+            Count = SeatCount[i];
         }
-        PartyData[i] = TempVariable;
-    }
+        else {
+            TempVariable = Number(document.getElementById(ID).value);
+            Count = PartyData[i];
+        };
+        if (TempVariable != Count) { lockvalue = i; }
+        if (Seat) { SeatCount[i] = TempVariable; }
+        else { PartyData[i] = TempVariable; }
+    };
     for (var i = 0; i < PrtyLabels.length; i++) {
         ID = i + "Party";
         IDColor = i + "PartyColor";
         PrtyLabels[i] = document.getElementById(ID).value;
         colors[i] = document.getElementById(IDColor).value;
     }
+    if (lockvalue != -1) {
+        if (Seat) { SeatCount = lockAndAdjustArray(SeatCount, lockvalue, Max) }
+        else { PartyData = lockAndAdjustArray(PartyData, lockvalue, Max); }
+        PullPageValues();
+    };
     ChartUpdate();
 };
+
+function lockAndAdjustArray(arr, i, targetSum) {
+    if (i < 0 || i >= arr.length) {
+        throw new Error("Index out of bounds");
+    }
+
+    // Calculate the sum of the array excluding the locked value
+    SumOfArray = ArraySum(arr);
+
+    var adjustment = (CountCheck() / (PartyCount - 1)) * -1
+    var LeftOverCount = adjustment*(PartyCount - 1)
+
+    // Adjust the array values except the locked value
+    for (var j = 0; LeftOverCount != 0; j++) {
+        if (j > arr.length) {
+            j = 0;
+        }
+        if (j !== i && arr[j] != 0) {
+            var num = 0;
+            if (LeftOverCount < 0) {
+                num = -1;
+            }
+            else {
+                num = 1;
+            }
+            arr[j] += num
+            LeftOverCount -= num;
+        }
+    }
+
+    // Adjust for floating-point errors
+
+    console.log(arr);
+    return arr;
+}
 
 function MajortiyCheck(PartyIDs, MajorityNumber) {
     var count = 0;
@@ -195,7 +242,6 @@ function clear() {
 function ChartUpdate() {
     if (Seat) {
         var Majority = SeatMajority;
-        setSeatData();
         ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
         HighChartsData.series[0].data = ParlimentData;
         SeatChart.series[0].update({ data: ParlimentData }, true);
@@ -207,18 +253,19 @@ function ChartUpdate() {
         SmoothChart.data.datasets[0].backgroundColor = colors;
         SmoothChart.update();
     }
-    document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
+    UpdateRightChartInfo()
 }
 
 function UpdateRightChartInfo() {
     if (Seat) { document.getElementById("Threshold").innerText = SeatMajority }
     else { document.getElementById("Threshold").innerText = 50 }
-
+    document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
     document.getElementById("Type").innerText = Type;
     document.getElementById("elementList").innerHTML = "";
+    document.getElementById("MaxCount").innerText = Max;
 }
 
-function UpdateDisplayValues() {
+function PullPageValues() {
     UpdateRightChartInfo();
 
     var Count = document.getElementsByClassName("Count");
@@ -254,7 +301,7 @@ function ChangeAll(Labels, Counts, Colours) {
     PrtyLabels = Labels;
     PartyData = Counts;
     colors = Colours;
-    UpdateDisplayValues();
+    PullPageValues();
 }
 
 function PlusButton(ElementID) {
@@ -263,19 +310,20 @@ function PlusButton(ElementID) {
 
 function RenderChart() {
     if (Seat) {
+        Max = SeatMax;
         SmoothChart.destroy();
         setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         SeatChart = Highcharts.chart('container', HighChartsData);
-        document.getElementById("Threshold").innerText = SeatMajority;
     }
     else {
+        Max = 100;
         setSmoothData();
         document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
-        document.getElementById("Threshold").innerText = 50;
     };
-    UpdateDisplayValues();
+    UpdateRightChartInfo()
+    PullPageValues();
 }
 function ChangeMode() {
     Seat = !Seat;
