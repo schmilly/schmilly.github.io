@@ -1,6 +1,6 @@
 # schmilly.github.io
 
-My personal web page, couple different projecst under this. 
+My personal web page, couple different projects under this. 
 
 ## Tasmania Coalition Calculator Project
 
