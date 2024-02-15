@@ -146,6 +146,7 @@ function clickPoll(PollId) {
     SeatMax = PollingData[PollNumber].SeatMax;
     TotalPrim = ArraySum(PollingData[0].PartyData);
     TotalSeat = ArraySum(PollingData[0].SeatProj);
+    CheckMax();
     clearPage();
     createPage();
     PushPageValues();
@@ -337,20 +338,28 @@ function PlusButton(ElementID) {
 
 function RenderChart() {
     if (Seat) {
-        Max = SeatMax;
         SmoothChart.destroy();
         setSeatData();
         document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         SeatChart = Highcharts.chart('container', HighChartsData);
     }
     else {
-        Max = 100;
         setSmoothData();
         document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
     };
+    CheckMax();
     UpdateRightChartInfo()
     PushPageValues();
+}
+
+function CheckMax() {
+    if (Seat) {
+        Max = SeatMax;
+    }
+    else {
+        Max = 100;
+    };
 }
 function ChangeMode() {
     Seat = !Seat;
