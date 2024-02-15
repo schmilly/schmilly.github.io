@@ -17,5 +17,7 @@ Still a work in progress.
 - - [ ] Move off basic layout and on to Flex Box
 - [ ] Add geographical map mode 
 - [ ] Optimise for Mobile Usage
+- [ ] Primary Vote to distribution converted based on seats
+- [ ] Editable Prefrences flows
 
 please report any issues or suggestions to schmilly@proton.me

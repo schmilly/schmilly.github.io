@@ -21,7 +21,6 @@ function LockToggle() {
     if (CountLock) {
         if (Seat) { SeatCount = lockAndAdjustArray(SeatCount, -1, Max) }
         else { PartyData = lockAndAdjustArray(PartyData, -1, Max); }
-        console.log("Gothere!");
         PushPageValues();
         ChartUpdate();
     };
@@ -66,7 +65,11 @@ function addBox(row, i) {
 
 function grabPolling() {
     for (var i = 0; i < PollingData.length; i++) {
-        let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_' + i + '> <td class="Date"> ' + PollingData[i].Date + '</td > <td class="Company">' + PollingData[i].Company + '</td> <td class="Level">' + PollingData[i].Level + '</td> </tr>'
+        let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_'
+            + i + '> <td class="Date"> '
+            + PollingData[i].Date + '</td > <td class="Company">'
+            + PollingData[i].Company + '</td> <td class="Level">'
+            + PollingData[i].Level + '</td> </tr>'
         document.getElementById("pollingData").innerHTML += RowHTML;
     };
 }
@@ -93,7 +96,6 @@ function handleChartClick(event, elements) {
                 break;
             }
         }
-
         if (!remove) {
             Selected.push(clickedIndex)
             // Get the label or any other information you need from the clicked element
@@ -102,8 +104,7 @@ function handleChartClick(event, elements) {
         }
         else {
             Selected.forEach(Value => {
-                var Label = PrtyLabels[Value];
-                addElementToList(Label);
+                addElementToList(PrtyLabels[Value]);
             });
         }
     }
@@ -174,12 +175,11 @@ function pullPagePartyCount() {
         var ID = i + "Label";
         var TempVariable = 0;
         var Count = 0;
+        TempVariable = Number(document.getElementById(ID).value);
         if (Seat) {
-            TempVariable = Number(document.getElementById(ID).value)
             Count = SeatCount[i];
         }
         else {
-            TempVariable = Number(document.getElementById(ID).value);
             Count = PartyData[i];
         };
         if (TempVariable != Count) { lockvalue = i; }
@@ -220,7 +220,7 @@ function lockAndAdjustArray(arr, i, targetSum) {
     for (var j = 0; LeftOverCount != 0;) {
         loopcount++;
         if (j !== i && arr[j] != 0) {
-            arr[j] += num
+            arr[j] += num;
             LeftOverCount += num;
         }
         if (loopcount > 200) {
@@ -237,18 +237,23 @@ function lockAndAdjustArray(arr, i, targetSum) {
             j++;
         }
     }
-    // Adjust for floating-point errors
-    console.log(ArraySum(arr));
     return arr;
 }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
-function MajortiyCheck(PartyIDs, MajorityNumber) {
+function MajortiyCheck(SelectedArr, MajorityNumber) {
     var count = 0;
-    PartyIDs.forEach(Party => {
-        count += PartyData[Party];
+    SelectedArr.forEach(Party => {
+        if (Seat) {
+            count += SeatCount[Party]; 
+        }
+        else { count += PartyData[Party]; }
     })
+    console.log(count);
     document.getElementById("CurrentValue").innerText = count;
-    if (MajorityNumber < count) {
+    if (MajorityNumber <= count) {
         return true;
     }
     else {
@@ -268,13 +273,13 @@ function clear() {
 }
 
 function ChartUpdate() {
-    if (Seat) {
+    if (Seat || BothChart) {
         var Majority = SeatMajority;
         ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
         HighChartsData.series[0].data = ParlimentData;
         SeatChart.series[0].update({ data: ParlimentData }, true);
     }
-    else {
+    if (!Seat || BothChart) {
         var Majority = 50;
         SmoothChart.data.datasets[0].data = PartyData;
         SmoothChart.data.labels = PrtyLabels;
@@ -285,17 +290,19 @@ function ChartUpdate() {
 }
 
 function UpdateRightChartInfo() {
-    if (Seat) { document.getElementById("Threshold").innerText = SeatMajority }
-    else { document.getElementById("Threshold").innerText = 50 }
-    document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
+    if (Seat) {
+        document.getElementById("Majority").innerText = MajortiyCheck(Selected, SeatMajority);
+        document.getElementById("Threshold").innerText = SeatMajority
+    }
+    else {
+        document.getElementById("Majority").innerText = MajortiyCheck(Selected, 50);
+        document.getElementById("Threshold").innerText = 50
+    }
     document.getElementById("Type").innerText = Type;
-    document.getElementById("elementList").innerHTML = "";
     document.getElementById("MaxCount").innerText = Max;
 }
 
 function PushPageValues() {
-    UpdateRightChartInfo();
-
     var Count = document.getElementsByClassName("Count");
     for (var i = 0; i < Count.length; i++) {
         if (Seat) {
@@ -313,9 +320,7 @@ function PushPageValues() {
     for (var i = 0; i < LSColors.length; i++) {
         LSColors[i].value = colors[i];
     }
-
-    Selected = [];
-    document.getElementById("CurrentValue").innerHTML = 0;
+    UpdateRightChartInfo();
 }
 
 function addParty(Name, Count, Colour) {
@@ -337,15 +342,14 @@ function PlusButton(ElementID) {
     };
 
 function RenderChart() {
-    if (Seat) {
-        SmoothChart.destroy();
+    if (Seat || BothChart ) {
         setSeatData();
-        document.getElementById("ChartID").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
+        document.getElementById("SeatChart").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         SeatChart = Highcharts.chart('container', HighChartsData);
     }
-    else {
+    if (!Seat || BothChart) {
         setSmoothData();
-        document.getElementById("ChartID").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
+        document.getElementById("SmoothChart").innerHTML = '<canvas style="width:50%" id="SmoothCircle"></canvas > '
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
     };
     CheckMax();
@@ -363,5 +367,7 @@ function CheckMax() {
 }
 function ChangeMode() {
     Seat = !Seat;
-    RenderChart();
+    CheckMax();
+    UpdateRightChartInfo()
+    PushPageValues();
 }

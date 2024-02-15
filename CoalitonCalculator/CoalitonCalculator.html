@@ -157,15 +157,20 @@
              </h2> 
     </div>
     <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
-        <div id="TopRow" class="row" >
-            <div class="col-md-4" style="border-style:solid;height:50%;">
-                <div id="ChartID">
+        <div id="TopRow" class="row">
+            <div class="col-md-3" style="border-style:solid;height:50%;">
+                <div id="SmoothChart">
                     <canvas style="width:50%" id="SmoothCircle">
                     </canvas>
                 </div>
                 <h3>Click on a party to add the to a coaliton.</h3>
             </div>
-            <div class="col-md-1" id="RightChartInfo" >
+            <div class="col-md-3" style="border-style:solid;height:50%;">
+                <div id="SeatChart">
+                    <figure class="highcharts-figure"><div id="container"></div></figure>
+                </div>
+            </div>
+            <div class="col-md-1" id="RightChartInfo">
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
                 <h3>Currently Selected <br /> <b id="CurrentValue">0</b> </h3>
                 <h3>Majority: <br /> <b id="Majority">false</b></h3>
@@ -175,7 +180,7 @@
                     <span class="slider round"></span>
                 </label>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <h3>
                     <b>Type:</b><br /> <text id="Type"></text>
                 </h3>
@@ -183,10 +188,10 @@
                     Selected Parties: <b id="elementList"></b>
                 </h3>
             </div>
-            <div class="col-md-2">
-                <button onclick="ChangeMode()"><text>Mode Change</text> <br/> <text class="small" >Toggle between Seat Mode and % Mode</text></button>
+            <div class="col-md-1">
+                <button onclick="ChangeMode()"><text>Mode Change</text> <br /> <text class="small">Toggle between Seat Mode and % Mode</text></button>
                 <button onclick="getPartyCount()">Refresh Data</button>
-                <button onclick="buttonClear()">Clear</button> 
+                <button onclick="buttonClear()">Clear</button>
 
             </div>
             <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
@@ -211,11 +216,10 @@
     <div class="row"><div style="padding-left: 10%;" class="col">
     <b> Known Bugs: </b>
     <ul>
-        <li>- Seat mode broken, currently does not interact with coaltion, unable to click on parties to add them to coaliton</li>
+        <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
         <li>- Seat mode takes up way too much of page and leaves large white space</li>
         <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
         <li>- Lock button has major issues, especially when interacting with 0</li>
-        <li>- Total Button doesn't work</li>
     </ul>
     If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
     </div>
@@ -246,6 +250,8 @@
     var Selected = [];
     var Row = 1;
     var CurrentTotal = 1;
+    var BothChart = 1;
+    //0 for 1 chart,1 for both charts 
     var CountLock = 0;
     //0 for unlock, 1 for Lock
     var Seat = 0;
