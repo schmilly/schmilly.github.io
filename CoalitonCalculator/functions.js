@@ -13,8 +13,19 @@ function LockCheck() {
     } else {
         CountLock = 0;
     }
-    getPartyCount();
+    pullPagePartyCount();
 } 
+
+function LockToggle() {
+    CountLock = !CountLock;
+    if (CountLock) {
+        if (Seat) { SeatCount = lockAndAdjustArray(SeatCount, -1, Max) }
+        else { PartyData = lockAndAdjustArray(PartyData, -1, Max); }
+        console.log("Gothere!");
+        PushPageValues();
+        ChartUpdate();
+    };
+}
 
 function setSmoothData() {
     SmoothData.data.lables = PrtyLabels;
@@ -30,19 +41,28 @@ function createPage() {
     var BoxCount = 0;
     Row = 1;
     for (var i = 0; i < PartyCount; i++) {
-        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" min="0" id="' + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="' + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'+i+'Checkbox" class="Update checkbox"></div>'
+
         if (BoxCount > 4) {
             BoxCount = 0;
             Row = Row + 1;
         }
-        document.getElementById("PartyRow" + Row).innerHTML += PollBox;
+        addBox(Row,i)
         BoxCount = BoxCount + 1;
     }
     var ChangeVar = document.getElementsByClassName("Update")
     for (var i = 0; i < ChangeVar.length; i++) {
-        ChangeVar[i].addEventListener("change", getPartyCount);
+        ChangeVar[i].addEventListener("change", pullPagePartyCount);
     }
 };
+
+function addBox(row, i) {
+    let PollBox = '<div class="col-md-1"><input type="text" id="'
+        + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" min="0" id="'
+        + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="'
+        + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'
+        + i + 'Checkbox" class="Update checkbox"></div>'
+    document.getElementById("PartyRow" + Row).innerHTML += PollBox;
+}
 
 function grabPolling() {
     for (var i = 0; i < PollingData.length; i++) {
@@ -128,7 +148,7 @@ function clickPoll(PollId) {
     TotalSeat = ArraySum(PollingData[0].SeatProj);
     clearPage();
     createPage();
-    PullPageValues();
+    PushPageValues();
     ChartUpdate();
 };
 
@@ -147,7 +167,7 @@ function CountCheck() {
     return 0;
 }
 
-function getPartyCount() {
+function pullPagePartyCount() {
     var lockvalue = -1;
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
@@ -171,23 +191,21 @@ function getPartyCount() {
         PrtyLabels[i] = document.getElementById(ID).value;
         colors[i] = document.getElementById(IDColor).value;
     }
-    if (lockvalue != -1) {
+    if (lockvalue != - 1 && CountLock) {
         if (Seat) { SeatCount = lockAndAdjustArray(SeatCount, lockvalue, Max) }
         else { PartyData = lockAndAdjustArray(PartyData, lockvalue, Max); }
-        PullPageValues();
+        PushPageValues();
     };
     ChartUpdate();
 };
 
 function lockAndAdjustArray(arr, i, targetSum) {
-    if (i < 0 || i >= arr.length) {
+    if ( i >= arr.length) {
         throw new Error("Index out of bounds");
     }
     // Calculate the sum of the array excluding the locked value
     SumOfArray = ArraySum(arr);
-
-    var LeftOverCount = (SumOfArray - Max);
-
+    var LeftOverCount = (SumOfArray - targetSum);
 
     // Adjust the array values except the locked value
     var loopcount = 0;
@@ -218,10 +236,8 @@ function lockAndAdjustArray(arr, i, targetSum) {
             j++;
         }
     }
-
     // Adjust for floating-point errors
-
-    console.log(arr);
+    console.log(ArraySum(arr));
     return arr;
 }
 
@@ -276,7 +292,7 @@ function UpdateRightChartInfo() {
     document.getElementById("MaxCount").innerText = Max;
 }
 
-function PullPageValues() {
+function PushPageValues() {
     UpdateRightChartInfo();
 
     var Count = document.getElementsByClassName("Count");
@@ -305,14 +321,14 @@ function addParty(Name, Count, Colour) {
     PrtyLabels.push(Name);
     PartyData.push(Count);
     colors.push(Colour);
-    getPartyCount();
+    pullPagePartyCount();
 }
 
 function ChangeAll(Labels, Counts, Colours) {
     PrtyLabels = Labels;
     PartyData = Counts;
     colors = Colours;
-    PullPageValues();
+    PushPageValues();
 }
 
 function PlusButton(ElementID) {
@@ -334,7 +350,7 @@ function RenderChart() {
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
     };
     UpdateRightChartInfo()
-    PullPageValues();
+    PushPageValues();
 }
 function ChangeMode() {
     Seat = !Seat;

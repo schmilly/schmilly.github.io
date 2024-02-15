@@ -171,7 +171,7 @@
                 <h3>Majority: <br /> <b id="Majority">false</b></h3>
                 <h3>Lock to: <b id="MaxCount"></b></h3>
                 <label class="switch">
-                    <input onclick="LockCheck()" type="checkbox" id="CheckBox">
+                    <input onclick="LockToggle()" type="checkbox" id="CheckBox">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -317,6 +317,6 @@
     createPage();
     RenderChart();
     grabPolling();
-    PullPageValues();
+    PushPageValues();
     LockCheck();
 </script>
