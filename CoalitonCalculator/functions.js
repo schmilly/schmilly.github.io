@@ -39,6 +39,11 @@ function grabPolling() {
     };
 }
 
+function ArraySum(SumArray) {
+    var Returnvalue = SumArray.reduce((partialSum, a) => partialSum + a, 0);
+    return Returnvalue;
+};
+
 // Function to handle chart click
 function handleChartClick(event, elements) {
     if (elements.length > 0) {
@@ -105,17 +110,53 @@ function clickPoll(PollId) {
     Type = PollingData[PollNumber].Level;
     PartyCount = PollingData[PollNumber].Count;
     SeatCount = PollingData[PollNumber].SeatProj;
+    SeatMajority = PollingData[PollNumber].SeatMajor;
+    SeatMax = PollingData[PollNumber].SeatMax;
+    TotalPrim = ArraySum(PollingData[0].PartyData);
+    TotalSeat = ArraySum(PollingData[0].SeatProj);
     clearPage();
     createPage();
     UpdateDisplayValues();
     ChartUpdate();
 };
 
+function lockCount() {
+    CountLock = !(CountLock);
+    CountCheck();
+};
+
+//Function returns 0 if fine, if not returns number of seats difference between Current count and Count max
+function CountCheck() {
+    if (CountLock) {
+        var Count = 0;
+        var CountMax = 0;
+        if (Seat) {
+            Count = TotalSeat;
+            CountMax = SeatMax;
+        }
+        else {
+            Count = TotalPrim;
+            CounMax = 100;
+        }
+
+        if (Count != Seatmax) {
+            return Count - CountMax;
+        }
+        else { return 0; }
+    };
+    return 0;
+}
+
 function getPartyCount() {
     for (var i = 0; i < PartyCount; i++) {
         var ID = i + "Label";
-        if (Seat) { SeatCount[i] = Number(document.getElementById(ID).value) }
-        else { PartyData[i] = Number(document.getElementById(ID).value); };
+        var TempVariable = 0;
+        if (Seat) { TempVariable = Number(document.getElementById(ID).value) }
+        else { TempVariable = Number(document.getElementById(ID).value); };
+        if (TempVariable != PartyData[i]){
+            console.log(CountCheck);
+        }
+        PartyData[i] = TempVariable;
     }
     for (var i = 0; i < PrtyLabels.length; i++) {
         ID = i + "Party";
@@ -169,10 +210,16 @@ function ChartUpdate() {
     document.getElementById("Majority").innerText = MajortiyCheck(Selected, Majority);
 }
 
-function UpdateDisplayValues() {
+function UpdateRightChartInfo() {
+    if (Seat) { document.getElementById("Threshold").innerText = SeatMajority }
+    else { document.getElementById("Threshold").innerText = 50 }
 
     document.getElementById("Type").innerText = Type;
     document.getElementById("elementList").innerHTML = "";
+}
+
+function UpdateDisplayValues() {
+    UpdateRightChartInfo();
 
     var Count = document.getElementsByClassName("Count");
     for (var i = 0; i < Count.length; i++) {

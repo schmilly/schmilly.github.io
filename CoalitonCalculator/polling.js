@@ -7,7 +7,8 @@ PartyColor = {
     "Nat": "#009933",
     "One": "#ffff99",
     "OaI": "#e8e3d3",
-    "Ind": "#EDE7E3",
+    "Oth": "#EDE7E3",
+    "Ind": "#D4E4BC",
     "JLP": "#f5c842"
 }
 
@@ -29,14 +30,51 @@ PrtyNme = {
 PollingData =
     [
         {
+        "Date": "Current",
+        "Company": "Current House",
+        "Level": "Tasmanian State",
+        "Count": 6,
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+            "PartyData": [48, 28, 12, 0, 6, 6],
+            "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+        "SeatProj": [11, 8, 2, 0, 4, 0],
+            "SeatMajor": 13,
+        "SeatMax": 25
+    },
+    {
+        "Date": "Extrapolated",
+        "Company": "Current House Next Seat Count",
+        "Level": "Tasmanian State",
+        "Count": 6,
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+        "PartyData": [48, 28, 12, 0, 6, 6],
+        "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+        "SeatProj": [15, 11, 3, 0, 6, 0],
+        "SeatMajor": 18,
+        "SeatMax": 35
+    },
+        {
             "Date": "2024-01-10",
-            "Company": "You Gov",
+            "Company": "You Gov Poll",
             "Level": "Tasmanian State",
             "Count": 5,
             "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind],
             "PartyData": [31, 27, 15, 20, 7],
             "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind],
             "SeatProj": [ 11, 10, 6, 7, 1],
-            "SeatMajor": 18
-        }
+            "SeatMajor": 18,
+            "SeatMax": 35
+        },
+        {
+        "Date": "2021-05-01",
+        "Company": "2021 Results",
+        "Level": "Tasmanian State",
+        "Count": 6,
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+        "PartyData": [48, 28, 12, 0, 6,6],
+         "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+        "SeatProj": [13, 9, 2, 0, 1,0],
+            "SeatMajor": 13,
+         "SeatMax": 25
+        }   
     ]

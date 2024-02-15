@@ -53,7 +53,7 @@
         }
 
         .small {
-            font-size: 10px;
+            font-size: 9px
         }
 
         div {
@@ -102,11 +102,13 @@
                 </div>
                 <h3>Click on a party to add the to a coaliton.</h3>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-1" id="RightChartInfo" >
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
                 <h3>Currently Selected <br /> <b id="CurrentValue">0</b> </h3>
                 <h3>Majority: <br /> <b id="Majority">false</b></h3>
-                <h3>Total:</h3><input id="MaxTotal" type="text"/>
+                <h3>Lock Count</h3>
+                <text class="small">(25 or 35 in seat mode, 100 in primary mode)</text>
+                <input onclick="lockCount()" id="MaxTotal" type="checkbox"/>
             </div>
             <div class="col-md-2">
                 <h3>
@@ -144,9 +146,11 @@
     <div class="row"><div style="padding-left: 10%;" class="col">
     <b> Known Bugs: </b>
     <ul>
+        <li>- Lock to count does not work</li>
         <li>- Seat mode broken, currently does not interact with coaltion, unable to click on parties to add them to coaliton</li>
         <li>- Seat mode takes up way too much of table and leaves large white space</li>
         <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
+        <li>- Total Button doesn't work</li>
     </ul>
     If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
     </div>
@@ -170,9 +174,14 @@
     var PrtyLabels = PollingData[0].PartyLabels;
     var colors = PollingData[0].PartyColor;
     var SeatMajority = PollingData[0].SeatMajor;
+    var TotalPrim = ArraySum(PollingData[0].PartyData);
+    var TotalSeat = ArraySum(PollingData[0].SeatProj);
+    var SeatMax = PollingData[0].SeatMax;
     var Selected = [];
     var Row = 1;
     var CurrentTotal = 1;
+    var CountLock = 0;
+    //0 for unlock, 1 for Lock
     var Seat = 0;
     //0 for % mode, 1 for Seat Mode
 
