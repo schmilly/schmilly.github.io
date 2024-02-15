@@ -30,7 +30,7 @@ function createPage() {
     var BoxCount = 0;
     Row = 1;
     for (var i = 0; i < PartyCount; i++) {
-        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" id="' + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="' + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'+i+'Checkbox" class="Update checkbox"></div>'
+        let PollBox = '<div class="col-md-1"><input type="text" id="' + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" min="0" id="' + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="' + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'+i+'Checkbox" class="Update checkbox"></div>'
         if (BoxCount > 4) {
             BoxCount = 0;
             Row = Row + 1;
@@ -183,28 +183,39 @@ function lockAndAdjustArray(arr, i, targetSum) {
     if (i < 0 || i >= arr.length) {
         throw new Error("Index out of bounds");
     }
-
     // Calculate the sum of the array excluding the locked value
     SumOfArray = ArraySum(arr);
 
-    var adjustment = (CountCheck() / (PartyCount - 1)) * -1
-    var LeftOverCount = adjustment*(PartyCount - 1)
+    var LeftOverCount = (SumOfArray - Max);
+
 
     // Adjust the array values except the locked value
-    for (var j = 0; LeftOverCount != 0; j++) {
-        if (j > arr.length) {
+    var loopcount = 0;
+    var num = 0;
+    if (LeftOverCount < 0) {
+        num = 1;
+    }
+    else {
+        num = -1;
+    }
+    for (var j = 0; LeftOverCount != 0;) {
+        loopcount++;
+        if (j !== i && arr[j] != 0) {
+            arr[j] += num
+            LeftOverCount += num;
+        }
+        if (loopcount > 200) {
+            console.log("too many loops, breaking")
+            console.log(j);
+            console.log(LeftOverCount);
+            console.log(arr.length);
+            break;
+        }
+        if (j >= PartyCount-1) {
             j = 0;
         }
-        if (j !== i && arr[j] != 0) {
-            var num = 0;
-            if (LeftOverCount < 0) {
-                num = -1;
-            }
-            else {
-                num = 1;
-            }
-            arr[j] += num
-            LeftOverCount -= num;
+        else {
+            j++;
         }
     }
 
