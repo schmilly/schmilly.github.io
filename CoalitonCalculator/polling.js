@@ -19,7 +19,7 @@ PartyColor = {
     "OaI": "#e8e3d3",
     "Oth": "#EDE7E3",
     "Ind": "#D4E4BC",
-    "JLP": "#f5c842"
+    "JLN": "#f5c842"
 }
 
 PrtyNme = {
@@ -32,7 +32,7 @@ PrtyNme = {
     "Oth": "Other",
     "Ind": "Independent",
     "OaI": "Others/independents",
-    "JLP": "Jaquie Lambie Party",
+    "JLN": "Jacqui Lambie Network",
     "KAP": "Katter Australia Party",
     "Nat": "Nationals"
 }
@@ -44,11 +44,11 @@ const PollingData =
         "Company": "Current House",
         "Level": "Tasmanian State",
         "Count": 6,
-        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
-            "PartyData": [48, 28, 12, 0, 6, 6],
-            "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLN, PrtyNme.Ind, PrtyNme.Oth],
+        "PartyData": [48, 28, 12, 0, 6, 6],
+        "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLN, PartyColor.Ind, PartyColor.Oth],
         "SeatProj": [11, 8, 2, 0, 4, 0],
-            "SeatMajor": 13,
+        "SeatMajor": 13,
         "SeatMax": 25
     },
     {
@@ -56,9 +56,9 @@ const PollingData =
         "Company": "35 Seat Count Extrapolated from Current House",
         "Level": "Tasmanian State",
         "Count": 6,
-        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLN, PrtyNme.Ind, PrtyNme.Oth],
         "PartyData": [48, 28, 12, 0, 6, 6],
-        "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+        "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLN, PartyColor.Ind, PartyColor.Oth],
         "SeatProj": [15, 11, 3, 0, 6, 0],
         "SeatMajor": 18,
         "SeatMax": 35
@@ -68,9 +68,9 @@ const PollingData =
             "Company": "You Gov Poll",
             "Level": "Tasmanian State",
             "Count": 6,
-            "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+            "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLN, PrtyNme.Ind, PrtyNme.Oth],
             "PartyData": [31, 27, 15, 20, 7, 0],
-            "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+            "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLN, PartyColor.Ind, PartyColor.Oth],
             "SeatProj": [ 11, 10, 6, 7, 1, 0],
             "SeatMajor": 18,
             "SeatMax": 35
@@ -80,9 +80,9 @@ const PollingData =
         "Company": "2021 Results",
         "Level": "Tasmanian State",
         "Count": 6,
-        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
+        "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLN, PrtyNme.Ind, PrtyNme.Oth],
         "PartyData": [48, 28, 12, 0, 6,6],
-         "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
+         "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLN, PartyColor.Ind, PartyColor.Oth],
          "SeatProj": [13, 9, 2, 0, 1,0],
          "SeatMajor": 13,
          "SeatMax": 25
