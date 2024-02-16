@@ -284,7 +284,7 @@
                 </button>
                 <button onclick="RenderChart()" type="button">Refresh </button>
                 <button onclick="buttonClear()" type="button">Clear</button>
-                <button onclick="buttonClear()" type="button">Add Party</button>
+                <button onclick="PlusButton()" type="button">Add Party</button>
             </div>
             <div class="col-md-1">
                 <button class="openbtn" onclick="openNav()">◁ Select Poll</button>
@@ -301,6 +301,7 @@
             </div>
         </div>
     </div>
+    <br />
     <div id="BoxesContainer" class="row">
         <div id="PartyRow" class="PartyRow">
         </div>
@@ -310,14 +311,13 @@
     <ul>
         <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
         <li>- Rescaling of graphs isn't very good and can cause issues </li>
-        <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
         <li>- Lock button has issues when interacting with 0</li>
     </ul>
     If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
     <br />
-    Data Links:
-    https://au.yougov.com/politics/articles/48296-the-tasmanian-state-liberal-vote-is-down-17-since-the-last-election
-    https://en.wikipedia.org/wiki/2024_Tasmanian_state_election
+    Data Links: <br />
+                <a>https://au.yougov.com/politics/articles/48296-the-tasmanian-state-liberal-vote-is-down-17-since-the-last-election</a>  <br />
+                <a>https://en.wikipedia.org/wiki/2024_Tasmanian_state_election</a>
 </div>
     </div>
 </body>
@@ -333,7 +333,7 @@
 <script>
     var ctx = document.getElementById('SmoothCircle');
     var Type = PollingData[0].Level;
-    var PartyCount = new Array();
+    var PartyCount = PollingData[0].Count;
     var PartyData = new Array();
     var SeatCount = new Array();
     var PrtyLabels = new Array();
@@ -418,7 +418,7 @@
 
             // Circular options
             center: ['50%', '80%'],
-            size: '165%',
+            size: '150%',
             startAngle: -90,
             endAngle: 90,
         }],

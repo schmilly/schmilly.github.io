@@ -51,20 +51,19 @@ function createPage() {
         addBox(i)
         BoxCount = BoxCount + 1;
     }
-    let AddButton = '<div class="col-md-3"><button</div>'
-    document.getElementById("PartyRow").innerHTML += AddButton;
     var ChangeVar = document.getElementsByClassName("Update")
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", pullPagePartyCount);
     }
 };
 
+
 function addBox(i) {
     let PollBox = '<div class="col-md-1"><input type="text" id="'
         + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" min="0" id="'
         + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="'
-        + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'
-        + i + 'Checkbox" class="Update checkbox"></div>'
+        + i + 'PartyColor" class="Update Color"/>'
+        // < input type = "checkbox" id = "'+ i + 'Checkbox" class="Update checkbox"></div>'
     document.getElementById("PartyRow").innerHTML += PollBox;
 }
 
@@ -345,8 +344,9 @@ function PushPageValues() {
 function addParty(Name, Count, Colour) {
     PrtyLabels.push(Name);
     PartyData.push(Count);
+    SeatCount.push(Count);
+    PartyCount += 1;
     colors.push(Colour);
-    pullPagePartyCount();
 }
 
 function ChangeAll(Labels, Counts, Colours) {
@@ -358,6 +358,10 @@ function ChangeAll(Labels, Counts, Colours) {
 
 function PlusButton(ElementID) {
     addParty("", 0, "#FFFFF");
+    addBox(PartyCount + 1);
+    clearPage();
+    createPage();
+    PushPageValues();
     };
 
 function RenderChart() {
