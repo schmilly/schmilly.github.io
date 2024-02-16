@@ -263,7 +263,7 @@
                     <canvas id="SmoothCircle">
                     </canvas>
                 </div>
-                <h3>Click on a party to add the to a coaliton.</h3>
+                <b>Click on a party to add the to a coaliton.</b>
             </div>
             <div class="col-md-1" id="RightChartInfo">
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
@@ -306,8 +306,8 @@
             </div>
         </div>
     </div>
-    <div id="BoxesContainer" class="row" style="padding:1%;">
-        <div id="PartyRow" class="PartyRow container">
+    <div id="BoxesContainer" class="row">
+        <div id="PartyRow" class="PartyRow">
         </div>
     </div>
     <div class="row"><div style="padding-left: 10%;" class="col">
@@ -378,6 +378,12 @@
             plugins: {
                 legend: {
                     position: "bottom",
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 14
+                        },
+                    }
                 }
             }
         }
@@ -400,6 +406,11 @@
             marginTop: 0,
             marginBottom: 0
         },
+        legend: {
+            itemStyle: {
+                fontSize: '14px'
+            },
+        },
         title: {
             text: "",
         },
@@ -412,7 +423,7 @@
             },
 
             // Circular options
-            center: ['50%', '88%'],
+            center: ['50%', '80%'],
             size: '170%',
             startAngle: -90,
             endAngle: 90,
@@ -422,6 +433,11 @@
                 states: {
                     inactive: {
                         opacity: 1
+                    }
+                },
+                events: {
+                    legendItemClick: function (e) {
+                        e.preventDefault();
                     }
                 }
             }
