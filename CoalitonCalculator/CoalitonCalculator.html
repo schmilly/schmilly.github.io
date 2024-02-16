@@ -15,14 +15,15 @@
         body {
             color: black;
             font-family: 'Tahoma';
+            margin:2%;
         }
 
         h3 {
             font-family: 'Tahoma';
             color: black;
-            text-align: center;
+            text-align: left;
             vertical-align: top;
-            font-size: 20px;
+            font-size: 18px;
             padding: 5px;
             margin: 5px;
         }
@@ -48,6 +49,11 @@
             width: 110%
         }
 
+        td {
+            padding: 10px;
+            outline-style: none solid none none;
+        }
+
         .Color {
             width: 50%;
         }
@@ -64,8 +70,21 @@
         }
 
         .scrollable {
-            height: 100%;
-            overflow-y: auto;
+            overflow-y:auto;
+        }
+
+        .PollRow {
+            background-color: #ffff;
+            border-color: cadetblue;
+            border-style: solid;
+        }
+
+        .PollRow:hover {
+                background-color: #b6ff00;
+        }
+
+        .container {
+            width:100%;
         }
 
         /* The switch - the box around the slider */
@@ -76,12 +95,12 @@
             height: 20px;
         }
 
-            /* Hide default HTML checkbox */
-            .switch input {
+        /* Hide default HTML checkbox */
+        .switch input {
                 opacity: 0;
                 width: 0;
                 height: 0;
-            }
+        }
 
         /* The slider */
         .slider {
@@ -96,7 +115,79 @@
             transition: .4s;
         }
 
-            .slider:before {
+        .chart-container{
+
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 10;
+            right: 0;
+            border-style:solid;
+            background-color: #FFF;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+         /* The sidebar links */
+        .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                display: block;
+                transition: 0.3s;
+        }
+
+         /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+                    color: #f1f1f1;
+        }
+
+            /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 36px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+                background-color: #444;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+              }
+        } 
+
+        .slider:before {
                 position: absolute;
                 content: "";
                 height: 10px;
@@ -106,7 +197,7 @@
                 background-color: white;
                 -webkit-transition: .4s;
                 transition: .4s;
-            }
+        }
 
         input:checked + .slider {
             background-color: #2196F3;
@@ -127,25 +218,23 @@
             border-radius: 34px;
         }
 
-            .slider.round:before {
+        .slider.round:before {
                 border-radius: 50%;
-            } 
-
-        .td {
-            border: "solid";
         }
-
-        .PollRow {
-            background-color: #ffff;
-        }
-
-        .PollRow:hover {
-                background-color: #b6ff00;
-        }
-
         .highcharts-figure,
         .highcharts-data-table table {
-            max-width: 100%;
+            min-width: 320px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
         }
     </style>
 </head>
@@ -162,19 +251,19 @@
             </text>
         </h2>
     </div>
-    <div class="container-fluid" style="height:100%;width:100%;padding:2px;">
+    <div id="main" style="height:341px; width: 100%; padding: 2px;">
         <div id="TopRow" class="row">
-            <div class="col-md-3" style="border-style:solid;height:50%;">
+            <div class="col-md-4 chart-container" id="SeatContainer">
+                <div id="SeatChart">
+                    <figure class="highcharts-figure"></figure>
+                </div>
+            </div>
+            <div class="col-md-4 chart-container" id="SmoothContainer">
                 <div id="SmoothChart">
-                    <canvas style="width:50%" id="SmoothCircle">
+                    <canvas id="SmoothCircle">
                     </canvas>
                 </div>
                 <h3>Click on a party to add the to a coaliton.</h3>
-            </div>
-            <div class="col-md-3" style="border-style:solid;height:50%;">
-                <div id="SeatChart">
-                    <figure class="highcharts-figure"><div id="container"></div></figure>
-                </div>
             </div>
             <div class="col-md-1" id="RightChartInfo">
                 <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
@@ -195,37 +284,39 @@
                 </h3>
             </div>
             <div class="col-md-1">
-                <button onclick="ChangeMode()"><text>Mode Change</text> <br /> <text class="small">Toggle between Seat Mode and % Mode</text></button>
-                <button onclick="getPartyCount()">Refresh Data</button>
-                <button onclick="buttonClear()">Clear</button>
-
+                <button onclick="ChangeMode()" type="button">
+                    <text>Toggle Mode</text> <br />
+                </button>
+                <button onclick="RenderChart()" type="button">Refresh </button>
+                <button onclick="buttonClear()" type="button">Clear</button>
+                <button onclick="buttonClear()" type="button">Add Party</button>
             </div>
-            <div class="col-md-3 Poll" style="height:50%;border-style:solid none solid solid;">
+            <div class="col-md-1">
+                <button class="openbtn" onclick="openNav()">◁ Select Poll</button>
+            </div>
+            <div id="mySidebar" class="sidebar" style="height:50%;">
                 <h3>
                     Based on Poll:
                 </h3>
-                <div class="scrollable" style="height:200px">
-                    <table id="pollingData" style="width:100%;height:30px">
+                <div class="scrollable">
+                    <table id="pollingData" style="height:30px">
                     </table>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="BoxesContainer" class="row" style="padding:1%;border">
-        <div id="PartyRow1" class="PartyRow">
-        </div>
-        <div id="PartyRow2" class="PartyRow">
-        </div>
-        <div id="PartyRow3" class="PartyRow">
+    <div id="BoxesContainer" class="row" style="padding:1%;">
+        <div id="PartyRow" class="PartyRow container">
         </div>
     </div>
     <div class="row"><div style="padding-left: 10%;" class="col">
     <b> Known Bugs: </b>
     <ul>
         <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
-        <li>- Seat mode takes up way too much of page and leaves large white space</li>
+        <li>- Rescaling of graphs isn't very good and can cause issues </li>
         <li>- Currently doesn't doesn't allow for adding parties, can only change current values</li>
-        <li>- Lock button has major issues, especially when interacting with 0</li>
+        <li>- Lock button has issues when interacting with 0</li>
     </ul>
     If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
     <br />
@@ -247,15 +338,16 @@
 <script>
     var ctx = document.getElementById('SmoothCircle');
     var Type = PollingData[0].Level;
-    var PartyCount = PollingData[0].Count;
-    var PartyData = PollingData[0].PartyData;
-    var SeatCount = PollingData[0].SeatProj;
-    var PrtyLabels = PollingData[0].PartyLabels;
-    var colors = PollingData[0].PartyColor;
+    var PartyCount = new Array();
+    var PartyData = new Array();
+    var SeatCount = new Array();
+    var PrtyLabels = new Array();
+    var colors = new Array();
     var SeatMajority = PollingData[0].SeatMajor;
     var TotalPrim = ArraySum(PollingData[0].PartyData);
     var TotalSeat = ArraySum(PollingData[0].SeatProj);
     var SeatMax = PollingData[0].SeatMax;
+    assignPoll(0);
     var Max = 100;
     var Selected = [];
     var Row = 1;
@@ -294,8 +386,19 @@
     ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
     var HighChartsData = {
         chart: {
-            height: '100%',
-            type: 'item',
+            type:'item',
+            borderWidth: 0,
+            reflow: true,
+            height: 338-28,
+            spacingTop: 0,
+            spacingRight: 0,
+            spacingBottom: 0,
+            spacingLeft: 0,
+            plotBorderWidth: 0,
+            marginRight: 0,//-60, //this does move the chart but you'll need to recompute it
+            marginLeft: 0,//-60,  //whenever the page changes width
+            marginTop: 0,
+            marginBottom: 0
         },
         title: {
             text: "",
@@ -309,8 +412,10 @@
             },
 
             // Circular options
+            center: ['50%', '88%'],
+            size: '170%',
             startAngle: -90,
-            endAngle: 90
+            endAngle: 90,
         }],
         plotOptions: {
             series: {
@@ -321,13 +426,6 @@
                 }
             }
         },
-    pane: [{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['25%', '145%'],
-        size: 300
-    }]
     };
 
     createPage();

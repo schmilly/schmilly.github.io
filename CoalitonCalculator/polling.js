@@ -1,3 +1,13 @@
+const deepFreeze = (obj) => {
+    Object.keys(obj).forEach((key) => {
+        const value = obj[key];
+        if (typeof value === 'object' && value !== null) {
+            deepFreeze(value);
+        }
+    });
+    return Object.freeze(obj);
+};
+
 PartyColor = {
     "ALP": "#f54245",
     "Lib": "#56638A",
@@ -27,7 +37,7 @@ PrtyNme = {
     "Nat": "Nationals"
 }
 
-PollingData =
+const PollingData =
     [
         {
         "Date": "Current",
@@ -73,8 +83,9 @@ PollingData =
         "PartyLabels": [PrtyNme.Lib, PrtyNme.ALP, PrtyNme.Grn, PrtyNme.JLP, PrtyNme.Ind, PrtyNme.Oth],
         "PartyData": [48, 28, 12, 0, 6,6],
          "PartyColor": [PartyColor.Lib, PartyColor.ALP, PartyColor.Grn, PartyColor.JLP, PartyColor.Ind, PartyColor.Oth],
-        "SeatProj": [13, 9, 2, 0, 1,0],
-            "SeatMajor": 13,
+         "SeatProj": [13, 9, 2, 0, 1,0],
+         "SeatMajor": 13,
          "SeatMax": 25
         }   
     ]
+Object.freeze(PollingData);

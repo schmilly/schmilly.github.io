@@ -1,5 +1,14 @@
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "350px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+}
 function clearPage() {
-    let ClearedRows = '<div id="PartyRow1" class="PartyRow"></div><div id="PartyRow2" class="PartyRow"></div><div id="PartyRow3" class="PartyRow"> </div>'
+    let ClearedRows = '<div id="PartyRow" class="PartyRow"></div>';
     document.getElementById("BoxesContainer").innerHTML = ClearedRows;
 };
 
@@ -38,29 +47,25 @@ function setSeatData() {
 
 function createPage() {
     var BoxCount = 0;
-    Row = 1;
     for (var i = 0; i < PartyCount; i++) {
-
-        if (BoxCount > 4) {
-            BoxCount = 0;
-            Row = Row + 1;
-        }
-        addBox(Row,i)
+        addBox(i)
         BoxCount = BoxCount + 1;
     }
+    let AddButton = '<div class="col-md-3"><button</div>'
+    document.getElementById("PartyRow").innerHTML += AddButton;
     var ChangeVar = document.getElementsByClassName("Update")
     for (var i = 0; i < ChangeVar.length; i++) {
         ChangeVar[i].addEventListener("change", pullPagePartyCount);
     }
 };
 
-function addBox(row, i) {
+function addBox(i) {
     let PollBox = '<div class="col-md-1"><input type="text" id="'
         + i + 'Party" class="Update Name" /></div><div class="col-md-1"><input type="number" min="0" id="'
         + i + 'Label" class="Count Update" /></div><div class="col-md-1"><input type="color" id="'
         + i + 'PartyColor" class="Update Color"/><input type="checkbox" id="'
         + i + 'Checkbox" class="Update checkbox"></div>'
-    document.getElementById("PartyRow" + Row).innerHTML += PollBox;
+    document.getElementById("PartyRow").innerHTML += PollBox;
 }
 
 function grabPolling() {
@@ -68,8 +73,8 @@ function grabPolling() {
         let RowHTML = '<tr class="PollRow" onClick="clickPoll(this.id)" id=Polling_'
             + i + '> <td class="Date"> '
             + PollingData[i].Date + '</td > <td class="Company">'
-            + PollingData[i].Company + '</td> <td class="Level">'
-            + PollingData[i].Level + '</td> </tr>'
+            + PollingData[i].Company + '</td>'
+            //  <td class="Level">' + PollingData[i].Level + '</td> </tr>'
         document.getElementById("pollingData").innerHTML += RowHTML;
     };
 }
@@ -137,22 +142,26 @@ function totalCalculator(data, count) {
 
 function clickPoll(PollId) {
     var PollNumber = PollId.split('_')[1];
-    PartyData = PollingData[PollNumber].PartyData;
-    PrtyLabels = PollingData[PollNumber].PartyLabels;
-    colors = PollingData[PollNumber].PartyColor;
-    Type = PollingData[PollNumber].Level;
-    PartyCount = PollingData[PollNumber].Count;
-    SeatCount = PollingData[PollNumber].SeatProj;
-    SeatMajority = PollingData[PollNumber].SeatMajor;
-    SeatMax = PollingData[PollNumber].SeatMax;
-    TotalPrim = ArraySum(PollingData[0].PartyData);
-    TotalSeat = ArraySum(PollingData[0].SeatProj);
+    assignPoll(PollNumber);
     CheckMax();
     clearPage();
     createPage();
     PushPageValues();
     ChartUpdate();
 };
+
+function assignPoll(PollNumber) {
+    PartyData = PollingData[PollNumber].PartyData.slice(0);
+    PrtyLabels = PollingData[PollNumber].PartyLabels.slice(0);
+    colors = PollingData[PollNumber].PartyColor.slice(0);
+    Type = PollingData[PollNumber].Level;
+    PartyCount = PollingData[PollNumber].Count;
+    SeatCount = PollingData[PollNumber].SeatProj.slice(0);
+    SeatMajority = PollingData[PollNumber].SeatMajor;
+    SeatMax = PollingData[PollNumber].SeatMax;
+    TotalPrim = ArraySum(PollingData[0].PartyData);
+    TotalSeat = ArraySum(PollingData[0].SeatProj);
+}
 
 //Function returns 0 if fine, if not returns number of seats difference between Current count and Count max
 function CountCheck() {
@@ -251,7 +260,6 @@ function MajortiyCheck(SelectedArr, MajorityNumber) {
         }
         else { count += PartyData[Party]; }
     })
-    console.log(count);
     document.getElementById("CurrentValue").innerText = count;
     if (MajorityNumber <= count) {
         return true;
@@ -302,6 +310,17 @@ function UpdateRightChartInfo() {
     document.getElementById("MaxCount").innerText = Max;
 }
 
+function chartSelectChange() {
+    if (Seat) {
+        document.getElementById("SeatContainer").style.outline = "solid  #000";
+        document.getElementById("SmoothContainer").style.outline = "none";
+    }
+    else {
+        document.getElementById("SeatContainer").style.outline = "none";
+        document.getElementById("SmoothContainer").style.outline = "solid  #000";
+    }
+}
+
 function PushPageValues() {
     var Count = document.getElementsByClassName("Count");
     for (var i = 0; i < Count.length; i++) {
@@ -346,6 +365,7 @@ function RenderChart() {
         setSeatData();
         document.getElementById("SeatChart").innerHTML = '<figure class="highcharts-figure"><div id="container"></div></figure>';
         SeatChart = Highcharts.chart('container', HighChartsData);
+        SeatChart.reflow();
     }
     if (!Seat || BothChart) {
         setSmoothData();
@@ -353,7 +373,8 @@ function RenderChart() {
         SmoothChart = new Chart(document.getElementById('SmoothCircle'), SmoothData);
     };
     CheckMax();
-    UpdateRightChartInfo()
+    UpdateRightChartInfo();
+    chartSelectChange();
     PushPageValues();
 }
 
@@ -368,6 +389,7 @@ function CheckMax() {
 function ChangeMode() {
     Seat = !Seat;
     CheckMax();
-    UpdateRightChartInfo()
+    UpdateRightChartInfo();
+    chartSelectChange();
     PushPageValues();
 }
