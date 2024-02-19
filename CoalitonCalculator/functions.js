@@ -159,8 +159,8 @@ function assignPoll(PollNumber) {
     SeatCount = PollingData[PollNumber].SeatProj.slice(0);
     SeatMajority = PollingData[PollNumber].SeatMajor;
     SeatMax = PollingData[PollNumber].SeatMax;
-    TotalPrim = ArraySum(PollingData[0].PartyData);
-    TotalSeat = ArraySum(PollingData[0].SeatProj);
+    ElcSeatCount = PollingData[PollNumber].ElectorateSeatCount;
+    Electorat = PollingData[PollNumber].Electorate.slice(0);
 }
 
 //Function returns 0 if fine, if not returns number of seats difference between Current count and Count max

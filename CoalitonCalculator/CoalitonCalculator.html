@@ -18,21 +18,26 @@
             margin:1%;
         }
 
+
+        h1 {
+            font-family: 'Brush Script MT';
+            text-align: center;
+            font-size: 50px;
+        }
+
+        h2 {
+          font-szie:20px;
+        }
+
         h3 {
             font-family: 'Tahoma';
             color: black;
             text-align: left;
             vertical-align: top;
-            font-size: 18px;
-            padding: 5px;
-            margin: 5px;
+            font-size: 14px;
+            margin: 7px;
         }
 
-        h2 {
-            font-family: 'Brush Script MT';
-            text-align: center;
-            font-size: 50px;
-        }
 
         b {
             font-family: 'Tahoma';
@@ -56,6 +61,12 @@
 
         .Color {
             width: 50%;
+        }
+
+        .Seats {
+          height:50px;
+          border-style:solid;
+          margin:2%;
         }
 
         .small {
@@ -236,7 +247,7 @@
 <body>
     <div class="row">
         <div class="col-md-12">
-            <h2>
+            <h1>
                 Schmillies Tasmanian Coaliton Calculator
                 <img src="./Tasmania-None-Select.svg"
                      style="height:65px;" />
@@ -245,7 +256,7 @@
                     <b>Made at the request of and via harrasment by Leo Pugsli and</b>
                     <img src="https://static.wixstatic.com/media/760046_dd30c7eacdd947f1b1bff19626a623fa~mv2.png/v1/fill/w_183,h_61,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/760046_dd30c7eacdd947f1b1bff19626a623fa~mv2.png" alt="" style="width: 183px; height: 61px; object-fit: cover;" width="183" height="61" srcset="https://static.wixstatic.com/media/760046_dd30c7eacdd947f1b1bff19626a623fa~mv2.png/v1/fill/w_183,h_61,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/760046_dd30c7eacdd947f1b1bff19626a623fa~mv2.png" fetchpriority="high">
                 </text>
-            </h2>
+            </h1>
         </div>
     </div>
     <div id="main" style="height:50%; padding: 2px;">
@@ -308,23 +319,24 @@
         <div id="PartyRow" class="PartyRow">
         </div>
     </div>
-    <div class="row" ID="ElectoralAndBugRow">
+    <div class="row">
     <div style="padding-left: 1%;" class="col-md-2">
       <b> Known Bugs: </b>
       <ul>
-          <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
+          <li>- Electorate Mode doesn't work; Doesn't tie into polling data at in anyway, also non interactive</li>
+          <li>- Seat view doesn't work, currently does not interact with coaltion. have to click on primary chart to change values</li>
           <li>- Rescaling of graphs isn't very good and can cause issues </li>
           <li>- Lock button has issues when interacting with 0</li>
       </ul>
-  Best viewed and optimised for: 1920x1080 on Firefox <br />
+        Best viewed and optimised for: 1920x1080 on Firefox <br/><br/>
   If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
-  <br />
+       <br/><br/>
        Links for Data: <br />
        <a>https://au.yougov.com/politics/articles/48296-the-tasmanian-state-liberal-vote-is-down-17-since-the-last-election</a><br/>
        <a>https://en.wikipedia.org/wiki/2024_Tasmanian_state_election</a>
   </div>
-      <div class="col-md-10">
-        <h3> <b> Enable Electorate mode </b> </h3>
+      <div class="col-md-10"  ID="ElectoralAndBugRow">
+        <h2> <b> Enable Electorate mode </b> </h2>
         <label class="switch">
         <input type="checkbox" id="CheckBox">
         <span class="slider round"></span>
@@ -346,8 +358,8 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script>
+    var ElectorateChartArray = [];
     var PollingData = TasmaniaState;
-    var ctx = document.getElementById('SmoothCircle');
     var Type = PollingData[0].Level;
     var PartyCount = PollingData[0].Count;
     var PartyData = new Array();
@@ -359,7 +371,7 @@
     var TotalSeat = ArraySum(PollingData[0].SeatProj);
     var SeatMax = PollingData[0].SeatMax;
     var ElcSeatCount = PollingData[0].ElectorateSeatCount;
-    var Electorate = new Array();
+    var Electorat = new Array();
     assignPoll(0);
     var Max = 100;
     var Selected = [];
@@ -378,4 +390,5 @@
     grabPolling();
     PushPageValues();
     LockCheck();
+    BuildElect();
   </script>

@@ -85,6 +85,10 @@ var HighChartsData = {
 
 var ElectorateChart = {
   type: 'bar',
+  data: {
+    datasets: [],
+    labels: [""]
+  },
   options: {
     indexAxis: 'y',
     maintainAspectRatio: false,

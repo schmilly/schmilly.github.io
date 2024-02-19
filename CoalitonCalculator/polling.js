@@ -61,33 +61,37 @@ const Electorates = [
   {
   Name:"Clark",
   SVGLoc:"Tasmania-" + ElectorateNames[0] + ".svg",
-  SeatCount: 7,
   PrimaryVote: [0,0,0,0,0],
-  Seats: [1,2,1,0,1]
+  Seats: [1,2,1,0,1],
+  Color: [PartyColor.ALP,PartyColor.Lib,PartyColor.Grn,PartyColor.Ind,PartyColor.Oth]
   },
   {
   Name:"Franklin",
   SVGLoc:"Tasmania-" +  ElectorateNames[1] + ".svg",
   PrimaryVote: [0,0,0,0,0],
-  Seats: [2,2,1,0,0,0]
+  Seats: [1,2,1,0,1,0],
+  Color: [PartyColor.ALP,PartyColor.Lib,PartyColor.Grn,PartyColor.Ind,PartyColor.Oth]
   },
   {
   Name:"Bass",
   SVGLoc:"Tasmania-" +  ElectorateNames[2] + ".svg",
   PrimaryVote: [0,0,0,0,0],
-  Seats: [3,2,0,0,0,0]
+  Seats: [2,2,0,0,1,0],
+  Color: [PartyColor.ALP,PartyColor.Lib,PartyColor.Grn,PartyColor.Ind,PartyColor.Oth]
   },
   {
   Name:"Lyons",
   SVGLoc:"Tasmania-" + ElectorateNames[3] + ".svg",
   PrimaryVote: [0,0,0,0,0],
-  Seats: [3,2,0,0,0,0]
+  Seats: [2,2,0,0,1,0],
+  Color: [PartyColor.ALP,PartyColor.Lib,PartyColor.Grn,PartyColor.Ind,PartyColor.Oth]
   },
   {
   Name:"Braddon",
   SVGLoc:"Tasmania-" + ElectorateNames[4] + ".svg",
   PrimaryVote: [0,0,0,0,0],
-  Seats: [3,2,0,0,0,0]
+  Seats: [2,3,0,0,0,0],
+  Color: [PartyColor.ALP,PartyColor.Lib,PartyColor.Grn,PartyColor.Ind,PartyColor.Oth]
   },
 ];
 
@@ -98,6 +102,7 @@ var Result_2021 = [
 {...Electorates[ElectID.Lyons], PrimaryVote: [51.2,32.5,8.9,0.9,1.2]},
 {...Electorates[ElectID.Braddon], PrimaryVote: [57.2,26.5,5.5,6.1,4.7]},
 ]  
+
 
 const TasmaniaState =
     [
