@@ -104,21 +104,22 @@ function handleChartClick(event, elements) {
             Selected.push(clickedIndex)
             // Get the label or any other information you need from the clicked element
             var clickedLabel = PrtyLabels[clickedIndex];
-            addElementToList(clickedLabel);
+            addElementToList(clickedLabel,colors[clickedIndex]);
         }
         else {
             Selected.forEach(Value => {
-                addElementToList(PrtyLabels[Value]);
+                addElementToList(PrtyLabels[Value],colors[Value]);
             });
         }
     }
     ChartUpdate();
 }
 
-function addElementToList(element) {
-    var list = document.getElementById('elementList');
+function addElementToList(element,color) {
+    var list = document.getElementById('SelectList');
     var listItem = document.createElement('li');
     listItem.textContent = element;
+    listItem.style.color = color;
     list.appendChild(listItem);
 }
 
@@ -275,25 +276,35 @@ function buttonClear() {
 }
 
 function clear() {
-    var list = document.getElementById('elementList');
+    var list = document.getElementById('SelectList');
     list.innerHTML = "";
 }
 
 function ChartUpdate() {
     if (Seat || BothChart) {
-        var Majority = SeatMajority;
         ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
         HighChartsData.series[0].data = ParlimentData;
         SeatChart.series[0].update({ data: ParlimentData }, true);
     }
     if (!Seat || BothChart) {
-        var Majority = 50;
+        SmoothChart.data.datasets[0].borderColor = CreateBorder(Selected);
         SmoothChart.data.datasets[0].data = PartyData;
         SmoothChart.data.labels = PrtyLabels;
         SmoothChart.data.datasets[0].backgroundColor = colors;
         SmoothChart.update();
     }
     UpdateRightChartInfo()
+}
+
+function CreateBorder(SelectedData) {
+    var ReturnArray = [];
+    for (var i = 0; i < PartyCount; i++) {
+        ReturnArray[i] = "transparent";
+    }
+    SelectedData.forEach(Value => {
+        ReturnArray[Value] = "gold";
+    });
+    return ReturnArray;
 }
 
 function UpdateRightChartInfo() {
