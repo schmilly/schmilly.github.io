@@ -15,7 +15,7 @@
         body {
             color: black;
             font-family: 'Tahoma';
-            margin:2%;
+            margin:1%;
         }
 
         h3 {
@@ -116,7 +116,7 @@
         }
 
         .container {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         /* The sidebar menu */
@@ -238,8 +238,8 @@
         <div class="col-md-12">
             <h2>
                 Schmillies Tasmanian Coaliton Calculator
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Tasmania_location_map_alt.png"
-                     style="height:55px;" />
+                <img src="./Tasmania-None-Select.svg"
+                     style="height:65px;" />
                 <br />
                 <text style="font-family: 'Tahoma'; font-size: small">
                     <b>Made at the request of and via harrasment by Leo Pugsli and</b>
@@ -308,26 +308,37 @@
         <div id="PartyRow" class="PartyRow">
         </div>
     </div>
-    <div class="row">
-        <div style="padding-left: 1%;" class="col-md-2">
-            <b> Known Bugs: </b>
-            <ul>
-                <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
-                <li>- Rescaling of graphs isn't very good and can cause issues </li>
-                <li>- Lock button has issues when interacting with 0</li>
-            </ul>
-        Best viewed and optimised for: 1920x1080 on Firefox <br />
-        If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
-        <br />
-             Links for Data: <br />
-             <a>https://au.yougov.com/politics/articles/48296-the-tasmanian-state-liberal-vote-is-down-17-since-the-last-election</a>  <br />
-             <a>https://en.wikipedia.org/wiki/2024_Tasmanian_state_election</a>
+    <div class="row" ID="ElectoralAndBugRow">
+    <div style="padding-left: 1%;" class="col-md-2">
+      <b> Known Bugs: </b>
+      <ul>
+          <li>- Seat mode broken, currently does not interact with coaltion. have to click on primary chart to change values</li>
+          <li>- Rescaling of graphs isn't very good and can cause issues </li>
+          <li>- Lock button has issues when interacting with 0</li>
+      </ul>
+  Best viewed and optimised for: 1920x1080 on Firefox <br />
+  If you find any additonal issues please report them to <a href="mailto:schmilly@proton.me">my email</a>
+  <br />
+       Links for Data: <br />
+       <a>https://au.yougov.com/politics/articles/48296-the-tasmanian-state-liberal-vote-is-down-17-since-the-last-election</a><br/>
+       <a>https://en.wikipedia.org/wiki/2024_Tasmanian_state_election</a>
+  </div>
+      <div class="col-md-10">
+        <h3> <b> Enable Electorate mode </b> </h3>
+        <label class="switch">
+        <input type="checkbox" id="CheckBox">
+        <span class="slider round"></span>
+        </label>
+        <div ID="ElectorateBox">
         </div>
+      </div>
     </div>
+
 </body>
 </html>
 <script src="./polling.js"></script>
 <script src="./functions.js"></script>
+<script src="./prefrences.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/item-series.js"></script>
@@ -347,10 +358,11 @@
     var TotalPrim = ArraySum(PollingData[0].PartyData);
     var TotalSeat = ArraySum(PollingData[0].SeatProj);
     var SeatMax = PollingData[0].SeatMax;
+    var ElcSeatCount = PollingData[0].ElectorateSeatCount;
+    var Electorate = new Array();
     assignPoll(0);
     var Max = 100;
     var Selected = [];
-    var Row = 1;
     var CurrentTotal = 1;
     var BothChart = 1;
     //0 for 1 chart,1 for both charts 
@@ -358,95 +370,12 @@
     //0 for unlock, 1 for Lock
     var Seat = 0;
     //0 for % mode, 1 for Seat Mode
-
-    var SmoothData = {
-        type: 'doughnut',
-        data: {
-            labels: PrtyLabels,
-            datasets: [{
-                label: '%',
-                data: PartyData,
-                borderWidth: 5,
-                borderAlign: "inner",
-                backgroundC5olor: colors
-            }]
-        },
-        options: {
-            rotation: -90,
-            circumference: 180,
-            maintainAspectRatio: false,
-            onClick: handleChartClick,
-            plugins: {
-                legend: {
-                    position: "bottom",
-                    labels: {
-                        // This more specific font property overrides the global property
-                        font: {
-                            size: 14
-                        },
-                    }
-                }
-            }
-        }
-    };
-
-    ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
-    var HighChartsData = {
-        chart: {
-            type: 'item',
-            height: (2 / 4 * 100) + '%',
-            borderWidth: 0,
-            spacingTop: 0,
-            spacingRight: 0,
-            spacingBottom: 0,
-            spacingLeft: 0,
-            plotBorderWidth: 0,
-            marginRight: 0,//-60, //this does move the chart but you'll need to recompute it
-            marginLeft: 0,//-60,  //whenever the page changes width
-            marginTop: 0,
-            marginBottom: 0
-        },
-        legend: {
-            itemStyle: {
-                fontSize: '14px'
-            },
-        },
-        title: {
-            text: "",
-        },
-        series: [{
-            name: 'Seats',
-            keys: ['name', 'y', 'color'],
-            data: ParlimentData,
-            dataLabels: {
-                enabled: false,
-            },
-
-            // Circular options
-            center: ['50%', '75%'],
-            size: '150%',
-            startAngle: -90,
-            endAngle: 90,
-        }],
-        plotOptions: {
-            series: {
-                states: {
-                    inactive: {
-                        opacity: 1
-                    }
-                },
-                events: {
-                    legendItemClick: function (e) {
-                        e.preventDefault();
-                    }
-                }
-            }
-        },
-    };
-
+</script>
+<script src="./ChartFrameworks.js"></script>
+<script>
     createPage();
     RenderChart();
     grabPolling();
     PushPageValues();
     LockCheck();
-</script>
+  </script>

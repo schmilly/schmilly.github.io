@@ -408,3 +408,4 @@ function ChangeMode() {
     chartSelectChange();
     PushPageValues();
 }
+
