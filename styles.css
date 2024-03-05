@@ -96,6 +96,14 @@ iframe {
   transform: translateZ(0);
 }*/
 
+.Quote {
+    padding-left: 5%;
+    letter-spacing: 0.1px;
+    text-shadow: 1px 1px #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
 h1,
 h2,
 header {
@@ -200,33 +208,24 @@ article {
 }
 
 .header {
-  background: linear-gradient(90deg, hotpink, #54b2f0);
-  color: white;
-  padding: 3px 3px 3px 7px;
-  font-size: 12px;
-  border-bottom: 1px solid grey;
-  font-weight: bold;
-  letter-spacing: 0.4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header {
-  background: linear-gradient(90deg, hotpink, #54b2f0);
-  color: white;
-  padding: 3px 3px 3px 7px;
-  font-size: 12px;
-  border-bottom: 1px solid grey;
-  font-weight: bold;
-  letter-spacing: 0.4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: linear-gradient(90deg, blue, #5cded3);
+    color: white;
+    padding: 3px 3px 3px 7px;
+    font-size: 12px;
+    border-bottom: 1px solid grey;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .blogh {
   background: linear-gradient(90deg, #A63A50, #AB9B96);
+}
+
+.contact {
+    background: linear-gradient(90deg, #DEB841, #DE9E36);
 }
 
 .Reading *{
@@ -243,8 +242,7 @@ article {
 }
 
 .plain a {
-  color: inherit;
-  text-decoration: none;
+
 }
 
 .header button {
