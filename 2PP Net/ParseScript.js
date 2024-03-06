@@ -1,2 +1,0 @@
-const Array_ParseScript = [
-];
