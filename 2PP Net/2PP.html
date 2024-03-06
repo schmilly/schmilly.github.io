@@ -20,7 +20,7 @@
 </header>
 <!-- ./ Header -->
 <main class="container">
-  <center><small> Click to remove </small></center>
+  <center><small> Click to remove, Scroll or pinch to zoom </small></center>
      <div style="height:700px" id="SmoothChart">
         <canvas  id="SmoothCircle">
         </canvas>
@@ -46,6 +46,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script src="../node_modules/chartjs-plugin-zoom/dist/chartjs-plugin-zoom.min.js"></script>
 <script src="./2PPFunctions.js"></script>
 <script src="./2022.js"></script>
 <script src="./2019.js"></script>
@@ -80,6 +81,25 @@
             datasets: DataSets,
         },
         options: {
+          plugins: {
+           zoom: {
+            pan: {
+              enabled: true,
+              modifierKey: 'ctrl'
+            },
+            limits: {
+              x: {
+                min: 0,
+                max: 1112
+              }
+            },
+            zoom: { 
+              wheel: {  enabled: true, },
+              pinch: { enabled: true  },
+              mode: 'xy',
+              }
+            }
+          },
           maintainAspectRatio: false,
           scales : {
             y: {
@@ -88,7 +108,7 @@
               },
              ticks:{
                 callback: function(value, index) {
-                        return value + "%";
+                        return Math.round(value) + "%";
                     },
              }, 
               title: {
@@ -104,7 +124,7 @@
               },
               ticks:{
                 callback: function(value, index, ticks) {
-                        return 'Day ' + value;
+                        return 'Day ' + Math.round(value);
                     },
                 major:{
                   enabled: true,
