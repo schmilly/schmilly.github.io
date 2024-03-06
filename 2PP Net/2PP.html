@@ -21,10 +21,23 @@
 </header>
 <!-- ./ Header -->
 <body>
-    <div id="SmoothChart">
-        <canvas id="SmoothCircle">
+     <div style="height:750px" id="SmoothChart">
+        <canvas  id="SmoothCircle">
         </canvas>
     </div>
+   <article>
+    <h6> Explanation </h6>
+   Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
+   <footer><small>
+       For Example: <br> <i>
+         Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
+         53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll <br><br> </i>
+       Or.. <br><br> <i>
+         Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
+         46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i>
+     </small></footer>
+    </article>
+
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -50,21 +63,39 @@
     ];
 
     var Colors = []
-        Colors[2007]="#D2AB99"
-        Colors[2010]="#C78283"
-        Colors[2013]="#0B3954"
-        Colors[2016]="#087E8B"
-        Colors[2019]="#BFD7EA"
-        Colors[2022]="#744253"
+        Colors[2007]="#9C0D38"
+        Colors[2010]="#ee2251"
+        Colors[2013]="#465fe8"
+        Colors[2016]="#3A0CA3"
+        Colors[2019]="#39A0ED"
+        Colors[2022]="#d56f46"
 
     var DataSets = [];
     generateChartData(DataSets, Filelist);
 
-
-    var ctx = document.getElementById("SmoothCircle");
-    const mixedChart = new Chart(ctx, {
+    var ChartData = {
         data: {
             datasets: DataSets,
         },
-    });
+        options: {
+          maintainAspectRatio: false,
+          scales : {
+            y: {
+              title: {
+                display: true,
+                text: "Net 2 Party Preffered (% +/-)" 
+              },
+            },
+            x: {
+              title: {
+                display: true,
+                text: "Days since election"
+              }
+            }
+          }
+      }
+    }
+    ChartData.data.datasets[11].borderWidth = 5;
+    var ctx = document.getElementById("SmoothCircle");
+    const mixedChart = new Chart(ctx, ChartData);
 </script>

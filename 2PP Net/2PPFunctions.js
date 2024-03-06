@@ -6,7 +6,7 @@ function createDataSets(pairArray, label) {
     pairArray.sort(sortFunction);
     const dataSet = {
         type: 'bubble',
-        label: label ,
+        label: label + " (Day, Net 2PP %)",
         data: [],
         pointRadius: 2,
         backgroundColor: Colors[label],
@@ -28,11 +28,15 @@ function createMean(pairsArray, label) {
     pairsArray.sort(sortFunction);
     const returnData = {
         type: 'line',
-        label: label + " Rolling Average",
+        label: label + " Term Rolling Average",
         data: [],
-        tension: 1,
+        tension: 0.1,
         pointRadius: 1,
         borderColor: Colors[label],
+        backgroundColor: Colors[label],
+        borderCapStyle: "round",
+        stepped: true,
+        borderWidth: 2,
     };
 
     var windowSize = 100;
@@ -40,7 +44,7 @@ function createMean(pairsArray, label) {
     var AverageArr = [];
 
     for (let i = 0; i < pairsArray.length; i++) {
-        if (i+1 >= pairsArray.length+1 && pairsArray[i][0] == pairsArray[i + 1][0]) {
+        if (i+1 >= pairsArray.length+1 && Number(pairsArray[i][0]) == Number(pairsArray[i + 1][0])) {
             continue;
         }
         AverageArr.push(pairsArray[i])
