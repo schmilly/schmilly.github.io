@@ -1,8 +1,4 @@
 const Array_2019 = [
-  ['', ''],
-  ['Days Since', 'Net on 2PP (Incumbent - Oppositon)'],
-  ['', ''],
-  ['Days Since', 'Net on 2PP (Incumbent - Oppositon) 2019'],
   ['0', ''],
   ['92', '6.0000000000000053E-2'],
   ['112', '2.0000000000000018E-2'],
