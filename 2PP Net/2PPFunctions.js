@@ -35,6 +35,7 @@ function createMean(pairsArray, label) {
         borderColor: Colors[label],
         backgroundColor: Colors[label],
         borderCapStyle: "round",
+        borderJoinStyle: "round",
         stepped: "middle",
         borderWidth: 2,
     };
