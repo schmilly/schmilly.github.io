@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Australia 2PP Chart</title>
+    <meta name="description" content="A Chart of Net 2PP rolling averages" />
+
+    <!-- Pico.css -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+</head>
+<!-- Header -->
+<header class="container">
+    <hgroup>
+        <h1>Australia Net 2PP Polling Average</h1>
+        <p>A Chart of Net 2PP rolling averages</p>
+    </hgroup>
+    <nav>
+    </nav>
+</header>
+<!-- ./ Header -->
+<body>
+    <div id="SmoothChart">
+        <canvas id="SmoothCircle">
+        </canvas>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script src="./2PPFunctions.js"></script>
+<script src="./2022.js"></script>
+<script src="./2019.js"></script>
+<script src="./2016.js"></script>
+<script src="./2013.js"></script>
+<script src="./2010.js"></script>
+<script src="./2007.js"></script>
+
+<script>
+    Filelist = [
+        "2007",
+        "2010",
+        "2013",
+        "2016",
+        "2019",
+        "2022"
+    ]
+    var DataSets = [];
+    generateChartData(DataSets, Filelist);
+
+
+    var ctx = document.getElementById("SmoothCircle");
+    const mixedChart = new Chart(ctx, {
+        data: {
+            datasets: DataSets,
+        },
+    });
+</script>
