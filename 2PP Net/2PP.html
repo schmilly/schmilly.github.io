@@ -8,8 +8,7 @@
     <meta name="description" content="A Chart of Net 2PP rolling averages" />
 
     <!-- Pico.css -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
 </head>
 <!-- Header -->
 <header class="container">
@@ -41,14 +40,23 @@
 <script src="./2007.js"></script>
 
 <script>
-    Filelist = [
+    var Filelist = [
         "2007",
         "2010",
         "2013",
         "2016",
         "2019",
         "2022"
-    ]
+    ];
+
+    var Colors = []
+        Colors[2007]="#D2AB99"
+        Colors[2010]="#C78283"
+        Colors[2013]="#0B3954"
+        Colors[2016]="#087E8B"
+        Colors[2019]="#BFD7EA"
+        Colors[2022]="#744253"
+
     var DataSets = [];
     generateChartData(DataSets, Filelist);
 

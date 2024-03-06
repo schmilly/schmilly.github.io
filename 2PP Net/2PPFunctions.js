@@ -6,16 +6,17 @@ function createDataSets(pairArray, label) {
     pairArray.sort(sortFunction);
     const dataSet = {
         type: 'bubble',
-        label: label,
+        label: label ,
         data: [],
-        pointRadius: 2
+        pointRadius: 2,
+        backgroundColor: Colors[label],
     };
 
     for (let i = 0; i < pairArray.length; i ++) {
         
             var pair = {
                 x: pairArray[i][0],
-                y: pairArray[i][1]
+                y: Math.round(pairArray[i][1]*100*10)/10
             };
             dataSet.data.push(pair);
     }
@@ -27,10 +28,11 @@ function createMean(pairsArray, label) {
     pairsArray.sort(sortFunction);
     const returnData = {
         type: 'line',
-        label: label,
+        label: label + " Rolling Average",
         data: [],
         tension: 1,
         pointRadius: 1,
+        borderColor: Colors[label],
     };
 
     var windowSize = 100;
@@ -46,7 +48,7 @@ function createMean(pairsArray, label) {
         AverageResult = calculateAverage(AverageArr);
         var PushVal = {
             x: pairsArray[i][0],
-            y: AverageResult
+            y: Math.round(AverageResult*100*10)/10
         }
         result.push(PushVal);
     }
@@ -95,7 +97,7 @@ function generateChartData(Dataset, Filelist) {
     ArrayName = ""
     Filelist.forEach(Value => {
         Dataset.push(createDataSets(eval("Array_" + Value), Value));
-        Dataset.push(createMean(eval("Array_" + Value), Value + " Rolling Average"));
+        Dataset.push(createMean(eval("Array_" + Value), Value ));
     });
 
 }
