@@ -3,13 +3,14 @@
 // X = 2PP +/-
 
 function createDataSets(pairArray, label) {
+    var Color = SelectColor(label);
     pairArray.sort(sortFunction);
     const dataSet = {
         type: 'bubble',
         label: label + " (Day, Net 2PP %)",
         data: [],
         pointRadius: 2,
-        backgroundColor: Colors[label],
+        backgroundColor: Color,
     };
 
     for (let i = 0; i < pairArray.length; i ++) {
@@ -23,8 +24,17 @@ function createDataSets(pairArray, label) {
 
     return dataSet;
 }
+function SelectColor(label){
+    if (Number.isInteger(Number(label))) {
+      return Colors[label];
+    }
+    else{
+      return "#0FF000"
+    }
 
+}
 function createMean(pairsArray, label) {
+    var Color = SelectColor(label);
     pairsArray.sort(sortFunction);
     const returnData = {
         type: 'line',
@@ -32,8 +42,8 @@ function createMean(pairsArray, label) {
         data: [],
         tension: 0.1,
         pointRadius: 1,
-        borderColor: Colors[label],
-        backgroundColor: Colors[label],
+        borderColor: Color,
+        backgroundColor: Color,
         borderCapStyle: "round",
         borderJoinStyle: "round",
         stepped: "middle",
