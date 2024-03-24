@@ -14,8 +14,8 @@
 <!-- Header -->
 <header class="container">
     <hgroup>
-        <h1>Australia Net 2PP Polling Average</h1>
-        <p>A Chart of Net 2PP rolling averages</p>
+        <h1>Greens Polling Average</h1>
+        <p>A Chart of Greens averages since 2022 election</p>
     </hgroup>
 </header>
 <!-- ./ Header -->
@@ -47,26 +47,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
 <script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
 <script src="./2PPFunctions.js"></script>
 <script src="./2022.js"></script>
-<script src="./2019.js"></script>
-<script src="./2016.js"></script>
-<script src="./2013.js"></script>
-<script src="./2010.js"></script>
-<script src="./2007.js"></script>
-
+<script src="./Greens.js"></script>
 <script>
     var Filelist = [
-        "2007",
-        "2010",
-        "2013",
-        "2016",
-        "2019",
-        "2022"
+        "2022",
+        "Greens",
     ];
 
     var Colors = []
-        Colors[2007]="#9C0D38"
+        Colors[2004]="#0FF000"
         Colors[2010]="#ee2251"
         Colors[2013]="#465fe8"
         Colors[2016]="#3A0CA3"
@@ -90,7 +82,7 @@
             limits: {
               x: {
                 min: 0,
-                max: 1112
+                max: 1225
               }
             },
             zoom: { 
@@ -118,7 +110,7 @@
             },
             x: {
               min: 0,
-              max: 1112,
+              max: 1225,
               grid:{
                 color:"#747474"
               },
