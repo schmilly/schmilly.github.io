@@ -47,6 +47,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
 <script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./2PPFunctions.js"></script>
 <script src="./2022.js"></script>
 <script src="./2019.js"></script>
@@ -81,7 +82,7 @@
             datasets: DataSets,
         },
         options: {
-          plugins: {
+        plugins: {
            zoom: {
             pan: {
               enabled: true,
@@ -98,7 +99,19 @@
               pinch: { enabled: true  },
               mode: 'xy',
               }
-            }
+            },
+          annotation: {
+            annotations: {
+              line1: {
+              // Indicates the type of annotation
+                type: 'line',
+                yMin: 0,
+                yMax: 0,
+                borderColor: 'rgb(255, 255, 255)',
+                borderWidth: 2,
+                }
+              }
+            },
           },
           maintainAspectRatio: false,
           scales : {

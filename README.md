@@ -2,22 +2,14 @@
 
 My personal web page, couple different projects under this. 
 
+## Australia Net 2PP Chart
+
+Pretty happy with outcome of this. Still requires manual updating which I don't like, but would probably require automatic commits, or a major refactoring to fix issue (pull from Wikipedia directly?)
+
+Update every couple weeks or when I can remember to do so.
+
 ## Tasmania Coalition Calculator Project
 
-Created on Request of 6news Australia
-
-Still a work in progress.
-
-### To Do:
-- [X] Make data appear dynamically instead of statically
-- [X] Make data non fictonal 
-- [ ] Add "seat mode" and "% mode"
-- - In early stages, still working on
-- [ ] Clean up look
-- - [ ] Move off basic layout and on to Flex Box
-- [ ] Add geographical map mode 
-- [ ] Optimise for Mobile Usage
-- [ ] Primary Vote to distribution converted based on seats
-- [ ] Editable Prefrences flows
+Election ended, no longer working on, potential to port to Federal election but unlikely.
 
 please report any issues or suggestions to schmilly@proton.me

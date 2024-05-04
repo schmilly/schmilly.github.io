@@ -23,7 +23,7 @@ function createDataSets(pairArray, label) {
     }
 
     return dataSet;
-}
+};
 function SelectColor(label){
     if (Number.isInteger(Number(label))) {
       return Colors[label];
