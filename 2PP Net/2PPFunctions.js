@@ -22,6 +22,7 @@ function createDataSets(pairArray, label) {
             dataSet.data.push(pair);
     }
 
+    console.log(dataSet)
     return dataSet;
 };
 function SelectColor(label){
@@ -29,7 +30,7 @@ function SelectColor(label){
       return Colors[label];
     }
     else{
-      return "#0FF000"
+      return "Brown"
     }
 
 }
