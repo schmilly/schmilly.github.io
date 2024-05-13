@@ -27,30 +27,30 @@
     </div>
    <div>
         <h5>Custom 2PP</h5>
-        <input type="checkbox">Enable Custom 2PP
+        <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
         <table class="slidecontainer">
             <td style="width:20%">Greens:</td>
-            <td><small>Labor %:<text id="greensflowlab">50</text> <br>
-                   Liberal %:<text id="greensflowlib">50</text></small> </td>
+            <td><small>Labor %:<text id="greensflowlab"></text> <br>
+                   Liberal %:<text id="greensflowlib"></text></small> </td>
             <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
         </table>
         <table class="slidecontainer">
             <td style="width:20%">One Nation</td>
-            <td><small>Labor %:<text id="GreensFlowLab">50</text> <br>
-                   Liberal %:<text id="GreensFlowLib">50</text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="Greens2PP"> </div></td>
+            <td><small>Labor %:<text id="oneflowlab"></text> <br>
+                   Liberal %:<text id="oneflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
         </table>
         <table class="slidecontainer">
             <td style="width:20%">United Australia Party</td>
-            <td><small>Labor %:<text id="greensflowlab">50</text> <br>
-                   Liberal %:<text id="greensflowlib">50</text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+            <td><small>Labor %:<text id="UAPflowlab"></text> <br>
+                   Liberal %:<text id="UAPflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
         </table>
         <table class="slidecontainer">
             <td style="width:20%">Other</td>
-            <td><small>Labor %:<text id="greensflowlab">50</text> <br>
-                   Liberal %:<text id="greensflowlib">50</text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+            <td><small>Labor %:<text id="otherflowlab"></text> <br>
+                   Liberal %:<text id="otherflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
         </table>
    </div>
    <article>
@@ -77,10 +77,27 @@
 <script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./2PPFunctions.js"></script>
-<script src="./2022.js"></script>
-<script src="./AdvanceMode.js"></script>
 <script>
+    //Header <script>
+    var TwoPPBool = false;
+
+    var PartyColor = {
+      "ALP": "#C97064",
+      "Lib": "#56638A",
+      "LaP": "#40798C",
+      "LNP":"#0066ff",
+      "UAP":"#ffff00",
+      "Grn": "#00FF2B", 
+      "Nat": "#009933",
+      "One": "#FF3F00",
+      "OaI": "#e8e3d3",
+      "Oth": "#EDE7E3",
+      "Ind": "#D4E4BC",
+      "JLN": "#BCA371"
+    }
+
+
+
     var Filelist = [
         "2022",
     ];
@@ -94,82 +111,20 @@
         Colors[2022]="#d56f46"
 
     var DataSets = [];
-    Custom2PPgenerateChartData(DataSets, Filelist, false);
+</script>
+</script>
+<script src="./2PPFunctions.js"></script>
+<script src="./2022.js"></script>
+<script src="./AdvanceMode.js"></script>
+<script src="./PageFunctions.js"></script>
+<script>
+    //Start Script
+    Custom2PPgenerateChartData(DataSets, Filelist, false,[0.5,0.5,0.5,0.5]);
 
-    var ChartData = {
-        data: {
-            datasets: DataSets,
-        },
-        options: {
-        plugins: {
-           zoom: {
-            pan: {
-              enabled: true,
-              modifierKey: 'ctrl'
-            },
-            limits: {
-              x: {
-                min: 0,
-                max: 1112
-              }
-            },
-            zoom: { 
-              wheel: {  enabled: true, },
-              pinch: { enabled: true  },
-              mode: 'xy',
-              }
-            },
-          annotation: {
-            annotations: {
-              line1: {
-              // Indicates the type of annotation
-                type: 'line',
-                yMin: 0,
-                yMax: 0,
-                borderColor: 'rgb(255, 255, 255)',
-                borderWidth: 2,
-                }
-              }
-            },
-          },
-          maintainAspectRatio: false,
-          scales : {
-            y: {
-              grid:{
-                color:"#747474"
-              },
-             ticks:{
-                callback: function(value, index) {
-                        return Math.round(value) + "%";
-                    },
-             }, 
-              title: {
-                display: true,
-                text: "Net 2 Party Preffered (% +/-)" 
-              },
-            },
-            x: {
-              min: 0,
-              max: 1112,
-              grid:{
-                color:"#747474"
-              },
-              ticks:{
-                callback: function(value, index, ticks) {
-                        return 'Day ' + Math.round(value);
-                    },
-                major:{
-                  enabled: true,
-                },
-              },
-              title: {
-                display: true,
-                text: "Days since election"
-              }
-            }
-          }
-      }
-    }
-    var ctx = document.getElementById("SmoothCircle");
-    const mixedChart = new Chart(ctx, ChartData);
+    ChartData = ChartDataCreate(DataSets);
+
+    ctx = document.getElementById("SmoothCircle");
+    mixedChart = new Chart(ctx, ChartData);
+
+
 </script>
