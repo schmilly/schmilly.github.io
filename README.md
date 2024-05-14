@@ -1,3 +1,4 @@
+PLEASE SEND ANY ISSUES, OR CONTACT QUERIES to: schmilly@proton.me
 
 My personal web page, couple different projects under this. 
 
@@ -14,8 +15,12 @@ This collects all polling data from 2007 election to modern day
 This only has 2PP from 2022 election to today
 However it does allow for setting custom 2PP Flows and preferences, which can enable further analysis of trends and current 2PP Flows
 
+##### Known Bugs:
+- [ ] Can't reset Zoom of 2PP Chart
+- [ ] Unable to go back to non-custom 2PP mode once checkbox has been checked; Unchecking checkbox simply freezes 2PP values.
+
 ##### Planned features and further support:
-- [ ] Agility to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
+- [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
