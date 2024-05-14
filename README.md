@@ -20,6 +20,7 @@ However it does allow for setting custom 2PP Flows and preferences, which can en
 - [ ] Unable to go back to non-custom 2PP mode once checkbox has been checked; Unchecking checkbox simply freezes 2PP values.
 
 ##### Planned features and further support:
+- [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
 - [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
