@@ -17,7 +17,7 @@ However it does allow for setting custom 2PP Flows and preferences, which can en
 
 ##### Known Bugs:
 - [ ] Can't reset Zoom of 2PP Chart
-- [ ] Unable to go back to non-custom 2PP mode once checkbox has been checked; Unchecking checkbox simply freezes 2PP values.
+- [X] Unable to go back to non-custom 2PP mode once checkbox has been checked; Unchecking checkbox simply freezes 2PP values. - Fixed 16/05/2024
 
 ##### Planned features and further support:
 - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.

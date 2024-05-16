@@ -29,7 +29,7 @@ function SelectColor(label){
       return Colors[label];
     }
     else{
-      return "Red"
+      return "#01aaff"
     }
 
 }

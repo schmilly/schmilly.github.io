@@ -5,6 +5,10 @@ ArrayColours = [PartyColor.Grn+"90",PartyColor.One+"90",PartyColor.UAP+"90",Part
 
 ArrayName = ["Greens","One Nation","United Australia","Other"]
 
+
+Polsters = ["Essential","Roy Morgan","YouGov","Resolve Strategic","RedBridge Group","Newspoll","Freshwater Strategy","Newspoll-YouGov","Dynata","Election"]
+
+
 function Custom2PPgenerateChartData(DataSets, Filelist, CustomMode, FlowstoLab){
   if (CustomMode){
     Array_2PP = [];
@@ -86,8 +90,8 @@ function ChartDataCreate(DataSets) {
                 type: 'line',
                 yMin: 0,
                 yMax: 0,
-                borderColor: 'rgb(255, 255, 255)',
-                borderWidth: 2,
+                borderColor: '#C2C7D0',
+                borderWidth: 3,
                 }
               }
             },

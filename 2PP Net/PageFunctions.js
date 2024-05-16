@@ -24,7 +24,7 @@ function slideinput(index,Slider,SliderLab,SliderLib){
   SliderLib.innerHTML = 100 - Slider.value;
   if (TwoPPBool){
     FlowstoLab[index] = Slider.value/100;
-    CalcCustom2PP();
+    CalcCustom2PP(true);
   };
 }
 
@@ -36,14 +36,17 @@ function EnableCustom2pp() {
   TwoPPBool = !(TwoPPBool)
   if (TwoPPBool){
     document.getElementById("enableadvance").checked = TwoPPBool;
+    CalcCustom2PP(true)
   }
-
-  CalcCustom2PP()
+  else{
+    document.getElementById("enableadvance").unchecked = TwoPPBool;
+    CalcCustom2PP(false)
+  }
 }
 
-function CalcCustom2PP(){
+function CalcCustom2PP(boolean){
   var DataSets = [];
-  CustomData = Custom2PPgenerateChartData(DataSets, Filelist, true, FlowstoLab)
+  CustomData = Custom2PPgenerateChartData(DataSets, Filelist, boolean, FlowstoLab)
 
   for (let i = 0; i < mixedChart.data.datasets[0].data.length; i++){
     mixedChart.data.datasets[0].data[i].y = CustomData[0].data[i].y
@@ -52,7 +55,5 @@ function CalcCustom2PP(){
     mixedChart.data.datasets[1].data[i].y = CustomData[1].data[i].y
   }
   mixedChart.update();
-
-
 
 }
