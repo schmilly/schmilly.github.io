@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Advance Mode</title>
+    <meta name="description" content="A Chart of Net 2PP rolling averages" />
+    <link href="./styles.css" rel="stylesheet">
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+</head>
+<body>
+<!-- Header -->
+<header class="container">
+    <hgroup>
+        <h1>Advance Mode</h1>
+        <p>This enables a more advance break down and let's you set custom prefrence flows for Parties</p>
+        <a href="./2PP.html"></a>
+    </hgroup>
+</header>
+<!-- ./ Header -->
+<main class="container">
+  <center><small> Click to remove, Scroll or pinch to zoom </small></center>
+    <div class="grid">
+     <div style="height:700px" id="SmoothChart">
+        <canvas  id="SmoothCircle">
+        </canvas>
+    </div>
+   <div>
+        <h5>Custom 2PP</h5>
+        <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
+        <table class="slidecontainer">
+            <td style="width:20%">Greens:</td>
+            <td><small>Labor %:<text id="greensflowlab"></text> <br>
+                   Liberal %:<text id="greensflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+        </table>
+        <table class="slidecontainer">
+            <td style="width:20%">One Nation</td>
+            <td><small>Labor %:<text id="oneflowlab"></text> <br>
+                   Liberal %:<text id="oneflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
+        </table>
+        <table class="slidecontainer">
+            <td style="width:20%">United Australia Party</td>
+            <td><small>Labor %:<text id="UAPflowlab"></text> <br>
+                   Liberal %:<text id="UAPflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
+        </table>
+        <table class="slidecontainer">
+            <td style="width:20%">Other</td>
+            <td><small>Labor %:<text id="otherflowlab"></text> <br>
+                   Liberal %:<text id="otherflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
+        </table>
+   </div>
+   </div>
+   <div class="grid"> 
+     <svg sodipodi:docname="Australian_House_of_Representatives_chart.svg" id="svg4639"  viewBox="0 0 251.87944 212.6" height="100%" width="100%" style="padding: 20px;"  ><script xmlns="" id="webrtc-control-b"/>
+    <sodipodi:namedview/>
+    <defs id="defs"/>
+    <g transform="translate(-4.7244973,-35.228017)" >
+      <rect class="ParlimentSeat" id="Oxley" transform="rotate(-90)" y="4.724" x="-146.5" height="9.890" width="9.890"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="Moncrieff" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="98.634583" y="140.44246" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="Parkes" y="186.63115" x="-0.67365283" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.4641555;" transform="matrix(-0.29028468,0.95694034,0.95694034,0.29028468,0,0)"/> 
+      <rect class="ParlimentSeat" id="Goldstein" y="187.06001" x="-159.55858" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;" transform="matrix(-0.88192126,0.47139674,0.47139674,0.88192126,0,0)"/>
+      <rect class="ParlimentSeat" id="Wentworth" style="opacity:1;fill:#a0a0a0;"  width="9.8" height="9.8" x="-195.50049" y="167.97324" transform="matrix(-0.95694034,0.29028468,0.29028468,0.95694034,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#006640;fill-opacity:1;"  width="9.8" height="9.8" x="35.164684" y="167.35059" transform="matrix(-0.09801714,0.99518473,0.99518473,0.09801714,0,0)"/>
+      <rect class="ParlimentSeat" id="Warringah" y="202.64769" x="-80.073471" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;" transform="matrix(-0.63439328,0.77301045,0.77301045,0.63439328,0,0)"/>
+      <rect class="ParlimentSeat" id="North_Sydney" style="opacity:1;fill:#a0a0a0;fill-opacity:1;"  width="9.8" height="9.8" x="-120.58362" y="198.76819" transform="matrix(-0.77301045,0.63439328,0.63439328,0.77301045,0,0)"/>
+      <rect class="ParlimentSeat" id="Kooyong" y="142.24133" x="-227.02812" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;" transform="matrix(-0.99518473,0.09801714,0.09801714,0.99518473,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="167.35785" x="50.716854" height="9.8" width="9.8"  style="opacity:1;fill:#006640;fill-opacity:1;" transform="matrix(-0.09801714,0.99518473,0.99518473,0.09801714,0,0)"/>
+      <rect class="ParlimentSeat" id="Indi" style="opacity:1;fill:#a0a0a0;fill-opacity:1;"  width="9.8" height="9.8" x="-64.537735" y="202.69466" transform="matrix(-0.63439328,0.77301045,0.77301045,0.63439328,0,0)"/>
+      <rect class="ParlimentSeat" id="Brisbane" y="198.82542" x="-105.0582" height="9.8" width="9.8"  style="opacity:1;fill:#33b747;fill-opacity:1;" transform="matrix(-0.77301045,0.63439328,0.63439328,0.77301045,0,0)"/>
+      <rect class="ParlimentSeat" id="Griffith" style="opacity:1;fill:#33b747;fill-opacity:1;"  width="9.8" height="9.8" x="-211.5424" y="142.31502" transform="matrix(-0.99518473,0.09801714,0.09801714,0.99518473,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="186.65265" x="14.875694" height="9.8" width="9.8"  style="opacity:1;fill:#006640;" transform="matrix(-0.29028468,0.95694034,0.95694034,0.29028468,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="183.82555" x="-0.45085776" height="9.8" width="9.8"  style="fill:#006640;fill-opacity:1;stroke:none;stroke-width:0." transform="matrix(-0.29028468,0.95694034,0.95694034,0.29028468,0,0)"/>
+      <rect class="ParlimentSeat" id="Monash" y="190.02928" x="-15.483195" height="9.8" width="9.8"  style="fill:#a0a0a0;fill-opacity:1;stroke:none;stroke-width:0." transform="matrix(-0.29028468,0.95694034,0.95694034,0.29028468,0,0)"/>
+      <rect class="ParlimentSeat" id="Melbourne" y="187.12538" x="-144.04524" height="9.8" width="9.8"  style="opacity:1;fill:#33b747;fill-opacity:1;" transform="matrix(-0.88192126,0.47139674,0.47139674,0.88192126,0,0)"/>
+      <rect class="ParlimentSeat" id="Ryan" transform="matrix(-0.95694034,0.29028468,0.29028468,0.95694034,0,0)" style="opacity:1;fill:#33b747;"  width="9.8" height="9.8" x="-180.00055" y="168.04419"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="193.79382" x="11.190813" height="9.8" width="9.8"  style="opacity:1;fill:#006640;" transform="matrix(-0.38268343,0.92387953,0.92387953,0.38268343,0,0)"/>
+      <rect class="ParlimentSeat" id="Mayo" style="opacity:1;fill:#ff6400;"  width="9.8" height="9.8" x="-147.32144" y="178.99759" transform="matrix(-0.92387953,0.38268343,0.38268343,0.92387953,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="171.13167" x="60.536308" height="9.8" width="9.8"  style="opacity:1;fill:#006640;" transform="matrix(-0.13052619,0.99144486,0.99144486,0.13052619,0,0)"/>
+      <rect class="ParlimentSeat" id="Kennedy" y="197.86554" x="-96.404305" height="9.8" width="9.8"  style="opacity:1;fill:#a00000;fill-opacity:1;" transform="matrix(-0.79335334,0.60876143,0.60876143,0.79335334,0,0)"/>
+      <rect class="ParlimentSeat" id="Clark" style="opacity:1;fill:#a0a0a0;"  width="9.8" height="9.8" x="-191.62018" y="147.59421" transform="matrix(-0.99144486,0.13052619,0.13052619,0.99144486,0,0)"/>
+      <rect class="ParlimentSeat" id="La Trobe" transform="matrix(-0.12661245,0.99195226,0.99195226,0.12661245,0,0)" y="171.04378" x="78.269821" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="Petrie" transform="matrix(-0.38268343,0.92387953,0.92387953,0.38268343,0,0)" style="opacity:1;fill:#006640;"  width="9.8" height="9.8" x="27.048891" y="199.20355"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(-0.84258148,0.53856889,0.53856889,0.84258148,0,0)" y="192.78572" x="-99.346703" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="122.45247" y="79.392258" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.99321387,-0.11630226,-0.11630226,-0.99321387,0,0)" y="-157.09274" x="230.07146" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.97014927,-0.24250856,-0.24250856,-0.97014927,0,0)" y="-174.50032" x="209.3644" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46414292;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.92722533,-0.37450391,-0.37450391,-0.92722533,0,0)" y="-191.12347" x="184.70107" height="9.889904" width="9.889904"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46410728;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.88552439,-0.46459289,-0.46459289,-0.88552439,0,0)" y="-197.57536" x="165.91856" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;stroke:none;stroke-width:0.46410865;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.80828447,-0.58879216,-0.58879216,-0.80828447,0,0)" y="-209.02492" x="136.91548" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46411043;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.74798624,-0.66371423,-0.66371423,-0.74798624,0,0)" y="-210.27411" x="117.27553" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;stroke:none;stroke-width:0.46411127;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.6457011,-0.76359026,-0.76359026,-0.6457011,0,0)" y="-214.19124" x="87.687843" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;stroke:none;stroke-width:0.46411157;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.57025793,-0.8214657,-0.8214657,-0.57025793,0,0)" y="-210.60957" x="68.036217" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.4641116;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.4894705,-0.87201986,-0.87201986,-0.4894705,0,0)" y="-205.17973" x="48.567474" height="9.8" width="9.8"  style="opacity:1;fill:#a0a0a0;fill-opacity:1;stroke:none;stroke-width:0.46411139;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.35921584,-0.93325451,-0.93325451,-0.35921584,0,0)" y="-199.35811" x="19.978647" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46411049;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.26713746,-0.96365843,-0.96365843,-0.26713746,0,0)" y="-189.41882" x="1.5507751" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46410954;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0.12310339,-0.99239385,-0.99239385,-0.12310339,0,0)" y="-176.96283" x="-24.66308" height="9.8" width="9.8"  style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46410879;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="28.516945" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="18.341965" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="38.692032" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="48.867111" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="69.217178" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="59.042191" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="79.392258" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="89.567337" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="109.91724" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="99.742249" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="120.09232" x="-108.52551" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="130.2674" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-108.52551" y="8.1668844" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="37.458145" x="82.355423" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="82.355423" y="49.970337"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="51.39856" y="37.458145"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="49.970337" x="51.39856" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="37.458145" x="66.877014" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="66.877014" y="49.970337"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="37.458145" x="35.920105" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="35.920105" y="49.970337"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="67.615631" x="82.355423" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="82.355423" y="80.127823"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="51.398552" y="67.615631"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="80.127823" x="51.398552" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="67.615631" x="66.877007" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="66.877007" y="80.127823"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="67.615631" x="35.920094" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="35.920094" y="80.127823"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="97.773102" x="82.355423" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="82.355423" y="110.28532"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="51.39856" y="97.773102"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="110.28532" x="51.39856" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="97.773102" x="66.877022" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="66.877022" y="110.28532"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="97.773102" x="35.920105" height="9.8" width="9.8"  style="opacity:1;fill:#ffffff;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="35.920105" y="110.28532"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="127.93027" x="82.355446" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415555;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="82.355446" y="140.44246"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;"  width="9.8" height="9.8" x="51.398567" y="127.93027"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="140.44246" x="51.398567" height="9.8" width="9.8"  style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415555;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="127.93027" x="66.877029" height="9.8" width="9.8"  style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415555;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#006640;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="66.877029" y="140.44246"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="127.93027" x="35.920109" height="9.8" width="9.8"  style="opacity:1;fill:#0043ae;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" style="opacity:1;fill:#0043ae;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="35.920109" y="140.44246"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="140.44246" x="-174.51889" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-106.875)" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-271.63464" y="104.43604"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-118.125)" y="65.071877" x="-289.30392" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-151.875)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-293.03622" y="-62.659081"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-163.125)" y="-102.98775" x="-277.69562" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-95.625)" y="139.59669" x="-246.62534" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-129.375)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-298.95407" y="23.01701"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-140.625)" y="-20.112429" x="-300.21429" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-174.375)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-254.78201" y="-139.54869"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-95.625)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-231.07317" y="139.60396"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-129.375)" y="23.063976" x="-283.41833" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-140.625)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-284.68887" y="-20.055193"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-174.375)" y="-139.47501" x="-239.2963" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-106.875)" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-256.0853" y="104.45753"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-118.125)" y="65.106804" x="-273.76013" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-151.875)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-277.52289" y="-62.593712"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="-102.91679" x="-262.19568" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-163.125)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-112.5)" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-250.40891" y="85.435669"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-157.5)" y="-82.602135" x="-255.6796" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-97.5)" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-220.19476" y="134.17271"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-127.5)" y="30.539362" x="-266.97949" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-142.5)" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;"  width="9.8" height="9.8" x="-268.77722" y="-26.775219"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-172.5)" y="-133.13687" x="-228.57913" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-202.60492" y="135.19301" transform="rotate(-97.273882)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-222.36887" y="-120.70892" transform="rotate(-168.81029)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="90.845398" x="-234.55083" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-112.5)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-251.84436" y="-45.794174" transform="rotate(-147.41373)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="rotate(-90)" y="79.392258" x="-160.701" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46414247;"  width="9.8" height="9.8" x="263.00284" y="124.13923" transform="rotate(6.6787431)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46414292;"  width="9.8" height="9.8" x="278.03152" y="100.20084" transform="rotate(14.034645)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46410728;"  width="9.889904" height="9.889904" x="290.74316" y="71.423615" transform="rotate(21.993655)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46410865;"  width="9.8" height="9.8" x="297.46967" y="53.16396" transform="rotate(27.683878)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46411043;"  width="9.8" height="9.8" x="303.63403" y="19.843651" transform="rotate(36.071343)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.46411127;"  width="9.8" height="9.8" x="305.20853" y="1.5208025" transform="rotate(41.58376)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:none;stroke-width:0.46411157;"  width="9.8" height="9.8" x="303.90109" y="-31.358719" transform="rotate(49.781738)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:#ffffff;fill-opacity:0;stroke:none;stroke-width:0.4641116;"  width="9.8" height="9.8" x="300.63708" y="-49.13905" transform="rotate(55.231786)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46411139;"  width="9.8" height="9.8" x="295.48294" y="-66.58445" transform="rotate(60.694215)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46411049;"  width="9.8" height="9.8" x="284.23291" y="-97.644882" transform="rotate(68.947954)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46410954;"  width="9.8" height="9.8" x="274.41403" y="-113.77792" transform="rotate(74.506)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46410879;"  width="9.8" height="9.8" x="256.3367" y="-142.10568" transform="rotate(82.928758)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="28.516945" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="18.341965" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="38.692032" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="48.867111" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="69.217178" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="59.042191" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="79.392258" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="89.567337" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="109.91724" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="99.742249" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="174.62798" y="120.09232" transform="matrix(0,1,1,0,0,0)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="130.2674" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" transform="matrix(0,1,1,0,0,0)" y="8.1668844" x="174.62798" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-200.79805" y="37.458145" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="49.970337" x="-200.79805" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="37.458145" x="-231.75491" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-231.75491" y="49.970337" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-216.27646" y="37.458145" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="49.970337" x="-216.27646" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-247.23337" y="37.458145" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="49.970337" x="-247.23337" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-200.79805" y="67.615631" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="80.127823" x="-200.79805" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="67.615631" x="-231.75493" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-231.75493" y="80.127823" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-216.27647" y="67.615631" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="80.127823" x="-216.27647" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-247.23338" y="67.615631" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="80.127823" x="-247.23338" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-200.79805" y="97.773102" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="110.28532" x="-200.79805" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="97.773102" x="-231.75491" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-231.75491" y="110.28532" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;"  width="9.8" height="9.8" x="-216.27646" y="97.773102" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="110.28532" x="-216.27646" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-247.23337" y="97.773102" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="110.28532" x="-247.23337" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415552;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="-200.79803" y="127.93027" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="140.44246" x="-200.79803" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="127.93027" x="-231.75491" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="-231.75491" y="140.44246" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;"  width="9.8" height="9.8" x="-216.27644" y="127.93027" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="140.44246" x="-216.27644" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" style="opacity:1;fill:PartyColor.ALP;"  width="9.8" height="9.8" x="-247.23337" y="127.93027" transform="rotate(-90)"/>
+      <rect class="ParlimentSeat" id="TestValue-Changme" y="140.44246" x="-247.23337" height="9.8" width="9.8"  style="opacity:1;fill:PartyColor.ALP;fill-opacity:1;stroke:none;stroke-width:0.46415555;" transform="rotate(-90)"/>
+      </g>
+    </svg>
+
+    <h3>
+            Click on a Seat to view Electorate
+    </h3>
+
+    </div>
+   <article>
+    <h6> Explanation </h6>
+    <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
+    </sub>
+      <footer><small>
+       For Example: <blockquote> <i>
+         Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
+         53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
+       Or..<blockquote> <i>
+         Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
+         46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
+     </small></footer>
+     <sub> Chart also uses a 100 day rolling average </sub> <br>
+    </article>
+</main>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    //Header <script>
+    var TwoPPBool = false;
+
+    var PartyColor = {
+      "ALP": "#C97064",
+      "Lib": "#56638A",
+      "LaP": "#40798C",
+      "LNP":"#0066ff",
+      "UAP":"#ffff00",
+      "Grn": "#00FF2B", 
+      "Nat": "#009933",
+      "One": "#FF3F00",
+      "OaI": "#e8e3d3",
+      "Oth": "#EDE7E3",
+      "Ind": "#D4E4BC",
+      "JLN": "#BCA371"
+    }
+
+
+
+    var Filelist = [
+        "2022",
+    ];
+
+    var Colors = []
+        Colors[2004]="#0FF000"
+        Colors[2010]="#ee2251"
+        Colors[2013]="#465fe8"
+        Colors[2016]="#3A0CA3"
+        Colors[2019]="#39A0ED"
+        Colors[2022]="#d56f46"
+
+    var DataSets = [];
+</script>
+</script>
+<script src="./2PPFunctions.js"></script>
+<script src="./2022.js"></script>
+<script src="./AdvanceMode.js"></script>
+<script src="./PageFunctions.js"></script>
+<script src="./Advance.js"></script>
+<script>
+    //Start Script
+    Custom2PPgenerateChartData(DataSets, Filelist, false,[0.5,0.5,0.5,0.5]);
+
+    ChartData = ChartDataCreate(DataSets);
+
+    ctx = document.getElementById("SmoothCircle");
+    mixedChart = new Chart(ctx, ChartData);
+
+
+</script>
