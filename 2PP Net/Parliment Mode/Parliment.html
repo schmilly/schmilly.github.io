@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Parliment Mode</title>
+    <meta name="description" content="A Chart of Net 2PP rolling averages" />
+    <link href="../styles.css" rel="stylesheet">
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
+</head>
+<body>
+<!-- Header -->
+    <header class="container">
+      <hgroup>
+        <h1>Parliment Mode</h1>
+        <p>This enables a more advance break down and let's you set custom prefrence flows for Parties</p>
+        <a href="./2PP.html"></a>
+      </hgroup>
+    </header>
+    <!-- ./ Header -->
+    <main class="container">
+      <div class="grid">
+        <div id="container" style="width:100px; height:100px">
+
+        </div>
+        <h3>
+          Click on a Seat to view Electorate
+        </h3>
+
+      </div>
+      <center><small> Click to remove, Scroll or pinch to zoom </small></center>
+      <div class="grid">
+        <div style="height:700px" id="SmoothChart">
+          <canvas  id="SmoothCircle">
+          </canvas>
+        </div>
+        <div>
+          <h5>Custom 2PP</h5>
+          <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
+          <table class="slidecontainer">
+            <td style="width:20%">Greens:</td>
+            <td><small>Labor %:<text id="greensflowlab"></text> <br>
+              Liberal %:<text id="greensflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+          </table>
+          <table class="slidecontainer">
+            <td style="width:20%">One Nation</td>
+            <td><small>Labor %:<text id="oneflowlab"></text> <br>
+              Liberal %:<text id="oneflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
+          </table>
+          <table class="slidecontainer">
+            <td style="width:20%">United Australia Party</td>
+            <td><small>Labor %:<text id="UAPflowlab"></text> <br>
+              Liberal %:<text id="UAPflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
+          </table>
+          <table class="slidecontainer">
+            <td style="width:20%">Other</td>
+            <td><small>Labor %:<text id="otherflowlab"></text> <br>
+                   Liberal %:<text id="otherflowlib"></text></small> </td>
+            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
+        </table>
+   </div>
+   </div>
+   <article>
+    <h6> Explanation </h6>
+    <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
+    </sub>
+      <footer><small>
+       For Example: <blockquote> <i>
+         Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
+         53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
+       Or..<blockquote> <i>
+         Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
+         46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
+     </small></footer>
+     <sub> Chart also uses a 100 day rolling average </sub> <br>
+    </article>
+</main>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    //Header <script>
+    var TwoPPBool = false;
+
+    var Filelist = [
+        "2022",
+    ];
+
+    var Colors = []
+        Colors[2022]="#d56f46"
+
+    var DataSets = [];
+</script>
+<script src="./ParlimentData.js"></script>
+<script src="./ParlimentFunc.js"></script>
+<script src="../2PPFunctions.js"></script>
+<script src="../2022.js"></script>
+<script src="../AdvanceMode.js"></script>
+<script src="../PageFunctions.js"></script>
+<script src="../AdvanceMode.js"></script>
+
+<script>
+    //Start Script
+    Custom2PPgenerateChartData(DataSets, Filelist, false,[0.5,0.5,0.5,0.5]);
+
+    ChartData = ChartDataCreate(DataSets);
+
+    ctx = document.getElementById("SmoothCircle");
+    mixedChart = new Chart(ctx, ChartData);
+</script>
