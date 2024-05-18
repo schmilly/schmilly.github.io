@@ -19,7 +19,7 @@ function SetSeatColor(ParlimentList){
       console.log("Error," + i + " not found")
     }
     Seat.addEventListener("click",ClickonSeat)
-    function ClickonSeat(SeatID){
+    function ClickonSeat(){
       Name = document.getElementById("ElcName")
       eval ("Name.innerText =  ElectorateIDNameArray." + i)
       MPName = document.getElementById("ElcMoP")
@@ -32,6 +32,8 @@ function SetSeatColor(ParlimentList){
       LocName = document.getElementById("ElcState")
       eval("LocID = ElcLocation." + i)
       eval("LocName.innerText = StateIDArray." + LocID)
+      primaryvote = document.getElementById("primvote")
+      primaryvote.innerHTML = GetElcFirPref(i);
     }
   })
 };
@@ -57,190 +59,22 @@ const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice
 
 //--Seat Functions--
 
-
-var Chart2PP = {
-  "type": "bar",
-  "data": {
-    "datasets": [
-      {
-        "label": "Liberal",
-        "data": [
-          31.8
-        ],
-        "backgroundColor": "#56638a"
-      },
-      {
-        "label": "Labor",
-        "data": [
-          22.1
-        ],
-        "backgroundColor": "#c97064"
-      },
-      {
-        "label": "Greens",
-        "data": [
-          20
-        ],
-        "backgroundColor": "#68a357"
-      },
-      {
-        "label": "Independent",
-        "data": [
-          20.8
-        ],
-        "backgroundColor": "#d4e4bc"
-      },
-      {
-        "label": "Other",
-        "data": [
-          5.3
-        ],
-        "backgroundColor": "#ede7e3"
-      }
-    ],
-    "labels": [
-      ""
-    ]
-  },
-  "options": {
-    "indexAxis": "y",
-    "maintainAspectRatio": false,
-    "elements": {
-      "bar": {
-        "borderWidth": 2
-      }
-    },
-    "plugins": {
-      "legend": {
-        "position": "right"
-      },
-      "title": {
-        "display": false,
-        "text": ""
-      }
-    },
-    "scales": {
-      "x": {
-        "axis": "x",
-        "stacked": true,
-        "max": 100,
-        "type": "linear",
-        "beginAtZero": true,
-        "ticks": {
-          "minRotation": 0,
-          "maxRotation": 50,
-          "mirror": false,
-          "textStrokeWidth": 0,
-          "textStrokeColor": "",
-          "padding": 3,
-          "display": true,
-          "autoSkip": true,
-          "autoSkipPadding": 3,
-          "labelOffset": 0,
-          "minor": {},
-          "major": {},
-          "align": "center",
-          "crossAlign": "near",
-          "showLabelBackdrop": false,
-          "backdropColor": "rgba(255, 255, 255, 0.75)",
-          "backdropPadding": 2,
-          "color": "#666"
-        },
-        "display": true,
-        "offset": false,
-        "reverse": false,
-        "bounds": "ticks",
-        "clip": true,
-        "grace": 0,
-        "grid": {
-          "display": true,
-          "lineWidth": 1,
-          "drawOnChartArea": true,
-          "drawTicks": true,
-          "tickLength": 8,
-          "offset": false,
-          "color": "rgba(0,0,0,0.1)"
-        },
-        "border": {
-          "display": true,
-          "dash": [],
-          "dashOffset": 0,
-          "width": 1,
-          "color": "rgba(0,0,0,0.1)"
-        },
-        "title": {
-          "display": false,
-          "text": "",
-          "padding": {
-            "top": 4,
-            "bottom": 4
-          },
-          "color": "#666"
-        },
-        "id": "x",
-        "position": "bottom"
-      },
-      "y": {
-        "axis": "y",
-        "stacked": true,
-        "max": 100,
-        "type": "category",
-        "offset": true,
-        "grid": {
-          "offset": true,
-          "display": true,
-          "lineWidth": 1,
-          "drawOnChartArea": true,
-          "drawTicks": true,
-          "tickLength": 8,
-          "color": "rgba(0,0,0,0.1)"
-        },
-        "ticks": {
-          "minRotation": 0,
-          "maxRotation": 50,
-          "mirror": false,
-          "textStrokeWidth": 0,
-          "textStrokeColor": "",
-          "padding": 3,
-          "display": true,
-          "autoSkip": true,
-          "autoSkipPadding": 3,
-          "labelOffset": 0,
-          "minor": {},
-          "major": {},
-          "align": "center",
-          "crossAlign": "near",
-          "showLabelBackdrop": false,
-          "backdropColor": "rgba(255, 255, 255, 0.75)",
-          "backdropPadding": 2,
-          "color": "#666"
-        },
-        "display": true,
-        "reverse": false,
-        "beginAtZero": false,
-        "bounds": "ticks",
-        "clip": true,
-        "grace": 0,
-        "border": {
-          "display": true,
-          "dash": [],
-          "dashOffset": 0,
-          "width": 1,
-          "color": "rgba(0,0,0,0.1)"
-        },
-        "title": {
-          "display": false,
-          "text": "",
-          "padding": {
-            "top": 4,
-            "bottom": 4
-          },
-          "color": "#666"
-        },
-        "id": "y",
-        "position": "left"
-      }
+function GetElcFirPref(ElcID){
+  eval("Value = FirstPref." + ElcID)
+  var othervote = 0.00;
+  var finalString = ""
+  Object.entries(Value).forEach(element => {
+    eval("SetPartyName = PartyNameArray." + element[0])
+    if (SetPartyName != undefined){
+      eval("PartyColored = PartyColor."+ element[0])
+      finalString = finalString + "Party: <text style='color:"+ PartyColored + "'>■</text><b> " + SetPartyName + "</b> Got <b>" + element[1] + "%</b> of votes <br>"
     }
-  }
+    else{
+      console.log("Couldn't find Party with IO " + element[0])
+      console.log("Adding votes of "+ element[1] +  " to other vote")
+      othervote = othervote + element[1]
+    }
+  });
+  finalString = finalString + "Other vote total is: " + othervote + "%"
+  return finalString 
 }
-
