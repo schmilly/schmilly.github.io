@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light dark" />
     <title>Parliment Mode</title>
     <meta name="description" content="A Chart of Net 2PP rolling averages" />
-    <link href="../styles.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" />
 </head>
@@ -23,17 +23,36 @@
     <main class="container">
       <div class="grid">
         <object id=container></object>
-        <h3>
-          Click on a Seat to view Electorate
-        </h3>
+        <div>
+          <p>
+            <b>Electorate:</b>  <text id=ElcName>None Selected</text>
+          </p>
+          <p>
+            <b>MP:</b>       <text id=ElcMoP></text> <br>
+            <b>Party:</b> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
+            State/Territory: <text id=ElcState></text>
+          </p>
+          <p>
+            Primary Vote last Election:<br>
+            Chart Here
+          </p>
+            
+            2PP Last Election:
+            <div>
+              <canvas id="PrimaryVote">
+              </canvas>
+            </div>
+          <p>
+            Predicted Primary Vote (uniform change): <br> WIP
+          </p>
+        </div>
 
       </div>
-      <center><small> Click to remove, Scroll or pinch to zoom </small></center>
       <div class="grid">
-        <div style="height:700px" id="SmoothChart">
+        <div style="height:700px">
           <canvas  id="SmoothCircle">
           </canvas>
-        </div>
+          </div>
         <div>
           <h5>Custom 2PP</h5>
           <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
@@ -122,4 +141,9 @@
     ctx = document.getElementById("SmoothCircle");
     mixedChart = new Chart(ctx, ChartData);
 
+    Canvas2PP =  document.getElementById("PrimayVote")
+    Bars2PP = new Chart(Canvas2PP,Chart2PP)
+
 </script>
+
+
