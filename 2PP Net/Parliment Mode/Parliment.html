@@ -22,7 +22,7 @@
     <!-- ./ Header -->
     <main class="container">
       <div class="grid">
-        <object id=container height="100%"></object>
+        <object id=container></object>
         <h3>
           Click on a Seat to view Electorate
         </h3>
@@ -100,6 +100,8 @@
         Colors[2022]="#d56f46"
 
     var DataSets = [];
+
+    var loaded = false;
 </script>
 <script src="./ParlimentData.js"></script>
 <script src="./ParlimentFunc.js"></script>
@@ -110,11 +112,14 @@
 <script src="../AdvanceMode.js"></script>
 
 <script>
-    //Start Script
+    //Start
+    
+    //Polling Chart
     Custom2PPgenerateChartData(DataSets, Filelist, false,[0.5,0.5,0.5,0.5]);
-
+    
     ChartData = ChartDataCreate(DataSets);
 
     ctx = document.getElementById("SmoothCircle");
     mixedChart = new Chart(ctx, ChartData);
+
 </script>
