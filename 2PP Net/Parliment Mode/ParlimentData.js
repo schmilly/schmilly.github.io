@@ -168,7 +168,6 @@ var PartyNameArray = {
   "JLN": "#BCA371",
   "CAl": "Center Alliance",
   "KAP": "Katter Australia Party"
-
 }
 
 var PartyColor = {
