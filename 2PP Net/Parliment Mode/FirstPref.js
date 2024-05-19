@@ -28,7 +28,7 @@ FirstPref = {
     "LDP": 1.37,
     "UAP": 5.48,
     "Grn": 8.76,
-    "": 1.04,
+    "Unknown": 1.04,
     "One": 2.86,
     "ALP": 35.26,
   },
@@ -213,14 +213,14 @@ FirstPref = {
     "Nat": 27.42,
     "One": 9.99,
   },
-  "Kingsford Smith": {
+  "Kingsford_Smith": {
     "Grn": 16.83,
     "One": 3.13,
     "UAP": 3.48,
     "Lib": 28.66,
     "ALP": 47.91,
   },
-  "Lindsay": {
+  "LIndsay": {
     "ALP": 31.71,
     "Grn": 8.02,
     "One": 5.92,
@@ -281,7 +281,7 @@ FirstPref = {
     "One": 3.01,
     "Lib": 52.61,
   },
-  "New England": {
+  "New_England": {
     "LDP": 3.26,
     "UAP": 2.62,
     "Ind": 7.87,
@@ -300,7 +300,7 @@ FirstPref = {
     "One": 4.5,
     "AJP": 2.41,
   },
-  "North Sydney": {
+  "North_Sydney": {
     "SPP": 1.2,
     "UAP": 1.78,
     "Grn": 8.55,
@@ -735,7 +735,7 @@ FirstPref = {
     "LNP": 38.5,
     "CYA": 0.36,
   },
-  "Wide Bay": {
+  "Wide_Bay": {
     "Ind": 2.86,
     "One": 10.2,
     "UAP": 4.6,
@@ -1032,7 +1032,7 @@ FirstPref = {
     "CYA": 0.59,
     "UAP": 5.06,
   },
-  "Flinders": {
+  "FlInders": {
     "UAP": 4.52,
     "One": 3.41,
     "LDP": 2.39,
@@ -1165,18 +1165,19 @@ FirstPref = {
     "Lib": 29.17,
   },
   "Kooyong": {
-    "Ind": 0.26,
+    "Ind": 40.29,
     "UAP": 0.99,
     "LDP": 1.05,
     "DHJP": 0.17,
     "One": 0.72,
+    "IndOTH": 0.26,
     "Lib": 42.66,
     "ALP": 6.92,
     "AJP": 0.49,
     "Grn": 6.3,
     "AUVA": 0.15,
   },
-  "La Trobe": {
+  "La_Trobe": {
     "Lib": 45.58,
     "One": 4.97,
     "Grn": 10.89,

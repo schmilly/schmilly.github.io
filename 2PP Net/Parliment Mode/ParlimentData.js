@@ -172,20 +172,20 @@ var PartyNameArray = {
 }
 
 var PartyColor = {
-  "ALP": "#F2542D",
+  "ALP": "#ee0003",
   "Lib": "#0068e8",
   "LaP": "#40798C",
   "LNP": "#008fe8",
   "UAP": "#ffff00",
-  "Grn": "#32E875", 
+  "Grn": "#9CEC5B", 
   "Nat": "#1f412f",
-  "One": "#FF3F00",
+  "One": "#cc5b10",
   "OaI": "#e8e3d3",
   "Oth": "#EDE7E3",
   "Ind": "#C2C7D0",
   "JLN": "#BCA371",
   "CAl": "Orange",
-  "KAP": "#b50204"
+  "KAP": "#910f00"
 }
 
 var ElectorateIDNameArray = {

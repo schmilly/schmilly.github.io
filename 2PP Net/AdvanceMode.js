@@ -60,80 +60,82 @@ function Custom2PPgenerateChartData(DataSets, Filelist, CustomMode, FlowstoLab){
 }
 
 function ChartDataCreate(DataSets) {
-      return ChartData = {
-        data: {
-            datasets: DataSets,
-        },
-        options: {
-        plugins: {
-           zoom: {
-            pan: {
-              enabled: true,
-              modifierKey: 'ctrl'
-            },
-            limits: {
-              x: {
-                min: 0,
-                max: 1112
-              }
-            },
-            zoom: { 
-              wheel: {  enabled: true, },
-              pinch: { enabled: true  },
-              mode: 'xy',
-              }
-            },
-          annotation: {
-            annotations: {
-              line1: {
-              // Indicates the type of annotation
-                type: 'line',
-                yMin: 0,
-                yMax: 0,
-                borderColor: '#C2C7D0',
-                borderWidth: 3,
-                }
-              }
-            },
+  return ChartData = {
+    data: {
+      datasets: DataSets,
+    },
+    options: {
+      plugins: {
+        zoom: {
+          pan: {
+            enabled: true,
+            modifierKey: 'ctrl'
           },
-          maintainAspectRatio: false,
-          scales : {
-            y: {
-              grid:{
-                color:"#747474"
-              },
-             ticks:{
-                callback: function(value, index) {
-                        return Math.round(value) + "%";
-                    },
-             }, 
-              title: {
-                display: true,
-                text: "Net 2 Party Preffered (% +/-)" 
-              },
-            },
+          limits: {
             x: {
               min: 0,
-              max: 1112,
-              grid:{
-                color:"#747474"
-              },
-              ticks:{
-                callback: function(value, index, ticks) {
-                        return 'Day ' + Math.round(value);
-                    },
-                major:{
-                  enabled: true,
-                },
-              },
-              title: {
-                display: true,
-                text: "Days since election"
-              }
+              max: 1112
+            }
+          },
+          zoom: { 
+            wheel: {  enabled: true, },
+            pinch: { enabled: true  },
+            mode: 'xy',
+          }
+        },
+        annotation: {
+          annotations: {
+            line1: {
+              // Indicates the type of annotation
+              type: 'line',
+              yMin: 0,
+              yMax: 0,
+              borderColor: '#C2C7D0',
+              borderWidth: 3,
             }
           }
+        },
+        legend: {
+          postition: 'bottom',
+        },
+      },
+      maintainAspectRatio: false,
+      scales : {
+        y: {
+          grid:{
+            color:"#747474"
+          },
+          ticks:{
+            callback: function(value, index) {
+              return Math.round(value) + "%";
+            },
+          }, 
+          title: {
+            display: true,
+            text: "Net 2 Party Preffered (% +/-)" 
+          },
+        },
+        x: {
+          min: 0,
+          grid:{
+            color:"#747474"
+          },
+          ticks:{
+            callback: function(value, index, ticks) {
+              return 'Day ' + Math.round(value);
+            },
+            major:{
+              enabled: true,
+            },
+          },
+          title: {
+            display: true,
+            text: "Days since election"
+          }
+        }
       }
     }
+  }
 };
 
 

@@ -23,6 +23,6 @@ def print_dict_as_code(dictionary):
     print("}")
 
 # Example usage
-csv_file = "./test.csv"
+csv_file = "./FirstPrefData.csv"
 result_dict = convert_csv_to_dict(csv_file)
 print_dict_as_code(result_dict)

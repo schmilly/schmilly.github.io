@@ -25,9 +25,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="374.05948"
-     inkscape:cx="539.52246"
-     inkscape:zoom="1.4142136"
+     inkscape:cy="388.90872"
+     inkscape:cx="337.99703"
+     inkscape:zoom="0.7071068"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -313,7 +313,7 @@
          inkscape:label="La Trobe" />
       <rect
          transform="rotate(-90)"
-         y="20.298565"
+         y="19.313427"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"
@@ -323,7 +323,7 @@
          inkscape:label="Riverina" />
       <rect
          transform="rotate(-90)"
-         y="42.591553"
+         y="41.606415"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"
@@ -337,7 +337,7 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="87.177635"
+         y="86.192497"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Maranoa" />
@@ -347,7 +347,7 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="142.91008"
+         y="141.92494"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="New England" />
@@ -357,7 +357,7 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="9.1520195"
+         y="8.1668816"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Gippsland" />
@@ -402,7 +402,7 @@
          width="9.8909321"
          height="9.8909321"
          x="98.634583"
-         y="154.05661"
+         y="153.07147"
          transform="matrix(0,1,1,0,0,0)"
          class="seat"
          inkscape:label="Moncrieff" />
@@ -432,7 +432,7 @@
          width="9.8909321"
          height="9.8909321"
          x="122.45247"
-         y="80.377396"
+         y="79.392258"
          transform="matrix(0,1,1,0,0,0)"
          class="seat"
          inkscape:label="Dickson" />
@@ -442,7 +442,7 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="31.445"
+         y="30.459862"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Fairfax" />
@@ -452,13 +452,13 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="53.738098"
+         y="52.75296"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Canning" />
       <rect
          transform="rotate(-90)"
-         y="76.03109"
+         y="75.045952"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"
@@ -472,7 +472,7 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="64.884644"
+         y="63.899506"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Bradfield" />
@@ -482,13 +482,13 @@
          width="9.8909321"
          height="9.8909321"
          x="-108.52551"
-         y="120.61699"
+         y="119.63185"
          transform="rotate(-90)"
          class="seat"
          inkscape:label="Deakin" />
       <rect
          transform="rotate(-90)"
-         y="109.47054"
+         y="108.4854"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"
@@ -498,7 +498,7 @@
          inkscape:label="Wannon" />
       <rect
          transform="rotate(-90)"
-         y="131.76353"
+         y="130.7784"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"
@@ -788,7 +788,7 @@
          inkscape:label="Cook" />
       <rect
          transform="rotate(-90)"
-         y="98.324181"
+         y="97.339043"
          x="-108.52551"
          height="9.8909321"
          width="9.8909321"

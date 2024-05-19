@@ -35,15 +35,14 @@
           <p>
             Primary Vote last Election (2022):<br>
             <text id=primvote ></text>
-          </p>
-            
-            2PP Last Election:
             <div>
-              <canvas id="PrimaryVote">
+              <canvas height="50%" width="100%" id="PrimaryVote">
               </canvas>
             </div>
           <p>
             Predicted Primary Vote (uniform change): <br> WIP
+            <canvas height="50%" width="100%" id="PredictPrimary">
+            </canvas>          
           </p>
         </div>
 
@@ -130,6 +129,7 @@
 <script src="./ParlimentData.js"></script>
 <script src="./ParlimentFunc.js"></script>
 <script src="./FirstPref.js"></script>
+<script src="./PrimaryVoteChart.js"></script>
 <script src="../2PPFunctions.js"></script>
 <script src="../2022.js"></script>
 <script src="../AdvanceMode.js"></script>
@@ -146,9 +146,10 @@
 
     ctx = document.getElementById("SmoothCircle");
     mixedChart = new Chart(ctx, ChartData);
-
-    Canvas2PP =  document.getElementById("PrimayVote")
-    Bars2PP = new Chart(Canvas2PP,Chart2PP)
+    
+    Canvas2PP =  document.getElementById("PrimaryVote")
+    FirstPrefData = CreateHorConfig();
+    BarsFirstPref = new Chart(Canvas2PP,FirstPrefData)
 
 </script>
 
