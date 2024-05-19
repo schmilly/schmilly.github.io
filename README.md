@@ -1,6 +1,10 @@
+# Schmilly's personal website
+
 PLEASE SEND ANY ISSUES, OR CONTACT QUERIES to: schmilly@proton.me
 
 My personal web page, couple different projects under this. 
+
+See below for explanations of Each of them
 
 ## Australia Net 2PP Chart
 
@@ -15,9 +19,11 @@ This collects all polling data from 2007 election to modern day
 This only has 2PP from 2022 election to today
 However it does allow for setting custom 2PP Flows and preferences, which can enable further analysis of trends and current 2PP Flows
 
+[Parliment Mode (still WIP):](https://schmilly.github.io/2PP%20Net/Parliment%20Mode/Parliment.html)
+Work in progress, but plan to show Seat-by-Seat data of polling and allows for break downs to that level.
+
 ##### Known Bugs:
 - [ ] Can't reset Zoom of 2PP Chart
-- [X] Unable to go back to non-custom 2PP mode once checkbox has been checked; Unchecking checkbox simply freezes 2PP values. - Fixed 16/05/2024
 
 ##### Planned features and further support:
 - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
@@ -25,6 +31,7 @@ However it does allow for setting custom 2PP Flows and preferences, which can en
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
+- - Still a work in porgress, but basically implemented.
 
 
 ## Tasmania Coalition Calculator Project
