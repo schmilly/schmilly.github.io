@@ -18,8 +18,9 @@ function SetSeatColor(ParlimentList){
     catch {
       console.log("Error," + i + " not found")
     }
-    Seat.addEventListener("click",ClickonSeat)
-    function ClickonSeat(){
+    try{
+      Seat.addEventListener("click",ClickonSeat)
+      function ClickonSeat(){
       
       Name = document.getElementById("ElcName")
       eval ("Name.innerText =  ElectorateIDNameArray." + i)
@@ -38,6 +39,10 @@ function SetSeatColor(ParlimentList){
 
       GetElcFirPref(i,FirstPrefData.data);
       BarsFirstPref.update();
+    }
+    }
+    catch{
+
     }
   })
 };

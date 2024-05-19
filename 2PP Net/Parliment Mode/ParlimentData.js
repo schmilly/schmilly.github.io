@@ -176,7 +176,7 @@ var PartyColor = {
   "LaP": "#40798C",
   "LNP": "#008fe8",
   "UAP": "#ffff00",
-  "Grn": "#9CEC5B", 
+  "Grn": "#33b747", 
   "Nat": "#1f412f",
   "One": "#cc5b10",
   "OaI": "#e8e3d3",

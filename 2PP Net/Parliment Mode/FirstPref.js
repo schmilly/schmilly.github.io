@@ -220,7 +220,7 @@ FirstPref = {
     "Lib": 28.66,
     "ALP": 47.91,
   },
-  "LIndsay": {
+  "Lindsay": {
     "ALP": 31.71,
     "Grn": 8.02,
     "One": 5.92,
