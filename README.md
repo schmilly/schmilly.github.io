@@ -22,8 +22,9 @@ However it does allow for setting custom 2PP Flows and preferences, which can en
 [Parliment Mode (still WIP):](https://schmilly.github.io/2PP%20Net/Parliment%20Mode/Parliment.html)
 Work in progress, but plan to show Seat-by-Seat data of polling and allows for break downs to that level.
 
-##### Known Bugs:
+##### Known Bugs/Issues:
 - [ ] Can't reset Zoom of 2PP Chart
+- [ ] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
 
 ##### Planned features and further support:
 - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
