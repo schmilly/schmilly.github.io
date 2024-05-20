@@ -32,7 +32,7 @@ Work in progress, but plan to show Seat-by-Seat data of polling and allows for b
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
-- - Still a work in porgress, but basically implemented.
+  - Still a work in porgress, but basically implemented.
 
 
 ## Tasmania Coalition Calculator Project
