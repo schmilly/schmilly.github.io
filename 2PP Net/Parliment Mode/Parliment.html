@@ -56,7 +56,7 @@
           <canvas  id="SmoothCircle">
           </canvas>
         </div>
-        <div>
+        <div style="overflow:scroll;height:700px">
           <h5>Custom 2PP</h5>
           <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
           <table class="slidecontainer">
@@ -83,6 +83,13 @@
               Liberal %:<text id="otherflowlib"></text></small> </td>
             <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
           </table>
+        </div>
+        <div>
+          <h5>Poll</h5>
+          <text id=SelectPollDate>Poll Date:</text> <br>
+          <text id=PllPollster>Pollster</text> <br>
+          <text id=PllPrimaryVote>Primary Vote</text> <br>
+          <text id=Pll2PP>2PP:</text> <br>
         </div>
       </div>
       <article>
