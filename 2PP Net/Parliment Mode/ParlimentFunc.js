@@ -47,19 +47,20 @@ function SetSeatColor(ParlimentList){
   })
 };
 
-var svgUrl    = "./Australian_House_of_Representatives_chart.svg";
+var svgUrl    = "./Australian_electoral_divisions,_blank_map_(2022).svg";
 var container = $("#container");
 $.get(svgUrl) 
   .then(injectSvg)
 
 function injectSvg(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
-  container.append(svg);
-  svg.attr("id", "test")
-  svg.attr("height","")
-  svg.attr("width","100%")
+  svg.attr("id", "svg")
+  svg.attr("style","overflow:auto;")
   svg.attr("onload","SetSeatColor(ElectorateList)")
+
+  container.append(svg);
   loaded = true;
+
 }
 
 //Taken from Satckoverflow
