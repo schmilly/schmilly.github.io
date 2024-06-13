@@ -1,8 +1,6 @@
-path:hover {
-  position: relative;
+path:hover { 
   stroke: #c2c7d0 !important;
-  stroke-width: 0.5cm !important;
-  z-index: 99 !important;
+  fill-opacity: 0.5 !important;
 }
 
 object {
