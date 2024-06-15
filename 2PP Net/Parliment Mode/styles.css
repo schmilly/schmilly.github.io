@@ -3,6 +3,12 @@ path:hover {
   fill-opacity: 0.5 !important;
 }
 
+.seat:hover {
+  stroke: var(--pico-color);
+  stroke-width: 1px;
+}
+
+
 object {
   color-scheme: light; /*<--Add this to fix WHITE BG issue*/
 }

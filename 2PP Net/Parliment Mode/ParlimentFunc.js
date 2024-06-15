@@ -1,9 +1,15 @@
+var selected = ""
 
 //-- SVG Functions --
 //
-function SetSeatColor(ParlimentList){
+function SetSeatColor(ParlimentList,MapMode){
   ParlimentList.forEach((i) => {
-    var Seat = document.getElementById(i)
+    if (MapMode){
+      var Seat = document.getElementById("Map").getElementById(i)
+    }
+    else {
+      var Seat = document.getElementById("Parliment").getElementById(i)
+    }
     eval("PartyID = Currentelectorateparty." + i)
     eval("SeatColor = PartyColor." + PartyID)
     try {
@@ -39,6 +45,24 @@ function SetSeatColor(ParlimentList){
 
       GetElcFirPref(i,FirstPrefData.data);
       BarsFirstPref.update();
+
+      try {
+      document.getElementById("Map").getElementById(selected).style.opacity=1
+      document.getElementById("Parliment").getElementById(selected).style.opacity=1
+      }
+      catch {}
+      selected = i;
+      var MapObject = document.getElementById("Map").getElementById(i)
+      MapObject.style.opacity=0.5
+
+      Cords = MapObject.getBBox()
+      Viewport = MapObject.getBoundingClientRect()
+      Scaler = Viewport.height/Cords.height
+      XPos = (Cords.x)
+      YPos = (Cords.y)
+      document.getElementById("topcontainer").scrollTo(XPos*Scaler,YPos*Scaler) 
+
+      document.getElementById("Parliment").getElementById(i).style.opacity=0.5
     }
     }
     catch{
@@ -47,19 +71,34 @@ function SetSeatColor(ParlimentList){
   })
 };
 
-var svgUrl    = "./Australian_electoral_divisions,_blank_map_(2022).svg";
-var container = $("#container");
-$.get(svgUrl) 
-  .then(injectSvg)
+var svgUrl2    = "Australian_House_of_Representatives_chart.svg";
+var container2 = $("#container2");
+$.get(svgUrl2) 
+  .then(injectParliment)
 
-function injectSvg(xmlDoc) {
+function injectParliment(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
-  svg.attr("id", "svg")
-  svg.attr("style","overflow:auto;")
-  svg.attr("onload","SetSeatColor(ElectorateList)")
+  container2.append(svg);
+  svg.attr("id", "Parliment")
+  svg.attr("height","")
+  svg.attr("width","100%")
+  svg.attr("onload","SetSeatColor(ElectorateList,true)")
+}
 
-  container.append(svg);
-  loaded = true;
+
+
+var svgUrl1    = "Australian_electoral_divisions,_blank_map_(2022).svg";
+var container1 = $("#container1");
+$.get(svgUrl1) 
+  .then(injectMap)
+
+function injectMap(xmlDoc) {
+  var svg = $(xmlDoc).find("svg");
+  svg.attr("id", "Map")
+  svg.attr("style","overflow:auto;")
+  svg.attr("onload","SetSeatColor(ElectorateList,false)")
+
+  container1.append(svg);
 
 }
 
