@@ -24,7 +24,7 @@ Work in progress, but plan to show Seat-by-Seat data of polling and allows for b
 
 ##### Known Bugs/Issues:
 - [ ] Can't reset Zoom of 2PP Chart
-- [ ] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
+- [X] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
 
 ##### Planned features and further support:
 - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
@@ -32,9 +32,5 @@ Work in progress, but plan to show Seat-by-Seat data of polling and allows for b
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
-  - Still a work in porgress, but basically implemented.
+  - Map implemented; Change in seats still a WIP
 
-
-## Tasmania Coalition Calculator Project
-
-Election ended, no longer working on, potential to port to Federal election but unlikely. Will use some of this code to improve 2PP and help with Parliament calculations.
