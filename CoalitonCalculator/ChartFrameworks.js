@@ -29,7 +29,7 @@ var SmoothData = {
     }
 };
 
-ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
+ParliamentData = generateParliamentdata(colors, PrtyLabels, SeatCount, PartyCount);
 var HighChartsData = {
     chart: {
         type: 'item',
@@ -56,7 +56,7 @@ var HighChartsData = {
     series: [{
         name: 'Seats',
         keys: ['name', 'y', 'color'],
-        data: ParlimentData,
+        data: ParliamentData,
         dataLabels: {
             enabled: false,
         },

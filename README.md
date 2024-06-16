@@ -19,7 +19,7 @@ This collects all polling data from 2007 election to modern day
 This only has 2PP from 2022 election to today
 However it does allow for setting custom 2PP Flows and preferences, which can enable further analysis of trends and current 2PP Flows
 
-[Parliment Mode (still WIP):](https://schmilly.github.io/2PP%20Net/Parliment%20Mode/Parliment.html)
+[Parliament Mode (still WIP):](https://schmilly.github.io/2PP%20Net/Parliament%20Mode/Parliament.html)
 Work in progress, but plan to show Seat-by-Seat data of polling and allows for break downs to that level.
 
 ##### Known Bugs/Issues:

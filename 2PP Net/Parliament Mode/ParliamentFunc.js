@@ -2,14 +2,14 @@ var selected = ""
 
 //-- SVG Functions --
 //
-function SetSeatColor(ParlimentList,MapMode){
-  ParlimentList.forEach((i) => {
+function SetSeatColor(ParliamentList,MapMode){
+  ParliamentList.forEach((i) => {
     if (MapMode){
       //Loop to wait for document to load
       var Seat = document.getElementById("Map").getElementById(i)
     }
     else {
-      var Seat = document.getElementById("Parliment").getElementById(i)
+      var Seat = document.getElementById("Parliament").getElementById(i)
     }
     eval("PartyID = Currentelectorateparty." + i)
     eval("SeatColor = PartyColor." + PartyID)
@@ -49,23 +49,26 @@ function SetSeatColor(ParlimentList,MapMode){
 
       try {
       document.getElementById("Map").getElementById(selected).style.opacity=1
-      document.getElementById("Parliment").getElementById(selected).style.opacity=1
+      document.getElementById("Parliament").getElementById(selected).style.opacity=1
       }
       catch {}
       selected = i;
       var MapObject = document.getElementById("Map").getElementById(i)
       MapObject.style.opacity=0.5
+      MapObject.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
+      document.documentElement.scrollTop = 0;
+      
 
-      Cords = MapObject.getBBox()
-      console.log(Cords)
-      Viewport = MapObject.getBoundingClientRect()
-      Scaler = Viewport.height/Cords.height
-      XPos = (Cords.x)
-      YPos = (Cords.y)
-      console.log("Scrolling to: " + XPos + "," + YPos)
-      document.getElementById("topcontainer").scrollTo(XPos,YPos) 
+      //Cords = MapObject.getBBox()
+      //console.log(Cords)
+      //Viewport = MapObject.getBoundingClientRect()
+      //Scaler = Viewport.height/Cords.height
+      //XPos = (Cords.x)
+      //YPos = (Cords.y)
+      //console.log("Scrolling to: " + XPos + "," + YPos)
+      //document.getElementById("topcontainer").scrollTo(XPos,YPos) 
 
-      document.getElementById("Parliment").getElementById(i).style.opacity=0.5
+      document.getElementById("Parliament").getElementById(i).style.opacity=0.5
     }
     }
     catch{
@@ -77,12 +80,12 @@ function SetSeatColor(ParlimentList,MapMode){
 var svgUrl2    = "Australian_House_of_Representatives_chart.svg";
 var container2 = $("#container2");
 $.get(svgUrl2) 
-  .then(injectParliment)
+  .then(injectParliament)
 
-function injectParliment(xmlDoc) {
+function injectParliament(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
   container2.append(svg);
-  svg.attr("id", "Parliment")
+  svg.attr("id", "Parliament")
   svg.attr("height","")
   svg.attr("width","100%")
   svg.attr("onload","SetSeatColor(ElectorateList,false)")

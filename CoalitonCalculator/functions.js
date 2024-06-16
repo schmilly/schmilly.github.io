@@ -42,7 +42,7 @@ function setSmoothData() {
 };
 
 function setSeatData() {
-    HighChartsData.series[0].data = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
+    HighChartsData.series[0].data = generateParliamentdata(colors, PrtyLabels, SeatCount, PartyCount);
 }
 
 function createPage() {
@@ -123,7 +123,7 @@ function addElementToList(element,color) {
     list.appendChild(listItem);
 }
 
-function generateParlimentdata(colors,labels,data,count) {
+function generateParliamentdata(colors,labels,data,count) {
     var returndata = [];
     for (var i = 0; i < count; i++) {
         returndata[i] = [labels[i], data[i], colors[i]]
@@ -282,9 +282,9 @@ function clear() {
 
 function ChartUpdate() {
     if (Seat || BothChart) {
-        ParlimentData = generateParlimentdata(colors, PrtyLabels, SeatCount, PartyCount);
-        HighChartsData.series[0].data = ParlimentData;
-        SeatChart.series[0].update({ data: ParlimentData }, true);
+        ParliamentData = generateParliamentdata(colors, PrtyLabels, SeatCount, PartyCount);
+        HighChartsData.series[0].data = ParliamentData;
+        SeatChart.series[0].update({ data: ParliamentData }, true);
     }
     if (!Seat || BothChart) {
         SmoothChart.data.datasets[0].borderColor = CreateBorder(Selected);
