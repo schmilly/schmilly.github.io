@@ -5,6 +5,7 @@ var selected = ""
 function SetSeatColor(ParlimentList,MapMode){
   ParlimentList.forEach((i) => {
     if (MapMode){
+      //Loop to wait for document to load
       var Seat = document.getElementById("Map").getElementById(i)
     }
     else {
@@ -56,11 +57,13 @@ function SetSeatColor(ParlimentList,MapMode){
       MapObject.style.opacity=0.5
 
       Cords = MapObject.getBBox()
+      console.log(Cords)
       Viewport = MapObject.getBoundingClientRect()
       Scaler = Viewport.height/Cords.height
       XPos = (Cords.x)
       YPos = (Cords.y)
-      document.getElementById("topcontainer").scrollTo(XPos*Scaler,YPos*Scaler) 
+      console.log("Scrolling to: " + XPos + "," + YPos)
+      document.getElementById("topcontainer").scrollTo(XPos,YPos) 
 
       document.getElementById("Parliment").getElementById(i).style.opacity=0.5
     }
@@ -82,7 +85,7 @@ function injectParliment(xmlDoc) {
   svg.attr("id", "Parliment")
   svg.attr("height","")
   svg.attr("width","100%")
-  svg.attr("onload","SetSeatColor(ElectorateList,true)")
+  svg.attr("onload","SetSeatColor(ElectorateList,false)")
 }
 
 
@@ -96,7 +99,7 @@ function injectMap(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Map")
   svg.attr("style","overflow:auto;")
-  svg.attr("onload","SetSeatColor(ElectorateList,false)")
+  svg.attr("onload","SetSeatColor(ElectorateList,true)")
 
   container1.append(svg);
 
