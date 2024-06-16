@@ -32,5 +32,6 @@ Work in progress, but plan to show Seat-by-Seat data of polling and allows for b
 - [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
-  - Map implemented; Change in seats still a WIP
-
+  - Map functional in unison with seats/Parliament Layout; Further implementation still required:
+  - [ ] Implementation of Seat level swings based on Poll
+  - [ ] Implementation of Parliament wide swings and rendering of such based on Poll

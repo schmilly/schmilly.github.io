@@ -633,26 +633,7 @@ body {
   margin:0
 }
 
-@media (min-width:768px) {
-  .container {
-    max-width:700px
-  }
-}
-@media (min-width:1024px) {
-  .container {
-    max-width:950px
-  }
-}
-@media (min-width:1280px) {
-  .container {
-    max-width:1200px
-  }
-}
-@media (min-width:1536px) {
-  .container {
-    max-width:100%;
-  }
-}
+
 .grid {
   grid-column-gap:var(--pico-grid-column-gap);
   grid-row-gap:var(--pico-grid-row-gap);
@@ -754,9 +735,7 @@ h6) {
 p {
   margin-bottom:var(--pico-typography-spacing-vertical)
 }
-hgroup {
-  margin-bottom:var(--pico-typography-spacing-vertical)
-}
+
 hgroup>* {
   margin-top:0;
   margin-bottom:0

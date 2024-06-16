@@ -7,8 +7,10 @@
     <title>Parliament Mode</title>
     <meta name="description" content="A Chart of Net 2PP rolling averages" />
     <link href="./styles.css" rel="stylesheet">
+    <link rel="icon" href="./Icon.svg" type="image/svg+xml">
     <!-- Custom Pico.css -->
     <link rel="stylesheet" href="./custom.pico.min.css"/> 
+
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -17,12 +19,12 @@
   <body>
     <!-- Header -->
     
-    <header class="container">
+    <header class="container" style="padding-left: 1em;">
       <hgroup>
         <h1>Parliament Mode</h1>
         <p style="line-height:100%">
           This enables a more advance break down and lets you set custom preference flows for parties <br>
-        <small><i>Note: Uses 2022 election results for Primary vote; but colours map based on who currently holds seatlections (e.g: Aston shows as red but Primary vote is from 2022 election)</small></i> <br>
+        <small><i>Note: Uses 2022 election results for Primary vote; but colours map based on who currently holds seat (e.g: Aston shows as red but Primary vote is from 2022 election)</small></i> <br>
         <small>Please send any bugs or issues to me on Twitter or via email to <a href="mailto:schmilly@proton.me">schmilly@proton.me</a></small><br>
         <a href="../2PP.html">Polling Average Chart</a>
         </p>
@@ -31,9 +33,11 @@
     <!-- ./ Header -->
     <main class="container">
       <div class="grid" >
+       <div> <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
         <div id=topcontainer style="overflow:auto;height:750px;border-width:5px;border-style:solid">
           <object id=container1>
           </object>
+          </div>
         </div>
         <div>
           <object id=container2>
@@ -42,21 +46,22 @@
         <div>
           <p style="margin-bottom: 0px;">
             <b>Electorate:</b>  <text id=ElcName>None Selected</text> <br>
-            <b>MP:</b>       <text id=ElcMoP></text> <br>
-            <b>Party:</b> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
             <b>State/Territory:</b> <text id=ElcState></text> <br>
+            <b>MP:</b>       <text id=ElcMoP></text> <br>
+            <b>Party:</b> <br> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
             <text>
               <b>Primary Vote last Election</b> (2022):
               <text id=primvote ></text>
           </p>
-              <div>
-                <canvas height="50%" width="100%" style="padding-right: 10%;" id="PrimaryVote">
-                </canvas>
-              </div>
-            </text>
-            <b>Predicted Primary Vote</b> (uniform change): <br> WIP
+          <div style="margin-right: 1em;">
+            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
+            </canvas>
+          </div>
+          <b>Predicted Primary Vote based on Poll</b> <small>(uniform swing from 2022): </small><br> WIP
             <canvas height="50%" width="100%" id="PredictPrimary">
             </canvas>
+          <br>
+          <b>Predicted Seat Winner based on Poll</b> <small>(based on vauge gesturing at statistics and Vote prefrences): </small><br> WIP
         </div>
       </div>
       <div class="grid">
@@ -102,14 +107,16 @@
             <text id=PllPollster></text>
           </text>
           <br>
-          <text>Primary Vote:
-            <text id=PllPrimaryVote></text> 
+          <text>Primary Vote: <br>
+            <canvas id=PllPrimaryVote></canvas> 
           </text>
           <br>
-          <text>2PP:
+          <text>Net 2PP (Labor - Liberal):
             <text id=Pll2PP></text> 
           </text> 
           <br>
+          <button>Render Parliment with Poll</button>
+          <text onclick="RenderParliment()" id=disclaimertext></text>
         </div>
       </div>
       <article>

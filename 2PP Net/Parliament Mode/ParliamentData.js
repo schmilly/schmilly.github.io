@@ -156,16 +156,16 @@ ElectorateList =
 var PartyNameArray = {
   "ALP": "Labor Party",
   "Lib": "Liberal Party",
-  "LaP": "",
+  "LaP": "Liberal and Nationals Party",
   "LNP": "Liberal National Party",
   "UAP": "United Australia Party",
   "Grn": "Greens", 
   "Nat": "Nationals",
   "One": "One Nation",
-  "OaI": "#e8e3d3",
-  "Oth": "#EDE7E3",
+  "OaI": "Fuck knows???",
+  "Oth": "Other",
   "Ind": "Indipendent",
-  "JLN": "#BCA371",
+  "JLN": "Jacqui Lambie Network",
   "CAl": "Center Alliance",
   "KAP": "Katter Australia Party"
 }

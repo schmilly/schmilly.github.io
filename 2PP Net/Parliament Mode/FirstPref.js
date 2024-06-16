@@ -887,7 +887,7 @@ FirstPref = {
     "UAP": 1.43,
   },
   "Franklin": {
-    "TLOC": 4.96,
+    "LoP": 4.96,
     "ALP": 36.69,
     "LDP": 2.01,
     "One": 2.85,

@@ -1,5 +1,7 @@
 var selected = ""
 
+SmoothCircle.onclick = PollClick; 
+
 //-- SVG Functions --
 //
 function SetSeatColor(ParliamentList,MapMode){
@@ -57,16 +59,6 @@ function SetSeatColor(ParliamentList,MapMode){
       MapObject.style.opacity=0.5
       MapObject.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
       document.documentElement.scrollTop = 0;
-      
-
-      //Cords = MapObject.getBBox()
-      //console.log(Cords)
-      //Viewport = MapObject.getBoundingClientRect()
-      //Scaler = Viewport.height/Cords.height
-      //XPos = (Cords.x)
-      //YPos = (Cords.y)
-      //console.log("Scrolling to: " + XPos + "," + YPos)
-      //document.getElementById("topcontainer").scrollTo(XPos,YPos) 
 
       document.getElementById("Parliament").getElementById(i).style.opacity=0.5
     }
@@ -212,3 +204,27 @@ function GetElcFirPref(ElcID,Data){
 //    Bars2PP.data.datasets[]
 //  }
 //}
+
+function PollClick(click){
+  //console.log(click)
+  try{
+  const points = mixedChart.getElementsAtEventForMode(click,'nearest'
+  , { intersect: true}, true)
+  console.log(points)
+  ClickonPoll = RawData[points[0].datasetIndex];
+  console.log(RawData[points[0].datasetIndex])
+  document.getElementById("SelectPollDate").innerText = ClickonPoll[0]
+  document.getElementById("PllPollster").innerText = ClickonPoll[1]  
+  //document.getElementById("PllPrimaryVote").innerText = ClickonPoll[2]
+  document.getElementById("Pll2PP").innerText = ClickonPoll[11]-ClickonPoll[12] + "%"
+  }
+  catch{
+    console.log("Error; Please click on a Poll data point")
+  }
+}
+
+
+function RenderParliment(){
+  document.getElementById("disclaimertext").innerText = "Thanks for tying this, unforutnatly my ass yet to get this to work so uhh; will be done eventually"
+
+}
