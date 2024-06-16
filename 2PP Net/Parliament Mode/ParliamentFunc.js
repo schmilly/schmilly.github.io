@@ -86,7 +86,6 @@ function injectParliament(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
   container2.append(svg);
   svg.attr("id", "Parliament")
-  svg.attr("height","")
   svg.attr("width","100%")
   svg.attr("onload","SetSeatColor(ElectorateList,false)")
 }
