@@ -15,21 +15,17 @@ Currently a work in progress with a lot of feature creep.
 Which collects changes in 2PP over years:
 This collects all polling data from 2007 election to modern day
 
-[Advance Mode:](https://schmilly.github.io/2PP%20Net/Advance_Mode.html)
-This only has 2PP from 2022 election to today
-However it does allow for setting custom 2PP Flows and preferences, which can enable further analysis of trends and current 2PP Flows
-
-[Parliament Mode (still WIP):](https://schmilly.github.io/2PP%20Net/Parliament%20Mode/Parliament.html)
-Work in progress, but plan to show Seat-by-Seat data of polling and allows for break downs to that level.
+[Parliament Mode:](https://schmilly.github.io/2PP%20Net/Parliament%20Mode/Parliament.html)
+Work in progress, currently shows seat by seat level Primary vote; Along with also allowing setting custom pref flows for polling data from 2022 and see resulting 2PP trends. Plans to implement ability to simulate flows and changes calculated from 2022 -> Poll in invidual seats as well to render flows and changes in Parliament map.
 
 ##### Known Bugs/Issues:
 - [ ] Can't reset Zoom of 2PP Chart
 - [X] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
+- [ ] Render Poll to Parliament button doesn't work
 
 ##### Planned features and further support:
 - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
 - [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
-- [ ] Add all 2PP periods seen in Basic Mode to Advance mode
 - [ ] Add 2PP periods/government terms from before 2007 
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
   - Map functional in unison with seats/Parliament Layout; Further implementation still required:
