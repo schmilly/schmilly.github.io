@@ -51,13 +51,12 @@
             <b>Party:</b> <br> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
             <text>
               <b>Primary Vote last Election</b> (2022):
-              <text id=primvote ></text>
           </p>
           <div style="margin-right: 1em;">
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
             </canvas>
           </div>
-          <b>Predicted Primary Vote based on Poll</b> <small>(uniform swing from 2022): </small><br> WIP
+          <b>Predicted Primary Vote based on Selected Poll</b> <small>(uniform swing from 2022): </small><br> WIP
             <canvas height="50%" width="100%" id="PredictPrimary">
             </canvas>
           <br>
@@ -65,58 +64,71 @@
         </div>
       </div>
       <div class="grid">
-        <div style="height:700px">
-          <canvas  id="SmoothCircle">
-          </canvas>
-        </div>
-        <div style="overflow:scroll;height:700px">
-          <h5>Custom 2PP</h5>
-          <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
-          <table class="slidecontainer">
-            <td style="width:20%">Greens:</td>
-            <td><small>Labor %:<text id="greensflowlab"></text> <br>
-              Liberal %:<text id="greensflowlib"></text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
-          </table>
-          <table class="slidecontainer">
-            <td style="width:20%">One Nation</td>
-            <td><small>Labor %:<text id="oneflowlab"></text> <br>
-              Liberal %:<text id="oneflowlib"></text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
-          </table>      
-          <table class="slidecontainer">
-            <td style="width:20%">United Australia Party</td>
-            <td><small>Labor %:<text id="UAPflowlab"></text> <br>
-              Liberal %:<text id="UAPflowlib"></text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
-          </table>
-          <table class="slidecontainer">
-            <td style="width:20%">Other</td>
-            <td><small>Labor %:<text id="otherflowlab"></text> <br>
-              Liberal %:<text id="otherflowlib"></text></small> </td>
-            <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
-          </table>
-        </div>
         <div>
+          <div style="height:700px">
+            <canvas  id="SmoothCircle">
+            </canvas>
+          </div>
+        </div>
+        <div class="grid">
+          <div>
           <h5>Poll</h5>
           <text>Poll Date:
-            <text id=SelectPollDate></text>
+            <b id=SelectPollDate></b>
           </text>
           <br>
           <text>Polster:
-            <text id=PllPollster></text>
+            <b id=PllPollster></b>
           </text>
           <br>
           <text>Primary Vote: <br>
-            <canvas id=PllPrimaryVote></canvas> 
           </text>
-          <br>
-          <text>Net 2PP (Labor - Liberal):
-            <text id=Pll2PP></text> 
-          </text> 
-          <br>
-          <button>Render Parliment with Poll</button>
-          <text onclick="RenderParliment()" id=disclaimertext></text>
+          <div>
+            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PollGPrimaryVote">
+            </canvas>
+            </div>
+            <text> Primary Vote Swing from 2022:
+              <b>WIP</b>
+            </text>
+            <br>
+            <text>Net 2PP (Labor - Liberal):
+              <b id=Pll2PP></b> 
+            </text> 
+            <br>
+            <button onclick="RenderParliment()">Render Parliment with Poll</button>
+            <text id=disclaimertext></text>
+          </div>
+          <div>
+            <h5>Custom 2PP</h5>
+            <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
+
+            <div>
+              <table class="slidecontainer">
+                <td style="width:20%">Greens:</td>
+                <td><small>Labor %:<text id="greensflowlab"></text> <br>
+                  Liberal %:<text id="greensflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">One Nation</td>
+                <td><small>Labor %:<text id="oneflowlab"></text> <br>
+                  Liberal %:<text id="oneflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">United Australia Party</td>
+                <td><small>Labor %:<text id="UAPflowlab"></text> <br>
+                  Liberal %:<text id="UAPflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">Other</td>
+                <td><small>Labor %:<text id="otherflowlab"></text> <br>
+                  Liberal %:<text id="otherflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
       <article>
@@ -126,10 +138,10 @@
         <footer><small>
           For Example: <blockquote> <i>
             Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
-            53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
+              53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
           Or..<blockquote> <i>
             Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
-            46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
+              46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
         </small></footer>
         <sub> Chart also uses a 100 day rolling average </sub> <br>
       </article>
@@ -170,9 +182,9 @@ Colors[2022]="#d56f46"
 <script src="./PrimaryVoteChart.js"></script>
 <script src="../2PPFunctions.js"></script>
 <script src="../2022.js"></script>
-<script src="../AdvanceMode.js"></script>
+<script src="./AdvanceMode.js"></script>
 <script src="../PageFunctions.js"></script>
-<script src="../AdvanceMode.js"></script>
+<script src="./AdvanceMode.js"></script>
 <script src="../Raw_Data.js"></script>
 
 <script>
@@ -186,11 +198,16 @@ Colors[2022]="#d56f46"
     ctx = document.getElementById("SmoothCircle");
     mixedChart = new Chart(ctx, ChartData);
     
-    Canvas2PP =  document.getElementById("PrimaryVote")
+    ElcPrimVote = document.getElementById("PrimaryVote")
     FirstPrefData = CreateHorConfig();
-    BarsFirstPref = new Chart(Canvas2PP,FirstPrefData)
-    
-    
+    BarsFirstPref = new Chart(ElcPrimVote,FirstPrefData)
+
+    PollGVote = document.getElementById("PollGPrimaryVote")    
+    PollPrefData = CreateHorConfig();
+    PollBarFirstPref = new Chart(PollGVote,PollPrefData)
+
+    var SelectedPoll
+    var SelectedPollPos
 </script>
 <script src="./SVG_Display.js"></script>
 

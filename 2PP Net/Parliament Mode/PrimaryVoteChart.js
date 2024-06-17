@@ -34,6 +34,4 @@ const Chart2PP = {
   },
 };
 
-function clickHandler(){
 
-}

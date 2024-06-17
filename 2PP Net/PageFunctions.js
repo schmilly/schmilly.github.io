@@ -55,5 +55,8 @@ function CalcCustom2PP(boolean){
     mixedChart.data.datasets[1].data[i].y = CustomData[1].data[i].y
   }
   mixedChart.update();
-
+  
+  if (SelectedPollPos != undefined){
+    document.getElementById("Pll2PP").innerText = ChartData.data.datasets[0].data[SelectedPollPos].y
+  }
 }

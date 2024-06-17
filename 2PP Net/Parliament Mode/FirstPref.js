@@ -126,7 +126,7 @@ FirstPref = {
     "LDP": 1.52,
     "ALP": 42.86,
   },
-  "Eden-Monaro": {
+  "EdenMonaro": {
     "SPP": 2.23,
     "LDP": 2.59,
     "ALP": 42.57,
@@ -1421,7 +1421,7 @@ FirstPref = {
     "UAP": 2.24,
     "CYA": 0.76,
   },
-  "O'Connor": {
+  "OConnor": {
     "One": 7.06,
     "ALP": 26.63,
     "Grn": 10.63,

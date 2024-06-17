@@ -677,7 +677,6 @@ pre,
 table,
 ul {
   margin-top:0;
-  margin-bottom:var(--pico-typography-spacing-vertical);
   color:var(--pico-color);
   font-style:normal;
   font-weight:var(--pico-font-weight)

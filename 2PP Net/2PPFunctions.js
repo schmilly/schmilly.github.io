@@ -4,7 +4,7 @@
 
 function createDataSets(pairArray, label) {
     var Color = SelectColor(label);
-    pairArray.sort(sortFunction);
+    //pairArray.sort(sortFunction);
     const dataSet = {
         type: 'bubble',
         label: label + " (Day, Net 2PP %)",
