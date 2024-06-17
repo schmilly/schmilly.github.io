@@ -34,12 +34,12 @@
     <main class="container">
       <div class="grid" >
        <div> <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
-        <div id=topcontainer style="overflow:auto;height:750px;border-width:5px;border-style:solid">
+        <div id=topcontainer style="overflow:auto;height:560px;border-width:5px;border-style:solid">
           <object id=container1>
           </object>
           </div>
         </div>
-        <div>
+        <div style="height:560px;">
           <object id=container2>
           </object>
         </div>
@@ -86,24 +86,24 @@
           <div>
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PollGPrimaryVote">
             </canvas>
-            </div>
-            <text> Primary Vote Swing from 2022:
-              <b>WIP</b>
-            </text>
-            <br>
-            <text>Net 2PP (Labor - Liberal):
-              <b id=Pll2PP></b> 
-            </text> 
-            <br>
-            <button onclick="RenderParliment()">Render Parliment with Poll</button>
-            <text id=disclaimertext></text>
           </div>
-          <div>
-            <h5>Custom 2PP</h5>
-            <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
-
+          <text> Primary Vote Swing from 2022:
+            <br><b>WIP</b>
+          </text>
+          <br>
+          <text>Net 2PP (Labor - Liberal):
+            <b id=Pll2PP></b> 
+          </text> 
+          <br>
+          <button onclick="RenderParliment()">Render Parliment with Poll</button>
+          <text id=disclaimertext></text>
+          </div>
             <div>
-              <table class="slidecontainer">
+            <h5>Custom 2PP</h5>
+              <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
+          
+            <div>
+                <table class="slidecontainer">
                 <td style="width:20%">Greens:</td>
                 <td><small>Labor %:<text id="greensflowlab"></text> <br>
                   Liberal %:<text id="greensflowlib"></text></small> </td>
@@ -127,7 +127,7 @@
                   Liberal %:<text id="otherflowlib"></text></small> </td>
                 <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
               </table>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -138,10 +138,10 @@
         <footer><small>
           For Example: <blockquote> <i>
             Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
-              53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
+            53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
           Or..<blockquote> <i>
             Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
-              46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
+            46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
         </small></footer>
         <sub> Chart also uses a 100 day rolling average </sub> <br>
       </article>
@@ -180,6 +180,7 @@ Colors[2022]="#d56f46"
 <script src="./ParliamentFunc.js"></script>
 <script src="./FirstPref.js"></script>
 <script src="./PrimaryVoteChart.js"></script>
+<script src="./PollChartInteraction.js"></script>
 <script src="../2PPFunctions.js"></script>
 <script src="../2022.js"></script>
 <script src="./AdvanceMode.js"></script>
