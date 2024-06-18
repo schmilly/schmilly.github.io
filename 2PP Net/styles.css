@@ -1,16 +1,16 @@
-ParliamentSeat {
- fill-opacity:0;
- stroke:none;
- stroke-width:0.4641555;
- stroke-linecap:round;
- stroke-linejoin:round;
- stroke-miterlimit:4;
- stroke-dasharray:none;
- stroke-dashoffset:0;
- stroke-opacity:1;
- fill-opacity:1;
+path:hover { 
+  stroke: #c2c7d0 !important;
+  fill-opacity: 0.5 !important;
 }
+
+.seat:hover {
+  stroke: var(--pico-color);
+  stroke-width: 1px;
+}
+
 
 object {
   color-scheme: light; /*<--Add this to fix WHITE BG issue*/
 }
+
+
