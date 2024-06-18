@@ -1,19 +1,79 @@
 RawDataHeaderID = [
-  "N/A",
-  "N/A",
-  "N/A",
-  "N/A",
+  "N/A",  "N/A",  "N/A",  "N/A",
   "LaP", 
   "ALP",
   "Grn",
   "One",
   "UAP",
   "Oth",
-  "OaI",
-  "N/A",
-  "N/A"
-  
+  "N/A","N/A",  "N/A" 
 ]
+
+PollList = [
+  "LaP", 
+  "ALP",
+  "Grn",
+  "One",
+  "UAP",
+  "Oth",
+  ]
+
+Location = {
+  "ALP":5,
+  "LaP":4,
+  "Grn":6,
+  "One":7,
+  "UAP":8,
+  "Oth":9
+}
+
+var PollIDConvert = {
+  "ALP": "ALP",
+  "Lib": "LaP",
+  "LaP": "LaP",
+  "LNP": "LaP",
+  "UAP": "UAP",
+  "Grn": "Grn", 
+  "Nat": "LaP",
+  "One": "One",
+    "Oth": "Oth",
+  "Ind": "Oth",
+  "JLN": "Oth",
+  "CAl": "Oth",
+  "KAP": "Oth"
+}
+ 
+var PartyNameArray = {
+  "ALP": "Labor Party",
+  "Lib": "Liberal Party",
+  "LaP": "Liberal and Nationals Party",
+  "LNP": "Liberal National Party",
+  "UAP": "United Australia Party",
+  "Grn": "Greens", 
+  "Nat": "Nationals",
+  "One": "One Nation",
+    "Oth": "Other",
+  "Ind": "Indipendent",
+  "JLN": "Jacqui Lambie Network",
+  "CAl": "Center Alliance",
+  "KAP": "Katter Australia Party"
+}
+
+var PartyColor = {
+  "ALP": "#ee0003",
+  "Lib": "#0068e8",
+  "LaP": "#0068e8",
+  "LNP": "#008fe8",
+  "UAP": "#ffff00",
+  "Grn": "#33b747", 
+  "Nat": "#1f412f",
+  "One": "#cc5b10",
+    "Oth": "#EDE7E3",
+  "Ind": "#C2C7D0",
+  "JLN": "#BCA371",
+  "CAl": "Orange",
+  "KAP": "#910f00"
+}
 
 ElectorateList =
   [
@@ -170,39 +230,6 @@ ElectorateList =
     "Wright"
   ]
 
-var PartyNameArray = {
-  "ALP": "Labor Party",
-  "Lib": "Liberal Party",
-  "LaP": "Liberal and Nationals Party",
-  "LNP": "Liberal National Party",
-  "UAP": "United Australia Party",
-  "Grn": "Greens", 
-  "Nat": "Nationals",
-  "One": "One Nation",
-  "OaI": "Fuck knows???",
-  "Oth": "Other",
-  "Ind": "Indipendent",
-  "JLN": "Jacqui Lambie Network",
-  "CAl": "Center Alliance",
-  "KAP": "Katter Australia Party"
-}
-
-var PartyColor = {
-  "ALP": "#ee0003",
-  "Lib": "#0068e8",
-  "LaP": "#0068e8",
-  "LNP": "#008fe8",
-  "UAP": "#ffff00",
-  "Grn": "#33b747", 
-  "Nat": "#1f412f",
-  "One": "#cc5b10",
-  "OaI": "#e8e3d3",
-  "Oth": "#EDE7E3",
-  "Ind": "#C2C7D0",
-  "JLN": "#BCA371",
-  "CAl": "Orange",
-  "KAP": "#910f00"
-}
 
 var ElectorateIDNameArray = {
   "Adelaide":"Adelaide",

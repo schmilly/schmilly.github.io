@@ -62,5 +62,63 @@ function getPollPrimVote(RawDataEntry,Data){
 
 function RenderParliment(){
   document.getElementById("disclaimertext").innerText = "\nThanks for tying this, unforutnatly my ass yet to get this to work so uhh; will be done eventually"
-
 }
+
+function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
+  Swing = { 
+    "ALP":Poll[Location.ALP] - BaseLine[Location.ALP],
+    "LaP":Poll[Location.LaP] - BaseLine[Location.LaP],
+    "Grn":Poll[Location.Grn] - BaseLine[Location.Grn],
+    "One":Poll[Location.One] - BaseLine[Location.One],
+    "UAP":Poll[Location.UAP] - BaseLine[Location.UAP],
+    "Oth":Poll[Location.Oth] - BaseLine[Location.Oth]
+  }
+  Vote = {
+    "ALP":0.00,
+    "LaP":0.00,
+    "Grn":0.00,
+    "One":0.00,
+    "UAP":0.00,
+    "Oth":0.00
+  } 
+  VoteSwing = []
+  eval("SeatPrim = FirstPref." + ElcID)
+  var othervote = 0.00;
+  var postionInArray = 0
+  Object.entries(SeatPrim).forEach((element) => {
+    eval("PartyID = PollIDConvert." + element[0])
+    if (PartyID != undefined){
+      eval("Vote." + PartyID  + " = Vote." + PartyID +" + element[1]")
+    }
+    else{
+      console.log("Couldn't find Party with ID " + element[0])
+      console.log("Adding votes of "+ element[1] +  " to other vote")
+      Vote.Oth = Vote.Oth + element[1]
+    }
+  });
+  PollList.forEach((PartyID)=> {
+    eval("PartyColored = PartyColor."+ PartyID)
+    eval("SetPartyName = PartyNameArray."+ PartyID)
+    eval("PartySwing = Swing." + PartyID)
+    eval("PartyVote = Vote."+ PartyID)
+    NewPrim = PartyVote + PartySwing
+    FinalVote = NewPrim
+    if (FinalVote < 0){
+      Swing.Oth = Swing.Oth + FinalVote
+      FinalVote = 0
+    }
+    Data.datasets[postionInArray] = {
+      label: SetPartyName,
+      data: [FinalVote.toFixed(1)],
+      backgroundColor: PartyColored
+    }
+    VoteSwing.push(FinalVote)
+    postionInArray = postionInArray + 1
+  })
+  while(Data.datasets.length > postionInArray){
+    Data.datasets.pop();
+  }
+  console.log(VoteSwing)
+  return Data;
+}
+

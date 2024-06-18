@@ -29,41 +29,52 @@ function SetSeatColor(ParliamentList,MapMode){
     try{
       Seat.addEventListener("click",ClickonSeat)
       function ClickonSeat(){
-      
-      Name = document.getElementById("ElcName")
-      eval ("Name.innerText =  ElectorateIDNameArray." + i)
-      MPName = document.getElementById("ElcMoP")
-      eval ("MPName.innerText = MPArray." + i)
-      
-      PartyName = document.getElementById("ElcPrty")
-      PartyIcon = document.getElementById("ElcPrtyIcon")
-      eval ("ElcPartyID = Currentelectorateparty." + i)
-      eval("PartyName.innerText = PartyNameArray." + ElcPartyID)
-      eval("PartyIcon.style.color = PartyColor." + ElcPartyID)
-      
-      LocName = document.getElementById("ElcState")
-      eval("LocID = ElcLocation." + i)
-      eval("LocName.innerText = StateIDArray." + LocID)
 
-      GetElcFirPref(i,FirstPrefData.data);
-      BarsFirstPref.update();
+        Name = document.getElementById("ElcName")
+        eval ("Name.innerText =  ElectorateIDNameArray." + i)
+        MPName = document.getElementById("ElcMoP")
+        eval ("MPName.innerText = MPArray." + i)
 
-      try {
-      document.getElementById("Map").getElementById(selected).style.opacity=1
-      document.getElementById("Parliament").getElementById(selected).style.opacity=1
+        PartyName = document.getElementById("ElcPrty")
+        PartyIcon = document.getElementById("ElcPrtyIcon")
+        eval ("ElcPartyID = Currentelectorateparty." + i)
+        eval("PartyName.innerText = PartyNameArray." + ElcPartyID)
+        eval("PartyIcon.style.color = PartyColor." + ElcPartyID)
+
+        LocName = document.getElementById("ElcState")
+        eval("LocID = ElcLocation." + i)
+        eval("LocName.innerText = StateIDArray." + LocID)
+
+        GetElcFirPref(i,FirstPrefData.data);
+        BarsFirstPref.update();
+
+        try {
+          document.getElementById("Map").getElementById(selected).style.opacity=1
+          document.getElementById("Parliament").getElementById(selected).style.opacity=1
+        }
+        catch {
+          console.log("Error, could not find selected to return to normal opacity:" + selected)
+        }
+        selected = i;
+        var MapObject = document.getElementById("Map").getElementById(i)
+        MapObject.style.opacity=0.5
+        MapObject.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
+        document.documentElement.scrollTop = 0;
+
+        document.getElementById("Parliament").getElementById(i).style.opacity=0.5
+
+        if (SelectedPollPos != undefined){
+          CalculateSeatPrim(
+            RawData[SelectedPollPos],
+            RawData[RawData.length-1],
+            i,
+            PredictedPrimData.data)
+          BarPredictedPref.update();
+        }
       }
-      catch {}
-      selected = i;
-      var MapObject = document.getElementById("Map").getElementById(i)
-      MapObject.style.opacity=0.5
-      MapObject.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
-      document.documentElement.scrollTop = 0;
-
-      document.getElementById("Parliament").getElementById(i).style.opacity=0.5
-    }
     }
     catch{
-
+      console.log("Error adding Seat Interaction listner")
     }
   })
 };

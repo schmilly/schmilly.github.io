@@ -19,7 +19,7 @@
   <body>
     <!-- Header -->
     
-    <header class="container" style="padding-left: 1em;">
+    <header class="container" style="padding-left: 1em;padding-right: 1em;">
       <hgroup>
         <h1>Parliament Mode</h1>
         <p style="line-height:100%">
@@ -48,7 +48,7 @@
             <b>Electorate:</b>  <text id=ElcName>None Selected</text> <br>
             <b>State/Territory:</b> <text id=ElcState></text> <br>
             <b>MP:</b>       <text id=ElcMoP></text> <br>
-            <b>Party:</b> <br> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
+            <b>Party:</b> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
             <text>
               <b>Primary Vote last Election</b> (2022):
           </p>
@@ -56,10 +56,11 @@
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
             </canvas>
           </div>
-          <b>Predicted Primary Vote based on Selected Poll</b> <small>(uniform swing from 2022): </small><br> WIP
-            <canvas height="50%" width="100%" id="PredictPrimary">
+          <b>Predicted Primary Vote with Selected Poll</b> <small>(uniform swing from 2022): </small>
+          <div style="margin-right: 1em;">
+            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
             </canvas>
-          <br>
+          </div>
           <b>Predicted Seat Winner based on Poll</b> <small>(based on vauge gesturing at statistics and Vote prefrences): </small><br> WIP
         </div>
       </div>
@@ -88,7 +89,7 @@
             </canvas>
           </div>
           <text> Primary Vote Swing from 2022:
-            <br><b>WIP</b>
+              <b>WIP</b>
           </text>
           <br>
           <text>Net 2PP (Labor - Liberal):
@@ -209,6 +210,10 @@ Colors[2022]="#d56f46"
 
     var SelectedPoll
     var SelectedPollPos
+
+    PredictedSPrimVote = document.getElementById("PredictedSeatPrimaryVote") 
+    PredictedPrimData = CreateHorConfig();
+    BarPredictedPref = new Chart(PredictedSPrimVote,PredictedPrimData)
 </script>
 <script src="./SVG_Display.js"></script>
 
