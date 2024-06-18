@@ -55,7 +55,7 @@ function getPollPrimVote(RawDataEntry,Data){
   while(Data.datasets.length > postionInArray){
     Data.datasets.pop();
   }
-  console.log(Data)
+  //console.log(Data)
   return Data;
 }
 
@@ -65,13 +65,15 @@ function RenderParliment(){
 }
 
 function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
+  Scaler =  1+Poll[Location.Undecide]/100 
+    //Variable to scale based on undecided votes, fill in blanks essentially
   Swing = { 
-    "ALP":Poll[Location.ALP] - BaseLine[Location.ALP],
-    "LaP":Poll[Location.LaP] - BaseLine[Location.LaP],
-    "Grn":Poll[Location.Grn] - BaseLine[Location.Grn],
-    "One":Poll[Location.One] - BaseLine[Location.One],
-    "UAP":Poll[Location.UAP] - BaseLine[Location.UAP],
-    "Oth":Poll[Location.Oth] - BaseLine[Location.Oth]
+    "ALP":Poll[Location.ALP]*Scaler - BaseLine[Location.ALP],
+    "LaP":Poll[Location.LaP]*Scaler - BaseLine[Location.LaP],
+    "Grn":Poll[Location.Grn]*Scaler - BaseLine[Location.Grn],
+    "One":Poll[Location.One]*Scaler - BaseLine[Location.One],
+    "UAP":Poll[Location.UAP]*Scaler - BaseLine[Location.UAP],
+    "Oth":Poll[Location.Oth]*Scaler - BaseLine[Location.Oth]
   }
   Vote = {
     "ALP":0.00,
@@ -80,19 +82,20 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     "One":0.00,
     "UAP":0.00,
     "Oth":0.00
-  } 
+  }
   VoteSwing = []
   eval("SeatPrim = FirstPref." + ElcID)
   var othervote = 0.00;
   var postionInArray = 0
   Object.entries(SeatPrim).forEach((element) => {
     eval("PartyID = PollIDConvert." + element[0])
-    if (PartyID != undefined){
+    if (PartyID != undefined){ 
       eval("Vote." + PartyID  + " = Vote." + PartyID +" + element[1]")
+      //console.log(PartyID + " : " + Vote.Oth)
     }
     else{
-      console.log("Couldn't find Party with ID " + element[0])
-      console.log("Adding votes of "+ element[1] +  " to other vote")
+      //console.log("Couldn't find Party with ID " + element[0])
+      //console.log("Adding votes of "+ element[1] +  " to other vote")
       Vote.Oth = Vote.Oth + element[1]
     }
   });
@@ -117,8 +120,19 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
   })
   while(Data.datasets.length > postionInArray){
     Data.datasets.pop();
+  } 
+  if (Math.round(Sum(VoteSwing)) != 100){
+    console.log("Error; Values do not add up to 100: " + VoteSwing) 
+    console.log("Sums to:" + Sum(VoteSwing))
   }
-  console.log(VoteSwing)
   return Data;
 }
 
+
+function Sum(Array){
+  SumValue = 0
+  Array.forEach(element => {
+    SumValue = Number(SumValue) + Number(element)
+  });
+  return SumValue
+}

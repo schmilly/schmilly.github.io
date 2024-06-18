@@ -24,7 +24,8 @@ Location = {
   "Grn":6,
   "One":7,
   "UAP":8,
-  "Oth":9
+  "Oth":9,
+  "Undecide":10
 }
 
 var PollIDConvert = {
@@ -36,7 +37,7 @@ var PollIDConvert = {
   "Grn": "Grn", 
   "Nat": "LaP",
   "One": "One",
-    "Oth": "Oth",
+  "Oth": "Oth",
   "Ind": "Oth",
   "JLN": "Oth",
   "CAl": "Oth",

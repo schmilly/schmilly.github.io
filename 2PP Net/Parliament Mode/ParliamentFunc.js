@@ -58,8 +58,10 @@ function SetSeatColor(ParliamentList,MapMode){
         selected = i;
         var MapObject = document.getElementById("Map").getElementById(i)
         MapObject.style.opacity=0.5
+
+        currentScroll = document.documentElement.scrollTop
         MapObject.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
-        document.documentElement.scrollTop = 0;
+        document.documentElement.scrollTop = currentScroll;
 
         document.getElementById("Parliament").getElementById(i).style.opacity=0.5
 
@@ -191,8 +193,8 @@ function GetElcFirPref(ElcID,Data){
 
     }
     else{
-      console.log("Couldn't find Party with ID " + element[0])
-      console.log("Adding votes of "+ element[1] +  " to other vote")
+      //console.log("Couldn't find Party with ID " + element[0])
+      //console.log("Adding votes of "+ element[1] +  " to other vote")
       othervote = othervote + element[1]
     }
   });
