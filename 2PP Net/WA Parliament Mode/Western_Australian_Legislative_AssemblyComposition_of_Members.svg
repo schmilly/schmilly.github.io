@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="Western_Australian_Legislative_AssemblyComposition_of_Members.svg"
+   width="143.49486mm"
+   height="118.2191mm"
+   viewBox="0 0 155.12957 127.80443"
+   version="1.1"
+   id="svg8"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     inkscape:current-layer="svg8"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="215.72815"
+     inkscape:cx="328.97614"
+     inkscape:zoom="1.3466022"
+     showgrid="false"
+     id="namedview65"
+     inkscape:window-height="979"
+     inkscape:window-width="2220"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     class="seat"
+     y="63.010075"
+     x="0"
+     height="10.583334"
+     width="10.583334"
+     id="Midland"
+     style="opacity:1;fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Midland" />
+  <rect
+     class="seat"
+     transform="rotate(140.3709)"
+     y="-172.1053"
+     x="-23.852194"
+     height="10.58232"
+     width="10.58232"
+     id="rect7335"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="rotate(126.69463)"
+     y="-174.01147"
+     x="-1.3951118"
+     height="10.58232"
+     width="10.58232"
+     id="rect7333"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     y="101.26204"
+     x="8.4666786"
+     height="10.583334"
+     width="10.583334"
+     id="Bunbury"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Bunbury" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Wanneroo"
+     width="10.583334"
+     height="10.583334"
+     x="20.108345"
+     y="101.26204"
+     inkscape:label="Wanneroo" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Baldivis"
+     width="10.583334"
+     height="10.583334"
+     x="31.750008"
+     y="101.26204"
+     inkscape:label="Baldivis" />
+  <rect
+     class="seat"
+     y="101.26204"
+     x="43.39167"
+     height="10.583334"
+     width="10.583334"
+     id="Morley"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Morley" />
+  <rect
+     class="seat"
+     y="101.26204"
+     x="55.03334"
+     height="10.583334"
+     width="10.583334"
+     id="Balcatta"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Balcatta" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Armadale"
+     width="10.583334"
+     height="10.583334"
+     x="66.675011"
+     y="101.26204"
+     inkscape:label="Armadale" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Forrestfield"
+     width="10.583334"
+     height="10.583334"
+     x="8.4666786"
+     y="115.06396"
+     inkscape:label="Forrestfield" />
+  <rect
+     class="seat"
+     y="115.06396"
+     x="20.108345"
+     height="10.583334"
+     width="10.583334"
+     id="Kingsley"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Kingsley" />
+  <rect
+     class="seat"
+     y="115.06396"
+     x="31.750008"
+     height="10.583334"
+     width="10.583334"
+     id="Dawesville"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Dawesville" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Geraldton"
+     width="10.583334"
+     height="10.583334"
+     x="43.39167"
+     y="115.06396"
+     inkscape:label="Geraldton" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Joondalup"
+     width="10.583334"
+     height="10.583334"
+     x="55.03334"
+     y="115.06396"
+     inkscape:label="Joondalup" />
+  <rect
+     class="seat"
+     y="115.06396"
+     x="66.675011"
+     height="10.583334"
+     width="10.583334"
+     id="Belmont"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Belmont" />
+  <rect
+     class="seat"
+     y="87.54071"
+     x="31.750008"
+     height="10.583334"
+     width="10.583334"
+     id="WestSwan"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="WestSwan" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Kwinana"
+     width="10.583334"
+     height="10.583334"
+     x="43.39167"
+     y="87.54071"
+     inkscape:label="Kwinana" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Mandurah"
+     width="10.583334"
+     height="10.583334"
+     x="55.03334"
+     y="87.54071"
+     inkscape:label="Mandurah" />
+  <rect
+     class="seat"
+     y="87.54071"
+     x="66.675011"
+     height="10.583334"
+     width="10.583334"
+     id="Perth"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Perth" />
+  <rect
+     class="seat"
+     y="-132.3587"
+     x="-15.583175"
+     height="10.582246"
+     width="10.582246"
+     id="Wanbro"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="rotate(135.02655)"
+     inkscape:label="Wanbro" />
+  <rect
+     class="seat"
+     y="-98.087753"
+     x="-88.944382"
+     height="10.582254"
+     width="10.582254"
+     id="Fremantle"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="rotate(-179.97346)"
+     inkscape:label="Fremantle" />
+  <rect
+     class="seat"
+     transform="rotate(112.50652)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect3704"
+     width="10.582286"
+     height="10.582286"
+     x="25.514944"
+     y="-142.71971" />
+  <rect
+     class="seat"
+     transform="rotate(157.50656)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect3015"
+     width="10.582285"
+     height="10.582285"
+     x="-58.41206"
+     y="-134.67384" />
+  <rect
+     class="seat"
+     transform="rotate(-179.97083)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="VictoriaPark"
+     width="10.582254"
+     height="10.582254"
+     x="-88.956001"
+     y="-111.80548"
+     inkscape:label="VictoriaPark" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect0391"
+     width="10.582227"
+     height="10.582227"
+     x="48.69659"
+     y="-149.58519"
+     transform="rotate(101.52897)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect4335"
+     width="10.58232"
+     height="10.58232"
+     x="-1.3918912"
+     y="-160.14487"
+     transform="rotate(126.69463)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect3712"
+     width="10.58232"
+     height="10.58232"
+     x="-24.058172"
+     y="-158.362"
+     transform="rotate(140.3709)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Bassendean"
+     width="10.582227"
+     height="10.582227"
+     x="-73.152039"
+     y="-143.25256"
+     transform="rotate(165.53656)"
+     inkscape:label="Bassendean" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Landsdale"
+     width="10.582207"
+     height="10.582207"
+     x="-88.861336"
+     y="-125.67293"
+     transform="rotate(179.98123)"
+     inkscape:label="Landsdale" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect3374"
+     width="10.581078"
+     height="10.581078"
+     x="-73.204308"
+     y="140.16158"
+     transform="rotate(-90.057523)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect1921"
+     width="10.581095"
+     height="10.581095"
+     x="-62.764305"
+     y="149.97354"
+     transform="rotate(-79.893557)" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Cottesloe"
+     width="10.583334"
+     height="10.583334"
+     x="0"
+     y="-24.517776"
+     inkscape:label="Cottesloe" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-24.517776"
+     x="11.641666"
+     height="10.583334"
+     width="10.583334"
+     id="Vasse"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Vasse" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-24.517776"
+     x="27.51667"
+     height="10.583334"
+     width="10.583334"
+     id="CentralWheatbelt"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="CentralWheatbelt" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="NorthWestCentral"
+     width="10.583334"
+     height="10.583334"
+     x="11.641666"
+     y="-10.766798"
+     inkscape:label="NorthWestCentral" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect7384"
+     width="10.583334"
+     height="10.583334"
+     x="55.03334"
+     y="-24.517776" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-24.517776"
+     x="66.675011"
+     height="10.583334"
+     width="10.583334"
+     id="rect7386"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-10.766798"
+     x="55.03334"
+     height="10.583334"
+     width="10.583334"
+     id="rect7396"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect7398"
+     width="10.583334"
+     height="10.583334"
+     x="66.675011"
+     y="-10.766798" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Roe"
+     width="10.583334"
+     height="10.583334"
+     x="27.51667"
+     y="-38.265942"
+     inkscape:label="Roe" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-38.265942"
+     x="39.158333"
+     height="10.583334"
+     width="10.583334"
+     id="Moore"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Moore" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     y="-38.265942"
+     x="55.03334"
+     height="10.583334"
+     width="10.583334"
+     id="Mirrabooka"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Mirrabooka" />
+  <rect
+     class="seat"
+     transform="scale(1,-1)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Albany"
+     width="10.583334"
+     height="10.583334"
+     x="66.675011"
+     y="-38.265942"
+     inkscape:label="Albany" />
+  <rect
+     class="seat"
+     transform="matrix(-0.70743437,-0.70677904,-0.70677904,0.70743437,0,0)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="ColliePreston"
+     width="10.582246"
+     height="10.582246"
+     x="-103.86768"
+     y="-43.992344"
+     inkscape:label="ColliePreston" />
+  <rect
+     class="seat"
+     transform="matrix(-0.99999989,4.6321037e-4,4.6321037e-4,0.99999989,0,0)"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="MountLawley"
+     width="10.582254"
+     height="10.582254"
+     x="-88.886124"
+     y="27.718878"
+     inkscape:label="MountLawley" />
+  <rect
+     class="seat"
+     y="-95.962242"
+     x="-87.331207"
+     height="10.582286"
+     width="10.582286"
+     id="rect7416"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="matrix(-0.38278856,-0.92383598,-0.92383598,0.38278856,0,0)" />
+  <rect
+     class="seat"
+     y="-21.21559"
+     x="-105.39277"
+     height="10.582285"
+     width="10.582285"
+     id="rect7418"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="matrix(-0.92392334,-0.38257765,-0.38257765,0.92392334,0,0)" />
+  <rect
+     class="seat"
+     y="13.974318"
+     x="-88.891968"
+     height="10.582254"
+     width="10.582254"
+     id="rect7420"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="matrix(-0.99999987,5.0911252e-4,5.0911252e-4,0.99999987,0,0)" />
+  <rect
+     class="seat"
+     transform="matrix(-0.19986338,-0.97982377,-0.97982377,0.19986338,0,0)"
+     y="-124.79597"
+     x="-72.831741"
+     height="10.582227"
+     width="10.582227"
+     id="rect7422"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="rect7422" />
+  <rect
+     class="seat"
+     transform="matrix(-0.59755,-0.80183165,-0.80183165,0.59755,0,0)"
+     y="-88.221382"
+     x="-102.11093"
+     height="10.58232"
+     width="10.58232"
+     id="rect7424"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="matrix(-0.7701894,-0.63781524,-0.63781524,0.7701894,0,0)"
+     y="-66.288315"
+     x="-103.6339"
+     height="10.58232"
+     width="10.58232"
+     id="rect7426"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="matrix(-0.96830721,-0.24976219,-0.24976219,0.96830721,0,0)"
+     y="-20.406013"
+     x="-100.98081"
+     height="10.582227"
+     width="10.582227"
+     id="rect7428"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     transform="matrix(-0.99999995,-3.2759829e-4,-3.2759829e-4,0.99999995,0,0)"
+     y="0.15780467"
+     x="-88.90255"
+     height="10.582207"
+     width="10.582207"
+     id="rect7430"
+     style="fill:#4d4d4d;fill-opacity:1" />
+  <rect
+     class="seat"
+     y="-123.36505"
+     x="50.834373"
+     height="10.583334"
+     width="10.583334"
+     id="rect8"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="rotate(90)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect9"
+     width="10.583334"
+     height="10.583334"
+     x="62.47604"
+     y="-123.36505"
+     transform="rotate(90)" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="Jandakot"
+     width="10.583334"
+     height="10.583334"
+     x="50.834373"
+     y="-109.56314"
+     transform="rotate(90)"
+     inkscape:label="Jandakot" />
+  <rect
+     class="seat"
+     y="-109.56314"
+     x="62.47604"
+     height="10.583334"
+     width="10.583334"
+     id="Butler"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="rotate(90)"
+     inkscape:label="Butler" />
+  <rect
+     class="seat"
+     style="fill:#4d4d4d;fill-opacity:1"
+     id="rect12"
+     width="10.583334"
+     height="10.583334"
+     x="50.834373"
+     y="-137.08638"
+     transform="rotate(90)" />
+  <rect
+     class="seat"
+     y="-137.08638"
+     x="62.47604"
+     height="10.583334"
+     width="10.583334"
+     id="rect13"
+     style="fill:#4d4d4d;fill-opacity:1"
+     transform="rotate(90)" />
+</svg>

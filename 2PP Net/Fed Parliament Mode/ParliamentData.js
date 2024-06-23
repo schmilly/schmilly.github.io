@@ -1,3 +1,6 @@
+ElectionDate= new Date(2022,4,22)
+ElectionDateStr = ElectionDate.toDateString();
+
 RawDataHeaderID = [
   "N/A",  "N/A",  "N/A",  "N/A",
   "LaP", 
@@ -20,6 +23,8 @@ PollList = [
 
 Location = {
   "ALP":5,
+  "ALP2PP":11,
+  "Lib2PP":12,
   "LaP":4,
   "Grn":6,
   "One":7,

@@ -1,8 +1,7 @@
- 
  const RawData = [
   [
     "14 December 2023 ",
-    "Redbridge[38] ",
+    "Redbridge",
     "1200",
     "44 ",
     "29 ",
@@ -15,7 +14,7 @@
   ],
   [
     "23 July 2023 ",
-    "Utting Research[39] ",
+    "Utting Research",
     "1000",
     "32 ",
     "37 ",
@@ -28,7 +27,7 @@
   ],
   [
     "31 May 2023 ",
-    "Utting Research[40] ",
+    "Utting Research",
     "800",
     "52 ",
     "28 ",
@@ -40,7 +39,7 @@
     "39 "
   ],
   [
-    "13 March 2021 election ",
+    "13 March 2021",
     "",
     "N/A ",
     "59.9 ",

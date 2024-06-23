@@ -1,7 +1,7 @@
  
  const RawData = [
    [
-     "10–16 June 2024",
+     "16 June 2024",
      "Roy Morgan",
      "Online",
      "1,724",
@@ -16,7 +16,7 @@
      "50"
    ],
    [
-     "14–16 June 2024",
+     "16 June 2024",
      "Freshwater Strategy",
      "Online",
      "1,060",
@@ -31,7 +31,7 @@
      "50"
    ],
    [
-     "3–9 June 2024",
+     "9 June 2024",
      "Roy Morgan",
      "Online",
      "1,687",
@@ -46,7 +46,7 @@
      "46.5"
    ],
    [
-     "3–7 June 2024",
+     "7 June 2024",
      "Newspoll",
      "Online",
          "1,232",
@@ -61,7 +61,7 @@
          "50"
      ],
      [
-         "31 May – 4 June 2024",
+         " 4 June 2024",
          "YouGov",
          "Online",
          "1,500",
@@ -76,7 +76,7 @@
          "50"
      ],
      [
-         "29 May – 2 June 2024",
+         " 2 June 2024",
          "Essential",
          "Online",
          "1,160",
@@ -91,7 +91,7 @@
          "48"
      ],
      [
-         "27 May – 2 June 2024",
+         " 2 June 2024",
          "Roy Morgan",
          "Online",
          "1,579",
@@ -106,7 +106,7 @@
          "48"
      ],
      [
-         "20–26 May 2024",
+         "26 May 2024",
          "Roy Morgan",
          "Online",
          "1,488",
@@ -121,7 +121,7 @@
          "51.5"
      ],
      [
-         "17–19 May 2024",
+         "19 May 2024",
          "Freshwater Strategy",
          "Online",
          "",
@@ -136,7 +136,7 @@
          "50"
      ],
      [
-         "16–19 May 2024",
+         "19 May 2024",
          "Essential",
          "Online",
          "1,149",
@@ -151,7 +151,7 @@
          "47"
      ],
      [
-         "15–19 May 2024",
+         "19 May 2024",
          "Resolve Strategic",
          "Online",
          "1,602",
@@ -166,7 +166,7 @@
          "50"
      ],
      [
-         "13–19 May 2024",
+         "19 May 2024",
          "Roy Morgan",
          "Online",
          "1,674",
@@ -181,7 +181,7 @@
          "49.5"
      ],
      [
-         "16–18 May 2024",
+         "18 May 2024",
          "Newspoll",
          "Online",
          "1,280",
@@ -196,7 +196,7 @@
          "48"
      ],
      [
-         "10–14 May 2024",
+         "14 May 2024",
          "YouGov",
          "Online",
          "1,506",
@@ -211,7 +211,7 @@
          "50"
      ],
      [
-         "6–12 May 2024",
+         "12 May 2024",
          "Roy Morgan",
          "Online",
          "1,654",
@@ -226,7 +226,7 @@
          "48"
      ],
      [
-         "1–5 May 2024",
+         "5 May 2024",
          "Essential",
          "Online",
          "1,150",
@@ -241,7 +241,7 @@
          "47"
      ],
      [
-         "29 April – 5 May 2024",
+         " 5 May 2024",
          "Roy Morgan",
          "Online",
          "1,666",
@@ -256,7 +256,7 @@
          "48"
      ],
      [
-         "22–28 April 2024",
+         "28 April 2024",
          "Roy Morgan",
          "Online",
          "1,719",
@@ -271,7 +271,7 @@
          "48"
      ],
      [
-         "19–23 April 2024",
+         "23 April 2024",
          "YouGov",
          "Online",
          "1,514",
@@ -286,7 +286,7 @@
          "48"
      ],
      [
-         "17–21 April 2024",
+         "21 April 2024",
          "Essential",
          "Online",
          "1,145",
@@ -301,7 +301,7 @@
          "49"
      ],
      [
-         "17–21 April 2024",
+         "21 April 2024",
          "Resolve Strategic",
          "Online",
          "1,610",
@@ -316,7 +316,7 @@
          "50"
      ],
      [
-         "15–21 April 2024",
+         "21 April 2024",
          "Roy Morgan",
          "Online",
          "1,617",
@@ -331,7 +331,7 @@
          "48"
      ],
      [
-         "12–21 April 2024",
+         "21 April 2024",
          "RedBridge Group",
          "Online",
          "1,529",
@@ -346,7 +346,7 @@
          "48"
      ],
      [
-         "15–18 April 2024",
+         "18 April 2024",
          "Newspoll",
          "Online",
          "1,236",
@@ -361,7 +361,7 @@
          "49"
      ],
      [
-         "12–14 April 2024",
+         "14 April 2024",
          "Freshwater Strategy",
          "Online",
          "1,055",
@@ -376,7 +376,7 @@
          "50"
      ],
      [
-         "8–14 April 2024",
+         "14 April 2024",
          "Roy Morgan",
          "Online",
          "1,706",
@@ -391,7 +391,7 @@
          "51"
      ],
      [
-         "3–7 April 2024",
+         "7 April 2024",
          "Essential",
          "Online",
          "1,165",
@@ -406,7 +406,7 @@
          "46"
      ],
      [
-         "1–7 April 2024",
+         "7 April 2024",
          "Roy Morgan",
          "Online",
          "1,731",
@@ -421,7 +421,7 @@
          "50.5"
      ],
      [
-         "25–31 March 2024",
+         "31 March 2024",
          "Roy Morgan",
          "Online",
          "1,677",
@@ -437,7 +437,7 @@
      ],
 
      [
-         "22–27 March 2024",
+         "27 March 2024",
          "YouGov",
          "Online",
          "1,513",
@@ -452,7 +452,7 @@
          "49"
      ],
      [
-         "21–24 March 2024",
+         "24 March 2024",
          "Resolve Strategic",
          "Online",
          "1,610",
@@ -467,7 +467,7 @@
          "47"
      ],
      [
-         "20–24 March 2024",
+         "24 March 2024",
          "Essential",
          "Online",
          "1,150",
@@ -482,7 +482,7 @@
          "50"
      ],
      [
-         "18–24 March 2024",
+         "24 March 2024",
          "Roy Morgan",
          "Online",
          "1,633",
@@ -497,7 +497,7 @@
          "50"
      ],
      [
-         "18–22 March 2024",
+         "22 March 2024",
          "Newspoll",
          "Online",
          "1,223",
@@ -512,7 +512,7 @@
          "49"
      ],
      [
-         "11–17 March 2024",
+         "17 March 2024",
          "Roy Morgan",
          "Online",
          "1,710",
@@ -527,7 +527,7 @@
          "48.5"
      ],
      [
-         "8–10 March 2024",
+         "10 March 2024",
          "Freshwater Strategy",
          "Online",
          "1,051",
@@ -542,7 +542,7 @@
          "49"
      ],
      [
-         "4–10 March 2024",
+         "10 March 2024",
          "Roy Morgan",
          "Online",
          "1,714",
@@ -557,7 +557,7 @@
          "48.5"
      ],
      [
-         "5–9 March 2024",
+         "9 March 2024",
          "Essential",
          "Online",
          "1,126",
@@ -572,7 +572,7 @@
          "47"
      ],
      [
-         "24 February – 5 March 2024",
+         " 5 March 2024",
          "YouGov[1]",
          "Online",
          "1539",
@@ -587,7 +587,7 @@
          "48"
      ],
      [
-         "26 February – 3 March 2024",
+         " 3 March 2024",
          "Roy Morgan[2]",
          "Online",
          "1679",
@@ -602,7 +602,7 @@
          "46.50"
      ],
      [
-         "21–25 February 2024",
+         "25 February 2024",
          "Essential[3]",
          "Online",
          "1145",
@@ -617,7 +617,7 @@
          "48"
      ],
      [
-         "19–25 February 2024",
+         "25 February 2024",
          "Roy Morgan[4]",
          "Online",
          "1682",
@@ -632,7 +632,7 @@
          "50"
      ],
      [
-         "19–23 February 2024",
+         "23 February 2024",
          "Newspoll[6]",
          "Online",
          "1245",
@@ -647,7 +647,7 @@
          "48"
      ],
      [
-         "16–18 February 2024",
+         "18 February 2024",
          "Freshwater Strategy[7]",
          "Online",
          "1049",
@@ -662,7 +662,7 @@
          "49"
      ],
      [
-         "12–18 February 2024",
+         "18 February 2024",
          "Roy Morgan[8]",
          "Online",
          "1706",
@@ -677,7 +677,7 @@
          "47.50"
      ],
      [
-         "7–11 February 2024",
+         "11 February 2024",
          "Essential[3]",
          "Online",
          "1148",
@@ -692,7 +692,7 @@
          "46"
      ],
      [
-         "5–11 February 2024",
+         "11 February 2024",
          "Roy Morgan[9]",
          "Online",
          "1699",
@@ -707,7 +707,7 @@
          "48"
      ],
      [
-         "2–7 February 2024",
+         "7 February 2024",
          "YouGov[10]",
          "Online",
          "1502",
@@ -722,7 +722,7 @@
          "48"
      ],
      [
-         "30 January – 7 February 2024",
+         " 7 February 2024",
          "RedBridge Group[11]",
          "Online",
          "2040",
@@ -737,7 +737,7 @@
          "48.80"
      ],
      [
-         "29 January – 4 February 2024",
+         " 4 February 2024",
          "Roy Morgan[12]",
          "Online",
          "1709",
@@ -752,7 +752,7 @@
          "47"
      ],
      [
-         "31 January – 3 February 2024",
+         " 3 February 2024",
          "Newspoll[13]",
          "Online",
          "1245",
@@ -767,7 +767,7 @@
          "48"
      ],
      [
-         "24–28 January 2024",
+         "28 January 2024",
          "Essential[3]",
          "Online",
          "1201",
@@ -782,7 +782,7 @@
          "46"
      ],
      [
-         "22–28 January 2024",
+         "28 January 2024",
          "Roy Morgan[14]",
          "Online",
          "1688",
@@ -797,7 +797,7 @@
          "49.50"
      ],
      [
-         "15–21 January 2024",
+         "21 January 2024",
          "Roy Morgan[15]",
          "Online",
          "1675",
@@ -812,7 +812,7 @@
          "47.50"
      ],
      [
-         "12–17 January 2024",
+         "17 January 2024",
          "YouGov[16]",
          "Online",
          "1532",
@@ -827,7 +827,7 @@
          "48"
      ],
      [
-         "8–14 January 2024",
+         "14 January 2024",
          "Roy Morgan[17]",
          "Online",
          "1727",
@@ -842,7 +842,7 @@
          "48.50"
      ],
      [
-         "10–11 January 2024",
+         "11 January 2024",
          "Freshwater Strategy[18][19][20]",
          "Online",
          "1007",
@@ -857,7 +857,7 @@
          "50"
      ],
      [
-         "2–7 January 2024",
+         "7 January 2024",
          "Roy Morgan[21]",
          "Online",
          "1716",
@@ -872,7 +872,7 @@
          "51"
      ],
      [
-         "15–17 December 2023",
+         "17 December 2023",
          "Freshwater Strategy[22]",
          "Online",
          "1109",
@@ -887,7 +887,7 @@
          "50"
      ],
      [
-         "11–17 December 2023",
+         "17 December 2023",
          "Roy Morgan[23]",
          "Online",
          "1109",
@@ -902,7 +902,7 @@
          "50"
      ],
      [
-         "11–15 December 2023",
+         "15 December 2023",
          "Newspoll[24]",
          "Online",
          "1219",
@@ -917,7 +917,7 @@
          "48"
      ],
      [
-         "6–11 December 2023",
+         "11 December 2023",
          "Essential[3]",
          "Online",
          "1102",
@@ -932,7 +932,7 @@
          "46"
      ],
      [
-         "6–11 December 2023",
+         "11 December 2023",
          "RedBridge Group[25]",
          "Online",
          "2010",
@@ -947,7 +947,7 @@
          "47.20"
      ],
      [
-         "1–5 December 2023",
+         "5 December 2023",
          "YouGov[26][27]",
          "Online",
          "1555",
@@ -962,7 +962,7 @@
          "49"
      ],
      [
-         "29 November – 3 December 2023",
+         " 3 December 2023",
          "Resolve Strategic[28][29]",
          "Online",
          "1605",
@@ -977,7 +977,7 @@
          "45"
      ],
      [
-         "27 November – 3 December 2023",
+         " 3 December 2023",
          "Roy Morgan[30]",
          "0",
          "1730",
@@ -992,7 +992,7 @@
          "49"
      ],
      [
-         "22–26 November 2023",
+         "26 November 2023",
          "Essential[3]",
          "Online",
          "1151",
@@ -1007,7 +1007,7 @@
          "47"
      ],
      [
-         "20–26 November 2023",
+         "26 November 2023",
          "Roy Morgan[31]",
          "0",
          "1379",
@@ -1022,7 +1022,7 @@
          "47.50"
      ],
      [
-         "20–24 November 2023",
+         "24 November 2023",
          "Newspoll[32]",
          "Online",
          "1216",
@@ -1037,7 +1037,7 @@
          "50"
      ],
      [
-         "13–19 November 2023",
+         "19 November 2023",
          "Roy Morgan[33]",
          "0",
          "1401",
@@ -1052,7 +1052,7 @@
          "50.50"
      ],
      [
-         "10–14 November 2023",
+         "14 November 2023",
          "YouGov[34]",
          "Online",
          "1582",
@@ -1067,7 +1067,7 @@
          "49"
      ],
      [
-         "8–12 November 2023",
+         "12 November 2023",
          "Essential[3]",
          "Online",
          "1150",
@@ -1082,7 +1082,7 @@
          "47"
      ],
      [
-         "6–12 November 2023",
+         "12 November 2023",
          "Roy Morgan[35]",
          "0",
          "1397",
@@ -1097,7 +1097,7 @@
          "50"
      ],
      [
-         "1–5 November 2023",
+         "5 November 2023",
          "Resolve Strategic[36]",
          "Online",
          "1602",
@@ -1112,7 +1112,7 @@
          "43"
      ],
      [
-         "30 October – 3 November 2023",
+         " 3 November 2023",
          "Newspoll[37]",
          "Online",
          "1220",
@@ -1127,7 +1127,7 @@
          "48"
      ],
      [
-         "27 October – 2 November 2023",
+         " 2 November 2023",
          "RedBridge Group[38]",
          "Online",
          "1205",
@@ -1142,7 +1142,7 @@
          "46.50"
      ],
      [
-         "25–29 October 2023",
+         "29 October 2023",
          "Essential[3]",
          "Online",
          "1149",
@@ -1157,7 +1157,7 @@
          "46"
      ],
      [
-         "23–29 October 2023",
+         "29 October 2023",
          "Roy Morgan[39]",
          "0",
          "1375",
@@ -1172,7 +1172,7 @@
          "47"
      ],
      [
-         "16–22 October 2023",
+         "22 October 2023",
          "Roy Morgan[40]",
          "0",
          "1383",
@@ -1187,7 +1187,7 @@
          "50.50"
      ],
      [
-         "4–12 October 2023",
+         "12 October 2023",
          "Newspoll[41]",
          "Online",
          "2638",
@@ -1202,7 +1202,7 @@
          "46"
      ],
      [
-         "6–10 October 2023",
+         "10 October 2023",
          "YouGov[42]",
          "Online",
          "1519",
@@ -1217,7 +1217,7 @@
          "47"
      ],
      [
-         "3–6 October 2023",
+         "6 October 2023",
          "Newspoll[43][44]",
          "Online",
          "1225",
@@ -1232,7 +1232,7 @@
          "47"
      ],
      [
-         "22 September – 4 October 2023",
+         " 4 October 2023",
          "Resolve Strategic[45][46]",
          "Online",
          "4728",
@@ -1247,7 +1247,7 @@
          "43"
      ],
      [
-         "27 September – 1 October 2023",
+         " 1 October 2023",
          "Essential[3]",
          "Online",
          "1125",
@@ -1262,7 +1262,7 @@
          "45"
      ],
      [
-         "25–29 September 2023",
+         "29 September 2023",
          "YouGov[47][48]",
          "Online",
          "1563",
@@ -1277,7 +1277,7 @@
          "47"
      ],
      [
-         "22–24 September 2023",
+         "24 September 2023",
          "Freshwater Strategy[49]",
          "Online",
          "1003",
@@ -1292,7 +1292,7 @@
          "49"
      ],
      [
-         "18–22 September 2023",
+         "22 September 2023",
          "Newspoll[50][51]",
          "Online",
          "1239",
@@ -1307,7 +1307,7 @@
          "46"
      ],
      [
-         "13–17 September 2023",
+         "17 September 2023",
          "Essential[3]",
          "Online",
          "1135",
@@ -1322,7 +1322,7 @@
          "45"
      ],
      [
-         "4–10 September 2023",
+         "10 September 2023",
          "Roy Morgan[52]",
          "0",
          "1382",
@@ -1337,7 +1337,7 @@
          "47.50"
      ],
      [
-         "6–9 September 2023",
+         "9 September 2023",
          "Resolve Strategic[53][54]",
          "Online",
          "1604",
@@ -1352,7 +1352,7 @@
          "44.50"
      ],
      [
-         "30 August – 4 September 2023",
+         " 4 September 2023",
          "RedBridge Group[55]",
          "Online",
          "1001",
@@ -1367,7 +1367,7 @@
          "45.90"
      ],
      [
-         "30 August – 3 September 2023",
+         " 3 September 2023",
          "Essential[3]",
          "Online",
          "1151",
@@ -1382,7 +1382,7 @@
          "43"
      ],
      [
-         "28 August – 3 September 2023",
+         " 3 September 2023",
          "Roy Morgan[56]",
          "0",
          "1404",
@@ -1397,7 +1397,7 @@
          "47"
      ],
      [
-         "28 August – 1 September 2023",
+         " 1 September 2023",
          "Newspoll[57]",
          "Online",
          "1200",
@@ -1412,7 +1412,7 @@
          "47"
      ],
      [
-         "16–20 August 2023",
+         "20 August 2023",
          "Essential[3][58]",
          "Online",
          "1151",
@@ -1427,7 +1427,7 @@
          "43"
      ],
      [
-         "10–14 August 2023",
+         "14 August 2023",
          "RedBridge Group[59]",
          "Online",
          "1010",
@@ -1442,7 +1442,7 @@
          "44.40"
      ],
      [
-         "9–13 August 2023",
+         "13 August 2023",
          "Resolve Strategic[60][61]",
          "Online",
          "1603",
@@ -1457,7 +1457,7 @@
          "44"
      ],
      [
-         "2–6 August 2023",
+         "6 August 2023",
          "Essential[3][62]",
          "Online",
          "1150",
@@ -1472,7 +1472,7 @@
          "42"
      ],
      [
-         "19–23 July 2023",
+         "23 July 2023",
          "Essential[3][63]",
          "Online",
          "1150",
@@ -1487,7 +1487,7 @@
          "45"
      ],
      [
-         "12–15 July 2023",
+         "15 July 2023",
          "Resolve Strategic[64][65]",
          "Online",
          "1610",
@@ -1502,7 +1502,7 @@
          "41.00"
      ],
      [
-         "12–15 July 2023",
+         "15 July 2023",
          "Newspoll[66][67]",
          "Online",
          "1570",
@@ -1517,7 +1517,7 @@
          "45"
      ],
      [
-         "5–9 July 2023",
+         "9 July 2023",
          "Essential[3][68]",
          "Online",
          "2248",
@@ -1532,7 +1532,7 @@
          "44"
      ],
      [
-         "21–25 June 2023",
+         "25 June 2023",
          "Essential[3]",
          "Online",
          "1148",
@@ -1547,7 +1547,7 @@
          "42"
      ],
      [
-         "16–24 June 2023",
+         "24 June 2023",
          "Newspoll[69][70]",
          "Online",
          "2303",
@@ -1562,7 +1562,7 @@
          "46"
      ],
      [
-         "7–11 June 2023",
+         "11 June 2023",
          "Essential[3]",
          "Online",
          "1123",
@@ -1577,7 +1577,7 @@
          "42"
      ],
      [
-         "6–11 June 2023",
+         "11 June 2023",
          "Resolve Strategic[71][72]",
          "Online",
          "1606",
@@ -1592,7 +1592,7 @@
          "40"
      ],
      [
-         "31 May – 3 June 2023",
+         " 3 June 2023",
          "Newspoll[73][74]",
          "Online",
          "1549",
@@ -1607,7 +1607,7 @@
          "45"
      ],
      [
-         "24–28 May 2023",
+         "28 May 2023",
          "Essential[3]",
          "Online",
          "1138",
@@ -1622,7 +1622,7 @@
          "43"
      ],
      [
-         "15–17 May 2023",
+         "17 May 2023",
          "Freshwater Strategy[75][76]",
          "Online",
          "1005",
@@ -1637,7 +1637,7 @@
          "48"
      ],
      [
-         "10–14 May 2023",
+         "14 May 2023",
          "Essential[3][77]",
          "Online",
          "1080",
@@ -1652,7 +1652,7 @@
          "42"
      ],
      [
-         "11–13 May 2023",
+         "13 May 2023",
          "Newspoll[78][79]",
          "Online",
          "1516",
@@ -1667,7 +1667,7 @@
          "45"
      ],
      [
-         "10–13 May 2023",
+         "13 May 2023",
          "Resolve Strategic[80][81]",
          "Online",
          "1610",
@@ -1682,7 +1682,7 @@
          "39"
      ],
      [
-         "26–30 April 2023",
+         "30 April 2023",
          "Essential[3][82]",
          "Online",
          "1130",
@@ -1697,7 +1697,7 @@
          "41"
      ],
      [
-         "19–22 April 2023",
+         "22 April 2023",
          "Newspoll[83][84]",
          "Online",
          "1514",
@@ -1712,7 +1712,7 @@
          "44"
      ],
      [
-         "12–16 April 2023",
+         "16 April 2023",
          "Essential[3][85]",
          "Online",
          "1136",
@@ -1727,7 +1727,7 @@
          "43"
      ],
      [
-         "12–16 April 2023",
+         "16 April 2023",
          "Resolve Strategic[86][87]",
          "Online",
          "1609",
@@ -1742,7 +1742,7 @@
          "38"
      ],
      [
-         "29 March – 2 April 2023",
+         " 2 April 2023",
          "Essential[3][88]",
          "Online",
          "1133",
@@ -1757,7 +1757,7 @@
          "42"
      ],
      [
-         "29 March – 1 April 2023",
+         " 1 April 2023",
          "Newspoll[89]",
          "Online",
          "1500",
@@ -1772,7 +1772,7 @@
          "45"
      ],
      [
-         "15–20 March 2023",
+         "20 March 2023",
          "Essential[3][90]",
          "Online",
          "1124",
@@ -1787,7 +1787,7 @@
          "43"
      ],
      [
-         "12–16 March 2023",
+         "16 March 2023",
          "Resolve Strategic[91][90]",
          "Online",
          "1600",
@@ -1802,7 +1802,7 @@
          "40"
      ],
      [
-         "1–5 March 2023",
+         "5 March 2023",
          "Essential[3]",
          "Online",
          "1141",
@@ -1817,7 +1817,7 @@
          "44.00"
      ],
      [
-         "27 February – 5 March 2023",
+         " 5 March 2023",
          "Roy Morgan",
          "0",
          "0",
@@ -1832,7 +1832,7 @@
          "45"
      ],
      [
-         "1–4 March 2023",
+         "4 March 2023",
          "Newspoll[92]",
          "Online",
          "1530",
@@ -1847,7 +1847,7 @@
          "46"
      ],
      [
-         "20–26 February 2023",
+         "26 February 2023",
          "Roy Morgan",
          "0",
          "0",
@@ -1862,7 +1862,7 @@
          "43.50"
      ],
      [
-         "15–19 February 2023",
+         "19 February 2023",
          "Essential[3]",
          "Online",
          "1044",
@@ -1877,7 +1877,7 @@
          "42"
      ],
      [
-         "15–19 February 2023",
+         "19 February 2023",
          "Resolve Strategic[93][94]",
          "Online",
          "1604",
@@ -1892,7 +1892,7 @@
          "42"
      ],
      [
-         "13–19 February 2023",
+         "19 February 2023",
          "Roy Morgan",
          "Online/Telephone",
          "0",
@@ -1907,7 +1907,7 @@
          "41"
      ],
      [
-         "1–6 February 2023",
+         "6 February 2023",
          "Essential[3]",
          "Online",
          "1000",
@@ -1922,7 +1922,7 @@
          "40.00"
      ],
      [
-         "1–4 February 2023",
+         "4 February 2023",
          "Newspoll[95][96]",
          "Online",
          "1512",
@@ -1937,7 +1937,7 @@
          "45"
      ],
      [
-         "23–29 January 2023",
+         "29 January 2023",
          "Roy Morgan",
          "0",
          "0",
@@ -1952,7 +1952,7 @@
          "43.00"
      ],
      [
-         "18–22 January 2023",
+         "22 January 2023",
          "Essential[3][97]",
          "Online",
          "1050",
@@ -1967,7 +1967,7 @@
          "42"
      ],
      [
-         "17–22 January 2023",
+         "22 January 2023",
          "Resolve Strategic[98][97]",
          "Online",
          "1606",
@@ -1982,7 +1982,7 @@
          "40.00"
      ],
      [
-         "16–18 December 2022",
+         "18 December 2022",
          "Freshwater Strategy[99][100][101]",
          "Online",
          "1209",
@@ -1997,7 +1997,7 @@
          "46"
      ],
      [
-         "7–11 December 2022",
+         "11 December 2022",
          "Essential[3]",
          "Online",
          "1042",
@@ -2012,7 +2012,7 @@
          "44"
      ],
      [
-         "30 November–4 December 2022",
+         "4 December 2022",
          "Resolve Strategic[102][103]",
          "Online",
          "1611",
@@ -2027,7 +2027,7 @@
          "40"
      ],
      [
-         "30 November–3 December 2022",
+         "3 December 2022",
          "Newspoll[104]",
          "Online",
          "1508",
@@ -2042,7 +2042,7 @@
          "45"
      ],
      [
-         "23–27 November 2022",
+         "27 November 2022",
          "Essential[104][105]",
          "Online",
          "1042",
@@ -2057,7 +2057,7 @@
          "43"
      ],
      [
-         "27–30 October 2022",
+         "30 October 2022",
          "Newspoll-YouGov[106]",
          "Online",
          "1500",
@@ -2072,7 +2072,7 @@
          "45"
      ],
      [
-         "26–30 October 2022",
+         "30 October 2022",
          "Resolve Strategic[107][106]",
          "Online",
          "1611",
@@ -2087,7 +2087,7 @@
          "42.60"
      ],
      [
-         "5–9 October 2022",
+         "9 October 2022",
          "Resolve Strategic[108][109]",
          "Online",
          "1604",
@@ -2102,7 +2102,7 @@
          "41.70"
      ],
      [
-         "14–18 September 2022",
+         "18 September 2022",
          "Resolve Strategic[110][111]",
          "Online",
          "1607",
@@ -2117,7 +2117,7 @@
          "43"
      ],
      [
-         "31 August–3 September 2022",
+         "3 September 2022",
          "Newspoll-YouGov[112][113]",
          "Online",
          "1505",
@@ -2132,7 +2132,7 @@
          "43"
      ],
      [
-         "17–21 August 2022",
+         "21 August 2022",
          "Resolve Strategic[114][115]",
          "Online",
          "2011",
@@ -2147,7 +2147,7 @@
          "38.70"
      ],
      [
-         "27–30 July 2022",
+         "30 July 2022",
          "Newspoll-YouGov[116][117]",
          "Online",
          "1508",
@@ -2162,7 +2162,7 @@
          "44"
      ],
      [
-         "14–17 June 2022",
+         "17 June 2022",
          "Dynata[118]",
          "Online",
          "1001",
@@ -2177,7 +2177,7 @@
          "47.80"
      ],
      [
-         "13–19 June 2022",
+         "19 June 2022",
          "Roy Morgan[119]",
          "Online/telephone",
          "1401",
@@ -2192,8 +2192,8 @@
          "47"
      ],
      [
-         "–21-May-22",
-         "Election[121][122]",
+         "21-may-2022",
+         "Election",
          "",
          "",
          "35.70",

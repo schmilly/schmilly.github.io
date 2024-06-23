@@ -81,7 +81,7 @@ function SetSeatColor(ParliamentList,MapMode){
   })
 };
 
-var svgUrl2    = "Australian_House_of_Representatives_chart.svg";
+var svgUrl2    = "Western_Australian_Legislative_AssemblyComposition_of_Members.svg";
 var container2 = $("#container2");
 $.get(svgUrl2) 
   .then(injectParliament)
