@@ -19,13 +19,13 @@
      inkscape:window-maximized="0"
      inkscape:window-y="0"
      inkscape:window-x="0"
-     inkscape:cy="215.72815"
-     inkscape:cx="328.97614"
+     inkscape:cy="393.9545"
+     inkscape:cx="328.60484"
      inkscape:zoom="1.3466022"
      showgrid="false"
      id="namedview65"
      inkscape:window-height="979"
-     inkscape:window-width="2220"
+     inkscape:window-width="1917"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      guidetolerance="10"
@@ -67,8 +67,9 @@
      x="-23.852194"
      height="10.58232"
      width="10.58232"
-     id="rect7335"
-     style="fill:#4d4d4d;fill-opacity:1" />
+     id="Willagee"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Willagee" />
   <rect
      class="seat"
      transform="rotate(126.69463)"
@@ -76,8 +77,9 @@
      x="-1.3951118"
      height="10.58232"
      width="10.58232"
-     id="rect7333"
-     style="fill:#4d4d4d;fill-opacity:1" />
+     id="Cannington"
+     style="fill:#4d4d4d;fill-opacity:1"
+     inkscape:label="Cannington" />
   <rect
      class="seat"
      y="101.26204"
@@ -246,20 +248,22 @@
      class="seat"
      transform="rotate(112.50652)"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect3704"
+     id="SouthernRiver"
      width="10.582286"
      height="10.582286"
      x="25.514944"
-     y="-142.71971" />
+     y="-142.71971"
+     inkscape:label="SouthernRiver" />
   <rect
      class="seat"
      transform="rotate(157.50656)"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect3015"
+     id="SwanHills"
      width="10.582285"
      height="10.582285"
      x="-58.41206"
-     y="-134.67384" />
+     y="-134.67384"
+     inkscape:label="SwanHills" />
   <rect
      class="seat"
      transform="rotate(-179.97083)"
@@ -273,30 +277,33 @@
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect0391"
+     id="Pilbara"
      width="10.582227"
      height="10.582227"
      x="48.69659"
      y="-149.58519"
-     transform="rotate(101.52897)" />
+     transform="rotate(101.52897)"
+     inkscape:label="Pilbara" />
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect4335"
+     id="Bicton"
      width="10.58232"
      height="10.58232"
      x="-1.3918912"
      y="-160.14487"
-     transform="rotate(126.69463)" />
+     transform="rotate(126.69463)"
+     inkscape:label="Bicton" />
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect3712"
+     id="Rockingham"
      width="10.58232"
      height="10.58232"
      x="-24.058172"
      y="-158.362"
-     transform="rotate(140.3709)" />
+     transform="rotate(140.3709)"
+     inkscape:label="Rockingham" />
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
@@ -320,21 +327,23 @@
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect3374"
+     id="Maylands"
      width="10.581078"
      height="10.581078"
      x="-73.204308"
      y="140.16158"
-     transform="rotate(-90.057523)" />
+     transform="rotate(-90.057523)"
+     inkscape:label="Maylands" />
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect1921"
+     id="Thornlie"
      width="10.581095"
      height="10.581095"
      x="-62.764305"
      y="149.97354"
-     transform="rotate(-79.893557)" />
+     transform="rotate(-79.893557)"
+     inkscape:label="Thornlie" />
   <rect
      class="seat"
      transform="scale(1,-1)"
@@ -556,12 +565,13 @@
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
-     id="rect9"
+     id="Riverton"
      width="10.583334"
      height="10.583334"
      x="62.47604"
      y="-123.36505"
-     transform="rotate(90)" />
+     transform="rotate(90)"
+     inkscape:label="Riverton" />
   <rect
      class="seat"
      style="fill:#4d4d4d;fill-opacity:1"
@@ -597,7 +607,8 @@
      x="62.47604"
      height="10.583334"
      width="10.583334"
-     id="rect13"
+     id="MurrayWellington"
      style="fill:#4d4d4d;fill-opacity:1"
-     transform="rotate(90)" />
+     transform="rotate(90)"
+     inkscape:label="MurrayWellington" />
 </svg>
