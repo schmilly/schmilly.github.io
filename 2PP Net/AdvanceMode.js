@@ -66,6 +66,27 @@ function ChartDataCreate(DataSets) {
     },
     options: {
       plugins: {
+        tooltip: {
+          callbacks: {
+
+            label: function(context) {
+              let label = "Date " || '';
+
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.x !== null) {
+                tickDate = new Date(ElectionDateStr);
+                tickDate.setDate(tickDate.getDate() + context.parsed.x)
+                label += tickDate.toLocaleDateString();
+              }
+              if (context.parsed.y !== null){
+                label += ", Net 2PP: " + context.parsed.y + "%"
+              }
+              return label;
+            }
+          }
+        },
         zoom: {
           pan: {
             enabled: true,
