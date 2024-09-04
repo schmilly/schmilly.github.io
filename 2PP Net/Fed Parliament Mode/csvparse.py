@@ -15,7 +15,7 @@ def calculate_preference_flow(data):
 
     rounds = data['CountNumber'].max()
     ElimParty = ""
-    for round_num in range(rounds):
+    for round_num in range(rounds+1):
         round_data = data[data['CountNumber'] == round_num]
 
         # Determine the candidate with the lowest preference count
