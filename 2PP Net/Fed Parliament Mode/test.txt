@@ -1,0 +1,3 @@
+Empty DataFrame
+Columns: [CalculationType, CalculationValue]
+Index: []
