@@ -99,14 +99,45 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
       Vote.Oth = Vote.Oth + element[1]
     }
   });
-  PollList.forEach((PartyID)=> {
+  OtherCount = 0;
+  LibNatCount = 0;
+  ContainsOther = false
+  Object.keys(SeatPrim).forEach((PartyID) => {
+    eval("SwingID = PollIDConvert." + PartyID)
+    if (PartyID == "Oth")
+      ContainsOther = true
+    if (SwingID == undefined || SwingID == "Oth"){
+      SwingID = "Oth"
+      OtherCount = OtherCount + 1
+    }
+    else if(SwingID == "LaP"){
+      LibNatCount = LibNatCount + 1
+    }
+  })
+  if (!ContainsOther)
+    SeatPrim.Oth = 0
+    OtherCount = OtherCount + 1
+  Object.keys(SeatPrim).forEach((PartyID)=> {
+    eval("SetPartyName = PartyNameArray."+ PartyID)      
+    eval("SwingID = PollIDConvert." + PartyID)
+    if (SwingID == undefined){
+      SwingID = "Oth"}
     eval("PartyColored = PartyColor."+ PartyID)
     eval("SetPartyName = PartyNameArray."+ PartyID)
-    eval("PartySwing = Swing." + PartyID)
-    eval("PartyVote = Vote."+ PartyID)
+    if (SwingID == "Oth")
+      eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
+    else if (SwingID == "LaP")
+      eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
+    else
+      eval("PartySwing = Swing." + SwingID)
+    eval("PartyVote = SeatPrim."+ PartyID)
     NewPrim = PartyVote + PartySwing
     FinalVote = NewPrim
     if (FinalVote < 0){
+      Swing.Oth = Swing.Oth + FinalVote
+      FinalVote = 0
+    }
+    else if (SetPartyName == undefined){
       Swing.Oth = Swing.Oth + FinalVote
       FinalVote = 0
     }
@@ -118,13 +149,22 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     VoteSwing.push(FinalVote)
     postionInArray = postionInArray + 1
   })
-  while(Data.datasets.length > postionInArray){
-    Data.datasets.pop();
-  } 
   if (Math.round(Sum(VoteSwing)) != 100){
     console.log("Error; Values do not add up to 100: " + VoteSwing) 
     console.log("Sums to:" + Sum(VoteSwing))
+    if (Math.round(Sum(VoteSwing)) < 100){
+     console.log("Fixing by increasing final entry")
+     Data.datasets[postionInArray] = {
+      label: "Other (Rounded Up)",
+      data: [100 - Math.round(Sum(VoteSwing))],
+      backgroundColor: PartyColor.Oth
+    }
+    }
   }
+  while(Data.datasets.length > postionInArray+1){
+    Data.datasets.pop();
+  } 
+
   return Data;
 }
 
