@@ -198,7 +198,6 @@ function GetElcFirPref(ElcID,Data){
       othervote = othervote + element[1]
     }
   });
-
   Data.datasets[postionInArray] = {
     label: "Other",
     data: [othervote],

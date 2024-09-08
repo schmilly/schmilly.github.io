@@ -75,6 +75,8 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     "UAP":Poll[Location.UAP]*Scaler - BaseLine[Location.UAP],
     "Oth":Poll[Location.Oth]*Scaler - BaseLine[Location.Oth]
   }
+
+
   Vote = {
     "ALP":0.00,
     "LaP":0.00,
@@ -83,40 +85,63 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     "UAP":0.00,
     "Oth":0.00
   }
+
+
   VoteSwing = []
   eval("SeatPrim = FirstPref." + ElcID)
   var othervote = 0.00;
   var postionInArray = 0
+  OtherCount = 1;
+  LibNatCount = 0;
+  Total = 0;
+  ContainsOther = false
+
   Object.entries(SeatPrim).forEach((element) => {
-    eval("PartyID = PollIDConvert." + element[0])
-    if (PartyID != undefined){ 
-      eval("Vote." + PartyID  + " = Vote." + PartyID +" + element[1]")
-      //console.log(PartyID + " : " + Vote.Oth)
+    PartyID = element[0]
+    eval("SwingID = PollIDConvert." + element[0])
+
+
+
+    if (SwingID != undefined) { 
+      eval("Vote." + SwingID  + " = Vote." + SwingID +" + element[1]")
+    //console.log(SwingID + " : " + Vote.Oth)
     }
     else{
       //console.log("Couldn't find Party with ID " + element[0])
       //console.log("Adding votes of "+ element[1] +  " to other vote")
       Vote.Oth = Vote.Oth + element[1]
     }
-  });
-  OtherCount = 0;
-  LibNatCount = 0;
-  ContainsOther = false
-  Object.keys(SeatPrim).forEach((PartyID) => {
-    eval("SwingID = PollIDConvert." + PartyID)
+
     if (PartyID == "Oth")
-      ContainsOther = true
+    ContainsOther = true
     if (SwingID == undefined || SwingID == "Oth"){
-      SwingID = "Oth"
       OtherCount = OtherCount + 1
     }
     else if(SwingID == "LaP"){
       LibNatCount = LibNatCount + 1
+    } 
+  });
+
+  KeyIDs = Object.keys(Vote)
+  VoteIDs = Object.keys(SeatPrim) 
+  for ( i = 0; i < KeyIDs.length; i = i + 1){
+    InPrimVote = false
+    for (x = 0; x < VoteIDs.length; x = x + 1){
+      eval ("CheckID = PollIDConvert." + VoteIDs[x])
+      if (KeyIDs[i] == CheckID){
+        InPrimVote = true
+        break;
+      }
     }
-  })
-  if (!ContainsOther)
-    SeatPrim.Oth = 0
-    OtherCount = OtherCount + 1
+    if (!InPrimVote){
+      MoveValue = KeyIDs[i]
+      eval("Swing.Oth = Swing.Oth + Swing." + MoveValue)
+    }
+  }
+
+
+
+
   Object.keys(SeatPrim).forEach((PartyID)=> {
     eval("SetPartyName = PartyNameArray."+ PartyID)      
     eval("SwingID = PollIDConvert." + PartyID)
@@ -135,33 +160,39 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     FinalVote = NewPrim
     if (FinalVote < 0){
       Swing.Oth = Swing.Oth + FinalVote
-      FinalVote = 0
+      FinalVote = 0 
     }
     else if (SetPartyName == undefined){
-      Swing.Oth = Swing.Oth + FinalVote
+      Swing.Oth = Swing.Oth + PartyVote
+      OtherCount = OtherCount - 1
       FinalVote = 0
+    }
+    if (FinalVote > 0 && SwingID == "Oth"){
+      Vote.Oth = Vote.Oth - PartyVote
     }
     Data.datasets[postionInArray] = {
       label: SetPartyName,
       data: [FinalVote.toFixed(1)],
       backgroundColor: PartyColored
     }
+    Total = Total+FinalVote
     VoteSwing.push(FinalVote)
     postionInArray = postionInArray + 1
   })
-  if (Math.round(Sum(VoteSwing)) != 100){
-    console.log("Error; Values do not add up to 100: " + VoteSwing) 
-    console.log("Sums to:" + Sum(VoteSwing))
-    if (Math.round(Sum(VoteSwing)) < 100){
-     console.log("Fixing by increasing final entry")
-     Data.datasets[postionInArray] = {
-      label: "Other (Rounded Up)",
-      data: [100 - Math.round(Sum(VoteSwing))],
-      backgroundColor: PartyColor.Oth
+
+  OtherVote = Vote.Oth + Swing.Oth/OtherCount
+  Data.datasets[postionInArray] = {
+      label: PartyNameArray.Oth,
+      data: [OtherVote.toFixed(1)],
+      backgroundColor: PartyColor.Oth}
+  Total=Total+OtherVote 
+  postionInArray = postionInArray + 1
+
+  if (Total != 100){
+    console.log("Error; Values do not add up to 100: " + VoteSwing)
+    console.log("Sums to:" + Total)
     }
-    }
-  }
-  while(Data.datasets.length > postionInArray+1){
+  while(Data.datasets.length > postionInArray){
     Data.datasets.pop();
   } 
 
