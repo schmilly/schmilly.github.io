@@ -33,26 +33,26 @@ function PollClick(click){
 
 
 function getPollPrimVote(RawDataEntry,Data){
-  var postionInArray = 0
+  var positionInArray = 0
   RawDataEntry.forEach((element,index) => {
       PartyID = RawDataHeaderID[index]
       if (PartyID != "N/A"){
         eval("SetPartyName = PartyNameArray." + PartyID)
         if (SetPartyName != undefined){
           eval("PartyColored = PartyColor."+ PartyID)
-          Data.datasets[postionInArray] = {
+          Data.datasets[positionInArray] = {
             label: SetPartyName,
             data: [element],
             backgroundColor: PartyColored
           }
-          postionInArray = postionInArray + 1
+          positionInArray = positionInArray + 1
         }
         else{
           console.log("Couldn't find Party with ID " + PartyID)
         }
       }  
   })
-  while(Data.datasets.length > postionInArray){
+  while(Data.datasets.length > positionInArray){
     Data.datasets.pop();
   }
   //console.log(Data)
@@ -64,9 +64,9 @@ function RenderParliment(){
   document.getElementById("disclaimertext").innerText = "\nThanks for tying this, unforutnatly my ass yet to get this to work so uhh; will be done eventually"
 }
 
-function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
+function CalculateSeatPrim(Poll,BaseLine,ElcID){
   Scaler =  1+Poll[Location.Undecide]/100 
-    //Variable to scale based on undecided votes, fill in blanks essentially
+  //Variable to scale based on undecided votes, fill in blanks essentially
   Swing = { 
     "ALP":Poll[Location.ALP]*Scaler - BaseLine[Location.ALP],
     "LaP":Poll[Location.LaP]*Scaler - BaseLine[Location.LaP],
@@ -86,11 +86,17 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     "Oth":0.00
   }
 
+  OutputArray = {
+    "label":[],
+    "data":[],
+    "color":[],
+    "ID":[],
+  }
 
   VoteSwing = []
   eval("SeatPrim = FirstPref." + ElcID)
   var othervote = 0.00;
-  var postionInArray = 0
+  var positionInArray = 0
   OtherCount = 1;
   LibNatCount = 0;
   Total = 0;
@@ -104,7 +110,7 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
 
     if (SwingID != undefined) { 
       eval("Vote." + SwingID  + " = Vote." + SwingID +" + element[1]")
-    //console.log(SwingID + " : " + Vote.Oth)
+      //console.log(SwingID + " : " + Vote.Oth)
     }
     else{
       //console.log("Couldn't find Party with ID " + element[0])
@@ -113,14 +119,17 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     }
 
     if (PartyID == "Oth")
-    ContainsOther = true
+      ContainsOther = true
     if (SwingID == undefined || SwingID == "Oth"){
-      OtherCount = OtherCount + 1
+      eval("SetPartyName = PartyNameArray."+ PartyID) 
+      if (SetPartyName != undefined){
+        OtherCount = OtherCount + 1 
+      }
     }
     else if(SwingID == "LaP"){
       LibNatCount = LibNatCount + 1
-    } 
-  });
+    }
+  })
 
   KeyIDs = Object.keys(Vote)
   VoteIDs = Object.keys(SeatPrim) 
@@ -133,7 +142,7 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
         break;
       }
     }
-    if (!InPrimVote){
+    if (!InPrimVote && KeyIDs[i] != "Oth"){
       MoveValue = KeyIDs[i]
       eval("Swing.Oth = Swing.Oth + Swing." + MoveValue)
     }
@@ -150,55 +159,71 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     eval("PartyColored = PartyColor."+ PartyID)
     eval("SetPartyName = PartyNameArray."+ PartyID)
     if (SwingID == "Oth")
-      eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
+    eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
     else if (SwingID == "LaP")
-      eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
+    eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
     else
-      eval("PartySwing = Swing." + SwingID)
+    eval("PartySwing = Swing." + SwingID)
     eval("PartyVote = SeatPrim."+ PartyID)
     NewPrim = PartyVote + PartySwing
     FinalVote = NewPrim
     if (FinalVote < 0){
-      Swing.Oth = Swing.Oth + FinalVote
+      Vote.Oth = Vote.Oth + FinalVote
       FinalVote = 0 
     }
     else if (SetPartyName == undefined){
-      Swing.Oth = Swing.Oth + PartyVote
-      OtherCount = OtherCount - 1
       FinalVote = 0
     }
     if (FinalVote > 0 && SwingID == "Oth"){
       Vote.Oth = Vote.Oth - PartyVote
     }
-    Data.datasets[postionInArray] = {
-      label: SetPartyName,
-      data: [FinalVote.toFixed(1)],
-      backgroundColor: PartyColored
-    }
-    Total = Total+FinalVote
-    VoteSwing.push(FinalVote)
-    postionInArray = postionInArray + 1
-  })
+    if (FinalVote != 0){
+        OutputArray.label[positionInArray] = SetPartyName;
+        OutputArray.data[positionInArray] = FinalVote.toFixed(1)
+        OutputArray.color[positionInArray] = PartyColored
+        OutputArray.ID[positionInArray] = PartyID
+      }
+      Total = Total+FinalVote
+      VoteSwing.push(FinalVote)
+      positionInArray = positionInArray + 1
+    })
 
   OtherVote = Vote.Oth + Swing.Oth/OtherCount
-  Data.datasets[postionInArray] = {
-      label: PartyNameArray.Oth,
-      data: [OtherVote.toFixed(1)],
-      backgroundColor: PartyColor.Oth}
+  OutputArray.label[positionInArray] = PartyNameArray.Oth;
+  OutputArray.data[positionInArray] = OtherVote.toFixed(1)
+  OutputArray.color[positionInArray] = PartyColor.Oth
+  OutputArray.ID[positionInArray] = "Other"
+
   Total=Total+OtherVote 
-  postionInArray = postionInArray + 1
+  positionInArray = positionInArray + 1
 
-  if (Total != 100){
+  if (Total.toFixed(1) != 100){
     console.log("Error; Values do not add up to 100: " + VoteSwing)
+    console.log("Other should be estimated to be:" + (100 - Sum(VoteSwing)))
+    console.log("Other sum is:" + OtherVote)
     console.log("Sums to:" + Total)
-    }
-  while(Data.datasets.length > postionInArray){
-    Data.datasets.pop();
-  } 
+  }
 
-  return Data;
+
+  return OutputArray;
 }
 
+function ArrayToChartJS(InputArray,Data){
+
+  ArrayLength = InputArray.label.length
+  for (x = 0; x < InputArray.label.length; x++){
+      Data.datasets[x] = {
+      label: InputArray.label[x],
+      data: [InputArray.data[x]],
+      backgroundColor: InputArray.color[x]
+    }
+  }
+  while(Data.datasets.length > ArrayLength){
+    Data.datasets.pop();
+  } 
+  
+  return Data
+}
 
 function Sum(Array){
   SumValue = 0
@@ -206,4 +231,8 @@ function Sum(Array){
     SumValue = Number(SumValue) + Number(element)
   });
   return SumValue
+}
+
+function PredictSeatWin(InputArray,PrefTable){
+  
 }

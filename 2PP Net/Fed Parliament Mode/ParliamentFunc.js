@@ -66,11 +66,10 @@ function SetSeatColor(ParliamentList,MapMode){
         document.getElementById("Parliament").getElementById(i).style.opacity=0.5
 
         if (SelectedPollPos != undefined){
-          CalculateSeatPrim(
+          ArrayToChartJS(CalculateSeatPrim(
             RawData[SelectedPollPos],
             RawData[RawData.length-1],
-            i,
-            PredictedPrimData.data)
+            i),PredictedPrimData.data)
           BarPredictedPref.update();
         }
       }
