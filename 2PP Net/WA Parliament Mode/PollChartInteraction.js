@@ -55,7 +55,7 @@ function getPollPrimVote(RawDataEntry,Data){
   while(Data.datasets.length > postionInArray){
     Data.datasets.pop();
   }
-  //console.log(Data)
+  console.log(Data)
   return Data;
 }
 

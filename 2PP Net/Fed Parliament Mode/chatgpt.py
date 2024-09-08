@@ -9,6 +9,9 @@ def convert_csv_to_dict(csv_file):
             electorate, party, percentage = row
             if electorate not in result:
                 result[electorate] = {}
+            for parties in result[electorate]:
+                if party in result[electorate]:
+                    party = party + "0"
             result[electorate][party] = percentage
     
     return result
