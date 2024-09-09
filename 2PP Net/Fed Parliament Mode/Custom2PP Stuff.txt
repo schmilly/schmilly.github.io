@@ -1,0 +1,32 @@
+<div>
+            <h5>Custom 2PP</h5>
+              <input id="enableadvance" type="checkbox" onclick="EnableCustom2pp()" unchecked><label for="enableadvance">Enable Custom 2PP</label>
+          
+            <div>
+                <table class="slidecontainer">
+                <td style="width:20%">Greens:</td>
+                <td><small>Labor %:<text id="greensflowlab"></text> <br>
+                  Liberal %:<text id="greensflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="greens2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">One Nation</td>
+                <td><small>Labor %:<text id="oneflowlab"></text> <br>
+                  Liberal %:<text id="oneflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="one2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">United Australia Party</td>
+                <td><small>Labor %:<text id="UAPflowlab"></text> <br>
+                  Liberal %:<text id="UAPflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="UAP2pp"> </div></td>
+              </table>
+              <table class="slidecontainer">
+                <td style="width:20%">Other</td>
+                <td><small>Labor %:<text id="otherflowlab"></text> <br>
+                  Liberal %:<text id="otherflowlib"></text></small> </td>
+                <td><div> <input type="range" min="0" max="100" value="50" class="slider" id="other2pp"> </div></td>
+              </table>
+              </div>
+          </div>
+
