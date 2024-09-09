@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Step 1: Read the CSV file
-df = pd.read_csv('/home/schmilly/schmilly.github.io/2PP Net/Fed Parliament Mode/transformtolookup.py')
+df = pd.read_csv('/home/schmilly/schmilly.github.io/2PP Net/Fed Parliament Mode/PrefrenceFlowsElimination2022.csv')
 
 # Step 2: Create the lookup table
 lookup_table = df.pivot_table(index='ID2', columns='ID1', values='Percentage', aggfunc='first').reset_index()

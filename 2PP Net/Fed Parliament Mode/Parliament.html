@@ -34,17 +34,17 @@
     <!-- ./ Header -->
     <main class="container">
       <div class="grid" >
-       <div> <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
-        <div id=topcontainer style="overflow:auto;height:560px;border-width:5px;border-style:solid">
-          <object id=container1>
-          </object>
+        <div> <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
+          <div id=topcontainer style="overflow:auto;height:560px;border-width:5px;border-style:solid">
+            <object id=container1>
+            </object>
           </div>
         </div>
-        <div style="height:560px;">
-          <object id=container2>
-          </object>
-        </div>
-        <div>
+        <div style="width:100%;padding:1em">
+          <div style="height:300px;">
+            <object id=container2>
+            </object>
+          </div>
           <p style="margin-bottom: 0px;">
             <b>Electorate:</b>  <text id=ElcName>None Selected</text> <br>
             <b>State/Territory:</b> <text id=ElcState></text> <br>
@@ -57,12 +57,29 @@
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
             </canvas>
           </div>
-          <b>Predicted Primary Vote with Selected Poll</b> <small>(uniform swing from 2022): </small>
+          <b>Predicted Primary Vote with Selected Poll</b> <br> <small>(uniform swing from 2022): </small>
           <div style="margin-right: 1em;">
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
             </canvas>
           </div>
-          <b>Predicted Seat Winner based on Poll</b> <small>(based on 2022 flows upon party elimination; Should not be considered accurate): </small><br> 
+
+
+        </div>
+        <div>
+          <b>Predicted Seat Winner based on Poll</b>
+          <div><details class="dropdown" style="margin:2%;">
+            <summary style="padding:0; font-size:100%;padding-right: 10px;padding-left: 10px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
+            <ul id=PrefFlowList>
+              <li><a>2022 House Pref Flows</a></li>
+              <li><a>2022 Senate Pref Flows</a></li>
+            </ul>
+          </details>
+          <label for="checkbox-1">
+            <input type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
+            Show Steps
+          </label>
+            </div>
+          <b>Predicted Final Vote:</b>
           <div style="margin-right: 1em;">
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
             </canvas>
@@ -70,19 +87,19 @@
         </div>
       </div>
       <div class="grid">
-        <div>
-          <div style="height:100%">
+      <div>
+        <div style="height:100%">
             <canvas  id="SmoothCircle">
             </canvas>
           </div>
         </div>
         <div class="grid">
           <div>
-          <h5>Poll</h5>
-          <text>Poll Date:
-            <b id=SelectPollDate></b>
-          </text>
-          <br>
+            <h5>Poll</h5>
+            <text>Poll Date:
+              <b id=SelectPollDate></b>
+            </text>
+            <br>
           <text>Polster:
             <b id=PllPollster></b>
           </text>
@@ -193,6 +210,7 @@ Colors[2022]="#d56f46"
 <script src="../PageFunctions.js"></script>
 <script src="./Raw_Data.js"></script>
 <script src="./PrefFlow.js"></script>
+<script src="./PrefFlowProcess.js"></script>
 
 <script>
     //Start
@@ -219,6 +237,10 @@ Colors[2022]="#d56f46"
     PredictedSPrimVote = document.getElementById("PredictedSeatPrimaryVote") 
     PredictedPrimData = CreateHorConfig();
     BarPredictedPref = new Chart(PredictedSPrimVote,PredictedPrimData)
+
+    PredictedFinal = document.getElementById("PredictedWinner")
+    PredictFinal = CreateHorConfig();
+    FinalPredictPref = new Chart(PredictedFinal,PredictFinal)
 </script>
 
 
