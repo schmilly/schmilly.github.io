@@ -11,10 +11,6 @@ See below for explanations of Each of them
 Started out as a chart to show net 2PP in polls and their changes over times
 Currently a work in progress with a lot of feature creep.
 
-[Basic Mode:](https://schmilly.github.io/2PP%20Net/2PP.html)
-Which collects changes in 2PP over years:
-This collects all polling data from 2007 election to modern day
-
 [Parliament Mode:](https://schmilly.github.io/2PP%20Net/Parliament%20Mode/Parliament.html)
 Work in progress, currently shows seat by seat level Primary vote; Along with also allowing setting custom pref flows for polling data from 2022 and see resulting 2PP trends. Plans to implement ability to simulate flows and changes calculated from 2022 -> Poll in invidual seats as well to render flows and changes in Parliament map.
 
@@ -24,10 +20,12 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
 - [ ] Render Poll to Parliament button doesn't work
 
 ##### Planned features and further support:
-- [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
-- [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
-- [ ] Add 2PP periods/government terms from before 2007 
+- [ ] Re-implement ability to view 2PP from multiple different terms
+  - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
+  - [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
   - Map functional in unison with seats/Parliament Layout; Further implementation still required:
-  - [ ] Implementation of Seat level swings based on Poll
+  - [X] Implementation of Seat level swings based on Poll
+  - [ ] Add abilitiy to calculate winner of Seat Based on Prefrences flows
   - [ ] Implementation of Parliament wide swings and rendering of such based on Poll
+- [ ] Add abillity to Auto Pull Polling Data from Wikipedia on load or via script and convert to JS format as required.
