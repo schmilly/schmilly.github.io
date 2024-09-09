@@ -17,6 +17,7 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
 ##### Known Bugs/Issues:
 - [ ] Can't reset Zoom of 2PP Chart
 - [X] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
+- [ ] For some reason; with some polls and in combination with some seats will result in "Other" vote being negative.
 - [ ] Render Poll to Parliament button doesn't work
 
 ##### Planned features and further support:
