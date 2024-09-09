@@ -24,8 +24,8 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
   - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
   - [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
 - [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
-  - Map functional in unison with seats/Parliament Layout; Further implementation still required:
   - [X] Implementation of Seat level swings based on Poll
-  - [ ] Add abilitiy to calculate winner of Seat Based on Prefrences flows
+  - [X] Added Geographic and Seating based map
+  - [ ] Add abilitiy to calculate winner of Seat Based on Prefrences flows (WIP ATM)
   - [ ] Implementation of Parliament wide swings and rendering of such based on Poll
 - [ ] Add abillity to Auto Pull Polling Data from Wikipedia on load or via script and convert to JS format as required.
