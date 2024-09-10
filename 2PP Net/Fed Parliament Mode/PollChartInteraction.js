@@ -229,6 +229,7 @@ function ArrayToChartJS(InputArray,Data){
       }
       else{ if (InputArray.ID[x] == "Oth"){
         InputArray.data[x] = parseFloat(InputArray.data[x]) + parseFloat(OtherVote)
+        OtherVote = 0;
       }
        Data.datasets[EntryCount] = {
         label: InputArray.label[x],
@@ -238,11 +239,20 @@ function ArrayToChartJS(InputArray,Data){
       EntryCount++
     }
   }
-  while(Data.datasets.length > EntryCount){
-    Data.datasets.pop();
-  } 
-  
-  return Data
+  if (OtherVote != 0){
+    Data.datasets[EntryCount] = {
+      label: PartyNameArray.Oth,
+      data: OtherVote.toFixed(2),
+      backgroundColor: PartyColor.Oth  }
+  EntryCount++;
+  OtherVote=0;
+}
+
+while(Data.datasets.length > EntryCount){
+  Data.datasets.pop();
+} 
+
+return Data
 }
 
 function Sum(Array){
