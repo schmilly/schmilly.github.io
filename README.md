@@ -15,12 +15,14 @@ Currently a work in progress with a lot of feature creep.
 Work in progress, currently shows seat by seat level Primary vote; Along with also allowing setting custom pref flows for polling data from 2022 and see resulting 2PP trends. Plans to implement ability to simulate flows and changes calculated from 2022 -> Poll in invidual seats as well to render flows and changes in Parliament map.
 
 ##### Known Bugs/Issues:
+[comment]: <> (StartParlBug)
 - [X] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
 - [ ] Sometimes when calculating seat vote based certain polls can lead to negative values for other vote
       - Example Canberra Electorate with 25/08/2022 Roy Morgan Poll leas to a negative other count and breaks chart
 - [ ] Render Poll to Parliament button doesn't work
 - [ ] Can't Reset 2PP Chart Zoom
 - [ ] Unchecking consolidation doesn't actually stop it from consolidating other vote
+[comment]: <> (EndParlBug)
 
 ##### Planned features and further support:
 - [ ] Re-implement ability to view 2PP from multiple different terms

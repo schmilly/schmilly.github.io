@@ -138,6 +138,7 @@
           </div>
                     </div>
       </div>
+      <div class="grid">
       <article>
         <h6> Explanation </h6>
         <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
@@ -152,6 +153,12 @@
         </small></footer>
         <sub> Chart also uses a 100 day rolling average </sub> <br>
       </article>
+        <article>
+          <kbd>Known Bugs/Issues</kbd>
+          <text id="BugReportText"></text>
+
+        </article>
+        </div>
     </main>
   </body>
 </html>
@@ -163,6 +170,7 @@
 <script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 <script>
 //Header <script>
 var TwoPPBool = false;
@@ -195,6 +203,7 @@ Colors[2022]="#d56f46"
 <script src="./Raw_Data.js"></script>
 <script src="./PrefFlow.js"></script>
 <script src="./PrefFlowProcess.js"></script>
+<script src="../ReadBugList.js"></script>
 
 <script>
     //Start
