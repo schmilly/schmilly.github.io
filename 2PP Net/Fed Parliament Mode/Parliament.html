@@ -40,33 +40,48 @@
             </object>
           </div>
         </div>
-        <div style="width:100%;padding:1em">
-          <div style="height:300px;">
+        <div style="width:100%;padding:0.5em">
+          <div class="grid">
+          <div style="padding-bottom:1%;width:150%;height:100%;position: relative; z-index: 4000;">
             <object id=container2>
             </object>
           </div>
-          <p style="margin-bottom: 0px;">
-            <b>Electorate:</b>  <text id=ElcName>None Selected</text> <br>
-            <b>State/Territory:</b> <text id=ElcState></text> <br>
-            <b>MP:</b>       <text id=ElcMoP></text> <br>
-            <b>Party:</b> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
-            <text>
-              <b>Primary Vote last Election</b> (2022):
-          </p>
-          <div style="margin-right: 1em;">
-            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
-            </canvas>
+          <div class="col-2" >
+            <div>
+              <p style="margin-bottom: 0px;margin-left:50%">
+                <b>Electorate:</b> <br> <text id=ElcName>None Selected</text> <br>
+                <b>State/Territory:</b> <br> <text id=ElcState></text> <br>
+                <b>MP:</b>  <br>     <text id=ElcMoP></text> <br>
+                <b>Party:</b> <br> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
+              </p>
+            </div>
+            </div>
           </div>
-          <b>Predicted Primary Vote with Selected Poll</b> <br> <small>(uniform swing from 2022): </small>
-          <div style="margin-right: 1em;">
-            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
-            </canvas>
-          </div>
+          <div class="grid">
+
+            <div>
+              <kbd>Primary Vote 2022 Election</kbd>
+              <div style="margin-right: 1em;">
+                <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
+                </canvas>
+              </div>
+              <kbd>Predicted Primary Vote with Selected Poll</kbd> 
+              <label for="checkbox-1" style="margin-bottom:0;display:inline;font-size:0.875em">
+                <input style="margin:0;" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
+                Consolidate Votes < 2%
+              </label> <br>
+              <div style="margin-right: 1em;">
+                <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
+                </canvas>
+              </div>
+              <small>(uniform swing from 2022) </small>
+            </div>
 
 
         </div>
+        </div>
         <div>
-          <b>Predicted Seat Winner based on Poll</b>
+          <kbd>Predicted Seat Winner based on Poll</kbd> <b>Non-Functional</b>
           <div><details class="dropdown" style="margin:2%;">
             <summary style="padding:0; font-size:100%;padding-right: 10px;padding-left: 10px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
             <ul id=PrefFlowList>

@@ -20,6 +20,7 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
       - Example Canberra Electorate with 25/08/2022 Roy Morgan Poll leas to a negative other count and breaks chart
 - [ ] Render Poll to Parliament button doesn't work
 - [ ] Can't Reset 2PP Chart Zoom
+- [ ] Unchecking consolidation doesn't actually stop it from consolidating other vote
 
 ##### Planned features and further support:
 - [ ] Re-implement ability to view 2PP from multiple different terms

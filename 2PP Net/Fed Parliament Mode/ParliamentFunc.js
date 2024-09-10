@@ -65,13 +65,7 @@ function SetSeatColor(ParliamentList,MapMode){
 
         document.getElementById("Parliament").getElementById(i).style.opacity=0.5
 
-        if (SelectedPollPos != undefined){
-          ArrayToChartJS(CalculateSeatPrim(
-            RawData[SelectedPollPos],
-            RawData[RawData.length-1],
-            i),PredictedPrimData.data)
-          BarPredictedPref.update();
-        }
+        UpdatePollBar(); 
       }
     }
     catch{
@@ -79,6 +73,16 @@ function SetSeatColor(ParliamentList,MapMode){
     }
   })
 };
+
+function UpdatePollBar(){
+  if (SelectedPollPos != undefined){
+    ArrayToChartJS(CalculateSeatPrim(
+      RawData[SelectedPollPos],
+      RawData[RawData.length-1],
+      selected),PredictedPrimData.data)
+    BarPredictedPref.update();
+  }
+}
 
 var svgUrl2    = "Australian_House_of_Representatives_chart.svg";
 var container2 = $("#container2");
@@ -182,6 +186,14 @@ function GetElcFirPref(ElcID,Data){
     eval("SetPartyName = PartyNameArray." + element[0])
     if (SetPartyName != undefined){
       eval("PartyColored = PartyColor."+ element[0])
+    }
+    else{
+      SetPartyName = element[0]
+      PartyColored = PartyColor.Oth
+    }
+    if (PartyColored == undefined){
+        PartyColored = PartyColor.Oth
+    }
 
       Data.datasets[postionInArray] = {
         label: SetPartyName,
@@ -189,20 +201,7 @@ function GetElcFirPref(ElcID,Data){
         backgroundColor: PartyColored
       }
       postionInArray = postionInArray + 1
-
-    }
-    else{
-      //console.log("Couldn't find Party with ID " + element[0])
-      //console.log("Adding votes of "+ element[1] +  " to other vote")
-      othervote = othervote + element[1]
-    }
   });
-  Data.datasets[postionInArray] = {
-    label: "Other",
-    data: [othervote],
-    backgroundColor: PartyColor.Oth
-  }
-  postionInArray = postionInArray + 1
 
   while(Data.datasets.length > postionInArray){
     Data.datasets.pop();

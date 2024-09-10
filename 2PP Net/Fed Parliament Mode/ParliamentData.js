@@ -38,6 +38,7 @@ var PollIDConvert = {
   "Lib": "LaP",
   "LaP": "LaP",
   "LNP": "LaP",
+  "CLP": "LaP",
   "UAP": "UAP",
   "Grn": "Grn", 
   "Nat": "LaP",
@@ -52,22 +53,49 @@ var PollIDConvert = {
 var PartyNameArray = {
   "ALP": "Labor Party",
   "Lib": "Liberal Party",
+  "CLP": "Country Liberal Party",
   "LaP": "Liberal and Nationals Party",
   "LNP": "Liberal National Party",
   "UAP": "United Australia Party",
   "Grn": "Greens", 
   "Nat": "Nationals",
   "One": "One Nation",
-    "Oth": "Other",
+  "Oth": "Other",
   "Ind": "Indipendent",
+  'LDP':'Liberal Democrats',
   "JLN": "Jacqui Lambie Network",
   "CAl": "Center Alliance",
-  "KAP": "Katter Australia Party"
+  "KAP": "Katter Australia Party",
+  "AJP": "Animal Justice Party",
+  "SOPA": "FUSION: Science, Pirate, Secular, Climate Emergency",
+  "VNS": "Victorian Socialists",
+  "CYA": "Australian Federation Party",
+  'TLOC':'The Local Party',
+  'WAP':'Western Australia Party',
+  'VNS':'Victorian Socialists',
+  'SAL':'Socialist Alliance',
+  'CEC':'Citizens Party',
+  'SPP':'Sustainable Australia Party - Stop Overdevelopment / Corruption',
+  'ASP':'Shooters, Fishers and Farmers Party',
+  'AUD':'Australian Democrats',
+  'IMO':'Informed Medical Options Party',
+  'AUVA':'Australian Values Party',
+  'AUC':'Australian Christians',
+  'DHJP':'Derryn Hinchs Justice Party',
+  'DPDA':'Democratic Alliance',
+  'IAP':'Indigenous - Aboriginal Party of Australia',
+  'DPDA':'Drew Pavlou Democratic Alliance',
+  'AUP':'Australian Progressives',
+  'REAS':'Reason Australia',
+  'NP':'National Party',
+  'HMP':'Legalise Cannabis Australia',
+  'XEN':'Centre Alliance'
 }
 
 var PartyColor = {
   "ALP": "#ee0003",
   "Lib": "#0068e8",
+  "CLP": "#0068e8",
   "LaP": "#0068e8",
   "LNP": "#008fe8",
   "UAP": "#ffff00",
@@ -78,7 +106,14 @@ var PartyColor = {
   "Ind": "#C2C7D0",
   "JLN": "#BCA371",
   "CAl": "Orange",
-  "KAP": "#910f00"
+  "KAP": "#910f00",
+  "AJP": "#5B2C86",
+  "SOPA": "#9A94E7",
+  "SAL": "Red",
+  "VNS": "Black",
+  "CYA": "#E3A02D",
+  "WAP": "#FFE701", //These guys could also be black tbh
+  "LDP": "Gold"
 }
 
 ElectorateList =

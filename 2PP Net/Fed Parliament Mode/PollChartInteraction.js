@@ -24,6 +24,7 @@ function PollClick(click){
     
     SelectedPoll = ClickonPoll
     SelectedPollPos = points[0].index
+    UpdatePollBar()
   }
   catch{
     console.log("Error; Please click on a Poll data point")
@@ -118,13 +119,8 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
       Vote.Oth = Vote.Oth + element[1]
     }
 
-    if (PartyID == "Oth")
-      ContainsOther = true
     if (SwingID == undefined || SwingID == "Oth"){
-      eval("SetPartyName = PartyNameArray."+ PartyID) 
-      if (SetPartyName != undefined){
-        OtherCount = OtherCount + 1 
-      }
+        OtherCount = OtherCount + 1  
     }
     else if(SwingID == "LaP"){
       LibNatCount = LibNatCount + 1
@@ -152,34 +148,43 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
 
 
   Object.keys(SeatPrim).forEach((PartyID)=> {
+    OtherPos = 0
     eval("SetPartyName = PartyNameArray."+ PartyID)      
     eval("SwingID = PollIDConvert." + PartyID)
     if (SwingID == undefined){
       SwingID = "Oth"}
     eval("PartyColored = PartyColor."+ PartyID)
     eval("SetPartyName = PartyNameArray."+ PartyID)
-    if (SwingID == "Oth")
-    eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
+    if (SwingID == "Oth"){
+      eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
+      OtherPost = OtherPos + 1}
     else if (SwingID == "LaP")
-    eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
+      eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
     else
-    eval("PartySwing = Swing." + SwingID)
+      eval("PartySwing = Swing." + SwingID)
     eval("PartyVote = SeatPrim."+ PartyID)
+
     NewPrim = PartyVote + PartySwing
     FinalVote = NewPrim
     if (FinalVote < 0){
-      Vote.Oth = Vote.Oth + FinalVote
+      Swing.Oth = Swing.Oth + FinalVote*(OtherCount/(OtherCount-OtherPos))
+      //Scale based on number of other or other count so can properly apply
       FinalVote = 0 
     }
     else if (SetPartyName == undefined){
-      FinalVote = 0
+      SetPartyName = PartyID
+      PartyColored = PartyColor.Oth
+      SwingID = "Oth"
     }
-    if (FinalVote > 0 && SwingID == "Oth"){
+    if (FinalVote > 0 && SwingID == "Oth" ){
       Vote.Oth = Vote.Oth - PartyVote
     }
     if (FinalVote != 0){
+        if (PartyColored == undefined){
+          PartyColored = PartyColor.Oth
+        }
         OutputArray.label[positionInArray] = SetPartyName;
-        OutputArray.data[positionInArray] = FinalVote.toFixed(1)
+        OutputArray.data[positionInArray] = FinalVote.toFixed(2)
         OutputArray.color[positionInArray] = PartyColored
         OutputArray.ID[positionInArray] = PartyID
       }
@@ -189,10 +194,12 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     })
 
   OtherVote = Vote.Oth + Swing.Oth/OtherCount
-  OutputArray.label[positionInArray] = PartyNameArray.Oth;
-  OutputArray.data[positionInArray] = OtherVote.toFixed(1)
-  OutputArray.color[positionInArray] = PartyColor.Oth
-  OutputArray.ID[positionInArray] = "Other"
+  if (OtherVote > 0){
+    OutputArray.label[positionInArray] = PartyNameArray.Oth;
+    OutputArray.data[positionInArray] = OtherVote.toFixed(2)
+    OutputArray.color[positionInArray] = PartyColor.Oth
+    OutputArray.ID[positionInArray] = "Oth"
+  }
 
   Total=Total+OtherVote 
   positionInArray = positionInArray + 1
@@ -211,14 +218,27 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
 function ArrayToChartJS(InputArray,Data){
 
   ArrayLength = InputArray.label.length
+  OtherVote = 0;
+  EntryCount = 0;
   for (x = 0; x < InputArray.label.length; x++){
-      Data.datasets[x] = {
-      label: InputArray.label[x],
-      data: [InputArray.data[x]],
-      backgroundColor: InputArray.color[x]
+      if (InputArray.data[x] == undefined){
+        continue
+      }
+      if (InputArray.data[x] < 2 && InputArray.ID[x] != "Oth"){
+            OtherVote = OtherVote + parseFloat(InputArray.data[x])
+      }
+      else{ if (InputArray.ID[x] == "Oth"){
+        InputArray.data[x] = parseFloat(InputArray.data[x]) + parseFloat(OtherVote)
+      }
+       Data.datasets[EntryCount] = {
+        label: InputArray.label[x],
+        data: [InputArray.data[x]],
+        backgroundColor: InputArray.color[x]
+      }
+      EntryCount++
     }
   }
-  while(Data.datasets.length > ArrayLength){
+  while(Data.datasets.length > EntryCount){
     Data.datasets.pop();
   } 
   
