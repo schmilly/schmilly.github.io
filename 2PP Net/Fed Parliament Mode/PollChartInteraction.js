@@ -184,7 +184,7 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
           PartyColored = PartyColor.Oth
         }
         OutputArray.label[positionInArray] = SetPartyName;
-        OutputArray.data[positionInArray] = FinalVote.toFixed(2)
+        OutputArray.data[positionInArray] = FinalVote
         OutputArray.color[positionInArray] = PartyColored
         OutputArray.ID[positionInArray] = PartyID
       }
@@ -194,13 +194,15 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     })
 
   OtherVote = Vote.Oth + Swing.Oth/OtherCount
-  if (OtherVote > 0){
-    OutputArray.label[positionInArray] = PartyNameArray.Oth;
-    OutputArray.data[positionInArray] = OtherVote.toFixed(2)
-    OutputArray.color[positionInArray] = PartyColor.Oth
-    OutputArray.ID[positionInArray] = "Oth"
-  }
-
+  if (OtherVote < 0){
+     OtherVote = OtherVote * -1
+  } 
+  
+  
+  OutputArray.label[positionInArray] = PartyNameArray.Oth;
+  OutputArray.data[positionInArray] = OtherVote
+  OutputArray.color[positionInArray] = PartyColor.Oth
+  OutputArray.ID[positionInArray] = "Oth"
   Total=Total+OtherVote 
   positionInArray = positionInArray + 1
 
@@ -216,7 +218,6 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
 }
 
 function ArrayToChartJS(InputArray,Data){
-
   ArrayLength = InputArray.label.length
   OtherVote = 0;
   EntryCount = 0;
@@ -233,7 +234,7 @@ function ArrayToChartJS(InputArray,Data){
       }
        Data.datasets[EntryCount] = {
         label: InputArray.label[x],
-        data: [InputArray.data[x]],
+        data: [InputArray.data[x].toFixed(2)],
         backgroundColor: InputArray.color[x]
       }
       EntryCount++

@@ -11,7 +11,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     MinLocation = -1
     CurrentList = []
     for (x = 0; x < InputArray.data.length; x++){
-      if (InputArray.data[x] > 50){
+      if (parseFloat(InputArray.data[x]).toFixed(0) >= 50){
         VoterWinner = InputArray.ID[x]
         PrefrencesAllocating = false;
         break;
@@ -52,7 +52,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
       VoteGone = parseFloat(PercentageofVote*MinValue) 
       InputArray.data[x] = parseFloat(InputArray.data[x]) + VoteGone;
       if(VoteGone != 0){
-        HoverText = HoverText + "|" + (PercentageofVote*100).toFixed(2)  + "% (" + VoteGone.toFixed(2) + ") added to " + InputArray.label[x]   
+        HoverText = HoverText + "|" + (PercentageofVote*100).toFixed(1)  + "% (" + VoteGone.toFixed(2) + ") added to " + InputArray.label[x]   
       } 
     }
     Amount = InputArray.data.splice(MinLocation,1)

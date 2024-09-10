@@ -46,7 +46,7 @@ var PollIDConvert = {
   "Oth": "Oth",
   "Ind": "Oth",
   "JLN": "Oth",
-  "CAl": "Oth",
+  "XEN": "Oth",
   "KAP": "Oth"
 }
  
@@ -64,7 +64,7 @@ var PartyNameArray = {
   "Ind": "Indipendent",
   'LDP':'Liberal Democrats',
   "JLN": "Jacqui Lambie Network",
-  "CAl": "Center Alliance",
+  "XEN": "Center Alliance",
   "KAP": "Katter Australia Party",
   "AJP": "Animal Justice Party",
   "SOPA": "FUSION: Science, Pirate, Secular, Climate Emergency",
@@ -89,7 +89,6 @@ var PartyNameArray = {
   'REAS':'Reason Australia',
   'NP':'National Party',
   'HMP':'Legalise Cannabis Australia',
-  'XEN':'Centre Alliance'
 }
 
 var PartyColor = {
@@ -105,7 +104,7 @@ var PartyColor = {
     "Oth": "#EDE7E3",
   "Ind": "#C2C7D0",
   "JLN": "#BCA371",
-  "CAl": "Orange",
+  "XEN": "Orange",
   "KAP": "#910f00",
   "AJP": "#5B2C86",
   "SOPA": "#9A94E7",
@@ -531,7 +530,7 @@ var Currentelectorateparty = {
   "Mallee":"Nat",
   "Maranoa":"LNP",
   "Maribyrnong":"ALP",
-  "Mayo":"CAl",
+  "Mayo":"XEN",
   "McEwen":"ALP",
   "McMahon":"ALP",
   "McPherson":"LNP",
