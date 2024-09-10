@@ -2,7 +2,7 @@ History = document.getElementById("PrefHistory")
 
 function PrefrenceFlows(InputArray,PrefTable,DivisonID){
   History.innerText = ""
-  VoteWinner = ""
+
   PrefrencesAllocating = true;
   Count = 0
   while(PrefrencesAllocating){
@@ -12,7 +12,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     CurrentList = []
     for (x = 0; x < InputArray.data.length; x++){
       if (parseFloat(InputArray.data[x]).toFixed(0) >= 50){
-        VoterWinner = InputArray.ID[x]
+
         PrefrencesAllocating = false;
         break;
       }
@@ -39,13 +39,13 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     Total = 0;
     FlowArray = []
     HoverText = ""
-    for (x = 0; x < CurrentList.length; x++){
+    for (x = 0; x < CurrentList.length; x++){ 
       eval("Flow = ElimCandidate." + InputArray.ID[CurrentList[x]])
-      if (Flow != undefined){
+      if (Flow != undefined && x != MinLocation){
         Total = Total + Flow
         FlowArray.push(Flow)
       }
-      else FlowArray.push(0) //Maybe change this to grab average value?
+      else FlowArray.push(0) //Maybe change this to grab average value? 
     }
     for (x = 0; x < FlowArray.length; x++){
       PercentageofVote = FlowArray[x]/Total

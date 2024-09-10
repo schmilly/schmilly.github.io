@@ -211,6 +211,8 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     console.log("Other should be estimated to be:" + (100 - Sum(VoteSwing)))
     console.log("Other sum is:" + OtherVote)
     console.log("Sums to:" + Total)
+    console.log("Changing Value to Match")
+    OutputArray.data[positionInArray-1] = OtherVote + (100 - Sum(VoteSwing)) 
   }
 
 
