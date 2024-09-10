@@ -81,6 +81,7 @@ function UpdatePollBar(){
       RawData[RawData.length-1],
       selected),PredictedPrimData.data)
     BarPredictedPref.update();
+    SimulatePrefChart();
   }
 }
 

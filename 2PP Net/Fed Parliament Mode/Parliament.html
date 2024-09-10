@@ -94,11 +94,16 @@
             Show Steps
           </label>
             </div>
+          <b style="color:var(--pico-del-color)"> Please note this is newly implimented ; 
+            <br> Not been checked yet and not likely to be accurate;
+            <br> There will be bugs Apologies for any issues <br>
+          </b>
           <b>Predicted Final Vote:</b>
           <div style="margin-right: 1em;">
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
             </canvas>
           </div>
+          Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
         </div>
       </div>
       <div class="grid" style="padding-bottom:1em">
@@ -235,5 +240,5 @@ Colors[2022]="#d56f46"
     PredictFinal = CreateHorConfig();
     FinalPredictPref = new Chart(PredictedFinal,PredictFinal)
 </script>
-
+<script src="./ElectorateFlows.js"></script>
 

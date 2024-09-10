@@ -1,16 +1,28 @@
-import pandas as pd
+import csv
 
-# Step 1: Read the CSV file
-df = pd.read_csv('Electorate_by_Electorate_flows-With-Electorates.csv')
+# Initialize the dictionary
+data_dict = {}
 
-# Step 2: Create the lookup table
-lookup_table = df.groupby('Electorate')['ID1']['ID2'].unique().reset_index()
+# Open and read the CSV file
+with open('Electorate_by_Electorate_flows-With-Electorates.csv', mode='r') as file:
+    csv_reader = csv.reader(file)
+    
+    # Skip the header
+    next(csv_reader)
+    
+    # Iterate through each row in the CSV
+    for row in csv_reader:
+        electorate, id1, id2, _, _, _, value = row
+        
+        # Create nested dictionary structure
+        if electorate not in data_dict:
+            data_dict[electorate] = {}
+        if id1 not in data_dict[electorate]:
+            data_dict[electorate][id1] = {}
+        
+        # Assign the value
+        data_dict[electorate][id1][id2] = value
 
-# If you want it to be a dictionary
-lookup_dict = lookup_table.set_index('Electorate')['ID1']['ID2'].to_dict()
+# Display the resulting dictionary
+print(data_dict)
 
-# Step 3: Save the lookup table to a new CSV file
-lookup_table.to_csv('lookup_table.csv', index=False)
-
-# Optional: Print the lookup dictionary
-print(lookup_dict)
