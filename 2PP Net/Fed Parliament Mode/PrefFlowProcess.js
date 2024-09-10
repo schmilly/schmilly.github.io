@@ -1,9 +1,12 @@
-function PrefrenceFlows(InputArray,PrefTable,DivisonID){
+History = document.getElementById("PrefHistory")
 
+function PrefrenceFlows(InputArray,PrefTable,DivisonID){
+  History.innerText = ""
   VoteWinner = ""
   PrefrencesAllocating = true;
-
+  Count = 0
   while(PrefrencesAllocating){
+
     MinValue = 100;
     MinLocation = -1
     CurrentList = []
@@ -29,11 +32,13 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     if (ElimCandidate == undefined){
       //Put Code here to find based on backup pref table, and defined elim candidate that way
       ElimCandidate = {
-        "LP": 0.5, "ALP": 0.5
+        "Lib": 0.5, "ALP": 0.5, "LNP": 0.5, "Nat":0.5, "CLP":0.5, "Ind":0.5
       }
+      //Tempt solution; Divide up equally between Lib+Nat and Labor
     }
     Total = 0;
     FlowArray = []
+    HoverText = ""
     for (x = 0; x < CurrentList.length; x++){
       eval("Flow = ElimCandidate." + InputArray.ID[CurrentList[x]])
       if (Flow != undefined){
@@ -43,13 +48,19 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
       else FlowArray.push(0) //Maybe change this to grab average value?
     }
     for (x = 0; x < FlowArray.length; x++){
-      InputArray.data[x] = parseFloat(InputArray.data[x]) + parseFloat(((FlowArray[x]/Total)*MinValue));
+      PercentageofVote = FlowArray[x]/Total
+      VoteGone = parseFloat(PercentageofVote*MinValue) 
+      InputArray.data[x] = parseFloat(InputArray.data[x]) + VoteGone;
+      if(VoteGone != 0){
+        HoverText = HoverText + "|" + (PercentageofVote*100).toFixed(2)  + "% (" + VoteGone.toFixed(2) + ") added to " + InputArray.label[x]   
+      } 
     }
     Amount = InputArray.data.splice(MinLocation,1)
     IDElim = InputArray.ID.splice(MinLocation,1)
     ColorElim = InputArray.color.splice(MinLocation,1)
     NameElim = InputArray.label.splice(MinLocation,1)
-
+    Count = Count + 1
+    History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='left'>" + Amount[0].toFixed(2) + "</abr> % of votes"
   }
   return InputArray
 
@@ -67,13 +78,20 @@ function SimulatePrefChart(){
 }
 
 
-function getHighestValue(Array){
-  HighestValue = 0;
-  ReturnValue = -1;
-  Array.forEach((item, index) => {
-    if (item > HighestValue){
-      HighestValue = item;
-      ReturnValue = index;}
-  }) 
-  return ReturnValue
+function getHighestValue(arr){
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (parseFloat(arr[i]) > parseFloat(max)) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
 }
