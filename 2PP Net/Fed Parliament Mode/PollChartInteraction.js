@@ -82,15 +82,15 @@ function RenderParliment(){
 }
 
 function CalculateSeatPrim(Poll,BaseLine,ElcID){
-  Scaler =  1+Poll[Location.Undecide]/100 
+  Scaler = Sum(Poll.slice(4,10))/100
   //Variable to scale based on undecided votes, fill in blanks essentially
   Swing = { 
-    "ALP":Poll[Location.ALP]*Scaler - BaseLine[Location.ALP],
-    "LaP":Poll[Location.LaP]*Scaler - BaseLine[Location.LaP],
-    "Grn":Poll[Location.Grn]*Scaler - BaseLine[Location.Grn],
-    "One":Poll[Location.One]*Scaler - BaseLine[Location.One],
-    "UAP":Poll[Location.UAP]*Scaler - BaseLine[Location.UAP],
-    "Oth":Poll[Location.Oth]*Scaler - BaseLine[Location.Oth]
+    "ALP":Poll[Location.ALP]/Scaler - BaseLine[Location.ALP],
+    "LaP":Poll[Location.LaP]/Scaler - BaseLine[Location.LaP],
+    "Grn":Poll[Location.Grn]/Scaler - BaseLine[Location.Grn],
+    "One":Poll[Location.One]/Scaler - BaseLine[Location.One],
+    "UAP":Poll[Location.UAP]/Scaler - BaseLine[Location.UAP],
+    "Oth":Poll[Location.Oth]/Scaler - BaseLine[Location.Oth]
   }
 
 
