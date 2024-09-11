@@ -24,14 +24,30 @@ function PollClick(click){
     
     SelectedPoll = ClickonPoll
     SelectedPollPos = points[0].index
+
     UpdatePollBar()
   }
   catch{
     console.log("Error; Please click on a Poll data point")
   }
+  UpdateSwingTable(Swing)
 }
 
-
+function UpdateSwingTable(SwingList){
+  SwingSum = 0
+  for (const [key, value] of Object.entries(SwingList)) {
+    document.getElementById(key + "Swing").innerText = value.toFixed(2)
+    SwingSum = SwingSum + value
+  } 
+  docSwingSum = document.getElementById("SwingSum")
+  docSwingSum.innerText = SwingSum.toFixed(2);
+  if (SwingSum.toFixed(2) != 0){
+    docSwingSum.className = "invalid"
+  } 
+  else{
+    docSwingSum.className = "valid"
+  }
+}
 
 function getPollPrimVote(RawDataEntry,Data){
   var positionInArray = 0

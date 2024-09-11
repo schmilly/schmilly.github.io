@@ -142,11 +142,43 @@
           <button onclick="RenderParliment()">Render Parliment with Poll</button>
           <text id=disclaimertext></text>
           </div>
-                    </div>
+        </div>
+        <div>
+          <h4> Swings from 2022 </h4>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Lib & Nats</th>
+                <th scope="col" id=ALPswinglabel style="backgroundcolor:">ALP</th>
+                <th scope="col" id=Grnswinglabel style="backgroundcolor:">Greens</th>
+                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
+                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
+                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th id=LaPSwing scope="row">0</th>
+                <td id=ALPSwing>0</td>
+                <td id=GrnSwing>0</td>
+                <td id=OneSwing>0</td>
+                <td id=UAPSwing>0</td>
+                <td id=OthSwing>0</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="2"><abr data-tooltip="Must Total to 0">Swing Total</abr></th>
+                <td id=SwingSum class="valid">0</td>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
       </div>
       <div class="grid">
-      <article>
-        <h6> Explanation </h6>
+        <article>
+          <h6> Explanation </h6>
         <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
         </sub>
         <footer><small>
@@ -240,6 +272,12 @@ Colors[2022]="#d56f46"
     PredictedFinal = document.getElementById("PredictedWinner")
     PredictFinal = CreateHorConfig();
     FinalPredictPref = new Chart(PredictedFinal,PredictFinal)
+
+    for (const [key, value] of Object.entries(Swing)) {
+      eval("VarColor = PartyColor."+key)
+      document.getElementById(key + "swinglabel").style.backgroundColor =  VarColor 
+    } 
+
 </script>
 <script src="./ElectorateFlows.js"></script>
 

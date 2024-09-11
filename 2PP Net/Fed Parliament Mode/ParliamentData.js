@@ -33,6 +33,15 @@ Location = {
   "Undecide":10
 }
 
+Swing = {
+  "LaP":0,
+  "ALP":0,
+  "Grn":0,
+  "One":0,
+  "UAP":0,
+  "Oth":0
+}
+
 var PollIDConvert = {
   "ALP": "ALP",
   "Lib": "LaP",
