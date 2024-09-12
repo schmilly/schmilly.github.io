@@ -154,10 +154,6 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
         break;
       }
     }
-    if (!InPrimVote && KeyIDs[i] != "Oth"){
-      MoveValue = KeyIDs[i]
-      eval("Swing.Oth = Swing.Oth + Swing." + MoveValue)
-    }
   }
 
 
