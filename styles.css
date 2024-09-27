@@ -224,6 +224,10 @@ article {
   background: linear-gradient(90deg, #A63A50, #AB9B96);
 }
 
+.transperth{
+  background: linear-gradient(45deg, #008635, #CBE2D4);
+}
+
 .contact {
     background: linear-gradient(90deg, #DEB841, #DE9E36);
 }
