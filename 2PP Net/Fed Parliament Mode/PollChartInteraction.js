@@ -123,8 +123,6 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     PartyID = element[0]
     eval("SwingID = PollIDConvert." + element[0])
 
-
-
     if (SwingID != undefined) { 
       eval("Vote." + SwingID  + " = Vote." + SwingID +" + element[1]")
       //console.log(SwingID + " : " + Vote.Oth)
