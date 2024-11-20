@@ -112,7 +112,8 @@ function ChartDataCreate(DataSets) {
               yMin: 0,
               yMax: 0,
               borderColor: '#C2C7D0',
-              borderWidth: 3,
+              borderWidth: 2,
+              z: -1
             }
           }
         },
