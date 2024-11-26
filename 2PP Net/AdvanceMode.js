@@ -112,8 +112,8 @@ function ChartDataCreate(DataSets) {
               yMin: 0,
               yMax: 0,
               borderColor: '#C2C7D0',
-              borderWidth: 2,
-              z: -1
+              borderWidth: 1.25,
+              opacity: 0.5,
             }
           }
         },
@@ -154,7 +154,7 @@ function ChartDataCreate(DataSets) {
           },
           title: {
             display: true,
-            text: "Days since election"
+            text: "Date (DD/MM/YYYY)"
           }
         }
       }
