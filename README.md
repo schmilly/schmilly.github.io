@@ -32,5 +32,6 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
   - [X] Implementation of Seat level swings based on Poll
   - [X] Added Geographic and Seating based map
   - [ ] Add abilitiy to calculate winner of Seat Based on Prefrences flows (WIP ATM)
-  - [ ] Implementation of Parliament wide swings and rendering of such based on Poll
+  - [X] Implementation of Parliament wide swings and rendering of such based on Poll
+      - [ ] Provide Seat Count of Parliament based on such swings. 
 - [ ] Add abillity to Auto Pull Polling Data from Wikipedia on load or via script and convert to JS format as required.
