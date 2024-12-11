@@ -175,9 +175,10 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     eval("PartyVote = SeatPrim."+ PartyID)
 
     NewPrim = PartyVote + PartySwing
+    SwingOth = Swing.Oth
     FinalVote = NewPrim
     if (FinalVote < 0){
-      Swing.Oth = Swing.Oth + FinalVote*(OtherCount/(OtherCount-OtherPos))
+      SwingOth = SwingOth + FinalVote*(OtherCount/(OtherCount-OtherPos))
       //Scale based on number of other or other count so can properly apply
       FinalVote = 0 
     }
@@ -203,9 +204,9 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
       positionInArray = positionInArray + 1
     })
 
-  OtherVote = Vote.Oth + Swing.Oth/OtherCount
+  OtherVote = Vote.Oth + SwingOth/OtherCount
   if (OtherVote < 0){
-     OtherVote = OtherVote * -1
+     //OtherVote = OtherVote * -1
   } 
   
   
@@ -224,7 +225,6 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     console.log("Changing Value to Match")
     OutputArray.data[positionInArray-1] = OtherVote + (100 - Sum(VoteSwing)) 
   }
-
 
   return OutputArray;
 }
