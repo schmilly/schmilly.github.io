@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>Parliament Mode</title>
+    <title>Schmilly's Cool Political Tool :D </title>
     <meta name="description" content="A Chart of Net 2PP rolling averages" />
     <link href="../styles.css" rel="stylesheet">
     <link rel="icon" href="../Icon.svg" type="image/svg+xml">
@@ -139,12 +139,11 @@
             <b id=Pll2PP></b> 
           </text> 
           <br>
-          <button onclick="renderParliment(ElectorateList)">Render Parliment with Poll</button>
-          <text id=disclaimertext></text>
+
           </div>
         </div>
         <div>
-          <h4> Swings from 2022 </h4>
+        <h4> Swings from 2022 </h4>
           <table>
             <thead>
               <tr>
@@ -173,6 +172,35 @@
               </tr>
             </tfoot>
           </table>
+          <div>
+          <button onclick="renderParliment(ElectorateList)">Render Parliment with Poll</button>
+          <br> Count based on Render (76 Seats needed for Majority) :
+          <div style="width:100%;overflow:scroll;">
+          <table  id="SeatCount">
+            <tr>
+              <th> Labor Party</th>
+              <th> Liberal Party</th>
+              <th> Liberal National Party</th>
+              <th> Greens</th>
+              <th> Nationals</th>
+              <th> Indipendent</th>
+              <th> Center Alliance</th>
+              <th> Katter Australia Party</th>
+            </tr>
+            <tr>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+              <td>- <br> - </td>
+            </tr>
+          </table>
+          </div>
+          </div>
+          
 
         </div>
       </div>

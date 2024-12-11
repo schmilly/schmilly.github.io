@@ -58,6 +58,23 @@ var PollIDConvert = {
   "XEN": "Oth",
   "KAP": "Oth"
 }
+
+Count2022 = {
+  "ALP": 77,
+  "Lib": 27,
+  "LaP": 58,
+  "LNP": 21,
+  "CLP": 0,
+  "UAP": 0,
+  "Grn": 4, 
+  "Nat": 10,
+  "One": 0,
+  "Oth": 12,
+  "Ind": 10,
+  "JLN": 0,
+  "XEN": 1,
+  "KAP": 1
+}
  
 var PartyNameArray = {
   "ALP": "Labor Party",
