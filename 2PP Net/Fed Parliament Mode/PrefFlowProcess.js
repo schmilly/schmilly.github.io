@@ -66,7 +66,12 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     ColorElim = InputArray.color.splice(MinLocation,1)
     NameElim = InputArray.label.splice(MinLocation,1)
     Count = Count + 1
-    History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='left'>" + Amount[0].toFixed(2) + "</abr> % of votes"
+    //Kind of a hackey way to deal with negative values in swings but whatever
+    //Just don't show distribution of votes if negative, but will still take away votes when negative.
+    //Kinda silly but it works
+    if(Count > 0){
+      History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='left'>" + Amount[0].toFixed(2) + "</abr> % of votes"
+    }
   }
   return InputArray
 
