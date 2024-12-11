@@ -206,7 +206,7 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
 
   OtherVote = Vote.Oth + SwingOth/OtherCount
   if (OtherVote < 0){
-     //OtherVote = OtherVote * -1
+     OtherVote = OtherVote * -1
   } 
   
   
