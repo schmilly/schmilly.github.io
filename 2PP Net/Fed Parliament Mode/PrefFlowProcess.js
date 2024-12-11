@@ -77,15 +77,17 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
 
 }
 
-function SimulatePrefChart(){
+function SimulatePrefChart(seat,SeatWin){
   FinalWinData = PrefrenceFlows(CalculateSeatPrim(
       RawData[SelectedPollPos],
       RawData[RawData.length-1],
-      selected),DivisonPrefrences2022House,selected)
+      seat),DivisonPrefrences2022House,seat)
   ArrayToChartJS(FinalWinData,FinalPredictPref.data)
   WinnerNum = getHighestValue(FinalWinData.data)
+  SeatWin = FinalWinData.label[WinnerNum]
   document.getElementById("Winner").innerText = FinalWinData.label[WinnerNum]
   FinalPredictPref.update()
+  return FinalWinData.ID[WinnerNum]
 }
 
 

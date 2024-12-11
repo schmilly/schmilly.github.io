@@ -77,9 +77,7 @@ function getPollPrimVote(RawDataEntry,Data){
 }
 
 
-function RenderParliment(){
-  document.getElementById("disclaimertext").innerText = "\nThanks for tying this, unforutnatly my ass yet to get this to work so uhh; will be done eventually"
-}
+
 
 function CalculateSeatPrim(Poll,BaseLine,ElcID){
   Scaler = Sum(Poll.slice(4,10))/100
@@ -111,6 +109,7 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
   }
 
   VoteSwing = []
+  SeatPrim = new Array();
   eval("SeatPrim = FirstPref." + ElcID)
   var othervote = 0.00;
   var positionInArray = 0

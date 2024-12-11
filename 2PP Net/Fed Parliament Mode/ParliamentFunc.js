@@ -3,7 +3,7 @@ var selected = ""
 
 //-- SVG Functions --
 //
-function SetSeatColor(ParliamentList,MapMode){
+function SetupSVG(ParliamentList,MapMode){
   ParliamentList.forEach((i) => {
     if (MapMode){
       //Loop to wait for document to load
@@ -81,7 +81,7 @@ function UpdatePollBar(){
       RawData[RawData.length-1],
       selected),PredictedPrimData.data)
     BarPredictedPref.update();
-    SimulatePrefChart();
+    SimulatePrefChart(selected);
   }
 }
 
@@ -95,7 +95,7 @@ function injectParliament(xmlDoc) {
   svg.attr("id", "Parliament")
   svg.attr("width","100%")
   svg.attr("height","100%")
-  svg.attr("onload","SetSeatColor(ElectorateList,false)")
+  svg.attr("onload","SetupSVG(ElectorateList,false)")
   container2.append(svg);
 }
 
@@ -110,7 +110,7 @@ function injectMap(xmlDoc) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Map")
   svg.attr("style","overflow:auto;")
-  svg.attr("onload","SetSeatColor(ElectorateList,true)")
+  svg.attr("onload","SetupSVG(ElectorateList,true)")
 
   container1.append(svg);
 
