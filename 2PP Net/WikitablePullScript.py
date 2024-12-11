@@ -1,12 +1,20 @@
 import pandas as pd
 import requests
+import sys
 import re
 from bs4 import BeautifulSoup
 from datetime import *
 
-LastEntry = datetime(2024, 10, 6)
+LastEntry = datetime(2022, 1, 1)
 wikiurl = 'https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Australian_federal_election'
 table_class = "wikitable sortable jquery-tablesorter"
+Read_File = False
+
+if len(sys.argv) >= 2:
+    file_location = sys.argv[1]
+    Read_File = True
+#Only Argument python program
+
 response = requests.get(wikiurl)
 
 
@@ -45,9 +53,16 @@ for x in PyTable:
         CurrentEntry = re.sub("%","",CurrentEntry)
         x[4+Num] = CurrentEntry
 
+if(Read_File):
+    with open(file_location,'r') as file:
+        RawData = file.read().split('"',2)
+    NewestDate = RawData[1]
+    LastEntry = datetime.strptime(NewestDate,"%d %B %Y")
+
 #Output in JS format
+print("const RawData = [")
 for y in PyTable:
-    if (datetime.strptime(y[0],"%d %B %Y") < LastEntry):
+    if (datetime.strptime(y[0],"%d %B %Y") <= LastEntry):
         break 
     print("[")
     for x in y:
