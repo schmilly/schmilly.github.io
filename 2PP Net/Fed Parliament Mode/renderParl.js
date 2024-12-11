@@ -1,7 +1,7 @@
 function renderParliment(SeatList) {
   Counts = {
-  "ALP": 0,  "Lib": 0,  "LaP": 0,  "LNP": 0,  "CLP": 0,  "UAP": 0,  "Grn": 0, 
-  "Nat": 0,  "One": 0,  "Oth": 0,  "Ind": 0,  "JLN": 0,  "XEN": 0,  "KAP": 0
+  "ALP": 0,  "Lib": 0,  "LaP": 0,  "LNP": 0,  "CLP": 0,  "Nat": 0,  "Grn": 0, 
+  "UAP": 0,  "One": 0,  "Oth": 0,  "Ind": 0,  "JLN": 0,  "XEN": 0,  "KAP": 0
   }
   
   SeatList.forEach((Seat) => {
