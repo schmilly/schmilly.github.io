@@ -3,13 +3,13 @@ function renderParliment(SeatList) {
   "ALP": 0,  "Lib": 0,  "LaP": 0,  "LNP": 0,  "CLP": 0,  "Nat": 0,  "Grn": 0, 
   "UAP": 0,  "One": 0,  "Oth": 0,  "Ind": 0,  "JLN": 0,  "XEN": 0,  "KAP": 0
   }
-  
   SeatList.forEach((Seat) => {
     try{
-      Winner = SimulatePrefChart(Seat, Winner)
+        Winner = SimulatePrefChart(Seat, Winner);
     }
     catch{
       console.log("Error with Electorate: " + Seat)
+      document.getElementById("SeatCount").innerHTML = "<b>ERROR: Unable to load data, please ensure a swing and poll has been selected</b>"
     }
     console.log(Seat)
     console.log(Winner)
@@ -22,7 +22,7 @@ function renderParliment(SeatList) {
     SeatMap.style.fill = SeatColor;
   })
   TopRow = ""
-  BottomRow = ""
+  BottomRow = ""  
   Object.entries(Counts).forEach((Elements => {
       if (Elements[1] > 0){
       eval("CountPartyName = PartyNameArray." + Elements[0])

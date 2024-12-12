@@ -11,7 +11,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     MinLocation = -1
     CurrentList = []
     for (x = 0; x < InputArray.data.length; x++){
-      if (parseFloat(InputArray.data[x]).toFixed(0) >= 50){
+      if (parseFloat(InputArray.data[x]).toFixed(2) >= 50){
 
         PrefrencesAllocating = false;
         break;
@@ -78,10 +78,15 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
 }
 
 function SimulatePrefChart(seat,SeatWin){
+  if (CustomSwing){
+    FinalWinData = PrefrenceFlows(CalcSeatSwing(Swing,seat),DivisonPrefrences2022House,seat)
+  }
+  else{
   FinalWinData = PrefrenceFlows(CalculateSeatPrim(
       RawData[SelectedPollPos],
       RawData[RawData.length-1],
       seat),DivisonPrefrences2022House,seat)
+  }
   ArrayToChartJS(FinalWinData,FinalPredictPref.data)
   WinnerNum = getHighestValue(FinalWinData.data)
   SeatWin = FinalWinData.label[WinnerNum]

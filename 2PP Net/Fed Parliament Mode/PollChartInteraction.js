@@ -37,8 +37,15 @@ function UpdateSwingTable(SwingList){
   SwingSum = 0
   for (const [key, value] of Object.entries(SwingList)) {
     document.getElementById(key + "Swing").innerText = value.toFixed(2)
-    SwingSum = SwingSum + value
   } 
+  UpdateSwingTotal(SwingList)
+}
+
+function UpdateSwingTotal(SwingList){
+  SwingSum = 0;
+  for (const [key, value] of Object.entries(SwingList)) {
+    SwingSum = SwingSum + value
+  }
   docSwingSum = document.getElementById("SwingSum")
   docSwingSum.innerText = SwingSum.toFixed(2);
   if (SwingSum.toFixed(2) != 0){
@@ -91,7 +98,16 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     "Oth":Poll[Location.Oth]/Scaler - BaseLine[Location.Oth]
   }
 
+  return CalcSeatSwing(Swing,ElcID);
+}
 
+function CalcSeatSwing(Swing,ElcID) {
+    OutputArray = {
+    "label":[],
+    "data":[],
+    "color":[],
+    "ID":[],
+  }
   Vote = {
     "ALP":0.00,
     "LaP":0.00,
@@ -99,13 +115,6 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     "One":0.00,
     "UAP":0.00,
     "Oth":0.00
-  }
-
-  OutputArray = {
-    "label":[],
-    "data":[],
-    "color":[],
-    "ID":[],
   }
 
   VoteSwing = []
@@ -122,31 +131,31 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     PartyID = element[0]
     eval("SwingID = PollIDConvert." + element[0])
 
-    if (SwingID != undefined) { 
-      eval("Vote." + SwingID  + " = Vote." + SwingID +" + element[1]")
+    if (SwingID != undefined) {
+      eval("Vote." + SwingID + " = Vote." + SwingID + " + element[1]")
       //console.log(SwingID + " : " + Vote.Oth)
     }
-    else{
+    else {
       //console.log("Couldn't find Party with ID " + element[0])
       //console.log("Adding votes of "+ element[1] +  " to other vote")
       Vote.Oth = Vote.Oth + element[1]
     }
 
-    if (SwingID == undefined || SwingID == "Oth"){
-        OtherCount = OtherCount + 1  
+    if (SwingID == undefined || SwingID == "Oth") {
+      OtherCount = OtherCount + 1
     }
-    else if(SwingID == "LaP"){
+    else if (SwingID == "LaP") {
       LibNatCount = LibNatCount + 1
     }
   })
 
   KeyIDs = Object.keys(Vote)
-  VoteIDs = Object.keys(SeatPrim) 
-  for ( i = 0; i < KeyIDs.length; i = i + 1){
+  VoteIDs = Object.keys(SeatPrim)
+  for (i = 0; i < KeyIDs.length; i = i + 1) {
     InPrimVote = false
-    for (x = 0; x < VoteIDs.length; x = x + 1){
-      eval ("CheckID = PollIDConvert." + VoteIDs[x])
-      if (KeyIDs[i] == CheckID){
+    for (x = 0; x < VoteIDs.length; x = x + 1) {
+      eval("CheckID = PollIDConvert." + VoteIDs[x])
+      if (KeyIDs[i] == CheckID) {
         InPrimVote = true
         break;
       }
@@ -156,94 +165,97 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
 
 
 
-  Object.keys(SeatPrim).forEach((PartyID)=> {
+  Object.keys(SeatPrim).forEach((PartyID) => {
     OtherPos = 0
-    eval("SetPartyName = PartyNameArray."+ PartyID)      
+    eval("SetPartyName = PartyNameArray." + PartyID)
     eval("SwingID = PollIDConvert." + PartyID)
-    if (SwingID == undefined){
-      SwingID = "Oth"}
-    eval("PartyColored = PartyColor."+ PartyID)
-    eval("SetPartyName = PartyNameArray."+ PartyID)
-    if (SwingID == "Oth"){
+    if (SwingID == undefined) {
+      SwingID = "Oth"
+    }
+    eval("PartyColored = PartyColor." + PartyID)
+    eval("SetPartyName = PartyNameArray." + PartyID)
+    if (SwingID == "Oth") {
       eval("PartySwing = (Swing." + SwingID + ")/OtherCount")
-      OtherPost = OtherPos + 1}
+      OtherPost = OtherPos + 1
+    }
     else if (SwingID == "LaP")
       eval("PartySwing = (Swing." + SwingID + ")/LibNatCount")
     else
       eval("PartySwing = Swing." + SwingID)
-    eval("PartyVote = SeatPrim."+ PartyID)
+    eval("PartyVote = SeatPrim." + PartyID)
 
     NewPrim = PartyVote + PartySwing
     SwingOth = Swing.Oth
     FinalVote = NewPrim
-    if (FinalVote < 0){
-      SwingOth = SwingOth + FinalVote*(OtherCount/(OtherCount-OtherPos))
+    if (FinalVote < 0) {
+      SwingOth = SwingOth + FinalVote * (OtherCount / (OtherCount - OtherPos))
       //Scale based on number of other or other count so can properly apply
-      FinalVote = 0 
+      FinalVote = 0
     }
-    else if (SetPartyName == undefined){
+    else if (SetPartyName == undefined) {
       SetPartyName = PartyID
       PartyColored = PartyColor.Oth
       SwingID = "Oth"
     }
-    if (FinalVote > 0 && SwingID == "Oth" ){
+    if (FinalVote > 0 && SwingID == "Oth") {
       Vote.Oth = Vote.Oth - PartyVote
     }
-    if (FinalVote != 0){
-        if (PartyColored == undefined){
-          PartyColored = PartyColor.Oth
-        }
-        OutputArray.label[positionInArray] = SetPartyName;
-        OutputArray.data[positionInArray] = FinalVote
-        OutputArray.color[positionInArray] = PartyColored
-        OutputArray.ID[positionInArray] = PartyID
+    if (FinalVote != 0) {
+      if (PartyColored == undefined) {
+        PartyColored = PartyColor.Oth
       }
-      Total = Total+FinalVote
-      VoteSwing.push(FinalVote)
-      positionInArray = positionInArray + 1
-    })
+      OutputArray.label[positionInArray] = SetPartyName;
+      OutputArray.data[positionInArray] = FinalVote
+      OutputArray.color[positionInArray] = PartyColored
+      OutputArray.ID[positionInArray] = PartyID
+    }
+    Total = Total + FinalVote
+    VoteSwing.push(FinalVote)
+    positionInArray = positionInArray + 1
+  })
 
-  OtherVote = Vote.Oth + SwingOth/OtherCount
-  if (OtherVote < 0){
-     OtherVote = OtherVote * -1
-  } 
-  
-  
+  OtherVote = Vote.Oth + SwingOth / OtherCount
+  if (OtherVote < 0) {
+    OtherVote = OtherVote * -1
+  }
+
+
   OutputArray.label[positionInArray] = PartyNameArray.Oth;
   OutputArray.data[positionInArray] = OtherVote
   OutputArray.color[positionInArray] = PartyColor.Oth
   OutputArray.ID[positionInArray] = "Oth"
-  Total=Total+OtherVote 
+  Total = Total + OtherVote
   positionInArray = positionInArray + 1
 
-  if (Total.toFixed(1) != 100){
+  if (Total.toFixed(1) != 100) {
     console.log("Error; Values do not add up to 100: " + VoteSwing)
     console.log("Other should be estimated to be:" + (100 - Sum(VoteSwing)))
     console.log("Other sum is:" + OtherVote)
     console.log("Sums to:" + Total)
     console.log("Changing Value to Match")
-    OutputArray.data[positionInArray-1] = OtherVote + (100 - Sum(VoteSwing)) 
+    OutputArray.data[positionInArray - 1] = OtherVote + (100 - Sum(VoteSwing))
   }
 
   return OutputArray;
 }
 
-function ArrayToChartJS(InputArray,Data){
+function ArrayToChartJS(InputArray, Data) {
   ArrayLength = InputArray.label.length
   OtherVote = 0;
   EntryCount = 0;
-  for (x = 0; x < InputArray.label.length; x++){
-      if (InputArray.data[x] == undefined){
-        continue
-      }
-      if (InputArray.data[x] < 2 && InputArray.ID[x] != "Oth"){
-            OtherVote = OtherVote + parseFloat(InputArray.data[x])
-      }
-      else{ if (InputArray.ID[x] == "Oth"){
+  for (x = 0; x < InputArray.label.length; x++) {
+    if (InputArray.data[x] == undefined) {
+      continue
+    }
+    if (InputArray.data[x] < 2 && InputArray.ID[x] != "Oth") {
+      OtherVote = OtherVote + parseFloat(InputArray.data[x])
+    }
+    else {
+      if (InputArray.ID[x] == "Oth") {
         InputArray.data[x] = parseFloat(InputArray.data[x]) + parseFloat(OtherVote)
         OtherVote = 0;
       }
-       Data.datasets[EntryCount] = {
+      Data.datasets[EntryCount] = {
         label: InputArray.label[x],
         data: [InputArray.data[x].toFixed(2)],
         backgroundColor: InputArray.color[x]
@@ -251,23 +263,24 @@ function ArrayToChartJS(InputArray,Data){
       EntryCount++
     }
   }
-  if (OtherVote != 0){
+  if (OtherVote != 0) {
     Data.datasets[EntryCount] = {
       label: PartyNameArray.Oth,
       data: OtherVote.toFixed(2),
-      backgroundColor: PartyColor.Oth  }
-  EntryCount++;
-  OtherVote=0;
+      backgroundColor: PartyColor.Oth
+    }
+    EntryCount++;
+    OtherVote = 0;
+  }
+
+  while (Data.datasets.length > EntryCount) {
+    Data.datasets.pop();
+  }
+
+  return Data
 }
 
-while(Data.datasets.length > EntryCount){
-  Data.datasets.pop();
-} 
-
-return Data
-}
-
-function Sum(Array){
+function Sum(Array) {
   SumValue = 0
   Array.forEach(element => {
     SumValue = Number(SumValue) + Number(element)
@@ -275,6 +288,4 @@ function Sum(Array){
   return SumValue
 }
 
-function PredictSeatWin(InputArray,PrefTable){
-  
-}
+

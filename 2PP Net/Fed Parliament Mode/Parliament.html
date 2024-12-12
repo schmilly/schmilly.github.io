@@ -14,31 +14,27 @@
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    
   </head>
   <body>
-    <!-- Header -->
-    
+    <!-- Header -->   
     <header class="container" style="padding-left: 1em;padding-right: 1em;">
       <hgroup>
         <h2>Schmilly's Political Tool</h2>
-        <p style="line-height:100%">
-          This enables a more advance break down and lets you set custom preference flows for parties <br>
-        <small><i>Note: Uses 2022 election results for Primary vote; but colours map based on who currently holds seat (e.g: Aston shows as red but Primary vote is from 2022 election)</small></i> <br>
-        <small>Please send any bugs or issues to me on Twitter or via email to <a href="mailto:schmilly@proton.me">schmilly@proton.me</a></small><br>
-        <a href="../2PP.html">Polling Average Chart</a>
-        <a href="../WA Parliament Mode/Parliament.html">Western Australia Version - Currently WIP</a>
-        </p>
       </hgroup>
     </header>
     <!-- ./ Header -->
-    <main class="container">
       <div class="grid" >
-        <div> <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
+        <div>>
+          <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
           <div id=topcontainer style="overflow:auto;height:500px;border-width:5px;border-style:solid">
             <object id=container1>
             </object>
           </div>
+        <input id="zoomin" class="zoom zoomin" type="button" style="width:1%;height:1%; transform: translate(20%) translateY(-150%);" onclick="MapZoom(1)"  id="zoom-in">
+        <input id="zoomout" class="zoom zoomout" type="button" style="width:1%;height:1%; transform: translate(125%) translateY(-150%);" onclick="MapZoom(0)" id="zoom-out">        
+        <input id="zoomrest" class="zoom zoomin" type="button" style="width:1%;height:1%; transform: translate(230%) translateY(-150%);" onclick="MapZoom(-1)"  id="zoom-in">        
+
         </div>
         <div style="width:100%;padding:0.5em">
           <div class="grid">
@@ -58,13 +54,13 @@
             </div>
           </div>
           <div class="grid">
-
             <div>
               <kbd>Primary Vote 2022 Election</kbd>
               <div style="margin-right: 1em;">
                 <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
                 </canvas>
               </div>
+      
               <kbd>Predicted Primary Vote with Selected Poll</kbd> 
               <label for="checkbox-1" style="margin-bottom:0;display:inline;font-size:0.875em">
                 <input style="margin:0;" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
@@ -76,12 +72,10 @@
               </div>
               <small>(uniform swing from 2022) </small>
             </div>
-
-
         </div>
         </div>
         <div>
-          <kbd>Predicted Seat Winner based on Poll</kbd> <b>(In Early Beta Stages)</b>
+          <kbd>Predicted Seat Winner based on Poll</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
           <div><details class="dropdown" style="margin:2%;">
             <summary style="padding:0; font-size:100%;padding-right: 10px;padding-left: 10px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
             <ul id=PrefFlowList>
@@ -89,22 +83,53 @@
               <li><a>2022 Senate Pref Flows</a></li>
             </ul>
           </details>
-          <label for="checkbox-1">
-            <input type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
+          <label for="checkbox-2">
+            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="{TT_sticky_header}"
+              onchange="ShowVote(this)" />
             Show Steps
           </label>
-            </div>
-          <b style="color:var(--pico-del-color)"> Please note this is newly implimented ; 
-            <br> Not been checked yet and not likely to be accurate;
-            <br> There will be bugs Apologies for any issues <br>
-          </b>
-          <b>Predicted Final Vote:</b>
-          <div style="margin-right: 1em;">
-            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
-            </canvas>
           </div>
-          Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
-          <text style="z-index:2;" id=PrefHistory></text>
+          <b style="color:var(--pico-del-color)">
+          </b>
+          <div id="FinalVoteBox" class="containerslide">
+            <b>Predicted Final Vote:</b>
+            <div style="margin-right: 1em;">
+              <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
+              </canvas>
+            </div>
+            Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
+            <text class="overlay" id=PrefHistory>
+              <table stlye="height:100%"><tr><td>Need to set a swing (custom or with a poll) and electorate to show steps for final result</td></tr></table>
+            </text>
+          </div>
+          <div>
+            <button style="padding:2px" onclick="renderParliment(ElectorateList)">Render Parliment with Poll</button>
+            Count based on Render (76 Seats needed for Majority) :
+            <div style="width:100%;overflow:scroll;">
+              <table id="SeatCount">
+                <tr>
+                  <th> Labor Party</th>
+                  <th> Liberal Party</th>
+                  <th> Liberal National Party</th>
+                  <th> Nationals</th>
+                  <th> Greens</th>
+                  <th> Indipendent</th>
+                  <th> Center Alliance</th>
+                  <th> Katter Australia Party</th>
+                </tr>
+                <tr>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                  <td>- <br> - </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
       <div class="grid" style="padding-bottom:1em">
@@ -131,9 +156,7 @@
             <canvas height="50%" width="100%" style="padding-right: 1em;" id="PollGPrimaryVote">
             </canvas>
           </div>
-          <text> Primary Vote Swing from 2022:
-              <b>WIP</b>
-          </text>
+          <text> Primary Vote Swing from 2022 Results:</text>
           <br>
           <text>Net 2PP (Labor - Liberal):
             <b id=Pll2PP></b> 
@@ -143,88 +166,81 @@
           </div>
         </div>
         <div>
-        <h4> Swings from 2022 </h4>
+          <div class="grid">
+          <h4> Swing from 2022 </h4> 
+          <label for="checkbox-3">
+            <input type="checkbox" id="checkbox-3" name="checkbox-3" onchange="CustomSwingToggle(this)" />
+            Custom Swing 
+          </label>
+          </div>
           <table>
             <thead>
               <tr>
-                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Lib & Nats</th>
-                <th scope="col" id=ALPswinglabel style="backgroundcolor:">ALP</th>
+                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Liberal-National (Coalition)</th>
+                <th scope="col" id=ALPswinglabel style="backgroundcolor:">Labor</th>
                 <th scope="col" id=Grnswinglabel style="backgroundcolor:">Greens</th>
-                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
-                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
-                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th id=LaPSwing scope="row">0</th>
-                <td id=ALPSwing>0</td>
-                <td id=GrnSwing>0</td>
-                <td id=OneSwing>0</td>
-                <td id=UAPSwing>0</td>
-                <td id=OthSwing>0</td>
+                <th id=LaPSwing scope="row">0.00</th>
+                <td id=ALPSwing>0.00</td>
+                <td id=GrnSwing>0.00</td>
+              </tr>
+              <tr>
+                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
+                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
+                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
+              </tr>
+              <tr>
+                <td id=OneSwing>0.00</td>
+                <td id=UAPSwing>0.00</td>
+                <td id=OthSwing>0.00</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <th scope="row" colspan="2"><abr data-tooltip="Must Total to 0">Swing Total</abr></th>
-                <td id=SwingSum class="valid">0</td>
+                <th scope="row" colspan="2">
+                  <abr data-tooltip="Must Total to 0">Swing Total</abr>
+                </th>
+                <td id=SwingSum class="valid">0.00</td>
               </tr>
             </tfoot>
-          </table>
-          <div>
-          <button onclick="renderParliment(ElectorateList)">Render Parliment with Poll</button>
-          <br> Count based on Render (76 Seats needed for Majority) :
-          <div style="width:100%;overflow:scroll;">
-          <table  id="SeatCount">
-            <tr>
-              <th> Labor Party</th>
-              <th> Liberal Party</th>
-              <th> Liberal National Party</th>
-              <th> Greens</th>
-              <th> Nationals</th>
-              <th> Indipendent</th>
-              <th> Center Alliance</th>
-              <th> Katter Australia Party</th>
-            </tr>
-            <tr>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-              <td>- <br> - </td>
-            </tr>
-          </table>
-          </div>
-          </div>
-          
-
+          </table> 
         </div>
-      </div>
+        </div>
       <div class="grid">
         <article>
-          <h6> Explanation </h6>
-        <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from the current government's 2 Party Preferred value.<br>
-        </sub>
-        <footer><small>
-          For Example: <blockquote> <i>
-            Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
-            53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
-          Or..<blockquote> <i>
-            Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
-            46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
-        </small></footer>
-        <sub> Chart also uses a 100 day rolling average </sub> <br>
-      </article>
+          <p style="line-height:100%">
+            This enables a more advance break down and lets you set custom preference flows for parties <br>
+            <small><i>Note: Uses 2022 election results for Primary vote; but colours map based on who currently holds seat
+                (e.g: Aston shows as red but Primary vote is from 2022 election)</small></i> <br>
+            <small>Please send any bugs or issues to me on Twitter or via email to <a
+                href="mailto:schmilly@proton.me">schmilly@proton.me</a></small><br>
+            <a href="../2PP.html">Polling Average Chart</a>
+            <a href="../WA Parliament Mode/Parliament.html">Western Australia Version - Currently WIP</a>
+          </p>
+          <article>
+            <h6> Explanation </h6>
+            <sub> Net 2 Party Preferred percentage is calculated by subtracting the opposition's 2 Party Preferred value from
+              the current government's 2 Party Preferred value.<br>
+            </sub>
+          </article>
+          <footer><small>
+              For Example: <blockquote> <i>
+                  Roy Mogran Poll 26 February – 3 March 2024 - ALP 53.5% vs L/NP 46.5% <br>
+                  53.5% - 46.5% = 7% Therefore Albo has a net 2PP of + 7% in Latest Poll</i></blockquote>
+              Or..<blockquote> <i>
+                  Newspoll Poll 17 - 20 August 2017 - ALP 54% vs LNP 46% <br>
+                  46% (LNP goverment @ time) - 54% = -8% Therefore ScoMo had a net 2PP of -8% at the time </i> </blockquote>
+            </small></footer>
+          <sub> Chart also uses a 100 day rolling average </sub> <br>
+        </article>
         <article>
           <kbd>Known Bugs/Issues</kbd>
           <text id="BugReportText"></text>
-
         </article>
-        </div>
+      </div>
     </main>
   </body>
 </html>
@@ -252,12 +268,9 @@ Colors[2022]="#d56f46"
 
     var loaded = false;
 
-    //First Pref Array Party Guide ALP,Liberal,Nationals,Liberal-National,Greens,One Nation,Indipendent,CUSTOM,other
-
-
-
 </script>
 <script src="./ParliamentData.js"></script>
+<script src="./SVGFunctions.js"></script>
 <script src="./ParliamentFunc.js"></script>
 <script src="./FirstPref.js"></script>
 <script src="./PrimaryVoteChart.js"></script>
@@ -267,14 +280,20 @@ Colors[2022]="#d56f46"
 <script src="../AdvanceMode.js"></script>
 <script src="../PageFunctions.js"></script>
 <script src="./Raw_Data.js"></script>
-<script src="./PrefFlow.js"></script>
+<script src="./PrefFlowData.js"></script>
 <script src="./PrefFlowProcess.js"></script>
 <script src="../ReadBugList.js"></script>
 <script src="./renderParl.js"></script>
+<script src="./CustomSwing.js"></script>
 
 <script>
     //Start
+   CustomSwing = false;
     
+    //Set checked box to blank
+    document.getElementById("checkbox-2").checked = false;
+    document.getElementById("checkbox-3").checked = false;
+
     //Polling Chart
     Custom2PPgenerateChartData(DataSets, Filelist, false,[0.5,0.5,0.5,0.5]);
     
