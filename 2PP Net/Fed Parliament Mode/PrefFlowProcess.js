@@ -70,7 +70,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     //Just don't show distribution of votes if negative, but will still take away votes when negative.
     //Kinda silly but it works
     if(Amount[0] > 0){
-      History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='left'>" + Amount[0].toFixed(2) + "</abr> % of votes"
+      History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NaeElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='top'>" + Amount[0].toFixed(2) + "</abr> % of votes"
     }
   }
   return InputArray
