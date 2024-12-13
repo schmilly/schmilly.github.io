@@ -25,7 +25,7 @@
     </header>
     <!-- ./ Header -->
       <div class="grid" >
-        <div>>
+        <div>
           <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
           <div id=topcontainer style="overflow:auto;height:500px;border-width:5px;border-style:solid">
             <object id=container1>
@@ -61,7 +61,7 @@
                 </canvas>
               </div>
       
-              <kbd>Predicted Primary Vote with Selected Poll</kbd> 
+              <kbd>Predicted Primary Vote with Swing</kbd> 
               <label for="checkbox-1" style="margin-bottom:0;display:inline;font-size:0.875em">
                 <input style="margin:0;" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
                 Consolidate Votes < 2%
@@ -74,8 +74,80 @@
             </div>
         </div>
         </div>
+      </div>
+      <div class="grid" style="padding-bottom:1em">
+<div style="height:100%">
+            <canvas  id="SmoothCircle">
+            </canvas>
+          </div>
+        <div class="grid">
+          <div>
+            <table>
+              <tr>
+                <th>Poll Date:</th>
+                <th>Polster:</th>
+                <th>Net 2PP (Labor - Liberal):</th>
+              </tr>
+              <tr>
+                <td><b id=SelectPollDate>-</b></td>
+                <td><b id=PllPollster>-</b> </td>
+                <td><b id=Pll2PP>-</b> </td>
+              </tr>
+            </table>
+          <text>Primary Vote: <br>
+          </text>
+          <div>
+            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PollGPrimaryVote">
+            </canvas>
+          </div>
+          </div>
+        </div>
         <div>
-          <kbd>Predicted Seat Winner based on Poll</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
+          <div class="grid">
+          <b> Swing from 2022 </b> 
+          <label for="checkbox-3">
+            <input type="checkbox" id="checkbox-3" name="checkbox-3" onchange="CustomSwingToggle(this)" />
+            Custom Swing 
+          </label>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Liberal-National (Coalition)</th>
+                <th scope="col" id=ALPswinglabel style="backgroundcolor:">Labor</th>
+                <th scope="col" id=Grnswinglabel style="backgroundcolor:">Greens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th id=LaPSwing scope="row">0.00</th>
+                <td id=ALPSwing>0.00</td>
+                <td id=GrnSwing>0.00</td>
+              </tr>
+              <tr>
+                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
+                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
+                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
+              </tr>
+              <tr>
+                <td id=OneSwing>0.00</td>
+                <td id=UAPSwing>0.00</td>
+                <td id=OthSwing>0.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="2">
+                  <abr data-tooltip="Must Total to 0">Swing Total</abr>
+                </th>
+                <td id=SwingSum class="valid">0.00</td>
+              </tr>
+            </tfoot>
+          </table> 
+        </div>
+      <div>
+        <div>
+          <kbd>Predicted Seat Winner based on Poll/Swing</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
           <div><details class="dropdown" style="margin:2%;">
             <summary style="padding:0; font-size:100%;padding-right: 10px;padding-left: 10px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
             <ul id=PrefFlowList>
@@ -130,83 +202,7 @@
               </table>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="grid" style="padding-bottom:1em">
-      <div>
-        <div style="height:100%">
-            <canvas  id="SmoothCircle">
-            </canvas>
-          </div>
-        </div>
-        <div class="grid">
-          <div>
-            <h5>Poll</h5>
-            <text>Poll Date:
-              <b id=SelectPollDate></b>
-            </text>
-            <br>
-          <text>Polster:
-            <b id=PllPollster></b>
-          </text>
-          <br>
-          <text>Primary Vote: <br>
-          </text>
-          <div>
-            <canvas height="50%" width="100%" style="padding-right: 1em;" id="PollGPrimaryVote">
-            </canvas>
-          </div>
-          <text> Primary Vote Swing from 2022 Results:</text>
-          <br>
-          <text>Net 2PP (Labor - Liberal):
-            <b id=Pll2PP></b> 
-          </text> 
-          <br>
-
-          </div>
-        </div>
-        <div>
-          <div class="grid">
-          <h4> Swing from 2022 </h4> 
-          <label for="checkbox-3">
-            <input type="checkbox" id="checkbox-3" name="checkbox-3" onchange="CustomSwingToggle(this)" />
-            Custom Swing 
-          </label>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Liberal-National (Coalition)</th>
-                <th scope="col" id=ALPswinglabel style="backgroundcolor:">Labor</th>
-                <th scope="col" id=Grnswinglabel style="backgroundcolor:">Greens</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th id=LaPSwing scope="row">0.00</th>
-                <td id=ALPSwing>0.00</td>
-                <td id=GrnSwing>0.00</td>
-              </tr>
-              <tr>
-                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
-                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
-                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
-              </tr>
-              <tr>
-                <td id=OneSwing>0.00</td>
-                <td id=UAPSwing>0.00</td>
-                <td id=OthSwing>0.00</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <th scope="row" colspan="2">
-                  <abr data-tooltip="Must Total to 0">Swing Total</abr>
-                </th>
-                <td id=SwingSum class="valid">0.00</td>
-              </tr>
-            </tfoot>
-          </table> 
+        </div> 
         </div>
         </div>
       <div class="grid">
