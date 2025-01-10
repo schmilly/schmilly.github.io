@@ -27,9 +27,9 @@
   monospace,
   var(--pico-font-family-emoji);
   --pico-font-family:var(--pico-font-family-sans-serif);
-  --pico-line-height:1.5;
+  --pico-line-height:1.1;
   --pico-font-weight:400;
-  --pico-font-size:100%;
+  --pico-font-size:70%;
   --pico-text-underline-offset:0.1rem;
   --pico-border-radius:0.25rem;
   --pico-border-width:0.0625rem;
@@ -66,28 +66,27 @@
 }
 @media (min-width:576px) {
   :root {
-    --pico-font-size:106.25%
+    --pico-font-size:70%
   }
 }
 @media (min-width:768px) {
   :root {
-    --pico-font-size:112.5%
+    --pico-font-size:74.25%
   }
 }
 @media (min-width:1024px) {
   :root {
-    --pico-font-size:118.75%
+    --pico-font-size:78%
   }
 }
 @media (min-width:1280px) {
   :root {
-    --pico-font-size:125%
+    --pico-font-size:82.5%
   }
 }
 @media (min-width:1536px) {
   :root {
-    --pico-font-size:106.25%
-  }
+    --pico-font-size:70%
 }
 a {
   --pico-text-decoration:underline
