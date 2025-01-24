@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="3530.9446"
-   height="2668.5701"
-   viewBox="0 0 1765.4723 1334.285"
+   width="1800"
+   height="1360.3799"
+   viewBox="0 0 1800.0001 1360.3798"
    version="1.1"
    id="svg11086"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
@@ -30,13 +30,13 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      units="px"
-     inkscape:zoom="0.13698165"
-     inkscape:cx="434.36476"
-     inkscape:cy="1730.1588"
+     inkscape:zoom="0.38744261"
+     inkscape:cx="885.2924"
+     inkscape:cy="480.0711"
      inkscape:window-width="1920"
      inkscape:window-height="962"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="1104"
+     inkscape:window-y="570"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      inkscape:snap-others="true"
@@ -63,14 +63,14 @@
        spacingy="145.52084"
        enabled="false"
        visible="true"
-       originx="21.771088"
+       originx="21.77109"
        color="#ff3f3f"
        opacity="1"
        empcolor="#ff3333"
        empopacity="1"
        empspacing="1"
        dotted="false"
-       originy="-3.5643375" />
+       originy="-3.5643332" />
     <sodipodi:guide
        position="0,1549.1354"
        orientation="0,6695"
@@ -98,8 +98,8 @@
        spacingy="2.6458333"
        empspacing="4"
        enabled="false"
-       originx="-2.041412"
-       originy="-3.5643375"
+       originx="-2.0414112"
+       originy="-3.5643332"
        units="px"
        visible="true" />
     <sodipodi:guide
@@ -992,7 +992,8 @@
      id="layer1"
      transform="translate(765.3811,595.85928)">
     <g
-       id="g34337">
+       id="g34337"
+       transform="translate(17.263845,13.047447)">
       <g
          id="Northen Territory"
          inkscape:label="Northen Territory">

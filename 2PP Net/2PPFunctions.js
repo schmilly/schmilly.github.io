@@ -44,7 +44,7 @@ function createMean(pairsArray, label,Color) {
         data: [],
         tension: 0.1,
 
-        pointRadius: 1,
+        pointRadius: 0,
         borderColor: Color,
         backgroundColor: Color,
         borderCapStyle: "round",

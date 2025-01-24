@@ -21,7 +21,7 @@ response = requests.get(wikiurl)
 # 200
 
 soup = BeautifulSoup(response.text, 'html.parser')
-cities = soup.find_all('table', {"class": "wikitable", "class": "sortable"})
+polls = soup.find_all('table', {"class": "wikitable", "class": "sortable"})
 
 
 # <table class="wikitable sortable">
@@ -31,8 +31,8 @@ cities = soup.find_all('table', {"class": "wikitable", "class": "sortable"})
 # <th>State
 # ....
 
-tables = pd.read_html(str(cities[0]))
-
+tables = pd.read_html(str(polls[0]))
+print(tables)
 
 PyTable = tables[0].to_numpy()
 
@@ -66,5 +66,5 @@ for y in PyTable:
         break 
     print("[")
     for x in y:
-        print('"'+ x + '",')
+        print('"'+ str(x) + '",')
     print("],")

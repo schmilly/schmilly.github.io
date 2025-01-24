@@ -38,29 +38,23 @@
         </div>
         <div style="width:100%;padding:0.5em">
           <div class="grid">
-          <div style="padding-bottom:1%;width:150%;height:300px;position: relative; z-index: 1;">
+          <div style="padding-bottom:1%;width:100%;height:100%;position: relative; z-index: 1;">
             <object id=container2>
             </object>
           </div>
           <div class="col-2" >
             <div>
-              <p style="margin-bottom: 0px;margin-left:40%">
+              <p style="margin-bottom: 1%;">
                 <b>Electorate:</b> <br> <text id=ElcName>None Selected</text> <br>
                 <b>State/Territory:</b> <br> <text id=ElcState></text> <br>
                 <b>MP:</b>  <br>     <text id=ElcMoP></text> <br>
                 <b>Party:</b> <br> <text id=ElcPrtyIcon>■</text>    <text id=ElcPrty></text> <br>
               </p>
-            </div>
-            </div>
-          </div>
-          <div class="grid">
-            <div>
               <kbd>Primary Vote 2022 Election</kbd>
               <div style="margin-right: 1em;">
-                <canvas height="50%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
+                <canvas height="100%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
                 </canvas>
               </div>
-      
               <kbd>Predicted Primary Vote with Swing</kbd> 
               <label for="checkbox-1" style="margin-bottom:0;display:inline;font-size:0.875em">
                 <input style="margin:0;" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
@@ -71,6 +65,11 @@
                 </canvas>
               </div>
               <small>(uniform swing from 2022) </small>
+            </div>
+            </div>
+          </div>
+          <div class="grid">
+            <div>
             </div>
         </div>
         </div>
@@ -144,9 +143,6 @@
           </table> 
         </div>
           </div>
-        </div>
-        
-      <div>
         <div>
           <kbd>Predicted Seat Winner based on Poll/Swing</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
           <div><details class="dropdown" style="margin:2%;">
@@ -167,7 +163,7 @@
           <div id="FinalVoteBox" class="containerslide">
             <b>Predicted Final Vote:</b>
             <div style="margin-right: 1em;">
-              <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
+              <canvas height="100%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
               </canvas>
             </div>
             Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
