@@ -60,7 +60,7 @@ var PartyNameArray = {
   "Nat": "Nationals",
   "One": "One Nation",
     "Oth": "Other",
-  "Ind": "Indipendent",
+  "Ind": "Independent",
   "JLN": "Jacqui Lambie Network",
   "CAl": "Center Alliance",
   "KAP": "Katter Australia Party"

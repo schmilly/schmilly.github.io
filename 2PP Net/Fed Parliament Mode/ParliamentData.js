@@ -87,7 +87,7 @@ var PartyNameArray = {
   "Nat": "Nationals",
   "One": "One Nation",
   "Oth": "Other",
-  "Ind": "Indipendent",
+  "Ind": "Independent",
   'LDP':'Liberal Democrats',
   "JLN": "Jacqui Lambie Network",
   "XEN": "Center Alliance",
