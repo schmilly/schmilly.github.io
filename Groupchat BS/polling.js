@@ -6,10 +6,10 @@
 // #32965D - Additonal Green (Shamrock)
 //
 PartyColor = {
-    "APR": "#FF006E",
-    "APL": "#FF4F83",
-    "GnR": "#39FF32",
-    "GnL": "#55AA32",
+    "APR": "#FF003E",
+    "APL": "#FF4F93",
+    "GnR": "#00FF31",
+    "GnL": "#4CFF00",
     "VcS": "#000000",
     "SAl": "#FF0008",
     "Unf": "#808080"
