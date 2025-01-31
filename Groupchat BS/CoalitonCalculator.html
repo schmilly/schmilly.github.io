@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Coalition Builder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            color: black;
+            font-family: 'Tahoma';
+            margin:1%;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        h2 {
+          font-szie:20px;
+        }
+
+        h3 {
+            font-family: 'Tahoma';
+            color: black;
+            text-align: left;
+            vertical-align: top;
+            font-size: 14px;
+            margin: 7px;
+        }
+
+
+        b {
+            font-family: 'Tahoma';
+        }
+
+        button {
+            padding: 5px;
+            font-size: 19x;
+            height: 100%;
+            width: 100%;
+        }
+
+        input {
+            width: 110%
+        }
+
+        td {
+            padding: 10px;
+            outline-style: none solid none none;
+        }
+
+        .Color {
+            width: 50%;
+        }
+
+        .Seats {
+          height:50px;
+          border-style:solid;
+          margin:2%;
+        }
+
+        .small {
+            font-size: 9px
+        }
+
+        div {
+        }
+
+        .Button {
+            padding: 5px;
+        }
+
+        .scrollable {
+            overflow-y:auto;
+        }
+
+        .PollRow {
+            background-color: #ffff;
+            border-color: cadetblue;
+            border-style: solid;
+        }
+
+        .PollRow:hover {
+                background-color: #b6ff00;
+        }
+
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .chart-container{
+            height:100%;
+        }
+
+        .container {
+            margin-top: 10px;
+        }
+
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 10;
+            right: 0;
+            border-style:solid;
+            background-color: #FFF;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+         /* The sidebar links */
+        .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                display: block;
+                transition: 0.3s;
+        }
+
+         /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+                    color: #f1f1f1;
+        }
+
+            /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 36px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+                background-color: #444;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+              }
+        } 
+
+        .slider:before {
+                position: absolute;
+                content: "";
+                height: 10px;
+                width: 10px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(40px);
+            -ms-transform: translateX(40px);
+            transform: translateX(40px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+                border-radius: 50%;
+        }
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 320px;
+            max-width: 800px;
+            max-height: 370px;
+        }
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                PvdA-GL Group Chat
+            </h1>
+        </div>
+    </div>
+    <div id="main" style=" padding: 2px;">
+        <div id="TopRow" class="row">
+            <div class="col-md-12 chart-container" id="SeatContainer">
+                <div id="SeatChart">
+                    <figure class="highcharts-figure"></figure>
+                </div>
+            </div>
+    </div>
+    <br />
+    </div>
+
+</body>
+</html>
+<script src="./polling.js"></script>
+<script src="./functions.js"></script>
+<script src="./prefrences.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/item-series.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+    var ElectorateChartArray = [];
+    var PollingData = TasmaniaState;
+    var Type = PollingData[0].Level;
+    var PartyCount = PollingData[0].Count;
+    var PartyData = new Array();
+    var SeatCount = new Array();
+    var PrtyLabels = new Array();
+    var colors = new Array();
+    var SeatMajority = PollingData[0].SeatMajor;
+    var TotalPrim = ArraySum(PollingData[0].PartyData);
+    var TotalSeat = ArraySum(PollingData[0].SeatProj);
+    var SeatMax = PollingData[0].SeatMax;
+    var ElcSeatCount = PollingData[0].ElectorateSeatCount;
+    var Electorat = new Array();
+    assignPoll(0);
+    var Max = 100;
+    var Selected = [];
+    var CurrentTotal = 1;
+    var BothChart = 1;
+    //0 for 1 chart,1 for both charts 
+    var CountLock = 0;
+    //0 for unlock, 1 for Lock
+    var Seat = 0;
+    //0 for % mode, 1 for Seat Mode
+</script>
+<script src="./ChartFrameworks.js"></script>
+<script>
+    createPage();
+    RenderChart();
+    grabPolling();
+    PushPageValues();
+    LockCheck();
+    BuildElect();
+  </script>

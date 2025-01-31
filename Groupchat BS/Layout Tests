@@ -1,0 +1,26 @@
+<div class="col-md-1">
+    <input type="text" id="1Party" class="Update Name" />
+</div>
+<div class="col-md-1">
+    <input type="number" id="1Label" class="Count Update" />
+</div>
+<div class="col-md-1">
+    <input type="color" id="1PartyColor" class="Update Color" />
+</div>
+
+      <div id="PartyRow1" class="PartyRow">
+      </div>
+      <div id="PartyRow2" class="PartyRow">
+      </div>
+      <div id="PartyRow3" class="PartyRow">
+    </div>
+
+[
+                ['The Left', 39, '#CC0099', 'DIE LINKE'],
+                ['Social Democratic Party', 206, '#EE0011', 'SPD'],
+                ['Alliance 90/The Greens', 118, '#448833', 'GRÜNE'],
+                ['Free Democratic Party', 92, '#FFCC00', 'FDP'],
+                ['Christian Democratic Union', 152, '#000000', 'CDU'],
+                ['Christian Social Union in Bavaria', 45, '#3366CC', 'CSU'],
+                ['Alternative for Germany', 83, '#3399FF', 'AfD'],
+                ['South Schleswig Voters\' Association', 1, '#000099', 'SSW']
