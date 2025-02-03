@@ -17,20 +17,47 @@
     
   </head>
   <body>
-    <!-- Header -->   
-    <header class="container" style="padding-left: 1em;padding-right: 1em;">
-          <hgroup>
-            <h1>Schmilly's Political Tool</h1>
-            <abr data-tooltip="Comparison of Incumbent Net 2PP rolling average since 2007"><a href="../2PP.html">
-            Compare Polls tool
+    <!-- Header -->
+    <div  class="grid headerBox" style="padding-left: 1em;padding-right: 1em;">
+      <div>
+        <hgroup>
+          <h1>Schmilly's Political Tool</h1> 
+        </hgroup>
+ <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small>
+      </div>
+      <div>
+        <abr data-tooltip="Comparison of Incumbent Net 2PP rolling average since 2007"><a href="../2PP.html">
+            Compare Polling Across the Years
           </a></abr>
-          </hgroup>
-    </header>
+      </div>
+      <div>
+        Current Map:
+        <details class="dropdown" >
+        <summary style="font-size:100%;padding:5px" role="button" class="secondary">
+          <small id="CurrentMap">2022 Election</small></summary>
+        <ul id="PrefFlowList">
+          <li><a onclick="SetMap('2025_Boundaries.svg','2024 Redistribution')">2024 Redistribution</a></li>
+          <li><a onclick="SetMap('Australian_electoral_divisions,_blank_map_(2022).svg', '2022 Election')">2022 Federal Election Map</a></li>
+        </ul>
+      </details>
+      </div>
+      <div>
+        <div><details class="dropdown">
+          <summary style="padding:0; font-size:100%;padding:5px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
+          <ul id="PrefFlowList">
+            <li><a>2022 House Pref Flows</a></li>
+            <li><a>2022 Senate Pref Flows</a></li>
+          </ul>
+        </details>
+
+        </div>
+      </div>
+    </div>
     <!-- ./ Header -->
-      <div class="grid" >
-        <div>
-          <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small> 
-          <div id=topcontainer style="overflow:auto;height:500px;border-width:5px;border-style:solid">
+    <div class="grid" >
+      <div>
+          
+          <div id=topcontainer style="overflow:auto;height:500px;border-width:5px;">
             <object id=container1>
             </object>
           </div>
@@ -97,6 +124,27 @@
                 </canvas>
               </div>
               <small>(uniform swing from 2022) </small>
+          <kbd>Predicted Seat Winner based on Poll/Swing</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
+          <div>
+          <label for="checkbox-2">
+            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="0.00"
+              onchange="ShowVote(this)" />
+            Show Steps
+          </label>
+          </div>
+          <b style="color:var(--pico-del-color)">
+          </b>
+          <div id="FinalVoteBox" class="containerslide">
+            <b>Predicted Final Vote:</b>
+            <div style="margin-right: 1em;">
+              <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
+              </canvas>
+            </div>
+            Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
+            <text class="overlay" id=PrefHistory>
+              <table stlye="height:100%"><tr><td>Need to set a swing (custom or with a poll) and electorate to show steps for final result</td></tr></table>
+            </text>
+          </div> 
             </div>
             </div>
           </div>
@@ -177,33 +225,7 @@
         </div>
           </div>
         <div>
-          <kbd>Predicted Seat Winner based on Poll/Swing</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
-          <div><details class="dropdown" style="margin:2%;">
-            <summary style="padding:0; font-size:100%;padding-right: 10px;padding-left: 10px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
-            <ul id=PrefFlowList>
-              <li><a>2022 House Pref Flows</a></li>
-              <li><a>2022 Senate Pref Flows</a></li>
-            </ul>
-          </details>
-          <label for="checkbox-2">
-            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="0.00"
-              onchange="ShowVote(this)" />
-            Show Steps
-          </label>
-          </div>
-          <b style="color:var(--pico-del-color)">
-          </b>
-          <div id="FinalVoteBox" class="containerslide">
-            <b>Predicted Final Vote:</b>
-            <div style="margin-right: 1em;">
-              <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedWinner">
-              </canvas>
-            </div>
-            Winner of Seat based on poll <kbd id=Winner>_</kbd> <br>
-            <text class="overlay" id=PrefHistory>
-              <table stlye="height:100%"><tr><td>Need to set a swing (custom or with a poll) and electorate to show steps for final result</td></tr></table>
-            </text>
-          </div> 
+
         </div> 
         </div>
         </div>

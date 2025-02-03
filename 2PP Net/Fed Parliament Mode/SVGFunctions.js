@@ -108,19 +108,21 @@ function injectParliament(xmlDoc) {
   container2.append(svg);
 }
 
+InjectSVGMap("Australian_electoral_divisions,_blank_map_(2022).svg")
+
+function InjectSVGMap(FileName){
+  var svgUrl1    = FileName;
+  var container1 = $("#container1");
+  $.get(svgUrl1) 
+    .then(data => injectMap(data,container1))
+}
 
 
-var svgUrl1    = "Australian_electoral_divisions,_blank_map_(2022).svg";
-var container1 = $("#container1");
-$.get(svgUrl1) 
-  .then(injectMap)
-
-function injectMap(xmlDoc) {
+function injectMap(xmlDoc,container1) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Map")
   svg.attr("style","overflow:auto;")
   svg.attr("onload","SetupSVG(ElectorateList,true)")
-
   container1.append(svg);
 }
 
@@ -147,4 +149,10 @@ function MapZoom(ZoomIn){
     SVGMap = document.getElementById("Map")
     SVGMap.style.transform = Var
     return 0;
+}
+
+function SetMap(File,MapName){
+  document.getElementById("container1").innerHTML=""
+  InjectSVGMap(File)
+  document.getElementById("CurrentMap").innerText=MapName
 }

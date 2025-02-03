@@ -18,6 +18,8 @@ object {
   color-scheme: light; /*<--Add this to fix WHITE BG issue*/
 }
 
+
+
 .containerslide {
   position: relative;
   width: 100%;
@@ -47,6 +49,10 @@ object {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.headerBox{
+  border-style: none none dotted none;
 }
 
 .zoom{

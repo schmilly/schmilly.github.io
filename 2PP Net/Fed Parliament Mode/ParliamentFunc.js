@@ -26,7 +26,7 @@ function CreateHorConfig(){
     data: InitalDataFirstPRef(),
     options: {
       layout : {
-        padding: 0
+        padding: -50
       },
       indexAxis: 'y',
       maintainAspectRatio: false,
@@ -55,6 +55,9 @@ function CreateHorConfig(){
           max:100
         },
         y: {
+          ticks:{
+            display:false
+          },
           stacked: true,
           max:100,
         },
