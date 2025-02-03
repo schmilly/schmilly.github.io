@@ -19,9 +19,12 @@
   <body>
     <!-- Header -->   
     <header class="container" style="padding-left: 1em;padding-right: 1em;">
-      <hgroup>
-        <h2>Schmilly's Political Tool</h2>
-      </hgroup>
+          <hgroup>
+            <h1>Schmilly's Political Tool</h1>
+            <abr data-tooltip="Comparison of Incumbent Net 2PP rolling average since 2007"><a href="../2PP.html">
+            Compare Polls tool
+          </a></abr>
+          </hgroup>
     </header>
     <!-- ./ Header -->
       <div class="grid" >
@@ -42,7 +45,7 @@
           <div style="padding-bottom:1%;width:100%;height:100%;position: relative; z-index: 1;">
 <div>
               <button style="padding:2px" onclick="renderParliment(ElectorateList)">Render Parliment with Poll</button>
-              Count based on Render (76 Seats needed for Majority) :
+              Count based on Render (76 Seats needed for Majority):
               <div style="width:100%;margin-bottom:1%;overflow:scroll;">
                 <table id="SeatCount">
                   <tr>
@@ -90,7 +93,7 @@
                 Consolidate Votes < 2%
               </label> <br>
               <div style="margin-right: 1em;">
-                <canvas height="50%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
+                <canvas height="100%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
                 </canvas>
               </div>
               <small>(uniform swing from 2022) </small>
@@ -139,26 +142,26 @@
           <table>
             <thead>
               <tr>
-                <th scope="col" id=LaPswinglabel style="backgroundcolor:">Liberal-National (Coalition)</th>
-                <th scope="col" id=ALPswinglabel style="backgroundcolor:">Labor</th>
-                <th scope="col" id=Grnswinglabel style="backgroundcolor:">Greens</th>
+                <th scope="col" id="LaPswinglabel" style="background-color: rgb(0, 104, 232);">Liberal-National (Coalition)</th>
+                <th scope="col" id="ALPswinglabel" style="background-color: rgb(238, 0, 3);">Labor</th>
+                <th scope="col" id="Grnswinglabel" style="background-color: rgb(51, 183, 71);">Greens</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th id=LaPSwing scope="row">0.00</th>
-                <td id=ALPSwing>0.00</td>
-                <td id=GrnSwing>0.00</td>
+                <th id="LaPSwing" scope="row"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></th>
+                <td id="ALPSwing"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></td>
+                <td id="GrnSwing"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></td>
               </tr>
               <tr>
-                <th scope="col" id=Oneswinglabel style="backgroundcolor:">One Nation</th>
-                <th scope="col" id=UAPswinglabel style="backgroundcolor:">UAP</th>
-                <th scope="col" id=Othswinglabel style="backgroundcolor:">Other</th>
+                <th scope="col" id="Oneswinglabel" style="background-color: rgb(204, 91, 16);">One Nation</th>
+                <th scope="col" id="UAPswinglabel" style="background-color: rgb(255, 255, 0);">UAP</th>
+                <th scope="col" id="Othswinglabel" style="background-color: rgb(237, 231, 227);">Other</th>
               </tr>
               <tr>
-                <td id=OneSwing>0.00</td>
-                <td id=UAPSwing>0.00</td>
-                <td id=OthSwing>0.00</td>
+                <td id="OneSwing"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></td>
+                <td id="UAPSwing"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></td>
+                <td id="OthSwing"><input autocomplete=off onchange="ChangeCustomSwing(this)" type="number" value="0.00" step="0.10" readonly=""></td>
               </tr>
             </tbody>
             <tfoot>
@@ -166,10 +169,11 @@
                 <th scope="row" colspan="2">
                   <abr data-tooltip="Must Total to 0">Swing Total</abr>
                 </th>
-                <td id=SwingSum class="valid">0.00</td>
+                <td id="SwingSum" class="valid">-0.00</td>
               </tr>
             </tfoot>
-          </table> 
+          </table>         </table> 
+          <button onclick="SimulatePrefChart(selected, Winner)" style="width:100%">Apply Swings to Seat</button> 
         </div>
           </div>
         <div>
@@ -182,7 +186,7 @@
             </ul>
           </details>
           <label for="checkbox-2">
-            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="{TT_sticky_header}"
+            <input type="checkbox" id="checkbox-2" name="checkbox-2" value="0.00"
               onchange="ShowVote(this)" />
             Show Steps
           </label>
@@ -319,7 +323,6 @@ Colors[2022]="#d56f46"
       eval("VarColor = PartyColor."+key)
       document.getElementById(key + "swinglabel").style.backgroundColor =  VarColor 
     } 
-
 </script>
 <script src="./ElectorateFlows.js"></script>
 

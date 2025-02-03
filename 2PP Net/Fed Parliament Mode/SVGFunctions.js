@@ -1,4 +1,4 @@
-var selected = ""
+var selected = "Grayndler"
 
 
 //-- SVG Functions --
@@ -76,7 +76,6 @@ function SetupSVG(ParliamentList,MapMode){
 
 function UpdatePollBar(){
   if (CustomSwing){
-    console.log("Got here")
     ArrayToChartJS(CalcSeatSwing(Swing,selected),PredictedPrimData.data)
     BarPredictedPref.update();
     SimulatePrefChart(selected);
@@ -88,6 +87,9 @@ function UpdatePollBar(){
       selected),PredictedPrimData.data)
     BarPredictedPref.update();
     SimulatePrefChart(selected);
+  }
+  else{
+    console.log("Please select a poll")
   }
 
 }

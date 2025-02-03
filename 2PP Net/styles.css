@@ -55,3 +55,12 @@ object {
   position:absolute;
 }
 
+input[readonly] {
+  -moz-appearance: textfield !important;
+}
+
+input[read-only]::-webkit-outer-spin-button,
+input[read-only]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

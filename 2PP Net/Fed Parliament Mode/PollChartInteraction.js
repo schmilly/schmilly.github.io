@@ -1,42 +1,46 @@
 SmoothCircle.onclick = PollClick; 
 
-function PollClick(click){
+function PollClick(click) {
   //console.log(click)
-  try{
-    const points = mixedChart.getElementsAtEventForMode(click,'nearest'
-    , { intersect: true}, false)
-    if (points[0].datasetIndex != 0){throw new Error("Click on undefined average 2PP")}
-    ClickonPoll = RawData[points[0].index];
-    //console.log(RawData[points[0].index])
-    
-
-    PartyPref = ClickonPoll[11]-ClickonPoll[12]
-    document.getElementById("SelectPollDate").innerText = ClickonPoll[0]
-    document.getElementById("PllPollster").innerText = ClickonPoll[1]  
-    //document.getElementById("PllPrimaryVote").innerText = ClickonPoll[2]
-    if (TwoPPBool){
-      document.getElementById("Pll2PP").innerText = points[0].element.$context.raw.y.toFixed(2) + "%"; 
-    }
-    else{document.getElementById("Pll2PP").innerText = PartyPref.toFixed(2) + "%";}
-
-    getPollPrimVote(ClickonPoll,PollBarFirstPref.data);
-    PollBarFirstPref.update()
-    
-    SelectedPoll = ClickonPoll
-    SelectedPollPos = points[0].index
-
-    UpdatePollBar()
+  points = ""
+  try {
+    points = mixedChart.getElementsAtEventForMode(click, 'nearest'
+      , { intersect: true }, false)
+    if (points[0].datasetIndex != 0) { throw new Error("Click on undefined average 2PP") }
   }
-  catch{
+  catch {
     console.log("Error; Please click on a Poll data point")
+    return
   }
+  ClickonPoll = RawData[points[0].index];
+  PollSelected(ClickonPoll);
+}
+
+function PollSelected(ClickonPoll){
+  PartyPref = ClickonPoll[11] - ClickonPoll[12]
+  document.getElementById("SelectPollDate").innerText = ClickonPoll[0]
+  document.getElementById("PllPollster").innerText = ClickonPoll[1]
+  //document.getElementById("PllPrimaryVote").innerText = ClickonPoll[2]
+  if (TwoPPBool) {
+    document.getElementById("Pll2PP").innerText = points[0].element.$context.raw.y.toFixed(2) + "%";
+  }
+  else { document.getElementById("Pll2PP").innerText = PartyPref.toFixed(2) + "%"; }
+
+  getPollPrimVote(ClickonPoll, PollBarFirstPref.data);
+  PollBarFirstPref.update()
+
+  SelectedPoll = ClickonPoll
+  SelectedPollPos = points[0].index
+  UpdatePollBar()
+
+  Swing = DefineSwing(SelectedPoll,RawData[RawData.length-1])
   UpdateSwingTable(Swing)
 }
 
 function UpdateSwingTable(SwingList){
   SwingSum = 0
   for (const [key, value] of Object.entries(SwingList)) {
-    document.getElementById(key + "Swing").innerText = value.toFixed(2)
+    document.getElementById(key + "Swing").childNodes[0].value = value.toFixed(2)
   } 
   UpdateSwingTotal(SwingList)
 }
@@ -84,12 +88,10 @@ function getPollPrimVote(RawDataEntry,Data){
 }
 
 
-
-
-function CalculateSeatPrim(Poll,BaseLine,ElcID){
+function DefineSwing(Poll,BaseLine){
   Scaler = Sum(Poll.slice(4,10))/100
   //Variable to scale based on undecided votes, fill in blanks essentially
-  Swing = { 
+  return Swing = { 
     "ALP":Poll[Location.ALP]/Scaler - BaseLine[Location.ALP],
     "LaP":Poll[Location.LaP]/Scaler - BaseLine[Location.LaP],
     "Grn":Poll[Location.Grn]/Scaler - BaseLine[Location.Grn],
@@ -97,6 +99,10 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID){
     "UAP":Poll[Location.UAP]/Scaler - BaseLine[Location.UAP],
     "Oth":Poll[Location.Oth]/Scaler - BaseLine[Location.Oth]
   }
+}
+
+function CalculateSeatPrim(Poll,BaseLine,ElcID){
+  DefineSwing(Poll,BaseLine)
 
   return CalcSeatSwing(Swing,ElcID);
 }

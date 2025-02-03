@@ -115,6 +115,8 @@ var PartyNameArray = {
   'REAS':'Reason Australia',
   'NP':'National Party',
   'HMP':'Legalise Cannabis Australia',
+  'Ind0':"Other Indipendent",
+  'Ind00':"Other Indipendent"
 }
 
 var PartyColor = {

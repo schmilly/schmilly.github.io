@@ -11,8 +11,6 @@ function renderParliment(SeatList) {
       console.log("Error with Electorate: " + Seat)
       document.getElementById("SeatCount").innerHTML = "<b>ERROR: Unable to load data, please ensure a swing and poll has been selected</b>"
     }
-    console.log(Seat)
-    console.log(Winner)
     //Loop to wait for document to load
     var SeatMap = document.getElementById("Map").getElementById(Seat)
     var SeatParl = document.getElementById("Parliament").getElementById(Seat)

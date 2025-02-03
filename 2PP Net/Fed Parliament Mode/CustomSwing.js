@@ -2,12 +2,12 @@ function CustomSwingToggle(obj) {
     PollList.forEach(element => {
         eval("HTMLElmnt = document.getElementById('" + element + "Swing')")
         if ($(obj).is(":checked")) {
-            PassValue = HTMLElmnt.textContent
-            HTMLElmnt.innerHTML = '<input onchange="ChangeCustomSwing(this)" type="number" value="' + PassValue + '" step="0.10"></input>'
+            PassValue = HTMLElmnt.firstChild.value
+            HTMLElmnt.innerHTML = '<input onchange="ChangeCustomSwing(this)" autocomplete=off type="number" value="' + PassValue + '" step="0.10"></input>'
             CustomSwing=true;
         } else {
             PassValue = HTMLElmnt.firstChild.value
-            HTMLElmnt.innerHTML = PassValue
+            HTMLElmnt.innerHTML = '<input onchange="ChangeCustomSwing(this)" autocomplete=off type="number" value="' + PassValue + '" step="0.10" readonly></input>'
             CustomSwing=false;
         }
     });

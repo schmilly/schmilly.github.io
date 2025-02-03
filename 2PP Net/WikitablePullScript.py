@@ -32,7 +32,6 @@ polls = soup.find_all('table', {"class": "wikitable", "class": "sortable"})
 # ....
 
 tables = pd.read_html(str(polls[0]))
-print(tables)
 
 PyTable = tables[0].to_numpy()
 
@@ -62,9 +61,14 @@ if(Read_File):
 #Output in JS format
 print("const RawData = [")
 for y in PyTable:
-    if (datetime.strptime(y[0],"%d %B %Y") <= LastEntry):
-        break 
+    try:
+        if (datetime.strptime(y[0],"%d %B %Y") <= LastEntry):
+            break 
+    except:
+        print("invalid date (oh well)")
     print("[")
     for x in y:
         print('"'+ str(x) + '",')
-    print("],")
+    print("] ,")
+
+#2PP.html setup
