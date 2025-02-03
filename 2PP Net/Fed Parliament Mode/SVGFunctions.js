@@ -111,6 +111,7 @@ function injectParliament(xmlDoc) {
 InjectSVGMap("Australian_electoral_divisions,_blank_map_(2022).svg")
 
 function InjectSVGMap(FileName){
+  document.getElementById("container1").innerHTML=""
   var svgUrl1    = FileName;
   var container1 = $("#container1");
   $.get(svgUrl1) 

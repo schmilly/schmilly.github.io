@@ -50,7 +50,7 @@ PrefFlows2022House = {
  'DHJP': 0,
  'DPDA': 0,
  'GAP': 0,
- 'GRN':18.87,
+ 'GRN':21.87,
  'GVIC': 0,
  'HMP': 0,
  'IAP': 0,
@@ -60,7 +60,7 @@ PrefFlows2022House = {
  'KAP':3.76,
  'LDP': 0,
  'LNP':7.31,
- 'Lib':11.39,
+ 'Lib':9.39,
  'Nat':4.08,
  'One': 0,
  'REAS': 0,
@@ -488,7 +488,7 @@ PrefFlows2022House = {
  'TLOC': 0,
  'TNL': 0,
  'UAP':0.43,
- 'VNS': 0,
+ 'VNS': 72.36,
  'WAP': 0,
  'XEN':0.52
 
@@ -1252,4 +1252,43 @@ PrefFlows2022House = {
  'WAP': 0,
  'XEN': 0
 
-}}
+},
+'Oth': {
+  'AJP':1.00,
+ 'ALP':1.00,
+ 'ASP':1.00,
+ 'AUC':1.00,
+ 'AUP':1.00,
+ 'AUVA':1.00,
+ 'CEC':1.00,
+ 'CLP':1.00,
+ 'CYA':1.00,
+ 'DHJP':1.00,
+ 'DPDA':1.00,
+ 'GAP':1.00,
+ 'GRN':1.00,
+ 'GVIC':1.00,
+ 'HMP':1.00,
+ 'IAP':1.00,
+ 'IMO':1.00,
+ 'IND':1.00,
+ 'JLN':1.00,
+ 'KAP':1.00,
+ 'LDP':1.00,
+ 'LNP':1.00,
+ 'Lib':1.00,
+ 'Nat':1.00,
+ 'One':1.00,
+ 'REAS':1.00,
+ 'SAL':1.00,
+ 'SOPA':1.00,
+ 'SPP':1.00,
+ 'TLOC':1.00,
+ 'TNL':1.00,
+ 'UAP':1.00,
+ 'VNS':1.00,
+ 'WAP':1.00,
+ 'XEN': 1.00
+}
+
+}

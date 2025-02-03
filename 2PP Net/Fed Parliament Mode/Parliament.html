@@ -114,7 +114,7 @@
                 <canvas height="100%" width="100%" style="padding-right: 1em;" id="PrimaryVote">
                 </canvas>
               </div>
-              <kbd>Predicted Primary Vote with Swing</kbd> 
+              <kbd>Predicted Primary Vote with Swing</kbd> <small>(uniform swing from 2022) </small> <br> 
               <label for="checkbox-1" style="margin-bottom:0;display:inline;font-size:0.875em">
                 <input style="margin:0;" type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
                 Consolidate Votes < 2%
@@ -123,7 +123,6 @@
                 <canvas height="100%" width="100%" style="padding-right: 1em;" id="PredictedSeatPrimaryVote">
                 </canvas>
               </div>
-              <small>(uniform swing from 2022) </small>
           <kbd>Predicted Seat Winner based on Poll/Swing</kbd> <abr data-tooltip="Not been checked yet. Not likely to be accurate. Will be bugs">(In Early Beta Stages)</abr>
           <div>
           <label for="checkbox-2">
@@ -344,7 +343,18 @@ Colors[2022]="#d56f46"
     for (const [key, value] of Object.entries(Swing)) {
       eval("VarColor = PartyColor."+key)
       document.getElementById(key + "swinglabel").style.backgroundColor =  VarColor 
-    } 
+    }
+
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+    });
+    
+
 </script>
 <script src="./ElectorateFlows.js"></script>
+<script>
+    if (params.map == "2024"){
+      SetMap('2025_Boundaries.svg','2024 Redistribution')
+    }
+</script>
 

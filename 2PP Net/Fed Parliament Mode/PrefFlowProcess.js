@@ -30,17 +30,10 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     }
     eval("ElimCandidate = PrefTable." + DivisonID + "." + InputArray.ID[MinLocation])
     if (ElimCandidate == undefined){
-      if (InputArray.ID[MinLocation] == "ALP"){
-        ElimCandidate = {
-          "Ind":0.5, "Grn": 0.75, "Lib": 0.25, "LNP": 0.25, "Nat":0.25, "CLP":0.25
-        }
-      }
-      else{
-        //Put Code here to find based on backup pref table, and defined elim candidate that way
-        ElimCandidate = {
-          "Lib": 0.5, "ALP": 0.5, "LNP": 0.5, "Nat":0.5, "CLP":0.5, "Ind":0.5, "Grn": 0.5
-        }}
-      //Tempt solution; Divide up equally between Lib+Nat and Labor
+        eval("ElimCandidate = PrefFlows2022House."+ InputArray.ID[MinLocation])
+    }
+    if(ElimCandidate == undefined){
+      ElimCandidate = PrefFlows2022House.Oth
     }
     Total = 0;
     FlowArray = []
