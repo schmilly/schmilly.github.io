@@ -28,7 +28,6 @@ function SetupSVG(ParliamentList,MapMode,DataYear){
     }
     try{
       Seat.addEventListener("click",ClickonSeat)
-      CombinedName = DataYear + "." + i
       function ClickonSeat(){ 
         Name = document.getElementById("ElcName")
         eval ("Name.innerText =  ElectorateIDNameArray." + i)
@@ -45,7 +44,7 @@ function SetupSVG(ParliamentList,MapMode,DataYear){
         eval("LocID = ElcLocation." + i)
         eval("LocName.innerText = StateIDArray." + LocID)
 
-        GetElcFirPref(CombinedName,FirstPrefData.data);
+        GetElcFirPref(DataYear + "." + i,FirstPrefData.data);
         BarsFirstPref.update();
 
         try {

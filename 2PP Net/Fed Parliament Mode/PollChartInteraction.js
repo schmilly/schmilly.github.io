@@ -104,7 +104,7 @@ function DefineSwing(Poll,BaseLine){
 function CalculateSeatPrim(Poll,BaseLine,ElcID){
   DefineSwing(Poll,BaseLine)
 
-  return CalcSeatSwing(Swing,ElcID);
+  return CalcSeatSwing(Swing,DataYear + "." + ElcID);
 }
 
 function CalcSeatSwing(Swing,ElcID) {
