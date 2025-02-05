@@ -16,14 +16,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
   </head>
+  
   <body>
     <!-- Header -->
-    <div  class="grid headerBox" style="padding-left: 1em;padding-right: 1em;">
+    <div class="grid headerBox" style="padding-left: 1em;padding-right: 1em;">
       <div>
         <hgroup>
-          <h1>Schmilly's Political Tool</h1> 
+          <h1>Schmilly's Political Tool</h1>
         </hgroup>
- <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a href="./Parliament.html">here</a> or reload page</small>
+        <small style="line-height:100%;font-size: 10px;">Map doesn't have any colours? Click <a
+            href="./Parliament.html">here</a> or reload page</small>
       </div>
       <div>
         <abr data-tooltip="Comparison of Incumbent Net 2PP rolling average since 2007"><a href="../2PP.html">
@@ -32,29 +34,34 @@
       </div>
       <div>
         Current Map:
-        <details class="dropdown" >
-        <summary style="font-size:100%;padding:5px" role="button" class="secondary">
-          <small id="CurrentMap">2022 Election</small></summary>
-        <ul id="PrefFlowList">
-          <li><a onclick="SetMap('2025_Boundaries.svg','2024 Redistribution')">2024 Redistribution</a></li>
-          <li><a onclick="SetMap('Australian_electoral_divisions,_blank_map_(2022).svg', '2022 Election')">2022 Federal Election Map</a></li>
-        </ul>
-      </details>
-      </div>
-      <div>
-        <div><details class="dropdown">
-          <summary style="padding:0; font-size:100%;padding:5px" role="button" class="secondary"><small>2022 House Pref Flows</small></summary>
+        <details class="dropdown">
+          <summary style="font-size:100%;padding:5px" role="button" class="secondary">
+            <small id="CurrentMap">2022 Election</small>
+          </summary>
           <ul id="PrefFlowList">
-            <li><a>2022 House Pref Flows</a></li>
-            <li><a>2022 Senate Pref Flows</a></li>
+            <li><a onclick="SetMap('2025_Boundaries.svg','2024 Redistribution','M2024')">2024 Redistribution</a></li>
+            <li><a onclick="SetMap('Australian_electoral_divisions,_blank_map_(2022).svg', '2022 Election','M2022')">2022 Federal
+                Election Map</a></li>
           </ul>
         </details>
+      </div>
+      <div>
+        <div>
+          <small> This bit is not functional yet, Sorry!</small>
+          <details class="dropdown">
+            <summary style="padding:0; font-size:100%;padding:5px" role="button" class="secondary"><small>2022 House Pref
+                Flows</small></summary>
+            <ul id="PrefFlowList">
+              <li><a>2022 House Pref Flows</a></li>
+              <li><a>2022 Senate Pref Flows</a></li>
+            </ul>
+          </details>
 
         </div>
       </div>
     </div>
     <!-- ./ Header -->
-    <div class="grid" >
+    <div class="grid">
       <div>
           
           <div id=topcontainer style="overflow:auto;height:500px;border-width:5px;">
@@ -275,7 +282,7 @@
 <script>
 //Header <script>
 var TwoPPBool = false;
-
+DataYear = "M2022"
 var Filelist = [
   "2022",
 ];
@@ -349,12 +356,12 @@ Colors[2022]="#d56f46"
     get: (searchParams, prop) => searchParams.get(prop),
     });
     
-    var CurrentMap = "M2022"
+
 </script>
 <script src="./ElectorateFlows.js"></script>
 <script>
     if (params.map == "2024"){
-      SetMap('2025_Boundaries.svg','2024 Redistribution')
+      SetMap('2025_Boundaries.svg','2024 Redistribution',"M2024")
     }
 </script>
 

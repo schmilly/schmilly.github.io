@@ -1,9 +1,9 @@
 var selected = "Grayndler"
-
+DataYear = "M2024"
 
 //-- SVG Functions --
 //
-function SetupSVG(ParliamentList,MapMode){
+function SetupSVG(ParliamentList,MapMode,DataYear){
   ParliamentList.forEach((i) => {
     if (MapMode){
       //Loop to wait for document to load
@@ -28,8 +28,8 @@ function SetupSVG(ParliamentList,MapMode){
     }
     try{
       Seat.addEventListener("click",ClickonSeat)
-      function ClickonSeat(){
-
+      CombinedName = DataYear + "." + i
+      function ClickonSeat(){ 
         Name = document.getElementById("ElcName")
         eval ("Name.innerText =  ElectorateIDNameArray." + i)
         MPName = document.getElementById("ElcMoP")
@@ -45,7 +45,7 @@ function SetupSVG(ParliamentList,MapMode){
         eval("LocID = ElcLocation." + i)
         eval("LocName.innerText = StateIDArray." + LocID)
 
-        GetElcFirPref(i,FirstPrefData.data);
+        GetElcFirPref(CombinedName,FirstPrefData.data);
         BarsFirstPref.update();
 
         try {
@@ -104,7 +104,7 @@ function injectParliament(xmlDoc) {
   svg.attr("id", "Parliament")
   svg.attr("width","100%")
   svg.attr("height","100%")
-  svg.attr("onload","SetupSVG(ElectorateList,false)")
+  svg.attr("onload","SetupSVG(ElectorateList,false,DataYear)")
   container2.append(svg);
 }
 
@@ -123,7 +123,7 @@ function injectMap(xmlDoc,container1) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Map")
   svg.attr("style","overflow:auto;")
-  svg.attr("onload","SetupSVG(ElectorateList,true)")
+  svg.attr("onload","SetupSVG(ElectorateList,true,DataYear)")
   container1.append(svg);
 }
 
@@ -152,7 +152,8 @@ function MapZoom(ZoomIn){
     return 0;
 }
 
-function SetMap(File,MapName){
+function SetMap(File,MapName,SetData){
+  DataYear = SetData
   document.getElementById("container1").innerHTML=""
   InjectSVGMap(File)
   document.getElementById("CurrentMap").innerText=MapName

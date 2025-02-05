@@ -30,9 +30,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      units="px"
-     inkscape:zoom="0.38744261"
-     inkscape:cx="885.2924"
-     inkscape:cy="480.0711"
+     inkscape:zoom="0.77488522"
+     inkscape:cx="406.51182"
+     inkscape:cy="816.89518"
      inkscape:window-width="1920"
      inkscape:window-height="962"
      inkscape:window-x="1104"
@@ -996,7 +996,8 @@
        transform="translate(17.263845,13.047447)">
       <g
          id="Northen Territory"
-         inkscape:label="Northen Territory">
+         inkscape:label="Northen Territory"
+         style="stroke:#000000;stroke-opacity:1">
         <path
            id="Solomon"
            style="fill:#a0a0a0;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4.86667;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
@@ -1375,7 +1376,8 @@
       </g>
       <g
          id="ACT"
-         inkscape:label="ACT">
+         inkscape:label="ACT"
+         style="stroke:#000000;stroke-opacity:1">
         <path
            id="Bean"
            style="fill:#a0a0a0;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
