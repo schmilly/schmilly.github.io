@@ -1,5 +1,20 @@
- 
- const RawData = [
+
+const RawData = [
+    [
+        "23 Feb 2025",
+        "Resolve Strategic",
+        "Online",
+        "1506",
+        "39",
+        "25",
+        "13",
+        "9",
+        "0",
+        "13",
+        "0",
+        "45",
+        "55",
+    ],
     [
         "16 Feb 2025",
         "Essential",
