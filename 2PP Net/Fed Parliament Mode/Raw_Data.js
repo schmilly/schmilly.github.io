@@ -1,6 +1,22 @@
 
 const RawData = [
     [
+        "24 Feb 2025",
+        "Roy Morgan",
+        "Online",
+        "1666",
+        "36.5",
+        "31.5",
+        "13.5",
+        "5",
+        "0",
+        "3",
+        "16",
+        "0",
+        "51",
+        "49",
+    ],
+    [
         "23 Feb 2025",
         "Resolve Strategic",
         "Online",
