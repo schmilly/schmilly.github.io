@@ -1524,6 +1524,14 @@ FirstPref = {
     "GAP":0.4,
     "IMO":0.1
     },
+     'Bean': {
+  'Lib': 29.72,
+  'ALP': 41.73,
+  'Grn': 14.8,
+  'One': 2.72,
+  'UAP': 2.88,
+  'Ind': 8.15,
+},
     //Currently here and below it is just 2022 data
 'Canberra': {
   'Lib': 21.77,

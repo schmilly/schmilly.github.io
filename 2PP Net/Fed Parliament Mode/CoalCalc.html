@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--URL Encoding for CoalitonCalculator
+?Seats
+
+-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Coaliton Calculator</title>
+    <meta name="description" content="A Chart of Net 2PP rolling averages" />
+    <link href="../styles.css" rel="stylesheet">
+    <link rel="icon" href="../Icon.svg" type="image/svg+xml">
+    <!-- Custom Pico.css -->
+    <link rel="stylesheet" href="../custom.pico.min.css"/> 
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+  </head>
+  
+<body>
+    <div class="row">
+        <div class="grid">
+            <h1>
+                Coaliton Calculator
+            </h1>
+        </div>
+    </div>
+    <div id="main" >
+        <div id="TopRow" class="grid">
+            <div class="col-md-4 chart-container" id="SeatContainer">
+                <div id="SeatChart">
+                    <figure class="highcharts-figure"></figure>
+                </div>
+            </div>
+            <div class="col-md-4 chart-container" id="SmoothContainer">
+                <div id="SmoothChart">
+                    <canvas id="SmoothCircle">
+                    </canvas>
+                </div>
+            </div>
+            <div class="col-md-1" id="RightChartInfo">
+                <b>Click on party to add to coaliton.</b>
+                <h3>Majority Needed <br /> <b id="Threshold">50</b> </h3>
+                <h3>Currently Selected <br /> <b id="CurrentValue">0</b> </h3>
+                <h3>Majority: <br /> <b id="Majority">false</b></h3>
+                <h3>Set total to: <b id="MaxCount"></b></h3>
+                <label class="switch">
+                    <input onclick="LockToggle()" type="checkbox" id="CheckBox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-md-1">
+                <h3>
+                    <b>Type:</b><br /> <text id="Type"></text>
+                </h3>
+                <h3 class="scrollable">
+                    Selected Parties: <b id="SelectList"></b>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div id="BoxesContainer" class="row">
+        <div id="PartyRow" class="PartyRow">
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+<script src="https://code.highcharts.com/modules/item-series.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="./ParliamentData.js"></script>
+<script src="./SVGFunctions.js"></script>
+<script src="./ParliamentFunc.js"></script>
+<script src="./FirstPref.js"></script>
+<script src="./PrimaryVoteChart.js"></script>
+<script src="./PollChartInteraction.js"></script>
+<script src="../2PPFunctions.js"></script>
+<script src="../2022.js"></script>
+<script src="../AdvanceMode.js"></script>
+<script src="../PageFunctions.js"></script>
+<script src="./Raw_Data.js"></script>
+<script src="./PrefFlowData.js"></script>
+<script src="./PrefFlowProcess.js"></script>
+<script src="../ReadBugList.js"></script>
+<script src="./renderParl.js"></script>
+<script src="./CustomSwing.js"></script>
+<script>
+  //Read Query URL
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+// Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  let SeatCount = params.Seats; 
+  let PartyCount = params.Partys;
+  let PartyList = params.PartyNames.split(",");
+  let PartySeats = params.PartySiz.split(",");
+
+</script>
+
