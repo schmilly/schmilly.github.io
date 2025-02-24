@@ -167,7 +167,7 @@ ElectorateList =
     "Brisbane",
     "Bruce",
     "Burt",
-    "Bullwinkel",
+    //"Bullwinkel",
     "Calare",
     "Calwell",
     "Canberra",
