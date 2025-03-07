@@ -157,9 +157,10 @@ function MapZoom(ZoomIn){
 
 function SetMap(MapFile,SeatFile,MapName,SetData){
   DataYear = SetData
+
+  document.getElementById("container2").innerHTML=""
+  InjectSVGMap(SeatFile,"container2",false)
   document.getElementById("container1").innerHTML=""
   InjectSVGMap(MapFile,"container1",true)
   document.getElementById("CurrentMap").innerText=MapName
-  document.getElementById("container2").innerHTML=""
-  InjectSVGMap(SeatFile,"container2",false)
 }

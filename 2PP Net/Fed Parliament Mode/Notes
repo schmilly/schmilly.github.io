@@ -1,1 +1,0 @@
- <input onchange="setTwoNumberDecimal" type="number" value="0.00" step="0.10">
