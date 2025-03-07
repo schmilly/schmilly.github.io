@@ -2,8 +2,8 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   sodipodi:docname="Australian_House_of_Representatives_chart_2024.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="2025_Reps_Layout.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    id="svg4639"
    version="1.1"
    viewBox="0 0 248.47786 196.26905"
@@ -25,9 +25,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="530.37165"
-     inkscape:cx="302.86407"
-     inkscape:zoom="1.7384036"
+     inkscape:cy="214.76738"
+     inkscape:cx="647.14942"
+     inkscape:zoom="1.229237"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -157,16 +157,6 @@
          transform="matrix(-0.63439328,0.77301045,0.77301045,0.63439328,0,0)"
          class="seat"
          inkscape:label="Warringah" />
-      <rect
-         style="fill:#a0a0a0;fill-opacity:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="North_Sydney"
-         width="9.8909321"
-         height="9.8909321"
-         x="-127.49641"
-         y="201.47493"
-         transform="matrix(-0.77301045,0.63439328,0.63439328,0.77301045,0,0)"
-         class="seat"
-         inkscape:label="North Sydney" />
       <rect
          y="143.13614"
          x="-236.11328"
