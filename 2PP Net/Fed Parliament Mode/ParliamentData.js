@@ -82,7 +82,7 @@ var PartyNameArray = {
   "CLP": "Country Liberal Party",
   "LaP": "Liberal and Nationals Party",
   "LNP": "Liberal National Party",
-  "UAP": "United Australia Party",
+  "UAP": "United Australia Party/Trumpet of Patriots",
   "Grn": "Greens", 
   "Nat": "Nationals",
   "One": "One Nation",
