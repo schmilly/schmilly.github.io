@@ -1,9 +1,9 @@
 var selected = "Grayndler"
-DataYear = "M2024"
 
 //-- SVG Functions --
 //
-function SetupSVG(ParliamentList,MapMode,DataYear){
+function SetupSVG(Parliament,MapMode,DataYear){
+  eval("ParliamentList = Parliament." + DataYear );
   ParliamentList.forEach((i) => {
     if (MapMode){
       //Loop to wait for document to load
@@ -98,7 +98,7 @@ var container2 = $("#container2");
 $.get(svgUrl2) 
   .then(injectParliament)
 
-function injectParliament(xmlDoc) {
+function injectParliament(xmlDoc,container2) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Parliament")
   svg.attr("width","100%")
@@ -107,14 +107,18 @@ function injectParliament(xmlDoc) {
   container2.append(svg);
 }
 
-InjectSVGMap("Australian_electoral_divisions,_blank_map_(2022).svg")
-
-function InjectSVGMap(FileName){
-  document.getElementById("container1").innerHTML=""
+function InjectSVGMap(FileName,Container,MapQ){
+  document.getElementById(Container).innerHTML=""
   var svgUrl1    = FileName;
-  var container1 = $("#container1");
+  var container1 = $("#"+ Container);
+  if (MapQ){
   $.get(svgUrl1) 
     .then(data => injectMap(data,container1))
+  }
+  else{
+  $.get(svgUrl1) 
+    .then(data => injectParliament(data,container1))
+  }
 }
 
 
@@ -151,9 +155,11 @@ function MapZoom(ZoomIn){
     return 0;
 }
 
-function SetMap(File,MapName,SetData){
+function SetMap(MapFile,SeatFile,MapName,SetData){
   DataYear = SetData
   document.getElementById("container1").innerHTML=""
-  InjectSVGMap(File)
+  InjectSVGMap(MapFile,"container1",true)
   document.getElementById("CurrentMap").innerText=MapName
+  document.getElementById("container2").innerHTML=""
+  InjectSVGMap(SeatFile,"container2",false)
 }

@@ -1,16 +1,17 @@
-function renderParliment(SeatList) {
+function renderParliment(List,Year) {
+  eval("SeatList = List." + Year)
   Counts = {
   "ALP": 0,  "Lib": 0,  "LaP": 0,  "LNP": 0,  "CLP": 0,  "Nat": 0,  "Grn": 0, 
   "UAP": 0,  "One": 0,  "Oth": 0,  "Ind": 0,  "JLN": 0,  "XEN": 0,  "KAP": 0
   }
   SeatList.forEach((Seat) => {
-    try{
+    //try{
         Winner = SimulatePrefChart(Seat, Winner);
-    }
-    catch{
-      console.log("Error with Electorate: " + Seat)
-      document.getElementById("SeatCount").innerHTML = "<b>ERROR: Unable to load data, please ensure a swing and poll has been selected</b>"
-    }
+    //}
+    //catch{
+      //console.log("Error with Electorate: " + Seat)
+      //document.getElementById("SeatCount").innerHTML = "<b>ERROR: Unable to load data, please ensure a swing and poll has been selected</b>"
+    //}
     //Loop to wait for document to load
     var SeatMap = document.getElementById("Map").getElementById(Seat)
     var SeatParl = document.getElementById("Parliament").getElementById(Seat)

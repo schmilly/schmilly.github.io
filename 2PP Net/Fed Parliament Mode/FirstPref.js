@@ -1509,21 +1509,22 @@ FirstPref = {
 
 'M2024' : {
   "Bullwinkel" :{
-    "ALP":35.4,
-    "Lib":33.5,
-    'Grn':11.7,
-    'One':4.6,
-    "UAP":2.7,
-    "WAP":1.5,
-    "Ind":1.7,
-    "CYA":1.6,
-    "Nat":1.3,
-    "LDP":1.1,
-    "AUC":1.0,
-    "AJP":0.6,
-    "GAP":0.4,
-    "IMO":0.1
+"ALP": 	36.32523759,
+"Lib": 	34.3189018,
+"Grn": 	11.29883844,
+"One": 4.329461457,
+"UAP": 2.851108765,
+"WAP": 2.639915523,
+"Ind": 1.795142555,
+"CYA": 1.689545935,
+"NAT": 1.372756072,
+"LDP": 1.16156283,
+"AUC": 0.55966209,
+"AJP": 0.633579725,
+"GAP": 0.422386484,
+"IMO": 0.105596621,
     },
+    //Currently here and below it is just 2022 data
      'Bean': {
   'Lib': 29.72,
   'ALP': 41.73,
@@ -1532,7 +1533,7 @@ FirstPref = {
   'UAP': 2.88,
   'Ind': 8.15,
 },
-    //Currently here and below it is just 2022 data
+
 'Canberra': {
   'Lib': 21.77,
   'ALP': 44.88,
@@ -2579,7 +2580,7 @@ FirstPref = {
   'AJP': 2.1,
   'CYA': 0.59,
 },
-'FlInders': {
+'Flinders': {
   'Lib': 43.49,
   'ALP': 21.73,
   'Grn': 9.4,
