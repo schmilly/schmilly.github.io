@@ -17,14 +17,14 @@ function SetSeatColor(ParliamentList,MapMode){
     try {
       if (rgb2hex(Seat.style.fill) != SeatColor.toLowerCase()){
         Seat.style.fill = SeatColor;
-        //console.log("Set Color for " + i)
+        //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Set Color for " + i)
       }
       else {
         // console.log( i + " already correct color")
       }
     }
     catch {
-      console.log("Error," + i + " not found")
+      ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error," + i + " not found")
     }
     try{
       Seat.addEventListener("click",ClickonSeat)
@@ -53,7 +53,7 @@ function SetSeatColor(ParliamentList,MapMode){
           document.getElementById("Parliament").getElementById(selected).style.opacity=1
         }
         catch {
-          console.log("Error, could not find selected to return to normal opacity:" + selected)
+          ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error, could not find selected to return to normal opacity:" + selected)
         }
         selected = i;
         var MapObject = document.getElementById("Map").getElementById(i)
@@ -76,7 +76,7 @@ function SetSeatColor(ParliamentList,MapMode){
       }
     }
     catch{
-      console.log("Error adding Seat Interaction listner")
+      ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error adding Seat Interaction listner")
     }
   })
 };
@@ -193,8 +193,8 @@ function GetElcFirPref(ElcID,Data){
 
     }
     else{
-      //console.log("Couldn't find Party with ID " + element[0])
-      //console.log("Adding votes of "+ element[1] +  " to other vote")
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Couldn't find Party with ID " + element[0])
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Adding votes of "+ element[1] +  " to other vote")
       othervote = othervote + element[1]
     }
   });

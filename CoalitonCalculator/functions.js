@@ -233,7 +233,7 @@ function lockAndAdjustArray(arr, i, targetSum) {
             LeftOverCount += num;
         }
         if (loopcount > 200) {
-            console.log("too many loops, breaking")
+            ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>too many loops, breaking")
             console.log(j);
             console.log(LeftOverCount);
             console.log(arr.length);

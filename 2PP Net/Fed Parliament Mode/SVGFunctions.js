@@ -17,14 +17,14 @@ function SetupSVG(Parliament,MapMode,DataYear){
     try {
       if (rgb2hex(Seat.style.fill) != SeatColor.toLowerCase()){
         Seat.style.fill = SeatColor;
-        //console.log("Set Color for " + i)
+        //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Set Color for " + i)
       }
       else {
         // console.log( i + " already correct color")
       }
     }
     catch {
-      console.log("Error," + i + " not found")
+      ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error," + i + " not found")
     }
     try{
       Seat.addEventListener("click",ClickonSeat)
@@ -52,7 +52,7 @@ function SetupSVG(Parliament,MapMode,DataYear){
           document.getElementById("Parliament").getElementById(selected).style.opacity=1
         }
         catch {
-          console.log("Error, could not find selected to return to normal opacity:" + selected)
+          ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error, could not find selected to return to normal opacity:" + selected)
         }
         selected = i;
         var MapObject = document.getElementById("Map").getElementById(i)
@@ -68,7 +68,7 @@ function SetupSVG(Parliament,MapMode,DataYear){
       }
     }
     catch{
-      console.log("Error adding Seat Interaction listner")
+      ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error adding Seat Interaction listner")
     }
   })
 };
@@ -88,15 +88,10 @@ function UpdatePollBar(){
     SimulatePrefChart(selected);
   }
   else{
-    console.log("Please select a poll")
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Please select a poll")
   }
 
 }
-
-var svgUrl2    = "Australian_House_of_Representatives_chart.svg";
-var container2 = $("#container2");
-$.get(svgUrl2) 
-  .then(injectParliament)
 
 function injectParliament(xmlDoc,container2) {
   var svg = $(xmlDoc).find("svg");

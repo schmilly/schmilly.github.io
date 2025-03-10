@@ -24,7 +24,7 @@ function Custom2PPgenerateChartData(DataSets, Filelist, CustomMode, FlowstoLab){
       var Day= timediff / (1000 * 60 * 60 * 24)
 
       FlowstoLab.forEach((Value) => {
-        if (isNaN(RawValue[counter])){ console.log("Invalid Value")}
+        if (isNaN(RawValue[counter])){ ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Invalid Value")}
         else {
         LaborPref = Number(LaborPref) + Number(RawValue[counter]*Value)
         LiberalPref = Number(LiberalPref) + Number(RawValue[counter]*(1-Value))

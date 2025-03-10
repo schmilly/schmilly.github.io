@@ -9,7 +9,7 @@ function PollClick(click) {
     if (points[0].datasetIndex != 0) { throw new Error("Click on undefined average 2PP") }
   }
   catch {
-    console.log("Error; Please click on a Poll data point")
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br> <b style='color:red'>Error:</b> Please click on a Poll data point")
     return
   }
   ClickonPoll = RawData[points[0].index];
@@ -76,7 +76,7 @@ function getPollPrimVote(RawDataEntry,Data){
           positionInArray = positionInArray + 1
         }
         else{
-          console.log("Couldn't find Party with ID " + PartyID)
+          ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Couldn't find Party with ID " + PartyID)
         }
       }  
   })
@@ -142,8 +142,8 @@ function CalcSeatSwing(Swing,ElcID) {
       //console.log(SwingID + " : " + Vote.Oth)
     }
     else {
-      //console.log("Couldn't find Party with ID " + element[0])
-      //console.log("Adding votes of "+ element[1] +  " to other vote")
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Couldn't find Party with ID " + element[0])
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Adding votes of "+ element[1] +  " to other vote")
       Vote.Oth = Vote.Oth + element[1]
     }
 
@@ -234,11 +234,11 @@ function CalcSeatSwing(Swing,ElcID) {
   positionInArray = positionInArray + 1
 
   if (Total.toFixed(1) != 100) {
-    console.log("Error; Values do not add up to 100: " + VoteSwing)
-    console.log("Other should be estimated to be:" + (100 - Sum(VoteSwing)))
-    console.log("Other sum is:" + OtherVote)
-    console.log("Sums to:" + Total)
-    console.log("Changing Value to Match")
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br> <b> Error; </b> Values do not add up to 100: " + VoteSwing)
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Other should be estimated to be:" + (100 - Sum(VoteSwing)))
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Other sum is:" + OtherVote)
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Sums to:" + Total)
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Changing Value to Match")
     OutputArray.data[positionInArray - 1] = OtherVote + (100 - Sum(VoteSwing))
   }
 

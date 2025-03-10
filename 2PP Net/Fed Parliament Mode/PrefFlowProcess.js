@@ -72,7 +72,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
 
 function SimulatePrefChart(seat,SeatWin){
   if (CustomSwing){
-    FinalWinData = PrefrenceFlows(CalcSeatSwing(Swing,seat),DivisonPrefrences2022House,seat)
+    FinalWinData = PrefrenceFlows(CalcSeatSwing(Swing,DataYear + "." + seat),DivisonPrefrences2022House,seat)
   }
   else{
   FinalWinData = PrefrenceFlows(CalculateSeatPrim(

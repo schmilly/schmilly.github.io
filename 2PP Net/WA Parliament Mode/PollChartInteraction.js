@@ -26,7 +26,7 @@ function PollClick(click){
     SelectedPollPos = points[0].index
   }
   catch{
-    console.log("Error; Please click on a Poll data point")
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error; Please click on a Poll data point")
   }
 }
 
@@ -48,7 +48,7 @@ function getPollPrimVote(RawDataEntry,Data){
           postionInArray = postionInArray + 1
         }
         else{
-          console.log("Couldn't find Party with ID " + PartyID)
+          ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Couldn't find Party with ID " + PartyID)
         }
       }  
   })
@@ -95,8 +95,8 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
       //console.log(PartyID + " : " + Vote.Oth)
     }
     else{
-      //console.log("Couldn't find Party with ID " + element[0])
-      //console.log("Adding votes of "+ element[1] +  " to other vote")
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Couldn't find Party with ID " + element[0])
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Adding votes of "+ element[1] +  " to other vote")
       Vote.Oth = Vote.Oth + element[1]
     }
   });
@@ -123,8 +123,8 @@ function CalculateSeatPrim(Poll,BaseLine,ElcID,Data){
     Data.datasets.pop();
   } 
   if (Math.round(Sum(VoteSwing)) != 100){
-    console.log("Error; Values do not add up to 100: " + VoteSwing) 
-    console.log("Sums to:" + Sum(VoteSwing))
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error; Values do not add up to 100: " + VoteSwing) 
+    ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Sums to:" + Sum(VoteSwing))
   }
   return Data;
 }

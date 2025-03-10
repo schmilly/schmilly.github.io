@@ -9,7 +9,7 @@ function renderParliment(List,Year) {
         Winner = SimulatePrefChart(Seat, Winner);
     //}
     //catch{
-      //console.log("Error with Electorate: " + Seat)
+      //ConsoleLog.innerHTML = (ConsoleLog.innerHTML + "<br>Error with Electorate: " + Seat)
       //document.getElementById("SeatCount").innerHTML = "<b>ERROR: Unable to load data, please ensure a swing and poll has been selected</b>"
     //}
     //Loop to wait for document to load
