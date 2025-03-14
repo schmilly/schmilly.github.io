@@ -88,7 +88,7 @@ var PartyNameArray = {
   "One": "One Nation",
   "Oth": "Other",
   "Ind": "Independent",
-  'LDP':'Liberal Democrats',
+  'LDP':'Liberal Democrats/Libertarian',
   "JLN": "Jacqui Lambie Network",
   "XEN": "Center Alliance",
   "KAP": "Katter Australia Party",
