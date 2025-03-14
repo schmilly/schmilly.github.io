@@ -30,7 +30,7 @@ function SetupSVG(Parliament,MapMode,DataYear){
       Seat.addEventListener("click",ClickonSeat)
       function ClickonSeat(){ 
         Name = document.getElementById("ElcName")
-        eval ("Name.innerText =  ElectorateIDNameArray." + i)
+        eval ("Name.innerText =  ElectorateIDNameArray." + i + " + ' ' + DataYear")
         MPName = document.getElementById("ElcMoP")
         eval ("MPName.innerText = MPArray." + i)
 
@@ -75,7 +75,7 @@ function SetupSVG(Parliament,MapMode,DataYear){
 
 function UpdatePollBar(){
   if (CustomSwing){
-    ArrayToChartJS(CalcSeatSwing(Swing,selected),PredictedPrimData.data)
+    ArrayToChartJS(CalcSeatSwing(Swing,DataYear + "." + selected),PredictedPrimData.data)
     BarPredictedPref.update();
     SimulatePrefChart(selected);
   }

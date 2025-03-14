@@ -51,7 +51,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
       VoteGone = parseFloat(PercentageofVote*MinValue) 
       InputArray.data[x] = parseFloat(InputArray.data[x]) + VoteGone;
       if(VoteGone != 0){
-        HoverText = HoverText + "|" + (PercentageofVote*100).toFixed(1)  + "% (" + VoteGone.toFixed(2) + ") added to " + InputArray.label[x]   
+        HoverText = HoverText + (PercentageofVote*100).toFixed(1)  + "% of (" + VoteGone.toFixed(2) + " added) goes to <abr data-tooltip='Current Total:"+ InputArray.data[x].toFixed(2)+"%'><b style='color:" + InputArray.color[x] + "'>" + InputArray.label[x]  + "</b></abr><br>" 
       } 
     }
     Amount = InputArray.data.splice(MinLocation,1)
@@ -63,7 +63,7 @@ function PrefrenceFlows(InputArray,PrefTable,DivisonID){
     //Just don't show distribution of votes if negative, but will still take away votes when negative.
     //Kinda silly but it works
     if(Amount[0] > 0){
-      History.innerHTML = History.innerHTML+"<br>" + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <abr data-tooltip='"+ HoverText  +"' data-placement='top'>" + Amount[0].toFixed(2) + "</abr> % of votes"
+      History.innerHTML = History.innerHTML + Count + "} <b> Eliminated: </b> <b style='color:"+ColorElim+"'>" + NameElim + "</b> with <i>" + Amount[0].toFixed(2) + "%</i> of votes <footer><small>" + HoverText + "</small></footer>"
     }
   }
   return InputArray
