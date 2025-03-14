@@ -83,7 +83,10 @@ function SimulatePrefChart(seat,SeatWin){
   ArrayToChartJS(FinalWinData,FinalPredictPref.data)
   WinnerNum = getHighestValue(FinalWinData.data)
   SeatWin = FinalWinData.label[WinnerNum]
-  document.getElementById("Winner").innerText = FinalWinData.label[WinnerNum]
+  WinnerElement = document.getElementById("Winner")
+  WinnerElement.innerText = FinalWinData.label[WinnerNum]
+  WinnerElement.style.backgroundColor = FinalWinData.color[WinnerNum]
+
   FinalPredictPref.update()
   return FinalWinData.ID[WinnerNum]
 }
