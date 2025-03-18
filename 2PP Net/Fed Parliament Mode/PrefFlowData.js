@@ -1254,7 +1254,7 @@ PrefFlows2022House = {
 
 },
 'Oth': {
-  'AJP':1.00,
+'AJP':1.00,
  'ALP':1.00,
  'ASP':1.00,
  'AUC':1.00,
@@ -1288,7 +1288,6 @@ PrefFlows2022House = {
  'UAP':1.00,
  'VNS':1.00,
  'WAP':1.00,
- 'XEN': 1.00
+ 'XEN':1.00,
 }
-
 }
