@@ -24,7 +24,7 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
 - [_] If Other swing is too high causes program to freeze and crash
 
 ##### Planned features and further support:
-- [_] Re-implement ability to view 2PP from multiple different terms
+- [X] Re-implement ability to view 2PP from multiple different terms (On Seperate page) 
   - [_] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
   - [_] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
 - [_] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
@@ -34,9 +34,12 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
       - [_] Fix bugs with this
   - [X] Implementation of Parliament wide swings and rendering of such based on Poll
       - [X] Provide Seat Count of Parliament based on such swings.
-      - [_] Show with Coaliton/ALP Results properly
+      - [_] Show Coaliton Results (i.e: As one Count) properly
 - [X] Add abillity to Auto Pull Polling Data from Wikipedia on load or via script and convert to JS format as required.
       - [_] Setup a server to auto pull and pload such data
+- [ ] Improvements to calculation
+      - [_] Add abillity to use Senate instead of House Prefrence Flows
+
       
 [comment]: <> (EndParlBug)
 
