@@ -86,24 +86,7 @@ function ChartDataCreate(DataSets) {
               return label;
             }
           }
-        },
-        zoom: {
-          pan: {
-            enabled: true,
-            modifierKey: 'ctrl'
-          },
-          limits: {
-            x: {
-              min: 0,
-              max: 1112
-            }
-          },
-          zoom: { 
-            wheel: {  enabled: true, },
-            pinch: { enabled: true  },
-            mode: 'xy',
-          }
-        },
+        }, 
         annotation: {
           annotations: {
             line1: {
