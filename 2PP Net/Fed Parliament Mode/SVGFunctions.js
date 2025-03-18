@@ -98,8 +98,7 @@ function injectParliament(xmlDoc,container2) {
   svg.attr("id", "Parliament")
   svg.attr("width","100%")
   svg.attr("height","100%")
-  svg.attr("onload","SetupSVG(ElectorateList,false,DataYear)")
-  container2.append(svg);
+  container2.append(svg).append(eval("SetupSVG(ElectorateList,false,DataYear)"));
 }
 
 function InjectSVGMap(FileName,Container,MapQ){
@@ -121,8 +120,8 @@ function injectMap(xmlDoc,container1) {
   var svg = $(xmlDoc).find("svg");
   svg.attr("id", "Map")
   svg.attr("style","overflow:auto;")
-  svg.attr("onload","SetupSVG(ElectorateList,true,DataYear)")
-  container1.append(svg);
+  container1.append(svg).append(eval("SetupSVG(ElectorateList,true,DataYear)"));
+
 }
 
 //Map Zoom

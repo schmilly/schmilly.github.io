@@ -3,21 +3,21 @@ PP_Split = ["greens","one","UAP","other"]
 
 FlowstoLab = [0.5,0.5,0.5,0.5]
 
-document.getElementById("enableadvance").checked = TwoPPBool;
-
-PP_Split.forEach((value,index) => {
-  eval('var ' + value + "slide = document.getElementById('" + value + "2pp')");
-  eval('var ' + value + "lab = document.getElementById('" + value + "flowlab')");
-  eval('var ' + value + "lib = document.getElementById('" + value + "flowlib')");
-  
-
-  eval ("FlowstoLab[index] = " + value + "slide.value")
-  eval(value + "lab.innerHTML = "+ value + "slide.value")
-  eval(value + "lib.innerHTML = 100 - "+ value + "slide.value")
-  
-  eval(value + "slide.oninput = function() {slideinput(index," + value + "slide," + value + "lab," +  value + "lib);}");
-
-});
+//document.getElementById("enableadvance").checked = TwoPPBool;
+//
+//PP_Split.forEach((value,index) => {
+//  eval('var ' + value + "slide = document.getElementById('" + value + "2pp')");
+//  eval('var ' + value + "lab = document.getElementById('" + value + "flowlab')");
+//  eval('var ' + value + "lib = document.getElementById('" + value + "flowlib')");
+//  
+//
+//  eval ("FlowstoLab[index] = " + value + "slide.value")
+//  eval(value + "lab.innerHTML = "+ value + "slide.value")
+//  eval(value + "lib.innerHTML = 100 - "+ value + "slide.value")
+//  
+//  eval(value + "slide.oninput = function() {slideinput(index," + value + "slide," + value + "lab," +  value + "lib);}");
+//
+//});
 
 function slideinput(index,Slider,SliderLab,SliderLib){
   SliderLab.innerHTML = Slider.value;
