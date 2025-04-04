@@ -17,28 +17,28 @@ Work in progress, currently shows seat by seat level Primary vote; Along with al
 ##### Known Bugs/Issues:
 [comment]: <> (StartParlBug)
 - [X] *Many* Spelling mistakes - thanks to @hindsight_apple on Twitter for pointing out the issues (https://twitter.com/hindsight_apple/status/1792376323551408563)
-- [_] Sometimes when calculating seat vote based certain polls can lead to negative values for other vote
+- [ ] Sometimes when calculating seat vote based certain polls can lead to negative values for other vote
       - Example Canberra Electorate with 25/08/2022 Roy Morgan Poll leas to a negative other count and breaks chart
-- [_] Can't Reset 2PP Chart Zoom
-- [_] Unchecking consolidation doesn't actually stop it from consolidating other vote
-- [_] If Other swing is too high causes program to freeze and crash
+- [ ] Can't Reset 2PP Chart Zoom
+- [ ] Unchecking consolidation doesn't actually stop it from consolidating other vote
+- [ ] If Other swing is too high causes program to freeze and crash
 
 ##### Planned features and further support:
 - [X] Re-implement ability to view 2PP from multiple different terms (On Seperate page) 
-  - [_] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
-  - [_] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
-- [_] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
+  - [ ] Show just rolling averages or remove year with one click instead of two in both basic and advance mode.
+  - [ ] Ability to filter out pollsters in Advance Mode - i.e. show only Roy Morgan or News Polls polls
+- [ ] Add Parliamentary map and seats based calculation, with changes in primary vote reflected in Parliament
   - [X] Implementation of Seat level swings based on Poll
   - [X] Added Geographic and Seating based map
   - [X] Add abilitiy to calculate winner of Seat Based on Prefrences flows
-      - [_] Fix bugs with this
+      - [ ] Fix bugs with this
   - [X] Implementation of Parliament wide swings and rendering of such based on Poll
       - [X] Provide Seat Count of Parliament based on such swings.
-      - [_] Show Coaliton Results (i.e: As one Count) properly
+      - [ ] Show Coaliton Results (i.e: As one Count) properly
 - [X] Add abillity to Auto Pull Polling Data from Wikipedia on load or via script and convert to JS format as required.
-      - [_] Setup a server to auto pull and pload such data
+      - [ ] Setup a server to auto pull and pload such data
 - [ ] Improvements to calculation
-      - [_] Add abillity to use Senate instead of House Prefrence Flows
+      - [ ] Add abillity to use Senate instead of House Prefrence Flows
 
       
 [comment]: <> (EndParlBug)
