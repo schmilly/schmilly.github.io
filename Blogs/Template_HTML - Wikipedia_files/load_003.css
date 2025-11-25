@@ -1,0 +1,1 @@
+span.updatedmarker{background-color:transparent;color:var(--color-content-added,#006400)}li.mw-history-line-updated{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/1/19/ChangedBulletVector.svg)}
