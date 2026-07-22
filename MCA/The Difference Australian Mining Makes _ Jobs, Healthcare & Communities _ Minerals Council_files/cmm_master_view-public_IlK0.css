@@ -1,0 +1,44 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.input-loading,
+#cmm-loading {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 3px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    position: relative;
+    top: 2px;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.loading-container{
+    position: relative;
+}
+
+.input-loading{
+    position: absolute;
+    right: 25px;
+    top: 18px;
+    left: auto;
+    bottom: 0;
+    border-color: rgba(0, 0, 0, .5);
+    border-top-color: white;
+}
