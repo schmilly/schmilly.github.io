@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="77"
-   height="120"
-   viewBox="0 0 77 120"
+   width="119.85461"
+   height="119.85461"
+   viewBox="0 0 119.85461 119.85461"
    fill="none"
    version="1.1"
    id="svg31"
    sodipodi:docname="icon.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   inkscape:export-filename="../minerals_favicon.png"
+   inkscape:export-xdpi="156.9902"
+   inkscape:export-ydpi="156.9902"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +27,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="5.6568542"
-     inkscape:cx="0.44194174"
+     inkscape:cx="21.831922"
      inkscape:cy="106.33118"
      inkscape:window-width="3840"
      inkscape:window-height="2090"
@@ -32,90 +35,80 @@
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg31" />
-  <rect
-     style="fill:#ffffff;stroke-width:6.92574;stroke-linejoin:round"
-     id="rect1"
-     width="119.85461"
-     height="119.85461"
-     x="-21.427303"
-     y="0.072696872"
-     inkscape:export-filename="../minerals_favicon.png"
-     inkscape:export-xdpi="156.9902"
-     inkscape:export-ydpi="156.9902" />
   <path
-     d="M0 0V120H63.3673C77.0272 120 76.7971 111.792 76.7971 104.317V0H0Z"
-     fill="white"
+     d="M 21.427303,-0.07269687 V 119.9273 h 63.3673 c 13.6599,0 13.4298,-8.208 13.4298,-15.683 V -0.07269687 Z"
+     fill="#ffffff"
      id="path1" />
   <path
-     d="M2.86138 71.0702L2.83262 73.5382H2.81824V87.3849H2.847V104.991H2.81824V117.044H66.8758C70.7436 116.7 73.8063 113.428 73.8063 109.482V3.04196C73.3893 41.9419 41.8854 70.7832 2.86138 71.0702Z"
-     fill="#425A69"
+     d="m 24.288683,70.997503 -0.02876,2.468 h -0.01438 v 13.8467 h 0.02876 V 104.9183 h -0.02876 v 12.053 h 64.05756 c 3.8678,-0.344 6.9305,-3.616 6.9305,-7.562 V 2.9692631 c -0.417,38.8999399 -31.9209,67.7412399 -70.94492,68.0282399 z"
+     fill="#425a69"
      id="path2" />
   <path
-     d="M14.4938 85.9931V81.6166L13.1997 83.8838H11.7619L10.4534 81.6166V85.9931H8.21029V76.8672H10.4246L12.4808 80.8849L14.537 76.8672H16.7513V85.9931H14.4938Z"
-     fill="white"
+     d="m 35.921103,85.920403 v -4.3765 l -1.2941,2.2672 h -1.4378 l -1.3085,-2.2672 v 4.3765 h -2.24311 v -9.1259 h 2.21431 l 2.0562,4.0177 2.0562,-4.0177 h 2.2143 v 9.1259 z"
+     fill="#ffffff"
      id="path3" />
   <path
-     d="M11.388 98.9071C10.324 98.9071 9.50438 98.5484 8.84296 97.874C7.87958 96.9126 7.92272 95.6212 7.92272 94.2581C7.92272 92.8949 7.87958 91.6035 8.84296 90.6421C9.50438 89.9821 10.324 89.6234 11.388 89.6234C13.1278 89.6234 14.5226 90.5847 14.8533 92.6079H12.5671C12.4233 92.0914 12.1357 91.6322 11.4024 91.6322C10.9854 91.6322 10.6834 91.8044 10.5109 92.0196C10.3096 92.2922 10.1658 92.6079 10.1658 94.2724C10.1658 95.9369 10.3096 96.2669 10.5109 96.5252C10.6834 96.7404 10.9854 96.9126 11.4024 96.9126C12.1501 96.9126 12.4377 96.4534 12.5671 95.9369H14.8533C14.5226 97.9457 13.1135 98.9071 11.388 98.9071Z"
-     fill="white"
+     d="m 32.815303,98.834403 c -1.064,0 -1.88362,-0.3587 -2.54504,-1.0331 -0.96338,-0.9614 -0.92024,-2.2528 -0.92024,-3.6159 0,-1.3632 -0.04314,-2.6546 0.92024,-3.616 0.66142,-0.66 1.48104,-1.0187 2.54504,-1.0187 1.7398,0 3.1346,0.9613 3.4653,2.9845 h -2.2862 c -0.1438,-0.5165 -0.4314,-0.9757 -1.1647,-0.9757 -0.417,0 -0.719,0.1722 -0.8915,0.3874 -0.2013,0.2726 -0.3451,0.5883 -0.3451,2.2528 0,1.6645 0.1438,1.9945 0.3451,2.2528 0.1725,0.2152 0.4745,0.3874 0.8915,0.3874 0.7477,0 1.0353,-0.4592 1.1647,-0.9757 h 2.2862 c -0.3307,2.0088 -1.7398,2.9702 -3.4653,2.9702 z"
+     fill="#ffffff"
      id="path11" />
   <path
-     d="M13.3291 111.678L12.9122 110.314H10.0939L9.64817 111.678H7.29005L10.6259 102.537H12.3658L15.7016 111.678H13.3435H13.3291ZM11.5462 106.01L10.7266 108.449H12.3226L11.5462 106.01Z"
-     fill="white"
+     d="m 34.756403,111.6053 -0.4169,-1.364 h -2.8183 l -0.44573,1.364 h -2.35812 l 3.33585,-9.141 h 1.7399 l 3.3358,9.141 h -2.3581 z m -1.7829,-5.668 -0.8196,2.439 h 1.596 z"
+     fill="#ffffff"
      id="path20" />
   <path
-     d="M2.9189 42.2289V63.25C4.31364 63.3361 5.70838 63.3792 7.1175 63.3792C41.1952 63.3792 69.0182 36.6471 70.6718 3.04196H42.3599C42.1011 24.6227 24.5734 42.071 2.9189 42.2289Z"
-     fill="#D18316"
+     d="m 24.346203,42.156203 v 21.0211 c 1.39474,0.0861 2.78948,0.1292 4.1986,0.1292 34.0777,0 61.9007,-26.7321 63.5543,-60.3372399 h -28.3119 c -0.2588,21.5807399 -17.7865,39.0290399 -39.441,39.1869399 z"
+     fill="#d18316"
      id="path29" />
   <path
-     d="M25.3498 3.04196C25.1916 15.2959 15.2271 25.1967 2.9189 25.2971V35.901C3.62346 35.944 4.32802 35.9584 5.03258 35.9584C23.6675 35.9584 38.909 21.3942 39.9299 3.04196H25.3498Z"
-     fill="#D18316"
+     d="m 46.777103,2.9692631 c -0.1582,12.2539399 -10.1227,22.1547399 -22.4309,22.2551399 v 10.6039 c 0.70456,0.043 1.40912,0.0574 2.11368,0.0574 18.63492,0 33.87642,-14.5642 34.89732,-32.9164399 z"
+     fill="#d18316"
      id="path30" />
   <path
-     d="M2.9189 21.0642C3.1202 21.0642 3.30712 21.0642 3.50843 21.0642C13.8755 21.0642 22.3878 13.1436 23.308 3.04196H2.9189V21.0642Z"
-     fill="#D18316"
+     d="m 24.346203,20.991503 c 0.2013,0 0.38822,0 0.58953,0 10.36707,0 18.87937,-7.9206 19.79957,-18.0222399 h -20.3891 z"
+     fill="#d18316"
      id="path31" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.8627px;line-height:1.09;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0.602941px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:none;stroke-width:6.83651;stroke-linejoin:round"
-     x="18.254755"
-     y="85.862221"
+     x="39.68206"
+     y="85.78952"
      id="text31"><tspan
        sodipodi:role="line"
        id="tspan31"
-       x="18.254755"
-       y="85.862221"
+       x="39.68206"
+       y="85.78952"
        style="stroke-width:6.83651">assive</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.8627px;line-height:1.09;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0.602941px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:none;stroke-width:6.83651;stroke-linejoin:round"
-     x="16.629755"
-     y="98.781487"
+     x="38.05706"
+     y="98.708786"
      id="text32"><tspan
        sodipodi:role="line"
        id="tspan32"
-       x="16.629755"
-       y="98.781487"
+       x="38.05706"
+       y="98.708786"
        style="stroke-width:6.83651">unts</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2654px;line-height:1.09;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0.48119px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:none;stroke-width:5.45603;stroke-linejoin:round"
-     x="48.827087"
-     y="98.806854"
+     x="70.254395"
+     y="98.734154"
      id="text33"><tspan
        sodipodi:role="line"
        id="tspan33"
-       x="48.827087"
-       y="98.806854"
+       x="70.254395"
+       y="98.734154"
        style="stroke-width:5.45603">of</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.8627px;line-height:1.09;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0.602941px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:none;stroke-width:6.83651;stroke-linejoin:round"
-     x="16.692255"
-     y="111.55239"
+     x="38.11956"
+     y="111.47969"
      id="text34"><tspan
        sodipodi:role="line"
        id="tspan34"
-       x="16.692255"
-       y="111.55239"
+       x="38.11956"
+       y="111.47969"
        style="stroke-width:6.83651">ustralia</tspan></text>
 </svg>
