@@ -24,14 +24,21 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="5.6568542"
-     inkscape:cx="-21.655145"
-     inkscape:cy="55.242717"
+     inkscape:cx="181.37289"
+     inkscape:cy="42.338019"
      inkscape:window-width="3840"
      inkscape:window-height="2090"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg31" />
+  <rect
+     style="fill:#ffffff;stroke-width:12.2217;stroke-linejoin:round"
+     id="rect1"
+     width="345.59842"
+     height="124.98113"
+     x="-1.9445437"
+     y="-1.2374369" />
   <path
      d="M0 0V120H63.3673C77.0272 120 76.7971 111.792 76.7971 104.317V0H0Z"
      fill="white"
@@ -108,4 +115,17 @@
        x="16.692255"
        y="111.55239"
        style="stroke-width:6.83651">ustralia</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:1.09;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:1px;writing-mode:lr-tb;direction:ltr;fill:#d18316;fill-opacity:1;stroke-width:11.3386;stroke-linejoin:round"
+     x="90.332893"
+     y="23.334524"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="90.332893"
+       y="23.334524"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Bold';fill:#d18316;fill-opacity:1">We are <tspan
+   style="font-style:italic;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Heavy Italic';fill:#000080;fill-opacity:1"
+   id="tspan2">parasites</tspan></tspan></text>
 </svg>
