@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TLD Word Maker – All Possible Words</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background: #f6f9fc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            color: #475569;
+            margin-top: -0.25rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .status {
+            font-size: 0.95rem;
+            color: #475569;
+            min-height: 1.8rem;
+        }
+        .status .spinner {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 3px solid #e2e8f0;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 0.5rem 0 1.25rem 0;
+            padding: 0.75rem 1rem;
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        .controls label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .controls input[type="checkbox"] {
+            width: 1.1rem;
+            height: 1.1rem;
+            cursor: pointer;
+        }
+        .stats {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0.25rem 0;
+        }
+        .results-table-wrap {
+            overflow-x: auto;
+            max-height: 70vh;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        th {
+            position: sticky;
+            top: 0;
+            background: #f8fafc;
+            z-index: 2;
+            text-align: left;
+            padding: 0.7rem 0.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.1s;
+        }
+        th:hover {
+            background: #eef2ff;
+        }
+        th .sort-icon {
+            display: inline-block;
+            margin-left: 0.3rem;
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+        td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .tld-badge {
+            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .word-badge {
+            font-weight: 600;
+            color: #0f172a;
+            cursor: help;
+            border-bottom: 1px dashed #94a3b8;
+        }
+        .base-word {
+            color: #475569;
+            font-style: italic;
+        }
+        .domain-badge {
+            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+            background: #f1f5f9;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #1e293b;
+        }
+        .restriction-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.1rem 0.55rem;
+            border-radius: 20px;
+            background: #f1f5f9;
+            color: #475569;
+        }
+        .restriction-tag.yes {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .restriction-tag.no {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .restriction-detail {
+            font-size: 0.8rem;
+            color: #475569;
+            margin-top: 0.15rem;
+            max-width: 280px;
+            word-break: break-word;
+        }
+        .category-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 2rem 0;
+            color: #94a3b8;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .upload-area {
+            margin: 0.5rem 0 1rem 0;
+            padding: 0.75rem 1rem;
+            background: #f1f5f9;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+        .upload-area .file-label {
+            background: #e2e8f0;
+            padding: 0.2rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 0.9rem;
+        }
+        .upload-area .file-label:hover {
+            background: #cbd5e1;
+        }
+        .upload-area input[type="file"] {
+            display: none;
+        }
+        .upload-area button {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.2rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 0.9rem;
+        }
+        .upload-area button:hover {
+            background: #cbd5e1;
+        }
+        .upload-area .info {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        /* Tooltip for meaning */
+        .meaning-tooltip {
+            display: none;
+            position: fixed;
+            background: #1e293b;
+            color: #f1f5f9;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            max-width: 300px;
+            z-index: 9999;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            line-height: 1.4;
+        }
+        .meaning-tooltip.visible {
+            display: block;
+        }
+        @media (max-width: 700px) {
+            body {
+                padding: 0 0.8rem;
+                margin: 1rem auto;
+            }
+            .card {
+                padding: 0.8rem;
+            }
+            th,
+            td {
+                padding: 0.4rem 0.3rem;
+                font-size: 0.75rem;
+            }
+            .restriction-detail {
+                max-width: 100px;
+                font-size: 0.65rem;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+            .upload-area {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔗 All TLD‑formed English Words</h1>
+    <div class="subhead">
+        Every English word that can be created by appending a generic TLD to a base string.
+        <br />
+        Example: <strong>compute</strong> + <strong>.red</strong> → <strong>computered</strong> → <strong>compute.red</strong>
+        <br />
+        <span style="font-size:0.8rem;color:#64748b;">
+            TLD list embedded (over 400 entries) – no external fetch. Click any column to sort.
+            Hover a word to see its definition.
+        </span>
+    </div>
+
+    <div class="card">
+        <div id="status" class="status">
+            <span class="spinner"></span> Loading word list…
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <label>
+                <input type="checkbox" id="filterRestricted" checked />
+                Hide restricted TLDs
+            </label>
+            <span style="color:#94a3b8;font-size:0.85rem;">(shows only TLDs with no restrictions)</span>
+        </div>
+
+        <!-- CSV upload / reset -->
+        <div class="upload-area">
+            <span style="font-weight:500;">📂 Replace TLD list</span>
+            <label class="file-label" for="csvFile">Choose CSV file</label>
+            <input type="file" id="csvFile" accept=".csv" />
+            <span class="info">CSV format: <code>tld,restrictions</code></span>
+            <button id="resetTlds">↺ Reset to default</button>
+        </div>
+
+        <div id="results">
+            <div class="empty-state">⏳ Loading data…</div>
+        </div>
+    </div>
+
+    <!-- Tooltip for meanings -->
+    <div id="meaningTooltip" class="meaning-tooltip"></div>
+
+    <div class="footer">
+        Word list from
+        <a href="https://www.npmjs.com/package/word-list-json" target="_blank" rel="noopener">word-list-json</a>
+        &bull; Meanings from
+        <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener">Free Dictionary API</a>
+        &bull; TLD list from the provided CSV (as of 2026)
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ----- EMBEDDED TLD LIST (parsed from the provided CSV) -----
+            const DEFAULT_TLDS_RAW = [
+                ["academy", ""],
+                ["accountant", ""],
+                ["accountants", ""],
+                ["anime", "Anime Sites Inc."],
+                ["actor", ""],
+                ["ads", "Reserved for Google AdSense."],
+                ["adult", ""],
+                ["aero", "Must verify eligibility for registration; only those in various categories of air-travel-related entities may register."],
+                ["africa", ""],
+                ["agency", ""],
+                ["airforce", ""],
+                ["analytics", "Reserved for SAS Institute."],
+                ["apartments", ""],
+                ["app", ""],
+                ["archi", "Restricted to individuals and organizations that can verify participation in architecture industry.[7]"],
+                ["army", ""],
+                ["art", ""],
+                ["associates", ""],
+                ["attorney", ""],
+                ["auction", ""],
+                ["audio", ""],
+                ["author", ""],
+                ["auto", ""],
+                ["autos", ""],
+                ["baby", ""],
+                ["band", ""],
+                ["bank", "Restricted to banks and savings associations"],
+                ["bar", ""],
+                ["barefoot", "Reserved for Gallo Vineyards Inc."],
+                ["bargains", ""],
+                ["baseball", "Reserved for MLB"],
+                ["beauty", ""],
+                ["beer", ""],
+                ["best", ""],
+                ["bet", ""],
+                ["bible", ""],
+                ["bid", ""],
+                ["bike", ""],
+                ["bingo", ""],
+                ["bio", "Open TLD; any person or entity is permitted to register; however, registrants who are \"producers, transformers and retailers, or otherwise involved in the field of agriculture, food and farming\" must comply with the Principles of Organic Agriculture.[11][12]"],
+                ["biz", "Open TLD; any person or entity is permitted to register; however, registrations may be challenged later if they are not held by commercial entities in accordance with the domain's charter. This TLD was created to provide relief for the .com TLD, where many names have already been taken."],
+                ["black", ""],
+                ["blackfriday", ""],
+                ["blockbuster", "Reserved for Blockbuster LLC"],
+                ["blog", ""],
+                ["blue", ""],
+                ["boo", ""],
+                ["book", ""],
+                ["boston", ""],
+                ["bot", "Previously restricted to online \"bots\" using approved frameworks (Amazon Lex, Dialogflow, Gupshup, Microsoft Bot Framework, and Pandorabots)[16] and now has no restrictions.[17]"],
+                ["boutique", ""],
+                ["box", ""],
+                ["broadway", "Reserved for members of the Broadway League"],
+                ["broker", ""],
+                ["build", ""],
+                ["builders", ""],
+                ["business", ""],
+                ["buy", ""],
+                ["buzz", ""],
+                ["cab", ""],
+                ["cafe", ""],
+                ["call", ""],
+                ["cam", ""],
+                ["camera", ""],
+                ["camp", ""],
+                ["capital", ""],
+                ["car", ""],
+                ["cards", ""],
+                ["care", ""],
+                ["career", ""],
+                ["careers", ""],
+                ["cars", ""],
+                ["casa", ""],
+                ["case", "Reserved for CNH Industrial"],
+                ["cash", ""],
+                ["casino", ""],
+                ["catering", ""],
+                ["catholic", ""],
+                ["center", ""],
+                ["cern", "CERN"],
+                ["ceo", ""],
+                ["cfd", ""],
+                ["channel", ""],
+                ["chat", ""],
+                ["charity", ""],
+                ["cheap", ""],
+                ["christmas", ""],
+                ["church", ""],
+                ["circle", ""],
+                ["city", ""],
+                ["claims", ""],
+                ["cleaning", ""],
+                ["click", ""],
+                ["clinic", ""],
+                ["clothing", ""],
+                ["cloud", ""],
+                ["club", ""],
+                ["coach", ""],
+                ["codes", ""],
+                ["coffee", ""],
+                ["college", ""],
+                ["community", ""],
+                ["company", ""],
+                ["compare", ""],
+                ["computer", ""],
+                ["condos", ""],
+                ["construction", ""],
+                ["consulting", ""],
+                ["contact", ""],
+                ["contractors", ""],
+                ["cooking", ""],
+                ["cool", ""],
+                ["coop", "The .coop TLD is limited to cooperatives as defined by the Rochdale Principles."],
+                ["country", ""],
+                ["coupon", ""],
+                ["coupons", ""],
+                ["courses", ""],
+                ["cpa", "Restricted to licensed CPAs and CPA firms"],
+                ["credit", ""],
+                ["creditcard", ""],
+                ["cruise", ""],
+                ["cricket", ""],
+                ["cruises", ""],
+                ["cyou", ""],
+                ["dad", ""],
+                ["dance", ""],
+                ["data", ""],
+                ["date", ""],
+                ["dating", ""],
+                ["day", ""],
+                ["deal", ""],
+                ["deals", ""],
+                ["degree", ""],
+                ["delivery", ""],
+                ["democrat", ""],
+                ["dental", ""],
+                ["dentist", ""],
+                ["design", ""],
+                ["dev", ""],
+                ["diamonds", ""],
+                ["diet", ""],
+                ["digital", ""],
+                ["direct", ""],
+                ["directory", ""],
+                ["discount", ""],
+                ["diy", ""],
+                ["docs", ""],
+                ["doctor", ""],
+                ["dog", ""],
+                ["domains", ""],
+                ["dot", ""],
+                ["download", ""],
+                ["drive", "Reserved for Google Drive"],
+                ["earth", ""],
+                ["eat", ""],
+                ["eco", "Open to anyone pledging a commitment to sustainability action.[25]"],
+                ["education", ""],
+                ["email", ""],
+                ["energy", ""],
+                ["engineer", ""],
+                ["engineering", ""],
+                ["edeka", ""],
+                ["entertainment", ""],
+                ["enterprises", ""],
+                ["equipment", ""],
+                ["esq", "To be restricted to verified lawyers and attorneys[27]"],
+                ["estate", ""],
+                ["events", ""],
+                ["exchange", ""],
+                ["expert", ""],
+                ["exposed", ""],
+                ["express", ""],
+                ["fail", ""],
+                ["faith", ""],
+                ["family", ""],
+                ["fan", ""],
+                ["fans", ""],
+                ["farm", ""],
+                ["fashion", ""],
+                ["fast", "Reserved for Amazon"],
+                ["feedback", ""],
+                ["film", ""],
+                ["final", ""],
+                ["finance", ""],
+                ["financial", ""],
+                ["fire", "Reserved for Amazon (promotion of Fire devices)"],
+                ["fish", ""],
+                ["fishing", ""],
+                ["fit", ""],
+                ["fitness", ""],
+                ["flights", ""],
+                ["florist", ""],
+                ["flowers", ""],
+                ["fly", "To be restricted to verified airlines, travel agencies and travel resellers[28]"],
+                ["foo", ""],
+                ["food", ""],
+                ["foodnetwork", "Reserved for Food Network"],
+                ["football", ""],
+                ["forex", ""],
+                ["forsale", ""],
+                ["forum", ""],
+                ["foundation", ""],
+                ["free", ""],
+                ["frontdoor", "Reserved for HGTV"],
+                ["fun", ""],
+                ["fund", ""],
+                ["furniture", ""],
+                ["fyi", "Identity Digital"],
+                ["gallery", ""],
+                ["game", ""],
+                ["games", ""],
+                ["garden", ""],
+                ["gay", ""],
+                ["gdn", ""],
+                ["gift", ""],
+                ["gifts", ""],
+                ["gives", ""],
+                ["glass", ""],
+                ["gle", "In use for some URL abbreviations related to Google such as forms.gle and goo.gle."],
+                ["global", ""],
+                ["gmbh", ""],
+                ["gold", ""],
+                ["golf", ""],
+                ["google", "In use for some websites related to Google such as blog.google."],
+                ["gop", ""],
+                ["graphics", ""],
+                ["green", "\"As a Registrant you may not ... use a .green name or its content in a way that negatively affects the mission, purpose of the .green TLD, or its brand.\"[35]"],
+                ["gripe", ""],
+                ["grocery", "Reserved for Walmart"],
+                ["group", ""],
+                ["guide", ""],
+                ["guitars", ""],
+                ["guru", ""],
+                ["hair", ""],
+                ["hangout", "Reserved for Google Hangouts"],
+                ["hamburg", "Unrestricted for inhabitants of Hamburg"],
+                ["health", ""],
+                ["healthcare", ""],
+                ["help", ""],
+                ["here", ""],
+                ["hiphop", ""],
+                ["hiv", ""],
+                ["hockey", ""],
+                ["holdings", ""],
+                ["holiday", ""],
+                ["homes", ""],
+                ["horse", ""],
+                ["hospital", ""],
+                ["host", ""],
+                ["hosting", ""],
+                ["hot", ""],
+                ["hotels", "Reserved for Booking.com"],
+                ["house", ""],
+                ["how", ""],
+                ["icu", ""],
+                ["inc", ""],
+                ["industries", ""],
+                ["info", ""],
+                ["ing", "Charleston Road Registry Inc. (Google)[n 1]"],
+                ["ink", ""],
+                ["institute", ""],
+                ["insurance", ""],
+                ["insure", ""],
+                ["international", ""],
+                ["investments", ""],
+                ["irish", ""],
+                ["jewelry", ""],
+                ["jobs", "For websites with job opportunities and job listings.[40]"],
+                ["joy", ""],
+                ["kim", ""],
+                ["kitchen", ""],
+                ["kosher", ""],
+                ["kpn", "Only available to KPN."],
+                ["land", ""],
+                ["lat", ""],
+                ["law", "Restricted to qualified lawyers, courts of law, law schools, and legal regulators.[41]"],
+                ["lawyer", ""],
+                ["lease", ""],
+                ["legal", ""],
+                ["lgbt", ""],
+                ["life", ""],
+                ["lifeinsurance", ""],
+                ["lighting", ""],
+                ["like", ""],
+                ["limited", ""],
+                ["limo", ""],
+                ["link", ""],
+                ["live", ""],
+                ["living", ""],
+                ["loan", ""],
+                ["loans", ""],
+                ["locker", "Reserved for DISH DBS Corporation"],
+                ["lol", ""],
+                ["lotto", ""],
+                ["love", ""],
+                ["ltd", ""],
+                ["luxury", ""],
+                ["makeup", ""],
+                ["management", ""],
+                ["map", ""],
+                ["market", ""],
+                ["marketing", ""],
+                ["markets", ""],
+                ["mba", ""],
+                ["med", ""],
+                ["media", ""],
+                ["meet", ""],
+                ["meme", ""],
+                ["memorial", ""],
+                ["men", ""],
+                ["menu", ""],
+                ["mobi", "Must be used for mobile-compatible sites in accordance with standards."],
+                ["mobile", ""],
+                ["moe", ""],
+                ["mom", ""],
+                ["money", ""],
+                ["monster", ""],
+                ["mortgage", ""],
+                ["motorcycles", ""],
+                ["mov", ""],
+                ["movie", ""],
+                ["museum", "Must be verified as a legitimate museum."],
+                ["music", ""],
+                ["name", "Open TLD; any person or entity is permitted to register; however, registrations may be challenged later if they are not by individuals (or the owners of fictional characters) in accordance with the domain's charter."],
+                ["navy", ""],
+                ["network", ""],
+                ["new", "The second-level domain name must be the thing to be created immediately when a user visits the .new website. Most likely, the .new will redirect to a company's main website."],
+                ["news", ""],
+                ["nexus", ""],
+                ["ngo", "Restricted to validated NGOs, as determined by PIR.[47]"],
+                ["ninja", ""],
+                ["now", ""],
+                ["ntt", "Restricted to use by NTT Japan.[48]"],
+                ["observer", ""],
+                ["org", ""],
+                ["one", ""],
+                ["ong", "Restricted to validated NGOs, as determined by PIR.[47]"],
+                ["onl", ""],
+                ["online", ""],
+                ["ooo", ""],
+                ["open", ""],
+                ["organic", "Registrants must be verified as a member of the organic community.[50]"],
+                ["page", ""],
+                ["partners", ""],
+                ["parts", ""],
+                ["party", ""],
+                ["pay", ""],
+                ["pet", ""],
+                ["pharmacy", "\"All registrants within the .pharmacy gTLD are vetted prior to registration to confirm that they meet all applicable regulatory standards, including pharmacy licensure and valid prescription requirements, in the jurisdictions where they are based and where they serve patients.\"[51]"],
+                ["phone", ""],
+                ["photo", ""],
+                ["photography", ""],
+                ["photos", ""],
+                ["physio", "Must be eligible for membership within an association that is a member of the World Confederation for Physical Therapy, have proper training as a physical therapist outside WCPT's reach, or otherwise supports physical therapy.[53][54]"],
+                ["pics", ""],
+                ["pictures", ""],
+                ["pid", ""],
+                ["pin", ""],
+                ["pink", ""],
+                ["pizza", ""],
+                ["place", ""],
+                ["plumbing", ""],
+                ["plus", ""],
+                ["poker", ""],
+                ["porn", "For sites providing sexually explicit content, such as pornography."],
+                ["post", "The .post TLD is restricted to Postal Administrations as defined in the Universal Postal Union constitution, and their large customers who wish to provide \"Trusted Postal Services\".[55]"],
+                ["press", ""],
+                ["prime", "Reserved for Amazon Prime"],
+                ["pro", ""],
+                ["productions", ""],
+                ["prof", ""],
+                ["promo", ""],
+                ["properties", ""],
+                ["property", ""],
+                ["protection", ""],
+                ["pub", ""],
+                ["qpon", ""],
+                ["quebec", ""],
+                ["racing", ""],
+                ["radio", "Restricted to people and companies with an active interest in the radio sector.[60]"],
+                ["read", ""],
+                ["realestate", ""],
+                ["realtor", "To be restricted to members of the National Association of Realtors and the Canadian Real Estate Association, and related associations.[61]"],
+                ["realty", ""],
+                ["recipes", ""],
+                ["red", ""],
+                ["rehab", ""],
+                ["reit", "Restricted to REITs, as determined by national law.[63]"],
+                ["rent", ""],
+                ["rentals", ""],
+                ["repair", ""],
+                ["report", ""],
+                ["republican", ""],
+                ["rest", ""],
+                ["restaurant", ""],
+                ["review", ""],
+                ["reviews", ""],
+                ["rich", ""],
+                ["rip", ""],
+                ["rocks", ""],
+                ["rodeo", ""],
+                ["room", ""],
+                ["rugby", ""],
+                ["run", ""],
+                ["safe", ""],
+                ["sale", ""],
+                ["salon", ""],
+                ["save", ""],
+                ["sbi", ""],
+                ["scholarships", ""],
+                ["school", ""],
+                ["science", ""],
+                ["search", ""],
+                ["secure", ""],
+                ["security", ""],
+                ["select", ""],
+                ["services", ""],
+                ["sex", "For sites providing sexually explicit content, such as pornography."],
+                ["sexy", ""],
+                ["shoes", ""],
+                ["shop", ""],
+                ["shopping", ""],
+                ["show", ""],
+                ["silk", "Reserved for Amazon Silk"],
+                ["singles", ""],
+                ["site", ""],
+                ["ski", ""],
+                ["skin", ""],
+                ["sky", ""],
+                ["sling", "Reserved for Sling Media"],
+                ["smart", "Reserved to Smart Communications, a wireless telecommunications in the Philippines."],
+                ["smile", ""],
+                ["sncf", "Reserved to the SNCF company."],
+                ["soccer", ""],
+                ["social", ""],
+                ["software", ""],
+                ["solar", ""],
+                ["solutions", ""],
+                ["song", ""],
+                ["spa", ""],
+                ["space", ""],
+                ["spreadbetting", ""],
+                ["spot", ""],
+                ["sport", ""],
+                ["srl", ""],
+                ["storage", ""],
+                ["store", ""],
+                ["stream", ""],
+                ["studio", ""],
+                ["study", ""],
+                ["style", ""],
+                ["sucks", ""],
+                ["supplies", ""],
+                ["supply", ""],
+                ["support", ""],
+                ["surf", ""],
+                ["surgery", ""],
+                ["systems", ""],
+                ["talk", ""],
+                ["tattoo", ""],
+                ["tax", ""],
+                ["taxi", ""],
+                ["team", ""],
+                ["tech", ""],
+                ["technology", ""],
+                ["tel", "A contact directory housing all types of contact information directly in the Domain Name System."],
+                ["tennis", ""],
+                ["theater", ""],
+                ["theatre", ""],
+                ["tickets", ""],
+                ["tips", ""],
+                ["tires", ""],
+                ["today", ""],
+                ["tools", ""],
+                ["top", ""],
+                ["tours", ""],
+                ["town", ""],
+                ["toys", ""],
+                ["trade", ""],
+                ["trading", ""],
+                ["training", ""],
+                ["travel", "Must be verified as a legitimate travel-related entity."],
+                ["trust", ""],
+                ["tube", ""],
+                ["tunes", ""],
+                ["university", ""],
+                ["uno", ""],
+                ["vacations", ""],
+                ["ventures", ""],
+                ["vet", ""],
+                ["video", ""],
+                ["villas", ""],
+                ["vin", ""],
+                ["vip", ""],
+                ["vision", ""],
+                ["vodka", ""],
+                ["volvo", "Only Volvo Holding Sverige Aktiebolag and its Affiliates are eligible to register a Domain Name under the .volvo Domain [71]"],
+                ["vote", "Must use the domain in connection with a \"clearly identified political/democratic process.\"[72]"],
+                ["voting", ""],
+                ["voyage", ""],
+                ["wang", ""],
+                ["watch", ""],
+                ["watches", ""],
+                ["weather", "Reserved for The Weather Channel"],
+                ["webcam", ""],
+                ["website", ""],
+                ["wed", "This TLD is intended primarily for engaged couples on a short-term basis (two years with large third-year renewal fees for second-level domains).[75]And although the registry is advertising for multiple world languages, all domains appear to need to be in Latin script.[76]"],
+                ["wedding", ""],
+                ["whoswho", "An open TLD, any person or entity is permitted to register. Conceived for those cited in one of the Who's Who reference titles published around the world, the registry was opened for use by private individuals, and for-profit and nonprofit entities, including those with social media aspirations. Registry policies allow for rapid takedown of non-compliant domains, for violations including imposturous registration of another's names, and proscribed uses, including pornography or adult services/applications."],
+                ["wiki", "\"An open TLD for anyone interested in community resource creation\",\"GoDaddy Registry\""],
+                ["win", ""],
+                ["wine", ""],
+                ["winners", "Reserved for TJX Companies"],
+                ["work", ""],
+                ["works", ""],
+                ["world", ""],
+                ["wow", ""],
+                ["wtf", ""],
+                ["xxx", "For sites providing sexually explicit content, such as pornography."],
+                ["xyz", ""],
+                ["yachts", ""],
+                ["yoga", ""],
+                ["you", ""]
+            ];
+
+            // Convert to objects
+            const DEFAULT_TLDS = DEFAULT_TLDS_RAW.map(([name, restrictions]) => ({
+                name: name.trim().toLowerCase(),
+                restrictions: restrictions.trim() || 'None'
+            }));
+
+            // ----- Category mapping for TLDs -----
+            const CATEGORY_MAP = {
+                // Tech / Digital
+                'tech': 'Tech',
+                'technology': 'Tech',
+                'computer': 'Tech',
+                'software': 'Tech',
+                'dev': 'Tech',
+                'engineering': 'Tech',
+                'engineer': 'Tech',
+                'digital': 'Tech',
+                'network': 'Tech',
+                'systems': 'Tech',
+                'cloud': 'Tech',
+                'data': 'Tech',
+                'analytics': 'Tech',
+                'cyber': 'Tech',
+                'it': 'Tech',
+                'ai': 'Tech',
+                'robotics': 'Tech',
+                'blockchain': 'Tech',
+                'crypto': 'Tech',
+                'coding': 'Tech',
+                'programming': 'Tech',
+                'science': 'Science',
+                'research': 'Science',
+                'physics': 'Science',
+                'biology': 'Science',
+                'chemistry': 'Science',
+                'math': 'Science',
+                'space': 'Science',
+                // Fashion / Beauty
+                'fashion': 'Fashion',
+                'beauty': 'Beauty',
+                'style': 'Fashion',
+                'makeup': 'Beauty',
+                'hair': 'Beauty',
+                'skin': 'Beauty',
+                'shoes': 'Fashion',
+                'clothing': 'Fashion',
+                'apparel': 'Fashion',
+                'jewelry': 'Fashion',
+                'watch': 'Fashion',
+                'watches': 'Fashion',
+                'bag': 'Fashion',
+                // Art & Design
+                'art': 'Art',
+                'design': 'Design',
+                'photo': 'Art',
+                'photography': 'Art',
+                'gallery': 'Art',
+                'museum': 'Art',
+                'theatre': 'Art',
+                'theater': 'Art',
+                'music': 'Art',
+                'film': 'Art',
+                'movie': 'Art',
+                'video': 'Art',
+                'dance': 'Art',
+                'craft': 'Art',
+                // Finance & Business
+                'finance': 'Finance',
+                'investments': 'Finance',
+                'bank': 'Finance',
+                'credit': 'Finance',
+                'insurance': 'Finance',
+                'accountant': 'Finance',
+                'accountants': 'Finance',
+                'tax': 'Finance',
+                'broker': 'Finance',
+                'trading': 'Finance',
+                'market': 'Business',
+                'marketing': 'Business',
+                'business': 'Business',
+                'company': 'Business',
+                'enterprises': 'Business',
+                'consulting': 'Business',
+                'agency': 'Business',
+                'management': 'Business',
+                'careers': 'Business',
+                'jobs': 'Business',
+                'legal': 'Legal',
+                'law': 'Legal',
+                'lawyer': 'Legal',
+                'attorney': 'Legal',
+                'realestate': 'Real Estate',
+                'realtor': 'Real Estate',
+                'property': 'Real Estate',
+                'homes': 'Real Estate',
+                // Travel
+                'travel': 'Travel',
+                'tours': 'Travel',
+                'vacations': 'Travel',
+                'hotel': 'Travel',
+                'hotels': 'Travel',
+                'cruise': 'Travel',
+                'flights': 'Travel',
+                'airline': 'Travel',
+                // Health
+                'health': 'Health',
+                'healthcare': 'Health',
+                'doctor': 'Health',
+                'dentist': 'Health',
+                'pharmacy': 'Health',
+                'physio': 'Health',
+                // Sports
+                'sport': 'Sports',
+                'sports': 'Sports',
+                'football': 'Sports',
+                'tennis': 'Sports',
+                'rugby': 'Sports',
+                'hockey': 'Sports',
+                'baseball': 'Sports',
+                // Food
+                'food': 'Food',
+                'cooking': 'Food',
+                'recipes': 'Food',
+                'restaurant': 'Food',
+                'coffee': 'Food',
+                'wine': 'Food',
+                'beer': 'Food',
+                // Education
+                'school': 'Education',
+                'college': 'Education',
+                'university': 'Education',
+                'education': 'Education',
+                // General
+                'global': 'General',
+                'world': 'General',
+                'international': 'General',
+                'community': 'General',
+                'group': 'General',
+                'club': 'General',
+                'foundation': 'General',
+                'trust': 'General',
+                'support': 'General',
+                'help': 'General',
+                'info': 'General',
+                'news': 'Media',
+                'media': 'Media',
+                'press': 'Media',
+                'radio': 'Media',
+                'tv': 'Media',
+                'porn': 'Adult',
+                'xxx': 'Adult',
+                'sex': 'Adult',
+                'adult': 'Adult',
+                'gay': 'LGBTQ',
+                'lgbt': 'LGBTQ',
+                // ... many more can be added
+            };
+
+            function getCategory(tld) {
+                // First check exact match, then try partial matches
+                if (CATEGORY_MAP[tld]) return CATEGORY_MAP[tld];
+                // Check if tld contains any category key
+                for (const [key, cat] of Object.entries(CATEGORY_MAP)) {
+                    if (tld.includes(key)) return cat;
+                }
+                return 'Other';
+            }
+
+            // ----- DOM refs -----
+            const statusEl = document.getElementById('status');
+            const resultsEl = document.getElementById('results');
+            const csvInput = document.getElementById('csvFile');
+            const resetBtn = document.getElementById('resetTlds');
+            const filterCheckbox = document.getElementById('filterRestricted');
+            const tooltip = document.getElementById('meaningTooltip');
+
+            // ----- State -----
+            let tlds = [...DEFAULT_TLDS];
+            let wordSet = null;
+            let currentMatches = [];
+            let sortKey = 'word';
+            let sortAsc = true;
+            let meaningCache = {};
+
+            // ----- Helpers -----
+            function setStatus(msg, isSpinner = false) {
+                if (isSpinner) {
+                    statusEl.innerHTML = `<span class="spinner"></span> ${msg}`;
+                } else {
+                    statusEl.textContent = msg;
+                }
+            }
+
+            function showError(msg) {
+                statusEl.innerHTML = `⚠️ ${msg}`;
+                statusEl.style.color = '#b91c1c';
+            }
+
+            function clearError() {
+                statusEl.style.color = '';
+            }
+
+            // ----- Fetch word list (from CDN) -----
+            async function fetchWordList() {
+                const url = 'https://cdn.jsdelivr.net/npm/word-list-json@0.2.0/words.json';
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Word list fetch failed (${response.status})`);
+                }
+                const data = await response.json();
+                if (!data.words || !Array.isArray(data.words)) {
+                    throw new Error('Unexpected word list format');
+                }
+                return new Set(data.words);
+            }
+
+            // ----- Find all matches using current tlds and wordSet -----
+            function findAllMatches() {
+                const matches = [];
+                for (const word of wordSet) {
+                    for (const tld of tlds) {
+                        if (word.endsWith(tld.name)) {
+                            const base = word.slice(0, -tld.name.length);
+                            if (base.length > 0) {
+                                matches.push({
+                                    tld: tld.name,
+                                    base: base,
+                                    word: word,
+                                    restrictions: tld.restrictions,
+                                    category: getCategory(tld.name),
+                                    domain: base + '.' + tld.name
+                                });
+                            }
+                        }
+                    }
+                }
+                return matches;
+            }
+
+            // ----- Filter restricted -----
+            function filterMatches(matches, hideRestricted) {
+                if (!hideRestricted) return matches;
+                return matches.filter(m => {
+                    const r = m.restrictions.toLowerCase();
+                    return r === 'none' || r === '' || r === 'unknown' || r.includes('open') || r.includes('no restrictions');
+                });
+            }
+
+            // ----- Sorting -----
+            function sortMatches(matches, key, asc) {
+                return matches.slice().sort((a, b) => {
+                    let valA = a[key];
+                    let valB = b[key];
+                    if (typeof valA === 'string') valA = valA.toLowerCase();
+                    if (typeof valB === 'string') valB = valB.toLowerCase();
+                    if (valA < valB) return asc ? -1 : 1;
+                    if (valA > valB) return asc ? 1 : -1;
+                    return 0;
+                });
+            }
+
+            // ----- Fetch meaning from API (with caching) -----
+            async function fetchMeaning(word) {
+                if (meaningCache[word]) return meaningCache[word];
+                try {
+                    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`;
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        if (response.status === 404) {
+                            meaningCache[word] = 'No definition found.';
+                            return meaningCache[word];
+                        }
+                        throw new Error(`API error ${response.status}`);
+                    }
+                    const data = await response.json();
+                    if (data && data[0] && data[0].meanings && data[0].meanings.length > 0) {
+                        const def = data[0].meanings[0].definitions[0].definition;
+                        meaningCache[word] = def;
+                        return def;
+                    } else {
+                        meaningCache[word] = 'No definition found.';
+                        return meaningCache[word];
+                    }
+                } catch (err) {
+                    console.warn('Meaning fetch error:', err);
+                    meaningCache[word] = 'Error fetching definition.';
+                    return meaningCache[word];
+                }
+            }
+
+            // ----- Render results -----
+            function renderMatches(matches, sortCol, sortDir, hideRestricted) {
+                // Filter
+                const filtered = filterMatches(matches, hideRestricted);
+                if (filtered.length === 0) {
+                    resultsEl.innerHTML = `
+                        <div class="empty-state">
+                            <p>😕 No matches found${hideRestricted ? ' (filtered restricted TLDs)' : ''}.</p>
+                            <p style="font-size:0.9rem;color:#94a3b8;">Try adjusting the filter or adding more TLDs.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Sort
+                const sorted = sortMatches(filtered, sortCol, sortDir);
+
+                const uniqueTlds = new Set(sorted.map(m => m.tld));
+                const uniqueCats = new Set(sorted.map(m => m.category));
+
+                let html = `
+                    <div class="stats">
+                        Found <strong>${sorted.length}</strong> word${sorted.length > 1 ? 's' : ''}
+                        across <strong>${uniqueTlds.size}</strong> TLDs,
+                        <strong>${uniqueCats.size}</strong> categories
+                        &bull; Sorted by <strong>${sortCol}</strong> ${sortDir ? '↑' : '↓'}
+                        ${hideRestricted ? '&bull; <span style="color:#166534;">✅ Only unrestricted TLDs shown</span>' : ''}
+                    </div>
+                    <div class="results-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-sort="tld">TLD <span class="sort-icon">${sortCol === 'tld' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                                <th data-sort="base">Base <span class="sort-icon">${sortCol === 'base' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                                <th data-sort="word">Resulting word <span class="sort-icon">${sortCol === 'word' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                                <th data-sort="category">Category <span class="sort-icon">${sortCol === 'category' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                                <th data-sort="domain">Domain <span class="sort-icon">${sortCol === 'domain' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                                <th data-sort="restrictions">Restriction <span class="sort-icon">${sortCol === 'restrictions' ? (sortDir ? '▲' : '▼') : '↕'}</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                for (const m of sorted) {
+                    const isRestricted = m.restrictions && m.restrictions !== 'None' && m.restrictions !== 'Unknown';
+                    const tagClass = isRestricted ? 'yes' : 'no';
+                    const tagLabel = isRestricted ? '⚠️ Restricted' : '✅ Open';
+                    const detail = isRestricted ? m.restrictions : 'No restrictions';
+
+                    html += `
+                        <tr>
+                            <td><span class="tld-badge">.${m.tld}</span></td>
+                            <td><span class="base-word">${m.base}</span></td>
+                            <td><span class="word-badge" data-word="${m.word}">${m.word}</span></td>
+                            <td><span class="category-tag">${m.category}</span></td>
+                            <td><span class="domain-badge">${m.domain}</span></td>
+                            <td>
+                                <span class="restriction-tag ${tagClass}">${tagLabel}</span>
+                                <div class="restriction-detail">${detail}</div>
+                            </td>
+                        </tr>
+                    `;
+                }
+
+                html += `
+                        </tbody>
+                    </table>
+                    </div>
+                `;
+
+                resultsEl.innerHTML = html;
+
+                // Attach sort listeners
+                document.querySelectorAll('th[data-sort]').forEach(th => {
+                    th.addEventListener('click', function() {
+                        const key = this.dataset.sort;
+                        if (sortKey === key) {
+                            sortAsc = !sortAsc;
+                        } else {
+                            sortKey = key;
+                            sortAsc = true;
+                        }
+                        renderMatches(currentMatches, sortKey, sortAsc, filterCheckbox.checked);
+                    });
+                });
+
+                // Attach hover listeners for meanings
+                document.querySelectorAll('.word-badge[data-word]').forEach(el => {
+                    el.addEventListener('mouseenter', async function(e) {
+                        const word = this.dataset.word;
+                        const meaning = await fetchMeaning(word);
+                        tooltip.textContent = meaning;
+                        tooltip.classList.add('visible');
+                        positionTooltip(e);
+                    });
+                    el.addEventListener('mousemove', positionTooltip);
+                    el.addEventListener('mouseleave', function() {
+                        tooltip.classList.remove('visible');
+                    });
+                });
+            }
+
+            function positionTooltip(e) {
+                const tooltip = document.getElementById('meaningTooltip');
+                let x = e.clientX + 12;
+                let y = e.clientY + 12;
+                // Keep within viewport
+                const rect = tooltip.getBoundingClientRect();
+                if (x + rect.width > window.innerWidth - 10) x = e.clientX - rect.width - 12;
+                if (y + rect.height > window.innerHeight - 10) y = e.clientY - rect.height - 12;
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            }
+
+            // ----- Update search with current tlds and filter -----
+            function runSearch() {
+                if (!wordSet) {
+                    setStatus('Word list not loaded yet.', false);
+                    return;
+                }
+                if (!tlds || tlds.length === 0) {
+                    resultsEl.innerHTML = `<div class="empty-state">No TLDs defined. Upload a CSV or reset to default.</div>`;
+                    return;
+                }
+                setStatus(`Scanning ${tlds.length} TLDs against ${wordSet.size.toLocaleString()} words…`, true);
+                setTimeout(() => {
+                    const matches = findAllMatches();
+                    currentMatches = matches;
+                    setStatus(`Ready — found ${matches.length} matches.`, false);
+                    clearError();
+                    renderMatches(matches, sortKey, sortAsc, filterCheckbox.checked);
+                }, 50);
+            }
+
+            // ----- CSV upload handler -----
+            function handleCsv(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const text = e.target.result;
+                        const lines = text.split('\n').filter(line => line.trim() !== '');
+                        const newTlds = [];
+                        let isHeader = true;
+                        for (const line of lines) {
+                            const parts = line.split(',').map(s => s.trim());
+                            if (parts.length < 2) continue;
+                            if (isHeader && parts[0].toLowerCase() === 'tld') {
+                                isHeader = false;
+                                continue;
+                            }
+                            const name = parts[0].toLowerCase();
+                            const restrictions = parts.slice(1).join(',').trim() || 'None';
+                            newTlds.push({ name, restrictions });
+                        }
+                        if (newTlds.length === 0) {
+                            alert('No valid TLDs found in CSV.');
+                            return;
+                        }
+                        tlds = newTlds;
+                        setStatus(`Loaded ${tlds.length} TLDs from CSV.`, false);
+                        runSearch();
+                    } catch (err) {
+                        alert('Error parsing CSV: ' + err.message);
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            // ----- Reset to default TLDs -----
+            function resetTlds() {
+                tlds = [...DEFAULT_TLDS];
+                setStatus(`Reset to ${tlds.length} default TLDs.`, false);
+                runSearch();
+            }
+
+            // ----- Initialise -----
+            async function init() {
+                try {
+                    setStatus('Loading word list…', true);
+                    wordSet = await fetchWordList();
+                    setStatus(`Loaded ${wordSet.size.toLocaleString()} words. Running search…`, true);
+                    clearError();
+                    runSearch();
+                } catch (err) {
+                    console.error(err);
+                    showError(`Failed to load word list: ${err.message}`);
+                    resultsEl.innerHTML = `<div class="empty-state">⚠️ Error: ${err.message}</div>`;
+                }
+            }
+
+            // ----- Event listeners -----
+            csvInput.addEventListener('change', function(e) {
+                if (this.files && this.files.length > 0) {
+                    handleCsv(this.files[0]);
+                }
+                this.value = '';
+            });
+
+            resetBtn.addEventListener('click', resetTlds);
+
+            filterCheckbox.addEventListener('change', function() {
+                renderMatches(currentMatches, sortKey, sortAsc, this.checked);
+            });
+
+            // ----- Start -----
+            init();
+        })();
+    </script>
+
+</body>
+</html>

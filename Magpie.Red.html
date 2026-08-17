@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magpie.Red · IT services</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9fc;
+      color: #1e1b2e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+
+      font-size: 1.8rem;
+      letter-spacing: -0.03em;
+      color: #1e1b2e;
+    text-align:right;
+    }
+
+    .logo b {
+      color: #ff0000;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: #1e1b2e;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      margin-left: 0.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 500;
+      color: #2d2a3e;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d93f4c;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #1e1b2e;
+      background: transparent;
+      padding: 0.6rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      cursor: default;
+      color: #1e1b2e;
+    }
+
+    .btn-outline i {
+      margin-right: 0.4rem;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2.5rem 0 3rem 0;
+      gap: 2rem;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+    }
+
+    .hero-text .tag {
+      background: #efe7f0;
+      color: #6b4b6b;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 i {
+      color: #d93f4c;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #3f3a53;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-primary {
+      background: #1e1b2e;
+      color: white;
+      border: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.2s;
+      cursor: default;
+      box-shadow: 0 8px 18px rgba(30, 27, 46, 0.15);
+    }
+
+    .btn-primary i {
+      margin-right: 0.6rem;
+    }
+
+    .btn-primary:hover {
+      background: #d93f4c;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      background: #eae4f0;
+      border-radius: 40px;
+      padding: 1.8rem 1.8rem;
+      text-align: center;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+    }
+
+    .hero-image i {
+      font-size: 6rem;
+      color: #1e1b2e;
+      opacity: 0.3;
+    }
+
+    .hero-image .magpie-icon {
+      font-size: 5rem;
+      color: #1e1b2e;
+      background: white;
+      padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+      border-radius: 100px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    /* services section */
+    .services {
+      padding: 3.5rem 0 4rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header h2 i {
+      color: #d93f4c;
+      margin-right: 0.5rem;
+    }
+
+    .section-header .sub {
+      color: #5f5a72;
+      font-weight: 500;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s;
+      border: 1px solid rgba(0,0,0,0.02);
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px -12px rgba(30, 27, 46, 0.12);
+      border-color: #e8e1f0;
+    }
+
+    .service-card .icon {
+      background: #f2edf7;
+      width: 70px;
+      height: 70px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+      font-size: 2rem;
+      color: #1e1b2e;
+      transition: 0.2s;
+    }
+
+    .service-card:hover .icon {
+      background: #d93f4c;
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: #514c64;
+      font-size: 0.95rem;
+    }
+
+    /* extra detail row – "why magpie" */
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e1b2e;
+      color: white;
+      border-radius: 50px;
+      padding: 2.5rem 3rem;
+      margin: 2rem 0 3rem 0;
+      gap: 2rem;
+    }
+
+    .feature-row .item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .feature-row .item i {
+      font-size: 2rem;
+      color: #d93f4c;
+    }
+
+    .feature-row .item span {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .feature-row .item strong {
+      font-weight: 700;
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    /* footer */
+    .footer {
+      padding: 2rem 0 2.5rem 0;
+      border-top: 1px solid #e1dbe8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3f3a53;
+      font-size: 0.95rem;
+    }
+
+    .footer .social i {
+      font-size: 1.5rem;
+      margin-left: 1.2rem;
+      color: #3f3a53;
+      transition: 0.2s;
+    }
+
+    .footer .social i:hover {
+      color: #d93f4c;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* responsiveness */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      .feature-row {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 32px;
+        padding: 2rem;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <header>
+      <div class="navbar">
+        <div>
+<object height="100px" data="MagpieRed/Wide Logo.svg" type="image/svg+xml">
+  <!-- Fallback content if the browser doesn't load SVGs -->
+  <img src="MagpieRed/Wide Logo.svg" alt="Static graphic">
+</object>
+</div>
+        <div class="nav-links">
+          <a href="#">Services</a>
+          <a href="#">About</a>
+          <a href="#">Support</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="btn-outline">
+          <i class="fas fa-headset"></i> 24/7 help
+        </div>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="tag"><i class="fas fa-bolt" style="margin-right: 6px;"></i> IT solutions, human touch</div>
+        <h1>
+          <i class="fas fa-crow" style="font-size: 2.8rem; margin-right: 6px;"></i> 
+          Swooping in<br> for you
+        </h1>
+        <p>From hosting to development — we deliver reliable, secure, and fast IT services tailored to your needs.</p>
+        <div class="hero-cta">
+          <span class="btn-primary"><i class="fas fa-rocket"></i> Get started</span>
+          <span class="btn-outline" style="border-color: #ccc; background: white;"><i class="fas fa-phone-alt"></i> +1 (555) 0123</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div>
+          <i class="fas fa-crow magpie-icon"></i>
+          <p style="margin-top: 0.8rem; font-weight: 500; color: #1e1b2e;">Magpie.Red</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- services grid -->
+    <section class="services">
+      <div class="section-header">
+        <h2><i class="fas fa-cogs"></i> Our services</h2>
+        <span class="sub">Everything you need</span>
+      </div>
+
+      <div class="service-grid">
+        <!-- web hosting -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <h3>Web hosting</h3>
+          <p>Fast, secure & scalable hosting with 99.9% uptime and 24/7 monitoring.</p>
+        </div>
+        <!-- mail hosting -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <h3>Mail hosting</h3>
+          <p>Professional email with custom domains, spam protection, and easy migration.</p>
+        </div>
+        <!-- IT support -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <h3>IT support</h3>
+          <p>On‑site & remote support, network setup, and proactive maintenance.</p>
+        </div>
+        <!-- computer repair -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-desktop"></i></div>
+          <h3>Computer repair</h3>
+          <p>Hardware & software repair, virus removal, data recovery, and upgrades.</p>
+        </div>
+        <!-- software development -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h3>Software development</h3>
+          <p>Custom apps, integrations, and legacy modernization — built to scale.</p>
+        </div>
+        <!-- website development -->
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Website development</h3>
+          <p>Responsive, SEO‑friendly websites from design to deployment & maintenance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- feature row: quick stats / trust -->
+    <div class="feature-row">
+      <div class="item">
+        <i class="fas fa-check-circle"></i>
+        <div><strong>150+</strong> <span>clients served</span></div>
+      </div>
+      <div class="item">
+        <i class="fas fa-clock"></i>
+        <div><strong>24/7</strong> <span>support & monitoring</span></div>
+      </div>
+      <div class="item">
+        <i class="fas fa-shield-alt"></i>
+        <div><strong>99.9%</strong> <span>uptime guarantee</span></div>
+      </div>
+      <div class="item">
+        <i class="fas fa-star"></i>
+        <div><strong>4.9</strong> <span>average rating</span></div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div>
+        <span style="font-weight: 600; color: #1e1b2e;">Magpie.Red</span> &nbsp;— IT with intelligence.
+      </div>
+      <div>
+        <span style="margin-right: 1rem;">© 2026</span>
+        <span class="social">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-github"></i>
+        </span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
