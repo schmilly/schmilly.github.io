@@ -119,7 +119,6 @@ const STRIKE_DATA = [
             endDate: "2026-08-13",
             workers: null,
             description: "Doctors to strike 12:30-4pm on 13 Aug. 76% voted, 97% in favour. Claims: 30% over 4 years, 12.5h shift cap, doctor-to-patient ratios. Phase one work bans commenced this week.",
-            tags: ["healthcare", "doctors", "victoria", "public-sector", "planned"],
             locations: [
                 { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
             ],
