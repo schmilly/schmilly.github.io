@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AU Strike Watch — Industrial Action Map</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-panel: #161b22;
+            --bg-elevated: #1c2129;
+            --border: #2d333b;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #57606a;
+            --strike: #e74c3c;
+            --lockout: #e67e22;
+            --protest: #f1c40f;
+            --planned: #3498db;
+            --resolved: #2ecc71;
+            --other: #95a5a6;
+            --accent: #58a6ff;
+            --glow: rgba(231, 76, 60, 0.4);
+            --sidebar-width: 340px;
+            --topbar-height: 52px;
+            --ticker-height: 32px;
+            --font-mono: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: var(--font-sans);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        #topbar {
+            height: var(--topbar-height);
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 16px;
+            position: relative;
+            z-index: 1000;
+            user-select: none;
+        }
+        #topbar .logo {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #topbar .logo .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--strike);
+            animation: pulse 2s infinite;
+            flex-shrink: 0;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 var(--glow); }
+            50% { box-shadow: 0 0 0 6px transparent; }
+        }
+        #topbar .logo span {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .stats-bar .stat {
+            text-align: center;
+            white-space: nowrap;
+        }
+        .stats-bar .stat .number {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-primary);
+            display: block;
+            font-family: var(--font-mono);
+        }
+        .stats-bar .stat .label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        #sidebar-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 20px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        #ticker {
+            height: var(--ticker-height);
+            background: #0a0c10;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+        }
+        #ticker .ticker-label {
+            background: var(--strike);
+            color: white;
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            flex-shrink: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        #ticker .ticker-content {
+            overflow: hidden;
+            flex: 1;
+            white-space: nowrap;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        #ticker .ticker-content span {
+            display: inline-block;
+            padding: 0 30px;
+        }
+
+        #main {
+            display: flex;
+            height: calc(100vh - var(--topbar-height) - var(--ticker-height));
+            width: 100%;
+            position: relative;
+        }
+
+        #sidebar {
+            width: var(--sidebar-width);
+            min-width: var(--sidebar-width);
+            background: var(--bg-panel);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: margin-left 0.3s ease, width 0.3s ease;
+            z-index: 900;
+        }
+        #sidebar.collapsed {
+            margin-left: calc(-1 * var(--sidebar-width));
+            min-width: 0;
+            width: 0;
+            border-right: none;
+        }
+
+        .sidebar-header {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .sidebar-header h2 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box:focus { border-color: var(--accent); }
+        .search-box::placeholder { color: var(--text-muted); }
+
+        .filter-section {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .filter-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .filter-chip {
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.15s;
+            user-select: none;
+            white-space: nowrap;
+        }
+        .filter-chip:hover {
+            border-color: var(--text-muted);
+            color: var(--text-primary);
+        }
+        .filter-chip.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .filter-chip .count {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 0 5px;
+            font-size: 10px;
+            margin-left: 4px;
+            color: var(--text-muted);
+        }
+
+        #event-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+        #event-list::-webkit-scrollbar { width: 5px; }
+        #event-list::-webkit-scrollbar-track { background: transparent; }
+        #event-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        .event-item {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.15s;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .event-item:hover { background: var(--bg-elevated); }
+        .event-item.selected {
+            background: rgba(88, 166, 255, 0.08);
+            border-left: 3px solid var(--accent);
+        }
+        .event-item .type-emoji {
+            flex-shrink: 0;
+        }
+        .event-item .event-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .event-item .event-title {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .event-item .event-meta {
+            font-size: 11px;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .event-item .event-meta .meta-tag {
+            background: var(--bg-dark);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            white-space: nowrap;
+        }
+        .event-item .event-date {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        #map-container {
+            flex: 1;
+            position: relative;
+            background: var(--bg-dark);
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+        }
+
+        .map-legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 800;
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            user-select: none;
+        }
+        .map-legend .legend-title {
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .map-legend .legend-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .legend-emoji {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(2px);
+        }
+        .modal-overlay.visible { display: flex; }
+        .modal {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            width: 90%;
+            max-width: 560px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: modalIn 0.2s ease;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .modal .modal-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .modal .form-group {
+            margin-bottom: 12px;
+        }
+        .modal label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .modal input, .modal select, .modal textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 13px;
+            outline: none;
+            font-family: var(--font-sans);
+        }
+        .modal input:focus, .modal select:focus, .modal textarea:focus {
+            border-color: var(--accent);
+        }
+        .modal textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .modal .form-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.15s;
+            font-family: var(--font-sans);
+        }
+        .btn:hover { background: var(--border); }
+        .btn.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        .btn.primary:hover { background: #4c8fd0; }
+        .btn.danger {
+            background: var(--strike);
+            border-color: var(--strike);
+            color: white;
+        }
+        .btn.danger:hover { background: #c0392b; }
+
+        .detail-section {
+            margin-bottom: 12px;
+        }
+        .detail-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .detail-value {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+        .source-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .source-link:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #sidebar-toggle { display: block; }
+            #sidebar {
+                position: absolute;
+                top: 0; left: 0; bottom: 0;
+                z-index: 950;
+                box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+            }
+            #sidebar.collapsed {
+                margin-left: calc(-1 * var(--sidebar-width));
+            }
+            .stats-bar .stat .label { display: none; }
+            .stats-bar .stat .number { font-size: 13px; }
+            .stats-bar { gap: 10px; }
+            .map-legend {
+                bottom: 10px;
+                right: 10px;
+                padding: 6px 8px;
+                font-size: 9px;
+            }
+            #topbar .logo span { display: none; }
+        }
+
+        .filter-chip.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+    </style>
+    </style>
+</head>
+<body>
+
+    <!-- ═══ TOP BAR ═══ -->
+    <header id="topbar">
+        <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+        <div class="logo">
+            <span class="dot"></span>
+            Dispute and Strike Map
+            <span>· Industrial Action Map ·</span>
+            All credit for the amazing information goes to  the incredible <a href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a href=""disputesreport.substack.com> Disputes Report</a>
+        </div>
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat"><span class="number" id="stat-active">0</span><span class="label">Active</span></div>
+            <div class="stat"><span class="number" id="stat-planned">0</span><span class="label">Planned</span></div>
+            <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers</span></div>
+            <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total Entries</span></div>
+        </div>
+        <!-- <button id="add-report-btn" class="btn primary" style="margin-left: auto;">+ Report</button> -->
+    </header>
+
+    <!-- ═══ NEWS TICKER ═══ -->
+    <div id="ticker">
+        <div class="ticker-label">⚡ Live</div>
+        <div class="ticker-content" id="ticker-content">
+            <span>Loading latest industrial actions…</span>
+        </div>
+    </div>
+
+    <!-- ═══ MAIN LAYOUT ═══ -->
+    <div id="main">
+                <aside id="sidebar">
+            <!-- Search -->
+            <div class="sidebar-header">
+                <h2>🔍 Search Disputes</h2>
+                <input type="text" id="search-input" class="search-box" placeholder="Search by union, industry, location…" autocomplete="off">
+            </div>
+
+            <!-- Type filter -->
+            <div class="filter-section">
+                <div class="filter-label">Event Type</div>
+                <div class="filter-chips" id="type-filters">
+                    <div class="filter-chip active" data-type="all">All</div>
+                    <div class="filter-chip" data-type="strike">⚠️ Strike</div>
+                    <div class="filter-chip" data-type="lockout">🔒 Lockout</div>
+                    <div class="filter-chip" data-type="protest">✊ Protest</div>
+                    <div class="filter-chip" data-type="planned">📋 Planned</div>
+                    <div class="filter-chip" data-type="resolved">✅ Resolved</div>
+                </div>
+            </div>
+
+            <!-- State filter -->
+            <div class="filter-section">
+                <div class="filter-label">State / Territory</div>
+                <div class="filter-chips" id="state-filters">
+                    <div class="filter-chip active" data-state="all">All</div>
+                    <div class="filter-chip" data-state="NSW">NSW</div>
+                    <div class="filter-chip" data-state="VIC">VIC</div>
+                    <div class="filter-chip" data-state="QLD">QLD</div>
+                    <div class="filter-chip" data-state="WA">WA</div>
+                    <div class="filter-chip" data-state="SA">SA</div>
+                    <div class="filter-chip" data-state="TAS">TAS</div>
+                    <div class="filter-chip" data-state="ACT">ACT</div>
+                    <div class="filter-chip" data-state="NT">NT</div>
+                </div>
+            </div>
+
+            <!-- Date range filter -->
+            <div class="filter-section">
+                <div class="filter-label">Date Range</div>
+                <div class="filter-chips date-filter" id="date-filters">
+                    <div class="filter-chip" data-range="7">7d</div>
+                    <div class="filter-chip" data-range="30">30d</div>
+                    <div class="filter-chip" data-range="90">90d</div>
+                    <div class="filter-chip active" data-range="all">All</div>
+                </div>
+            </div>
+
+            <!-- NEW: Upcoming filter -->
+            <div class="filter-section">
+                <div class="filter-label">Upcoming</div>
+                <div class="filter-chips">
+                    <div class="filter-chip" id="upcoming-filter">📅 Upcoming</div>
+                </div>
+            </div>
+
+            <!-- NEW: Tag filters -->
+            <div class="filter-section">
+                <div class="filter-label">Tags</div>
+                <div class="filter-chips" id="tag-filters">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Event list -->
+            <div id="event-list"></div>
+        </aside>
+
+        <!-- Map container -->
+        <div id="map-container">
+            <div id="map"></div>
+            <div class="map-legend">
+                <div class="legend-title">Event Types</div>
+                <div class="legend-row"><span class="legend-emoji">⚠️</span> Strike</div>
+                <div class="legend-row"><span class="legend-emoji">🔒</span> Lockout</div>
+                <div class="legend-row"><span class="legend-emoji">✊</span> Protest/Rally</div>
+                <div class="legend-row"><span class="legend-emoji">📋</span> Planned</div>
+                <div class="legend-row"><span class="legend-emoji">✅</span> Resolved</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ADD REPORT MODAL ═══ -->
+    <div class="modal-overlay" id="add-modal">
+        <div class="modal">
+            <h3>📝 Report Industrial Action</h3>
+            <div class="modal-subtitle">Add a new dispute or update to an existing action.</div>
+            <form id="add-form">
+                <div class="form-group">
+                    <label for="f-title">Event Title *</label>
+                    <input type="text" id="f-title" required placeholder="e.g. CFMEU Strike at Barangaroo Site">
+                </div>
+                <div class="form-group">
+                    <label for="f-action-id">Action ID (optional, to link to existing)</label>
+                    <input type="text" id="f-action-id" placeholder="e.g. vic-doctors-strike">
+                </div>
+                <div class="form-group">
+                    <label for="f-union">Union *</label>
+                    <input type="text" id="f-union" required placeholder="e.g. CFMEU, AMWU, ETU…">
+                </div>
+                <div class="form-group">
+                    <label for="f-industry">Industry *</label>
+                    <select id="f-industry" required>
+                        <option value="">Select…</option>
+                        <option>Construction</option>
+                        <option>Mining</option>
+                        <option>Education</option>
+                        <option>Healthcare</option>
+                        <option>Transport</option>
+                        <option>Manufacturing</option>
+                        <option>Retail</option>
+                        <option>Public Sector</option>
+                        <option>Logistics</option>
+                        <option>Energy</option>
+                        <option>Rail Transport</option>
+                        <option>Rail Maintenance</option>
+                        <option>Arts & Culture</option>
+                        <option>Utilities</option>
+                        <option>Environment / Parks</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="f-type">Event Type *</label>
+                    <select id="f-type" required>
+                        <option value="strike">⚠️ Strike</option>
+                        <option value="lockout">🔒 Lockout</option>
+                        <option value="protest">✊ Protest/Rally</option>
+                        <option value="planned">📋 Planned Action</option>
+                        <option value="resolved">✅ Resolved</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="f-start">Start Date *</label>
+                    <input type="date" id="f-start" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-end">End Date (leave blank if ongoing)</label>
+                    <input type="date" id="f-end">
+                </div>
+                <div class="form-group">
+                    <label for="f-workers">Workers Affected</label>
+                    <input type="number" id="f-workers" placeholder="e.g. 500" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="f-desc">Description</label>
+                    <textarea id="f-desc" placeholder="Brief description of the industrial action…"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Locations *</label>
+                    <div id="locations-container">
+                        <div class="location-row" style="display: flex; gap: 8px; margin-bottom: 6px;">
+                            <input type="text" class="location-name" placeholder="Location name" style="flex: 1;">
+                            <input type="text" class="location-city" placeholder="City" style="flex: 1;" required>
+                            <input type="number" step="any" class="location-lat" placeholder="Lat" style="flex: 0 0 80px;">
+                            <input type="number" step="any" class="location-lng" placeholder="Lng" style="flex: 0 0 80px;">
+                            <button type="button" class="btn remove-location" style="padding: 4px 8px;">✕</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-location-btn" class="btn" style="margin-top: 6px;">+ Add Location</button>
+                </div>
+                <div class="form-group">
+                    <label>Sources</label>
+                    <div id="sources-container">
+                        <div class="source-row" style="display: flex; gap: 8px; margin-bottom: 6px;">
+                            <input type="text" class="source-name" placeholder="Source name" style="flex: 1;">
+                            <input type="url" class="source-url" placeholder="https://…" style="flex: 2;">
+                            <button type="button" class="btn remove-source" style="padding: 4px 8px;">✕</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-source-btn" class="btn" style="margin-top: 6px;">+ Add Source</button>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Submit Report</button>
+                    <button type="button" class="btn" id="add-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ═══ DETAIL MODAL ═══ -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal" id="detail-modal-content">
+            <!-- Populated dynamically -->
+        </div>
+    </div>
+
+    <!-- ═══ Leaflet JS ═══ -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

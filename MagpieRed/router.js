@@ -17,7 +17,7 @@ const pages = {
 <p> Wether you need on going support, have a specific project, or just need your tech working again, <b> Magpie.<b style="color:red">Red</b></b> is here for you! </p>
         <div class="hero-cta">
           <span class="btn-primary"><i class="fas fa-rocket"></i> Get started</span>
-          <span class="btn-outline" style="border-color: #ccc; background: white;"><i class="fas fa-phone-alt"></i> +1 (555) 0123</span>
+          <span class="btn-outline" style="border-color: #ccc; background: white;"><i class="fas fa-phone-alt"></i> 0487 178 768 </span>
         </div>
       </div>
       <div height=100% class="hero-image">
@@ -27,31 +27,17 @@ const pages = {
       </div>
     </section>
 
-    <!-- services grid -->
-    <section class="services">
-      <div class="section-header">
-        <h2><i class="fas fa-cogs"></i> Our services</h2>
-        <span class="sub">Everything you need</span>
-      </div>
 
-      <div class="service-grid">
-        <div class="service-card"><div class="icon"><i class="fas fa-globe"></i></div><h3>Web hosting</h3><p>Fast, secure & scalable hosting with 99.9% uptime and 24/7 monitoring.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-envelope"></i></div><h3>Mail hosting</h3><p>Professional email with custom domains, spam protection, and easy migration.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-headset"></i></div><h3>IT support</h3><p>On‑site & remote support, network setup, and proactive maintenance.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-desktop"></i></div><h3>Computer repair</h3><p>Hardware & software repair, virus removal, data recovery, and upgrades.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-code"></i></div><h3>Software development</h3><p>Custom apps, integrations, and legacy modernization — built to scale.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-paint-brush"></i></div><h3>Website development</h3><p>Responsive, SEO‑friendly websites from design to deployment & maintenance.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-lock"></i></div><h3>Security</h3><p>Protective and teritorial, magpies protect their clients and their data</p></div>
-      </div>
-    </section>
 
     <!-- feature row -->
     <div class="feature-row">
       <div class="item"><i class="fas fa-check-circle"></i><div><strong>150+</strong> <span>clients served</span></div></div>
-      <div class="item"><i class="fas fa-clock"></i><div><strong>24/7</strong> <span>support & monitoring</span></div></div>
+      <div class="item"><i class="fas fa-clock"></i><div><strong>24/7</strong> <span>monitoring</span></div></div>
       <div class="item"><i class="fas fa-shield-alt"></i><div><strong>99.9%</strong> <span>uptime guarantee</span></div></div>
       <div class="item"><i class="fas fa-star"></i><div><strong>4.9</strong> <span>average rating</span></div></div>
     </div>
+
+    ${renderServices()}
   `,
 
   plan: `
@@ -60,6 +46,9 @@ const pages = {
         <h1 style="font-size: 2.8rem; font-weight: 700; letter-spacing: -0.02em;"><i class="fas fa-sitemap" style="color: #d93f4c;"></i> Magpie.Red Plan</h1>
         <span style="background: #1e1b2e; color: white; padding: 0.3rem 1.5rem; border-radius: 60px; font-weight: 500;">co‑operative roadmap</span>
       </div>
+
+      <p style="font-size: 1.2rem; color: #3f3a53; max-width: 700px; margin-bottom: 2rem;">For too long the IT sector is dominated by individual providers with only one focus: money</p>
+      <p style="font-size: 1.2rem; color: #3f3a53; max-width: 700px; margin-bottom: 2rem;"> <b> Magpie.<b style="color:red">Red</b></b> is doing things differently. We are bringing democracy and client and worker voices together. To create the IT solutions that are better for everyone and enable the best outcomes for clients and workers alike.</p>
       <!-- Phases -->
       <h2><i class="fas fa-route"></i> Road Map</h2>
 
@@ -67,7 +56,7 @@ const pages = {
         <span class="phase-badge">Phase 1</span>
         <h3><i class="fas fa-file-signature"></i> Foundation & Establishment</h3>
         <ul>
-          <li><strong>Initial Registration:</strong> Sole trader with ABN under William van den Wall Bake.</li>
+          <li><strong>Initial Registration:</strong> Sole trader ABN.</li>
           <li>Establish legal & operational foundation.</li>
         </ul>
       </div>
@@ -126,24 +115,14 @@ const pages = {
       <div class="values-grid">
         <div class="value-item"><i class="fas fa-scale-balanced"></i><h4>Equity & Fairness</h4><p>Fair dealings with clients & employees, aligned with co‑operative model.</p></div>
         <div class="value-item"><i class="fas fa-handshake"></i><h4>Service</h4><p>Exceptional, reliable, client‑focused service — our key differentiator.</p></div>
-        <div class="value-item"><i class="fa-solid fa-people-group"></i><h4>Democracy</h4><p>Employees have a voice in business, foundational to future co‑op.</p></div>
+        <div class="value-item"><i class="fa-solid fa-people-group"></i><h4>Democracy</h4><p>Employees and clients alike have a voice in our business, foundational to future co‑op.</p></div>
         <div class="value-item"><i class="fas fa-shield-halved"></i><h4>Security</h4><p>Highest standards to protect client data and systems.</p></div>
+        <div class="value-item"><i class="fas fa-user-secret"></i><h4>Privacy</h4><p>In the modern era, every tech company is trying to steal your data. At <b> Magpie.<b style="color:red">Red</b></b> we strive to ensure your data remains private and controlled by you.</p></div>
       </div>
   `,
 
   services: `
-    <section style="padding: 3rem 0;">
-      <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-cogs" style="color: #d93f4c;"></i> Our Services</h1>
-      <p style="font-size: 1.2rem; color: #3f3a53; max-width: 700px; margin-bottom: 2rem;">Comprehensive IT solutions tailored to your business needs.</p>
-      <div class="service-grid">
-        <div class="service-card"><div class="icon"><i class="fas fa-globe"></i></div><h3>Web hosting</h3><p>Fast, secure & scalable hosting with 99.9% uptime and 24/7 monitoring.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-envelope"></i></div><h3>Mail hosting</h3><p>Professional email with custom domains, spam protection, and easy migration.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-headset"></i></div><h3>IT support</h3><p>On‑site & remote support, network setup, and proactive maintenance.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-desktop"></i></div><h3>Computer repair</h3><p>Hardware & software repair, virus removal, data recovery, and upgrades.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-code"></i></div><h3>Software development</h3><p>Custom apps, integrations, and legacy modernization — built to scale.</p></div>
-        <div class="service-card"><div class="icon"><i class="fas fa-paint-brush"></i></div><h3>Website development</h3><p>Responsive, SEO‑friendly websites from design to deployment & maintenance.</p></div>
-      </div>
-    </section>
+      ${renderServices()}
   `,
 
   support: `
@@ -151,9 +130,9 @@ const pages = {
       <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-headset" style="color: #d93f4c;"></i> Support</h1>
       <p style="font-size: 1.2rem; color: #3f3a53; margin-bottom: 1.5rem;">We're here to help. Reach out anytime.</p>
       <div style="background: white; border-radius: 32px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #f0ebf5;">
-        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> +1 (555) 0123</p>
+        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> (+61) 0487 178 768</p>
         <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> support@magpie.red</p>
-        <p><i class="fas fa-clock" style="color: #d93f4c; width: 2rem;"></i> 24/7 – we never sleep</p>
+
       </div>
     </section>
   `,
@@ -165,11 +144,76 @@ const pages = {
       <div style="background: white; border-radius: 32px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #f0ebf5;">
         <p><i class="fas fa-map-pin" style="color: #d93f4c; width: 2rem;"></i> Australia wide</p>
         <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> hello@magpie.red</p>
-        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> +1 (555) 0123</p>
+        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> (+61) 0487 178 768</p>
       </div>
     </section>
   `
 };
+
+function renderServices() {
+  return `
+    <div class="services">
+      <div class="section-header">
+        <h2><i class="fas fa-cogs"></i> Our services</h2>
+        <span class="sub">Everything you need</span>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <h3>Web hosting</h3>
+          <p>Fast, secure & scalable hosting with 99.9% uptime and 24/7 monitoring.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <h3>Mail hosting</h3>
+          <p>Professional email with custom domains, spam protection, and easy migration.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <h3>IT support</h3>
+          <p>On‑site & remote support, network setup, and proactive maintenance.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-desktop"></i></div>
+          <h3>Computer repair</h3>
+          <p>Hardware & software repair, virus removal, data recovery, and upgrades.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <h3>Software development</h3>
+          <p>Custom apps, integrations, and legacy modernization — built to scale.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>website development</h3>
+          <p>responsive, seo‑friendly websites from design to deployment & maintenance.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <h3>Security</h3>
+          <p>With accredited qualifications, cybersecurity and protection of you and your data to the highest level.</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Function to render individual service cards (for detailed service pages)
+function renderServiceCard(icon, title, description, features) {
+  return `
+    <section style="padding: 3rem 0; max-width: 800px;">
+      <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem;"><i class="fas ${icon}" style="color: #d93f4c;"></i> ${title}</h1>
+      <p style="font-size: 1.2rem; color: #3f3a53; margin-bottom: 1.5rem;">${description}</p>
+      <div style="background: white; border-radius: 32px; padding: 2rem; border: 1px solid #f0ebf5;">
+        <h3>Features</h3>
+        <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+          ${features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
+    </section>
+  `;
+}
 
 function navigate(page) {
   const content = document.getElementById('page-content');

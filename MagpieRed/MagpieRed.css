@@ -492,3 +492,118 @@ img {
   height: 100%;
   object-fit: cover; /* Fills the box, clips overflow */
 }
+
+/* Drop Down stuff */
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  margin-top: 0; 
+  border: 1px solid #f0ebf5;
+  padding-top: 10px; 
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* For desktop - ensure the menu stays open when hovering over it */
+.dropdown-menu:hover {
+  display: block !important;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: #2d2a3e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #f4f0f8;
+  color: #d93f4c;
+}
+
+.dropdown-menu a:first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+.dropdown-menu a:last-child {
+  border-radius: 0 0 16px 16px;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .dropdown {
+    display: block;
+    width: 100%;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding-left: 1.5rem;
+    margin-top: 0.2rem;
+    background: transparent;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.5rem 1rem;
+  }
+  
+  .dropdown-menu a:hover {
+    background: #f4f0f8;
+  }
+}
+
+/* Smooth dropdown animation */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
+  }
+}
