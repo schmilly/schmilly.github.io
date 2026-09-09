@@ -65,7 +65,14 @@ const COMPANY = {
     "Lummus Imaging": {
         "Birdge Road": [-37.8167, 144.9936],
     },
-    "Viva":[-38.07680767751296, 144.37967195955835] //Oil refinery
+    "Viva":[-38.07680767751296, 144.37967195955835], //Oil refinery
+    "Pacific National": {
+        "NSW":[-33.840659007925886, 151.2059929824021],
+        "VIC":[-37.802469240892684, 144.91788990626077],
+    },
+    "Alcoa": {
+        "WA":[-32.03623881672403, 115.83298262212477]
+    }
 }
 
 const MELB = {
@@ -76,6 +83,14 @@ const MELB = {
     "Town Hall": [-37.816106117492154, 144.9670850824903],
     "Uni":[-37.79840685767232, 144.96095388740878],
     "Peter MacCallum Cancer Centre": [-37.80026478320679, 144.95671662077825],
+    "RLA Polymers": [-37.817593111961365, 145.305556385398],
+    "Overnewton College":[-37.706363106002726, 144.8216275455058],
+    "Secure Journeys Melbourne": [-37.68409443780323, 144.94450175001506]
+}
+
+const BRIS = {
+    "Mater Hospital Brisbane" : [-27.486102725716407, 153.02784104315765],
+    "Secure Journeys Brisbane": [-27.422621424649737, 153.1022575959132]
 }
 
 const PER = {
@@ -86,23 +101,420 @@ const PER = {
 const SYD = {
     "Quay": [-33.86047772953971, 151.2110670199961],
     "Uni": [-33.88810449082193, 151.1871032773295],
+    "Northern Beaches": [-33.670256518987316, 151.31802318697055]
+}
+
+const MINE = {
+    "Wambo": [-32.58159379060998, 151.01065361676308]
+}
+
+const REF = { //refinerys
+    "Townsville Copper": [-19.253381711248775, 146.83341807654375]
 }
 
 const CAN = {
     "ACT Government Analytical Laboratory" : [-35.33153716457696, 149.04976620656367],
 }
 
+const SA = {
+    "Service Stream SA": [-34.860410821670975, 138.5680181935495]
+}
+
+const WA ={
+    "Varanus Island": [-20.393, 115.3427]
+}
 const STRIKE_DATA = [
 
+
+    // MEU - Peabody (lockout abandoned)
+    {
+        id: 317,
+        actionId: "peabody-meu",
+        title: "Peabody Abandons Third Lockout",
+        union: "MEU",
+        industry: "Mining",
+        type: "resolved",
+        startDate: "2026-08-05",
+        endDate: "2026-08-13",
+        state:"NSW",
+        workers: 19,
+        description: "Peabody lockout and pay dispute resolves in favour of MEU workers",
+
+        locations: [
+            { city: "Newcastle", state: "NSW", lat: MINE["Wambo"][0], lng: MINE["Wambo"][1], name: "Wambo Washery" }
+        ],
+        sources: [
+            { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" },
+            { name: "MEU - Peabody locks out Wambo Washery Workers", url: "https://meu.org.au/peabody-locks-out-wambo-washery-workers/"},
+            { name: "MEU - SOLIDARITY WINS: PEABODY WORKERS DEFEAT ENERGY GIANT’S LOCKOUTS AND WIN FAIR DEAL", url: "https://meu.org.au/peabody-wambo-workers-defeat-lockouts-win-fair-deal/"},
+        ]
+    },
+
     // ============================================
-    // AU Strike Watch - Data File
-    // Events from Disputes Reports:
-    //   - 5 August 2026
-    //   - 2 September 2026
-    //   - 9 September 2026
-    // Each entry includes: actionId (for grouping), tags (array),
-    // locations with state, named sources.
+    // 29 JULY 2026 REPORT
     // ============================================
+
+    // ACT Public Sector (rejection of offer)
+    {
+        id: 200,
+        actionId: "act-public-sector",
+        title: "ACT Public Sector Unions Reject New Offer",
+        union: "AEU / ANMF / CFMEU / CPSU",
+        industry: "Public Sector",
+        type: "planned",
+        startDate: "2026-07-20",
+        endDate: "",
+        workers: null,
+        description: "Unions reject 9% over 3 years offer. 66% CPSU members voted no; CFMEU GSOs unanimous rejection. Vote no campaign to be run.",
+
+        locations: [
+            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+        ],
+        sources: [
+            { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+        ]
+    },
+
+// AWU/ETU QLD - Glencore
+{
+    id: 201,
+    actionId: "glencore-townsville",
+    title: "Glencore Townsville Copper Refinery Workers Reject Offer",
+    union: "AWU / ETU",
+    industry: "Mining",
+    type: "strike",
+    startDate: "2026-03-01",
+    endDate: "",
+    workers: null,
+    description: "After 18 months bargaining, workers rejected 12% over 4 years. Struck for 4 hours and partial bans in March. New draft even worse.",
+
+    locations: [
+        { city: "Townsville", state: "QLD", lat: REF["Townsville Copper"][0], lng: REF["Townsville Copper"][1], name: "Townsville Copper Refinery" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// AEU Victoria - Public school teachers (second strike)
+{
+    id: 202,
+    actionId: "aeu-vic-teachers",
+    title: "Victorian Teachers Hold Second 24-Hour Strike",
+    union: "AEU Victoria",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-07-23",
+    endDate: "2026-07-23",
+    workers: null,
+    description: "Second 24-hour strike this year. Rally at Bourke Street Mall then Parliament House. Negotiations stalled.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// RTBU NSW - Keolis Downer (action paused)
+{
+    id: 203,
+    actionId: "keolis-downer-rtbu",
+    title: "Keolis Downer Bus Action Paused for Negotiations",
+    union: "RTBU NSW",
+    industry: "Transport",
+    type: "resolved",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "Industrial action on Northern Beaches buses to stop for 8 weeks while wage negotiations continue.",
+
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SYD["Northern Beaches"][0], lng: SYD["Northern Beaches"][1], name: "Northern Beaches" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// MEU - Peabody (lockout)
+{
+    id: 204,
+    actionId: "peabody-meu",
+    title: "Peabody Workers Locked Out Again at Wambo Washery",
+    union: "MEU",
+    industry: "Mining",
+    type: "lockout",
+    startDate: "2026-07-15",
+    endDate: "",
+    workers: null,
+    description: "Another 14-day lockout. 3 months in dispute, 18 bargaining meetings. CEO got 29% increase.",
+
+
+    locations: [
+        { city: "Newcastle", state: "NSW", lat: MINE["Wambo"][0], lng: MINE["Wambo"][1], name: "Wambo Washery" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// VAHPA - Allied health workers (3-hour strike)
+{
+    id: 205,
+    actionId: "vahpa-allied-health",
+    title: "Allied Health Workers 3-Hour Stop Work",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "strike",
+    startDate: "2026-07-23",
+    endDate: "2026-07-23",
+    workers: 1000,
+    description: "Around 1000 workers across public hospitals stopped work for 3 hours. Rejected 19-21% offer; demand 36% over 3 years.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// Mater Hospital maintenance workers
+{
+    id: 206,
+    actionId: "mater-hospital-qld",
+    title: "Mater Hospital Maintenance Workers Take Action",
+    union: "AMWU / CFMEU / ETU / PPTEU",
+    industry: "Healthcare",
+    type: "strike",
+    startDate: "2026-07-21",
+    endDate: "2026-07-21",
+    workers: null,
+    state:"QLD",
+    description: "Industrial action at Mater Hospital Brisbane over EBA. Negotiations 9+ months.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: BRIS["Mater Hospital Brisbane"][0], lng: BRIS["Mater Hospital Brisbane"][1], name: "Mater Hospital" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// UWU - Secure Journeys (weekend stoppages)
+{
+    id: 207,
+    actionId: "secure-journeys",
+    title: "Secure Journeys Detention Workers Weekend Stoppages",
+    union: "UWU",
+    industry: "Detention Services",
+    type: "strike",
+    startDate: "2026-07-25",
+    endDate: "2026-07-26",
+    workers: null,
+    description: "Stoppages at Melbourne and Brisbane centres on 25-26 July. Safety concerns for workers and detainees.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: MELB["Secure Journeys Melbourne"][0], lng: MELB["Secure Journeys Melbourne"][1], name: "Melbourne Immigration Detention Centre" },
+        { city: "Brisbane", state: "QLD", lat: BRIS["Secure Journeys Brisbane"][0], lng: BRIS["Secure Journeys Brisbane"][1], name: "Brisbane Immigration Detention Centre" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// CEPU SA - Service Stream
+{
+    id: 208,
+    actionId: "service-stream-sa-cepu",
+    title: "Service Stream SA Stoppages Continue",
+    union: "CEPU SA",
+    industry: "Telecommunications",
+    type: "strike",
+    startDate: "2026-07-22",
+    endDate: "",
+    workers: null,
+    description: "Day 5 of stoppages. Back at bargaining table after rejecting management's offer.",
+
+    locations: [
+        { city: "Adelaide", state: "SA", lat: SA["Service Stream SA"][0], lng: SA["Service Stream SA"][1], name: "Service Stream SA" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// MSAV - Public health professionals (planned strike)
+{
+    id: 209,
+    actionId: "msav-public-health",
+    title: "MSAV 24-Hour Strike Planned",
+    union: "MSAV",
+    industry: "Healthcare",
+    type: "planned",
+    startDate: "2026-07-30",
+    endDate: "2026-07-30",
+    workers: null,
+    description: "24-hour strike planned for 30 July. Originally targeting Bendigo, may shift to Premier Carroll's electorate of Niddrie.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various locations" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// ASU Victoria - Metropolitan Melbourne council workers (stop work)
+{
+    id: 210,
+    actionId: "melb-councils-asu",
+    title: "Melbourne Council Workers Stop Work and Rally",
+    union: "ASU Victoria",
+    industry: "Local Government",
+    type: "strike",
+    startDate: "2026-07-30",
+    endDate: "2026-07-30",
+    workers: null,
+    description: "4-hour stoppage (10am-2pm) with rally at Parliament. Demands: 10% first year, 4% annual, rate capping reform.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian Parliament" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// AMWU WA - UGL Alcoa (PABO)
+{
+    id: 211,
+    actionId: "alcoa-ugl-amwu",
+    title: "Alcoa Workers Endorse Industrial Action",
+    union: "AMWU WA",
+    industry: "Manufacturing",
+    type: "planned",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "92% vote yes in PABO. Negotiations months; company can't afford improved wages. Action imminent.",
+    locations: [
+        { city: "Perth", state: "WA", lat: COMPANY["Alcoa"]["WA"][0], lng: COMPANY["Alcoa"]["WA"][1], name: "Alcoa WA" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// HACSU Vic - Scope (voting on action)
+{
+    id: 212,
+    actionId: "scope-hacsu",
+    title: "Scope Disability Workers Voting on Industrial Action",
+    union: "HACSU Vic",
+    industry: "Disability Services",
+    type: "planned",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "After 18 months bargaining, members voting on action. Claims: non-contact hours, minimum shift lengths, fair rostering.",
+
+    locations: [
+        { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// TWU - FedEx (PABO granted)
+{
+    id: 213,
+    actionId: "twu-transport-strike",
+    title: "FedEx Protected Action Ballot Granted",
+    union: "TWU",
+    industry: "Transport / Logistics",
+    type: "planned",
+    startDate: "2026-07-22",
+    endDate: "2026-08-20",
+    workers: null,
+    description: "FWC granted PABO; ballot closes 20 Aug. Workers voted down offer without job security. Amazon Effect concerns.",
+
+    locations: [
+        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "FedEx Sydney" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "FedEx Melbourne" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// RTBU - Pacific National (vote for action)
+{
+    id: 214,
+    actionId: "pacific-national-rtbu",
+    title: "Pacific National Intermodal Crew Vote for Action",
+    union: "RTBU",
+    industry: "Rail Transport",
+    type: "planned",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "Intermodal train crew voted in favour of industrial action; 90%+ support for most actions.",
+
+    locations: [
+        { city: "Sydney", state: "NSW", lat: COMPANY["Pacific National"]["NSW"][0], lng: COMPANY["Pacific National"]["NSW"][1], name: "Pacific National NSW" },
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Pacific National"]["VIC"][0], lng: COMPANY["Pacific National"]["VIC"][1], name: "Pacific National VIC" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// AMOU/MUA Tasmania - TasPorts (vote for action)
+{
+    id: 215,
+    actionId: "tasports",
+    title: "TasPorts Workers Vote for Industrial Action",
+    union: "AMOU / MUA / CFMEU Tasmania",
+    industry: "Ports",
+    type: "planned",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "Workers at 11 ports voted for action including 24-hour strikes. Offer below CPI.",
+
+    locations: [
+        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Hobart Port" },
+        { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "Burnie Port" },
+        { city: "Devonport", state: "TAS", lat: CITY_COORDS["Devonport"][0], lng: CITY_COORDS["Devonport"][1], name: "Devonport Port" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
+
+// CPSU/ETU/MEAA Vic - Arts Centre Melbourne (PABO)
+{
+    id: 216,
+    actionId: "arts-centre-melb",
+    title: "Arts Centre Melbourne Workers Vote in PABO",
+    union: "CPSU / ETU / MEAA",
+    industry: "Arts & Culture",
+    type: "planned",
+    startDate: "2026-07-29",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot currently underway. Workers ready to fight for above 3% wage cap.",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Arts Centre Melbourne" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
+    ]
+},
         // ============================================
         // 5 AUGUST 2026 REPORT
         // ============================================
@@ -139,7 +551,7 @@ const STRIKE_DATA = [
     endDate: "",
     workers: null,
     description: "Incident Response workers taking action 7-10am and 4-7pm weekdays. Closing lanes during incidents. Fighting against roster changes and loss of RDOs.",
-    tags: ["public-sector", "transport", "victoria", "roads"],
+
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Major arterial roads" }
     ],
@@ -159,8 +571,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-08",
     endDate: "",
     workers: null,
+    state: "WA",
     description: "24-hour ship loading ban on 8 Aug, 24-hour stoppage from 5:30am on 9 Aug. ETU high voltage electricians striking 12 hours on 9 Aug. Negotiations stalled.",
-    tags: ["mining", "western-australia", "port-hedland", "industrial-action"],
+
     locations: [
         { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
     ],
@@ -179,9 +592,10 @@ const STRIKE_DATA = [
     type: "strike",
     startDate: "2026-07-29",
     endDate: "",
+    state: "ACT",
     workers: null,
     description: "Two-hour stoppage and march to Legislative Assembly. Demanding hazard allowance. Work bans since 29 June.",
-    tags: ["public-sector", "act", "forensic", "science"],
+
     locations: [
         { city: "Canberra", state: "ACT", lat: CAN["ACT Government Analytical Laboratory"][0], lng: CAN["ACT Government Analytical Laboratory"][1], name: "ACT Government Analytical Laboratory" }
     ],
@@ -202,7 +616,7 @@ const STRIKE_DATA = [
     endDate: "",
     workers: null,
     description: "4-hour stoppage by workers from 8 councils. Rally outside Parliament House. Demands: 10% first year, then 4% annual; rate capping reform.",
-    tags: ["local-government", "victoria", "councils", "wages"],
+
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parliament House" },
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various councils" }
@@ -220,11 +634,11 @@ const STRIKE_DATA = [
     union: "AMOU / MUA",
     industry: "Transport",
     type: "strike",
-    startDate: "2026-08-07",
+    startDate: "2026-06-31",
     endDate: "",
+    state:"QLD",
     workers: null,
     description: "Second strike on 7 Aug 8-10am. First strike on 31 Jul 8-10am. Bosses offered below-inflation increase.",
-    tags: ["transport", "ferries", "queensland", "brisbane"],
     locations: [
         { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane River" }
     ],
@@ -244,8 +658,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-04",
     endDate: "",
     workers: 160,
+    state:"SA",
     description: "First strike at Arnott's since 1990s. Wages have fallen behind inflation. KKR private equity owner.",
-    tags: ["food-manufacturing", "south-australia", "cost-of-living", "strike"],
+
     locations: [
         { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Arnott's Adelaide" }
     ],
@@ -264,9 +679,10 @@ const STRIKE_DATA = [
     type: "planned",
     startDate: "2026-08-10",
     endDate: "",
+    state:"NSW",
     workers: null,
     description: "2-hour stop work meeting on 10 Aug to discuss industrial campaign. Bargaining delayed by management.",
-    tags: ["education", "university", "nsw", "nteu"],
+
     locations: [
         { city: "Sydney", state: "NSW", lat: SYD["Uni"][0], lng: SYD["Uni"][1], name: "University of Sydney" }
     ],
@@ -286,8 +702,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-11",
     endDate: "",
     workers: null,
+    state: "VIC",
     description: "24-hour strike on 11 Aug with rally at Peter MacCallum Cancer Centre. Follows previous strike on 16 June.",
-    tags: ["healthcare", "allied-health", "victoria", "strike"],
+
     locations: [
         { city: "Melbourne", state: "VIC", lat: MELB["Peter MacCallum Cancer Centre"][0], lng: MELB["Peter MacCallum Cancer Centre"][1], name: "Peter MacCallum Cancer Centre" }
     ],
@@ -307,8 +724,8 @@ const STRIKE_DATA = [
     startDate: "2026-08-05",
     endDate: "",
     workers: null,
+    state:"SA",
     description: "Members rejected offer despite leadership recommendation. 67% voted no. Matter referred to SA Employment Tribunal.",
-    tags: ["healthcare", "nurses", "midwives", "south-australia"],
     locations: [
         { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Various hospitals" }
     ],
@@ -329,10 +746,10 @@ const STRIKE_DATA = [
     endDate: "",
     workers: null,
     description: "48-hour overtime ban from 1 Aug; 24-hour lift up/lay back ban on 3 Aug. Negotiations resume next week.",
-    tags: ["rail", "transport", "intermodal", "overtime-ban"],
+
     locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Pacific National NSW" },
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Pacific National VIC" }
+        { city: "Sydney", state: "NSW", lat: COMPANY["Pacific National"]["NSW"][0], lng: COMPANY["Pacific National"]["NSW"][1], name: "Pacific National NSW" },
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Pacific National"]["VIC"][0], lng: COMPANY["Pacific National"]["VIC"][1], name: "Pacific National VIC" }
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -350,8 +767,9 @@ const STRIKE_DATA = [
     startDate: "2026-07-31",
     endDate: "",
     workers: null,
+    state:"SA",
     description: "3-hour stoppage. Fighting unilateral redeployment clause and AI use without consultation.",
-    tags: ["local-government", "south-australia", "council", "ai"],
+
     locations: [
         { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "City of Port Adelaide Enfield" }
     ],
@@ -371,8 +789,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-19",
     endDate: "2026-08-19",
     workers: null,
+    state:"VIC",
     description: "Third strike on 19 Aug. Negotiations stalled with new Education Minister.",
-    tags: ["education", "teachers", "victoria", "strike"],
+
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
     ],
@@ -392,8 +811,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-04",
     endDate: "2026-08-04",
     workers: null,
+    state:"VIC",
     description: "Planned action from 4 Aug to 4 Sep cancelled due to FWC s.418 order. Action not going ahead.",
-    tags: ["disability-services", "victoria", "fwc"],
+
     locations: [
         { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
     ],
@@ -413,10 +833,11 @@ const STRIKE_DATA = [
     startDate: "2026-08-05",
     endDate: "",
     workers: null,
+    state:"VIC",
     description: "Unanimous vote for action; started with overtime ban.",
-    tags: ["manufacturing", "victoria", "overtime-ban"],
+
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "RLA Polymers" }
+        { city: "Melbourne", state: "VIC", lat: MELB["RLA Polymers"][0], lng: MELB["RLA Polymers"][1], name: "RLA Polymers" }
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -434,8 +855,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-05",
     endDate: "2026-08-05",
     workers: null,
+    state:"WA",
     description: "More stoppages today. Campaign for pay parity, secure jobs, respectful rostering.",
-    tags: ["aviation", "western-australia", "perth", "security"],
+
     locations: [
         { city: "Perth", state: "WA", lat: PER["Airport"][0], lng: PER["Airport"][1], name: "Perth Airport" }
     ],
@@ -455,8 +877,9 @@ const STRIKE_DATA = [
     startDate: "2026-07-30",
     endDate: "",
     workers: null,
+    state:"VIC",
     description: "Indefinite strike after Acciona refused to finalise bargaining. Rally outside South Melbourne office on 3 Aug.",
-    tags: ["construction", "infrastructure", "victoria", "strike"],
+
     locations: [
         { city: "South Melbourne", state: "VIC", lat: CITY_COORDS["South Melbourne"][0], lng: CITY_COORDS["South Melbourne"][1], name: "Acciona Office" }
     ],
@@ -465,26 +888,7 @@ const STRIKE_DATA = [
     ]
 },
 
-// MEU - Peabody (lockout abandoned)
-{
-    id: 117,
-    actionId: "peabody-meu",
-    title: "Peabody Abandons Third Lockout",
-    union: "MEU",
-    industry: "Mining",
-    type: "resolved",
-    startDate: "2026-08-05",
-    endDate: "",
-    workers: null,
-    description: "Peabody abandoned lockout after MEU launched FWC proceedings. Will pay workers for lockout period.",
-    tags: ["mining", "coal", "nsw", "lockout"],
-    locations: [
-        { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Wambo Washery" }
-    ],
-    sources: [
-        { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
-    ]
-},
+
 
 // AMWU/ETU Vic - Downer (initial rolling stoppages)
 {
@@ -496,9 +900,10 @@ const STRIKE_DATA = [
     type: "strike",
     startDate: "2026-07-29",
     endDate: "",
+    state:"VIC",
     workers: null,
     description: "Rolling stoppages at Pakenham and Calder Park depots. Seeking parity with Metro Trains and V/Line.",
-    tags: ["rail-maintenance", "victoria", "strike"],
+
     locations: [
         { city: "Pakenham", state: "VIC", lat: CITY_COORDS["Pakenham"][0], lng: CITY_COORDS["Pakenham"][1], name: "Pakenham Depot" }
     ],
@@ -515,11 +920,12 @@ const STRIKE_DATA = [
     union: "CPSU / MEAA",
     industry: "Arts & Culture",
     type: "planned",
+    state:"VIC",
     startDate: "2026-07-29",
     endDate: "2026-08-05",
     workers: null,
     description: "Ballot opened 29 July, closes 5 August. Key claims: wages, allowances, leave. MEAA calls for increased government funding.",
-    tags: ["arts", "culture", "victoria", "ballot"],
+
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Arts Centre Melbourne" }
     ],
@@ -536,11 +942,12 @@ const STRIKE_DATA = [
     union: "TWU",
     industry: "Waste Management",
     type: "planned",
+    state:"VIC",
     startDate: "2026-08-05",
     endDate: "",
     workers: null,
     description: "Unanimous vote for industrial action. Concerns over intrusive surveillance and safety record (8 deaths since 2022).",
-    tags: ["waste-management", "victoria", "safety"],
+
     locations: [
         { city: "Dandenong", state: "VIC", lat: CITY_COORDS["Dandenong"][0], lng: CITY_COORDS["Dandenong"][1], name: "Cleanaway Dandenong" }
     ],
@@ -552,7 +959,7 @@ const STRIKE_DATA = [
 // ASU Vic - Service Stream Coliban
 {
     id: 121,
-    actionId: "service-stream-coliban",
+    actionId: "service-stream-ASU-coliban",
     title: "Service Stream Coliban Workers Vote for Action",
     union: "ASU Vic",
     industry: "Utilities",
@@ -560,8 +967,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-05",
     endDate: "",
     workers: null,
+    state:"VIC",
     description: "Unanimous vote for action; contract ending 2027, no pay rise since 2024. Considering bans and stop works.",
-    tags: ["utilities", "victoria", "water"],
+
     locations: [
         { city: "Bendigo", state: "VIC", lat: CITY_COORDS["Bendigo"][0], lng: CITY_COORDS["Bendigo"][1], name: "Coliban Water" }
     ],
@@ -581,8 +989,9 @@ const STRIKE_DATA = [
     startDate: "2026-08-01",
     endDate: "2026-08-03",
     workers: null,
+    state:"VIC",
     description: "New agreement endorsed after weeks of action: 11.5% over 3 years, $3000 sign-on, improved allowances.",
-    tags: ["oil-gas", "victoria", "eba", "resolved"],
+
     locations: [
         { city: "Geelong", state: "VIC", lat: COMPANY["Viva"][0], lng: COMPANY["Viva"][1], name: "Viva Oil Refinery" }
     ],
@@ -679,19 +1088,20 @@ const STRIKE_DATA = [
     {
         id: 5,
         actionId: "qld-rail-amwu-etu",
-        title: "Queensland Rail AMWU/ETU Industrial Action",
+        title: "Queensland Rail Industrial Action",
         union: "AMWU / ETU / RTBU / TSU",
         industry: "Rail Transport",
         type: "strike",
         startDate: "2026-07-01",
         endDate: "",
-        workers: null,
+        workers: 7000,
         description: "Rolling stoppages and overtime bans affecting maintenance; delays expected.",
         locations: [
             { city: "Brisbane", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland Rail Network" }
         ],
         sources: [
             { name: "Disputes Report - 2nd of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-2-september" },
+            { name: "Wikipedia - 2026 Queensland rail strikes", url:"https://en.wikipedia.org/wiki/2026_Queensland_rail_strikes"},
         ]
     },
 
@@ -770,7 +1180,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "5-hour strike on 2 September; 5% wage increase demand.",
         locations: [
-            { city: "Sydney", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Circular Quay" }
+            { city: "Sydney", lat: SYD["Quay"][0], lng: SYD["Quay"][1], name: "Circular Quay" }
         ],
         sources: [
             { name: "Disputes Report - 2nd of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-2-september" },
@@ -801,7 +1211,7 @@ const STRIKE_DATA = [
     {
         id: 11,
         actionId: "usyd-nteu",
-        title: "University of Sydney 24-Hour Strike",
+        title: "University of Sydney Strike",
         union: "NTEU",
         industry: "Education",
         type: "strike",
@@ -955,7 +1365,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Opal readers switched off from 11/9 to 6/10, overtime bans. Transdev refuses fair deal.",
         locations: [
-            { city: "Sydney", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Circular Quay" }
+            { city: "Sydney", lat: SYD["Quay"][0], lng: SYD["Quay"][1], name: "Circular Quay" }
         ],
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
@@ -1059,7 +1469,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Work bans from 8/9, 4-hour strike on 17/9. Demands: 37% pay increase over 3 years and $5000 healthcare allowance.",
         locations: [
-            { city: "Keilor", lat: CITY_COORDS["Keilor"][0], lng: CITY_COORDS["Keilor"][1], name: "Overnewton College" }
+            { city: "Keilor", lat: MELB["Overnewton College"][0], lng: MELB["Overnewton College"][1], name: "Overnewton College" }
         ],
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
@@ -1181,8 +1591,8 @@ const STRIKE_DATA = [
         description: "4-hour strike from 10am to 2pm. 92% no vote against offer. Safety concerns due to job cuts.",
         locations: [
             { city: "Sydney", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Detention Centre" },
-            { city: "Melbourne", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Detention Centre" },
-            { city: "Brisbane", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Detention Centre" }
+            { city: "Melbourne", state: "VIC", lat: MELB["Secure Journeys Melbourne"][0], lng: MELB["Secure Journeys Melbourne"][1], name: "Melbourne Immigration Detention Centre" },
+            { city: "Brisbane", state: "QLD", lat: BRIS["Secure Journeys Brisbane"][0], lng: BRIS["Secure Journeys Brisbane"][1], name: "Brisbane Immigration Detention Centre" }
         ],
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
@@ -1274,7 +1684,7 @@ const STRIKE_DATA = [
     // Lumus Imaging
     {
         id: 34,
-        actionId: "lumus-imaging",
+        actionId: "lumus-imaging-strike",
         title: "Lumus Imaging Nurses Industrial Action",
         union: "ANMF Vic",
         industry: "Healthcare",
@@ -1315,7 +1725,7 @@ const STRIKE_DATA = [
     {
         id: 36,
         actionId: "npt-vau",
-        title: "National Patient Transport Workers Strike",
+        title: "National Patient Transport (NPT) Workers Strike",
         union: "VAU",
         industry: "Healthcare / Patient Transport",
         type: "strike",
@@ -1334,7 +1744,7 @@ const STRIKE_DATA = [
     // TasPorts
     {
         id: 37,
-        actionId: "tasports-mua",
+        actionId: "tasports",
         title: "TasPorts MUA Industrial Action",
         union: "MUA Tasmania",
         industry: "Ports",
@@ -1362,14 +1772,15 @@ const STRIKE_DATA = [
         industry: "Aviation",
         type: "planned",
         startDate: "2026-09-09",
-        endDate: "",
-        workers: null,
+        endDate: "2026-09-09",
+        workers: 900,
         description: "82% turnout, 99% yes vote for action. No dates announced yet.",
         locations: [
             { city: "Melbourne", lat: COMPANY["Jetstar"][0], lng: COMPANY["Jetstar"][1], name: "Jetstar HQ" }
         ],
         sources: [
-            { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
+            { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" },
+            { name: "ABC News - Jetstar's profits soar as passengers face more fees and workers push for bigger share", url: "https://www.abc.net.au/news/2026-08-18/jetstar-profits-soar-workers-pay-stalls/107002696"}
         ]
     },
 
@@ -1391,7 +1802,1158 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
         ]
-    }
+    },
+    {
+        id: 5000,
+        actionId: "hsu-the-department-of-families-fairness-and-housing",
+        title: "HSU and The Department of Families, Fairness and Housing - Protected Action Ballot",
+        union: "HSU",
+        industry: "Other",
+        type: "ballot",
+        startDate: "2026-09-08",
+        endDate: "",
+        workers: null,
+        description: "Protected action ballot result from Fair Work Commission.",
+        locations: [
+            {
+                city: "Unknown",
+                state: "",
+                lat: -25.5,
+                lng: 134.0,
+                name: "The Department of Families, Fairness and Housing"
+            }
+        ],
+        sources: [
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/hsu_20261044.pdf"
+            }
+        ],
+        tags: ["other", "hsu", "fwc-ballot"]
+    },
+{
+    id: 5001,
+    actionId: "jetstar-asu",
+    title: "ASU and Jetstar Airways Pty Limited - Protected Action Ballot",
+    union: "ASU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Jetstar Airways Pty Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/asu_20261041.pdf"
+        }
+    ],
+    tags: ["other", "asu", "fwc-ballot"]
+},
+{
+    id: 5002,
+    actionId: "tasports",
+    title: "CFMEU and Tasmania Ports Corporation Pty Ltd T/A Tasports - Protected Action Ballot",
+    union: "CFMEU",
+    industry: "Maritime",
+    type: "ballot",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Tasmania Ports Corporation Pty Ltd T/A Tasports"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_20261008.pdf"
+        }
+    ],
+    tags: ["maritime", "cfmeu", "fwc-ballot"]
+},
+{
+    id: 5003,
+    actionId: "twu-bridgestone-australia-ltd",
+    title: "TWU and Bridgestone Australia Ltd - Protected Action Ballot",
+    union: "TWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Bridgestone Australia Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261050.pdf"
+        }
+    ],
+    tags: ["other", "twu", "fwc-ballot"]
+},
+{
+    id: 5004,
+    actionId: "premier-coal",
+    title: "MEU and Premier Coal Pty Ltd - Protected Action Ballot",
+    union: "MEU",
+    industry: "Mining",
+    type: "ballot",
+    startDate: "2026-09-07",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/meu_20261039.pdf"
+        }
+    ],
+    tags: ["mining", "meu", "fwc-ballot"]
+},
+{
+    id: 5006,
+    actionId: "sydney-ferries",
+    title: "AIMPE and Transdev Sydney Ferries Pty Ltd - Protected Action Ballot",
+    union: "AIMPE",
+    industry: "Rail Transport",
+    type: "ballot",
+    startDate: "2026-09-04",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/aimpe_20261035.pdf"
+        }
+    ],
+    tags: ["rail-transport", "aimpe", "fwc-ballot"]
+},
+{
+    id: 5007,
+    actionId: "amou-port-of-portland-pty-limited",
+    title: "AMOU and Port of Portland Pty Limited - Protected Action Ballot",
+    union: "AMOU",
+    industry: "Maritime",
+    type: "ballot",
+    startDate: "2026-09-04",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Port of Portland Pty Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amou_20261029.pdf"
+        }
+    ],
+    tags: ["maritime", "amou", "fwc-ballot"]
+},
+{
+    id: 5008,
+    actionId: "premier-coal",
+    title: "AMWU and Premier Coal Pty Ltd - Protected Action Ballot",
+    union: "AMWU",
+    industry: "Mining",
+    type: "ballot",
+    startDate: "2026-09-04",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261030.pdf"
+        }
+    ],
+    tags: ["mining", "amwu", "fwc-ballot"]
+},
+{
+    id: 5009,
+    actionId: "twu-transport-strike",
+    title: "TWU and Qube Logistics (Vic) Pty Ltd - Protected Action Ballot",
+    union: "TWU",
+    industry: "Transport / Logistics",
+    type: "ballot",
+    startDate: "2026-09-03",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Qube Logistics (Vic) Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261028.pdf"
+        }
+    ],
+    tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+},
+{
+    id: 5010,
+    actionId: "amwu-csl-limited",
+    title: "AMWU and CSL Limited - Protected Action Ballot",
+    union: "AMWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-03",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "CSL Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261027.pdf"
+        }
+    ],
+    tags: ["other", "amwu", "fwc-ballot"]
+},
+{
+    id: 5011,
+    actionId: "cepu-csl-limited",
+    title: "CEPU and CSL Limited - Protected Action Ballot",
+    union: "CEPU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-03",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "CSL Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261026.pdf"
+        }
+    ],
+    tags: ["other", "cepu", "fwc-ballot"]
+},
+{
+    id: 5012,
+    actionId: "overnewton-college",
+    title: "IEU and Overnewton Anglican Community College Limited - Protected Action Ballot",
+    union: "IEU",
+    industry: "Education",
+    type: "ballot",
+    startDate: "2026-09-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Overnewton Anglican Community College Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/ieu_20261010.pdf"
+        }
+    ],
+    tags: ["education", "ieu", "fwc-ballot"]
+},
+{
+    id: 5013,
+    actionId: "uwu-bega-dairy-and-drinks-pty-ltd",
+    title: "UWU and Bega Dairy and Drinks Pty Ltd - Protected Action Ballot",
+    union: "UWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Bega Dairy and Drinks Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/uwu_20261015.pdf"
+        }
+    ],
+    tags: ["other", "uwu", "fwc-ballot"]
+},
+{
+    id: 5014,
+    actionId: "twu-veolia-recycling-recovery-pty-ltd-veolia-environmental-services-australia-pty-ltd",
+    title: "TWU and Veolia Recycling & Recovery Pty Ltd, Veolia Environmental Services (Australia) Pty Ltd - Protected Action Ballot",
+    union: "TWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Veolia Recycling & Recovery Pty Ltd, Veolia Environmental Services (Australia) Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261016.pdf"
+        }
+    ],
+    tags: ["other", "twu", "fwc-ballot"]
+},
+{
+    id: 5015,
+    actionId: "twu-bega-dairy-and-drinks-pty-ltd",
+    title: "TWU and Bega Dairy and Drinks Pty Ltd - Protected Action Ballot",
+    union: "TWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Bega Dairy and Drinks Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261014.pdf"
+        }
+    ],
+    tags: ["other", "twu", "fwc-ballot"]
+},
+{
+    id: 5016,
+    actionId: "cfmeu-mammoet-australia-pty-ltd",
+    title: "CFMEU and Mammoet Australia Pty Ltd - Protected Action Ballot",
+    union: "CFMEU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-01",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Mammoet Australia Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026926.pdf"
+        }
+    ],
+    tags: ["other", "cfmeu", "fwc-ballot"]
+},
+{
+    id: 5017,
+    actionId: "cepu-siemens-ltd",
+    title: "CEPU and Siemens Ltd - Protected Action Ballot",
+    union: "CEPU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-01",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Siemens Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261006.pdf"
+        }
+    ],
+    tags: ["other", "cepu", "fwc-ballot"]
+},
+{
+    id: 5018,
+    actionId: "lumus-imaging-strike",
+    title: "ANMF and Lumus Imaging (Victoria/Tasmania) Pty Ltd - Protected Action Ballot",
+    union: "ANMF",
+    industry: "Healthcare",
+    type: "ballot",
+    startDate: "2026-09-01",
+    endDate: "2026-09-01",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/anmf_20261011.pdf"
+        }
+    ],
+    tags: ["healthcare", "anmf", "fwc-ballot"]
+},
+{
+    id: 5019,
+    actionId: "amwu-nissan-casting-australia-pty-ltd",
+    title: "AMWU and Nissan Casting Australia Pty Ltd - Protected Action Ballot",
+    union: "AMWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-09-01",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Nissan Casting Australia Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026986.pdf"
+        }
+    ],
+    tags: ["other", "amwu", "fwc-ballot"]
+},
+{
+    id: 5020,
+    actionId: "npt-vau",
+    title: "VAU and National Patient Transport Pty Ltd - Protected Action Ballot",
+    union: "VAU",
+    industry: "Maritime",
+    type: "ballot",
+    startDate: "2026-08-31",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "National Patient Transport Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/vau_2026996.pdf"
+        }
+    ],
+    tags: ["maritime", "vau", "fwc-ballot"]
+},
+{
+    id: 5021,
+    actionId: "twu-ceva-logistics-australia-pty-ltd",
+    title: "TWU and Ceva Logistics (Australia) Pty Ltd - Protected Action Ballot",
+    union: "TWU",
+    industry: "Transport / Logistics",
+    type: "ballot",
+    startDate: "2026-08-31",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Ceva Logistics (Australia) Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261000.pdf"
+        }
+    ],
+    tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+},
+{
+    id: 5022,
+    actionId: "awu-service-stream-limited",
+    title: "AWU and Service Stream Limited - Protected Action Ballot",
+    union: "AWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-08-28",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Service Stream Limited"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026992.pdf"
+        }
+    ],
+    tags: ["other", "awu", "fwc-ballot"]
+},
+{
+    id: 5023,
+    actionId: "amwu-south32-worsley-alumina-pty-ltd",
+    title: "AMWU and South32 Worsley Alumina Pty Ltd - Protected Action Ballot",
+    union: "AMWU",
+    industry: "Mining",
+    type: "ballot",
+    startDate: "2026-08-28",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "South32 Worsley Alumina Pty Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026977.pdf"
+        }
+    ],
+    tags: ["mining", "amwu", "fwc-ballot"]
+},
+{
+    id: 5024,
+    actionId: "adelaide-catholic-schools",
+    title: "IEU and Catholic Church Endowment Society Incorporated T/A Cardijn College - Protected Action Ballot",
+    union: "IEU",
+    industry: "Education",
+    type: "ballot",
+    startDate: "2026-08-27",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Catholic Church Endowment Society Incorporated T/A Cardijn College"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/ieu_2026997.pdf"
+        }
+    ],
+    tags: ["education", "ieu", "fwc-ballot"]
+},
+    {
+        id: 5293,
+        actionId: "qld-rail-amwu-etu",
+        title: "AMWU and Queensland Rail Transit Authority - Protected Action Ballot",
+        union: "AMWU",
+        industry: "Rail Transport",
+        type: "ballot",
+        startDate: "2026-03-23",
+        endDate: "",
+        workers: null,
+        description: "Protected action ballot result from Fair Work Commission.",
+        locations: [
+            {
+                city: "Unknown",
+                state: "",
+                lat: -25.5,
+                lng: 134.0,
+                name: "Queensland Rail Transit Authority"
+            }
+        ],
+        sources: [
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026202.pdf"
+            },
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026203.pdf"
+            },
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026204.pdf"
+            },
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026200.pdf"
+            },
+                        {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026208.pdf"
+            },
+
+        ],
+        tags: ["rail-transport", "amwu", "fwc-ballot"]
+    },
+    {
+        id: 5297,
+        actionId: "qld-rail-amwu-etu",
+        title: "CEPU and Queensland Rail - Protected Action Ballot",
+        union: "CEPU",
+        industry: "Rail Transport",
+        type: "ballot",
+        startDate: "2026-03-23",
+        endDate: "",
+        workers: null,
+        description: "Protected action ballot result from Fair Work Commission.",
+        locations: [
+            {
+                city: "Unknown",
+                state: "",
+                lat: -25.5,
+                lng: 134.0,
+                name: "Queensland Rail"
+            }
+        ],
+        sources: [
+            {
+                name: "FWC Ballot Result",
+                url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026209.pdf"
+            }
+        ],
+        tags: ["rail-transport", "cepu", "fwc-ballot"]
+    },
+{
+    id: 5171,
+    actionId: "mater-hospital-qld",
+    title: "AMWU and Mater Misericordiae Ltd - Protected Action Ballot",
+    union: "AMWU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-06-08",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission. ",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Mater Misericordiae Ltd"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026568.pdf"
+        }
+    ],
+    tags: ["other", "amwu", "fwc-ballot"]
+},
+{
+    id: 5178,
+    actionId: "mater-hospital-qld",
+    title: "PPTEU and Mater - Protected Action Ballot",
+    union: "PPTEU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-06-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission.",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Mater"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/ppteu_2026553.pdf"
+        }
+    ],
+    tags: ["other", "ppteu", "fwc-ballot"]
+},
+{
+    id: 5179,
+    actionId: "mater-hospital-qld",
+    title: "CEPU and Mater - Protected Action Ballot",
+    union: "CEPU",
+    industry: "Other",
+    type: "ballot",
+    startDate: "2026-06-02",
+    endDate: "",
+    workers: null,
+    description: "Protected action ballot result from Fair Work Commission. ",
+    locations: [
+        {
+            city: "Unknown",
+            state: "",
+            lat: -25.5,
+            lng: 134.0,
+            name: "Mater"
+        }
+    ],
+    sources: [
+        {
+            name: "FWC Ballot Result",
+            url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026552.pdf"
+        }
+    ],
+    tags: ["other", "cepu", "fwc-ballot"]
+},
+{
+    id: 7001,
+    actionId: "aeu-vic-teachers",
+    title: "Victorian Teachers Reject Offer, Plan 24-Hour Strike",
+    union: "AEU Victoria",
+    industry: "Education",
+    type: "planned",
+    startDate: "2026-07-23",
+    endDate: "2026-07-23",
+    workers: null,
+    description: "AEU members rejected government offer (51.81% to 48.82%). 50,677 members voted in straw poll. Strike on 23 July with rally at Bourke Street Mall then Parliament House. Demands include action on workload and class sizes.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Bourke Street Mall / Parliament House" }
+    ],
+    sources: [
+        { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+    ]
+        },
+
+        // MUA - Certis (Port Botany gatehouse guards)
+        {
+            id: 7002,
+            actionId: "certis-mua",
+            title: "Certis Gatehouse Guards Strike at Port Botany",
+            union: "MUA",
+            industry: "Ports / Security",
+            type: "strike",
+            startDate: "2026-07-24",
+            endDate: "2026-07-24",
+            workers: null,
+            description: "Gatehouse guards at DP World Port Botany striking again. In negotiations since late last year, commenced industrial action in May. Certis refusing fair offer. Scabs expected.",
+            locations: [
+                { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "DP World Port Botany" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // AMWU/AWU/ETU WA - BHP Port Hedland (historic strike)
+        {
+            id: 7003,
+            actionId: "bhp-hedland",
+            title: "BHP Port Hedland Workers Hold Historic Strike",
+            union: "AMWU / AWU / ETU",
+            industry: "Mining",
+            type: "strike",
+            startDate: "2026-07-23",
+            endDate: "2026-07-23",
+            workers: null,
+            description: "Historic strike at BHP Port Hedland. Union members walked off at 2pm. Solidarity rallies in Melbourne and Brisbane. Negotiations resumed in FWC; talks described as 'constructive'. More action if negotiations stall.",
+            locations: [
+                { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // UWU - ISS Perth Airport (aviation screening officers)
+        {
+            id: 7004,
+            actionId: "perth-airport-iss",
+            title: "Perth Airport Screening Officers Strike",
+            union: "UWU",
+            industry: "Aviation",
+            type: "strike",
+            startDate: "2026-07-17",
+            endDate: "",
+            workers: null,
+            description: "Aviation screening officers walked off on 17 and 20 July. Paid 13-19% less than interstate counterparts. Insecure rosters (16 hrs/week guaranteed, 4-hr shifts). One proposal already voted down. Demands: pay parity, secure jobs, respectful rostering.",
+            locations: [
+                { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth Airport" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // CPSU Victoria - Parks Victoria (work bans)
+        {
+            id: 7005,
+            actionId: "parks-victoria",
+            title: "Parks Victoria Workers Escalate Work Bans",
+            union: "CPSU Victoria",
+            industry: "Environment / Parks",
+            type: "strike",
+            startDate: "2026-07-18",
+            endDate: "2026-07-27",
+            workers: null,
+            description: "Work bans from 18-27 July: entrance gates may not unlock, bins not emptied, toilets not cleaned. Pay grades now below minimum wage. Campaign for fair pay.",
+            locations: [
+                { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various parks across Victoria" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // CEPU SA - Service Stream (stoppages)
+        {
+            id: 7006,
+            actionId: "service-stream-sa-cepu",
+            title: "Service Stream SA Workers Hold Stoppages",
+            union: "CEPU SA",
+            industry: "Telecommunications / Defence",
+            type: "strike",
+            startDate: "2026-07-16",
+            endDate: "",
+            workers: null,
+            description: "Stoppages on 16, 17, 20, 21 July. Agreement voted down. Workers from RAAF Base Edinburgh and Defence Base Woomera walked off. Seeking industry standard wages. Company recently signed $1.6B defence contract.",
+            locations: [
+                { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "RAAF Base Edinburgh / Woomera" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // ANMF Victoria - Public school nurses (ongoing action)
+        {
+            id: 7007,
+            actionId: "anmf-school-nurses",
+            title: "Public School Nurses Continue Industrial Action",
+            union: "ANMF Victoria",
+            industry: "Healthcare / Education",
+            type: "strike",
+            startDate: "2026-05-01",
+            endDate: "",
+            workers: null,
+            description: "School nurses taking action for over 80 days. Fighting for pay parity with public sector colleagues. Actions include community engagement, media comment, wearing union shirts, displaying campaign messages.",
+            locations: [
+                { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public schools" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // CPSU ACT - ACT public sector (new offer)
+        {
+            id: 7008,
+            actionId: "act-public-sector",
+            title: "ACT Public Sector Workers Polled on New Offer",
+            union: "CPSU ACT",
+            industry: "Public Sector",
+            type: "planned",
+            startDate: "2026-07-22",
+            endDate: "",
+            workers: null,
+            description: "New offer: 9% over 3 years, $600 cost of living payment (or $1000 if CPI hits 4%), super to 13%, AI clause, personal leave cap from 7 to 10 days. CPSU polling members until 27 July. Ballot in August.",
+            locations: [
+                { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // CPSU Tasmania - Launceston Reception Prison (industrial action)
+        {
+            id: 7009,
+            actionId: "launceston-prison-cpsu",
+            title: "Launceston Prison Officers Take Industrial Action",
+            union: "CPSU Tasmania",
+            industry: "Corrections",
+            type: "strike",
+            startDate: "2026-07-14",
+            endDate: "2026-07-15",
+            workers: null,
+            description: "Second action in 3 months. Refused additional prisoners from Hobart, only essential welfare, cancelled non-essential movements. Protesting chronic overcrowding and pest issues (rats in cells).",
+            locations: [
+                { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston Reception Prison" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // MSAV - Public health professionals (survey for action)
+        {
+            id: 7010,
+            actionId: "msav-public-health",
+            title: "MSAV Members Surveyed on Industrial Action",
+            union: "MSAV",
+            industry: "Healthcare",
+            type: "planned",
+            startDate: "2026-07-22",
+            endDate: "",
+            workers: null,
+            description: "Survey sent to members to gauge appetite for action. No revised offer from government despite being advised to expect one. Union signalling escalation.",
+            locations: [
+                { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public health sites" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // AMWU Victoria - Kinetic buses (action commenced)
+        {
+            id: 7011,
+            actionId: "kinetic-amwu",
+            title: "Kinetic Bus Workers Commence Industrial Action",
+            union: "AMWU Victoria",
+            industry: "Transport",
+            type: "strike",
+            startDate: "2026-07-20",
+            endDate: "",
+            workers: null,
+            description: "AMWU members at Kinetic buses in Melbourne commenced industrial action after breakdown in negotiations.",
+            locations: [
+                { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Kinetic depots" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // ETU WA - UGL Varanus Island (ongoing, scab warning)
+        {
+            id: 7012,
+            actionId: "ugl-varanus-island",
+            title: "UGL Varanus Island Industrial Action Continues",
+            union: "ETU WA",
+            industry: "Oil & Gas",
+            type: "strike",
+            startDate: "2026-07-01",
+            endDate: "",
+            workers: null,
+            description: "Industrial action continues. ETU warns workers against scab labour through Mobalize, TechForce, Talent HQ, Core Talent. UGL and Santos seeking replacements.",
+            locations: [
+                { city: "Varanus Island", state: "WA", lat: WA["Varanus Island"][0], lng: WA["Varanus Island"][1], name: "Varanus Island" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+//Surly this has finished
+// Yep
+{ id:701201,
+  actionId: "ugl-varanus-island",
+  title:"UGL VI EBA Voted up",
+  union: "Offshore Alliance",
+  industry: "Oil & Gas",
+  type: "resolved",
+  startDate: "2026-08-19",
+  endDate: "2026-08-19",
+  workers: null,
+  description: "UGL IV EBA voted up",
+  locations: [
+      { city: "Varanus Island", state: "WA", lat: WA["Varanus Island"][0], lng: WA["Varanus Island"][1], name: "Varanus Island" }
+  ],
+  sources: [
+      { name: "Offshore Alliance FB Post - August 19", url: "https://www.facebook.com/100063786371409/posts/ugl-are-without-doubt-one-of-the-worst-maintenance-contractors-working-in-the-we/1711009564368573/" },
+  ],
+
+},
+
+        // ETU QLD - Cleanco Kareeya Power Station (action)
+        {
+            id: 7013,
+            actionId: "cleanco-kareeya",
+            title: "Cleanco Kareeya Power Station Workers Take Action",
+            union: "ETU QLD",
+            industry: "Energy",
+            type: "strike",
+            startDate: "2026-07-15",
+            endDate: "",
+            workers: null,
+            description: "Industrial action at Kareeya Power Station. Follows action at Barron Gorge in June. Fighting against hostile bargaining framework of Crisafulli Government. Cleanco is state government owned.",
+            locations: [
+                { city: "Cairns", state: "QLD", lat: CITY_COORDS["Cairns"][0], lng: CITY_COORDS["Cairns"][1], name: "Kareeya Power Station" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // QNMU - Bethany Christian Care (action commenced)
+        {
+            id: 7014,
+            actionId: "bethany-christian-care",
+            title: "Bethany Christian Care Workers Commence Industrial Action",
+            union: "QNMU",
+            industry: "Aged Care",
+            type: "strike",
+            startDate: "2026-07-16",
+            endDate: "",
+            workers: null,
+            description: "Industrial action commenced. Management offer not good enough; workers fighting for fair agreement.",
+            locations: [
+                { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Bethany Christian Care" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // MUA WA - Port of Broome (PABO endorsed)
+        {
+            id: 7015,
+            actionId: "port-broome-mua",
+            title: "Port of Broome Workers Endorse Industrial Action",
+            union: "MUA WA",
+            industry: "Ports",
+            type: "planned",
+            startDate: "2026-07-24",
+            endDate: "",
+            workers: null,
+            description: "100% of MUA members endorsed industrial action. Action kicks off 24 July.",
+            locations: [
+                { city: "Broome", state: "WA", lat: -17.9614, lng: 122.2353, name: "Port of Broome" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // AIPA - Qantas (PABO vote)
+        {
+            id: 7016,
+            actionId: "qantas-aipa",
+            title: "Qantas Pilots to Vote in Protected Action Ballot",
+            union: "AIPA",
+            industry: "Aviation",
+            type: "planned",
+            startDate: "2026-07-29",
+            endDate: "",
+            workers: null,
+            description: "AIPA members to vote in PABO next week. Negotiations ongoing for 2 years. Pilots rejected Qantas offer in April. Seeking work-life balance and pay rise above 3%. Long-haul pilots haven't taken action for 15 years.",
+            locations: [
+                { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Qantas" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
+
+        // Resolution: AWU/ETU/MUA - Inpex (agreement endorsed)
+        {
+            id: 7017,
+            actionId: "inpex-resolution",
+            title: "Inpex Workers Endorse New Agreement",
+            union: "AWU / ETU / MUA",
+            industry: "Oil & Gas",
+            type: "resolved",
+            startDate: "2026-07-22",
+            endDate: "2026-07-22",
+            workers: null,
+            description: "97.3% participation, 97.5% voted in favour. Agreement includes highest remuneration among Tier-1 operators, career progression, 20 job share positions, additional leave, improved fatigue management. Unions estimate action cost Inpex $200 million.",
+            locations: [
+                { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Inpex" }
+            ],
+            sources: [
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+            ]
+        },
 ];
 
 // Export globally

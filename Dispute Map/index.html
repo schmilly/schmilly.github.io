@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AU Strike Watch — Industrial Action Map</title>
+    <title>Dispute and Struggle Watch — Industrial Action Map</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -32,13 +32,9 @@
         </div>
         <!-- <button id="add-report-btn" class="btn primary" style="margin-left: auto;">+ Report</button> -->
     </header>    <!-- ═══ TOP BAR ═══ -->
-    <header id="topbar">
-This is currently a work in progress and thusly should be treat as such. Do not rely on this site for factual information.
-    </header>
 
     <!-- ═══ NEWS TICKER ═══ -->
     <div id="ticker">
-        <div class="ticker-label">⚡ Live</div>
         <div class="ticker-content" id="ticker-content">
             <span>Loading latest industrial actions…</span>
         </div>
@@ -48,6 +44,7 @@ This is currently a work in progress and thusly should be treat as such. Do not 
     <div id="main">
         <!-- Sidebar -->
         <aside id="sidebar">
+            <div class="minor">This is currently a work in progress and thusly should be treat as such. Do not rely on this site for factual information.</div>
             <!-- Search -->
             <div class="sidebar-header">
                 <h2>🔍 Search Disputes</h2>
@@ -59,10 +56,12 @@ This is currently a work in progress and thusly should be treat as such. Do not 
                 <div class="filter-label">Event Type</div>
                 <div class="filter-chips" id="type-filters">
                     <div class="filter-chip active" data-type="all">All</div>
-                    <div class="filter-chip" data-type="strike">⚠️ Strike</div>
+                    <div class="filter-chip" data-type="strike">✊ Strike/Collection Action</div>
                     <div class="filter-chip" data-type="lockout">🔒 Lockout</div>
-                    <div class="filter-chip" data-type="protest">✊ Protest</div>
+                    <div class="filter-chip" data-type="protest">🪧 Protest</div>
                     <div class="filter-chip" data-type="planned">📋 Planned</div>
+                    <div class="filter-chip" data-type="ballot">🗳️ Ballot</div>
+                    <div class="filter-chip" data-type="scab">🐀 Scab Alert</div>
                     <div class="filter-chip" data-type="resolved">✅ Resolved</div>
                 </div>
             </div>
@@ -127,6 +126,7 @@ This is currently a work in progress and thusly should be treat as such. Do not 
             </div>
         </div>
     </div>
+
     <!-- ═══ ADD REPORT MODAL ═══ -->
     <div class="modal-overlay" id="add-modal">
         <div class="modal">
@@ -231,6 +231,9 @@ This is currently a work in progress and thusly should be treat as such. Do not 
             <!-- Populated dynamically -->
         </div>
     </div>
+
+
+
 
     <!-- ═══ Leaflet JS ═══ -->
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
