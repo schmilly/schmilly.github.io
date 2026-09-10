@@ -223,7 +223,7 @@ html, body {
     border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
     transition: margin-left 0.3s ease, width 0.3s ease;
     z-index: 900;
 }
@@ -686,6 +686,10 @@ html, body {
         --ticker-height: 28px;
     }
 
+    #ticker {
+        display: none;
+    }
+
     #topbar {
         padding: 0 8px;
         gap: 8px;
@@ -784,6 +788,10 @@ html, body {
         --sidebar-width: 260px;
         --topbar-height: 44px;
         --ticker-height: 24px;
+    }
+
+    #ticker {
+        display: none;
     }
 
     #topbar .logo {
