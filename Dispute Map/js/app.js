@@ -22,7 +22,7 @@
  resolved:   { emoji: '✔', color: '#2ecc71' },
  ballot:      {emoji: '🗳️',color:'#acbfa4'},
  scab:       {emoji:'🐀',color:'brown'},
- default:    { emoji: '❔', color: '#95a5a6' }
+ default:    { emoji: '?', color: '#95a5a6' }
     };
 
     function getTypeInfo(type) {

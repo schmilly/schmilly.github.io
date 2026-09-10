@@ -660,11 +660,11 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 11px;
     background: rgba(13, 17, 23, 0.96);
     border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 10px;
+    color: var(--text-primary);
+    font-size: 11px;
     line-height: 1.3;
     z-index: 1100;
     text-align: center;
@@ -797,4 +797,8 @@ html, body {
     .sidebar-header h2 {
         font-size: 12px;
     }
+}
+
+a {
+    color: var(--strike)
 }
