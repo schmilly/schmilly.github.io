@@ -19,7 +19,7 @@
  lockout:    { emoji: '🔒', color: '#e67e22' },
  protest:    { emoji: '🪧', color: '#f1c40f' },
  planned:    { emoji: '📋', color: '#3498db' },
- resolved:   { emoji: '✅', color: '#2ecc71' },
+ resolved:   { emoji: '✔', color: '#2ecc71' },
  ballot:      {emoji: '🗳️',color:'#acbfa4'},
  scab:       {emoji:'🐀',color:'brown'},
  default:    { emoji: '❔', color: '#95a5a6' }
@@ -33,7 +33,7 @@
         const info = getTypeInfo(type);
         const containerSize = size + 6;
         const fontSize = size;
-        return `<span style="font-size: ${fontSize}px; line-height: 1;">${info.emoji}</span>`;
+        return `<span  style="font-size: ${fontSize}px; line-height: 1;color: ${info.color}">${info.emoji}</span>`;
     }
 
         // ─── State ───
@@ -45,6 +45,7 @@
         let activeDateRange = 'all';
         let activeUpcomingFilter = false;
         let activeTagFilter = null;
+        let tagsExpanded = false;
         let searchQuery = '';
         let selectedActionId = null;
         let map;
@@ -60,6 +61,7 @@
         const dateFilterChips = document.querySelectorAll('#date-filters .filter-chip');
         const upcomingFilterChip = document.getElementById('upcoming-filter');
         const tagFilterContainer = document.getElementById('tag-filters');
+        const tagToggleBtn = document.getElementById('tag-toggle');
         const statActiveEl = document.getElementById('stat-active');
         const statPlannedEl = document.getElementById('stat-planned');
         const statWorkersEl = document.getElementById('stat-workers');
@@ -156,7 +158,7 @@
             });
             tagFilterContainer.appendChild(allChip);
 
-            tagSet.forEach(tag => {
+            [...tagSet].sort((a, b) => a.localeCompare(b)).forEach(tag => {
                 const chip = document.createElement('div');
                 chip.className = 'filter-chip' + (activeTagFilter === tag ? ' active' : '');
                 chip.dataset.tag = tag;
@@ -168,17 +170,31 @@
                 });
                 tagFilterContainer.appendChild(chip);
             });
+
+            updateTagVisibility();
         }
 
         function updateTagChips() {
-            const chips = tagFilterContainer.querySelectorAll('.filter-chip');
-            chips.forEach(chip => {
-                if (chip.dataset.tag === 'all') {
-                    chip.classList.toggle('active', activeTagFilter === null);
-                } else {
-                    chip.classList.toggle('active', chip.dataset.tag === activeTagFilter);
-                }
+            tagFilterContainer.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.classList.toggle('active',
+                    chip.dataset.tag === 'all' ? activeTagFilter === null : chip.dataset.tag === activeTagFilter
+                );
             });
+            updateTagVisibility();
+        }
+
+        function updateTagVisibility() {
+            const chips = [...tagFilterContainer.querySelectorAll('.filter-chip')];
+            const collapsedCount = 7;
+            chips.forEach((chip, index) => {
+                chip.hidden = !tagsExpanded && index >= collapsedCount && chip.dataset.tag !== activeTagFilter;
+            });
+            if (tagToggleBtn) {
+                const hiddenCount = chips.filter(chip => chip.hidden).length;
+                tagToggleBtn.hidden = hiddenCount === 0;
+                tagToggleBtn.textContent = tagsExpanded ? 'Show fewer tags' : `Show all tags${hiddenCount ? ` (${hiddenCount})` : ''}`;
+                tagToggleBtn.setAttribute('aria-expanded', String(tagsExpanded));
+            }
         }
 
         // ─── Map Initialization ───
@@ -422,7 +438,11 @@
                 const e = action.latestEntry;
                 return `<span>${getEmojiHtml(e.type, 14)} ${escapeHtml(e.title)} — ${formatDate(e.startDate)}</span>`;
             }).join('');
-            tickerContentEl.innerHTML = tickerHTML;
+            // Duplicate the ticker content so the animation loops seamlessly.
+            tickerContentEl.innerHTML = tickerHTML + tickerHTML;
+            tickerContentEl.classList.remove('is-scrolling');
+            void tickerContentEl.offsetWidth;
+            tickerContentEl.classList.add('is-scrolling');
         }
 
         // ─── Detail Modal ───
@@ -598,6 +618,13 @@
 
         // ─── UI Event Binding ───
         function bindUIEvents() {
+            if (tagToggleBtn) {
+                tagToggleBtn.addEventListener('click', () => {
+                    tagsExpanded = !tagsExpanded;
+                    updateTagVisibility();
+                });
+            }
+
             sidebarToggleBtn.addEventListener('click', () => {
                 sidebarEl.classList.toggle('collapsed');
             });

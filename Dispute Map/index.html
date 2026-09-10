@@ -22,7 +22,7 @@
             <span class="dot"></span>
             Dispute and Strike Map
             <span>· Industrial Action Map ·</span>
-            All credit for the amazing information goes to  the incredible <a href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a href=""disputesreport.substack.com> Disputes Report</a>
+            All credit for the amazing information goes to  the incredible <a href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a href="https://disputesreport.substack.com"> Disputes Report</a>
         </div>
         <div class="stats-bar" id="stats-bar">
             <div class="stat"><span class="number" id="stat-active">0</span><span class="label">Active</span></div>
@@ -44,7 +44,9 @@
     <div id="main">
         <!-- Sidebar -->
         <aside id="sidebar">
-            <div class="minor">This is currently a work in progress and thusly should be treat as such. Do not rely on this site for factual information.</div>
+            <div class="minor" role="note">
+                <strong>Work in progress:</strong> This map is experimental and may contain errors or omissions. Do not rely on it as a definitive source of factual information.
+            </div>
             <!-- Search -->
             <div class="sidebar-header">
                 <h2>🔍 Search Disputes</h2>
@@ -62,7 +64,7 @@
                     <div class="filter-chip" data-type="planned">📋 Planned</div>
                     <div class="filter-chip" data-type="ballot">🗳️ Ballot</div>
                     <div class="filter-chip" data-type="scab">🐀 Scab Alert</div>
-                    <div class="filter-chip" data-type="resolved">✅ Resolved</div>
+                    <div class="filter-chip" data-type="resolved">✔ Resolved</div>
                 </div>
             </div>
 
@@ -104,9 +106,10 @@
             <!-- Tag filters -->
             <div class="filter-section">
                 <div class="filter-label">Tags</div>
-                <div class="filter-chips" id="tag-filters">
+                <div class="filter-chips tag-filters" id="tag-filters">
                     <!-- Dynamically populated -->
                 </div>
+                <button type="button" class="tag-toggle" id="tag-toggle" aria-expanded="false">Show all tags</button>
             </div>
 
             <!-- Event list -->
@@ -118,14 +121,23 @@
             <div id="map"></div>
             <div class="map-legend">
                 <div class="legend-title">Event Types</div>
-                <div class="legend-row"><span class="legend-emoji">⚠️</span> Strike</div>
+                <div class="legend-row"><span class="legend-emoji">✊</span> Strike</div>
                 <div class="legend-row"><span class="legend-emoji">🔒</span> Lockout</div>
-                <div class="legend-row"><span class="legend-emoji">✊</span> Protest/Rally</div>
+                <div class="legend-row"><span class="legend-emoji">🪧</span> Protest/Rally</div>
                 <div class="legend-row"><span class="legend-emoji">📋</span> Planned</div>
-                <div class="legend-row"><span class="legend-emoji">✅</span> Resolved</div>
+                <div class="legend-row"><span class="legend-emoji">🗳️</span> Ballot</div>
+                <div class="legend-row"><span class="legend-emoji">🐀</span> Scab</div>
+                <div class="legend-row"><span class="legend-emoji">✔</span> Resolved</div>
+
             </div>
         </div>
     </div>
+
+    <!-- ═══ FOOTER DISCLAIMER ═══ -->
+    <footer id="site-footer">
+        <span><strong>Disclaimer:</strong> Experimental community map — information may be incomplete or inaccurate.</span>
+        <span class="footer-note">Use source links to verify details.</span>
+    </footer>
 
     <!-- ═══ ADD REPORT MODAL ═══ -->
     <div class="modal-overlay" id="add-modal">
