@@ -16,7 +16,6 @@
     --planned: #3498db;
     --resolved: #2ecc71;
     --other: #95a5a6;
-    --accent: #58a6ff;
     --glow: rgba(231, 76, 60, 0.4);
     --sidebar-width: 340px;
     --topbar-height: 52px;
@@ -271,24 +270,108 @@ html, body {
 }
 
 .filter-section {
-    padding: 10px 14px;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
 }
 
-.filter-label {
+/* ─── Collapsible filter header ─── */
+.filter-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: transparent;
+    border: 0;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
     font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.7px;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 6px;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s, background 0.15s;
+}
+
+.filter-header:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+.filter-header:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.filter-header .filter-label {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+}
+
+.filter-header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.filter-summary {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    color: var(--accent);
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter-summary:empty {
+    display: none;
+}
+
+.chevron {
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.filter-section.collapsed .chevron {
+    transform: rotate(-45deg);
+}
+
+/* ─── Collapsible panel (grid-rows trick animates to auto height) ─── */
+.filter-panel {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.22s ease;
+}
+
+.filter-section.collapsed .filter-panel {
+    grid-template-rows: 0fr;
+}
+
+.filter-panel-inner {
+    overflow: hidden;
+    min-height: 0;
 }
 
 .filter-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+    padding: 0 14px 12px;
 }
 
 .filter-chip {
@@ -415,18 +498,23 @@ html, body {
     align-items: flex-start;
 }
 
-.tag-filters .filter-chip[hidden] {
+.filter-chips .filter-chip[hidden] {
     display: none;
 }
 
 .tag-toggle {
-    margin-top: 7px;
-    padding: 3px 8px;
+    display: block;
+    margin: 0 14px 12px;
+    padding: 3px 0;
     border: 0;
     background: transparent;
     color: var(--accent);
     font: 600 10px var(--font-sans);
     cursor: pointer;
+}
+
+.tag-toggle[hidden] {
+    display: none;
 }
 
 .tag-toggle:hover {

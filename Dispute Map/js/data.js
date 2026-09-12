@@ -72,7 +72,8 @@ const COMPANY = {
     },
     "Alcoa": {
         "WA":[-32.03623881672403, 115.83298262212477]
-    }
+    },
+    "Nissan Casting": [-38.02148284314224, 145.2165257516094],
 }
 
 const MELB = {
@@ -101,7 +102,8 @@ const PER = {
 const SYD = {
     "Quay": [-33.86047772953971, 151.2110670199961],
     "Uni": [-33.88810449082193, 151.1871032773295],
-    "Northern Beaches": [-33.670256518987316, 151.31802318697055]
+    "Northern Beaches": [-33.670256518987316, 151.31802318697055],
+    "QANTAS": [-33.92548617476988, 151.18660150979397],
 }
 
 const MINE = {
@@ -782,15 +784,15 @@ const STRIKE_DATA = [
 {
     id: 112,
     actionId: "aeu-vic-teachers",
-    title: "Victorian Public School Teachers Strike 24 Hours",
+    title: "Victorian Public School Teachers met and voted to Strike for 24 Hours",
     union: "AEU Victoria",
     industry: "Education",
     type: "planned",
-    startDate: "2026-08-19",
-    endDate: "2026-08-19",
+    startDate: "2026-07-31",
+    endDate: "2026-07-31",
     workers: null,
     state:"VIC",
-    description: "Third strike on 19 Aug. Negotiations stalled with new Education Minister.",
+    description: "Third strike planned on 19 Aug. Negotiations stalled with new Education Minister.",
 
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
@@ -981,7 +983,7 @@ const STRIKE_DATA = [
 // Wins/resolutions: AMWU/AWU Vic - Viva Oil Refinery
 {
     id: 122,
-    actionId: "ugl-viva-resolution",
+    actionId: "ugl-viva-refinery",
     title: "Viva Oil Refinery Workers Endorse New EBA",
     union: "AMWU / AWU Vic",
     industry: "Oil & Gas",
@@ -2284,10 +2286,10 @@ const STRIKE_DATA = [
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
-            city: "Unknown",
-            state: "",
-            lat: -25.5,
-            lng: 134.0,
+            city: "Dandeong, Victoria",
+            state: "VIC",
+            lat: COMPANY["Nissan Casting"][0],
+            lng: COMPANY["Nissan Casting"][1],
             name: "Nissan Casting Australia Pty Ltd"
         }
     ],
@@ -2928,7 +2930,7 @@ const STRIKE_DATA = [
             workers: null,
             description: "AIPA members to vote in PABO next week. Negotiations ongoing for 2 years. Pilots rejected Qantas offer in April. Seeking work-life balance and pay rise above 3%. Long-haul pilots haven't taken action for 15 years.",
             locations: [
-                { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Qantas" }
+                { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas" }
             ],
             sources: [
                 { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2954,6 +2956,584 @@ const STRIKE_DATA = [
                 { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
             ]
         },
+{
+    id: 8001,
+    actionId: "dxc-asu-professionals-australia",
+    title: "DXC Workers Commence Stop Work Actions",
+    union: "ASU / Professionals Australia",
+    industry: "IT Services",
+    type: "strike",
+    startDate: "2026-07-01",
+    endDate: "2026-07-14",
+    workers: null,
+    description: "After rejecting DXC's proposed offer, workers commenced 3 days of stop work actions from 1 July, including on the ATO mainframe at a peak time for the tax agency. Clients affected included the ATO, Victorian WorkCover Authority, WorkSafe, Victoria Police and City of Gold Coast. Stoppages continue until at least 14 July. Workers seek a 4% wage increase backdated to 1 July 2025.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian WorkCover Authority / WorkSafe / Victoria Police" },
+        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8002,
+    actionId: "qld-rail-amwu-etu",
+    title: "Queensland Rail In-Principle Agreements Reached for Three EBAs",
+    union: "AMWU / ASU / ETU / Professionals Australia / RTBU QLD",
+    industry: "Rail Transport",
+    type: "resolved",
+    startDate: "2026-07-07",
+    endDate: "",
+    workers: 3500,
+    description: "In-principle agreements reached for the administrative, professional and technical; travel and tourism and other employees; and station operations EBAs. Includes 8% over 3 years plus a cost-of-living relief payment with backpay from 1 June 2026. Negotiations continue for train control, network, rollingstock and operations, and a proposed electrical-only agreement. Disruptions likely continue in maintenance areas.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland Rail Network" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8003,
+    actionId: "peabody-meu",
+    title: "Peabody Extends Indefinite Lockout at Wambo Washery",
+    union: "MEU",
+    industry: "Mining",
+    type: "lockout",
+    startDate: "2026-07-01",
+    endDate: "",
+    workers: null,
+    state: "NSW",
+    description: "Peabody refused to accept work from union members participating in partial work bans after the lockout was due to end on 1 July, in practice an indefinite lockout. The MEU alleges Peabody is sharing cherry-picked figures and bundling superannuation and bonuses when wage increases are only applied to the base rate.",
+    locations: [
+        { city: "Newcastle", state: "NSW", lat: MINE["Wambo"][0], lng: MINE["Wambo"][1], name: "Wambo Washery" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8004,
+    actionId: "act-aeu-teachers",
+    title: "ACT Public School Teachers Continue Work Bans",
+    union: "AEU ACT",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-06-26",
+    endDate: "",
+    workers: null,
+    state: "ACT",
+    description: "AEU members at ACT public schools continue work bans. The Education Directorate sent an after-hours direction for teachers to detail industrial action in timesheets; it was withdrawn after the AEU lodged a dispute. Bans include no written comments on student reports; no staff meetings after 3:30pm; talking to parents about industrial action; not participating in Directorate surveys; and wearing AEU t-shirts on Fridays.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT public schools" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8005,
+    actionId: "vahpa-allied-health",
+    title: "VAHPA Public Allied Health Rallies and Work Bans",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "strike",
+    startDate: "2026-07-03",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "VAHPA members rallied at GV Health Shepparton on 3 July and at Barwon Health Geelong, Peninsula University Hospital Frankston and Olivia Newton John Cancer Wellness Centre Heidelberg on 7 July. Work bans and stoppages continue after 10 months bargaining and one unsatisfactory government offer.",
+    locations: [
+        { city: "Shepparton", state: "VIC", lat: -36.3833, lng: 145.4000, name: "GV Health" },
+        { city: "Geelong", state: "VIC", lat: CITY_COORDS["Geelong"][0], lng: CITY_COORDS["Geelong"][1], name: "Barwon Health" },
+        { city: "Frankston", state: "VIC", lat: -38.1440, lng: 145.1220, name: "Peninsula University Hospital" },
+        { city: "Heidelberg", state: "VIC", lat: -37.7580, lng: 145.0670, name: "Olivia Newton John Cancer Wellness Centre" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8006,
+    actionId: "glencore-townsville",
+    title: "Glencore Rejects ETU Concession Offer at Townsville Refinery",
+    union: "ETU",
+    industry: "Mining",
+    type: "strike",
+    startDate: "2026-07-02",
+    endDate: "",
+    workers: null,
+    state: "QLD",
+    description: "The ETU made a one-time concession offer to Glencore: 4% annual wage increases over 3 years with existing bonuses rolled into base rates, on the basis industrial action would be withdrawn for an uninterrupted vote. Glencore rejected the offer and threatened that large financial elements would be withdrawn if workers did not accept what was on the table. Industrial action continues.",
+    locations: [
+        { city: "Townsville", state: "QLD", lat: REF["Townsville Copper"][0], lng: REF["Townsville Copper"][1], name: "Townsville Copper Refinery" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8007,
+    actionId: "downer-orange-hsu",
+    title: "Orange Base Hospital Workers Walk Off Over Dangerous Rosters",
+    union: "HSU NSW",
+    industry: "Healthcare / Facilities",
+    type: "strike",
+    startDate: "2026-07-06",
+    endDate: "2026-07-06",
+    workers: null,
+    state: "NSW",
+    description: "HSU members at Orange Base Hospital walked off the job for 2 hours over dangerous rosters that leave workers with only a seven-hour gap between shifts. The Downer Group is contracted to operate non-clinical services at the public-private partnership hospital.",
+    locations: [
+        { city: "Orange", state: "NSW", lat: -33.2833, lng: 149.1000, name: "Orange Base Hospital" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8008,
+    actionId: "parks-victoria",
+    title: "Parks Victoria Workers Hold Second 24-Hour Strike",
+    union: "ASU / CPSU Vic",
+    industry: "Environment / Parks",
+    type: "strike",
+    startDate: "2026-07-08",
+    endDate: "2026-07-08",
+    workers: null,
+    state: "VIC",
+    description: "Second 24-hour strike at Parks Victoria. Workers rallied outside the Environment Minister's office at 8 Nicholson Street, Melbourne from 12 noon. Workers are fighting for a fair deal from the state government, including pay parity with public sector colleagues.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Environment Minister's Office, 8 Nicholson Street" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8009,
+    actionId: "keolis-downer-rtbu",
+    title: "Keolis Downer Northern Beaches Bus Action Escalates",
+    union: "RTBU NSW",
+    industry: "Transport",
+    type: "strike",
+    startDate: "2026-06-18",
+    endDate: "",
+    workers: null,
+    state: "NSW",
+    description: "RTBU members have been turning off Opal card readers since 18 June and this week instituted a ban on driving any bus displaying a dashboard warning light. Workers are fighting for decent wages and safer working conditions.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SYD["Northern Beaches"][0], lng: SYD["Northern Beaches"][1], name: "Northern Beaches" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8010,
+    actionId: "ugl-viva-refinery",
+    title: "UGL Viva Refinery Workers Hold Weekly Friday Stoppages",
+    union: "AMWU / AWU Vic",
+    industry: "Oil & Gas",
+    type: "strike",
+    startDate: "2026-06-19",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "AWU members held a 4-hour stoppage on 19 June following AMWU action on 12 June at the Viva refinery in Geelong. Workers will participate in stoppages every Friday until they get a better deal. Claims include 4% annual pay increases, better severance pay and consistent overtime pay.",
+    locations: [
+        { city: "Geelong", state: "VIC", lat: COMPANY["Viva"][0], lng: COMPANY["Viva"][1], name: "Viva Oil Refinery" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8011,
+    actionId: "alcoa-ugl-amwu",
+    title: "UGL BP Refinery Workers Apply for Protected Action Ballot",
+    union: "AMWU WA",
+    industry: "Oil & Gas",
+    type: "planned",
+    startDate: "2026-07-08",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "The AMWU applied for a protected action ballot on behalf of members at BP Refinery employed by UGL. Workers are fighting for a fair wage increase, industry standard site and travel allowances, and recognition for working on a major hazard facility.",
+    locations: [
+        { city: "Kwinana", state: "WA", lat: -32.2333, lng: 115.7833, name: "BP Refinery Kwinana" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8012,
+    actionId: "bhp-hedland",
+    title: "BHP Port Hedland AWU Members Endorse Industrial Action",
+    union: "AWU / AMWU / ETU",
+    industry: "Mining",
+    type: "planned",
+    startDate: "2026-07-07",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "AWU members employed by BHP at Port Hedland endorsed protected industrial action, with 97% voting yes, following strong protected action ballot results from AMWU and ETU members. The three unions met BHP on 7 July, with a strong indication industrial action would follow if it did not go well.",
+    locations: [
+        { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8013,
+    actionId: "bhp-mining-area-c",
+    title: "BHP Mining Area C and South Flank Agreement Endorsed",
+    union: "AMWU / AWU / ETU / MEU",
+    industry: "Mining",
+    type: "resolved",
+    startDate: "2026-07-07",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "BHP's proposed agreement covering workers at Mining Area C and South Flank was endorsed by a narrow majority of 58%. The agreement includes annual pay increases of 4% over 4 years, 14% superannuation contributions, and a delayed flight compensation scheme commencing next year. Both the AMWU and ETU recommended a no vote; the Western Mine Workers Alliance acknowledged the agreement failed to meet a number of claims.",
+    locations: [
+        { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Mining Area C / South Flank" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8014,
+    actionId: "kinetic-tas-twu",
+    title: "Kinetic Tasmania Bus Drivers Reach In-Principle Agreement",
+    union: "TWU Tasmania",
+    industry: "Transport",
+    type: "resolved",
+    startDate: "2026-07-07",
+    endDate: "",
+    workers: null,
+    state: "TAS",
+    description: "The TWU reached an in-principle agreement with Kinetic covering all Kinetic bus drivers across Tasmania in a single agreement for the first time. Workers achieved an immediate 6.65% wage increase, with 4% increases in the next 2 years, greater roster certainty, increased shift loadings and other improvements.",
+    locations: [
+        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Kinetic Hobart" },
+        { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Kinetic Launceston" },
+        { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "Kinetic Burnie" },
+        { city: "Devonport", state: "TAS", lat: CITY_COORDS["Devonport"][0], lng: CITY_COORDS["Devonport"][1], name: "Kinetic Devonport" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8015,
+    actionId: "racq-amwu",
+    title: "RACQ Workers Endorse New Offer After June Action",
+    union: "AMWU QLD",
+    industry: "Roadside Assistance / Insurance",
+    type: "resolved",
+    startDate: "2026-07-07",
+    endDate: "",
+    workers: null,
+    state: "QLD",
+    description: "Following industrial action in June, workers endorsed a new offer from RACQ. The new deal includes a 17% pay rise, allowances indexed every year, leave loading, paid time for on-job tasks and other improvements.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "RACQ" }
+    ],
+    sources: [
+        { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
+    ]
+},
+{
+    id: 8016,
+    actionId: "aeu-vic-teachers",
+    title: "AEU members vote to accept pay and conditions offer",
+    union: "AEU Victoria",
+    industry: "Education",
+    type: "resolved",
+    startDate: "2026-08-16",
+    endDate: "2026-08-16",
+    workers: null,
+    description: "Victorian public school teachers, principals, and education support staff have overwhelming endorsed the latest pay and conditions offer. 79% of Australian Education Union members working in Victorian public schools have voted to accept the government’s offer of pay rises between 28.3% and 32.4% over four years, and a lump sum payment of $2,000 at the start of the agreement. ",
+
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+    ],
+    sources: [
+        { name: "AEU Vic. - AEU members vote to accept pay and conditions offer", url: "https://www.aeuvic.asn.au/aeu-members-vote-accept-pay-and-conditions-offer" }
+    ]
+},
+{
+    id: 8101,
+    actionId: "anmf-sa-nurses",
+    title: "SA Nurses and Midwives Reach In-Principle Agreement",
+    union: "ANMF SA",
+    industry: "Healthcare",
+    type: "resolved",
+    startDate: "2026-07-01",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "ANMF reached an in-principle agreement with the SA government for public sector nurses and midwives. The deal includes a 16% wage increase: 3% in January 2027, 3% in July 2027, 4% in July 2028, plus the 6% already agreed in February (4% backdated to 1 January and 2% from 26 October). This falls short of the 23% sought but improves on the 10.75% over 3 years rejected earlier. Industrial action is suspended while members vote.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Various public hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8102,
+    actionId: "campbells-soup-amwu",
+    title: "Campbell's Soup Workers Continue Industrial Action",
+    union: "AMWU Vic",
+    industry: "Food Manufacturing",
+    type: "strike",
+    startDate: "2026-05-20",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "AMWU members at Campbell's Soup have been undertaking industrial action for 6 weeks, but negotiations remain at a standstill. Management won't move from 7.7% over 3 years and an increase in casuals. Campbell's claims workers seek 18% over 3 years. Local management is complaining about loss of raw food due to industrial action.",
+    locations: [
+        { city: "Shepparton", state: "VIC", lat: -36.3833, lng: 145.4000, name: "Campbell's Soup Shepparton" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8103,
+    actionId: "aeu-vic-teachers",
+    title: "Victorian Teachers to Recommence Bans in Term 3",
+    union: "AEU Victoria",
+    industry: "Education",
+    type: "planned",
+    startDate: "2026-07-13",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "The AEU announced that at the start of Term 3 all bans and limitations will recommence. Expected bans include: no attending one hour of meetings per week; no principal members attending principal area forum meetings; no responding to Department of Education emails; no implementing new Department programs and initiatives; and no written comments on student reports. Term 2 reports were already missing comments due to previous bans.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8104,
+    actionId: "dof-offshore",
+    title: "DOF Accused of Recruiting Foreign Scabs",
+    union: "Offshore Alliance",
+    industry: "Offshore Energy",
+    type: "scab",
+    startDate: "2026-06-30",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "The Offshore Alliance warned DOF was trying to hire scabs. An article in The Australian outlined that recruiter Airswift was advertising specifically for foreign workers in response to industrial action. After being contacted by The Australian, Airswift claimed the wording was inadvertently included and did not accurately reflect the recruitment purpose. The LinkedIn post appears to have been taken down.",
+    locations: [
+        { city: "Perth", state: "WA", lat: PER["Ocean"][0], lng: PER["Ocean"][1], name: "DOF Base" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8105,
+    actionId: "peabody-meu",
+    title: "Peabody Lockout at Wambo Washery Continues",
+    union: "MEU",
+    industry: "Mining",
+    type: "lockout",
+    startDate: "2026-06-24",
+    endDate: "2026-07-01",
+    workers: null,
+    state: "NSW",
+    description: "The lockout of MEU members employed by Peabody at the Wambo washery continued into this week. Peabody's original notification indicated the lockout would end on 1 July, but it could be extended. Workers on the picket line were visited by ACTU President Michele O'Neil and local ALP MP Dan Repacholi. Workers are unhappy with the proposed wage increase and prepared to fight for a better deal.",
+    locations: [
+        { city: "Newcastle", state: "NSW", lat: MINE["Wambo"][0], lng: MINE["Wambo"][1], name: "Wambo Washery" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8106,
+    actionId: "act-public-sector",
+    title: "ACT Public Sector Professionals Commence Indefinite Action",
+    union: "Professionals Australia",
+    industry: "Public Sector",
+    type: "strike",
+    startDate: "2026-06-29",
+    endDate: "",
+    workers: null,
+    state: "ACT",
+    description: "Professionals Australia members across the ACT public sector, including forensic scientists, medical physicists, pharmacists and engineers, commenced indefinite industrial action on 29 June. They are dissatisfied with the territory government's below-inflation offer of 3% annual wage increases, delayed superannuation improvements and no backpay. The indefinite action includes bans on correspondence, electronic messaging, phone calls, out-of-hours work and external meetings.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8107,
+    actionId: "melb-councils-asu",
+    title: "Melbourne Metropolitan Council Action Continues",
+    union: "ASU Vic",
+    industry: "Local Government",
+    type: "strike",
+    startDate: "2026-06-01",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "Industrial action continues at all 8 metropolitan Melbourne councils fighting for a multi-employer agreement. This includes low-level bans like wearing union campaign t-shirts and stopping work to share information about the dispute. ASU members at Maribyrnong and Merri-Bek have implemented additional bans including street cleaning and library bans. Some Merri-Bek workers have received pay docking notices, which the union is examining.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan Melbourne councils" },
+        { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8108,
+    actionId: "dxc-asu-professionals-australia",
+    title: "DXC Workers Reject Latest Offer",
+    union: "Professionals Australia / ASU",
+    industry: "IT Services",
+    type: "strike",
+    startDate: "2026-06-30",
+    endDate: "",
+    workers: null,
+    description: "Workers at DXC rejected the tech contractor's latest offer, with 74% voting no. The deal included a one-off $1000 payment but had standby rates going backwards, no backpay and no cost-of-living increase. Professionals Australia also said DXC agreed to a number of clauses in negotiations, then deleted them without notifying anyone before putting the agreement to a vote. These included workplace delegates' rights, union induction access and union secondment leave.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian clients" },
+        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8109,
+    actionId: "bhp-mining-area-c",
+    title: "BHP Mining Area C and South Flank Ballot Under Way",
+    union: "AMWU / ETU",
+    industry: "Mining",
+    type: "ballot",
+    startDate: "2026-06-30",
+    endDate: "2026-07-03",
+    workers: null,
+    state: "WA",
+    description: "Both the AMWU and ETU are recommending a no vote on the agreement put out to a vote by BHP for workers at Mining Area C and South Flank. The Western Mineworkers Alliance (AWU and MEU) is not publicly recommending a yes or no vote, only saying it is important to vote. The ballot closes on Friday 3 July.",
+    locations: [
+        { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Mining Area C / South Flank" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8110,
+    actionId: "taswater-cepu",
+    title: "CEPU Lodges Dispute with TasWater Over Operator Cuts",
+    union: "CEPU Tasmania",
+    industry: "Utilities",
+    type: "planned",
+    startDate: "2026-07-01",
+    endDate: "",
+    workers: null,
+    state: "TAS",
+    description: "The CEPU formally lodged a dispute with TasWater over a plan to reduce the presence of operators at water and sewerage treatment plants. TasWater's plan would shift monitoring to remote systems and automation. The dispute was lodged as Environment Tasmania demonstrated TasWater released more than half a billion litres of improperly treated sewage into state waterways in 2024-2025.",
+    locations: [
+        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "TasWater" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8111,
+    actionId: "cfmeu-sa-builders",
+    title: "CFMEU SA Protected Action Ballots Voted Up at Major Builders",
+    union: "CFMEU SA",
+    industry: "Construction",
+    type: "strike",
+    startDate: "2026-06-29",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "The SA Branch of the CFMEU said protected action ballots had been voted up at 5 major builders, and protected industrial action would kick off this week across several major sites. FWC ballot results exist for Built, Lendlease, Multiplex, Watpac and Hansen Yuncken.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Major construction sites" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8112,
+    actionId: "ugl-varanus-island",
+    title: "UGL Varanus Island Workers Vote in Protected Action Ballot",
+    union: "Offshore Alliance",
+    industry: "Oil & Gas",
+    type: "ballot",
+    startDate: "2026-06-30",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "Union members employed by UGL on Varanus Island are voting in a protected action ballot. According to the Alliance, UGL's pay offer is 16% less than workers' demands, with 2% wage increases in the second, third and fourth years. Workers are fighting for an industry standard agreement with decent pay and allowances, training pay, overcycle rates and cyclone pay during cyclone stand downs. The ballot closed 30 June.",
+    locations: [
+        { city: "Varanus Island", state: "WA", lat: WA["Varanus Island"][0], lng: WA["Varanus Island"][1], name: "Varanus Island" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8113,
+    actionId: "act-cfmeu-gso",
+    title: "ACT General Service Officers Endorse Industrial Action",
+    union: "CFMEU ACT",
+    industry: "Public Sector",
+    type: "ballot",
+    startDate: "2026-06-29",
+    endDate: "",
+    workers: 300,
+    state: "ACT",
+    description: "Canberra's General Service Officers overwhelmingly endorsed industrial action. Of the 300 who voted in a protected action ballot, 99% were in favour. These CFMEU members are part of the broader ACT public sector negotiations. GSOs manage maintenance, waste management, parks and sports grounds in the ACT and are seeking a 12% wage increase over 3 years.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+},
+{
+    id: 8114,
+    actionId: "vic-doctors-strike",
+    title: "Victorian Public Hospital Doctors Endorse Protected Action Ballot Application",
+    union: "ASMOF Vic",
+    industry: "Healthcare",
+    type: "ballot",
+    startDate: "2026-06-29",
+    endDate: "",
+    workers: 2000,
+    state: "VIC",
+    description: "A meeting of more than 2000 ASMOF members endorsed the union applying for a protected action ballot, with only 12 members voting against. The last major industrial action by doctors in Victoria, a stop work meeting, was over 20 years ago. ASMOF has been negotiating for a new agreement for 10 months and has reached a stalemate. Key issues include high workloads, unsafe hours and poor pay.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
+    ]
+}
 ];
 
 // Export globally
