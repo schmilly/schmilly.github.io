@@ -101,7 +101,8 @@ const BRIS = {
 
 const PER = {
     "Ocean": [-32.06461197040717, 115.68461785309951],
-    "Airport": [-31.939091610821503, 115.96655132495701]
+    "Airport": [-31.939091610821503, 115.96655132495701],
+
 }
 
 const SYD = {
@@ -129,7 +130,8 @@ const SA = {
 }
 
 const WA ={
-    "Varanus Island": [-20.651803004964947, 115.57788827871269]
+    "Varanus Island": [-20.651803004964947, 115.57788827871269],
+    "Worsley Alumina": [-33.2421, 116.0666],
 }
 
 const QLD ={
@@ -2411,10 +2413,9 @@ const STRIKE_DATA = [
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
-            city: "Unknown",
-            state: "",
-            lat: -25.5,
-            lng: 134.0,
+            city: "Perth", state: "WA",
+            lat: WA["Worsley Alumina"][0],
+            lng: WA["Worsley Alumina"][1],
             name: "South32 Worsley Alumina Pty Ltd"
         }
     ],
@@ -2740,13 +2741,14 @@ const STRIKE_DATA = [
             type: "strike",
             startDate: "2026-05-01",
             endDate: "",
-            workers: null,
+            workers: 350,
             description: "School nurses taking action for over 80 days. Fighting for pay parity with public sector colleagues. Actions include community engagement, media comment, wearing union shirts, displaying campaign messages.",
             locations: [
                 { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public schools" }
             ],
             sources: [
-                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
+                { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" },
+                { name: "Public school nurses to launch industrial action - ANMF", url:"https://otr.anmfvic.asn.au/articles/public-school-nurses-to-launch-industrial-action/"}
             ]
         },
 
@@ -4306,14 +4308,15 @@ const STRIKE_DATA = [
     type: "strike",
     startDate: "2026-06-01",
     endDate: "",
-    workers: null,
+    workers: 11,
     state: "WA",
     description: "Mortuary technicians at Sir Charles Gairdner Hospital in Perth took stop work action in early June. Management put forward a proposal for 24/7 rosters. HSUWA members are fighting to ensure appropriate parameters are adopted so workers are supported through the change.",
     locations: [
         { city: "Perth", state: "WA", lat: -31.9505, lng: 115.8000, name: "Sir Charles Gairdner Hospital" }
     ],
     sources: [
-        { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
+        { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" },
+        { name: "HSU WA Insta Post", url: "https://www.instagram.com/p/DZcXKJpjEEE/" },
     ]
 },
 {

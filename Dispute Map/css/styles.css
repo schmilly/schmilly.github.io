@@ -898,3 +898,51 @@ html, body {
 a {
     color: var(--strike)
 }
+
+.stale-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    padding: .15em .6em;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #7a4a00;
+    background: #fff3d6;
+    border: 1px solid #e6c069;
+    border-radius: 999px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.stale-badge:hover { background: #ffe9b3; }
+
+.stale-badge[aria-expanded="true"] {
+    background: #ffe1a0;
+    border-color: #d9a83c;
+}
+
+.stale-badge:focus-visible {
+    outline: 2px solid #7a4a00;
+    outline-offset: 2px;
+}
+
+.stale-notice {
+    margin-top: .5rem;
+    padding: .5rem .75rem;
+    font-size: .85rem;
+    color: #6b4a00;
+    background: #fffaf0;
+    border-left: 3px solid #e6c069;
+    border-radius: 4px;
+    animation: stale-in .2s ease-out;
+}
+
+@keyframes stale-in {
+    from { opacity: 0; transform: translateY(-.25rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stale-notice { animation: none; }
+}

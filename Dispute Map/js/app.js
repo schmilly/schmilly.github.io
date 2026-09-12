@@ -2,7 +2,7 @@
 // AU Strike Watch - Main Application
 // Features: grouped actions (multiple entries), multiple locations,
 // unified emoji markers with colored backgrounds, collapsible filter
-// sections and union-based filtering.
+// sections, union-based filtering, stale-entry detection.
 // ============================================
 
 (function() {
@@ -11,6 +11,8 @@
     // ─── Configuration ───
     const MAP_CENTER = [-25.5, 134.0];
     const MAP_ZOOM = 4;
+    const STALE_DAYS = 30;
+    const MS_PER_DAY = 86400000;
     const TILE_LAYER_URL = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}';
     const TILE_LAYER_ATTRIBUTION = 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community';
 
@@ -40,6 +42,7 @@
     let allEntries = [];
     let groupedActions = [];
     let filteredActions = [];
+    let activityIndex = new Map();
     let activeTypeFilter = 'all';
     let activeStateFilter = 'all';
     let activeDateRange = 'all';
@@ -81,6 +84,8 @@
 
     // ─── Initialization ───
     function init() {
+        injectStyles();
+
         if (window.STRIKE_DATA && Array.isArray(window.STRIKE_DATA)) {
             allEntries = window.STRIKE_DATA;
         } else {
@@ -89,6 +94,7 @@
         }
 
         buildGroupedActions();
+        buildActivityIndex();
         initMap();
         initCollapsibleSections();
         bindUIEvents();
@@ -96,6 +102,73 @@
         buildUnionFilters();
         applyFilters();
         updateTicker();
+    }
+
+    // ─── Injected CSS for the stale badge / notice ───
+    function injectStyles() {
+        if (document.getElementById('stale-styles')) return;
+        const style = document.createElement('style');
+        style.id = 'stale-styles';
+        style.textContent = `
+            .stale-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: .35em;
+                padding: .1em .55em;
+                font-size: 11px;
+                font-weight: 600;
+                line-height: 1.6;
+                color: #7a4a00;
+                background: #fff3d6;
+                border: 1px solid #e6c069;
+                border-radius: 999px;
+                cursor: pointer;
+                vertical-align: middle;
+                font-family: inherit;
+            }
+            .stale-badge:hover { background: #ffe9b3; }
+            .stale-badge[aria-expanded="true"] {
+                background: #ffe1a0;
+                border-color: #d9a83c;
+            }
+            .stale-badge:focus-visible {
+                outline: 2px solid #7a4a00;
+                outline-offset: 2px;
+            }
+            .stale-notice {
+                margin-top: 6px;
+                padding: 6px 10px;
+                font-size: 11.5px;
+                color: #6b4a00;
+                background: #fffaf0;
+                border-left: 3px solid #e6c069;
+                border-radius: 4px;
+                animation: stale-in .2s ease-out;
+            }
+            .stale-notice[hidden] { display: none; }
+            @keyframes stale-in {
+                from { opacity: 0; transform: translateY(-.25rem); }
+                to   { opacity: 1; transform: none; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .stale-notice { animation: none; }
+            }
+            @media (prefers-color-scheme: dark) {
+                .stale-badge {
+                    color: #ffd98a;
+                    background: #3a2d10;
+                    border-color: #7a5c1e;
+                }
+                .stale-badge:hover,
+                .stale-badge[aria-expanded="true"] { background: #4a3a15; }
+                .stale-notice {
+                    color: #ffd98a;
+                    background: #2a2110;
+                    border-left-color: #7a5c1e;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     // ─── Group entries by actionId ───
@@ -112,7 +185,6 @@
 
         groupedActions = [];
         actionMap.forEach((entries, actionId) => {
-            // Sort entries by start date ascending
             entries.sort((a, b) => {
                 const dateA = new Date(a.startDate);
                 const dateB = new Date(b.startDate);
@@ -122,7 +194,6 @@
 
             const latestEntry = entries[entries.length - 1];
 
-            // Calculate earliest start date across all entries
             let firstStartDate = entries[0].startDate;
             entries.forEach(e => {
                 const d = new Date(e.startDate);
@@ -139,8 +210,51 @@
             });
         });
 
-        // Sort groups by latest entry start date descending
         groupedActions.sort((a, b) => new Date(b.latestEntry.startDate) - new Date(a.latestEntry.startDate));
+    }
+
+    // ─── Build stale activity index (actionId -> latest timestamp) ───
+    function buildActivityIndex() {
+        activityIndex = new Map();
+        groupedActions.forEach(action => {
+            let latest = 0;
+            action.entries.forEach(entry => {
+                const start = Date.parse(entry.startDate);
+                if (!isNaN(start) && start > latest) latest = start;
+                const end = entry.endDate ? Date.parse(entry.endDate) : NaN;
+                if (!isNaN(end) && end > latest) latest = end;
+            });
+            if (latest > 0) activityIndex.set(action.actionId, latest);
+        });
+    }
+
+    function getStaleInfo(action, now = Date.now()) {
+        const ts = activityIndex.get(action.actionId);
+        if (ts === undefined) return null;
+        const days = Math.floor((now - ts) / MS_PER_DAY);
+        if (days < STALE_DAYS) return null;
+        return { days, lastTs: ts, lastDate: new Date(ts) };
+    }
+
+    function getStaleBadgeHtml(action) {
+        const info = getStaleInfo(action);
+        if (!info) return '';
+        return `<button type="button" class="stale-badge" aria-expanded="false"
+            title="No update in ${info.days} days">
+            <span aria-hidden="true">⏱</span>Stale — ${info.days}d
+        </button>`;
+    }
+
+    function getStaleNoticeHtml(action) {
+        const info = getStaleInfo(action);
+        if (!info) return '';
+        const iso = info.lastDate.toISOString().split('T')[0];
+        return `<div class="stale-notice" hidden>
+            No update recorded for this action in the last
+            <strong>${info.days} days</strong>
+            (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
+            If you have newer information, please add a report.
+        </div>`;
     }
 
     // ─── Union helpers ───
@@ -346,7 +460,6 @@
     function applyFilters() {
         let result = [...groupedActions];
 
-        // Search filter
         if (searchQuery.trim()) {
             const q = searchQuery.toLowerCase();
             result = result.filter(action => {
@@ -364,12 +477,10 @@
             });
         }
 
-        // Type filter
         if (activeTypeFilter !== 'all') {
             result = result.filter(action => action.latestEntry.type === activeTypeFilter);
         }
 
-        // State filter
         if (activeStateFilter !== 'all') {
             result = result.filter(action => {
                 const e = action.latestEntry;
@@ -379,7 +490,6 @@
             });
         }
 
-        // Date range filter
         if (activeDateRange !== 'all') {
             const now = new Date();
             const daysAgo = parseInt(activeDateRange, 10);
@@ -394,7 +504,6 @@
             });
         }
 
-        // Upcoming filter
         if (activeUpcomingFilter) {
             const now = new Date();
             result = result.filter(action => {
@@ -404,14 +513,12 @@
             });
         }
 
-        // Union filter (matches any entry in the group)
         if (activeUnionFilter) {
             result = result.filter(action =>
                 action.entries.some(entry => splitUnions(entry.union).includes(activeUnionFilter))
             );
         }
 
-        // Tag filter (matches any entry in the group)
         if (activeTagFilter) {
             result = result.filter(action =>
                 action.entries.some(entry => Array.isArray(entry.tags) && entry.tags.includes(activeTagFilter))
@@ -472,6 +579,8 @@
             item.dataset.actionId = action.actionId;
 
             const updateCount = action.entries.length > 1 ? ` <span class="meta-tag" style="background:#58a6ff33; color:#58a6ff;">${action.entries.length} updates</span>` : '';
+            const staleBadge = getStaleBadgeHtml(action);
+            const staleNotice = getStaleNoticeHtml(action);
 
             item.innerHTML = `
             <div style="flex-shrink:0;">${getEmojiHtml(latest.type, 18)}</div>
@@ -482,7 +591,9 @@
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
             ${latest.tags ? latest.tags.map(t => `<span class="meta-tag" style="background:#333;">#${t}</span>`).join('') : ''}
+            ${staleBadge}
             </div>
+            ${staleNotice}
             </div>
             <div class="event-date">${formatDate(latest.startDate)}</div>
             `;
@@ -496,6 +607,18 @@
                     map.setView(markers[0].getLatLng(), 10);
                 }
             });
+
+            // Wire up the stale badge toggle so it doesn't open the detail modal.
+            const staleBtn = item.querySelector('.stale-badge');
+            if (staleBtn) {
+                staleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const notice = item.querySelector('.stale-notice');
+                    const isOpen = staleBtn.getAttribute('aria-expanded') === 'true';
+                    staleBtn.setAttribute('aria-expanded', String(!isOpen));
+                    if (notice) notice.hidden = isOpen;
+                });
+            }
 
             eventListEl.appendChild(item);
         });
@@ -513,7 +636,6 @@
             const e = action.latestEntry;
             return `<span>${getEmojiHtml(e.type, 14)} ${escapeHtml(e.title)} — ${formatDate(e.startDate)}</span>`;
         }).join('');
-        // Duplicate the ticker content so the animation loops seamlessly.
         tickerContentEl.innerHTML = tickerHTML + tickerHTML;
         tickerContentEl.classList.remove('is-scrolling');
         void tickerContentEl.offsetWidth;
@@ -526,7 +648,7 @@
         if (!action) return;
 
         const latest = action.latestEntry;
-        const firstStart = action.firstStartDate || latest.startDate; // fallback
+        const firstStart = action.firstStartDate || latest.startDate;
         const typeInfo = getTypeInfo(latest.type);
         const typeLabel = latest.type.charAt(0).toUpperCase() + latest.type.slice(1);
 
@@ -546,7 +668,6 @@
             ).join('<br>');
         }
 
-        // History with sources, title and union for each entry
         let historyHtml = '';
         if (action.entries.length > 1) {
             historyHtml = `
@@ -568,6 +689,20 @@
                     </div>`;
         }
 
+        // Stale block for the detail modal
+        const staleInfo = getStaleInfo(action);
+        let staleHtml = '';
+        if (staleInfo) {
+            const iso = staleInfo.lastDate.toISOString().split('T')[0];
+            staleHtml = `
+            <div class="stale-notice" style="display:block;">
+                ⏱ <strong>Stale entry</strong> — no update recorded in the last
+                <strong>${staleInfo.days} days</strong>
+                (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
+                If you have newer information, please add a report.
+            </div>`;
+        }
+
         detailModalContent.innerHTML = `
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
         <div>${getEmojiHtml(latest.type, 24)}</div>
@@ -575,6 +710,7 @@
         <span style="margin-left: auto; font-size: 12px; color: #8b949e;">${formatDate(latest.startDate)}</span>
         </div>
         <h3 style="margin-bottom: 8px;">${escapeHtml(latest.title)}</h3>
+        ${staleHtml}
         <div class="detail-section"><div class="detail-label">Union</div><div class="detail-value">${escapeHtml(latest.union || 'Not specified')}</div></div>
         <div class="detail-section"><div class="detail-label">Industry</div><div class="detail-value">${escapeHtml(latest.industry || 'Not specified')}</div></div>
         <div class="detail-section"><div class="detail-label">Locations</div><div class="detail-value">${locationsHtml}</div></div>
@@ -685,6 +821,7 @@
 
         allEntries.push(newEntry);
         buildGroupedActions();
+        buildActivityIndex();
         buildTagFilters();
         buildUnionFilters();
         closeAddModal();
