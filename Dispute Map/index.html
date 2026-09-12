@@ -27,7 +27,7 @@
         <div class="stats-bar" id="stats-bar">
             <div class="stat"><span class="number" id="stat-active">0</span><span class="label">Active</span></div>
             <div class="stat"><span class="number" id="stat-planned">0</span><span class="label">Planned</span></div>
-            <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers</span></div>
+            <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers Tracked</span></div>
             <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total Entries</span></div>
         </div>
         <!-- <button id="add-report-btn" class="btn primary" style="margin-left: auto;">+ Report</button> -->
@@ -56,7 +56,7 @@
             </div>
 
                        <!-- Event Type filter -->
-            <div class="filter-section collapsible" data-filter-section="type">
+            <div class="filter-section collapsible collapsed" data-filter-section="type">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
                     <span class="filter-label">Event Type</span>
                     <span class="filter-header-right">
@@ -81,7 +81,7 @@
             </div>
 
             <!-- State filter -->
-            <div class="filter-section collapsible" data-filter-section="state">
+            <div class="filter-section collapsible collapsed" data-filter-section="state">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-state">
                     <span class="filter-label">State / Territory</span>
                     <span class="filter-header-right">
@@ -107,7 +107,7 @@
             </div>
 
             <!-- Union filter -->
-            <div class="filter-section collapsible" data-filter-section="union">
+            <div class="filter-section collapsible collapsed" data-filter-section="union">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-union">
                     <span class="filter-label">Union</span>
                     <span class="filter-header-right">
@@ -126,7 +126,7 @@
             </div>
 
             <!-- Date range filter -->
-            <div class="filter-section collapsible" data-filter-section="date">
+            <div class="filter-section collapsible collapsed" data-filter-section="date">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-date">
                     <span class="filter-label">Date Range</span>
                     <span class="filter-header-right">
@@ -147,7 +147,7 @@
             </div>
 
             <!-- Upcoming filter -->
-            <div class="filter-section collapsible" data-filter-section="upcoming">
+            <div class="filter-section collapsible collapsed" data-filter-section="upcoming">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-upcoming">
                     <span class="filter-label">Upcoming</span>
                     <span class="filter-header-right">
@@ -165,7 +165,7 @@
             </div>
 
             <!-- Tag filters -->
-            <div class="filter-section collapsible" data-filter-section="tags">
+            <div class="filter-section collapsible collapsed" data-filter-section="tags">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-tags">
                     <span class="filter-label">Tags</span>
                     <span class="filter-header-right">
@@ -278,7 +278,7 @@
                     <input type="date" id="f-end">
                 </div>
                 <div class="form-group">
-                    <label for="f-workers">Workers Affected</label>
+                    <label for="f-workers">Workers Involved</label>
                     <input type="number" id="f-workers" placeholder="e.g. 500" min="0">
                 </div>
                 <div class="form-group">

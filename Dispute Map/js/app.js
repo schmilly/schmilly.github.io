@@ -551,7 +551,7 @@
         if (action.entries.length > 1) {
             historyHtml = `
             <div class="detail-section">
-            <div class="detail-label">📜 Update History</div>
+            <div class="detail-label">Update History</div>
             <div style="border-left: 2px solid #444; padding-left: 12px; margin-top: 6px;">
             ${action.entries.map(entry => `
                 <div style="margin-bottom: 12px;">
@@ -578,7 +578,7 @@
         <div class="detail-section"><div class="detail-label">Union</div><div class="detail-value">${escapeHtml(latest.union || 'Not specified')}</div></div>
         <div class="detail-section"><div class="detail-label">Industry</div><div class="detail-value">${escapeHtml(latest.industry || 'Not specified')}</div></div>
         <div class="detail-section"><div class="detail-label">Locations</div><div class="detail-value">${locationsHtml}</div></div>
-        <div class="detail-section"><div class="detail-label">Workers Affected</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
+        <div class="detail-section"><div class="detail-label">Workers Involved</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
         <div class="detail-section"><div class="detail-label">Duration</div><div class="detail-value">${formatDate(firstStart)} — ${latest.endDate ? formatDate(latest.endDate) : 'Ongoing'}</div></div>
         <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: #c9d1d9;">${escapeHtml(latest.description)}</div></div>
         ${historyHtml}
