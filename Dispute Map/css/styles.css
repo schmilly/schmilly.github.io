@@ -1133,3 +1133,58 @@ a {
 @media (prefers-reduced-motion: reduce) {
     .stale-notice { animation: none; }
 }
+
+/* ─── Animated <details> / <summary> ─── */
+:root {
+    interpolate-size: allow-keywords;
+}
+
+details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+    block-size 0.3s ease,
+    content-visibility 0.3s allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
+/* ─── Animated <details> ─── */
+
+/* Lets block-size animate to/from `auto` */
+:root {
+    interpolate-size: allow-keywords;
+}
+
+/* The content box inside <details> — hidden when closed by default */
+details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+    block-size 0.3s ease,
+    content-visibility 0.3s allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
+/* Chevron: points right when closed, down when open */
+details .chevron {
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+details[open] .chevron {
+    transform: rotate(45deg);
+}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+    details::details-content,
+    details .chevron {
+        transition: none;
+    }
+}

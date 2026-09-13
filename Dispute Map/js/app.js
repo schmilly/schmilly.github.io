@@ -229,6 +229,10 @@
     }
 
     function getStaleInfo(action, now = Date.now()) {
+        // Only flag actions that are still marked ongoing (no end date on the latest entry).
+        const latest = action.latestEntry;
+        if (latest.endDate) return null;
+
         const ts = activityIndex.get(action.actionId);
         if (ts === undefined) return null;
         const days = Math.floor((now - ts) / MS_PER_DAY);
@@ -252,7 +256,7 @@
         return `<div class="stale-notice" hidden>
             No update recorded for this dispute in the last
             <strong>${info.days} days</strong>
-            (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
+            (last activity <time datetime="${iso}">${formatDate(iso)}</time>) and it is marked as still ongoing.
             If you have newer information, please <a href="mailto:schmilly@proton.me">email me</a>.
         </div>`;
     }
@@ -698,7 +702,7 @@
             <div class="stale-notice" style="display:block;">
                 ⏱ <strong>Stale entry</strong> — no update recorded in the last
                 <strong>${staleInfo.days} days</strong>
-                (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
+                (last activity <time datetime="${iso}">${formatDate(iso)}</time>) and it is marked as still ongoing.
             If you have newer information, please <a href="mailto:schmilly@proton.me">email me</a>.
             </div>`;
         }

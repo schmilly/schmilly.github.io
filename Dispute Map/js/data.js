@@ -135,6 +135,7 @@ const SA = {
 const WA ={
     "Varanus Island": [-20.651803004964947, 115.57788827871269],
     "Worsley Alumina": [-33.2421, 116.0666],
+    "Port of Broome": [-18.00372, 122.2107]
 }
 
 const QLD ={
@@ -148,7 +149,47 @@ const VIC ={
     "Port of Portland":[-38.3531, 141.6176]
 }
 const STRIKE_DATA = [
+    {
+        id: 315,
+        actionId: "unimelb-nteu",
+        title: "UniMelb NTEU Strike for Paid Sick Leave for Casuals and Safe Workloads",
+        union: "NTEU",
+        industry: "Education",
+        type: "strike",
+        startDate: "2026-08-27",
+        endDate: "2026-08-27",
+        workers: null,
+        state: "VIC",
+        description: "Hundreds of NTEU members at the University of Melbourne went on strike on 27 August in response to management's refusal to agree to key bargaining demands, including paid sick leave for casuals and safer workloads for academic staff. The five-hour strike was strongly supported by students, who joined staff at a campus rally featuring NTEU speakers and UMSU President Lushomo Chinganya. Aboriginal staff member and senior lecturer Kim Alley highlighted the union's demand for improved protections for First Nations staff. NTEU bargaining lead Dr Carla Winston said academic workloads are 'unsustainable', with staff expected to work weekends and into the evening, and that management 'has no clue' about daily workloads. Casual worker Clare condemned management's refusal to instate sick leave for casuals, saying casuals are forced to choose between working while sick or losing pay. After the rally, a mass meeting voted unanimously to adopt a new bargaining claim requiring all major changes involving permanent relocation of staff to be put to a ballot of affected staff and win majority approval.",
+        locations: [
+            { city: "Melbourne", state: "VIC", lat: MELB["Uni"][0], lng: MELB["Uni"][1], name: "University of Melbourne" }
+        ],
+        sources: [
+            { name: "Green Left - Uni of Melb NTEU strike for sick leave for casuals, safe workloads", url: "https://www.greenleft.org.au/2026/1461/news/uni-melb-nteu-strike-sick-leave-casuals-safe-workloads" }
+        ],
+        tags: ["education", ""]
+    },
 
+    {
+        id: 316,
+        actionId: "bhp-hedland",
+        title: "BHP Port Hedland Talks End Without Deal, Resume Next Week",
+        union: "AMWU / ETU / AWU / MEU",
+        industry: "Mining",
+        type: "strike",
+        startDate: "2026-09-08",
+        endDate: "",
+        workers: null,
+        state: "WA",
+        description: "Talks between BHP and the Combined BHP Ports Unions ended without a deal, with further negotiations scheduled for next Tuesday (15 Sept), facilitated by the Fair Work Commission. BHP tabled an updated proposal offering a 17% pay increase over four years for most workers, a A$25,000 transition payment paid over two years, and an increase to roster allowances. The three unions rejected the offer, saying it leaves about 40% of the workforce in a worse position and keeps wage inequalities alive, and pointing to BHP's ~$13 billion underlying profit for fiscal 2026. Workers are seeking pay that recognises extreme remote heat, long hours and time away from families. Port Hedland is the world's largest iron ore loading port, with BHP shipping around $80 million worth of iron ore daily through the facility.",
+        locations: [
+            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+        ],
+        sources: [
+            { name: "Reuters - BHP, union talks for Port Hedland iron ore workers to stretch on into next week", url: "https://www.reuters.com/business/world-at-work/bhp-union-talks-port-hedland-iron-ore-workers-stretch-into-next-week-2026-09-08/" },
+            { name: "The DCN - Unions reject BHP's updated Pilbara port offer as dispute intensifies", url: "https://www.thedcn.com.au/news/bhp-tables-updated-offer-as-pilbara-port-dispute-enters-new-phase" }
+        ]
+    },
 
     // MEU - Peabody (lockout abandoned)
     {
@@ -2933,7 +2974,7 @@ const STRIKE_DATA = [
             workers: null,
             description: "100% of MUA members endorsed industrial action. Action kicks off 24 July.",
             locations: [
-                { city: "Broome", state: "WA", lat: -17.9614, lng: 122.2353, name: "Port of Broome" }
+                { city: "Broome", state: "WA", lat: WA["Port of Broome"][0], lng: WA["Port of Broome"][1], name: "Port of Broome" }
             ],
             sources: [
                 { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -3252,14 +3293,54 @@ const STRIKE_DATA = [
     ]
 },
 {
+    id: 8504,
+    actionId: "port-broome-mua",
+    title: "Broome Port MUA Members Unanimously Back Agreement in Principle",
+    union: "MUA WA",
+    industry: "Ports",
+    type: "resolved",
+    startDate: "2026-08-28",
+    endDate: "2026-08-28",
+    workers: null,
+    state: "WA",
+    description: "MUA members at the Port of Broome met at 6am on Friday 28 August to hear a full report back on outcomes in the new agreement, following written reports from the Fair Work process the week before that resulted in a suspension of all industrial action. The session allowed full debate and questions between members, committee and officials present including WA Branch Secretary Will Tracey and Organiser Paul Brett. The outcome reached in Fair Work had been before three different Fair Work Commissioners and came about after 30 days of bans and stoppages including a full 11-day shutdown of all operations at the Port of Broome. The Port of Broome had filed for an Intractable Bargaining Declaration programmed for hearing on 21-22 September. At the conclusion of the meeting the Broome membership voted unanimously to back the agreement in principle, subject to drafting. The final draft is to be presented to the workforce the following Tuesday.",
+    locations: [
+        { city: "Broome", state: "WA", lat: -17.9614, lng: 122.2353, name: "Port of Broome" }
+    ],
+    sources: [
+        { name: "MUA WA Branch - Facebook post, 29 August 2026", url: "https://www.facebook.com/muawabranch/posts/mua-members-at-the-port-of-broome-met-at-6am-on-friday-28th-to-hear-a-full-repor/1624928089639196/" }
+    ],
+    tags: ["maritime",]
+},
+{
+    id: 8503,
+    actionId: "port-broome-mua",
+    title: "MUA Urges Members to Back New Broome Port Agreement After 11-Day Shutdown",
+    union: "MUA WA",
+    industry: "Ports",
+    type: "resolved",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "The MUA's WA Branch has called on members to vote yes to a new enterprise agreement at the Port of Broome, following a hard-fought industrial campaign that culminated in an 11-day shutdown of operations. Wharf crews and maintenance workers had been on strike since 7 August, halting cruise ship arrivals and livestock loading, with both terminals closed and cruise passengers ferried ashore in small boats. The dispute centred on pay and conditions, with the union arguing Broome Port trades were the lowest paid in the state's port system. The new agreement, if endorsed, would replace the previous deal that expired in October 2025.",
+    locations: [
+                { city: "Broome", state: "WA", lat: WA["Port of Broome"][0], lng: WA["Port of Broome"][1], name: "Port of Broome" }
+    ],
+    sources: [
+        { name: "The DCN - MUA urges members to back new Broome Port agreement", url: "https://www.thedcn.com.au/news/mua-urges-members-to-back-new-broome-port-agreement" }
+    ],
+    tags: ["maritime"]
+},
+{
     id: 8015,
     actionId: "racq-amwu",
     title: "RACQ Workers Endorse New Offer After June Action",
     union: "AMWU QLD",
     industry: "Roadside Assistance / Insurance",
     type: "resolved",
-    startDate: "2026-07-07",
-    endDate: "",
+    startDate: "2026-07-01",
+    endDate: "2026-07-01",
     workers: null,
     state: "QLD",
     description: "Following industrial action in June, workers endorsed a new offer from RACQ. The new deal includes a 17% pay rise, allowances indexed every year, leave loading, paid time for on-job tasks and other improvements.",
