@@ -78,7 +78,10 @@ const COMPANY = {
     "Fleurieu Cranes": [-34.84434769783146, 138.5671177063876],
     "DP World": [-33.967410544907686, 151.22038597785794],
     "NRMA":[-33.8459, 151.0699],
-    "Stowe": [-33.8119, 151.03241]
+    "Stowe": [-33.8119, 151.03241],
+    "Bega Dairy": [-36.6661, 149.8231],
+    "Bridgestone": [-34.9406, 138.6170],
+    "Ceva Logistics": [-37.8064, 144.7371]
 }
 
 const MELB = {
@@ -91,7 +94,7 @@ const MELB = {
     "Peter MacCallum Cancer Centre": [-37.80026478320679, 144.95671662077825],
     "RLA Polymers": [-37.817593111961365, 145.305556385398],
     "Overnewton College":[-37.706363106002726, 144.8216275455058],
-    "Secure Journeys Melbourne": [-37.68409443780323, 144.94450175001506]
+    "Secure Journeys Melbourne": [-37.68409443780323, 144.94450175001506],
 }
 
 const BRIS = {
@@ -139,6 +142,10 @@ const QLD ={
         "The Plains":[-27.5926, 153.1005],
         "Janoah Gardens":[-27.4681, 153.1709],
     }
+}
+
+const VIC ={
+    "Port of Portland":[-38.3531, 141.6176]
 }
 const STRIKE_DATA = [
 
@@ -1919,8 +1926,8 @@ const STRIKE_DATA = [
         {
             city: "Unknown",
             state: "",
-            lat: -25.5,
-            lng: 134.0,
+            lat: COMPANY["Bridgestone"][0],
+            lng: COMPANY["Bridgestone"][1],
             name: "Bridgestone Australia Ltd"
         }
     ],
@@ -1983,10 +1990,10 @@ const STRIKE_DATA = [
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
-            city: "Unknown",
-            state: "",
-            lat: -25.5,
-            lng: 134.0,
+            city: "Portland",
+            state: "VIC",
+            lat: VIC["Port of Portland"][0],
+            lng: VIC["Port of Portland"][1],
             name: "Port of Portland Pty Limited"
         }
     ],
@@ -2144,8 +2151,8 @@ const STRIKE_DATA = [
         {
             city: "Unknown",
             state: "",
-            lat: -25.5,
-            lng: 134.0,
+            lat: COMPANY["Bega Dairy"][0],
+            lng: COMPANY["Bega Dairy"][1],
             name: "Bega Dairy and Drinks Pty Ltd"
         }
     ],
@@ -2200,8 +2207,8 @@ const STRIKE_DATA = [
         {
             city: "Unknown",
             state: "",
-            lat: -25.5,
-            lng: 134.0,
+            lat: COMPANY["Bega Dairy"][0],
+            lng: COMPANY["Bega Dairy"][1],
             name: "Bega Dairy and Drinks Pty Ltd"
         }
     ],
@@ -2359,8 +2366,8 @@ const STRIKE_DATA = [
         {
             city: "Unknown",
             state: "",
-            lat: -25.5,
-            lng: 134.0,
+            lat: COMPANY["Ceva Logistics"][0],
+            lng: COMPANY["Ceva Logistics"][1],
             name: "Ceva Logistics (Australia) Pty Ltd"
         }
     ],

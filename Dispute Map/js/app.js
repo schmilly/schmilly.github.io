@@ -250,10 +250,10 @@
         if (!info) return '';
         const iso = info.lastDate.toISOString().split('T')[0];
         return `<div class="stale-notice" hidden>
-            No update recorded for this action in the last
+            No update recorded for this dispute in the last
             <strong>${info.days} days</strong>
             (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
-            If you have newer information, please add a report.
+            If you have newer information, please <a href="mailto:schmilly@proton.me">email me</a>.
         </div>`;
     }
 
@@ -699,7 +699,7 @@
                 ⏱ <strong>Stale entry</strong> — no update recorded in the last
                 <strong>${staleInfo.days} days</strong>
                 (last activity <time datetime="${iso}">${formatDate(iso)}</time>).
-                If you have newer information, please add a report.
+            If you have newer information, please <a href="mailto:schmilly@proton.me">email me</a>.
             </div>`;
         }
 

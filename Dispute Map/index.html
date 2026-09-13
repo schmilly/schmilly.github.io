@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Disputes Map</title>
 
+    <!-- Set theme before first paint to avoid a flash -->
+    <script src="js/lightmode.js"></script>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
@@ -31,7 +34,11 @@
             <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total Entries</span></div>
         </div>
         <!-- <button id="add-report-btn" class="btn primary" style="margin-left: auto;">+ Report</button> -->
-    </header>    <!-- ═══ TOP BAR ═══ -->
+        <button id="theme-toggle" class="theme-toggle" type="button"
+                aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+            <span class="theme-icon" aria-hidden="true">☀️</span>
+        </button>
+    </header>
 
     <!-- ═══ NEWS TICKER ═══ -->
     <div id="ticker">
@@ -58,7 +65,7 @@
                 <input type="text" id="search-input" class="search-box" placeholder="Search by union, industry, location…" autocomplete="off">
             </div>
 
-                       <!-- Event Type filter -->
+            <!-- Event Type filter -->
             <div class="filter-section collapsible collapsed" data-filter-section="type">
                 <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
                     <span class="filter-label">Event Type</span>
@@ -211,20 +218,23 @@
                 <div class="legend-row"><span class="legend-emoji">🗳️</span> Ballot</div>
                 <div class="legend-row"><span class="legend-emoji">🐀</span> Scab</div>
                 <div class="legend-row"><span class="legend-emoji">✔</span> Resolved</div>
-
             </div>
         </div>
     </div>
 
     <!-- ═══ FOOTER DISCLAIMER ═══ -->
     <footer id="site-footer">
+        <details open>
+        <summary class="filter-header filter-label"><span class="chevron" aria-hidden="true"></span></summary>
         <span><a href="./about.html">About</a></span>
         <span><a href="./roadmap.html">Roadmap</a></span>
         Use source links to verify details.
         <strong> Get YOUR workplace on the map</strong> <a href="https://www.australianunions.org.au/landing-page/for-the-workers/">Join your Union</a> Make it millitant, support struggle, get involved with <a href="https://www.victoriansocialists.org.au/news/launching-the-socialist-workers-caucus">the Socialist Workers Caucus (SWC)</a>, <a href="https://www.instagram.com/tradeunionistsforall/">TUFA</a> or the <a href="https://ancomfed.org/">Anarcho Communist Federation</a> Site is in no way endorsed or affialted with anyone mentioned
+        </details>
     </footer>
 
     <!-- ═══ ADD REPORT MODAL ═══ -->
+    <!-- Not implemented -->
     <div class="modal-overlay" id="add-modal">
         <div class="modal">
             <h3>📝 Report Industrial Action</h3>
@@ -329,11 +339,8 @@
         </div>
     </div>
 
-
-
-
     <!-- ═══ Leaflet JS ═══ -->
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>

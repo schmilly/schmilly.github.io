@@ -5,275 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roadmap — Dispute Map</title>
 <meta name="description" content="Planned improvements and features for Dispute Map — filtering, UI, performance and collaboration.">
+
+<!-- Set theme before first paint to avoid a flash -->
+<!-- Set theme before first paint to avoid a flash -->
+<script src="js/lightmode.js"></script>
+
 <link rel="stylesheet" href="css/styles.css">
-<style>
-/* ─── Static page overrides ─── */
-html    {
-    overflow: auto;
-}
-body.page {
-    height: auto;
-    min-height: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
-.page-nav a {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 5px 11px;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    transition: all 0.15s;
-    white-space: nowrap;
-}
-
-.page-nav a:hover {
-    color: var(--text-primary);
-    background: var(--bg-elevated);
-    border-color: var(--border);
-}
-
-.page-nav a.active {
-    color: var(--text-primary);
-    background: var(--bg-elevated);
-    border-color: var(--border);
-}
-
-.page-main {
-    padding: 36px 20px 80px;
-}
-
-.page-wrap {
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
-.page-head {
-    margin-bottom: 30px;
-}
-
-.page-title {
-    font-size: 34px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    line-height: 1.15;
-}
-
-.page-title .accent { color: red; }
-
-.page-lede {
-    margin-top: 12px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--text-primary);
-}
-
-.page-wrap a { color: var(--accent); text-decoration: none; }
-.page-wrap a:hover { text-decoration: underline; }
-
-/* ─── Section headings ─── */
-.section-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 32px 0 14px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-}
-
-.section-head .sec-icon {
-    font-size: 18px;
-    line-height: 1;
-}
-
-.section-head h2 {
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-}
-
-.section-head .sec-count {
-    margin-left: auto;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1px 8px;
-}
-
-.section-head:first-of-type { margin-top: 0; }
-
-/* ─── Roadmap cards ─── */
-.card {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-}
-
-.card h3 {
-    font-size: 14.5px;
-    font-weight: 700;
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    line-height: 1.4;
-}
-
-.card h3 .bullet {
-    color: var(--accent);
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.card p {
-    font-size: 13.5px;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin-top: 8px;
-    padding-left: 22px;
-}
-
-.card p strong { color: var(--text-primary); }
-
-.card .quote {
-    margin-top: 9px;
-    padding-left: 22px;
-    font-size: 13px;
-    line-height: 1.65;
-    color: var(--text-primary);
-    font-style: italic;
-}
-
-/* ─── Sub items (bug fixes) ─── */
-.sub-list {
-    list-style: none;
-    margin: 10px 0 0 0;
-    padding-left: 22px;
-}
-
-.sub-list li {
-    position: relative;
-    padding: 8px 0 8px 22px;
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    border-left: 2px solid var(--border);
-    margin-left: 2px;
-}
-
-.sub-list li::before {
-    content: "";
-    position: absolute;
-    left: -5px;
-    top: 15px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--bg-panel);
-    border: 2px solid var(--accent);
-}
-
-.sub-list li strong { color: var(--text-primary); }
-
-.sub-list li .quote {
-    display: block;
-    margin-top: 5px;
-    font-style: italic;
-    color: var(--text-primary);
-    font-size: 12.5px;
-}
-
-/* ─── Status pill ─── */
-.pill {
-    display: inline-block;
-    font-size: 9.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    vertical-align: middle;
-    margin-left: 6px;
-    white-space: nowrap;
-}
-
-.pill.planned   { background: rgba(52, 152, 219, 0.15);  color: #3498db; border: 1px solid rgba(52,152,219,0.35); }
-.pill.bug       { background: rgba(231, 76, 60, 0.15);   color: #e74c3c; border: 1px solid rgba(231,76,60,0.35); }
-.pill.ui        { background: rgba(241, 196, 15, 0.13);  color: #f1c40f; border: 1px solid rgba(241,196,15,0.32); }
-.pill.perf      { background: rgba(230, 126, 34, 0.15);  color: #e67e22; border: 1px solid rgba(230,126,34,0.35); }
-.pill.collab    { background: rgba(46, 204, 113, 0.14);  color: #2ecc71; border: 1px solid rgba(46,204,113,0.32); }
-.pill.dream     { background: rgba(155, 89, 182, 0.16);  color: #b07cd6; border: 1px solid rgba(155,89,182,0.35); }
-
-/* ─── Back link ─── */
-.next-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 30px;
-    padding: 16px 20px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--bg-panel);
-    text-decoration: none !important;
-    transition: border-color 0.15s, background 0.15s;
-}
-
-.next-link:hover {
-    border-color: var(--accent);
-    background: var(--bg-elevated);
-}
-
-.next-link .nl-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-.next-link .nl-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-top: 2px;
-}
-
-.next-link .nl-arrow {
-    font-size: 20px;
-    color: var(--accent);
-}
-
-@media (max-width: 768px) {
-    .page-main { padding: 22px 12px 72px; }
-    .page-title { font-size: 26px; }
-    .page-lede { font-size: 14px; }
-    .card { padding: 15px 16px; border-radius: 10px; }
-    .page-nav a { padding: 5px 8px; font-size: 11px; }
-    .section-head h2 { font-size: 15px; }
-    .card p, .sub-list li { font-size: 13px; }
-}
-</style>
+<link rel="stylesheet" href="css/info.css">
 </head>
 <body class="page">
 
     <!-- ─── Top Bar ─── -->
     <div id="topbar">
         <div class="logo">
-            <span class="dot"></span>Dispute Map</span>
+            <span class="dot"></span>Dispute Map
         </div>
         <nav class="page-nav">
             <a href="index.html">Map</a>
             <a href="about.html">About</a>
             <a href="roadmap.html" class="active">Roadmap</a>
         </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button"
+                aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+            <span class="theme-icon" aria-hidden="true">☀️</span>
+        </button>
     </div>
 
     <!-- ─── Main ─── -->
@@ -287,33 +42,11 @@ body.page {
                 </p>
             </header>
 
-            <!-- ═══════════ FEATURES ═══════════ -->
-            <div class="section-head">
-
-                <h2>Features</h2>
-                <span class="sec-count">2</span>
-            </div>
-
-            <div class="card">
-                <h3><span class="bullet">{</span> Filtering by Union <span class="pill planned">Planned</span></h3>
-                <p class="quote">
-                    Currently not possible to filter entries by Union.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3><span class="bullet">{</span> Show events where other people wanted (Solidarity Actions?) <span class="pill planned">Planned</span></h3>
-                <p class="quote">
-                    Showing events where a union is calling for other people to join them to show up
-                    and join them and that being front and centre is important for the website.
-                </p>
-            </div>
 
             <!-- ═══════════ BUG FIXES ═══════════ -->
             <div class="section-head">
-
                 <h2>Bug Fixes</h2>
-                <span class="sec-count">4</span>
+                <span class="sec-count">2</span>
             </div>
 
             <div class="card">
@@ -361,7 +94,7 @@ body.page {
                         </span>
                     </li>
                     <li>
-                                            <strong>Fix Filter Usability</strong>
+                        <strong>Fix Filter Usability</strong>
                         <span class="quote">
                             Filters are not very usable at the moment and would work better as a collapse menu
                         </span>
@@ -369,66 +102,82 @@ body.page {
                 </ul>
             </div>
 
-            <!-- ═══════════ PERFORMANCE ═══════════ -->
+                        <!-- ═══════════ FEATURES ═══════════ -->
             <div class="section-head">
-
-                <h2>Performance</h2>
-                <span class="sec-count">1</span>
-            </div>
-
-            <div class="card">
-                <h3><span class="bullet">{</span> Improve dynamic serving <span class="pill perf">Performance</span></h3>
-                <p class="quote">
-                    Currently all information is served up from one big data.js file. This works
-                    alright for now but as the amount of entries increase, it would be better to
-                    improve this by only serving up data from past month by default, and then letting
-                    people filter stuff as appropriate.
-                </p>
-            </div>
-
-            <!-- ═══════════ COLLABORATION ═══════════ -->
-            <div class="section-head">
-
-                <h2>Collaboration</h2>
+                <h2>Features</h2>
                 <span class="sec-count">2</span>
             </div>
 
-            <div class="card">
-                <h3><span class="bullet">{</span> Allow reporting of actions <span class="pill collab">Collaboration</span></h3>
+            <div class="card done">
+                <h3><span class="bullet">{</span> Filtering by Union <span class="pill done">Done</span></h3>
                 <p class="quote">
-                    Currently there is a framework to report an event (Strike, lockout, dispute e.t.c.),
+                    Currently not possible to filter entries by Union.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3><span class="bullet">{</span> Show events where other people wanted (Solidarity Actions?) <span class="pill planned">Planned</span></h3>
+                <p class="quote">
+                    Showing events where a union is calling for other people to join them to show up
+                    and join them and that being front and centre is important for the website.
+                </p>
+            </div>
+
+                        <div class="card">
+                <h3><span class="bullet">{</span> Improve Performance <span class="pill planned">Planned</span></h3>
+                <ul class="sub-list">
+                    <li>
+                        <strong>Serving of JS file</strong>
+                        <span class="quote">
+                            Currently all information is served up from one big data.js file. This works
+                    alright for now but as the amount of entries increase, it would be better to
+                    improve this by only serving up data from past month by default, and then letting
+                    people filter stuff as appropriate.
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Slow Downs on mobile</strong>
+                        <span class="quote">
+                            On Desktop rendering is fine and fast, but I have notice some issues on mobile
+                        </span>
+                    </li>
+                </ul>
+            </div>
+                                    <div class="card">
+                <h3><span class="bullet">{</span> Collaboration <span class="pill planned">Planned</span></h3>
+                <ul class="sub-list">
+                    <li>
+                        <strong>Allow reporting of actions</strong>
+                        <span class="quote">
+                            Currently there is a framework to report an event (Strike, lockout, dispute e.t.c.),
                     but server is not setup to handle requests. Setting up a way to handle the ability
                     for people to file forms and then accept or reject if a dispute is legitimate would
                     be awesome.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3><span class="bullet">{</span> Wiki integration <span class="pill dream">Dream</span></h3>
-                <p class="quote">
-                    This is more of a dream, but integrating with a media wiki instance which anyone
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Wiki integration</strong>
+                        <span class="quote">
+                                                This is more of a dream, but integrating with a media wiki instance which anyone
                     can contribute to, and then tying links to each dispute and also pulling information
                     into each other would be awesome.
-                </p>
+                        </span>
+                    </li>
+                </ul>
             </div>
-
-            <!-- ═══════════ OTHER ═══════════ -->
-            <div class="section-head">
-
-                <h2>Other</h2>
-                <span class="sec-count">1</span>
-            </div>
-
-            <div class="card">
+                        <div class="card">
                 <h3><span class="bullet">{</span> Drop AI from data ingestion <span class="pill collab">Collaboration</span></h3>
                 <p class="quote">
                     Use collaboration features to stop using AI for data ingestion.
                 </p>
             </div>
+            </div>
+
+
 
             <a class="next-link" href="about.html">
                 <div>
-                    <div class="nl-label">← Back</div>
+                    <div class="nl-label">Next</div>
                     <div class="nl-title">About Dispute Map</div>
                 </div>
                 <div class="nl-arrow">→</div>
