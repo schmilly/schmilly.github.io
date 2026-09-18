@@ -88,7 +88,8 @@ const COMPANY = {
     "CSL":{
         "VIC":[-37.6881, 144.9396]
     },
-    "RACQ":[-27.5863, 153.1001]
+    "RACQ":[-27.5863, 153.1001],
+    "Ichthys gas field": [-12.3519, 130.1464]
 }
 
 const MELB = {
@@ -1924,7 +1925,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hsu_20261044.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["other", "fwc-ballot"]
     },
 {
     id: 5001,
@@ -2476,7 +2477,7 @@ const STRIKE_DATA = [
             url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026992.pdf"
         }
     ],
-    tags: ["other", "awu", "fwc-ballot"]
+    tags: ["other", "fwc-ballot"]
 },
 {
     id: 5023,
@@ -2531,7 +2532,7 @@ const STRIKE_DATA = [
             url: "https://www.fwc.gov.au/documents/ballot-results/ieu_2026997.pdf"
         }
     ],
-    tags: ["education", "ieu", "fwc-ballot"]
+    tags: ["education", "fwc-ballot"]
 },
     {
         id: 5293,
@@ -3034,7 +3035,7 @@ const STRIKE_DATA = [
         // Resolution: AWU/ETU/MUA - Inpex (agreement endorsed)
         {
             id: 7017,
-            actionId: "inpex-resolution",
+            actionId: "inpex-ichthys",
             title: "Inpex Workers Endorse New Agreement",
             union: "AWU / ETU / MUA",
             industry: "Oil & Gas",
@@ -3044,7 +3045,7 @@ const STRIKE_DATA = [
             workers: null,
             description: "97.3% participation, 97.5% voted in favour. Agreement includes highest remuneration among Tier-1 operators, career progression, 20 job share positions, additional leave, improved fatigue management. Unions estimate action cost Inpex $200 million.",
             locations: [
-                { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Inpex" }
+                { city: "Darwin", state: "NT", lat: COMPANY["Ichthys gas field"][0], lng: COMPANY["Ichthys gas field"][1], name: "Ichthys gas facilities" }
             ],
             sources: [
                 { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -3958,7 +3959,7 @@ const STRIKE_DATA = [
 },
 {
     id: 8216,
-    actionId: "inpex-resolution",
+    actionId: "inpex-ichthys",
     title: "Inpex In-Principle Agreement Reached, Ending Ichthys Action",
     union: "AWU / ETU / MUA",
     industry: "Oil & Gas",
@@ -3968,7 +3969,7 @@ const STRIKE_DATA = [
     workers: null,
     description: "An in-principle agreement between unions and Inpex was reached on 17 June, ending industrial action at the Ichthys gas facilities. Media reports say the agreement includes annual wage increases of 3.75%, improved job security and career progression systems. The Offshore Alliance alleged the strike action at Ichthys cost Inpex $200 million in lost production.",
     locations: [
-        { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Ichthys gas facilities" }
+        { city: "Darwin", state: "NT", lat: COMPANY["Ichthys gas field"][0], lng: COMPANY["Ichthys gas field"][1], name: "Ichthys gas facilities" }
     ],
     sources: [
         { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3982,7 +3983,7 @@ const STRIKE_DATA = [
     industry: "Construction",
     type: "resolved",
     startDate: "2026-06-18",
-    endDate: "",
+    endDate: "2026-06-18",
     workers: null,
     state: "SA",
     description: "On 18 June the CFMEU shared that members at Fleurieu Cranes had voted up a new EBA. In March, protected action ballots were being voted on at Fleurieu Cranes and Crane Services, two of the biggest crane companies in South Australia. It is unclear if industrial action commenced or if the threat was enough. The union described it as a huge win.",
@@ -4001,7 +4002,7 @@ const STRIKE_DATA = [
     industry: "Early Childhood Education",
     type: "resolved",
     startDate: "2026-06-24",
-    endDate: "",
+    endDate: "2026-06-24",
     workers: null,
     description: "UWU members in early childhood education will no longer walk off the job in July as the Federal Government agreed to fund a 15% pay increase for another 18 months. Workers were facing a funding cliff and pay cut in November. The additional funding fills the gap until gender undervaluation wage increases come into effect in 2029.",
     locations: [
@@ -4019,8 +4020,8 @@ const STRIKE_DATA = [
     union: "AWU Victoria",
     industry: "Emergency Services / Forestry",
     type: "resolved",
-    startDate: "2026-06-24",
-    endDate: "",
+    startDate: "2025-01-01",
+    endDate: "2026-06-24",
     workers: null,
     state: "VIC",
     description: "After 18 months of protected industrial action, AWU forest firefighters have been successful in their campaign for a new agreement. No details on the agreement yet, but over the campaign membership grew from 300 to 1000 members.",
@@ -4039,7 +4040,7 @@ const STRIKE_DATA = [
     industry: "Construction / Manufacturing",
     type: "resolved",
     startDate: "2026-06-24",
-    endDate: "",
+    endDate: "2026-06-24",
     workers: null,
     state: "NSW",
     description: "After two weeks of industrial action, ETU members at Stowe have voted up an in-principle agreement. The agreement includes wage increases of 23.25% over 4 years (6%/6%/6%/5.25%), 5 weeks annual leave, improved parental leave, improvements to allowances and May Day guaranteed as a paid day off.",
@@ -4063,7 +4064,7 @@ const STRIKE_DATA = [
     state: "NT",
     description: "On 2 June union members at all 3 Inpex Ichthys gas facilities walked off the job seeking 3% annual wage increases. Initial action was two 2-hour stoppages and bans on overtime and shift swaps. On 8 June unions accused Inpex of reneging on a classification framework offer and escalated to daily 8-hour stoppages. Inpex launched FWC s.424 proceedings, which were rejected on 13 June. On 12 June unions wound back to two 2-hour stoppages but rejected the latest offer. A notice to extend protected action beyond 23 June was being sent.",
     locations: [
-        { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Ichthys gas facilities" }
+         { city: "Darwin", state: "NT", lat: COMPANY["Ichthys gas field"][0], lng: COMPANY["Ichthys gas field"][1], name: "Ichthys gas facilities" }
     ],
     sources: [
         { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4502,7 +4503,7 @@ const STRIKE_DATA = [
     industry: "Emergency Services / Ambulance",
     type: "resolved",
     startDate: "2026-06-16",
-    endDate: "",
+    endDate: "2026-06-16",
     workers: null,
     state: "TAS",
     description: "87% of HACSU members endorsed a new agreement with Ambulance Tasmania, bringing a long dispute to an end after industrial action commenced 9 months ago. The agreement includes the standard 8.75% wage increase over 3 years, plus structural adjustments, a modernised classification structure and improved conditions. HACSU state secretary Robbie Moore confirmed the agreement addresses key issues around rostering and single officer responses. It will soon be lodged with the Tasmanian Industrial Commission.",
@@ -4526,7 +4527,7 @@ const STRIKE_DATA = [
     state: "NT",
     description: "Union members at Inpex's Ichthys LNG facilities commenced industrial action on 2 June. According to the Offshore Alliance, while significant progress was made in negotiations, they fell short on a number of fundamental claims. Workers are fighting for 3% annual wage increases and improvements to conditions. AREEA claimed this would increase labour costs by 50-60%. Action at 3 facilities included stoppages and work bans. Workers were set to commence action the previous week but it was suspended at the eleventh hour.",
     locations: [
-        { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Ichthys LNG facilities" }
+         { city: "Darwin", state: "NT", lat: COMPANY["Ichthys gas field"][0], lng: COMPANY["Ichthys gas field"][1], name: "Ichthys gas facilities" }
     ],
     sources: [
         { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
@@ -4759,6 +4760,26 @@ const STRIKE_DATA = [
         { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" },
         { name: "HWU Victoria - Facebook Post June 1", url: "https://www.facebook.com/healthworkersunion/posts/pfbid03434HvJmGbptvL7ww52M3mmxNPPwAfhW7XwEFc9QG6brAyU8cDmrU1UXG5jLnY9PDl"},
     ]
+},
+{
+    id: 8508,
+    actionId: "hwu-public-sector-health",
+    title: "Victorian Health Workers Endorse New Enterprise Agreement",
+    union: "HWU",
+    industry: "Healthcare",
+    type: "resolved",
+    startDate: "2026-06-03",
+    endDate: "2026-06-03",
+    workers: 22267,
+    state: "VIC",
+    description: "Victorian health workers emphatically endorsed their new Public Sector Enterprise Agreement, with 93.5% voting in favour and more than 22,000 workers taking part. A total of 20,832 healthcare workers voted yes, with fifteen health services returning a unanimous 100% endorsement. The deal delivers significant wage increases and workplace improvements for tens of thousands of workers. The vote coincided with Administrator Charlie Donnelly certifying that the HWU is functioning effectively and ready to be returned to democratic control, following a turnaround in finances and membership growth from 10,674 to more than 14,500 since administration began in December 2024.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian health services" }
+    ],
+    sources: [
+        { name: "HWU - Statement from the Administrator Charlie Donnelly, 3 June 2026", url: "https://hwu.org.au/statement-from-the-administrator-charlie-donnelly/" }
+    ],
+    tags: ["healthcare"]
 },
 {
     id: 8601,
@@ -5248,6 +5269,89 @@ const STRIKE_DATA = [
     sources: [
         { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
     ]
+},
+{
+    id: 8505,
+    actionId: "port-adelaide-enfield-asu",
+    title: "Port Adelaide Enfield Workers Vote Down Agreement for Fourth Time",
+    union: "ASU SA",
+    industry: "Local Government",
+    type: "strike",
+    startDate: "2026-08-20",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "ASU members at the City of Port Adelaide Enfield have voted NO to management's proposed Enterprise Agreement for the fourth time. Members have fought against attacks on job security and are standing strong for wages that keep up with the cost of living. The union's message to Council is that it is time to listen and come back with a fair offer.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: SA["City of Port Adelaide Enfield"][0], lng: SA["City of Port Adelaide Enfield"][1], name: "City of Port Adelaide Enfield" }
+    ],
+    sources: [
+        { name: "ASU Proud SA/NT - Instagram post, 20 August 2026", url: "https://www.instagram.com/p/DcP6rj4Gvon/" }
+    ],
+    tags: ["local-government", "asu"]
+},
+{
+    id: 8507,
+    actionId: "ieu-vic-catholic-teachers",
+    title: "VCEA provides offer to IEU Significant Concerns",
+    union: "IEU Vic",
+    industry: "Education",
+    type: "ballot",
+    startDate: "2026-09-18",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "IEU press release reveals conditions and changes offered to the IEU from the Victorian Catholic Education Authority",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Catholic schools across Victoria" }
+    ],
+    sources: [
+        { name: "IEU Victoria Tasmania - VCEA's latest offer unpacked", url: "https://www.ieuvictas.org.au/news/vceaoffer" }
+    ],
+    tags: ["education", "ieu"]
+},
+{
+    id: 8509,
+    actionId: "isis-sugar-mill-amwu",
+    title: "Isis Central Sugar Mill Workers Secure EBA After Protected Action",
+    union: "AWU / AMWU QLD & NT",
+    industry: "Food Manufacturing",
+    type: "resolved",
+    startDate: "2026-07-01",
+    endDate: "2026-07-01",
+    workers: null,
+    state: "QLD",
+    description: "After lengthy negotiations and protected industrial action, AWU members at Isis Central Sugar Mill have secured wins in cane railways including better conditions, allowances, wages and improved safety. The AWU and AMWU hosted a BBQ for union members to discuss the latest EBA offer. Workers at the mill share a sense of collective responsibility, working for the last locally owned sugar mill in Queensland, with many family generations working side-by-side. The locally focused bargaining collective between workers and management reached an agreement that benefits workers, the mill's viability, and the Childers community and economy.",
+    locations: [
+        { city: "Childers", state: "QLD", lat: -25.2333, lng: 152.2833, name: "Isis Central Sugar Mill" }
+    ],
+    sources: [
+        { name: "AWU Queensland & NT Branch - Facebook post, 1 July 2026", url: "https://www.facebook.com/AWUqueensland/posts/the-awu-and-amwu-qld-nt-hosted-a-bbq-for-union-members-at-isis-central-sugar-mil/1344596671195987/" }
+    ],
+    tags: ["food-manufacturing"]
+},
+{
+    id: 8510,
+    actionId: "qld-rail-amwu-etu",
+    title: "Queensland Rail Reaches In-Principle Agreement on All Remaining EBAs",
+    union: "AMWU / ETU / RTBU / TSU",
+    industry: "Rail Transport",
+    type: "resolved",
+    startDate: "2026-09-18",
+    endDate: "2026-09-18",
+    workers: 6000,
+    state: "QLD",
+    description: "Queensland Rail has reached an in-principle agreement on all remaining enterprise agreements, ending a long-running pay dispute and months of union disruption. In-principle deals were finalised on the remaining three of seven EBAs: Network, Rollingstock and Operations, and a new electrical-only agreement, following negotiations in the Fair Work Commission since May. Key conditions include an 8.5% wage increase over three years plus an additional cost-of-living relief payment of up to 1% in each of the second and third years depending on inflation, in line with the Queensland Government-Owned Corporations Wages Policy. Backpay will be paid from 1 August 2026 for the Network and Rollingstock and Operations agreements, and from 1 September 2026 for the electrical-only agreement. Union protected industrial action has been lifted, allowing the maintenance backlog to be cleared. The SEQ network is on track to restore 91% of services (7,725 weekly services, or an additional 417) from 12 October, with a full timetable expected by the end of November. Beenleigh and Shorncliffe line services will uplift to 15-minute peak services. All outcomes have been recommended by the Fair Work Commission to go to a ballot of employees, with a recommendation to vote yes.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland Rail Network" }
+    ],
+    sources: [
+        { name: "Statement from the Minister for Transport and Main Roads - Queensland Government", url: "https://statements.qld.gov.au/statements/106087" },
+        { name: "National Tribune - Statement From Minister For Transport And Main Roads", url: "https://www.nationaltribune.com.au/statement-from-minister-for-transport-and-main-roads/" },
+        { name: "National Tribune - More trains coming as Queensland Rail reaches final in-principle agreements", url: "https://www.nationaltribune.com.au/more-trains-coming-as-queensland-rail-reaches-final-in-principle-agreements/" },
+        { name: "ABC News - Queensland Rail and unions reach agreement, ending months-long pay dispute", url: "https://newsapp.abc.net.au/news/2026-09-18/qld-rail-dispute-resolved/107170016" }
+    ],
+    tags: ["rail-transport", "amwu", "rtbu", "etu", "tsu"]
 }
 ];
 
