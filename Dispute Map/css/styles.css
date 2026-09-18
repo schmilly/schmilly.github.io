@@ -125,7 +125,14 @@ html, body {
     font-size: 13px;
 }
 
+.thank-you{
+    font-size: 9px;
+}
 
+.thank-you summary{
+    font-size: 9px;
+    padding: 1px;
+}
 
 .stats-bar {
     display: flex;
@@ -934,6 +941,8 @@ html[data-theme="light"] .leaflet-control-attribution {
     color: #4a5460 !important;
 }
 
+
+
 /* Marker popup content */
 .marker-popup { text-align: center; }
 .marker-popup .mp-title { font-weight: 700; display: block; margin-bottom: 2px; }
@@ -1059,9 +1068,14 @@ html[data-theme="light"] .leaflet-control-attribution {
         padding: 0px;
     }
 
-    details {
-        font-size: 8px;
-    }
+.thank-you{
+    font-size: 8px;
+}
+
+.thank-you summary{
+    font-size: 6px;
+    padding: 1px;
+}
 }
 
 @media (max-width: 480px) {
