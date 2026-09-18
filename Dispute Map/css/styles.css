@@ -9,8 +9,12 @@
     --bg-ticker: #0a0c10;
     --bg-footer: rgba(13, 17, 23, 0.96);
     --border: #3a2c2d;
+    --bg-alt: #333;
     --text-primary: #ffffff;
     --text-secondary: #ffffff;
+    --text-tertiary: #c9d1d9;
+    --text-quaternary: #999;
+    --text-heading: #e6edf3;
     --text-muted: #fcc7c7;
     --accent: #58a6ff;
     --strike: #e74c3c;
@@ -45,8 +49,12 @@ html[data-theme="light"] {
     --bg-ticker: #e3e7ee;
     --bg-footer: rgba(255, 255, 255, 0.96);
     --border: #ccd3db;
+    --bg-alt: #e5e5e5;
     --text-primary: #10151b;
     --text-secondary: #333d47;
+    --text-tertiary: #232426;
+    --text-quaternary: #4b4e52;
+    --text-heading: #222222;
     --text-muted: #5f6b78;
     --accent: #2f6fd0;
     --strike: #c0392b;

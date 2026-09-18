@@ -641,7 +641,7 @@
             <span class="meta-tag">${latest.union || 'N/A'}</span>
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
-            ${latest.tags ? latest.tags.map(t => `<span class="meta-tag" style="background:#333;">#${t}</span>`).join('') : ''}
+            ${latest.tags ? latest.tags.map(t => `<span class="meta-tag" style="background:var(--bg-alt);">#${t}</span>`).join('') : ''}
             ${staleBadge}
             </div>
             ${staleNotice}
@@ -727,9 +727,9 @@
             <div style="border-left: 2px solid #444; padding-left: 12px; margin-top: 6px;">
             ${action.entries.map(entry => `
                 <div style="margin-bottom: 12px;">
-                <div style="font-weight: 700; color: #e6edf3; font-size: 13px;">${escapeHtml(entry.title)}</div>
-                <div style="font-size: 11px; color: #aaa;">Union: ${escapeHtml(entry.union || 'Unknown')} · ${formatDate(entry.startDate)}</div>
-                <div style="font-size: 12px; color: #999; margin-top: 4px;">${escapeHtml(entry.description)}</div>
+                <div style="font-weight: 700; color:var(--text-heading); font-size: 13px;">${escapeHtml(entry.title)}</div>
+                <div style="font-size: 11px; color:var(--text-heading);">Union: ${escapeHtml(entry.union || 'Unknown')} · ${formatDate(entry.startDate)}</div>
+                <div style="font-size: 12px; color:var(--text-quaternary); margin-top: 4px;">${escapeHtml(entry.description)}</div>
                 ${entry.sources && entry.sources.length > 0 ? `
                     <div style="font-size: 11px; margin-top: 4px; color: #58a6ff;">
                     ${entry.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener noreferrer" class="source-link" style="font-size:11px;">${src.name || src.url}</a>`).join(' · ')}
@@ -767,7 +767,7 @@
         <div class="detail-section"><div class="detail-label">Locations</div><div class="detail-value">${locationsHtml}</div></div>
         <div class="detail-section"><div class="detail-label">Workers Involved</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
         <div class="detail-section"><div class="detail-label">Duration</div><div class="detail-value">${formatDate(firstStart)} — ${latest.endDate ? formatDate(latest.endDate) : 'Ongoing'}</div></div>
-        <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: #c9d1d9;">${escapeHtml(latest.description)}</div></div>
+        <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: var(--text-tertiary);">${escapeHtml(latest.description)}</div></div>
         ${historyHtml}
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
