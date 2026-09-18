@@ -81,7 +81,14 @@ const COMPANY = {
     "Stowe": [-33.8119, 151.03241],
     "Bega Dairy": [-36.6661, 149.8231],
     "Bridgestone": [-34.9406, 138.6170],
-    "Ceva Logistics": [-37.8064, 144.7371]
+    "Ceva Logistics": [-37.8064, 144.7371],
+    "Valmet":{
+        "NSW":[-33.7650, 151.2755]
+    },
+    "CSL":{
+        "VIC":[-37.6881, 144.9396]
+    },
+    "RACQ":[-27.5863, 153.1001]
 }
 
 const MELB = {
@@ -99,7 +106,8 @@ const MELB = {
 
 const BRIS = {
     "Mater Hospital Brisbane" : [-27.486102725716407, 153.02784104315765],
-    "Secure Journeys Brisbane": [-27.422621424649737, 153.1022575959132]
+    "Secure Journeys Brisbane": [-27.422621424649737, 153.1022575959132],
+    "River": [-27.48038317578606, 153.03099475353326]
 }
 
 const PER = {
@@ -113,6 +121,7 @@ const SYD = {
     "Uni": [-33.88810449082193, 151.1871032773295],
     "Northern Beaches": [-33.670256518987316, 151.31802318697055],
     "QANTAS": [-33.92548617476988, 151.18660150979397],
+    "Airport": [-33.94111, 151.1746],
 }
 
 const MINE = {
@@ -130,6 +139,8 @@ const CAN = {
 const SA = {
     "Service Stream SA": [-34.860410821670975, 138.5680181935495],
     "City of Port Adelaide Enfield": [-34.84380947005328, 138.50440372486509],
+    "SA Pathology": [-34.9197, 138.6080], //Main lab
+    "KONE": [-34.9142, 138.628]
 }
 
 const WA ={
@@ -142,11 +153,30 @@ const QLD ={
     "Bethany Christian Care": {
         "The Plains":[-27.5926, 153.1005],
         "Janoah Gardens":[-27.4681, 153.1709],
-    }
+    },
+    "QUT": [-27.4779, 153.0274], //Queensland Uni of Technology
+    "Griffith Uni": [-27.5531, 153.0510],
+    "Parliament":[-27.475532182152072, 153.02740592577948]
+}
+
+const TAS ={
+    "Royal Hobart Hospital": [-42.8798, 147.3292],
 }
 
 const VIC ={
-    "Port of Portland":[-38.3531, 141.6176]
+    "Port of Portland":[-38.3531, 141.6176],
+}
+
+const PORT = { //Ports
+    "Hobart":[-42.88178, 147.33922],
+    "Portland":[-38.3531, 141.6176],
+}
+
+const UNI ={ //Unis
+    "QLD":[-27.4977, 153.0128],
+    "Griffith":[-27.5531, 153.0510],
+    "QLD Uni Tech":[-27.4779, 153.0274],
+    "MELB":[-37.79840685767232, 144.96095388740878],
 }
 const STRIKE_DATA = [
     {
@@ -496,7 +526,7 @@ const STRIKE_DATA = [
 // TWU - FedEx (PABO granted)
 {
     id: 213,
-    actionId: "twu-fedex-strike",
+    actionId: "twu-transport-strike",
     title: "FedEx Protected Action Ballot Granted",
     union: "TWU",
     industry: "Transport / Logistics",
@@ -551,7 +581,7 @@ const STRIKE_DATA = [
     description: "Workers at 11 ports voted for action including 24-hour strikes. Offer below CPI.",
 
     locations: [
-        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Hobart Port" },
+        { city: "Hobart", state: "TAS", lat: PORT["Hobart"][0], lng: PORT["Hobart"][1], name: "Hobart Port" },
         { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "Burnie Port" },
         { city: "Devonport", state: "TAS", lat: CITY_COORDS["Devonport"][0], lng: CITY_COORDS["Devonport"][1], name: "Devonport Port" }
     ],
@@ -705,7 +735,7 @@ const STRIKE_DATA = [
     workers: null,
     description: "Second strike on 7 Aug 8-10am. First strike on 31 Jul 8-10am. Bosses offered below-inflation increase.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane River" }
+        { city: "Brisbane", state: "QLD", lat: BRIS["River"][0], lng: BRIS["River"][1], name: "Brisbane River" }
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1345,7 +1375,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Stickers, posters, email signatures; QIRC application by government.",
         locations: [
-            { city: "Brisbane", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Parliament House" }
+            { city: "Brisbane", lat: QLD["Parliament"][0], lng: QLD["Parliament"][1], name: "Parliament House" }
         ],
         sources: [
             { name: "Disputes Report - 2nd of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-2-september" },
@@ -2095,7 +2125,7 @@ const STRIKE_DATA = [
 },
 {
     id: 5010,
-    actionId: "amwu-csl-limited",
+    actionId: "csl-amwu-etu",
     title: "AMWU and CSL Limited - Protected Action Ballot",
     union: "AMWU",
     industry: "Other",
@@ -2123,7 +2153,7 @@ const STRIKE_DATA = [
 },
 {
     id: 5011,
-    actionId: "cepu-csl-limited",
+    actionId: "csl-amwu-etu",
     title: "CEPU and CSL Limited - Protected Action Ballot",
     union: "CEPU",
     industry: "Other",
@@ -3259,7 +3289,7 @@ const STRIKE_DATA = [
     industry: "Mining",
     type: "resolved",
     startDate: "2026-07-07",
-    endDate: "",
+    endDate: "2026-07-07",
     workers: null,
     state: "WA",
     description: "BHP's proposed agreement covering workers at Mining Area C and South Flank was endorsed by a narrow majority of 58%. The agreement includes annual pay increases of 4% over 4 years, 14% superannuation contributions, and a delayed flight compensation scheme commencing next year. Both the AMWU and ETU recommended a no vote; the Western Mine Workers Alliance acknowledged the agreement failed to meet a number of claims.",
@@ -3320,7 +3350,7 @@ const STRIKE_DATA = [
     industry: "Ports",
     type: "resolved",
     startDate: "2026-09-08",
-    endDate: "",
+    endDate: "2026-09-08",
     workers: null,
     state: "WA",
     description: "The MUA's WA Branch has called on members to vote yes to a new enterprise agreement at the Port of Broome, following a hard-fought industrial campaign that culminated in an 11-day shutdown of operations. Wharf crews and maintenance workers had been on strike since 7 August, halting cruise ship arrivals and livestock loading, with both terminals closed and cruise passengers ferried ashore in small boats. The dispute centred on pay and conditions, with the union arguing Broome Port trades were the lowest paid in the state's port system. The new agreement, if endorsed, would replace the previous deal that expired in October 2025.",
@@ -3345,7 +3375,7 @@ const STRIKE_DATA = [
     state: "QLD",
     description: "Following industrial action in June, workers endorsed a new offer from RACQ. The new deal includes a 17% pay rise, allowances indexed every year, leave loading, paid time for on-job tasks and other improvements.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "RACQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY["RACQ"][0], lng: COMPANY["RACQ"][1], name: "RACQ" }
     ],
     sources: [
         { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -4381,7 +4411,7 @@ const STRIKE_DATA = [
     state: "QLD",
     description: "In the first week of June, following a unanimous yes vote in a protected action ballot, AMWU member patrol workers at the RACQ commenced partial work bans. The RACQ refused to accept partial work, essentially locking workers out. Bosses have followed up by lecturing workers not to mention the dispute to RACQ members or explain that delays are related to industrial action. Workers are fighting for pay parity with RACQ auto workshop mechanics.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "RACQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY["RACQ"][0], lng: COMPANY["RACQ"][1], name: "RACQ" }
     ],
     sources: [
         { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4728,6 +4758,495 @@ const STRIKE_DATA = [
     sources: [
         { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" },
         { name: "HWU Victoria - Facebook Post June 1", url: "https://www.facebook.com/healthworkersunion/posts/pfbid03434HvJmGbptvL7ww52M3mmxNPPwAfhW7XwEFc9QG6brAyU8cDmrU1UXG5jLnY9PDl"},
+    ]
+},
+{
+    id: 8601,
+    actionId: "tasports",
+    title: "TasPorts MUA and AMOU Members Commence Industrial Action",
+    union: "AMOU / MUA Tasmania",
+    industry: "Ports",
+    type: "strike",
+    startDate: "2026-09-12",
+    endDate: "",
+    workers: null,
+    state: "TAS",
+    description: "AMOU and MUA members at TasPorts commenced industrial action at 6am on Saturday 12 September. Workers participated in a 4-hour stoppage on Saturday morning and a range of ongoing work bans are in place. Workers are fighting for a fair wage increase, pay rates comparable with equivalent workers interstate, and an increase in superannuation contributions from 12.5% to 15%. Workers were originally poised to take action in early August, but it was suspended.",
+    locations: [
+        { city: "Hobart", state: "TAS", lat: PORT["Hobart"][0], lng: PORT["Hobart"][1], name: "Hobart Port" },
+        { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "Burnie Port" },
+        { city: "Devonport", state: "TAS", lat: CITY_COORDS["Devonport"][0], lng: CITY_COORDS["Devonport"][1], name: "Devonport Port" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8602,
+    actionId: "qut-nteu",
+    title: "QUT NTEU Members Commence Industrial Action",
+    union: "NTEU",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-09-16",
+    endDate: "",
+    workers: null,
+    state: "QLD",
+    description: "NTEU members at the Queensland University of Technology commenced industrial action. Workers stopped work for two hours on 16 September from 11:30am-1:30pm. Work bans include a ban on meeting with supervisors, managers and Deans; periodic bans on using Outlook, Canvas and Salesforce; wearing NTEU merchandise; and interrupting work to make statements about taking protected industrial action. The NTEU began negotiations with QUT in December 2025 and the university is yet to make a counter offer on pay, with no agreement on fixing workloads or improving change management provisions. QUT has applied to the FWC to mediate negotiations rather than working with the union directly. Workers are fighting for a 20% wage increase, protection from AI, workload protections and improvements to leave.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: QLD["QUT"][0], lng: QLD["QUT"][1], name: "Queensland University of Technology" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ],
+    tags: ["education", "nteu"]
+},
+{
+    id: 8603,
+    actionId: "bhp-hedland",
+    title: "BHP Port Hedland Talks Stall, Unions Seek Intractable Bargaining Declaration",
+    union: "AMWU / AWU / ETU",
+    industry: "Mining",
+    type: "strike",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "On 8 September, BHP and unions with members at Port Hedland met at the FWC but no agreement was reached. BHP offered a $25,000 transition payment and a 17% wage increase over the proposed 4-year agreement. According to ETU WA Branch secretary Adam Woodage, under the proposal 40% of the workforce would be 'going backwards'. Woodage said: 'There were two major tiers of conditions, we want everyone on the good tier… they want everyone on the shit tier.' The sticking point is that BHP's base wages are below what most workers are currently paid and rely on performance payments to top up take-home pay. Unions do not want existing wage inequalities resolved by cutting some workers' wages. The AMWU, AWU and ETU are applying to the FWC for an intractable bargaining declaration, which if granted would kick off an arbitration process.",
+    locations: [
+        { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ],
+    tags: ["mining"]
+},
+{
+    id: 8604,
+    actionId: "uq-nteu",
+    title: "University of Queensland NTEU Half-Day Strike and Work Bans",
+    union: "NTEU",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-09-08",
+    endDate: "2026-09-08",
+    workers: null,
+    state: "QLD",
+    description: "On 8 September NTEU members at the University of Queensland struck for half a day. Workers have also been participating in a ban on meetings with supervisors, managers and Deans, and a ban on participation in staff appraisal processes. Workers are fighting for a 20% pay increase over 3 years, but the University is offering only 12% over 4 years. Other key sticking points include the NTEU's claim for 17% superannuation for casuals, action on workload, and an end-of-year shutdown. Bargaining with the university commenced in February this year.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: UNI["QLD"][0], lng: UNI["QLD"][1], name: "University of Queensland" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ],
+    tags: ["education", "nteu"]
+},
+{
+    id: 8605,
+    actionId: "twu-transport-strike",
+    title: "FedEx Locks Out 3000 Workers After National Transport Strike",
+    union: "TWU",
+    industry: "Transport / Logistics",
+    type: "lockout",
+    startDate: "2026-09-11",
+    endDate: "",
+    workers: 3000,
+    description: "Thousands of transport workers at FedEx, Border Express, K&S, SCT, PFD, Sadliers, Goldstar and Qube struck for 24 hours on Thursday 10 September. Workers are fighting for pay in line with industry standards, job security and a say in the future of their industries. In response to Thursday's strike action, FedEx locked out 3000 workers across the country on Friday 11 September.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Melbourne" },
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane" },
+        { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8606,
+    actionId: "griffith-nteu",
+    title: "Griffith University NTEU Members Hold Stoppages",
+    union: "NTEU",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-09-09",
+    endDate: "2026-09-09",
+    workers: null,
+    state: "QLD",
+    description: "NTEU members at Griffith University have held two 30-minute stoppages recently, the first on 26 August and the second on 9 September. Workers are fighting for a 20% wage increase, but Griffith University has neither responded to this claim nor put a counter offer. As with QUT and UQ, workers at Griffith are also fighting for protections against AI, action on workload, 17% superannuation for casuals and improvements to leave.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: QLD["Griffith Uni"][0], lng: QLD["Griffith Uni"][1], name: "Griffith University" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ],
+    tags: ["education", "nteu"]
+},
+{
+    id: 8607,
+    actionId: "scope-hacsu",
+    title: "Scope Disability Workers Walk Off at 35 Housing Homes",
+    union: "HACSU Vic",
+    industry: "Disability Services",
+    type: "strike",
+    startDate: "2026-09-11",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "On Friday 11 September, workers from 35 disability housing homes walked off the job and rallied outside Scope's headquarters. Workers and their union have been in negotiations for a new EBA for 2 years. The dispute centres on public services being outsourced to private providers, resulting in worse wages for workers and likely worse standards of care for people with disabilities.",
+    locations: [
+        { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" },
+        { name: "The Age - Scope disability workers strike over pay", url: "https://www.theage.com.au/national/victoria/scope-disability-workers-strike-over-pay-20260911-p5a2kz.html" }
+    ]
+},
+{
+    id: 8608,
+    actionId: "sydney-ferries",
+    title: "Transdev Cancels Parramatta River Ferries Amid MUA Dispute",
+    union: "MUA",
+    industry: "Transport",
+    type: "strike",
+    startDate: "2026-09-12",
+    endDate: "2026-09-13",
+    workers: null,
+    state: "NSW",
+    description: "The MUA's dispute with Sydney ferries operator Transdev continues. While the MUA invited Sydneysiders to enjoy free ferry rides, Transdev maintains the MUA cannot turn off Opal card readers as part of industrial action and that passengers must tap on and tap off. Transdev then cancelled ferry services along the Parramatta River over the weekend of 12-13 September. While Transdev claimed this was linked to industrial action, the MUA said it was retaliation, with Deputy Branch Secretary Paul Garrett saying: 'If Transdev chooses to cancel services, that is a decision being made by the company, not by the workers. The workers are ready to do their jobs and will be at work across the weekend being paid to leave boats tied up to the wharf.' MUA members are fighting for a decent deal and wages that keep up with the cost of living.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SYD["Quay"][0], lng: SYD["Quay"][1], name: "Circular Quay / Parramatta River" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8609,
+    actionId: "vic-doctors-strike",
+    title: "ASMOF Victoria Withdraws Planned 24-Hour Strike After Government Threat",
+    union: "ASMOF Vic",
+    industry: "Healthcare",
+    type: "planned",
+    startDate: "2026-09-15",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "Public hospital doctors were planning to strike for 24 hours on 15 September, but the action was called off on Monday 14 September. According to ASMOF: 'On Friday, the Government advised us that if it did not believe hospitals could be sufficiently staffed during the stoppage, it would use technical and patient safety mechanisms available to it to seek to stop the action. That has occurred. Following legal advice and discussions in the Commission today, ASMOF Victoria has withdrawn tomorrow's planned 24-hour stoppage.' Patient safety was enough of an issue for the state government to suspend industrial action, but not enough to address key claims including banning shifts longer than 12.5 hours, capping consecutive night shifts at four in a row and introducing doctor-to-patient ratios.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8610,
+    actionId: "rivercity-ferries",
+    title: "River City Ferries Stoppages Continue on CityCat Services",
+    union: "AMOU / MUA",
+    industry: "Transport",
+    type: "strike",
+    startDate: "2026-09-10",
+    endDate: "",
+    workers: null,
+    state: "QLD",
+    description: "The dispute between River City Ferries and the MUA continues with more stoppages on CityCat ferries. A 24-hour stoppage was held from 4am on Thursday 10 September. Two 2-hour stoppages were held on 16 and 17 September targeting peak hours of 8am-10am and 4pm-6pm. Workers are fighting for a 6% wage increase in the first year of a new agreement followed by 4.75% or the FWC increase, whichever is greater, as well as backpay from the expiry of the current agreement and improvements to conditions.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane River" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8611,
+    actionId: "act-public-sector",
+    title: "ACT Public Sector Workers Reject Latest Pay Offer",
+    union: "AEU / CFMEU / CPSU / Professionals Australia",
+    industry: "Public Sector",
+    type: "strike",
+    startDate: "2026-09-15",
+    endDate: "",
+    workers: null,
+    state: "ACT",
+    description: "Workers in the ACT public sector rejected the Territory Government's most recent pay offer. Unions ran a vote no campaign on the offer, which included top-up payments if inflation hit certain levels but did not budge from the base 9% pay increase over 3 years. 63% of those who participated rejected the offer. Several unions including the CPSU and AEU have threatened to escalate industrial action. Professionals Australia were first out of the barriers, with ACT pharmacists striking for two hours on 15 September.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8612,
+    actionId: "melb-councils-asu",
+    title: "Melbourne Council Bans Escalate as Councils Dock Wages",
+    union: "ASU Victoria",
+    industry: "Local Government",
+    type: "strike",
+    startDate: "2026-09-08",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "Industrial action continues across 8 Melbourne metropolitan councils. Harder-hitting bans are back on, including street cleaning through the City of Yarra and residential bin collection in Hume and Merri-bek. Merri-bek is docking workers wages up to 15% if they participate in industrial action, and Hume has commenced docking wages by up to 11.5%. The ASU had been pressuring the state government to amend rate capping legislation, but with the election fast approaching this is no longer a live option, though the union is still lobbying the government to contribute to a solution. An update from the ASU on 8 September reported that conversations with the State Government continue to progress positively but noted there was no firm commitment from the government, nor a pay offer from councils.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan councils" },
+        { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" },
+        { city: "Broadmeadows", state: "VIC", lat: CITY_COORDS["Broadmeadows"][0], lng: CITY_COORDS["Broadmeadows"][1], name: "Hume City Council" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "City of Yarra" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8613,
+    actionId: "jetstar-asu",
+    title: "Jetstar Workers Commence Industrial Action",
+    union: "ASU",
+    industry: "Aviation",
+    type: "strike",
+    startDate: "2026-09-12",
+    endDate: "",
+    workers: 900,
+    description: "Having overwhelmingly voted in favour of industrial action, ASU members at Jetstar commenced industrial action on Saturday 12 September. Workers are wearing campaign badges and stickers while working and talking to customers about their campaign.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Jetstar"][0], lng: COMPANY["Jetstar"][1], name: "Jetstar HQ" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8614,
+    actionId: "service-stream-sa-cepu",
+    title: "Service Stream SA Workers Vote Down Second Unendorsed Agreement",
+    union: "CEPU SA",
+    industry: "Telecommunications",
+    type: "strike",
+    startDate: "2026-09-11",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "Workers have voted down another unendorsed proposed agreement from Service Stream. Workers previously voted down a subpar agreement in July. Stoppages at Service Stream continue. A rally in support of workers was held on Friday 11 September at the Edinburgh RAAF base.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: SA["Service Stream SA"][0], lng: SA["Service Stream SA"][1], name: "Service Stream SA / Edinburgh RAAF Base" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8615,
+    actionId: "bridgestone-uwu",
+    title: "Bridgestone Tyrefitters Commence Six-Day Strike",
+    union: "UWU",
+    industry: "Manufacturing",
+    type: "strike",
+    startDate: "2026-09-10",
+    endDate: "2026-09-16",
+    workers: null,
+    description: "UWU members working as tyrefitters at Bridgestone commenced a 6-day strike on Thursday 10 September. Workers are fighting for a fair deal that will keep up with the cost of living. UWU members are asking supporters to sign a petition calling on Managing Director Heath Barclay to provide workers with a decent offer.",
+    locations: [{
+                    city: "Unknown",
+            state: "",
+            lat: COMPANY["Bridgestone"][0],
+            lng: COMPANY["Bridgestone"][1],
+            name: "Bridgestone Australia Ltd"
+        }],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8616,
+    actionId: "sa-pathology-psa",
+    title: "SA Pathology Immunology Workers Take Industrial Action",
+    union: "PSA SA",
+    industry: "Healthcare",
+    type: "strike",
+    startDate: "2026-09-16",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "PSA members working in Immunology at SA Pathology have taken industrial action. Workers are fighting back against increasing workloads that are affecting staff wellbeing and service quality.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA Pathology" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8617,
+    actionId: "vahpa-allied-health",
+    title: "VAHPA 'Four Weeks To Fix It' Campaign Enters Week Two",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "protest",
+    startDate: "2026-09-16",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "Week 2 of VAHPA's 'Four Weeks To Fix It' campaign is encouraging members to put up campaign posters, chalk messages and distribute campaign materials at the start of shifts.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8618,
+    actionId: "csl-amwu-etu",
+    title: "FWC Orders CSL Industrial Action to Stop",
+    union: "AMWU / ETU Vic",
+    industry: "Manufacturing",
+    type: "strike",
+    startDate: "2026-09-11",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "The Victorian branches of both the AMWU and ETU posted notices advising that industrial action at CSL scheduled for 11 September was ordered by the FWC to stop, not occur and not be organised. The dispute is believed to be limited to an agreement covering workers in metals classifications.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["CSL"]["VIC"][0], lng: COMPANY["CSL"]["VIC"][1], name: "CSL" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8619,
+    actionId: "kone-cepu",
+    title: "Kone Workers Commence Industrial Action",
+    union: "CEPU SA",
+    industry: "Manufacturing / Services",
+    type: "strike",
+    startDate: "2026-09-15",
+    endDate: "",
+    workers: null,
+    state: "SA",
+    description: "CEPU members at Kone have commenced industrial action in pursuit of a better deal. Workers held stop work meetings on 15 September and voted to escalate industrial action.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: SA["KONE"][0], lng: SA["KONE"][1], name: "Kone" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8620,
+    actionId: "wellington-clinics-hacsu",
+    title: "Wellington Clinics Nurses Stop Work Over Fixed-Term Contract Cuts",
+    union: "HACSU Tasmania",
+    industry: "Healthcare",
+    type: "strike",
+    startDate: "2026-09-15",
+    endDate: "",
+    workers: null,
+    state: "TAS",
+    description: "HACSU nurses working across medical specialist clinics at the Wellington Clinics at Royal Hobart Hospital stopped work on 15 September to protest against a decision not to extend fixed-term nursing contracts at the clinics. 50% of the nursing workforce are on fixed-term contracts, representing approximately 5 full-time equivalent positions. Health Minister Eric Abetz has termed the cuts 'operational efficiencies'.",
+    locations: [
+        { city: "Hobart", state: "TAS", lat: TAS["Royal Hobart Hospital"][0], lng: TAS["Royal Hobart Hospital"][1], name: "Wellington Clinics, Royal Hobart Hospital" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8621,
+    actionId: "overnewton-college",
+    title: "Overnewton Teachers Escalate to Half-Day Strike",
+    union: "IEU Vic",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-09-17",
+    endDate: "2026-09-17",
+    workers: null,
+    state: "VIC",
+    description: "Teachers at Overnewton College struck for half a day on 17 September. The teachers have already been implementing a range of work bans for over a week, including ignoring dress code and wearing oodies and slippers to work. Parents at the school have created a petition in support of the teachers, but argue that any wage increase for teachers should not be funded by an increase to fees.",
+    locations: [
+        { city: "Keilor", state: "VIC", lat: MELB["Overnewton College"][0], lng: MELB["Overnewton College"][1], name: "Overnewton College" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8622,
+    actionId: "certis-twu",
+    title: "TWU Certis Members Vote in Protected Action Ballot",
+    union: "TWU NSW",
+    industry: "Aviation / Security",
+    type: "ballot",
+    startDate: "2026-09-11",
+    endDate: "2026-09-18",
+    workers: null,
+    state: "NSW",
+    description: "The TWU in NSW advised a protected action ballot for its members at Certis is open from 11 September to 18 September. The ballot is believed to be for Certis members at Sydney Airport.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SYD["Airport"][0], lng: SYD["Airport"][1], name: "Sydney Airport" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8623,
+    actionId: "western-downs-council",
+    title: "Western Downs Regional Council Reaches In-Principle Agreement",
+    union: "AWU / The Services Union QLD",
+    industry: "Local Government",
+    type: "resolved",
+    startDate: "2026-09-16",
+    endDate: "2026-09-16",
+    workers: null,
+    state: "QLD",
+    description: "An in-principle agreement has been made between unions and the Western Downs Regional Council. A formal ballot on the agreement opened on 15 September and closes on 17 September. An AWU organiser described it as a 'significant agreement' with wage increases of up to 16% over 3 years and a new increment scheme that will see workers properly remunerated for their skills and experience. The Services Union noted the agreement includes wage increases of 3% more than the original offer as well as improved conditions and benefits.",
+    locations: [
+        { city: "Dalby", state: "QLD", lat: -27.1833, lng: 151.2667, name: "Western Downs Regional Council" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8624,
+    actionId: "valmet-amwu-etu",
+    title: "Valmet Workers Win In-Principle Agreement After Two Days of Bans",
+    union: "AMWU / ETU NSW",
+    industry: "Manufacturing",
+    type: "resolved",
+    startDate: "2026-09-14",
+    endDate: "2026-09-16",
+    workers: null,
+    state: "NSW",
+    description: "Union members at Valmet have reached an in-principle agreement. It took just two days of partial work bans at one site with 100% ETU membership to drag the bosses back to the negotiating table with an improved offer. The in-principle agreement includes significant wage increases and the removal of a pay averaging system that disadvantaged newer employees.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: COMPANY["Valmet"]["NSW"][0], lng: COMPANY["Valmet"]["NSW"][1], name: "Valmet" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
+    ]
+},
+{
+    id: 8625,
+    actionId: "parks-victoria",
+    title: "Parks Victoria Unions Reach In-Principle Agreement After 12 Months",
+    union: "ASU / AWU / CPSU Victoria",
+    industry: "Environment / Parks",
+    type: "resolved",
+    startDate: "2026-09-16",
+    endDate: "2026-09-16",
+    workers: null,
+    state: "VIC",
+    description: "After fighting for more than 12 months, unions at Parks Victoria have reached an in-principle agreement. According to the CPSU, the deal includes a 3% pay increase, a $5000 one-off payment and a structural wages uplift that will boost base levels of pay. The ASU shared that their members will get a boost to their pay of between 4.5% and 6% depending on grade. When workers commenced industrial action in May, it was the first time in 15 years. Actions included 24-hour strikes (including one the previous week), closure of parks and various work bans.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" }
+    ],
+    sources: [
+        { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
     ]
 }
 ];
