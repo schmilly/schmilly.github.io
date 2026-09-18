@@ -2984,8 +2984,8 @@ const STRIKE_DATA = [
             workers: null,
             description: "Industrial action commenced. Management offer not good enough; workers fighting for fair agreement.",
             locations: [
-                { city: "Brisbane", state: "QLD", lat: QLD["Bethany Christian Care"]["Janoah Gardens"][0], lng: QLD["Bethany Christian Care"]["Janoah Gardens"][1], name: "Bethany Christian Care"},
-                {city: "Brisbane", state: "QLD", lat: QLD["Bethany Christian Care"]["The Plains"][0], lng: QLD["Bethany Christian Care"]["The Plains"][1], name: "Bethany Christian Care"}
+                { city: "Brisbane", state: "QLD", lat: QLD["Bethany Christian Care"]["Janoah Gardens"][0], lng: QLD["Bethany Christian Care"]["Janoah Gardens"][1], name: "Janoah Gardens - Bethany Christian Care"},
+                {city: "Brisbane", state: "QLD", lat: QLD["Bethany Christian Care"]["The Plains"][0], lng: QLD["Bethany Christian Care"]["The Plains"][1], name: "The Plains - Bethany Christian Care"}
             ],
             sources: [
                 { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -4820,7 +4820,7 @@ const STRIKE_DATA = [
     sources: [
         { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
     ],
-    tags: ["education", "nteu"]
+    tags: ["education"]
 },
 {
     id: 8603,
