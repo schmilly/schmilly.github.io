@@ -89,7 +89,15 @@ const COMPANY = {
         "VIC":[-37.6881, 144.9396]
     },
     "RACQ":[-27.5863, 153.1001],
-    "Ichthys gas field": [-12.3519, 130.1464]
+    "Ichthys gas field": [-12.3519, 130.1464],
+    "FedEx":{ //Fed Ex HQ's in each capital city
+        "PER":[-31.991228965142373, 115.91983629673909],
+        "SYD":[-33.924754990813874, 151.18778396151285],
+        "MELB":[-37.69748673856566, 144.8581720352885],
+        "BRIS":[-27.425800876345058, 153.08531336776494],
+        "ADL":[-34.945925929930176, 138.5481889223183],
+        "CAN":[-35.394494369262326, 149.1650417412423]
+    }
 }
 
 const MELB = {
@@ -4874,10 +4882,10 @@ const STRIKE_DATA = [
     workers: 3000,
     description: "Thousands of transport workers at FedEx, Border Express, K&S, SCT, PFD, Sadliers, Goldstar and Qube struck for 24 hours on Thursday 10 September. Workers are fighting for pay in line with industry standards, job security and a say in the future of their industries. In response to Thursday's strike action, FedEx locked out 3000 workers across the country on Friday 11 September.",
     locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney" },
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Melbourne" },
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane" },
-        { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth" }
+        { city: "Sydney", state: "NSW", lat: COMPANY["FedEx"]["SYD"][0], lng:  COMPANY["FedEx"]["SYD"][1], name: "FedEx Sydney" },
+        { city: "Melbourne", state: "VIC",  lat: COMPANY["FedEx"]["MELB"][0], lng:  COMPANY["FedEx"]["MELB"][1], name: "FedEx Melbourne" },
+        { city: "Brisbane", state: "QLD", lat: COMPANY["FedEx"]["BRIS"][0], lng:  COMPANY["FedEx"]["BRIS"][1], name: "FedEx Brisbane" },
+        { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng:  COMPANY["FedEx"]["PER"][1], name: "FedEx Perth" }
     ],
     sources: [
         { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5293,7 +5301,7 @@ const STRIKE_DATA = [
 {
     id: 8507,
     actionId: "ieu-vic-catholic-teachers",
-    title: "VCEA provides offer to IEU Significant Concerns",
+    title: "IEU publicises details of offer from the Vic. Catholic Ed. Auth.",
     union: "IEU Vic",
     industry: "Education",
     type: "ballot",
@@ -5301,7 +5309,7 @@ const STRIKE_DATA = [
     endDate: "",
     workers: null,
     state: "VIC",
-    description: "IEU press release reveals conditions and changes offered to the IEU from the Victorian Catholic Education Authority",
+    description: "IEU press release reveals conditions and changes offered to the IEU from the Victorian Catholic Education Authority (VCEU)",
     locations: [
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Catholic schools across Victoria" }
     ],
