@@ -57,6 +57,10 @@
     let markerClusterGroup;
     let markersMap = new Map();
 
+    // Sidebar auto-collapse on mobile
+    const MOBILE_MQ = window.matchMedia('(max-width: 768px)');
+    let sidebarAutoCollapsed = false;
+
     // ─── DOM Elements ───
     const mapContainer = document.getElementById('map');
     const eventListEl = document.getElementById('event-list');
@@ -97,11 +101,51 @@
         buildActivityIndex();
         initMap();
         initCollapsibleSections();
+        initSidebarState();
         bindUIEvents();
         buildTagFilters();
         buildUnionFilters();
         applyFilters();
         updateTicker();
+    }
+
+    // ─── Sidebar: collapsed by default on mobile ───
+    function initSidebarState() {
+        if (MOBILE_MQ.matches) {
+            // Suppress the slide transition on first paint so it doesn't animate open→closed.
+            sidebarEl.style.transition = 'none';
+            sidebarEl.classList.add('collapsed');
+            void sidebarEl.offsetWidth; // force style commit
+            sidebarEl.style.transition = '';
+            sidebarAutoCollapsed = true;
+        }
+
+        const onBreakpointChange = (e) => {
+            if (e.matches) {
+                // Entered mobile: collapse
+                sidebarEl.classList.add('collapsed');
+                sidebarAutoCollapsed = true;
+            } else if (sidebarAutoCollapsed) {
+                // Returned to desktop: restore
+                sidebarEl.classList.remove('collapsed');
+                sidebarAutoCollapsed = false;
+            }
+            syncSidebarToggle();
+        };
+
+        if (typeof MOBILE_MQ.addEventListener === 'function') {
+            MOBILE_MQ.addEventListener('change', onBreakpointChange);
+        } else if (typeof MOBILE_MQ.addListener === 'function') {
+            MOBILE_MQ.addListener(onBreakpointChange); // Safari < 14
+        }
+
+        syncSidebarToggle();
+    }
+
+    function syncSidebarToggle() {
+        if (!sidebarToggleBtn) return;
+        const expanded = !sidebarEl.classList.contains('collapsed');
+        sidebarToggleBtn.setAttribute('aria-expanded', String(expanded));
     }
 
     // ─── Injected CSS for the stale badge / notice ───
@@ -369,9 +413,12 @@
         map = L.map(mapContainer, {
             center: MAP_CENTER,
             zoom: MAP_ZOOM,
-            zoomControl: true,
-            attributionControl: true
+            attributionControl: true,
         });
+
+        L.control.zoom({
+        position: 'topright'
+        }).addTo(map);
 
         L.tileLayer(TILE_LAYER_URL, {
             attribution: TILE_LAYER_ATTRIBUTION,
@@ -851,6 +898,8 @@
 
         sidebarToggleBtn.addEventListener('click', () => {
             sidebarEl.classList.toggle('collapsed');
+            sidebarAutoCollapsed = false; // user made an explicit choice
+            syncSidebarToggle();
         });
 
         let searchTimeout;

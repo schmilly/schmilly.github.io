@@ -1050,6 +1050,18 @@ html[data-theme="light"] .leaflet-control-attribution {
         padding: 8px 12px;
         font-size: 12px;
     }
+
+    .stats-bar {
+        display:none;
+    }
+
+    summary {
+        padding: 0px;
+    }
+
+    details {
+        font-size: 8px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1074,6 +1086,7 @@ html[data-theme="light"] .leaflet-control-attribution {
     .sidebar-header h2 {
         font-size: 12px;
     }
+
 }
 
 a {
