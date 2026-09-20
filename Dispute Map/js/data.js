@@ -1,5 +1,5 @@
 // ============================================
-// AU Strike Watch - Data File
+// AU dtrike Watch - Data File
 // Events from Disputes Reports - 2 & 9 September 2026
 // Supports: multiple locations per action, multiple entries (updates) for same action,
 // named sources.
@@ -174,6 +174,8 @@ const TAS ={
 
 const VIC ={
     "Port of Portland":[-38.3531, 141.6176],
+    "DOT":[-37.8150, 144.9743], //Vic Department of transport,
+    "Parks Vic": [-37.81046,144.96036],
 }
 
 const PORT = { //Ports
@@ -657,7 +659,7 @@ const STRIKE_DATA = [
     description: "Incident Response workers taking action 7-10am and 4-7pm weekdays. Closing lanes during incidents. Fighting against roster changes and loss of RDOs.",
 
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Major arterial roads" }
+        { city: "Melbourne", state: "VIC", lat: VIC["DOT"][0], lng: VIC["DOT"][1], name: "Major artereal roads" }
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -4030,7 +4032,7 @@ const STRIKE_DATA = [
     type: "resolved",
     startDate: "2025-01-01",
     endDate: "2026-06-24",
-    workers: null,
+    workers: 1000,
     state: "VIC",
     description: "After 18 months of protected industrial action, AWU forest firefighters have been successful in their campaign for a new agreement. No details on the agreement yet, but over the campaign membership grew from 300 to 1000 members.",
     locations: [

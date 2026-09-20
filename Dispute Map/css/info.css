@@ -1,4 +1,4 @@
-* ─── Static page overrides ─── */
+/* ─── Static page overrides ─── */
 html    {
     overflow: auto;
 }
@@ -203,7 +203,23 @@ body.page {
 .pill.dream     { background: rgba(155, 89, 182, 0.16);  color: #8e44ad; border: 1px solid rgba(155,89,182,0.35); }
 
 .pill.done   { background: rgba(46, 204, 113, 0.14);  color: #27ae60; border: 1px solid rgba(46,204,113,0.32); }
-.card.done { background: rgba(46, 204, 113, 0.14); }
+.card.done { background: rgba(46, 204, 113, 0.1); }
+
+.card.done {
+  color: var(--text-quaternary);
+  padding:5px;
+  font-size: 10px;
+}
+
+.card.done p {
+   text-decoration: line-through;
+   color: var(--text-quaternary);
+  font-size: 11px;
+}
+
+.card.done span {
+   color: var(--text-quaternary);
+}
 
 html[data-theme="dark"] .pill.ui    { color: #f1c40f; }
 html[data-theme="dark"] .pill.collab { color: #2ecc71; }
