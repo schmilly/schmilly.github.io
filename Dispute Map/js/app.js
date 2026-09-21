@@ -56,6 +56,7 @@
     let map;
     let markerClusterGroup;
     let markersMap = new Map();
+    let markerCache = new Map();
 
     // Sidebar auto-collapse on mobile
     const MOBILE_MQ = window.matchMedia('(max-width: 768px)');
@@ -107,6 +108,7 @@
         buildUnionFilters();
         applyFilters();
         updateTicker();
+        selectActionFromHash();
     }
 
     // ─── Sidebar: collapsed by default on mobile ───
@@ -444,24 +446,31 @@
 
     // ─── Rendering Markers ───
     function renderMarkers() {
-        markerClusterGroup.clearLayers();
-        markersMap.clear();
+        const visibleActionIds = new Set(filteredActions.map(action => action.actionId));
+        const markersToRemove = [];
+
+        markersMap.forEach((markers, actionId) => {
+            if (!visibleActionIds.has(actionId)) {
+                markersToRemove.push(...markers);
+                markersMap.delete(actionId);
+            }
+        });
+        if (markersToRemove.length > 0) {
+            markerClusterGroup.removeLayers(markersToRemove);
+        }
 
         filteredActions.forEach(action => {
-            const latest = action.latestEntry;
-            let locations = [];
-            if (latest.locations && latest.locations.length > 0) {
-                locations = latest.locations;
-            } else {
-                locations = [{ city: latest.city, lat: latest.lat, lng: latest.lng, name: latest.city, state: latest.state }];
+            const cached = markerCache.get(action.actionId);
+            if (cached && cached.entry !== action.latestEntry) {
+                markerClusterGroup.removeLayers(cached.markers);
+                markerCache.delete(action.actionId);
+                markersMap.delete(action.actionId);
             }
 
-            const markersForAction = [];
-            locations.forEach(loc => {
-                const marker = createMarker(latest, loc, action.actionId);
-                markersForAction.push(marker);
-                markerClusterGroup.addLayer(marker);
-            });
+            const markersForAction = getMarkersForAction(action);
+            if (!markersMap.has(action.actionId)) {
+                markerClusterGroup.addLayers(markersForAction);
+            }
             markersMap.set(action.actionId, markersForAction);
         });
 
@@ -479,6 +488,21 @@
         } else if (filteredActions.length === 0) {
             map.setView(MAP_CENTER, MAP_ZOOM);
         }
+    }
+
+    function getMarkersForAction(action) {
+        const cached = markerCache.get(action.actionId);
+        if (cached && cached.entry === action.latestEntry) {
+            return cached.markers;
+        }
+
+        const latest = action.latestEntry;
+        const locations = latest.locations && latest.locations.length > 0
+            ? latest.locations
+            : [{ city: latest.city, lat: latest.lat, lng: latest.lng, name: latest.city, state: latest.state }];
+        const markers = locations.map(location => createMarker(latest, location, action.actionId));
+        markerCache.set(action.actionId, { entry: latest, markers });
+        return markers;
     }
 
     function createMarker(entry, location, actionId) {
@@ -504,8 +528,41 @@
     }
 
     window.openDetailFromPopup = function(actionId) {
-        openDetailModal(actionId);
+        selectAction(actionId);
     };
+
+    function actionUrl(actionId) {
+        return `#${encodeURIComponent(actionId)}`;
+    }
+
+    function selectAction(actionId, updateUrl = true) {
+        const action = groupedActions.find(item => item.actionId === actionId);
+        if (!action) return;
+
+        selectedActionId = actionId;
+        if (updateUrl && window.location.hash !== actionUrl(actionId)) {
+            window.location.hash = encodeURIComponent(actionId);
+        }
+        updateEventList();
+        openDetailModal(actionId);
+
+        const markers = markersMap.get(actionId);
+        if (markers && markers.length > 0) {
+            map.setView(markers[0].getLatLng(), 10);
+        }
+    }
+
+    function selectActionFromHash() {
+        if (!window.location.hash) return;
+
+        let actionId;
+        try {
+            actionId = decodeURIComponent(window.location.hash.slice(1));
+        } catch (error) {
+            return;
+        }
+        selectAction(actionId, false);
+    }
 
     // ─── Filtering ───
     function applyFilters() {
@@ -646,17 +703,18 @@
             </div>
             ${staleNotice}
             </div>
-            <div class="event-date">${formatDate(latest.startDate)}</div>
+            <div class="event-date">
+                ${formatDate(latest.startDate)}
+                <a class="event-link" href="${actionUrl(action.actionId)}" aria-label="Open link for ${escapeHtml(latest.title)}" title="Copy or share this dispute link">#</a>
+            </div>
             `;
 
             item.addEventListener('click', () => {
-                selectedActionId = action.actionId;
-                updateEventList();
-                openDetailModal(action.actionId);
-                const markers = markersMap.get(action.actionId);
-                if (markers && markers.length > 0) {
-                    map.setView(markers[0].getLatLng(), 10);
-                }
+                selectAction(action.actionId);
+            });
+
+            item.querySelector('.event-link').addEventListener('click', (e) => {
+                e.stopPropagation();
             });
 
             // Wire up the stale badge toggle so it doesn't open the detail modal.
@@ -772,6 +830,7 @@
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
         <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;">
+        <a class="btn" href="${actionUrl(action.actionId)}">Share link</a>
         <button class="btn" id="detail-close">Close</button>
         </div>
         `;
@@ -882,6 +941,8 @@
 
     // ─── UI Event Binding ───
     function bindUIEvents() {
+        window.addEventListener('hashchange', selectActionFromHash);
+
         if (tagToggleBtn) {
             tagToggleBtn.addEventListener('click', () => {
                 tagsExpanded = !tagsExpanded;

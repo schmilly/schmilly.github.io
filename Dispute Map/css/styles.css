@@ -574,6 +574,20 @@ html[data-theme="light"] .event-item.selected {
     white-space: nowrap;
 }
 
+.event-link {
+    display: inline-block;
+    margin-left: 6px;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.event-link:hover,
+.event-link:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 /* Update-count + tag variants (were inline colors) */
 .meta-tag.updates {
     background: rgba(88, 166, 255, 0.20);

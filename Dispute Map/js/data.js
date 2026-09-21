@@ -320,7 +320,8 @@ const STRIKE_DATA = [
     ],
     sources: [
         { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
-    ]
+    ],
+    tags: ["education","stall","negotiation","rally"    ]
 },
 
 // RTBU NSW - Keolis Downer (action paused)
@@ -685,7 +686,8 @@ const STRIKE_DATA = [
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
-    ]
+    ],
+    tags: ["stall","negotiation"]
 },
 
 // Professionals Australia - ACT Forensic Scientists
@@ -903,7 +905,8 @@ const STRIKE_DATA = [
     ],
     sources: [
         { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
-    ]
+    ],
+    tags:["negotiation","stall","education"]
 },
 
 // HACSU Vic - Scope (initial action cancelled by FWC)
@@ -4850,7 +4853,7 @@ const STRIKE_DATA = [
     sources: [
         { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
     ],
-    tags: ["mining"]
+    tags: ["mining","stall","negotiations"]
 },
 {
     id: 8604,
