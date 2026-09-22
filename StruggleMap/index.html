@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Struggle Map</title>
+
+    <!-- Set theme before first paint to avoid a flash -->
+    <script src="js/lightmode.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <!-- External custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ═══ TOP BAR ═══ -->
+    <header id="topbar">
+        <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+        <div class="logo">
+            <span class="dot"></span>
+            Struggle Map
+            <span>· Mapping the Fight ·</span>
+        </div>
+        <details open class="thank-you">
+        <summary class="filter-header filter-label button"><span class="chevron" aria-hidden="true"></span>Credit</summary>
+                    <div>All credit for the amazing information goes to  the incredible <a href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a href="https://Strugglesreport.substack.com"> Struggles Report</a> </div>
+        </details>
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat"><span class="number" id="stat-active">0</span><span class="label">Active</span></div>
+            <div class="stat"><span class="number" id="stat-planned">0</span><span class="label">Planned</span></div>
+            <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers Tracked</span></div>
+            <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total Entries</span></div>
+        </div>
+        <!-- <button id="add-report-btn" class="btn primary" style="margin-left: auto;">+ Report</button> -->
+        <button id="theme-toggle" class="theme-toggle" type="button"
+                aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+            <span class="theme-icon" aria-hidden="true">☀️</span>
+        </button>
+    </header>
+
+    <!-- ═══ NEWS TICKER ═══ -->
+    <div id="ticker">
+        <div class="ticker-content" id="ticker-content">
+            <span>Loading latest industrial actions…</span>
+        </div>
+    </div>
+
+    <!-- ═══ MAIN LAYOUT ═══ -->
+    <div id="main">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="minor" role="note">
+                <strong>Work in progress:</strong> This map is experimental and may contain errors or omissions. Do not rely on it as a definitive source of factual information.
+                <br>
+                <strong>Please email bugs to <a href="mailto:schmilly@proton.me">schmilly@proton.me</a> </strong>
+            </div>
+            <details>
+            <summary class="filter-header filter-label">Filter and Search<span class="chevron" aria-hidden="true"></span></summary>
+            <div>
+            <!-- Search -->
+            <div class="sidebar-header">
+                <h2>🔍 Search Struggles</h2>
+                <input type="text" id="search-input" class="search-box" placeholder="Search by union, industry, location…" autocomplete="off">
+            </div>
+
+            <!-- Event Type filter -->
+            <div class="filter-section collapsible collapsed" data-filter-section="type">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
+                    <span class="filter-label">Event Type</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-type">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips" id="type-filters">
+                            <div class="filter-chip active" data-type="all">All</div>
+                            <div class="filter-chip" data-type="strike">✊ Strike/Collection Action</div>
+                            <div class="filter-chip" data-type="lockout">🔒 Lockout</div>
+                            <div class="filter-chip" data-type="protest">🪧 Protest</div>
+                            <div class="filter-chip" data-type="planned">📋 Planned</div>
+                            <div class="filter-chip" data-type="ballot">🗳️ Ballot</div>
+                            <div class="filter-chip" data-type="scab">🐀 Scab Alert</div>
+                            <div class="filter-chip" data-type="resolved">✔ Resolved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- State filter -->
+            <div class="filter-section collapsible collapsed" data-filter-section="state">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-state">
+                    <span class="filter-label">State / Territory</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-state">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips" id="state-filters">
+                            <div class="filter-chip active" data-state="all">All</div>
+                            <div class="filter-chip" data-state="NSW">NSW</div>
+                            <div class="filter-chip" data-state="VIC">VIC</div>
+                            <div class="filter-chip" data-state="QLD">QLD</div>
+                            <div class="filter-chip" data-state="WA">WA</div>
+                            <div class="filter-chip" data-state="SA">SA</div>
+                            <div class="filter-chip" data-state="TAS">TAS</div>
+                            <div class="filter-chip" data-state="ACT">ACT</div>
+                            <div class="filter-chip" data-state="NT">NT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Union filter -->
+            <div class="filter-section collapsible collapsed" data-filter-section="union">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-union">
+                    <span class="filter-label">Union</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-union">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips tag-filters" id="union-filters">
+                            <!-- Dynamically populated -->
+                        </div>
+                        <button type="button" class="tag-toggle" id="union-toggle" aria-expanded="false">Show all unions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date range filter -->
+            <div class="filter-section collapsible collapsed" data-filter-section="date">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-date">
+                    <span class="filter-label">Date Range</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-date">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips date-filter" id="date-filters">
+                            <div class="filter-chip" data-range="7">7d</div>
+                            <div class="filter-chip" data-range="30">30d</div>
+                            <div class="filter-chip" data-range="90">90d</div>
+                            <div class="filter-chip active" data-range="all">All</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming filter -->
+            <div class="filter-section collapsible collapsed" data-filter-section="upcoming">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-upcoming">
+                    <span class="filter-label">Upcoming</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-upcoming">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips">
+                            <div class="filter-chip" id="upcoming-filter">📅 Show only upcoming</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tag filters -->
+            <div class="filter-section collapsible collapsed" data-filter-section="tags">
+                <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-tags">
+                    <span class="filter-label">Tags</span>
+                    <span class="filter-header-right">
+                        <span class="filter-summary"></span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </span>
+                </button>
+                <div class="filter-panel" id="panel-tags">
+                    <div class="filter-panel-inner">
+                        <div class="filter-chips tag-filters" id="tag-filters">
+                            <!-- Dynamically populated -->
+                        </div>
+                        <button type="button" class="tag-toggle" id="tag-toggle" aria-expanded="false">Show all tags</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </details>
+            <!-- Event list -->
+            <div id="event-list"></div>
+        </aside>
+
+        <!-- Map Container -->
+        <div id="map-container">
+            <div id="map"></div>
+
+            <!-- Mobile only: toggles the sidebar + footer so the map can go full-bleed -->
+            <button id="map-chrome-toggle" type="button" aria-controls="sidebar" aria-expanded="true"
+                    title="Show / hide the filters and event list">
+                <span class="toggle-icon" aria-hidden="true">✕</span>
+                <span class="toggle-label">Hide list</span>
+            </button>
+
+            <div class="map-legend">
+                <div class="legend-title">Event Types</div>
+                <div class="legend-row"><span class="legend-emoji">✊</span> Strike</div>
+                <div class="legend-row"><span class="legend-emoji">🔒</span> Lockout</div>
+                <div class="legend-row"><span class="legend-emoji">🪧</span> Protest/Rally</div>
+                <div class="legend-row"><span class="legend-emoji">📋</span> Planned</div>
+                <div class="legend-row"><span class="legend-emoji">🗳️</span> Ballot</div>
+                <div class="legend-row"><span class="legend-emoji">🐀</span> Scab</div>
+                <div class="legend-row"><span class="legend-emoji">✔</span> Resolved</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FOOTER DISCLAIMER ═══ -->
+    <footer id="site-footer">
+        <details open>
+        <summary class="filter-header filter-label"><span class="chevron" aria-hidden="true"></span></summary>
+        <span><a href="./about.html">About</a></span>
+        <span><a href="./roadmap.html">Roadmap</a></span>
+        Use source links to verify details.
+        <strong> Get YOUR workplace on the map</strong> <a href="https://www.australianunions.org.au/landing-page/for-the-workers/">Join your Union</a> Make it millitant, support struggle, get involved with <a href="https://www.victoriansocialists.org.au/news/launching-the-socialist-workers-caucus">the Socialist Workers Caucus (SWC)</a>, <a href="https://www.instagram.com/tradeunionistsforall/">TUFA</a> or the <a href="https://ancomfed.org/">Anarcho Communist Federation</a> Site is in no way endorsed or affialted with anyone mentioned
+        </details>
+    </footer>
+
+    <!-- ═══ ADD REPORT MODAL ═══ -->
+    <!-- Not implemented -->
+    <div class="modal-overlay" id="add-modal">
+        <div class="modal">
+            <h3>📝 Report Industrial Action</h3>
+            <div class="modal-subtitle">Add a new Struggle or update to an existing action.</div>
+            <form id="add-form">
+                <div class="form-group">
+                    <label for="f-title">Event Title *</label>
+                    <input type="text" id="f-title" required placeholder="e.g. CFMEU Strike at Barangaroo Site">
+                </div>
+                <div class="form-group">
+                    <label for="f-action-id">Action ID (optional, to link to existing)</label>
+                    <input type="text" id="f-action-id" placeholder="e.g. vic-doctors-strike">
+                </div>
+                <div class="form-group">
+                    <label for="f-union">Union *</label>
+                    <input type="text" id="f-union" required placeholder="e.g. CFMEU, AMWU, ETU…">
+                </div>
+                <div class="form-group">
+                    <label for="f-industry">Industry *</label>
+                    <select id="f-industry" required>
+                        <option value="">Select…</option>
+                        <option>Construction</option>
+                        <option>Mining</option>
+                        <option>Education</option>
+                        <option>Healthcare</option>
+                        <option>Transport</option>
+                        <option>Manufacturing</option>
+                        <option>Retail</option>
+                        <option>Public Sector</option>
+                        <option>Logistics</option>
+                        <option>Energy</option>
+                        <option>Rail Transport</option>
+                        <option>Rail Maintenance</option>
+                        <option>Arts & Culture</option>
+                        <option>Utilities</option>
+                        <option>Environment / Parks</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="f-type">Event Type *</label>
+                    <select id="f-type" required>
+                        <option value="strike">⚠️ Strike</option>
+                        <option value="lockout">🔒 Lockout</option>
+                        <option value="protest">✊ Protest/Rally</option>
+                        <option value="planned">📋 Planned Action</option>
+                        <option value="resolved">✅ Resolved</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="f-start">Start Date *</label>
+                    <input type="date" id="f-start" required>
+                </div>
+                <div class="form-group">
+                    <label for="f-end">End Date (leave blank if ongoing)</label>
+                    <input type="date" id="f-end">
+                </div>
+                <div class="form-group">
+                    <label for="f-workers">Workers Involved</label>
+                    <input type="number" id="f-workers" placeholder="e.g. 500" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="f-desc">Description</label>
+                    <textarea id="f-desc" placeholder="Brief description of the industrial action…"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Locations *</label>
+                    <div id="locations-container">
+                        <div class="location-row" style="display: flex; gap: 8px; margin-bottom: 6px;">
+                            <input type="text" class="location-name" placeholder="Location name" style="flex: 1;">
+                            <input type="text" class="location-city" placeholder="City" style="flex: 1;" required>
+                            <input type="number" step="any" class="location-lat" placeholder="Lat" style="flex: 0 0 80px;">
+                            <input type="number" step="any" class="location-lng" placeholder="Lng" style="flex: 0 0 80px;">
+                            <button type="button" class="btn remove-location" style="padding: 4px 8px;">✕</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-location-btn" class="btn" style="margin-top: 6px;">+ Add Location</button>
+                </div>
+                <div class="form-group">
+                    <label>Sources</label>
+                    <div id="sources-container">
+                        <div class="source-row" style="display: flex; gap: 8px; margin-bottom: 6px;">
+                            <input type="text" class="source-name" placeholder="Source name" style="flex: 1;">
+                            <input type="url" class="source-url" placeholder="https://…" style="flex: 2;">
+                            <button type="button" class="btn remove-source" style="padding: 4px 8px;">✕</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-source-btn" class="btn" style="margin-top: 6px;">+ Add Source</button>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Submit Report</button>
+                    <button type="button" class="btn" id="add-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ═══ DETAIL MODAL ═══ -->
+    <div class="modal-overlay" id="detail-modal">
+        <div class="modal" id="detail-modal-content">
+            <!-- Populated dynamically -->
+        </div>
+    </div>
+
+    <!-- ═══ Leaflet JS ═══ -->
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/app.js"></script>
+</body>
+</html>
