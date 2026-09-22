@@ -17,17 +17,20 @@
     const TILE_LAYER_ATTRIBUTION = 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community';
 
     // ─── Type definitions ───
-    const TYPE_INFO = {
-        strike:     { emoji: '✊', color: '#e74c3c' },
-        lockout:    { emoji: '🔒', color: '#e67e22' },
-        protest:    { emoji: '🪧', color: '#f1c40f' },
-        planned:    { emoji: '📋', color: '#3498db' },
-        resolved:   { emoji: '✔', color: '#2ecc71' },
-        ballot:     { emoji: '🗳️', color: '#acbfa4' },
-        scab:       { emoji: '🐀', color: 'brown' },
-        default:    { emoji: '?', color: '#95a5a6' }
-    };
-
+const TYPE_INFO = {
+    strike:     { emoji: '⚒',   color: '#dd0c19', label: 'Strike / Action', showInFilter: true },
+    lockout:    { emoji: '⛔︎',  color: '#e67e22', label: 'Lockout',                    showInFilter: true },
+    protest:    { emoji: '⚑',   color: '#f1c40f', label: 'Protest',                    showInFilter: true },
+    planned:    { emoji: '⛶',   color: '#3498db', label: 'Planned',                    showInFilter: true },
+    update:     { emoji: '⚠',   color: '#d5d81e', label: 'Update',                     showInFilter: true },
+    resolved:   { emoji: '✔',   color: '#2ecc71', label: 'Resolved',                   showInFilter: true },
+    ballot:     { emoji: '☐',   color: '#acbfa4', label: 'Ballot',                     showInFilter: true },
+    scab:       { emoji: '⚠',   color: '#804f00',   label: 'Scab Alert',                 showInFilter: true },
+    ballotpass: { emoji: '☑',   color: '#b4dea3', label: 'Ballot Passed',              showInFilter: true },
+    ballotfail: { emoji: '☒',   color: '#bfaea4', label: 'Ballot Failed',              showInFilter: true },
+    default:    { emoji: '?',   color: '#95a5a6', label: 'Other',                      showInFilter: false },
+    unkown: { emoji: '?',   color: '#95a5a6', label: 'Unknown',                      showInFilter: false },
+};
     function getTypeInfo(type) {
         return TYPE_INFO[type] || TYPE_INFO.default;
     }
@@ -36,6 +39,17 @@
         const info = getTypeInfo(type);
         const fontSize = size;
         return `<span style="font-size: ${fontSize}px; line-height: 1; color: ${info.color}">${info.emoji}</span>`;
+    }
+
+    function getLabelText(type){
+        const info = getTypeInfo(type);
+        return `${info.label}`;
+    }
+
+    function getLabelHTML(type, size = 20){
+        const info = getTypeInfo(type);
+        const fontSize = size;
+        return `<span style="font-size: ${fontSize}px; line-height: 1; color: ${info.color}">${info.label}</span>`;
     }
 
     // ─── State ───
@@ -66,8 +80,8 @@
     const mapContainer = document.getElementById('map');
     const eventListEl = document.getElementById('event-list');
     const searchInput = document.getElementById('search-input');
-    const typeFilterChips = document.querySelectorAll('#type-filters .filter-chip');
-    const stateFilterChips = document.querySelectorAll('#state-filters .filter-chip');
+    const typeFilterContainer = document.getElementById('type-filters');
+    const stateFilterContainer = document.getElementById('state-filters');
     const dateFilterChips = document.querySelectorAll('#date-filters .filter-chip');
     const upcomingFilterChip = document.getElementById('upcoming-filter');
     const tagFilterContainer = document.getElementById('tag-filters');
@@ -101,13 +115,16 @@
         buildGroupedActions();
         buildActivityIndex();
         initMap();
+        buildTypeFilters();     
+        buildStateFilters();    
+        buildLegend();          
         initCollapsibleSections();
         initSidebarState();
         bindUIEvents();
         buildTagFilters();
         buildUnionFilters();
         applyFilters();
-        updateTicker();
+        //updateTicker();
         selectActionFromHash();
     }
 
@@ -398,6 +415,103 @@
         });
     }
 
+    // ─── Build event-type filter chips dynamically ───
+function buildTypeFilters() {
+    if (!typeFilterContainer) return;
+    typeFilterContainer.innerHTML = '';
+
+    const makeChip = (value, html, isActive) => {
+        const chip = document.createElement('div');
+        chip.className = 'filter-chip' + (isActive ? ' active' : '');
+        chip.dataset.type = value;
+        chip.innerHTML = html;
+        chip.addEventListener('click', () => {
+            activeTypeFilter = value;
+            buildTypeFilters();
+            applyFilters();
+        });
+        return chip;
+    };
+
+    typeFilterContainer.appendChild(makeChip('all', 'All', activeTypeFilter === 'all'));
+
+    Object.entries(TYPE_INFO).forEach(([key, info]) => {
+        if (info.showInFilter === false) return;
+        const html = `<span aria-hidden="true" style="color:${info.color}">${info.emoji}</span> ${escapeHtml(info.label)}`;
+        typeFilterContainer.appendChild(makeChip(key, html, activeTypeFilter === key));
+    });
+}
+
+// ─── Collect states present in the data (normalised to upper-case) ───
+function collectStates() {
+    const set = new Set();
+    const add = (s) => { if (s) set.add(s.toUpperCase()); };
+    allEntries.forEach(entry => {
+        add(entry.state);
+        if (Array.isArray(entry.locations)) entry.locations.forEach(loc => add(loc.state));
+    });
+    const preferred = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];
+    const known = preferred.filter(s => set.has(s));
+    const extra = [...set].filter(s => !preferred.includes(s)).sort();
+    return [...known, ...extra];
+}
+
+// ─── Build state filter chips dynamically ───
+function buildStateFilters() {
+    if (!stateFilterContainer) return;
+    stateFilterContainer.innerHTML = '';
+
+    const makeChip = (value, label, isActive) => {
+        const chip = document.createElement('div');
+        chip.className = 'filter-chip' + (isActive ? ' active' : '');
+        chip.dataset.state = value;
+        chip.textContent = label;
+        chip.addEventListener('click', () => {
+            activeStateFilter = value;
+            buildStateFilters();
+            applyFilters();
+        });
+        return chip;
+    };
+
+    stateFilterContainer.appendChild(makeChip('all', 'All', activeStateFilter === 'all'));
+    collectStates().forEach(state => {
+        stateFilterContainer.appendChild(makeChip(state, state, activeStateFilter === state));
+    });
+}
+
+// ─── Build the map legend from TYPE_INFO, showing only types in use ───
+function buildLegend() {
+    const container = document.getElementById('map-container');
+    if (!container) return;
+
+    let legend = container.querySelector('.map-legend');
+    if (!legend) {
+        legend = document.createElement('div');
+        legend.className = 'map-legend';
+        container.appendChild(legend);
+    }
+
+    const present = new Set();
+    groupedActions.forEach(action => present.add(action.latestEntry.type));
+
+    const rows = [];
+    Object.entries(TYPE_INFO).forEach(([key, info]) => {
+        if (info.showInFilter === false) return;
+        if (!present.has(key)) return;
+        rows.push(
+            `<div class="legend-row">
+                <span class="legend-emoji" aria-hidden="true" style="color:${info.color}">${info.emoji}</span>
+                <span>${escapeHtml(info.label)}</span>
+            </div>`
+        );
+    });
+
+    legend.innerHTML =
+        `<div class="legend-title">Legend</div>` +
+        (rows.length ? rows.join('') : '<div class="legend-row">No entries</div>');
+}
+
     // ─── Collapsible filter sections ───
     function initCollapsibleSections() {
         document.querySelectorAll('.filter-section.collapsible').forEach(section => {
@@ -589,14 +703,15 @@
             result = result.filter(action => action.latestEntry.type === activeTypeFilter);
         }
 
-        if (activeStateFilter !== 'all') {
-            result = result.filter(action => {
-                const e = action.latestEntry;
-                if (e.state === activeStateFilter) return true;
-                if (e.locations && e.locations.some(loc => loc.state === activeStateFilter)) return true;
-                return false;
-            });
-        }
+if (activeStateFilter !== 'all') {
+    const target = activeStateFilter.toUpperCase();
+    result = result.filter(action => {
+        const e = action.latestEntry;
+        if ((e.state || '').toUpperCase() === target) return true;
+        if (e.locations && e.locations.some(loc => (loc.state || '').toUpperCase() === target)) return true;
+        return false;
+    });
+}
 
         if (activeDateRange !== 'all') {
             const now = new Date();
@@ -676,7 +791,7 @@
         eventListEl.innerHTML = '';
 
         if (filteredActions.length === 0) {
-            eventListEl.innerHTML = '<div style="padding: 20px; text-align: center; color: #8b949e;">No events match your filters.</div>';
+            eventListEl.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-quaternary);">No events match your filters.</div>';
             return;
         }
 
@@ -691,10 +806,11 @@
             const staleNotice = getStaleNoticeHtml(action);
 
             item.innerHTML = `
-            <div style="flex-shrink:0;">${getEmojiHtml(latest.type, 18)}</div>
+            <div style="flex-shrink:0;">${getEmojiHtml(latest.type, 18)}</div> 
             <div class="event-info">
             <div class="event-title">${escapeHtml(latest.title)}</div>
             <div class="event-meta">
+            <span class="meta-tag">${getLabelHTML(latest.type, 10)}</span>
             <span class="meta-tag">${latest.union || 'N/A'}</span>
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
@@ -933,6 +1049,8 @@
         buildGroupedActions();
         buildActivityIndex();
         buildTagFilters();
+        buildStateFilters();   
+        buildLegend();         
         buildUnionFilters();
         closeAddModal();
         applyFilters();
@@ -972,23 +1090,7 @@
             }, 250);
         });
 
-        typeFilterChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                typeFilterChips.forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                activeTypeFilter = chip.dataset.type;
-                applyFilters();
-            });
-        });
 
-        stateFilterChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                stateFilterChips.forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                activeStateFilter = chip.dataset.state;
-                applyFilters();
-            });
-        });
 
         dateFilterChips.forEach(chip => {
             chip.addEventListener('click', () => {

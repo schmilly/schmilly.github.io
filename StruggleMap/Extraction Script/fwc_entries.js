@@ -1,5 +1,3 @@
-Extracted 917 entries.
-// Auto-generated from FWC ballot results
 const fwcBallotEntries = [
         endDate: "",
         workers: null,

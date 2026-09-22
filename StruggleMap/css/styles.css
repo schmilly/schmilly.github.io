@@ -4,10 +4,10 @@
 
 :root {
     --bg-dark: #160d0e;
-    --bg-panel: #161b22;
-    --bg-elevated: #281b1d;
+    --bg-panel: #150b0d;
+    --bg-elevated: #6f151d;
     --bg-ticker: #0a0c10;
-    --bg-footer: rgba(13, 17, 23, 0.96);
+    --bg-footer: #150b0d;
     --border: #3a2c2d;
     --bg-alt: #333;
     --text-primary: #ffffff;
@@ -16,7 +16,7 @@
     --text-quaternary: #999;
     --text-heading: #e6edf3;
     --text-muted: #fcc7c7;
-    --accent: #58a6ff;
+    --accent: #db222a;
     --strike: #e74c3c;
     --lockout: #e67e22;
     --protest: #f1c40f;
@@ -56,7 +56,7 @@ html[data-theme="light"] {
     --text-quaternary: #4b4e52;
     --text-heading: #222222;
     --text-muted: #5f6b78;
-    --accent: #2f6fd0;
+    --accent: #db222a;
     --strike: #c0392b;
     --glow: rgba(231, 76, 60, 0.22);
 
@@ -105,7 +105,7 @@ html, body {
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: -0.5px;
     white-space: nowrap;
     display: flex;
@@ -697,14 +697,13 @@ html[data-theme="light"] .map-legend {
     display: none;
     position: fixed;
     top: 0;
-    left: 0;
+    left: var(--sidebar-width);
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 2000;
-    justify-content: center;
+    background: rgba(0, 0, 0, 0.0);
+    z-index: 890; /* Below sidebar, but above everything else */
+    justify-content: left;
     align-items: center;
-    backdrop-filter: blur(2px);
 }
 
 .modal-overlay.visible {

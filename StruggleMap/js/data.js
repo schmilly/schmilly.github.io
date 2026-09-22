@@ -549,7 +549,7 @@ const STRIKE_DATA = [
     title: "FedEx Protected Action Ballot Granted",
     union: "TWU",
     industry: "Transport / Logistics",
-    type: "planned",
+    type: "ballot",
     startDate: "2026-07-22",
     endDate: "2026-08-20",
     workers: null,
@@ -571,7 +571,7 @@ const STRIKE_DATA = [
     title: "Pacific National Intermodal Crew Vote for Action",
     union: "RTBU",
     industry: "Rail Transport",
-    type: "planned",
+    type: "ballotpass",
     startDate: "2026-07-29",
     endDate: "",
     workers: null,
@@ -587,6 +587,7 @@ const STRIKE_DATA = [
 },
 
 // AMOU/MUA Tasmania - TasPorts (vote for action)
+//*
 {
     id: 215,
     actionId: "tasports",
@@ -1925,7 +1926,7 @@ const STRIKE_DATA = [
         title: "HSU and The Department of Families, Fairness and Housing - Protected Action Ballot",
         union: "HSU",
         industry: "Other",
-        type: "ballot",
+        type: "ballotpass",
         startDate: "2026-09-08",
         endDate: "",
         workers: null,
@@ -2009,7 +2010,7 @@ const STRIKE_DATA = [
     title: "TWU and Bridgestone Australia Ltd - Protected Action Ballot",
     union: "TWU",
     industry: "Other",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-09-08",
     endDate: "",
     workers: null,
@@ -2069,6 +2070,7 @@ const STRIKE_DATA = [
     ],
     tags: ["rail-transport", "aimpe", "fwc-ballot"]
 },
+/* Commented out because it has no votes in the result (??)
 {
     id: 5007,
     actionId: "amou-port-of-portland-pty-limited",
@@ -2096,7 +2098,7 @@ const STRIKE_DATA = [
         }
     ],
     tags: ["maritime", "amou", "fwc-ballot"]
-},
+}, */ 
 {
     id: 5008,
     actionId: "premier-coal",
@@ -2234,7 +2236,7 @@ const STRIKE_DATA = [
     title: "UWU and Bega Dairy and Drinks Pty Ltd - Protected Action Ballot",
     union: "UWU",
     industry: "Other",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-09-02",
     endDate: "",
     workers: null,
@@ -2290,7 +2292,7 @@ const STRIKE_DATA = [
     title: "TWU and Bega Dairy and Drinks Pty Ltd - Protected Action Ballot",
     union: "TWU",
     industry: "Other",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-09-02",
     endDate: "",
     workers: null,
@@ -2393,10 +2395,10 @@ const STRIKE_DATA = [
     title: "AMWU and Nissan Casting Australia Pty Ltd - Protected Action Ballot",
     union: "AMWU",
     industry: "Other",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-09-01",
     endDate: "",
-    workers: null,
+    workers: 54,
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
@@ -2449,10 +2451,10 @@ const STRIKE_DATA = [
     title: "TWU and Ceva Logistics (Australia) Pty Ltd - Protected Action Ballot",
     union: "TWU",
     industry: "Transport / Logistics",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-08-31",
     endDate: "",
-    workers: null,
+    workers: 318,
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
@@ -2477,7 +2479,7 @@ const STRIKE_DATA = [
     title: "AWU and Service Stream Limited - Protected Action Ballot",
     union: "AWU",
     industry: "Other",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-08-28",
     endDate: "",
     workers: null,
@@ -2505,10 +2507,10 @@ const STRIKE_DATA = [
     title: "AMWU and South32 Worsley Alumina Pty Ltd - Protected Action Ballot",
     union: "AMWU",
     industry: "Mining",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-08-28",
     endDate: "",
-    workers: null,
+    workers: 136,
     description: "Protected action ballot result from Fair Work Commission.",
     locations: [
         {
@@ -3306,10 +3308,10 @@ const STRIKE_DATA = [
 {
     id: 8013,
     actionId: "bhp-mining-area-c",
-    title: "BHP Mining Area C and South Flank Agreement Endorsed",
+    title: "BHP Mining Area C and South Flank Agreement Endorsed Despite Unions Recommending No",
     union: "AMWU / AWU / ETU / MEU",
     industry: "Mining",
-    type: "resolved",
+    type: "ballotfail",
     startDate: "2026-07-07",
     endDate: "2026-07-07",
     workers: null,
@@ -3926,7 +3928,7 @@ const STRIKE_DATA = [
     title: "Glencore Mine Workers Vote for Industrial Action",
     union: "MEU",
     industry: "Mining",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-06-23",
     endDate: "",
     workers: null,
@@ -4658,7 +4660,7 @@ const STRIKE_DATA = [
     title: "Wambo United Joint Venture Workers Vote for Industrial Action",
     union: "MEU",
     industry: "Mining",
-    type: "ballot",
+    type: "ballotpass",
     startDate: "2026-06-02",
     endDate: "",
     workers: null,
@@ -5320,7 +5322,7 @@ const STRIKE_DATA = [
     title: "IEU publicises details of offer from the Vic. Catholic Ed. Auth.",
     union: "IEU Vic",
     industry: "Education",
-    type: "ballot",
+    type: "update",
     startDate: "2026-09-18",
     endDate: "",
     workers: null,
