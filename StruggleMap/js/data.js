@@ -1560,9 +1560,9 @@ const STRIKE_DATA = [
         title: "Downer Pakenham: Industrial Action Withdrawn for FWC Hearing",
         union: "AMWU / ETU",
         industry: "Rail Maintenance",
-        type: "strike",
+        type: "update",
         startDate: "2026-08-31",
-        endDate: "",
+        endDate: "2026-09-08",
         workers: null,
         description: "Unions applied for assisted bargaining and withdrew all industrial action as good faith. FWC hearing scheduled 8/9. Trains may resume normal service.",
         locations: [

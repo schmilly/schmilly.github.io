@@ -18,20 +18,20 @@
 
     // ─── Type definitions ───
 const TYPE_INFO = {
-    strike:     { emoji: '⚒',   color: '#ff0011', label: 'Strike', showInFilter: true },
-    stoppage:   { emoji: '✖',   color: '#ff0011', label: 'Intermittent Strike/Stoppage', showInFilter: true },
-    action:     { emoji: '⚒',   color: '#c1474f', label: 'Action', showInFilter: true },
-    lockout:    { emoji: '⛔︎',  color: '#e67e22', label: 'Lockout',                    showInFilter: true },
-    protest:    { emoji: '⚑',   color: '#f1c40f', label: 'Protest',                    showInFilter: true },
-    planned:    { emoji: '⛶',   color: '#3498db', label: 'Planned',                    showInFilter: true },
-    update:     { emoji: '⚠',   color: '#d5d81e', label: 'Update',                     showInFilter: true },
-    resolved:   { emoji: '✔',   color: '#2ecc71', label: 'Resolved',                   showInFilter: true },
-    ballot:     { emoji: '☐',   color: '#acbfa4', label: 'Ballot',                     showInFilter: true },
-    scab:       { emoji: '⚠',   color: '#804f00',   label: 'Scab Alert',                 showInFilter: true },
-    ballotpass: { emoji: '☑',   color: '#b4dea3', label: 'Ballot Passed',              showInFilter: true },
-    ballotfail: { emoji: '☒',   color: '#bfaea4', label: 'Ballot Failed',              showInFilter: true },
-    default:    { emoji: '?',   color: '#95a5a6', label: 'Other',                      showInFilter: false },
-    unkown: { emoji: '?',   color: '#95a5a6', label: 'Unknown',                      showInFilter: false },
+    strike:     { emoji: '⚒',   color: 'var(--type-strike-color)',     label: 'Strike',                       showInFilter: true },
+    stoppage:   { emoji: '✖',   color: 'var(--type-stoppage-color)',   label: 'Intermittent Strike/Stoppage', showInFilter: true },
+    action:     { emoji: '⚒',   color: 'var(--type-action-color)',     label: 'Action',                       showInFilter: true },
+    lockout:    { emoji: '⛔︎',  color: 'var(--type-lockout-color)',    label: 'Lockout',                      showInFilter: true },
+    protest:    { emoji: '⚑',   color: 'var(--type-protest-color)',    label: 'Protest',                      showInFilter: true },
+    planned:    { emoji: '⛶',   color: 'var(--type-planned-color)',    label: 'Planned',                      showInFilter: true },
+    update:     { emoji: '⚠',   color: 'var(--type-update-color)',     label: 'Update',                       showInFilter: true },
+    resolved:   { emoji: '✔',   color: 'var(--type-resolved-color)',   label: 'Resolved',                     showInFilter: true },
+    ballot:     { emoji: '☐',   color: 'var(--type-ballot-color)',     label: 'Ballot',                       showInFilter: true },
+    scab:       { emoji: '⚠',   color: 'var(--type-scab-color)',       label: 'Scab Alert',                   showInFilter: true },
+    ballotpass: { emoji: '☑',   color: 'var(--type-ballotpass-color)', label: 'Ballot Passed',                showInFilter: true },
+    ballotfail: { emoji: '☒',   color: 'var(--type-ballotfail-color)', label: 'Ballot Failed',                showInFilter: true },
+    default:    { emoji: '?',   color: 'var(--type-default-color)',    label: 'Other',                        showInFilter: false },
+    unkown:     { emoji: '?',   color: 'var(--type-unkown-color)',     label: 'Unknown',                      showInFilter: false },
 };
     function getTypeInfo(type) {
         return TYPE_INFO[type] || TYPE_INFO.default;
@@ -540,17 +540,17 @@ function buildLegend() {
 
         L.tileLayer(TILE_LAYER_URL, {
             attribution: TILE_LAYER_ATTRIBUTION,
-            maxZoom: 19
+            maxZoom: 20
         }).addTo(map);
 
         markerClusterGroup = L.markerClusterGroup({
             chunkedLoading: true,
             showCoverageOnHover: false,
-            maxClusterRadius: 50,
+            maxClusterRadius: 25,
             iconCreateFunction: function(cluster) {
                 const count = cluster.getChildCount();
                 return L.divIcon({
-                    html: `<div style="background-color: rgba(30,35,45,0.9); border: 1px solid #3a3f4a; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: #e6edf3; font-weight: 700; font-size: 13px;">${count}</div>`,
+                    html: `<div style="background-color: var(--map-background); border: 1px solid var(--map-border); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--map-centre); font-weight: 700; font-size: 13px;">${count}</div>`,
                     className: 'custom-cluster-icon',
                     iconSize: L.point(36, 36)
                 });
@@ -949,7 +949,6 @@ if (activeStateFilter !== 'all') {
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
         <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;">
         <a class="btn" href="${actionUrl(action.actionId)}">Share link</a>
-        <button class="btn" id="detail-close">Close</button>
         </div>
         `;
 
