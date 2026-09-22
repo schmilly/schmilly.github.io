@@ -97,8 +97,15 @@ const COMPANY = {
         "BRIS":[-27.425800876345058, 153.08531336776494],
         "ADL":[-34.945925929930176, 138.5481889223183],
         "CAN":[-35.394494369262326, 149.1650417412423]
-    }
+    },
+    "DXC": {
+        "HQ": [-33.779443835275245, 151.12839627976174],
+        "VIC": [-37.81644172891636, 144.96220319140227],
+        "QLD": [-27.453496838068023, 153.03833752649774],
+        "ACT": [-35.313489520105335, 149.18984661134039]
+    },
 }
+
 
 const MELB = {
     "Port": [-37.84192, 144.9234],
@@ -3078,7 +3085,8 @@ const STRIKE_DATA = [
     locations: [
         { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian WorkCover Authority / WorkSafe / Victoria Police" },
-        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" }
+        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" },
+             { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC Australia Headquarters" }
     ],
     sources: [
         { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -3562,7 +3570,8 @@ const STRIKE_DATA = [
     locations: [
         { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian clients" },
-        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" }
+        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" },
+        { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC Australia Headquarters" }
     ],
     sources: [
         { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -4232,7 +4241,8 @@ const STRIKE_DATA = [
     locations: [
         { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
         { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian clients" },
-        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" }
+        { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" },
+        { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC Australia Headquarters" }
     ],
     sources: [
         { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4635,7 +4645,8 @@ const STRIKE_DATA = [
     description: "Industrial action and strike-breaking tactics continue at IT services provider DXC. While workers participated in stoppages, DXC attempted to bring in contractors to cover gaps. According to unions, many of these contractors did not have the required security clearances needed to work on sensitive government accounts. DXC's clients include the Department of Defence, Australian Signals Directorate, the ATO and the Department of Home Affairs.",
     locations: [
         { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / Department of Defence / ASD / Home Affairs" },
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "DXC clients" }
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "DXC clients" },
+        { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC Australia Headquarters" }
     ],
     sources: [
         { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
