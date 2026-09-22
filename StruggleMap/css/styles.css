@@ -27,6 +27,7 @@
     --sidebar-width: 340px;
     --topbar-height: 52px;
     --ticker-height: 32px;
+    --selected:rgba(252, 117, 105, 0.08);
     --font-mono: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
     --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
 
@@ -43,19 +44,19 @@
 /* ─── Light theme overrides ─── */
 html[data-theme="light"] {
     color-scheme: light;
-    --bg-dark: #eef1f5;
+    --bg-dark: #c7cdcd;
     --bg-panel: #ffffff;
     --bg-elevated: #e7ecf2;
     --bg-ticker: #e3e7ee;
     --bg-footer: rgba(255, 255, 255, 0.96);
     --border: #ccd3db;
     --bg-alt: #e5e5e5;
-    --text-primary: #10151b;
+    --text-primary: #000;
     --text-secondary: #333d47;
     --text-tertiary: #232426;
     --text-quaternary: #4b4e52;
     --text-heading: #222222;
-    --text-muted: #5f6b78;
+    --text-muted: #3f4144;
     --accent: #db222a;
     --strike: #c0392b;
     --glow: rgba(231, 76, 60, 0.22);
@@ -531,7 +532,7 @@ html, body {
 }
 
 .event-item.selected {
-    background: rgba(88, 166, 255, 0.08);
+    background: var(--selected);
     border-left: 3px solid var(--accent);
 }
 
@@ -1088,6 +1089,16 @@ html[data-theme="light"] .leaflet-control-attribution {
     summary {
         padding: 0px;
     }
+
+    .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width)*0.5;
+    z-index: 890; /* Below sidebar, but above everything else */
+    justify-content: left;
+    align-items: center;
+}
 
 .thank-you{
     font-size: 8px;

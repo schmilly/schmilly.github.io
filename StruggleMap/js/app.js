@@ -18,7 +18,9 @@
 
     // ─── Type definitions ───
 const TYPE_INFO = {
-    strike:     { emoji: '⚒',   color: '#dd0c19', label: 'Strike / Action', showInFilter: true },
+    strike:     { emoji: '⚒',   color: '#ff0011', label: 'Strike', showInFilter: true },
+    stoppage:   { emoji: '✖',   color: '#ff0011', label: 'Intermittent Strike/Stoppage', showInFilter: true },
+    action:     { emoji: '⚒',   color: '#c1474f', label: 'Action', showInFilter: true },
     lockout:    { emoji: '⛔︎',  color: '#e67e22', label: 'Lockout',                    showInFilter: true },
     protest:    { emoji: '⚑',   color: '#f1c40f', label: 'Protest',                    showInFilter: true },
     planned:    { emoji: '⛶',   color: '#3498db', label: 'Planned',                    showInFilter: true },
@@ -932,7 +934,7 @@ if (activeStateFilter !== 'all') {
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
         <div>${getEmojiHtml(latest.type, 24)}</div>
         <span style="font-size: 13px; font-weight: 700; color: ${typeInfo.color};">${typeLabel}</span>
-        <span style="margin-left: auto; font-size: 12px; color: #8b949e;">${formatDate(latest.startDate)}</span>
+        <span style="margin-left: auto; font-size: 12px; color: #8b949e;">${formatDate(latest.startDate)}</span><button class="btn" id="detail-close">X</button>
         </div>
         <h3 style="margin-bottom: 8px;">${escapeHtml(latest.title)}</h3>
         ${staleHtml}
@@ -941,7 +943,7 @@ if (activeStateFilter !== 'all') {
         <div class="detail-section"><div class="detail-label">Locations</div><div class="detail-value">${locationsHtml}</div></div>
         <div class="detail-section"><div class="detail-label">Workers Involved</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
         <div class="detail-section"><div class="detail-label">Duration</div><div class="detail-value">${formatDate(firstStart)} — ${latest.endDate ? formatDate(latest.endDate) : 'Ongoing'}</div></div>
-        <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: var(--text-tertiary);">${escapeHtml(latest.description)}</div></div>
+        <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: var(--text-tertiary);">${latest.description}</div></div>
         ${historyHtml}
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
