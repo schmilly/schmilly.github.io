@@ -38,7 +38,7 @@ const CITY_COORDS = {
     "Albury": [-36.0800, 146.9160],
     "Port Hedland": [-20.3107, 118.5876],
     "Pakenham": [-38.0812, 145.4870],
-    "Kooragang Island": [-32.8610, 151.7750],
+    "Kooragang Island": [-32.886807957868044, 151.77933788271903],
     "Royal Melbourne Hospital": [-37.7990, 144.9560],
     "Royal Women's Hospital": [-37.7980, 144.9560],
     "Royal Children's Hospital": [-37.7920, 144.9500],
@@ -151,6 +151,7 @@ const REF = { //refinerys
 
 const CAN = {
     "ACT Government Analytical Laboratory": [-35.33153716457696, 149.04976620656367],
+    "ATO": [-35.34296155147976, 149.08567122290285]
 }
 
 const SA = {
@@ -2325,7 +2326,7 @@ const STRIKE_DATA = [
         industry: "Other",
         type: "ballot",
         startDate: "2026-09-01",
-        endDate: "",
+        endDate: "2026-09-01",
         workers: null,
         description: "Protected action ballot result from Fair Work Commission.",
         locations: [
@@ -2353,7 +2354,7 @@ const STRIKE_DATA = [
         industry: "Other",
         type: "ballot",
         startDate: "2026-09-01",
-        endDate: "",
+        endDate: "2026-09-01",
         workers: null,
         description: "Protected action ballot result from Fair Work Commission.",
         locations: [
@@ -3089,10 +3090,10 @@ const STRIKE_DATA = [
         workers: null,
         description: "After rejecting DXC's proposed offer, workers commenced 3 days of stop work actions from 1 July, including on the ATO mainframe at a peak time for the tax agency. Clients affected included the ATO, Victorian WorkCover Authority, WorkSafe, Victoria Police and City of Gold Coast. Stoppages continue until at least 14 July. Workers seek a 4% wage increase backdated to 1 July 2025.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ATO / DXC clients" },
+            { city: "Canberra", state: "ACT", lat: CAN["ATO"][0], lng: CAN["ATO"][1], name: "ATO (as a DXC client)" },
             { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian WorkCover Authority / WorkSafe / Victoria Police" },
             { city: "Gold Coast", state: "QLD", lat: CITY_COORDS["Gold Coast"][0], lng: CITY_COORDS["Gold Coast"][1], name: "City of Gold Coast" },
-            { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC Australia Headquarters" }
+            { city: "Macquarie Park", state: "NSW", lat: COMPANY["DXC"]["HQ"][0], lng: COMPANY["DXC"]["HQ"][1], name: "DXC" }
         ],
         sources: [
             { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -3106,7 +3107,7 @@ const STRIKE_DATA = [
         industry: "Rail Transport",
         type: "resolved",
         startDate: "2026-07-07",
-        endDate: "",
+        endDate: "2026-07-07",
         workers: 3500,
         description: "In-principle agreements reached for the administrative, professional and technical; travel and tourism and other employees; and station operations EBAs. Includes 8% over 3 years plus a cost-of-living relief payment with backpay from 1 June 2026. Negotiations continue for train control, network, rollingstock and operations, and a proposed electrical-only agreement. Disruptions likely continue in maintenance areas.",
         locations: [

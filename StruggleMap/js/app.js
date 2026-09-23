@@ -664,6 +664,7 @@ function buildLegend() {
 
         const markers = markersMap.get(actionId);
         if (markers && markers.length > 0) {
+            //Need to find way to offset this and account for sidebar width
             map.setView(markers[0].getLatLng(), 14);
         }
     }
