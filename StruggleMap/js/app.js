@@ -664,7 +664,7 @@ function buildLegend() {
 
         const markers = markersMap.get(actionId);
         if (markers && markers.length > 0) {
-            map.setView(markers[0].getLatLng(), 10);
+            map.setView(markers[0].getLatLng(), 14);
         }
     }
 
