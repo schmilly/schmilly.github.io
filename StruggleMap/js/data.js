@@ -5337,7 +5337,8 @@ const STRIKE_DATA = [
             { city: "Port Melbourne", state: "VIC", lat: MELB["Quantem"][0], lng: MELB["Quantem"][1], name: "Quantem Terminal" }
         ],
         sources: [
-            { name: "MUA - QUANTEM DISPUTE UPDATE, 15 September 2026", url: "https://www.facebook.com/reel/904260922550490" }
+            { name: "MUA - QUANTEM DISPUTE UPDATE, 15 September 2026", url: "https://www.facebook.com/reel/904260922550490" },
+            { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
         ],
         tags: ["maritime", "mua"]
     },
@@ -5437,7 +5438,7 @@ const STRIKE_DATA = [
         title: "Tasmanian Public Sector Nurses Commence Industrial Action",
         union: "HACSU / ANMF Tasmania",
         industry: "Healthcare",
-        type: "strike",
+        type: "action",
         startDate: "2026-09-21",
         endDate: "",
         workers: null,
@@ -5458,7 +5459,7 @@ const STRIKE_DATA = [
         title: "TWU Industrial Action Set to Commence at Qantas Subsidiaries",
         union: "TWU",
         industry: "Aviation",
-        type: "strike",
+        type: "stoppage",
         startDate: "2026-09-23",
         endDate: "",
         workers: null,
@@ -5478,7 +5479,7 @@ const STRIKE_DATA = [
         title: "Arts Centre Melbourne Workers Hold Second 24-Hour Strike",
         union: "CPSU / ETU / MEAA",
         industry: "Arts & Culture",
-        type: "strike",
+        type: "stoppage",
         startDate: "2026-09-18",
         endDate: "",
         workers: null,
@@ -5498,7 +5499,7 @@ const STRIKE_DATA = [
         title: "BHP Port Hedland Unions Apply for Intractable Bargaining Declaration",
         union: "AMWU / AWU / ETU",
         industry: "Mining",
-        type: "strike",
+        type: "update",
         startDate: "2026-09-17",
         endDate: "",
         workers: null,
@@ -5506,25 +5507,6 @@ const STRIKE_DATA = [
         description: "On 17 September, the unions in dispute with BHP at Port Hedland all posted identical statements on social media. The statement notes that workers rejected a proposal from BHP that would leave half the workforce worse off, and that unions want to resolve inequality in conditions by lifting everyone to the same standards. It goes on to say that negotiations have reached an impasse, there is no reasonable chance an agreement will be reached without the intervention of the FWC, and that is why they are applying for an intractable bargaining declaration.",
         locations: [
             { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
-        ],
-        sources: [
-            { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
-        ]
-    },
-    {
-        id: 8706,
-        actionId: "quantem-mua",
-        title: "Quantem Workers Return to Work, Warn of Escalation if No Deal",
-        union: "MUA Vic",
-        industry: "Fuel Port Operations",
-        type: "scab",
-        startDate: "2026-09-15",
-        endDate: "",
-        workers: null,
-        state: "VIC",
-        description: "On 15 September, MUA members at Quantem unanimously voted to lift work bans and return to work, having been stood down for 13 days without pay. The workers have decided to try and negotiate a satisfactory outcome with Quantem. However, organiser Shane Reside warned that if a decent deal isn't made in the next couple of weeks, industrial action will recommence and escalate. The MUA commenced industrial action earlier in the month, and while the action was ongoing not a single ship was able to load or unload any product out of the Quantem terminal, despite scabs being brought in from interstate and overseas.",
-        locations: [
-            { city: "Port Melbourne", state: "VIC", lat: MELB["Quantem"][0], lng: MELB["Quantem"][1], name: "Quantem Terminal" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5555,7 +5537,7 @@ const STRIKE_DATA = [
         title: "ACT Teachers Call Another Stoppage After Rejecting Offer",
         union: "AEU ACT",
         industry: "Education",
-        type: "strike",
+        type: "stoppage",
         startDate: "2026-09-24",
         endDate: "2026-09-24",
         workers: null,
@@ -5574,7 +5556,7 @@ const STRIKE_DATA = [
         title: "Jetstar Workers Escalate Action with Shoe Ban and Fee Bans",
         union: "ASU",
         industry: "Aviation",
-        type: "strike",
+        type: "action",
         startDate: "2026-09-18",
         endDate: "",
         workers: null,
@@ -5592,7 +5574,7 @@ const STRIKE_DATA = [
         title: "Certis Security Workers at Sydney Airport to Commence Industrial Action",
         union: "TWU NSW",
         industry: "Aviation / Security",
-        type: "strike",
+        type: "stoppage",
         startDate: "2026-09-24",
         endDate: "",
         workers: null,
