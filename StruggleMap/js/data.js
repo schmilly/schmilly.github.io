@@ -340,7 +340,7 @@ const STRIKE_DATA = [
         title: "Keolis Downer Bus Action Paused for Negotiations",
         union: "RTBU NSW",
         industry: "Transport",
-        type: "resolved",
+        type: "update",
         startDate: "2026-07-29",
         endDate: "",
         workers: null,
@@ -3974,7 +3974,7 @@ const STRIKE_DATA = [
         industry: "Construction",
         type: "resolved",
         startDate: "2026-06-24",
-        endDate: "",
+        endDate: "2026-06-24",
         workers: null,
         state: "NSW",
         description: "ETU members at 12 construction companies in Sydney have won a 5.25% pay increase for the first year of their new agreement. While negotiations for the rest of the agreement continue, workers will benefit from the increase in their next pay packet with backpay to 1 May.",
@@ -5466,7 +5466,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Negotiations between the TWU and Qantas in the FWC on 18 September did not progress significantly, so industrial action is set to commence this week. TWU members employed at Qantas Ground Services are expected to strike for 24 hours on 24 September, while TWU members at Australia Air Express are expected to strike on 23 September. The TWU has been in negotiations with Qantas for 11 months seeking decent pay and conditions. Workers also have concerns about safety, the splintering of workers into multiple subsidiaries, and the outsourcing of permanent jobs. The TWU posted a video late on 22 September saying Qantas was trying legal manoeuvres to stop industrial action.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Qantas" },
+            { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas" },
             { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Qantas" }
         ],
         sources: [
