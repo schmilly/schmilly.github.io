@@ -65,8 +65,10 @@ const TYPE_INFO = {
     let activeUpcomingFilter = false;
     let activeTagFilter = null;
     let activeUnionFilter = null;
+    let activeIndustryFilter = null;
     let tagsExpanded = false;
     let unionsExpanded = false;
+    let industriesExpanded = false;
     let searchQuery = '';
     let selectedActionId = null;
     let map;
@@ -90,6 +92,8 @@ const TYPE_INFO = {
     const tagToggleBtn = document.getElementById('tag-toggle');
     const unionFilterContainer = document.getElementById('union-filters');
     const unionToggleBtn = document.getElementById('union-toggle');
+    const industryFilterContainer = document.getElementById('industry-filters');
+    const industryToggleBtn = document.getElementById('industry-toggle');
     const statActiveEl = document.getElementById('stat-active');
     const statPlannedEl = document.getElementById('stat-planned');
     const statWorkersEl = document.getElementById('stat-workers');
@@ -125,6 +129,7 @@ const TYPE_INFO = {
         bindUIEvents();
         buildTagFilters();
         buildUnionFilters();
+        buildIndustryFilters();
         applyFilters();
         //updateTicker();
         selectActionFromHash();
@@ -340,6 +345,14 @@ const TYPE_INFO = {
         return [...set].sort((a, b) => a.localeCompare(b));
     }
 
+    function collectIndustries() {
+        const set = new Set();
+        allEntries.forEach(entry => {
+            if (entry.industry) set.add(entry.industry);
+        });
+        return [...set].sort((a, b) => a.localeCompare(b));
+    }
+
     // ─── Generic expandable chip list ───
     function renderChipList({ container, toggleBtn, values, allLabel, activeValue, collapsedCount, expanded, onSelect }) {
         if (!container) return;
@@ -412,6 +425,23 @@ const TYPE_INFO = {
             onSelect: (value) => {
                 activeUnionFilter = value;
                 buildUnionFilters();
+                applyFilters();
+            }
+        });
+    }
+
+    function buildIndustryFilters() {
+        renderChipList({
+            container: industryFilterContainer,
+            toggleBtn: industryToggleBtn,
+            values: collectIndustries(),
+            allLabel: 'All Industries',
+            activeValue: activeIndustryFilter,
+            collapsedCount: 7,
+            expanded: industriesExpanded,
+            onSelect: (value) => {
+                activeIndustryFilter = value;
+                buildIndustryFilters();
                 applyFilters();
             }
         });
@@ -745,6 +775,12 @@ if (activeStateFilter !== 'all') {
             );
         }
 
+        if (activeIndustryFilter) {
+            result = result.filter(action =>
+                action.entries.some(entry => entry.industry === activeIndustryFilter)
+            );
+        }
+
         if (activeTagFilter) {
             result = result.filter(action =>
                 action.entries.some(entry => Array.isArray(entry.tags) && entry.tags.includes(activeTagFilter))
@@ -772,6 +808,7 @@ if (activeStateFilter !== 'all') {
 
         setSummary('type', activeTypeFilter === 'all' ? '' : activeChipLabel('type-filters'));
         setSummary('state', activeStateFilter === 'all' ? '' : activeStateFilter);
+        setSummary('industry', activeIndustryFilter || '');
         setSummary('union', activeUnionFilter || '');
         setSummary('date', activeDateRange === 'all' ? '' : `Last ${activeDateRange}d`);
         setSummary('upcoming', activeUpcomingFilter ? 'On' : '');
@@ -1053,6 +1090,7 @@ if (activeStateFilter !== 'all') {
         buildStateFilters();   
         buildLegend();         
         buildUnionFilters();
+        buildIndustryFilters();
         closeAddModal();
         applyFilters();
         updateTicker();
@@ -1073,6 +1111,13 @@ if (activeStateFilter !== 'all') {
             unionToggleBtn.addEventListener('click', () => {
                 unionsExpanded = !unionsExpanded;
                 buildUnionFilters();
+            });
+        }
+
+        if (industryToggleBtn) {
+            industryToggleBtn.addEventListener('click', () => {
+                industriesExpanded = !industriesExpanded;
+                buildIndustryFilters();
             });
         }
 

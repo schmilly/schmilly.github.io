@@ -116,6 +116,25 @@
                         </div>
                     </div>
 
+                    <!-- Industry filter -->
+                    <div class="filter-section collapsible collapsed" data-filter-section="industry">
+                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-industry">
+                            <span class="filter-label">Industry</span>
+                            <span class="filter-header-right">
+                                <span class="filter-summary"></span>
+                                <span class="chevron" aria-hidden="true"></span>
+                            </span>
+                        </button>
+                        <div class="filter-panel" id="panel-industry">
+                            <div class="filter-panel-inner">
+                                <div class="filter-chips tag-filters" id="industry-filters">
+                                    <!-- Dynamically populated from STRIKE_DATA -->
+                                </div>
+                                <button type="button" class="tag-toggle" id="industry-toggle" aria-expanded="false">Show all industries</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Union filter -->
                     <div class="filter-section collapsible collapsed" data-filter-section="union">
                         <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-union">
