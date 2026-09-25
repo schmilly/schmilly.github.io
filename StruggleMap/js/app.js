@@ -61,7 +61,11 @@ const TYPE_INFO = {
     let activityIndex = new Map();
     let activeTypeFilter = 'all';
     let activeStateFilter = 'all';
-    let activeDateRange = 'all';
+    let activeDateFrom = '';
+    let activeDateTo = '';
+    let dateFilterEnabled = true;
+    let includeStaleEntries = false;
+    let includeOngoingEntries = true;
     let activeUpcomingFilter = false;
     let activeTagFilter = null;
     let activeUnionFilter = null;
@@ -86,7 +90,12 @@ const TYPE_INFO = {
     const searchInput = document.getElementById('search-input');
     const typeFilterContainer = document.getElementById('type-filters');
     const stateFilterContainer = document.getElementById('state-filters');
-    const dateFilterChips = document.querySelectorAll('#date-filters .filter-chip');
+    const dateFromInput = document.getElementById('date-from');
+    const dateToInput = document.getElementById('date-to');
+    const enableDateFilterInput = document.getElementById('enable-date-filter');
+    const dateOptionsEl = document.querySelector('.date-options');
+    const includeStaleInput = document.getElementById('include-stale');
+    const includeOngoingInput = document.getElementById('include-ongoing');
     const upcomingFilterChip = document.getElementById('upcoming-filter');
     const tagFilterContainer = document.getElementById('tag-filters');
     const tagToggleBtn = document.getElementById('tag-toggle');
@@ -110,6 +119,20 @@ const TYPE_INFO = {
     // ─── Initialization ───
     function init() {
         injectStyles();
+
+        const defaultDateFrom = new Date();
+        defaultDateFrom.setDate(defaultDateFrom.getDate() - STALE_DAYS);
+        activeDateFrom = toDateInputValue(defaultDateFrom);
+        activeDateTo = toDateInputValue(new Date());
+        dateFromInput.value = activeDateFrom;
+        dateToInput.value = activeDateTo;
+        enableDateFilterInput.checked = dateFilterEnabled;
+        dateFromInput.disabled = !dateFilterEnabled;
+        dateToInput.disabled = !dateFilterEnabled;
+        includeStaleInput.disabled = !dateFilterEnabled;
+        includeOngoingInput.disabled = !dateFilterEnabled;
+        dateOptionsEl.classList.toggle('is-disabled', !dateFilterEnabled);
+        includeOngoingInput.checked = includeOngoingEntries;
 
         if (window.STRIKE_DATA && Array.isArray(window.STRIKE_DATA)) {
             allEntries = window.STRIKE_DATA;
@@ -287,14 +310,8 @@ const TYPE_INFO = {
     function buildActivityIndex() {
         activityIndex = new Map();
         groupedActions.forEach(action => {
-            let latest = 0;
-            action.entries.forEach(entry => {
-                const start = Date.parse(entry.startDate);
-                if (!isNaN(start) && start > latest) latest = start;
-                const end = entry.endDate ? Date.parse(entry.endDate) : NaN;
-                if (!isNaN(end) && end > latest) latest = end;
-            });
-            if (latest > 0) activityIndex.set(action.actionId, latest);
+            const latest = Date.parse(action.latestEntry.startDate);
+            if (!isNaN(latest)) activityIndex.set(action.actionId, latest);
         });
     }
 
@@ -712,6 +729,19 @@ function buildLegend() {
     }
 
     // ─── Filtering ───
+    function toDateInputValue(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    function parseDateOnly(value) {
+        if (!value) return NaN;
+        const timestamp = Date.parse(`${value}T00:00:00`);
+        return Number.isNaN(timestamp) ? NaN : timestamp;
+    }
+
     function applyFilters() {
         let result = [...groupedActions];
 
@@ -746,19 +776,22 @@ if (activeStateFilter !== 'all') {
     });
 }
 
-        if (activeDateRange !== 'all') {
-            const now = new Date();
-            const daysAgo = parseInt(activeDateRange, 10);
-            const cutoffDate = new Date(now);
-            cutoffDate.setDate(cutoffDate.getDate() - daysAgo);
+        const rangeStart = parseDateOnly(activeDateFrom);
+        const rangeEnd = parseDateOnly(activeDateTo);
+        if (dateFilterEnabled) result = result.filter(action => {
+            const e = action.latestEntry;
+            const start = parseDateOnly(e.startDate);
+            const end = parseDateOnly(e.endDate);
+            const hasEndDate = Number.isFinite(end);
+            const lastActivity = hasEndDate ? end : start;
+            const outsideSelectedRange =
+                (Number.isFinite(rangeStart) && lastActivity < rangeStart) ||
+                (Number.isFinite(rangeEnd) && start > rangeEnd);
 
-            result = result.filter(action => {
-                const e = action.latestEntry;
-                const start = new Date(e.startDate);
-                const end = e.endDate ? new Date(e.endDate) : new Date('9999-12-31');
-                return (end >= cutoffDate || start >= cutoffDate);
-            });
-        }
+            if (!includeOngoingEntries && !hasEndDate) return false;
+            if (outsideSelectedRange && (!includeStaleEntries || !getStaleInfo(action))) return false;
+            return true;
+        });
 
         if (activeUpcomingFilter) {
             const now = new Date();
@@ -810,7 +843,14 @@ if (activeStateFilter !== 'all') {
         setSummary('state', activeStateFilter === 'all' ? '' : activeStateFilter);
         setSummary('industry', activeIndustryFilter || '');
         setSummary('union', activeUnionFilter || '');
-        setSummary('date', activeDateRange === 'all' ? '' : `Last ${activeDateRange}d`);
+        const dateSummary = !dateFilterEnabled
+            ? 'Off'
+            : [activeDateFrom, activeDateTo].filter(Boolean).join(' - ');
+        const dateOptions = [
+            dateFilterEnabled && includeStaleEntries ? 'stale' : '',
+            dateFilterEnabled && includeOngoingEntries ? 'ongoing' : ''
+        ].filter(Boolean);
+        setSummary('date', [dateSummary, ...dateOptions].filter(Boolean).join(' · '));
         setSummary('upcoming', activeUpcomingFilter ? 'On' : '');
         setSummary('tags', activeTagFilter || '');
     }
@@ -1138,13 +1178,34 @@ if (activeStateFilter !== 'all') {
 
 
 
-        dateFilterChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                dateFilterChips.forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                activeDateRange = chip.dataset.range;
-                applyFilters();
-            });
+        dateFromInput.addEventListener('change', () => {
+            activeDateFrom = dateFromInput.value;
+            applyFilters();
+        });
+
+        dateToInput.addEventListener('change', () => {
+            activeDateTo = dateToInput.value;
+            applyFilters();
+        });
+
+        enableDateFilterInput.addEventListener('change', () => {
+            dateFilterEnabled = enableDateFilterInput.checked;
+            dateFromInput.disabled = !dateFilterEnabled;
+            dateToInput.disabled = !dateFilterEnabled;
+            includeStaleInput.disabled = !dateFilterEnabled;
+            includeOngoingInput.disabled = !dateFilterEnabled;
+            dateOptionsEl.classList.toggle('is-disabled', !dateFilterEnabled);
+            applyFilters();
+        });
+
+        includeStaleInput.addEventListener('change', () => {
+            includeStaleEntries = includeStaleInput.checked;
+            applyFilters();
+        });
+
+        includeOngoingInput.addEventListener('change', () => {
+            includeOngoingEntries = includeOngoingInput.checked;
+            applyFilters();
         });
 
         upcomingFilterChip.addEventListener('click', () => {

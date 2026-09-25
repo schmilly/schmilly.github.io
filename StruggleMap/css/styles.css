@@ -544,8 +544,95 @@ body {
     color: var(--text-muted);
 }
 
-.date-filter .filter-chip {
-    font-family: var(--font-mono);
+.date-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 14px 10px;
+}
+
+.date-enable {
+    padding: 0 14px 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 10px;
+}
+
+.date-field {
+    min-width: 0;
+}
+
+.date-field label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+}
+
+.date-field input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    height: 30px;
+    padding: 4px 6px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font: 11px var(--font-mono);
+    color-scheme: dark;
+}
+
+.date-field input[type="date"]:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.date-field input[type="date"]:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.date-field input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.date-options {
+    display: grid;
+    gap: 7px;
+    padding: 0 14px 12px;
+}
+
+.date-options.is-disabled {
+    opacity: 0.42;
+}
+
+.date-options.is-disabled .checkbox-label {
+    cursor: not-allowed;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.35;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    accent-color: var(--accent);
+    margin: 0;
+}
+
+.checkbox-label span {
+    min-width: 0;
 }
 
 #event-list {

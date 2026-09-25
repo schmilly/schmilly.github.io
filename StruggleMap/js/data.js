@@ -200,6 +200,251 @@ const POWER = { //Power plants
     "Barron Gorge":[-16.8513, 145.6468],
     "Loy Yang":[-38.2509684682121, 146.5776162036045],
 }
+
+const HOSP = {
+    // ============================================
+    // NEW SOUTH WALES
+    // ============================================
+    NSW: {
+        // Sydney metropolitan
+        "Royal Prince Alfred": [-33.8894, 151.1824],
+        "Westmead": [-33.8033, 150.9877],
+        "Royal North Shore": [-33.8220, 151.1870],
+        "St Vincent's Sydney": [-33.8790, 151.2150],
+        "Prince of Wales": [-33.9170, 151.2290],
+        "Sydney Children's": [-33.9180, 151.2340],
+        "Royal Hospital for Women": [-33.9185, 151.2350],
+        "Concord Repatriation General": [-33.8680, 151.1020],
+        "Liverpool": [-33.9200, 150.9250],
+        "Nepean": [-33.7580, 150.6980],
+        "Blacktown": [-33.7720, 150.9080],
+        "Campbelltown": [-34.0680, 150.8080],
+        "Sutherland": [-34.0350, 151.0780],
+        "Manly": [-33.7980, 151.2900],
+        "Hornsby Ku-ring-gai": [-33.7030, 151.0960],
+        "Ryde": [-33.7960, 151.1070],
+        "Fairfield": [-33.8700, 150.9500],
+        "Bankstown-Lidcombe": [-33.9250, 151.0330],
+        "Auburn": [-33.8480, 151.0330],
+        "Mt Druitt": [-33.7700, 150.8200],
+        // Newcastle / Hunter
+        "John Hunter": [-32.9210, 151.6940],
+        "Maitland": [-32.7400, 151.5500],
+        "Cessnock District": [-32.8330, 151.3550],
+        // Illawarra / South
+        "Wollongong": [-34.4250, 150.8880],
+        "Shellharbour": [-34.5750, 150.8700],
+        "Shoalhaven District Memorial": [-34.8800, 150.6000],
+        // Regional
+        "Orange Base": [-33.2833, 149.1000],
+        "Cootamundra": [-34.6400, 148.0300],
+        "Young": [-34.3140, 148.2970],
+        "Wagga Wagga Base": [-35.1100, 147.3700],
+        "Albury Base": [-36.0700, 146.9200],
+        "Dubbo Base": [-32.2430, 148.6050],
+        "Tamworth Rural Referral": [-31.0930, 150.9300],
+        "Coffs Harbour Health Campus": [-30.2980, 153.1130],
+        "Lismore Base": [-28.8080, 153.2780],
+        "Port Macquarie Base": [-31.4350, 152.9000],
+        "Broken Hill Base": [-31.9550, 141.4650],
+        "Bathurst Base": [-33.4200, 149.5800],
+        "Goulburn Base": [-34.7530, 149.7200]
+    },
+
+    // ============================================
+    // VICTORIA
+    // ============================================
+    VIC: {
+        // Melbourne metropolitan
+        "Royal Melbourne": [-37.7990, 144.9560],
+        "Royal Women's": [-37.7980, 144.9560],
+        "Royal Children's": [-37.7920, 144.9500],
+        "Peter MacCallum Cancer Centre": [-37.8003, 144.9567],
+        "The Alfred": [-37.8460, 144.9810],
+        "St Vincent's Hospital Melbourne": [-37.8090, 144.9780],
+        "Austin": [-37.7570, 145.0570],
+        "Olivia Newton John Cancer Wellness Centre": [-37.7580, 145.0670],
+        "Monash Medical Centre": [-37.9080, 145.1300],
+        "Eastern Health Box Hill": [-37.8180, 145.1250],
+        "Maroondah": [-37.8280, 145.2420],
+        "Angliss": [-37.8780, 145.2680],
+        "Northern": [-37.6760, 144.9300],
+        "Sunshine": [-37.7920, 144.8290],
+        "Footscray": [-37.7965, 144.8990],
+        "Werribee Mercy": [-37.8980, 144.6650],
+        "Frankston": [-38.1440, 145.1220],
+        "Dandenong": [-37.9830, 145.2150],
+        "Casey": [-38.0910, 145.3020],
+        "Sandringham": [-37.9550, 145.0050],
+        "Williamstown": [-37.8580, 144.8920],
+        "Heidelberg Repatriation": [-37.7580, 145.0470],
+        "Royal Victorian Eye and Ear": [-37.8100, 144.9730],
+        // Regional Victoria
+        "Ballarat Base": [-37.5622, 143.8503],
+        "Bendigo": [-36.7580, 144.2803],
+        "Geelong University": [-38.1499, 144.3617],
+        "Warrnambool Base": [-38.3830, 142.4830],
+        "Mildura Base": [-34.1850, 142.1620],
+        "Shepparton GV Health": [-36.3833, 145.4000],
+        "Wodonga": [-36.1200, 146.8900],
+        "Wangaratta Base": [-36.3550, 146.3200],
+        "Sale": [-38.1100, 147.0700],
+        "Traralgon": [-38.1950, 146.5400],
+        "Hamilton Base": [-37.7450, 142.0230],
+        "Horsham Base": [-36.7150, 142.2000],
+        "Swan Hill District": [-35.3400, 143.5580],
+        "Echuca Regional Health": [-36.1280, 144.7500]
+    },
+
+    // ============================================
+    // QUEENSLAND
+    // ============================================
+    QLD: {
+        // Brisbane metropolitan
+        "Royal Brisbane and Women's": [-27.4480, 153.0280],
+        "Princess Alexandra": [-27.5000, 153.0330],
+        "Mater Hospital Brisbane": [-27.4861, 153.0278],
+        "Queensland Children's": [-27.5020, 153.0290],
+        "Mater Mothers'": [-27.4870, 153.0280],
+        "Greenslopes Private": [-27.5040, 153.0460],
+        "Redcliffe": [-27.2340, 153.1080],
+        "Prince Charles": [-27.3930, 153.0280],
+        "Royal Brisbane": [-27.4480, 153.0280],
+        "Redland": [-27.6120, 153.2880],
+        "Logan": [-27.6650, 153.1550],
+        "Ipswich": [-27.6140, 152.7600],
+        "Caboolture": [-27.0850, 152.9520],
+        // Gold Coast
+        "Gold Coast University": [-27.9610, 153.3800],
+        "Robina": [-28.0800, 153.3930],
+        // Regional
+        "Townsville University": [-19.3250, 146.7550],
+        "Cairns": [-16.9130, 145.7690],
+        "Sunshine Coast University": [-26.7300, 153.1050],
+        "Toowoomba": [-27.5600, 151.9500],
+        "Rockhampton": [-23.3770, 150.5100],
+        "Mackay Base": [-21.1412, 149.1864],
+        "Bundaberg": [-24.8670, 152.3480],
+        "Gladstone": [-23.8420, 151.2550],
+        "Hervey Bay": [-25.2900, 152.8300],
+        "Maryborough": [-25.5300, 152.7000],
+        "Mount Isa Base": [-20.7250, 139.4920],
+        "Emerald": [-23.5250, 148.1620],
+        "Longreach": [-23.4400, 144.2500],
+        "Gympie": [-26.1900, 152.6650],
+        "Nambour General": [-26.6250, 152.9550],
+        "Kingaroy": [-26.5400, 151.8400],
+        "Roma": [-26.5700, 148.7900],
+        "Bowen": [-20.0100, 148.2450]
+    },
+
+    // ============================================
+    // WESTERN AUSTRALIA
+    // ============================================
+    WA: {
+        // Perth metropolitan
+        "Royal Perth": [-31.9520, 115.8650],
+        "Sir Charles Gairdner": [-31.9505, 115.8000],
+        "Fiona Stanley": [-32.0700, 115.8220],
+        "King Edward Memorial": [-31.9530, 115.8320],
+        "Perth Children's": [-31.9500, 115.8050],
+        "Princess Margaret": [-31.9530, 115.8320],
+        "Fremantle": [-32.0550, 115.7550],
+        "Rockingham General": [-32.2780, 115.7450],
+        "Joondalup Health Campus": [-31.7450, 115.7700],
+        "Armadale Kelmscott Memorial": [-32.1520, 116.0170],
+        "Swan District": [-31.8900, 115.9800],
+        "Bentley": [-32.0000, 115.9200],
+        "Kalamunda": [-31.9800, 116.0700],
+        // Regional WA
+        "Bunbury Regional": [-33.3271, 115.6369],
+        "Geraldton Regional": [-28.7744, 114.6086],
+        "Albany Health Campus": [-35.0230, 117.8830],
+        "Kalgoorlie Health Campus": [-30.7480, 121.4690],
+        "Port Hedland Health Campus": [-20.3107, 118.5876],
+        "Karratha Health Campus": [-20.7360, 116.8460],
+        "Broome Health Campus": [-17.9614, 122.2353],
+        "Carnarvon Health Campus": [-24.8840, 113.6580],
+        "Esperance Health Campus": [-33.8600, 121.8900],
+        "Northam Health Service": [-31.6500, 116.6700],
+        "Narrogin Health Service": [-32.9330, 117.1780],
+        "Collie Health Service": [-33.3600, 116.1500],
+        "Merredin Health Service": [-31.4800, 118.2800]
+    },
+
+    // ============================================
+    // SOUTH AUSTRALIA
+    // ============================================
+    SA: {
+        // Adelaide metropolitan
+        "Royal Adelaide": [-34.9210, 138.6020],
+        "Flinders Medical Centre": [-35.0167, 138.5667],
+        "Lyell McEwin": [-34.7500, 138.6000],
+        "The Queen Elizabeth": [-34.9030, 138.5350],
+        "Modbury": [-34.8330, 138.6880],
+        "Noarlunga Health Services": [-35.1420, 138.5020],
+        "Repatriation General": [-35.0130, 138.5760],
+        "Women's and Children's": [-34.9230, 138.6020],
+        "SA Pathology": [-34.9197, 138.6080],
+        "Adelaide Remand Centre": [-34.9170, 138.5900],
+        "Hampstead Rehabilitation Centre": [-34.8700, 138.6100],
+        "Glenside Health Services": [-34.9470, 138.6150],
+        // Regional SA
+        "Mount Gambier": [-37.8320, 140.7730],
+        "Whyalla": [-33.0330, 137.5800],
+        "Port Augusta": [-32.4950, 137.7700],
+        "Port Pirie": [-33.1900, 138.0100],
+        "Berri": [-34.2830, 140.6000],
+        "Murray Bridge": [-35.1230, 139.2730],
+        "Mount Barker": [-35.0700, 138.8600],
+        "Victor Harbor": [-35.5530, 138.6200],
+        "Gawler": [-34.6000, 138.7500],
+        "Tanunda": [-34.5200, 138.9500]
+    },
+
+    // ============================================
+    // TASMANIA
+    // ============================================
+    TAS: {
+        "Royal Hobart": [-42.8798, 147.3292],
+        "Launceston General": [-41.4420, 147.1400],
+        "North West Regional": [-41.0520, 145.9060],
+        "Mersey Community": [-41.1800, 146.3500],
+        "Tolosa Street Mental Health Service": [-42.8650, 147.3000],
+        "Roy Fagan Centre": [-42.8800, 147.3100],
+        "Wellington Clinics": [-42.8798, 147.3292],
+        "St John's Park": [-42.8700, 147.3050],
+        "Clare House": [-42.8900, 147.3200]
+    },
+
+    // ============================================
+    // AUSTRALIAN CAPITAL TERRITORY
+    // ============================================
+    ACT: {
+        "Canberra": [-35.3420, 149.0870],
+        "Calvary Public Hospital Bruce": [-35.2340, 149.0700],
+        "University of Canberra": [-35.2380, 149.0880],
+        "Centenary Hospital for Women and Children": [-35.3420, 149.0870],
+        "ACT Government Analytical Laboratory": [-35.3315, 149.0498]
+    },
+
+    // ============================================
+    // NORTHERN TERRITORY
+    // ============================================
+    NT: {
+        "Royal Darwin": [-12.4200, 130.8530],
+        "Darwin Private": [-12.4230, 130.8580],
+        "Alice Springs": [-23.6980, 133.8807],
+        "Gove District": [-12.1870, 136.7820],
+        "Katherine District": [-14.4680, 132.2640],
+        "Palmerston Regional": [-12.4830, 130.9800],
+        "Darwin Correctional Centre": [-12.4700, 130.9700],
+        "Berrimah Correctional Centre": [-12.4500, 130.9300],
+        "Alice Springs Correctional Centre": [-23.7200, 133.8700]
+    }
+};
+
+
 const STRIKE_DATA = [
     {
         id: 315,
@@ -8776,3 +9021,4 @@ const STRIKE_DATA = [
 // Export globally
 window.STRIKE_DATA = STRIKE_DATA;
 window.CITY_COORDS = CITY_COORDS;
+window.PUBLIC_HOSPITALS = PUBLIC_HOSPITALS;

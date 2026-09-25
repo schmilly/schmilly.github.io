@@ -166,11 +166,31 @@
                         </button>
                         <div class="filter-panel" id="panel-date">
                             <div class="filter-panel-inner">
-                                <div class="filter-chips date-filter" id="date-filters">
-                                    <div class="filter-chip" data-range="7">7d</div>
-                                    <div class="filter-chip" data-range="30">30d</div>
-                                    <div class="filter-chip" data-range="90">90d</div>
-                                    <div class="filter-chip active" data-range="all">All</div>
+                                <div class="date-enable">
+                                    <label class="checkbox-label" for="enable-date-filter">
+                                        <input type="checkbox" id="enable-date-filter">
+                                        <span>Enable date filter</span>
+                                    </label>
+                                </div>
+                                <div class="date-inputs">
+                                    <div class="date-field">
+                                        <label for="date-from">Include from</label>
+                                        <input type="date" id="date-from" aria-label="Include events from">
+                                    </div>
+                                    <div class="date-field">
+                                        <label for="date-to">Include through</label>
+                                        <input type="date" id="date-to" aria-label="Include events through">
+                                    </div>
+                                </div>
+                                <div class="date-options">
+                                    <label class="checkbox-label" for="include-stale">
+                                        <input type="checkbox" id="include-stale">
+                                        <span>Include stale entries (30+ days without update)</span>
+                                    </label>
+                                    <label class="checkbox-label" for="include-ongoing">
+                                        <input type="checkbox" id="include-ongoing">
+                                        <span>Include ongoing / no end date</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
