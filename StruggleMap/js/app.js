@@ -28,7 +28,7 @@ const TYPE_INFO = {
     resolved:   { emoji: '✔',   color: 'var(--type-resolved-color)',   label: 'Resolved',                     showInFilter: true },
     ballot:     { emoji: '☐',   color: 'var(--type-ballot-color)',     label: 'Ballot',                       showInFilter: true },
     scab:       { emoji: '⚠',   color: 'var(--type-scab-color)',       label: 'Scab Alert',                   showInFilter: true },
-    ballotpass: { emoji: '☑',   color: 'var(--type-ballotpass-color)', label: 'Ballot Passed',                showInFilter: true },
+    ballotpass: { emoji: '☑',   color: 'var(--type-ballotpass-color)', label: 'Ballot Success',                showInFilter: true },
     ballotfail: { emoji: '☒',   color: 'var(--type-ballotfail-color)', label: 'Ballot Failed',                showInFilter: true },
     default:    { emoji: '?',   color: 'var(--type-default-color)',    label: 'Other',                        showInFilter: false },
     unkown:     { emoji: '?',   color: 'var(--type-unkown-color)',     label: 'Unknown',                      showInFilter: false },
@@ -934,8 +934,8 @@ if (activeStateFilter !== 'all') {
         detailModalContent.innerHTML = `
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
         <div>${getEmojiHtml(latest.type, 24)}</div>
-        <span style="font-size: 13px; font-weight: 700; color: ${typeInfo.color};">${typeLabel}</span>
-        <span style="margin-left: auto; font-size: 12px; color: #8b949e;">${formatDate(latest.startDate)}</span><button class="btn" id="detail-close">X</button>
+        <span style="font-size: 13px; font-weight: 700; color: ${typeInfo.color};">${getLabelText(latest.type)}</span>
+        <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);">${formatDate(latest.startDate)}</span><button class="btn" id="detail-close">X</button>
         </div>
         <h3 style="margin-bottom: 8px;">${escapeHtml(latest.title)}</h3>
         ${staleHtml}
@@ -948,8 +948,7 @@ if (activeStateFilter !== 'all') {
         ${historyHtml}
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
-        <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;">
-        <a class="btn" href="${actionUrl(action.actionId)}">Share link</a>
+        <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;"> <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);"> ${latest.adddate || 'Date added missing'}</span>
         </div>
         `;
 
