@@ -75,6 +75,7 @@ const TYPE_INFO = {
     let industriesExpanded = false;
     let searchQuery = '';
     let selectedActionId = null;
+    let hoveredActionId = null;
     let map;
     let markerClusterGroup;
     let markersMap = new Map();
@@ -651,6 +652,8 @@ function buildLegend() {
         } else if (filteredActions.length === 0) {
             map.setView(MAP_CENTER, MAP_ZOOM);
         }
+
+        updateMarkerHighlights();
     }
 
     function getMarkersForAction(action) {
@@ -679,6 +682,18 @@ function buildLegend() {
 
         const marker = L.marker([location.lat, location.lng], { icon });
 
+        marker.on('mouseover', () => {
+            hoveredActionId = actionId;
+            updateMarkerHighlights();
+        });
+        marker.on('mouseout', () => {
+            if (hoveredActionId === actionId) {
+                hoveredActionId = null;
+                updateMarkerHighlights();
+            }
+        });
+        marker.on('add', updateMarkerHighlights);
+
         let popupHtml = `<div style="text-align:center;">
         <strong>${escapeHtml(entry.title)}</strong><br>
         <span style="font-size:12px;">${location.name || location.city}</span><br>
@@ -688,6 +703,18 @@ function buildLegend() {
 
         marker.bindPopup(popupHtml, { maxWidth: 250 });
         return marker;
+    }
+
+    function updateMarkerHighlights() {
+        markersMap.forEach((markers, actionId) => {
+            const isHighlighted = actionId === selectedActionId || actionId === hoveredActionId;
+            markers.forEach(marker => {
+                const element = marker.getElement();
+                if (element) {
+                    element.classList.toggle('related-location-marker', isHighlighted);
+                }
+            });
+        });
     }
 
     window.openDetailFromPopup = function(actionId) {
@@ -703,6 +730,7 @@ function buildLegend() {
         if (!action) return;
 
         selectedActionId = actionId;
+        updateMarkerHighlights();
         if (updateUrl && window.location.hash !== actionUrl(actionId)) {
             window.location.hash = encodeURIComponent(actionId);
         }

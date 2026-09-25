@@ -1131,6 +1131,34 @@ html[data-theme="light"] .leaflet-control-attribution {
     color: #4a5460 !important;
 }
 
+.custom-emoji-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-emoji-marker.related-location-marker::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(219, 34, 42, 0.2);
+    pointer-events: none;
+    animation: related-location-pulse 1.5s ease-out infinite;
+}
+
+@keyframes related-location-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.65;
+    }
+}
+
 
 
 /* Marker popup content */

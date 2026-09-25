@@ -262,7 +262,7 @@ const HOSP = {
         "Royal Children's": [-37.7920, 144.9500],
         "Peter MacCallum Cancer Centre": [-37.8003, 144.9567],
         "The Alfred": [-37.8460, 144.9810],
-        "St Vincent's Hospital Melbourne": [-37.8090, 144.9780],
+        "St Vincents Melbourne": [-37.80793205474873, 144.9760853627314 ],
         "Austin": [-37.7570, 145.0570],
         "Olivia Newton John Cancer Wellness Centre": [-37.7580, 145.0670],
         "Monash Medical Centre": [-37.9080, 145.1300],
@@ -5922,7 +5922,7 @@ const STRIKE_DATA = [
         description: "HACSU member nurses in Tasmania's public sector commenced industrial action on 21 September. HACSU had set a deadline of 14 September for the government to present an offer, but no offer has been tabled. HACSU's bargaining team have participated in 50 hours of negotiations. Industrial action has kicked off with a round of workplace bans, including wearing campaign materials, placing campaign materials on patient care boards, speaking to media and the public about the campaign, working to rule by taking all breaks on time, not participating in audit-related activities, not attending non-patient related meetings, and not filing RFAs or taking late files to admissions. Meanwhile, ANMF members at the Royal Hobart Hospital endorsed industrial action at a mass meeting on 22 September, with further mass meetings in the north and north-west later this week. Public sector nurses are fighting for a fair deal with decent wages and conditions and safer staffing levels.",
         locations: [
             { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Royal Hobart Hospital" },
-            { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston General Hospital" },
+            { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
             { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "North West Regional Hospital" }
         ],
         sources: [
@@ -6223,7 +6223,7 @@ const STRIKE_DATA = [
 },
 {
     id: 9003,
-    actionId: "tas-public-sector-nurses",
+    actionId: "tas-public-sector",
     title: "Tasmanian Public Sector Workers Dispute Escalates",
     union: "AEU / CPSU / HACSU Tasmania",
     industry: "Public Sector",
@@ -7267,14 +7267,14 @@ const STRIKE_DATA = [
         title: "St Vincent's Private Nurses Escalate Campaign with Bed Closures",
         union: "ANMF Vic",
         industry: "Healthcare",
-        type: "strike",
+        type: "action",
         startDate: "2025-01-08",
         endDate: "",
         workers: null,
         state: "VIC",
         description: "Nurses and midwives at St Vincent's Private escalated their industrial campaign with bed closures. Management tried to assert this action was unlawful, but nurses stood strong. Workers have been undertaking industrial action since November as part of their campaign for ratios and improved conditions.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "St Vincent's Private Hospital" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["St Vincents Melbourne"][0], lng: HOSP["VIC"]["St Vincents Melbourne"][1], name: "St Vincent's Private Hospital" }
         ],
         sources: [
             { name: "Disputes Report - 15 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-january" }
@@ -7503,7 +7503,7 @@ const STRIKE_DATA = [
     },
     {
         id: 10013,
-        actionId: "tas-public-sector-2025",
+        actionId: "tas-public-sector",
         title: "Tasmanian Public Sector Workers Escalate Industrial Action",
         union: "AEU / CPSU / HACSU Tasmania",
         industry: "Public Sector",
@@ -7515,7 +7515,7 @@ const STRIKE_DATA = [
         description: "Leaders of the AEU, CPSU and HACSU urged Premier Jeremy Rockliff to intervene in public sector negotiations. HACSU members held a 3-hour rolling stopwork at Launceston General Hospital. CPSU and HACSU members at Ashley Youth Detention Centre struck for 2 hours over safety, security and staffing concerns.",
         locations: [
             { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tasmanian public sector" },
-            { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston General Hospital" }
+            { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7669,7 +7669,7 @@ const STRIKE_DATA = [
         industry: "Oil & Gas / Construction",
         type: "resolved",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2025-02-04",
         workers: null,
         state: "WA",
         description: "Workers at Pluto 2 voted up Bechtel's offer. The proposed agreement includes approximately a 7% wage increase on commencement followed by 5% wage increases in December 2026 and 2027, plus a $10,000 sign-on bonus. Unions had reportedly been aiming for a 30% wage increase over the life of the agreement.",
@@ -7893,7 +7893,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Nurses and healthcare workers rallied outside Launceston General Hospital in response to the lack of air conditioning in the hospital. Portable air-conditioners, cold face washers and icy poles were being rolled out by management - viewed as insufficient by unions. Unions are calling for urgent action from the government to ensure a safe environment for workers and patients.",
         locations: [
-            { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston General Hospital" }
+            { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -9125,7 +9125,7 @@ const STRIKE_DATA = [
         description: "HACSU members in Tasmania continued their industrial campaign demanding a fair deal from the state government. Pharmacy staff, podiatry staff and medical physicists at the Royal Hobart Hospital stopped work for 1 hour. Workers at the Roy Fagan Centre stopped work for 1 hour. Cleaners, food services workers, trades staff, administration staff, hospital aides and theatre support staff at the Launceston General Hospital stopped work for 1 hour over the government's lousy wages offer.",
         locations: [
             { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Royal Hobart Hospital" },
-            { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston General Hospital" }
+            { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
