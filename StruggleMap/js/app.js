@@ -63,7 +63,7 @@ const TYPE_INFO = {
     let activeStateFilter = 'all';
     let activeDateFrom = '';
     let activeDateTo = '';
-    let dateFilterEnabled = true;
+    let dateFilterEnabled = false;
     let includeStaleEntries = false;
     let includeOngoingEntries = true;
     let activeUpcomingFilter = false;
@@ -959,11 +959,14 @@ if (activeStateFilter !== 'all') {
 
         let locationsHtml = '';
         if (latest.locations && latest.locations.length > 0) {
-            locationsHtml = latest.locations.map(loc =>
-                `<div>📍 ${loc.name || loc.city}, ${loc.state || ''}</div>`
+            locationsHtml = latest.locations.map((loc, index) =>
+                `<div class="location-entry${index >= 4 ? ' location-entry-hidden' : ''}"${index >= 4 ? ' hidden' : ''}>📍 ${escapeHtml(loc.name || loc.city)}, ${escapeHtml(loc.state || '')}</div>`
             ).join('');
+            if (latest.locations.length > 4) {
+                locationsHtml += `<button type="button" class="locations-toggle" aria-expanded="false">See more (${latest.locations.length - 4})</button>`;
+            }
         } else {
-            locationsHtml = `<div>📍 ${latest.city}, ${latest.state || ''}</div>`;
+            locationsHtml = `<div>📍 ${escapeHtml(latest.city || '')}, ${escapeHtml(latest.state || '')}</div>`;
         }
 
         let sourcesHtml = '';
@@ -1033,6 +1036,19 @@ if (activeStateFilter !== 'all') {
         document.getElementById('detail-close').addEventListener('click', () => {
             detailModal.classList.remove('visible');
         });
+        const locationsToggle = detailModalContent.querySelector('.locations-toggle');
+        if (locationsToggle) {
+            locationsToggle.addEventListener('click', () => {
+                const isExpanded = locationsToggle.getAttribute('aria-expanded') === 'true';
+                detailModalContent.querySelectorAll('.location-entry-hidden').forEach(location => {
+                    location.hidden = isExpanded;
+                });
+                locationsToggle.setAttribute('aria-expanded', String(!isExpanded));
+                locationsToggle.textContent = isExpanded
+                    ? `See more (${latest.locations.length - 4})`
+                    : 'See less';
+            });
+        }
         detailModal.onclick = (e) => {
             if (e.target === detailModal) detailModal.classList.remove('visible');
         };

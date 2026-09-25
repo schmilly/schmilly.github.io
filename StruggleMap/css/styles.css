@@ -635,6 +635,25 @@ body {
     min-width: 0;
 }
 
+.location-entry-hidden[hidden] {
+    display: none;
+}
+
+.locations-toggle {
+    margin-top: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.locations-toggle:hover {
+    text-decoration: underline;
+}
+
 #event-list {
     flex: 1;
     overflow-y: auto;
