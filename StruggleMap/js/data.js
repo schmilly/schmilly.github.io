@@ -97,7 +97,11 @@ const COMPANY = {
         "QLD": [-27.453496838068023, 153.03833752649774],
         "ACT": [-35.313489520105335, 149.18984661134039]
     },
-    "K AND S": [-31.957271582472234, 115.98783445823149]
+    "K AND S": [-31.957271582472234, 115.98783445823149],
+    "ALSTOM": [-31.89636199051062, 116.02331929038176],
+    "DYNELEC": [-34.466729848922604, 150.83263302741156],
+    "Tomago":[-32.82575691442906, 151.71854990432388],
+    "Stowe":[-32.892972222566016, 151.60143883928703],
 }
 
 
@@ -200,6 +204,7 @@ const POWER = { //Power plants
     "Kareeya": [-17.7672, 145.578],
     "Barron Gorge":[-16.8513, 145.6468],
     "Loy Yang":[-38.2509684682121, 146.5776162036045],
+    "Gladstone": [-23.84852306388098, 151.21830310883442],
 }
 
 const HOSP = {
@@ -582,7 +587,7 @@ const TWU_TRANSPORT_STRIKE_LOCATIONS = [
     { city: "Sydney", state: "NSW", lat: -33.9386, lng: 151.1853, name: "FedEx Sydney (Botany)" },
     { city: "Melbourne", state: "VIC", lat: -37.6773, lng: 144.8400, name: "FedEx Melbourne (Melbourne Airport)" },
     { city: "Brisbane", state: "QLD", lat: -27.4188, lng: 153.0893, name: "FedEx Brisbane (Brisbane Airport)" },
-    { city: "Perth", state: "WA", lat: -31.9923, lng: 115.9198, name: "FedEx Perth (Welshpool)" },
+    { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng: COMPANY["FedEx"]["PER"][1], name: "FedEx Perth (Welshpool)" },
 
     // ============================================
     // BORDEREXPRESS
@@ -6760,26 +6765,6 @@ const STRIKE_DATA = [
     ]
 },
 {
-    id: 9030,
-    actionId: "stowe-etu",
-    title: "Stowe Workers Strike, Shutting Down Microsoft Data Centre Build",
-    union: "ETU NSW",
-    industry: "Construction",
-    type: "strike",
-    startDate: "2026-06-11",
-    endDate: "",
-    workers: null,
-    state: "NSW",
-    description: "On 11 June ETU members at Stowe voted to commence strike action with 24-hour stoppages for the rest of the week. Workers met again on 15 June and voted to continue striking for another 48 hours. The stoppages are causing significant disruption including shutting down construction of the $1.3 billion Microsoft data centre in Kemps Creek. Workers are fighting for a better offer with higher wages and improved conditions.",
-    locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Stowe" },
-        { city: "Kemps Creek", state: "NSW", lat: -33.8500, lng: 150.8000, name: "Microsoft data centre, Kemps Creek" }
-    ],
-    sources: [
-        { name: "Disputes Report - 17 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
-    ]
-},
-{
     id: 9031,
     actionId: "cleanco-barron-gorge",
     title: "Cleanco Barron Gorge Workers Take Industrial Action",
@@ -7068,25 +7053,6 @@ const STRIKE_DATA = [
         { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
     ]
 },
-{
-    id: 9046,
-    actionId: "stowe-etu",
-    title: "Stowe Workers Vote Up In-Principle Agreement",
-    union: "ETU NSW",
-    industry: "Construction / Manufacturing",
-    type: "resolved",
-    startDate: "2026-06-24",
-    endDate: "2026-06-24",
-    workers: null,
-    state: "NSW",
-    description: "After two weeks of industrial action, ETU members at Stowe have voted up an in-principle agreement. The agreement includes wage increases of 23.25% over 4 years (6%/6%/6%/5.25%), 5 weeks annual leave, improved parental leave, improvements to allowances and May Day guaranteed as a paid day off.",
-    locations: [
-        { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Stowe" }
-    ],
-    sources: [
-        { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
-    ]
-},
 
 // --- 2025 ENTRIES (selected) ---
 {
@@ -7287,9 +7253,9 @@ const STRIKE_DATA = [
         title: "NSW Public Sector Psychiatrists Resign En Masse",
         union: "ASMOF NSW",
         industry: "Healthcare",
-        type: "action",
+        type: "update",
         startDate: "2025-01-21",
-        endDate: "",
+        endDate: "2025-01-21",
         workers: 200,
         state: "NSW",
         description: "Over 200 of 295 public psychiatrists sent in resignations effective 21 January over a 30% pay gap and severe staffing crisis. Mental health wards closed. NSW IRC agreed to expedited arbitration. ASMOF frustrated with government refusing to consider any wage increase over 3%.",
@@ -7341,9 +7307,29 @@ const STRIKE_DATA = [
         ],
         tags: ["manufacturing", "cfmeu", "lockout"]
     },
+        {
+        id: 100041,
+        actionId: "opal-maryvale-cfmeu-2025",
+        title: "Opal Maryvale Mill Locks Out Resolves after 4 weeks",
+        union: "CFMEU Manufacturing",
+        industry: "Manufacturing / Paper",
+        type: "ballotpass",
+        startDate: "2025-01-16",
+        endDate: "2026-02-16",
+        workers: 300,
+        state: "VIC",
+        description: "The 4 week lock out of workers draws to a close. 'The workers voted late Saturday,15 February, to accept an improved deal, and were back at work at 6am this morning (Sunday 16 February), a full month after the lockout was first instigated.'",
+        locations: [
+            { city: "Maryvale", state: "VIC", lat: -38.2, lng: 146.4, name: "Opal Maryvale Mill" }
+        ],
+        sources: [
+            { name: "Print21 - Feb 19 2026", url: "https://print21.com.au/packaging/lockout-ends-as-maryvale-dispute-over/" }
+        ],
+        tags: ["manufacturing", "cfmeu", "lockout"]
+    },
     {
         id: 10005,
-        actionId: "sydney-trains-cru-2025",
+        actionId: "sydney-trains-2025",
         title: "Sydney Trains Industrial Action Suspended by FWC",
         union: "ASU / AMWU / ETU / RTBU / PA",
         industry: "Rail Transport",
@@ -7414,7 +7400,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "580 AWU members at Tomago Aluminium in Newcastle commenced industrial action. The company is refusing workers a 15% pay increase over 5 years, refusing to budge from a 10% offer. The action coincided with a visit from the Prime Minister announcing $2 billion of investment into the Australian-made aluminium industry.",
         locations: [
-            { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Tomago Aluminium" }
+            { city: "Newcastle", state: "NSW", lat: COMPANY["Tomago"][0], lng: COMPANY["Tomago"][1], name: "Tomago Aluminium" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -7593,7 +7579,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "An update from the ETU confirmed that workers at Dynelec were still on strike. Workers are fighting for improved wages and conditions in a new EBA. Dynelec initially offered 11.5%, but then dropped that back to 10.5%.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Dynelec" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["DYNELEC"][0], lng: COMPANY["DYNELEC"][1], name: "Dynelec" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7629,7 +7615,7 @@ const STRIKE_DATA = [
         industry: "Manufacturing / Pharmaceutical",
         type: "strike",
         startDate: "2025-02-03",
-        endDate: "",
+        endDate: "2025-02-03",
         workers: null,
         state: "VIC",
         description: "Members of three unions at CSL struck for 24 hours. Workers are fighting back as the company threatens to extend working hours, cut conditions and move office-based employees off an enterprise agreement onto individual contracts. Workers seek at least 14% over 3 years; CSL offered 10.5%.",
@@ -7689,7 +7675,7 @@ const STRIKE_DATA = [
         industry: "Public Sector",
         type: "resolved",
         startDate: "2025-01-30",
-        endDate: "",
+        endDate: "2025-01-30",
         workers: null,
         state: "SA",
         description: "An in-principle agreement was reached between the PSA and the SA state government for salaried public sector workers. The new EBA includes a 10.8% cumulative wage increase: 3.75% backdated to 1 August 2025, 3.5% on 1 July 2026 and 3.25% on 1 July 2027. Additional $4000 increase to base wages for historically low paid employees. Correctional officers included after striking for 4 days in December.",
@@ -7709,12 +7695,12 @@ const STRIKE_DATA = [
         industry: "Energy",
         type: "strike",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2025-02-04",
         workers: null,
         state: "QLD",
         description: "Workers commenced a 24-hour stoppage after management failed to address key claims including a cost of living adjustment. Bans were also put in place including a ban on operating units above 110MW, indefinite overtime bans, call-out/recall bans, technology bans, and bans on higher duties. A successful outcome was reached in less than 24 hours.",
         locations: [
-            { city: "Gladstone", state: "QLD", lat: -23.842, lng: 151.255, name: "Gladstone Power Station" }
+            { city: "Gladstone", state: "QLD", lat: POWER["Gladstone"][0], lng: POWER["Gladstone"][1], name: "Gladstone Power Station" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7743,7 +7729,7 @@ const STRIKE_DATA = [
     },
     {
         id: 20003,
-        actionId: "snowy-2-safety-awu-2025",
+        actionId: "snowy-2-2025",
         title: "Snowy 2.0 Workers Walk Off Over Safety Concerns",
         union: "AWU",
         industry: "Construction / Infrastructure",
@@ -7809,7 +7795,7 @@ const STRIKE_DATA = [
         industry: "Legal Services",
         type: "ballot",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2026-02-18",
         workers: null,
         state: "VIC",
         description: "Another protected action ballot order was granted for lawyers at Maurice Blackburn. The ballot was set to close on 18 February. Workers are fighting for a decent pay increase, 10 days reproductive leave, and measures to improve the gender pay gap.",
@@ -8056,7 +8042,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Workers at Alstom Metronet in Bellevue walked off the job. Unions have been in negotiations for an EBA. The last bargaining meeting was held on 24 February where Alstom wouldn't agree to the union's claims, and subsequently lodged a dispute in the FWC. Unions are seeking a 23% wage increase over 3 years, but Alstom's best offer is only 12% over 3 years. Workers are also fighting for a 36-hour week.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Alstom Metronet Bellevue" }
+            { city: "Perth", state: "WA", lat: COMPANY["ALSTOM"][0], lng: COMPANY["ALSTOM"][1], name: "Alstom Metronet Bellevue" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -8085,7 +8071,7 @@ const STRIKE_DATA = [
     },
     {
         id: 20020,
-        actionId: "sydney-trains-etu-2025",
+        actionId: "sydney-trains-2025",
         title: "ETU Challenges FWC Suspension of Sydney Trains Industrial Action",
         union: "ETU NSW",
         industry: "Rail Transport",
@@ -8217,7 +8203,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "ETU members at Stowe overwhelmingly voted in favour of taking industrial action. Stowe is NSW's biggest electrical contractor. Current offer from Stowe is a 5% wage increase on a 12-month extension of the current agreement and a $15 per day travel allowance from May. The ETU's list of claims includes a 6% wage increase.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Stowe" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Stowe" }
         ],
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
@@ -8750,7 +8736,7 @@ const STRIKE_DATA = [
     },
     {
         id: 30010,
-        actionId: "sydney-trains-cru-2025-2",
+        actionId: "sydney-trains-2025",
         title: "Sydney Trains Industrial Action in Three-Cornered Legal Stoush",
         union: "CRU / ETU NSW",
         industry: "Rail Transport",
