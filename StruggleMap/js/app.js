@@ -706,7 +706,7 @@ function buildLegend() {
 
         let popupHtml = `<div style="text-align:center;">
         <strong>${escapeHtml(entry.title)}</strong><br>
-        <span style="font-size:12px;">${location.name || location.city} · ${entry.startDate}</span><br>
+        <span style="font-size:12px;">${location.name || location.city} · ${formatDate(entry.startDate)}</span><br>
         <span style="font-size:11px; color:#aaa;">${entry.union} · ${entry.industry}</span><br>
         <button class="btn" style="margin-top:8px;" onclick="openDetailFromPopup('${actionId}')">Details</button>
         </div>`;
