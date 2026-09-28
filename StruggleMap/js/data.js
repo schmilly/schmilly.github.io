@@ -8700,7 +8700,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "CFMEU members at Freo Cranes in the Pilbara walked off the job for 24 hours commencing at 6am. 150 workers participated in the action, with more industrial action likely before Christmas.",
         locations: [
-            { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Freo Cranes" }
+            { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Freo Cranes operations Pilbara" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8766,7 +8766,7 @@ const STRIKE_DATA = [
     {
     id: 8706,
     actionId: "land-forces-expo-protest",
-    title: "Land Forces 2026 and Protests",
+    title: "Land Forces 2026 Protests",
     union: null,
     industry: '"Defence"',
     type: "protest",
