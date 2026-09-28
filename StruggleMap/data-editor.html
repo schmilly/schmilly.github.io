@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Strike Data Editor</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dev">
+
+<h1>Strike Data Editor</h1>
+<div class="sub">
+</div>
+
+<div class="toolbar">
+  <button id="exportBtn" class="primary dev">1. Export CSV</button>
+  <button id="importBtn" class="primary dev">2. Import CSV</button>
+  <button id="downloadBtn" class="dev">3. Download data.js snippet</button>
+  <span style="flex:1"></span>
+  <input type="file" id="fileInput" accept=".csv,text/csv" />
+</div>
+
+<div class="stats" id="stats">Loading…</div>
+
+<textarea id="csvArea" placeholder="CSV will appear here on export. Paste edited CSV here before importing."></textarea>
+
+<div class="note">
+  <strong>LibreOffice Calc tip:</strong> When you open the CSV, choose
+  <em>“Edit filter settings”</em> and tick <em>“Detect special numbers”</em> = <strong>OFF</strong>,
+  or set all column types to <strong>Text</strong>. Otherwise Calc will reformat
+  dates (<code>2026-09-08</code>) and long decimals. Save back as <strong>UTF‑8 CSV</strong>.
+</div>
+
+<div class="status" id="status"></div>
+
+<!-- =====================================================================
+     ORIGINAL data.js — included verbatim
+     ===================================================================== -->
+<script src="js/locations.js"></script>
+<script src="js/data.js"></script>
+
+<!-- =====================================================================
+     ROUND-TRIP LOGIC
+     ===================================================================== -->
+<script>
+// ---------- Variables that hold { key: [lat, lng] } pairs ----------
+const REF_VARS = {
+  CITY_COORDS, COMPANY,
+  MELB, BRIS, PER, SYD, MINE, REF, CAN,
+  SA, WA, QLD, TAS, VIC, PORT, UNI, POWER, HOSP
+};
+
+// ---------- Variables that are whole arrays of location objects ----------
+const ARRAY_VARS = {
+  RAFFWUBOOKSTORE_LOCATIONS,
+  TWU_TRANSPORT_STRIKE_LOCATIONS
+};
+
+// ---------- Build the "lat,lng" -> expression map ----------
+function buildPairMap() {
+  const map = new Map();
+  function walk(obj, path) {
+    for (const key of Object.keys(obj)) {
+      const val = obj[key];
+      const p = path ? `${path}[${JSON.stringify(key)}]` : `window[${JSON.stringify(key)}]`;
+      if (Array.isArray(val) && val.length === 2 &&
+          typeof val[0] === 'number' && typeof val[1] === 'number') {
+        const k = `${val[0]},${val[1]}`;
+        if (!map.has(k)) map.set(k, p);
+      } else if (val && typeof val === 'object' && !Array.isArray(val)) {
+        walk(val, p);
+      }
+    }
+  }
+  walk(REF_VARS, '');
+  return map;
+}
+
+// ---------- Serialize the locations field as JS source ----------
+function serializeLocations(locations, pairMap) {
+  for (const [name, arr] of Object.entries(ARRAY_VARS)) {
+    if (JSON.stringify(locations) === JSON.stringify(arr)) return name;
+  }
+  return '[' + locations.map(loc => {
+    const pair = pairMap.get(`${loc.lat},${loc.lng}`);
+    const latExpr = pair ? `${pair}[0]` : String(loc.lat);
+    const lngExpr = pair ? `${pair}[1]` : String(loc.lng);
+    const fields = [];
+    fields.push(`city: ${JSON.stringify(loc.city)}`);
+    fields.push(`state: ${JSON.stringify(loc.state ?? '')}`);
+    fields.push(`lat: ${latExpr}`);
+    fields.push(`lng: ${lngExpr}`);
+    fields.push(`name: ${JSON.stringify(loc.name)}`);
+    for (const k of Object.keys(loc)) {
+      if (!['city', 'state', 'lat', 'lng', 'name'].includes(k)) {
+        fields.push(`${k}: ${JSON.stringify(loc[k])}`);
+      }
+    }
+    return `{ ${fields.join(', ')} }`;
+  }).join(', ') + ']';
+}
+
+// ---------- Evaluate a locations expression back into an array ----------
+function evalLocations(expr) {
+  const scope = { ...REF_VARS, ...ARRAY_VARS };
+  const names = Object.keys(scope);
+  const values = names.map(n => scope[n]);
+  // Also allow `window["CITY_COORDS"][...]` style paths
+  const fn = new Function('window', ...names, `return (${expr});`);
+  return fn(window, ...values);
+}
+
+// ---------- CSV escape / unescape ----------
+function csvCell(str) {
+  str = String(str);
+  if (/[",\n\r]/.test(str)) str = '"' + str.replace(/"/g, '""') + '"';
+  return str;
+}
+
+// ---------- Export STRIKE_DATA to CSV ----------
+function exportToCSV(data) {
+  const pairMap = buildPairMap();
+  const keys = new Set();
+  data.forEach(item => Object.keys(item).forEach(k => keys.add(k)));
+  const headers = Array.from(keys).sort();
+
+  const rows = [headers.map(csvCell).join(',')];
+  data.forEach(item => {
+    const row = headers.map(header => {
+      const val = item[header];
+      if (val === undefined || val === null) return '';
+      let str;
+      if (header === 'locations' && Array.isArray(val)) {
+        str = serializeLocations(val, pairMap);
+      } else if (typeof val === 'object') {
+        str = JSON.stringify(val);
+      } else {
+        str = String(val);
+      }
+      return csvCell(str);
+    });
+    rows.push(row.join(','));
+  });
+  return rows.join('\n');
+}
+
+// ---------- CSV parser (RFC 4180-ish) ----------
+function parseCSV(csv) {
+  const rows = [];
+  let row = [], cell = '', inQuotes = false;
+  for (let i = 0; i < csv.length; i++) {
+    const c = csv[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (csv[i + 1] === '"') { cell += '"'; i++; }
+        else inQuotes = false;
+      } else cell += c;
+    } else {
+      if (c === '"') inQuotes = true;
+      else if (c === ',') { row.push(cell); cell = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && csv[i + 1] === '\n') i++;
+        row.push(cell); rows.push(row);
+        row = []; cell = '';
+      } else cell += c;
+    }
+  }
+  if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+  while (rows.length && rows[rows.length - 1].every(c => c === '')) rows.pop();
+  return rows;
+}
+
+// ---------- Import CSV -> array of STRIKE_DATA objects ----------
+function importFromCSV(csv) {
+  const rows = parseCSV(csv);
+  if (!rows.length) return [];
+  const headers = rows[0];
+  const out = [];
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const obj = {};
+    headers.forEach((header, idx) => {
+      let val = row[idx] ?? '';
+      if (header === 'locations' && val) {
+        try { val = evalLocations(val); }
+        catch (e) {
+          console.warn('Could not evaluate locations expression, keeping raw string:', val, e);
+        }
+      } else if (['sources', 'tags'].includes(header) && val) {
+        try { val = JSON.parse(val); }
+        catch (e) { console.warn('Bad JSON in column', header, val); }
+      } else if (header === 'id' || header === 'workers') {
+        if (val === '') val = null;
+        else { const n = Number(val); if (!isNaN(n)) val = n; }
+      }
+      obj[header] = val;
+    });
+    out.push(obj);
+  }
+  return out;
+}
+
+// ---------- Serialize STRIKE_DATA to JS source (with references) ----------
+function jsKey(k) {
+  return /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(k) ? k : JSON.stringify(k);
+}
+
+function toJSSource(data) {
+  const pairMap = buildPairMap();
+  const items = data.map(item => {
+    const lines = Object.entries(item).map(([k, v]) => {
+      let out;
+      if (k === 'locations' && Array.isArray(v)) {
+        out = serializeLocations(v, pairMap);
+      } else {
+        out = JSON.stringify(v, null, 2).replace(/\n/g, '\n    ');
+      }
+      return `        ${jsKey(k)}: ${out}`;
+    });
+    return '    {\n' + lines.join(',\n') + '\n    }';
+  });
+  return 'const STRIKE_DATA = [\n' + items.join(',\n') + '\n];\n';
+}
+
+// ---------- UI wiring ----------
+const $ = id => document.getElementById(id);
+const statusEl = $('status');
+function setStatus(msg, kind = 'info') {
+  statusEl.textContent = msg;
+  statusEl.className = 'status ' + kind;
+}
+
+function refreshStats() {
+  const n = window.STRIKE_DATA.length;
+  const pairMap = buildPairMap();
+  $('stats').textContent =
+    `${n} entries loaded · ${pairMap.size} variable coordinates indexed · ` +
+    `${Object.keys(ARRAY_VARS).length} whole-array refs tracked`;
+}
+refreshStats();
+
+$('exportBtn').onclick = () => {
+  try {
+    const csv = exportToCSV(window.STRIKE_DATA);
+    $('csvArea').value = csv;
+    setStatus(`Exported ${window.STRIKE_DATA.length} rows to CSV (${csv.length.toLocaleString()} chars). Copy into LibreOffice Calc.`, 'ok');
+  } catch (e) {
+    setStatus('Export failed: ' + e.message, 'err');
+    console.error(e);
+  }
+};
+
+$('importBtn').onclick = () => {
+  try {
+    const csv = $('csvArea').value;
+    if (!csv.trim()) { setStatus('Paste CSV into the textarea first.', 'err'); return; }
+    const newData = importFromCSV(csv);
+    window.STRIKE_DATA = newData;
+    refreshStats();
+    setStatus(`Imported ${newData.length} entries. Click "Download data.js snippet" to save.`, 'ok');
+  } catch (e) {
+    setStatus('Import failed: ' + e.message, 'err');
+    console.error(e);
+  }
+};
+
+$('downloadBtn').onclick = () => {
+  try {
+    const src = toJSSource(window.STRIKE_DATA);
+    const blob = new Blob([src], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'strike_data_snippet.js';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Downloaded strike_data_snippet.js — replace the STRIKE_DATA array in your data.js with this.', 'ok');
+  } catch (e) {
+    setStatus('Download failed: ' + e.message, 'err');
+    console.error(e);
+  }
+};
+
+$('fileInput').onchange = e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    $('csvArea').value = ev.target.result;
+    setStatus(`Loaded ${file.name} (${ev.target.result.length.toLocaleString()} chars). Click "Import CSV".`, 'info');
+  };
+  reader.readAsText(file, 'UTF-8');
+};
+</script>
+
+</body>
+</html>

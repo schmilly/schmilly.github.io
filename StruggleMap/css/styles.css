@@ -18,6 +18,8 @@
     --text-muted: #fcc7c7;
     --text-really-muted: #8b949e;
     --accent: #db222a;
+    --accent-alt: #2155ff;
+    --accent-alt-muted: #7780d7;
     --strike: #e74c3c;
     --lockout: #e67e22;
     --protest: #f1c40f;
@@ -1464,4 +1466,67 @@ details[open] .chevron {
     details .chevron {
         transition: none;
     }
+}
+
+  body.dev * { box-sizing: border-box; }
+  body.dev {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0; padding: 20px; background: var(--bg-dark); color: var(--text-primary);
+  }
+  body.dev h1 { margin: 0 0 6px; font-size: 22px; }
+  body.dev .sub { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
+  body.dev .toolbar {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    padding: 12px; background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 12px;
+  }
+  button.dev {
+    padding: 8px 14px; font-size: 14px; border-radius: 6px;
+    border: 1px solid #ccc; background: var(--accent); cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  button.primary { background: var(--accent-alt-muted); color: var(--text-primary); border-color: #2563eb; }
+  button.primary:hover { background: var(--accent-alt) !important; }
+  button.danger { background: var(--accent); color: #fff; border-color: #dc2626; }
+  button.danger:hover { background: #b91c1c; }
+  input[type=file] { font-size: 13px; }
+  textarea {
+    width: 100%; min-height: 400px; padding: 10px; font-family:
+      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px; line-height: 1.4; border: 1px solid #ccc;
+    border-radius: 8px; background: #fff; resize: vertical;
+    white-space: pre; overflow: auto;
+  }
+  .stats {
+    font-size: 13px; color: #444; padding: 8px 12px;
+    background: #eef2ff; border-radius: 6px; margin-bottom: 12px;
+    display: inline-block;
+  }
+  .status {
+    margin-top: 12px; padding: 10px 14px; border-radius: 6px;
+    font-size: 13px; display: none;
+  }
+  .status.ok    { background: #dcfce7; color: #166534; display: block; }
+  .status.err   { background: #fee2e2; color: #991b1b; display: block; }
+  .status.info  { background: #dbeafe; color: #1e40af; display: block; }
+  body.dev .note {
+    font-size: 12px; color: #666; margin: 10px 0;
+    padding: 10px; background: #fffbeb; border-left: 3px solid #f59e0b;
+    border-radius: 4px;
+  }
+  code { background: var(--bg-alt); color:var(--accent-alt) 4px; border-radius: 3px; font-size: 12px; }
+
+  /* Upcoming-event chip in the sidebar list */
+.meta-tag.upcoming {
+    background: rgba(52, 152, 219, 0.18);
+    color: #3498db;
+    border: 1px solid rgba(52, 152, 219, 0.45);
+    font-weight: 600;
+}
+
+html[data-theme="light"] .meta-tag.upcoming {
+    background: rgba(52, 152, 219, 0.14);
+    color: #1f6fb2;
+    border-color: rgba(52, 152, 219, 0.35);
 }
