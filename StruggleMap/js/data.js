@@ -6958,7 +6958,7 @@ const STRIKE_DATA = [
     },
     {
         id: 10009,
-        actionId: "ffmv-awu-2025",
+        actionId: "forest-firefighters-awu",
         title: "Forest Fire Management Victoria Workers Continue Action",
         union: "AWU Victoria",
         industry: "Emergency Services / Forestry",
