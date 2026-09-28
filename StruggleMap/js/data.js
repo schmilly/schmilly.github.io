@@ -7874,7 +7874,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Members of the Ambulance Employees Association of Western Australia commenced industrial action following an 'overwhelming' rejection of a proposed EBA. Paramedics are concerned about the ramping crisis and forced overtime. Workers will not take strike action but will be painting campaign messages on ambulance vehicles, wearing union T-shirts, prioritising personal fatigue management, ceasing work communications outside hours, and starting vehicle and equipment checks only during paid hours.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "St John's Ambulance" }
+            { city: "Perth", state: "WA", lat: COMPANY["St John"]["WA"][0], lng: COMPANY["St John"]["WA"][1], name: "St John's Headquaters" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
