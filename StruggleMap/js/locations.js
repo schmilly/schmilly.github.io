@@ -203,7 +203,8 @@ const VIC = {
     "DOT": [-37.8150, 144.9743], //Vic Department of transport,
     "Parks Vic": [-37.81046, 144.96036],
     "Hume City": [-37.681992618429874, 144.91828546273769],
-    "Melton Civic Centre": [-37.68207628629816, 144.58708142307282]
+    "Melton Civic Centre": [-37.68207628629816, 144.58708142307282],
+    "Thornbury": [-37.75519146696384, 144.9986849416703],
 }
 
 const PORT = { //Ports

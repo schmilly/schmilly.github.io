@@ -33,7 +33,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hsu_20261044.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5001,
@@ -61,7 +61,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_20261041.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5002,
@@ -89,7 +89,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_20261008.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5003,
@@ -117,7 +117,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261050.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5004,
@@ -145,7 +145,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meu_20261039.pdf"
             }
         ],
-        tags: ["mining", "meu", "fwc-ballot"]
+        tags: ["labour union","mining", "meu", "fwc-ballot"]
     },
     {
         id: 5005,
@@ -165,7 +165,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_20261005.pdf"
             }
         ],
-        tags: ["rail-transport", "amou", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amou", "fwc-ballot"]
     },
     {
         id: 5006,
@@ -193,7 +193,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/aimpe_20261035.pdf"
             }
         ],
-        tags: ["rail-transport", "aimpe", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "aimpe", "fwc-ballot"]
     },
     {
         id: 5007,
@@ -221,7 +221,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_20261029.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     },
     {
         id: 5008,
@@ -249,7 +249,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261030.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5009,
@@ -277,7 +277,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261028.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5010,
@@ -305,7 +305,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261027.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5011,
@@ -333,7 +333,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261026.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5012,
@@ -361,7 +361,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieu_20261010.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5013,
@@ -389,7 +389,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_20261015.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5014,
@@ -417,7 +417,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261016.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5015,
@@ -445,7 +445,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261014.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5016,
@@ -473,7 +473,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026926.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5017,
@@ -501,7 +501,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261006.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5018,
@@ -529,7 +529,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/anmf_20261011.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5019,
@@ -557,7 +557,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026986.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5020,
@@ -585,7 +585,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/vau_2026996.pdf"
             }
         ],
-        tags: ["maritime", "vau", "fwc-ballot"]
+        tags: ["labour union","maritime", "vau", "fwc-ballot"]
     },
     {
         id: 5021,
@@ -613,7 +613,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261000.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5022,
@@ -641,7 +641,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026992.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5023,
@@ -669,7 +669,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026977.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5024,
@@ -697,7 +697,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieu_2026997.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5025,
@@ -725,7 +725,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026959.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5026,
@@ -753,7 +753,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026987.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5027,
@@ -781,7 +781,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026976.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5028,
@@ -809,7 +809,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026975.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5029,
@@ -837,7 +837,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026935.pdf"
             }
         ],
-        tags: ["rail-transport", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5030,
@@ -865,7 +865,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026938.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5031,
@@ -893,7 +893,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieu_2026957.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5032,
@@ -921,7 +921,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026940.pdf"
             }
         ],
-        tags: ["manufacturing", "twu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "twu", "fwc-ballot"]
     },
     {
         id: 5033,
@@ -949,7 +949,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026973.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5034,
@@ -977,7 +977,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026969.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5035,
@@ -1005,7 +1005,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/anmf_2026936.pdf"
             }
         ],
-        tags: ["education", "anmf", "fwc-ballot"]
+        tags: ["labour union","education", "anmf", "fwc-ballot"]
     },
     {
         id: 5036,
@@ -1033,7 +1033,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026954.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5037,
@@ -1061,7 +1061,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026937.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5038,
@@ -1089,7 +1089,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026912.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5039,
@@ -1117,7 +1117,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026960.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5040,
@@ -1145,7 +1145,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026949.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5041,
@@ -1173,7 +1173,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026864.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5042,
@@ -1201,7 +1201,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026945.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5043,
@@ -1229,7 +1229,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amieu_2026783.pdf"
             }
         ],
-        tags: ["other", "amieu", "fwc-ballot"]
+        tags: ["labour union","other", "amieu", "fwc-ballot"]
     },
     {
         id: 5044,
@@ -1257,7 +1257,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026801.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5045,
@@ -1285,7 +1285,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026929.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5046,
@@ -1313,7 +1313,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hsu_2026863.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5047,
@@ -1341,7 +1341,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026899.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5048,
@@ -1369,7 +1369,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026910.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5049,
@@ -1397,7 +1397,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026910.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5050,
@@ -1425,7 +1425,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026891.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5051,
@@ -1453,7 +1453,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026890.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5052,
@@ -1481,7 +1481,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026884.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5053,
@@ -1509,7 +1509,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026882.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5054,
@@ -1537,7 +1537,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026881.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5055,
@@ -1565,7 +1565,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026880.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5056,
@@ -1593,7 +1593,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026879.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5057,
@@ -1621,7 +1621,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026878.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5058,
@@ -1649,7 +1649,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026877.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5059,
@@ -1677,7 +1677,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026876.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5060,
@@ -1705,7 +1705,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026911.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5061,
@@ -1733,7 +1733,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026874.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5062,
@@ -1761,7 +1761,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026907.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5063,
@@ -1789,7 +1789,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026913.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5064,
@@ -1817,7 +1817,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026871.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5065,
@@ -1845,7 +1845,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026909.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5066,
@@ -1873,7 +1873,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026908.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5067,
@@ -1901,7 +1901,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026894.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5068,
@@ -1929,7 +1929,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026903.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5069,
@@ -1957,7 +1957,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026901.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5070,
@@ -1985,7 +1985,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026897.pdf"
             }
         ],
-        tags: ["manufacturing", "cepu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cepu", "fwc-ballot"]
     },
     {
         id: 5071,
@@ -2013,7 +2013,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026849.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5072,
@@ -2041,7 +2041,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026867.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5073,
@@ -2069,7 +2069,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meaa_2026865.pdf"
             }
         ],
-        tags: ["other", "meaa", "fwc-ballot"]
+        tags: ["labour union","other", "meaa", "fwc-ballot"]
     },
     {
         id: 5074,
@@ -2097,7 +2097,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026854.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5075,
@@ -2125,7 +2125,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026853.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5076,
@@ -2153,7 +2153,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieua_2026851.pdf"
             }
         ],
-        tags: ["other", "ieua", "fwc-ballot"]
+        tags: ["labour union","other", "ieua", "fwc-ballot"]
     },
     {
         id: 5077,
@@ -2181,7 +2181,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/aipa_2026844.pdf"
             }
         ],
-        tags: ["other", "aipa", "fwc-ballot"]
+        tags: ["labour union","other", "aipa", "fwc-ballot"]
     },
     {
         id: 5078,
@@ -2209,7 +2209,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026839.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5079,
@@ -2237,7 +2237,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026843.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5080,
@@ -2265,7 +2265,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieua_2026845.pdf"
             }
         ],
-        tags: ["education", "ieua", "fwc-ballot"]
+        tags: ["labour union","education", "ieua", "fwc-ballot"]
     },
     {
         id: 5081,
@@ -2293,7 +2293,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apesma_2026842.pdf"
             }
         ],
-        tags: ["utilities", "professionals-australia", "fwc-ballot"]
+        tags: ["labour union","utilities", "professionals-australia", "fwc-ballot"]
     },
     {
         id: 5082,
@@ -2321,7 +2321,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026838.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5083,
@@ -2349,7 +2349,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026846.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5084,
@@ -2377,7 +2377,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hacsu_2026813.pdf"
             }
         ],
-        tags: ["other", "hacsu", "fwc-ballot"]
+        tags: ["labour union","other", "hacsu", "fwc-ballot"]
     },
     {
         id: 5085,
@@ -2405,7 +2405,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asmof_2026768.pdf"
             }
         ],
-        tags: ["other", "asmof", "fwc-ballot"]
+        tags: ["labour union","other", "asmof", "fwc-ballot"]
     },
     {
         id: 5086,
@@ -2433,7 +2433,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026810.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5087,
@@ -2461,7 +2461,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026804.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5088,
@@ -2489,7 +2489,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026815.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5089,
@@ -2517,7 +2517,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026816.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5090,
@@ -2545,7 +2545,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026818.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5091,
@@ -2573,7 +2573,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026812.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5092,
@@ -2601,7 +2601,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026798.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5093,
@@ -2629,7 +2629,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026803.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5094,
@@ -2657,7 +2657,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026715.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5095,
@@ -2685,7 +2685,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026809.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5096,
@@ -2713,7 +2713,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026829.pdf"
             }
         ],
-        tags: ["manufacturing", "cepu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cepu", "fwc-ballot"]
     },
     {
         id: 5097,
@@ -2741,7 +2741,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026811.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5098,
@@ -2769,7 +2769,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026808.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5099,
@@ -2797,7 +2797,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026794.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5100,
@@ -2825,7 +2825,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieua_2026774.pdf"
             }
         ],
-        tags: ["education", "ieua", "fwc-ballot"]
+        tags: ["labour union","education", "ieua", "fwc-ballot"]
     },
     {
         id: 5101,
@@ -2853,7 +2853,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026770.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5102,
@@ -2881,7 +2881,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_2026754.pdf"
             }
         ],
-        tags: ["other", "amou-&-cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "amou-&-cfmeu", "fwc-ballot"]
     },
     {
         id: 5103,
@@ -2909,7 +2909,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026795.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5104,
@@ -2937,7 +2937,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026778.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5105,
@@ -2965,7 +2965,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026790.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5106,
@@ -2993,7 +2993,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026789.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5107,
@@ -3021,7 +3021,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026600.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5108,
@@ -3049,7 +3049,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026769.pdf"
             }
         ],
-        tags: ["utilities", "amwu", "fwc-ballot"]
+        tags: ["labour union","utilities", "amwu", "fwc-ballot"]
     },
     {
         id: 5109,
@@ -3077,7 +3077,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026772.pdf"
             }
         ],
-        tags: ["utilities", "awu", "fwc-ballot"]
+        tags: ["labour union","utilities", "awu", "fwc-ballot"]
     },
     {
         id: 5110,
@@ -3105,7 +3105,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026767.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5111,
@@ -3133,7 +3133,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026773.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5112,
@@ -3161,7 +3161,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026764.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5113,
@@ -3189,7 +3189,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026762.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5114,
@@ -3217,7 +3217,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026763.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5115,
@@ -3245,7 +3245,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_2026766.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     },
     {
         id: 5116,
@@ -3273,7 +3273,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026753.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5117,
@@ -3301,7 +3301,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026756.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5118,
@@ -3329,7 +3329,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026596.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5119,
@@ -3357,7 +3357,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026757.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5120,
@@ -3385,7 +3385,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026713.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5121,
@@ -3413,7 +3413,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026595.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5122,
@@ -3441,7 +3441,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026743.pdf"
             }
         ],
-        tags: ["construction", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5123,
@@ -3469,7 +3469,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026711.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5124,
@@ -3497,7 +3497,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026781.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5125,
@@ -3525,7 +3525,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026745.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5126,
@@ -3553,7 +3553,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026742.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5127,
@@ -3581,7 +3581,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026738.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5128,
@@ -3609,7 +3609,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026746.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5129,
@@ -3637,7 +3637,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026732.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5130,
@@ -3665,7 +3665,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026735.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5131,
@@ -3693,7 +3693,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026720.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5132,
@@ -3721,7 +3721,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026699.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5133,
@@ -3749,7 +3749,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amacsu_2026733.pdf"
             }
         ],
-        tags: ["other", "amacsu", "fwc-ballot"]
+        tags: ["labour union","other", "amacsu", "fwc-ballot"]
     },
     {
         id: 5134,
@@ -3777,7 +3777,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026574.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5135,
@@ -3805,7 +3805,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026721.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5136,
@@ -3833,7 +3833,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026714.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5137,
@@ -3861,7 +3861,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026687.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5138,
@@ -3889,7 +3889,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026706.pdf"
             }
         ],
-        tags: ["healthcare", "awu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "awu", "fwc-ballot"]
     },
     {
         id: 5139,
@@ -3917,7 +3917,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026695.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5140,
@@ -3945,7 +3945,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026629.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5141,
@@ -3973,7 +3973,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026569.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5142,
@@ -4001,7 +4001,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026704.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5143,
@@ -4029,7 +4029,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026702.pdf"
             }
         ],
-        tags: ["mining", "awu", "fwc-ballot"]
+        tags: ["labour union","mining", "awu", "fwc-ballot"]
     },
     {
         id: 5144,
@@ -4057,7 +4057,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amieu_2026717.pdf"
             }
         ],
-        tags: ["other", "amieu", "fwc-ballot"]
+        tags: ["labour union","other", "amieu", "fwc-ballot"]
     },
     {
         id: 5145,
@@ -4085,7 +4085,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026693.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5146,
@@ -4113,7 +4113,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026688.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5147,
@@ -4141,7 +4141,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026694.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5148,
@@ -4169,7 +4169,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026634.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5149,
@@ -4197,7 +4197,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026686.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5150,
@@ -4225,7 +4225,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026683.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5151,
@@ -4253,7 +4253,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026636.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5152,
@@ -4281,7 +4281,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026633.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5153,
@@ -4309,7 +4309,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026635.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5154,
@@ -4337,7 +4337,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/anmf_2026619.pdf"
             }
         ],
-        tags: ["other", "anmf", "fwc-ballot"]
+        tags: ["labour union","other", "anmf", "fwc-ballot"]
     },
     {
         id: 5155,
@@ -4365,7 +4365,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026615.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5156,
@@ -4393,7 +4393,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026613.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5157,
@@ -4421,7 +4421,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026612.pdf"
             }
         ],
-        tags: ["construction", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5158,
@@ -4449,7 +4449,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026611.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5159,
@@ -4477,7 +4477,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026610.pdf"
             }
         ],
-        tags: ["construction", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5160,
@@ -4505,7 +4505,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026614.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5161,
@@ -4533,7 +4533,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026592.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5162,
@@ -4561,7 +4561,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026593.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5163,
@@ -4589,7 +4589,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026599.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5164,
@@ -4617,7 +4617,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026578.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5165,
@@ -4645,7 +4645,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026577.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5166,
@@ -4673,7 +4673,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meu_2026478.pdf"
             }
         ],
-        tags: ["other", "meu", "fwc-ballot"]
+        tags: ["labour union","other", "meu", "fwc-ballot"]
     },
     {
         id: 5167,
@@ -4701,7 +4701,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026585.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5168,
@@ -4729,7 +4729,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026581.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5169,
@@ -4757,7 +4757,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apf_2026474.pdf"
             }
         ],
-        tags: ["education", "apf", "fwc-ballot"]
+        tags: ["labour union","education", "apf", "fwc-ballot"]
     },
     {
         id: 5170,
@@ -4785,7 +4785,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026540.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5171,
@@ -4813,7 +4813,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026568.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5172,
@@ -4841,7 +4841,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026565.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5173,
@@ -4869,7 +4869,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026558.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5174,
@@ -4897,7 +4897,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026555.pdf"
             }
         ],
-        tags: ["utilities", "asu", "fwc-ballot"]
+        tags: ["labour union","utilities", "asu", "fwc-ballot"]
     },
     {
         id: 5175,
@@ -4925,7 +4925,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026554.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5176,
@@ -4953,7 +4953,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026549.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5177,
@@ -4981,7 +4981,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026546.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5178,
@@ -5009,7 +5009,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ppteu_2026553.pdf"
             }
         ],
-        tags: ["other", "ppteu", "fwc-ballot"]
+        tags: ["labour union","other", "ppteu", "fwc-ballot"]
     },
     {
         id: 5179,
@@ -5037,7 +5037,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026552.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5180,
@@ -5065,7 +5065,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026549.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5181,
@@ -5093,7 +5093,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026547.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5182,
@@ -5121,7 +5121,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_2026541.pdf"
             }
         ],
-        tags: ["other", "amou", "fwc-ballot"]
+        tags: ["labour union","other", "amou", "fwc-ballot"]
     },
     {
         id: 5183,
@@ -5149,7 +5149,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026523.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5184,
@@ -5177,7 +5177,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026539.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5185,
@@ -5205,7 +5205,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026545.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5186,
@@ -5233,7 +5233,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026529.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5187,
@@ -5261,7 +5261,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026528.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5188,
@@ -5289,7 +5289,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026526.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5189,
@@ -5317,7 +5317,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026363.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5190,
@@ -5345,7 +5345,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/pa_2026479.pdf"
             }
         ],
-        tags: ["healthcare", "professionals-australia", "fwc-ballot"]
+        tags: ["labour union","healthcare", "professionals-australia", "fwc-ballot"]
     },
     {
         id: 5191,
@@ -5373,7 +5373,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026521.pdf"
             }
         ],
-        tags: ["utilities", "asu", "fwc-ballot"]
+        tags: ["labour union","utilities", "asu", "fwc-ballot"]
     },
     {
         id: 5192,
@@ -5401,7 +5401,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026544.pdf"
             }
         ],
-        tags: ["utilities", "asu", "fwc-ballot"]
+        tags: ["labour union","utilities", "asu", "fwc-ballot"]
     },
     {
         id: 5193,
@@ -5429,7 +5429,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apesma_2026458.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5194,
@@ -5457,7 +5457,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026349.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5195,
@@ -5485,7 +5485,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026497.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5196,
@@ -5513,7 +5513,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026464.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5197,
@@ -5541,7 +5541,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026494.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5198,
@@ -5569,7 +5569,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026493.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5199,
@@ -5597,7 +5597,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026490.pdf"
             }
         ],
-        tags: ["maritime", "awu", "fwc-ballot"]
+        tags: ["labour union","maritime", "awu", "fwc-ballot"]
     },
     {
         id: 5200,
@@ -5625,7 +5625,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026489.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5201,
@@ -5653,7 +5653,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hsu_2026475.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5202,
@@ -5681,7 +5681,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026487.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5203,
@@ -5709,7 +5709,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026483.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5204,
@@ -5737,7 +5737,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/alaea_2026436.pdf"
             }
         ],
-        tags: ["maritime", "alaea", "fwc-ballot"]
+        tags: ["labour union","maritime", "alaea", "fwc-ballot"]
     },
     {
         id: 5205,
@@ -5765,7 +5765,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meu_2026275.pdf"
             }
         ],
-        tags: ["energy", "meu", "fwc-ballot"]
+        tags: ["labour union","energy", "meu", "fwc-ballot"]
     },
     {
         id: 5206,
@@ -5793,7 +5793,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026294.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5207,
@@ -5821,7 +5821,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026286.pdf"
             }
         ],
-        tags: ["energy", "amwu", "fwc-ballot"]
+        tags: ["labour union","energy", "amwu", "fwc-ballot"]
     },
     {
         id: 5208,
@@ -5849,7 +5849,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apesma_2026285.pdf"
             }
         ],
-        tags: ["energy", "apesma", "fwc-ballot"]
+        tags: ["labour union","energy", "apesma", "fwc-ballot"]
     },
     {
         id: 5209,
@@ -5877,7 +5877,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asmof_2026468.pdf"
             }
         ],
-        tags: ["other", "asmof", "fwc-ballot"]
+        tags: ["labour union","other", "asmof", "fwc-ballot"]
     },
     {
         id: 5210,
@@ -5905,7 +5905,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026425.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5211,
@@ -5933,7 +5933,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026426.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5212,
@@ -5961,7 +5961,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_2026452.pdf"
             }
         ],
-        tags: ["rail-transport", "asu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "asu", "fwc-ballot"]
     },
     {
         id: 5213,
@@ -5989,7 +5989,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026450.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5214,
@@ -6017,7 +6017,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026448.pdf"
             }
         ],
-        tags: ["maritime", "amwu", "fwc-ballot"]
+        tags: ["labour union","maritime", "amwu", "fwc-ballot"]
     },
     {
         id: 5215,
@@ -6045,7 +6045,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026453.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5216,
@@ -6073,7 +6073,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cpsu_2026443.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5217,
@@ -6101,7 +6101,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026442.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5218,
@@ -6129,7 +6129,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026469.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5219,
@@ -6157,7 +6157,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026467.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5220,
@@ -6185,7 +6185,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026470.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5221,
@@ -6213,7 +6213,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/rtbu_2026428.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5222,
@@ -6241,7 +6241,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026440.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5223,
@@ -6269,7 +6269,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/HSU_2026387.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5224,
@@ -6297,7 +6297,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CPSU_2026348.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5225,
@@ -6325,7 +6325,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CPSU_2026377.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5226,
@@ -6353,7 +6353,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CPSU_2026378.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5227,
@@ -6381,7 +6381,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026386.pdf"
             }
         ],
-        tags: ["other", "cfmeu-delta-pty-ltd", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu-delta-pty-ltd", "fwc-ballot"]
     },
     {
         id: 5228,
@@ -6409,7 +6409,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/aeu_2026343.pdf"
             }
         ],
-        tags: ["education", "eau", "fwc-ballot"]
+        tags: ["labour union","education", "eau", "fwc-ballot"]
     },
     {
         id: 5229,
@@ -6437,7 +6437,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/aeu_2026341.pdf"
             }
         ],
-        tags: ["education", "eau", "fwc-ballot"]
+        tags: ["labour union","education", "eau", "fwc-ballot"]
     },
     {
         id: 5230,
@@ -6465,7 +6465,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026410.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5231,
@@ -6493,7 +6493,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026362.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5232,
@@ -6521,7 +6521,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026338.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5233,
@@ -6549,7 +6549,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026361.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5234,
@@ -6577,7 +6577,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026221.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5235,
@@ -6605,7 +6605,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_2026354.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5236,
@@ -6633,7 +6633,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026329.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5237,
@@ -6661,7 +6661,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/nteiu_2026283.pdf"
             }
         ],
-        tags: ["other", "nteiu", "fwc-ballot"]
+        tags: ["labour union","other", "nteiu", "fwc-ballot"]
     },
     {
         id: 5238,
@@ -6689,7 +6689,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026332.pdf"
             }
         ],
-        tags: ["other", "amu", "fwc-ballot"]
+        tags: ["labour union","other", "amu", "fwc-ballot"]
     },
     {
         id: 5239,
@@ -6717,7 +6717,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026351.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5240,
@@ -6745,7 +6745,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026364.pdf"
             }
         ],
-        tags: ["education", "amwu", "fwc-ballot"]
+        tags: ["labour union","education", "amwu", "fwc-ballot"]
     },
     {
         id: 5241,
@@ -6773,7 +6773,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meu_2026196.pdf"
             }
         ],
-        tags: ["mining", "meu", "fwc-ballot"]
+        tags: ["labour union","mining", "meu", "fwc-ballot"]
     },
     {
         id: 5242,
@@ -6801,7 +6801,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_2026193.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5243,
@@ -6829,7 +6829,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026331.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5244,
@@ -6857,7 +6857,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026298.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5245,
@@ -6885,7 +6885,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026169.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5246,
@@ -6913,7 +6913,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026167.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5247,
@@ -6941,7 +6941,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026277.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5248,
@@ -6969,7 +6969,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026276.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5249,
@@ -6997,7 +6997,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026288.pdf"
             }
         ],
-        tags: ["rail-transport", "asu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "asu", "fwc-ballot"]
     },
     {
         id: 5250,
@@ -7025,7 +7025,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026287.pdf"
             }
         ],
-        tags: ["rail-transport", "asu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "asu", "fwc-ballot"]
     },
     {
         id: 5251,
@@ -7053,7 +7053,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026281.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5252,
@@ -7081,7 +7081,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026159.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5253,
@@ -7109,7 +7109,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ANMF_2026271.pdf"
             }
         ],
-        tags: ["education", "anmf-(victoria)", "fwc-ballot"]
+        tags: ["labour union","education", "anmf-(victoria)", "fwc-ballot"]
     },
     {
         id: 5254,
@@ -7137,7 +7137,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026244.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5255,
@@ -7165,7 +7165,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026266.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5256,
@@ -7193,7 +7193,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026267.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5257,
@@ -7221,7 +7221,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AIMPE_2026237.pdf"
             }
         ],
-        tags: ["other", "aimpe-&-amou", "fwc-ballot"]
+        tags: ["labour union","other", "aimpe-&-amou", "fwc-ballot"]
     },
     {
         id: 5258,
@@ -7249,7 +7249,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026194.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5259,
@@ -7277,7 +7277,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026257.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5260,
@@ -7305,7 +7305,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026256.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5261,
@@ -7333,7 +7333,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026258.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5262,
@@ -7361,7 +7361,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026246.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5263,
@@ -7389,7 +7389,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026259.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5264,
@@ -7417,7 +7417,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026187.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5265,
@@ -7445,7 +7445,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026252.pdf"
             }
         ],
-        tags: ["maritime", "cepu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cepu", "fwc-ballot"]
     },
     {
         id: 5266,
@@ -7473,7 +7473,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026109.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5267,
@@ -7501,7 +7501,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026253.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5268,
@@ -7529,7 +7529,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026245.pdf"
             }
         ],
-        tags: ["rail-transport", "asu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "asu", "fwc-ballot"]
     },
     {
         id: 5269,
@@ -7557,7 +7557,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ANMF_2026234.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5270,
@@ -7585,7 +7585,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026104.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5271,
@@ -7613,7 +7613,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026103.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5272,
@@ -7641,7 +7641,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026101.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5273,
@@ -7669,7 +7669,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/IEU_2026239.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5274,
@@ -7697,7 +7697,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026241.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5275,
@@ -7725,7 +7725,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026231.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5276,
@@ -7753,7 +7753,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026225.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5277,
@@ -7781,7 +7781,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026195.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5278,
@@ -7809,7 +7809,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026232.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5279,
@@ -7837,7 +7837,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AIPA_2026230.pdf"
             }
         ],
-        tags: ["other", "australian", "fwc-ballot"]
+        tags: ["labour union","other", "australian", "fwc-ballot"]
     },
     {
         id: 5280,
@@ -7865,7 +7865,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWUA_2026228.pdf"
             }
         ],
-        tags: ["other", "transport-workers-union-of-australia", "fwc-ballot"]
+        tags: ["labour union","other", "transport-workers-union-of-australia", "fwc-ballot"]
     },
     {
         id: 5281,
@@ -7893,7 +7893,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AFAP_2026226.pdf"
             }
         ],
-        tags: ["other", "australian-federation-of-air-pilots", "fwc-ballot"]
+        tags: ["labour union","other", "australian-federation-of-air-pilots", "fwc-ballot"]
     },
     {
         id: 5282,
@@ -7921,7 +7921,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/NTEU_2026214.pdf"
             }
         ],
-        tags: ["other", "national-tertiary-education-industry-union", "fwc-ballot"]
+        tags: ["labour union","other", "national-tertiary-education-industry-union", "fwc-ballot"]
     },
     {
         id: 5283,
@@ -7949,7 +7949,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/APESMA_2026227.pdf"
             }
         ],
-        tags: ["rail-transport", "apesma", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "apesma", "fwc-ballot"]
     },
     {
         id: 5284,
@@ -7977,7 +7977,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026223.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5285,
@@ -8005,7 +8005,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_202687.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5286,
@@ -8033,7 +8033,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026210.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5287,
@@ -8061,7 +8061,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026219.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5288,
@@ -8089,7 +8089,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026213.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5289,
@@ -8117,7 +8117,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026212.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5290,
@@ -8145,7 +8145,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202675.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5291,
@@ -8173,7 +8173,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026204.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5292,
@@ -8201,7 +8201,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026203.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5293,
@@ -8229,7 +8229,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026202.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5294,
@@ -8257,7 +8257,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026190.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5295,
@@ -8285,7 +8285,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026200.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5296,
@@ -8313,7 +8313,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026208.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5297,
@@ -8341,7 +8341,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026209.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5298,
@@ -8369,7 +8369,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026199.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5299,
@@ -8397,7 +8397,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026188.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5300,
@@ -8425,7 +8425,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWU_2026192.pdf"
             }
         ],
-        tags: ["manufacturing", "twu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "twu", "fwc-ballot"]
     },
     {
         id: 5301,
@@ -8453,7 +8453,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026201.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5302,
@@ -8481,7 +8481,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026178.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5303,
@@ -8509,7 +8509,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026181.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5304,
@@ -8537,7 +8537,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026179.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5305,
@@ -8565,7 +8565,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026197.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5306,
@@ -8593,7 +8593,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/FAAA_2026131.pdf"
             }
         ],
-        tags: ["other", "flight-attendants'-association-of-australia", "fwc-ballot"]
+        tags: ["labour union","other", "flight-attendants'-association-of-australia", "fwc-ballot"]
     },
     {
         id: 5307,
@@ -8621,7 +8621,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_2026175.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5308,
@@ -8649,7 +8649,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AFULE_2026174.pdf"
             }
         ],
-        tags: ["other", "afule", "fwc-ballot"]
+        tags: ["labour union","other", "afule", "fwc-ballot"]
     },
     {
         id: 5309,
@@ -8677,7 +8677,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026162.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5310,
@@ -8705,7 +8705,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_2026170.pdf"
             }
         ],
-        tags: ["construction", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5311,
@@ -8733,7 +8733,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026165.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5312,
@@ -8761,7 +8761,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026183.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5313,
@@ -8789,7 +8789,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/PCA_2026177.pdf"
             }
         ],
-        tags: ["other", "the-phlebotomists-council-of-australia", "fwc-ballot"]
+        tags: ["labour union","other", "the-phlebotomists-council-of-australia", "fwc-ballot"]
     },
     {
         id: 5314,
@@ -8817,7 +8817,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026184.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5315,
@@ -8845,7 +8845,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_202660.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5316,
@@ -8873,7 +8873,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026161.pdf"
             }
         ],
-        tags: ["healthcare", "uwu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "uwu", "fwc-ballot"]
     },
     {
         id: 5317,
@@ -8901,7 +8901,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026147.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5318,
@@ -8929,7 +8929,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ANMF_2026144.pdf"
             }
         ],
-        tags: ["construction", "anmf", "fwc-ballot"]
+        tags: ["labour union","construction", "anmf", "fwc-ballot"]
     },
     {
         id: 5319,
@@ -8957,7 +8957,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/APESMA_2026138.pdf"
             }
         ],
-        tags: ["utilities", "apesma", "fwc-ballot"]
+        tags: ["labour union","utilities", "apesma", "fwc-ballot"]
     },
     {
         id: 5320,
@@ -8985,7 +8985,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026136.pdf"
             }
         ],
-        tags: ["utilities", "asu", "fwc-ballot"]
+        tags: ["labour union","utilities", "asu", "fwc-ballot"]
     },
     {
         id: 5321,
@@ -9013,7 +9013,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026164.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5322,
@@ -9041,7 +9041,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026154.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5323,
@@ -9069,7 +9069,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/NTEIU_2026110.pdf"
             }
         ],
-        tags: ["other", "national-teritary-education-industry-union", "fwc-ballot"]
+        tags: ["labour union","other", "national-teritary-education-industry-union", "fwc-ballot"]
     },
     {
         id: 5324,
@@ -9097,7 +9097,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_202656.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5325,
@@ -9125,7 +9125,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CPSU_2026118.pdf"
             }
         ],
-        tags: ["other", "cpsu-the-community", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu-the-community", "fwc-ballot"]
     },
     {
         id: 5326,
@@ -9153,7 +9153,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026149.pdf"
             }
         ],
-        tags: ["utilities", "awu", "fwc-ballot"]
+        tags: ["labour union","utilities", "awu", "fwc-ballot"]
     },
     {
         id: 5327,
@@ -9181,7 +9181,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/HSU_2026127.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5328,
@@ -9209,7 +9209,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AEU_202654.pdf"
             }
         ],
-        tags: ["other", "aeu", "fwc-ballot"]
+        tags: ["labour union","other", "aeu", "fwc-ballot"]
     },
     {
         id: 5329,
@@ -9237,7 +9237,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AFAP_2026150.pdf"
             }
         ],
-        tags: ["other", "australian-federation-of-air-pilots", "fwc-ballot"]
+        tags: ["labour union","other", "australian-federation-of-air-pilots", "fwc-ballot"]
     },
     {
         id: 5330,
@@ -9265,7 +9265,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026128.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5331,
@@ -9293,7 +9293,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/APESMA_2026123.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5332,
@@ -9321,7 +9321,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ASU_2026125.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5333,
@@ -9349,7 +9349,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/MEAA_2026119.pdf"
             }
         ],
-        tags: ["other", "meaa", "fwc-ballot"]
+        tags: ["labour union","other", "meaa", "fwc-ballot"]
     },
     {
         id: 5334,
@@ -9377,7 +9377,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_202680.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5335,
@@ -9405,7 +9405,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_2026122.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5336,
@@ -9433,7 +9433,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026120.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5337,
@@ -9461,7 +9461,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_2026117.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5338,
@@ -9489,7 +9489,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWU_202697.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5339,
@@ -9517,7 +9517,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_2026105.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5340,
@@ -9545,7 +9545,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026108.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5341,
@@ -9573,7 +9573,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_202699.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5342,
@@ -9601,7 +9601,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/HSU_202684.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5343,
@@ -9629,7 +9629,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_202691.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5344,
@@ -9657,7 +9657,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202690.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5345,
@@ -9685,7 +9685,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202694.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5346,
@@ -9713,7 +9713,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_202682.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5347,
@@ -9741,7 +9741,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_202681.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5348,
@@ -9769,7 +9769,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_202677.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5349,
@@ -9797,7 +9797,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_202676.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5350,
@@ -9825,7 +9825,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202678.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5351,
@@ -9853,7 +9853,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/RTBU_202673.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5352,
@@ -9881,7 +9881,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_202669.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5353,
@@ -9909,7 +9909,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_202667.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5354,
@@ -9937,7 +9937,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_20251848.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5355,
@@ -9965,7 +9965,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWU_202661.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5356,
@@ -9993,7 +9993,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_20251870.pdf"
             }
         ],
-        tags: ["energy", "amu", "fwc-ballot"]
+        tags: ["labour union","energy", "amu", "fwc-ballot"]
     },
     {
         id: 5357,
@@ -10021,7 +10021,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_20251869.pdf"
             }
         ],
-        tags: ["energy", "amu", "fwc-ballot"]
+        tags: ["labour union","energy", "amu", "fwc-ballot"]
     },
     {
         id: 5358,
@@ -10049,7 +10049,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_202649.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5359,
@@ -10077,7 +10077,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_202637.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5360,
@@ -10105,7 +10105,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CFMEU_202646.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5361,
@@ -10133,7 +10133,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202628.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5362,
@@ -10161,7 +10161,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ANMF_202612.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5363,
@@ -10189,7 +10189,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202630.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5364,
@@ -10217,7 +10217,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/HSU_202617.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5365,
@@ -10245,7 +10245,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/R Luxton_202647.pdf"
             }
         ],
-        tags: ["other", "r-luxton", "fwc-ballot"]
+        tags: ["labour union","other", "r-luxton", "fwc-ballot"]
     },
     {
         id: 5366,
@@ -10273,7 +10273,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_202631.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5367,
@@ -10301,7 +10301,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWU_202624.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5368,
@@ -10329,7 +10329,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/TWU_202623.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5369,
@@ -10357,7 +10357,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPUSA_20251850.pdf"
             }
         ],
-        tags: ["other", "cepusa", "fwc-ballot"]
+        tags: ["labour union","other", "cepusa", "fwc-ballot"]
     },
     {
         id: 5370,
@@ -10385,7 +10385,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AMWU_202625.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5371,
@@ -10413,7 +10413,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_202627.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5372,
@@ -10441,7 +10441,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ANMF_202619.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5373,
@@ -10469,7 +10469,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/AWU_202621.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5374,
@@ -10497,7 +10497,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/UWU_202622.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5375,
@@ -10525,7 +10525,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPUSA_202620.pdf"
             }
         ],
-        tags: ["other", "cepusa", "fwc-ballot"]
+        tags: ["labour union","other", "cepusa", "fwc-ballot"]
     },
     {
         id: 5376,
@@ -10553,7 +10553,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_202618.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5377,
@@ -10581,7 +10581,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_202611.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5378,
@@ -10609,7 +10609,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/PCA_20251853.pdf"
             }
         ],
-        tags: ["other", "the-phlebotomists-council-of-australia", "fwc-ballot"]
+        tags: ["labour union","other", "the-phlebotomists-council-of-australia", "fwc-ballot"]
     },
     {
         id: 5379,
@@ -10637,7 +10637,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ASUWA_20251828.pdf"
             }
         ],
-        tags: ["other", "asuwa", "fwc-ballot"]
+        tags: ["labour union","other", "asuwa", "fwc-ballot"]
     },
     {
         id: 5380,
@@ -10665,7 +10665,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_20251821.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5381,
@@ -10693,7 +10693,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AMWU_20264.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5382,
@@ -10721,7 +10721,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AWU_20263.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5383,
@@ -10749,7 +10749,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AMWU_20251817.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5384,
@@ -10777,7 +10777,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/RTBU_20269.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5385,
@@ -10805,7 +10805,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CEPUSA_20251804.pdf"
             }
         ],
-        tags: ["manufacturing", "cepusa", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cepusa", "fwc-ballot"]
     },
     {
         id: 5386,
@@ -10833,7 +10833,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CEPUSA_20251809.pdf"
             }
         ],
-        tags: ["maritime", "cepusa", "fwc-ballot"]
+        tags: ["labour union","maritime", "cepusa", "fwc-ballot"]
     },
     {
         id: 5387,
@@ -10861,7 +10861,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CEPU_20266.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5388,
@@ -10889,7 +10889,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AMWU_20265.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5389,
@@ -10917,7 +10917,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AMWU_20251792.pdf"
             }
         ],
-        tags: ["maritime", "amwu", "fwc-ballot"]
+        tags: ["labour union","maritime", "amwu", "fwc-ballot"]
     },
     {
         id: 5390,
@@ -10945,7 +10945,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_20251849.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5391,
@@ -10973,7 +10973,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/UWU_20251871.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5392,
@@ -11001,7 +11001,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_20251846.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5393,
@@ -11029,7 +11029,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/TWU_20251829.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5394,
@@ -11057,7 +11057,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/UWU_20251857.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5395,
@@ -11085,7 +11085,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/TWU_20251841.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5396,
@@ -11113,7 +11113,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CEPU_20251845.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5397,
@@ -11141,7 +11141,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/AMWU_20251843.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5398,
@@ -11169,7 +11169,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/alaea_20251862.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "alaea", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "alaea", "fwc-ballot"]
     },
     {
         id: 5399,
@@ -11197,7 +11197,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/TWUWA_20251830.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twuwa", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twuwa", "fwc-ballot"]
     },
     {
         id: 5400,
@@ -11225,7 +11225,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ALAEA,AMWU and AWU_20251775.pdf"
             }
         ],
-        tags: ["other", "alaea,-amwu-&-awu", "fwc-ballot"]
+        tags: ["labour union","other", "alaea,-amwu-&-awu", "fwc-ballot"]
     },
     {
         id: 5401,
@@ -11253,7 +11253,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251819.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5402,
@@ -11281,7 +11281,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251818.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5403,
@@ -11309,7 +11309,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251815.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5404,
@@ -11337,7 +11337,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251695.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5405,
@@ -11365,7 +11365,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251795.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5406,
@@ -11393,7 +11393,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251794.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5407,
@@ -11421,7 +11421,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251798.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5408,
@@ -11449,7 +11449,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251679.pdf"
             }
         ],
-        tags: ["maritime", "awu", "fwc-ballot"]
+        tags: ["labour union","maritime", "awu", "fwc-ballot"]
     },
     {
         id: 5409,
@@ -11477,7 +11477,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251784.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5410,
@@ -11505,7 +11505,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251728.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5411,
@@ -11533,7 +11533,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251772.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5412,
@@ -11561,7 +11561,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251774.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5413,
@@ -11589,7 +11589,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/apesma_20251770.pdf"
             }
         ],
-        tags: ["rail-transport", "apesma", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "apesma", "fwc-ballot"]
     },
     {
         id: 5414,
@@ -11617,7 +11617,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251738.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "uwu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "uwu", "fwc-ballot"]
     },
     {
         id: 5415,
@@ -11645,7 +11645,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251765.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5416,
@@ -11673,7 +11673,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251764.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5417,
@@ -11701,7 +11701,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251743.pdf"
             }
         ],
-        tags: ["manufacturing", "awu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "awu", "fwc-ballot"]
     },
     {
         id: 5418,
@@ -11729,7 +11729,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251740.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5419,
@@ -11757,7 +11757,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251735.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5420,
@@ -11785,7 +11785,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251741.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5421,
@@ -11813,7 +11813,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251734.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5422,
@@ -11841,7 +11841,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251755.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5423,
@@ -11869,7 +11869,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwuandcfmeu_20251754.pdf"
             }
         ],
-        tags: ["construction", "amwu-&-cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu-&-cfmeu", "fwc-ballot"]
     },
     {
         id: 5424,
@@ -11897,7 +11897,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251756.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5425,
@@ -11925,7 +11925,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251610.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5426,
@@ -11953,7 +11953,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/raffwu_20251676.pdf"
             }
         ],
-        tags: ["other", "raffwu", "fwc-ballot"]
+        tags: ["labour union","other", "raffwu", "fwc-ballot"]
     },
     {
         id: 5427,
@@ -11981,7 +11981,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251732.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5428,
@@ -12009,7 +12009,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251725.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5429,
@@ -12037,7 +12037,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251720.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5430,
@@ -12065,7 +12065,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251712.pdf"
             }
         ],
-        tags: ["maritime", "amwu", "fwc-ballot"]
+        tags: ["labour union","maritime", "amwu", "fwc-ballot"]
     },
     {
         id: 5431,
@@ -12093,7 +12093,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251702.pdf"
             }
         ],
-        tags: ["maritime", "cepu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cepu", "fwc-ballot"]
     },
     {
         id: 5432,
@@ -12121,7 +12121,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251694.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5433,
@@ -12149,7 +12149,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251704.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5434,
@@ -12177,7 +12177,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251699.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5435,
@@ -12205,7 +12205,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251673.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5436,
@@ -12233,7 +12233,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251701.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5437,
@@ -12261,7 +12261,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251654.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5438,
@@ -12289,7 +12289,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251686.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5439,
@@ -12317,7 +12317,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251687.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5440,
@@ -12345,7 +12345,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251678.pdf"
             }
         ],
-        tags: ["other", "nteu", "fwc-ballot"]
+        tags: ["labour union","other", "nteu", "fwc-ballot"]
     },
     {
         id: 5441,
@@ -12373,7 +12373,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251638.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5442,
@@ -12401,7 +12401,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/vau_20251647.pdf"
             }
         ],
-        tags: ["other", "vau", "fwc-ballot"]
+        tags: ["labour union","other", "vau", "fwc-ballot"]
     },
     {
         id: 5443,
@@ -12429,7 +12429,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251657.pdf"
             }
         ],
-        tags: ["utilities", "asu", "fwc-ballot"]
+        tags: ["labour union","utilities", "asu", "fwc-ballot"]
     },
     {
         id: 5444,
@@ -12457,7 +12457,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251650.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5445,
@@ -12485,7 +12485,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251658.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5446,
@@ -12513,7 +12513,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251655.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5447,
@@ -12541,7 +12541,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251674.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5448,
@@ -12569,7 +12569,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251651.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "uwu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "uwu", "fwc-ballot"]
     },
     {
         id: 5449,
@@ -12597,7 +12597,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251647.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5450,
@@ -12625,7 +12625,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251646.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5451,
@@ -12653,7 +12653,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251652.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5452,
@@ -12681,7 +12681,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cpsu_20251641.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5453,
@@ -12709,7 +12709,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251642.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5454,
@@ -12737,7 +12737,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251631.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "uwu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "uwu", "fwc-ballot"]
     },
     {
         id: 5455,
@@ -12765,7 +12765,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251629.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5456,
@@ -12793,7 +12793,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251626.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5457,
@@ -12821,7 +12821,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251627.pdf"
             }
         ],
-        tags: ["energy", "amwu", "fwc-ballot"]
+        tags: ["labour union","energy", "amwu", "fwc-ballot"]
     },
     {
         id: 5458,
@@ -12849,7 +12849,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/apesma_20251630.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5459,
@@ -12877,7 +12877,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251619.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5460,
@@ -12905,7 +12905,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251622.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5461,
@@ -12933,7 +12933,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251623.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5462,
@@ -12961,7 +12961,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251624.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5463,
@@ -12989,7 +12989,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251617.pdf"
             }
         ],
-        tags: ["maritime", "twu", "fwc-ballot"]
+        tags: ["labour union","maritime", "twu", "fwc-ballot"]
     },
     {
         id: 5464,
@@ -13017,7 +13017,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251612.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5465,
@@ -13045,7 +13045,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251616.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5466,
@@ -13073,7 +13073,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251615.pdf"
             }
         ],
-        tags: ["manufacturing", "awu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "awu", "fwc-ballot"]
     },
     {
         id: 5467,
@@ -13101,7 +13101,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251613.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5468,
@@ -13129,7 +13129,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251609.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5469,
@@ -13157,7 +13157,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251602.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5470,
@@ -13185,7 +13185,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251583.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5471,
@@ -13213,7 +13213,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251605.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5472,
@@ -13241,7 +13241,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251596.pdf"
             }
         ],
-        tags: ["construction", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","construction", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5473,
@@ -13269,7 +13269,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251595.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5474,
@@ -13297,7 +13297,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251604.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5475,
@@ -13325,7 +13325,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251478.pdf"
             }
         ],
-        tags: ["other", "amu", "fwc-ballot"]
+        tags: ["labour union","other", "amu", "fwc-ballot"]
     },
     {
         id: 5476,
@@ -13353,7 +13353,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251586.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5477,
@@ -13381,7 +13381,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251585.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5478,
@@ -13409,7 +13409,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/CFMEU_20251377.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5479,
@@ -13437,7 +13437,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251584.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5480,
@@ -13465,7 +13465,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251563.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5481,
@@ -13493,7 +13493,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251432.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5482,
@@ -13521,7 +13521,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251573.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5483,
@@ -13549,7 +13549,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251579.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5484,
@@ -13577,7 +13577,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251578.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5485,
@@ -13605,7 +13605,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/araandnra_20255.pdf"
             }
         ],
-        tags: ["other", "ara", "fwc-ballot"]
+        tags: ["labour union","other", "ara", "fwc-ballot"]
     },
     {
         id: 5486,
@@ -13633,7 +13633,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/afule_20251568.pdf"
             }
         ],
-        tags: ["mining", "afule", "fwc-ballot"]
+        tags: ["labour union","mining", "afule", "fwc-ballot"]
     },
     {
         id: 5487,
@@ -13661,7 +13661,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251570.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5488,
@@ -13689,7 +13689,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251532.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5489,
@@ -13717,7 +13717,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251422.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5490,
@@ -13745,7 +13745,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251567.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5491,
@@ -13773,7 +13773,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251565.pdf"
             }
         ],
-        tags: ["mining", "rtbu", "fwc-ballot"]
+        tags: ["labour union","mining", "rtbu", "fwc-ballot"]
     },
     {
         id: 5492,
@@ -13801,7 +13801,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_20251560.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     },
     {
         id: 5493,
@@ -13829,7 +13829,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251547.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5494,
@@ -13857,7 +13857,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251525.pdf"
             }
         ],
-        tags: ["rail-transport", "awu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "awu", "fwc-ballot"]
     },
     {
         id: 5495,
@@ -13885,7 +13885,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251562.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5496,
@@ -13913,7 +13913,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251521.pdf"
             }
         ],
-        tags: ["healthcare", "asu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "asu", "fwc-ballot"]
     },
     {
         id: 5497,
@@ -13941,7 +13941,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_20251550.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5498,
@@ -13969,7 +13969,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251539.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5499,
@@ -13997,7 +13997,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251549.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5500,
@@ -14025,7 +14025,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251526.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5501,
@@ -14053,7 +14053,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251533.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5502,
@@ -14081,7 +14081,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251378.pdf"
             }
         ],
-        tags: ["other", "amw", "fwc-ballot"]
+        tags: ["labour union","other", "amw", "fwc-ballot"]
     },
     {
         id: 5503,
@@ -14109,7 +14109,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251502.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5504,
@@ -14137,7 +14137,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251496.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5505,
@@ -14165,7 +14165,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251503.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5506,
@@ -14193,7 +14193,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251524.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5507,
@@ -14221,7 +14221,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251531.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5508,
@@ -14249,7 +14249,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251506.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5509,
@@ -14277,7 +14277,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251517.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5510,
@@ -14305,7 +14305,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251518.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5511,
@@ -14333,7 +14333,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251519.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5512,
@@ -14361,7 +14361,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251513.pdf"
             }
         ],
-        tags: ["manufacturing", "awu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "awu", "fwc-ballot"]
     },
     {
         id: 5513,
@@ -14389,7 +14389,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251498.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5514,
@@ -14417,7 +14417,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251499.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5515,
@@ -14445,7 +14445,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251497.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5516,
@@ -14473,7 +14473,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251470.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5517,
@@ -14501,7 +14501,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251467.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5518,
@@ -14529,7 +14529,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251469.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5519,
@@ -14557,7 +14557,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251508.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5520,
@@ -14585,7 +14585,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251464.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5521,
@@ -14613,7 +14613,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251465.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5522,
@@ -14641,7 +14641,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251463.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5523,
@@ -14669,7 +14669,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251462.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5524,
@@ -14697,7 +14697,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251475.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5525,
@@ -14725,7 +14725,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251487.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5526,
@@ -14753,7 +14753,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251449.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5527,
@@ -14781,7 +14781,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251461.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5528,
@@ -14809,7 +14809,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/apesma_20251452.pdf"
             }
         ],
-        tags: ["rail-transport", "apesma", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "apesma", "fwc-ballot"]
     },
     {
         id: 5529,
@@ -14837,7 +14837,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251450.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5530,
@@ -14865,7 +14865,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251327.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5531,
@@ -14893,7 +14893,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251460.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5532,
@@ -14921,7 +14921,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251412.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5533,
@@ -14949,7 +14949,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpeandamou_20251435.pdf"
             }
         ],
-        tags: ["other", "aimpe-&-amou", "fwc-ballot"]
+        tags: ["labour union","other", "aimpe-&-amou", "fwc-ballot"]
     },
     {
         id: 5534,
@@ -14977,7 +14977,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251451.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5535,
@@ -15005,7 +15005,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251428.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5536,
@@ -15033,7 +15033,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/bishop_20251278.pdf"
             }
         ],
-        tags: ["healthcare", "bishop", "fwc-ballot"]
+        tags: ["labour union","healthcare", "bishop", "fwc-ballot"]
     },
     {
         id: 5537,
@@ -15061,7 +15061,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251312.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5538,
@@ -15089,7 +15089,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251291.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5539,
@@ -15117,7 +15117,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251414.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5540,
@@ -15145,7 +15145,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251383.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5541,
@@ -15173,7 +15173,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251400.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5542,
@@ -15201,7 +15201,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251265.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5543,
@@ -15229,7 +15229,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251399.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5544,
@@ -15257,7 +15257,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251393.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5545,
@@ -15285,7 +15285,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251402.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5546,
@@ -15313,7 +15313,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251384.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5547,
@@ -15341,7 +15341,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_20251249.pdf"
             }
         ],
-        tags: ["other", "meu", "fwc-ballot"]
+        tags: ["labour union","other", "meu", "fwc-ballot"]
     },
     {
         id: 5548,
@@ -15369,7 +15369,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_20251379.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5549,
@@ -15397,7 +15397,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251244.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5550,
@@ -15425,7 +15425,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251243.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5551,
@@ -15453,7 +15453,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251364.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5552,
@@ -15481,7 +15481,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251373.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5553,
@@ -15509,7 +15509,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251365.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5554,
@@ -15537,7 +15537,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251362.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5555,
@@ -15565,7 +15565,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251228.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5556,
@@ -15593,7 +15593,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251220.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5557,
@@ -15621,7 +15621,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251216.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5558,
@@ -15649,7 +15649,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251349.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5559,
@@ -15677,7 +15677,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251324.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5560,
@@ -15705,7 +15705,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251326.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5561,
@@ -15733,7 +15733,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ufu_20251198.pdf"
             }
         ],
-        tags: ["other", "ufu", "fwc-ballot"]
+        tags: ["labour union","other", "ufu", "fwc-ballot"]
     },
     {
         id: 5562,
@@ -15761,7 +15761,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251340.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5563,
@@ -15789,7 +15789,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251339.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5564,
@@ -15817,7 +15817,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251331.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5565,
@@ -15845,7 +15845,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_20251335.pdf"
             }
         ],
-        tags: ["other", "anmf", "fwc-ballot"]
+        tags: ["labour union","other", "anmf", "fwc-ballot"]
     },
     {
         id: 5566,
@@ -15873,7 +15873,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251305.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5567,
@@ -15901,7 +15901,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251315.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5568,
@@ -15929,7 +15929,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251316.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5569,
@@ -15957,7 +15957,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251319.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5570,
@@ -15985,7 +15985,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251317.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5571,
@@ -16013,7 +16013,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeuandcepu_20251313.pdf"
             }
         ],
-        tags: ["other", "cfmeu-&-cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu-&-cepu", "fwc-ballot"]
     },
     {
         id: 5572,
@@ -16041,7 +16041,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251310.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5573,
@@ -16069,7 +16069,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251306.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5574,
@@ -16097,7 +16097,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251307.pdf"
             }
         ],
-        tags: ["maritime", "asu", "fwc-ballot"]
+        tags: ["labour union","maritime", "asu", "fwc-ballot"]
     },
     {
         id: 5575,
@@ -16125,7 +16125,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251314.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5576,
@@ -16153,7 +16153,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251164.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5577,
@@ -16181,7 +16181,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_20251299.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5578,
@@ -16209,7 +16209,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251302.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5579,
@@ -16237,7 +16237,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251301.pdf"
             }
         ],
-        tags: ["healthcare", "uwu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "uwu", "fwc-ballot"]
     },
     {
         id: 5580,
@@ -16265,7 +16265,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_20251261.pdf"
             }
         ],
-        tags: ["other", "amou", "fwc-ballot"]
+        tags: ["labour union","other", "amou", "fwc-ballot"]
     },
     {
         id: 5581,
@@ -16293,7 +16293,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251276.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5582,
@@ -16321,7 +16321,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/itu_20251150.pdf"
             }
         ],
-        tags: ["other", "itu", "fwc-ballot"]
+        tags: ["labour union","other", "itu", "fwc-ballot"]
     },
     {
         id: 5583,
@@ -16349,7 +16349,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251275.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5584,
@@ -16377,7 +16377,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cpsu_20251288.pdf"
             }
         ],
-        tags: ["other", "cpsu", "fwc-ballot"]
+        tags: ["labour union","other", "cpsu", "fwc-ballot"]
     },
     {
         id: 5585,
@@ -16405,7 +16405,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepuandasu_20251280.pdf"
             }
         ],
-        tags: ["other", "cepu-&-asu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu-&-asu", "fwc-ballot"]
     },
     {
         id: 5586,
@@ -16433,7 +16433,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/apesma_20251279.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5587,
@@ -16461,7 +16461,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251284.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5588,
@@ -16489,7 +16489,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251283.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5589,
@@ -16517,7 +16517,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251285.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5590,
@@ -16545,7 +16545,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251139.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5591,
@@ -16573,7 +16573,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251281.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5592,
@@ -16601,7 +16601,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251131.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5593,
@@ -16629,7 +16629,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251274.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5594,
@@ -16657,7 +16657,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251273.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5595,
@@ -16685,7 +16685,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251277.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5596,
@@ -16713,7 +16713,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_20251282.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5597,
@@ -16741,7 +16741,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251125.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5598,
@@ -16769,7 +16769,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251123.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5599,
@@ -16797,7 +16797,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251118.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5600,
@@ -16825,7 +16825,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251110.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5601,
@@ -16853,7 +16853,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251247.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5602,
@@ -16881,7 +16881,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251245.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5603,
@@ -16909,7 +16909,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251248.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5604,
@@ -16937,7 +16937,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251253.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5605,
@@ -16965,7 +16965,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251196.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5606,
@@ -16993,7 +16993,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251246.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5607,
@@ -17021,7 +17021,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251239.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5608,
@@ -17049,7 +17049,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251237.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5609,
@@ -17077,7 +17077,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251099.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5610,
@@ -17105,7 +17105,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251241.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5611,
@@ -17133,7 +17133,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251234.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5612,
@@ -17161,7 +17161,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aeu_20251124.pdf"
             }
         ],
-        tags: ["education", "aeu", "fwc-ballot"]
+        tags: ["labour union","education", "aeu", "fwc-ballot"]
     },
     {
         id: 5613,
@@ -17189,7 +17189,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025786.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5614,
@@ -17217,7 +17217,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251204.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5615,
@@ -17245,7 +17245,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251203.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5616,
@@ -17273,7 +17273,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251081.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5617,
@@ -17301,7 +17301,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251209.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5618,
@@ -17329,7 +17329,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251206.pdf"
             }
         ],
-        tags: ["maritime", "twu", "fwc-ballot"]
+        tags: ["labour union","maritime", "twu", "fwc-ballot"]
     },
     {
         id: 5619,
@@ -17357,7 +17357,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251215.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5620,
@@ -17385,7 +17385,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251194.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5621,
@@ -17413,7 +17413,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251178.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5622,
@@ -17441,7 +17441,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/apesma_20251186.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5623,
@@ -17469,7 +17469,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251187.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5624,
@@ -17497,7 +17497,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251062.pdf"
             }
         ],
-        tags: ["healthcare", "cepu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "cepu", "fwc-ballot"]
     },
     {
         id: 5625,
@@ -17525,7 +17525,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251173.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5626,
@@ -17553,7 +17553,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251158.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5627,
@@ -17581,7 +17581,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251141.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5628,
@@ -17609,7 +17609,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_20251185.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     },
     {
         id: 5629,
@@ -17637,7 +17637,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251034.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5630,
@@ -17665,7 +17665,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025962.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5631,
@@ -17693,7 +17693,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpe_20251168.pdf"
             }
         ],
-        tags: ["maritime", "aimpe", "fwc-ballot"]
+        tags: ["labour union","maritime", "aimpe", "fwc-ballot"]
     },
     {
         id: 5632,
@@ -17721,7 +17721,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251116.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5633,
@@ -17749,7 +17749,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_20251156.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5634,
@@ -17777,7 +17777,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251152.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5635,
@@ -17805,7 +17805,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251154.pdf"
             }
         ],
-        tags: ["rail-transport", "twu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "twu", "fwc-ballot"]
     },
     {
         id: 5636,
@@ -17833,7 +17833,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251145.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5637,
@@ -17861,7 +17861,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251147.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5638,
@@ -17889,7 +17889,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251146.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5639,
@@ -17917,7 +17917,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025944.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5640,
@@ -17945,7 +17945,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025946.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5641,
@@ -17973,7 +17973,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251126.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5642,
@@ -18001,7 +18001,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251120.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5643,
@@ -18029,7 +18029,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20251112.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5644,
@@ -18057,7 +18057,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apesma_20251166.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5645,
@@ -18085,7 +18085,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251117.pdf"
             }
         ],
-        tags: ["utilities", "amwu", "fwc-ballot"]
+        tags: ["labour union","utilities", "amwu", "fwc-ballot"]
     },
     {
         id: 5646,
@@ -18113,7 +18113,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/vailresorts_2025926.pdf"
             }
         ],
-        tags: ["other", "vail-resorts", "fwc-ballot"]
+        tags: ["labour union","other", "vail-resorts", "fwc-ballot"]
     },
     {
         id: 5647,
@@ -18141,7 +18141,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2025919.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5648,
@@ -18169,7 +18169,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025925.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5649,
@@ -18197,7 +18197,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251107.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5650,
@@ -18225,7 +18225,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_20251069.pdf"
             }
         ],
-        tags: ["maritime", "awu", "fwc-ballot"]
+        tags: ["labour union","maritime", "awu", "fwc-ballot"]
     },
     {
         id: 5651,
@@ -18253,7 +18253,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251102.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5652,
@@ -18281,7 +18281,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/apesma_20251083.pdf"
             }
         ],
-        tags: ["other", "apesma", "fwc-ballot"]
+        tags: ["labour union","other", "apesma", "fwc-ballot"]
     },
     {
         id: 5653,
@@ -18309,7 +18309,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_20251093.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5654,
@@ -18337,7 +18337,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251097.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5655,
@@ -18365,7 +18365,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251088.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5656,
@@ -18393,7 +18393,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251096.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5657,
@@ -18421,7 +18421,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251084.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5658,
@@ -18449,7 +18449,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251051.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5659,
@@ -18477,7 +18477,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251074.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5660,
@@ -18505,7 +18505,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251073.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5661,
@@ -18533,7 +18533,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251078.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5662,
@@ -18561,7 +18561,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20251082.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5663,
@@ -18589,7 +18589,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20251050.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5664,
@@ -18617,7 +18617,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251067.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5665,
@@ -18645,7 +18645,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251068.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5666,
@@ -18673,7 +18673,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025963.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5667,
@@ -18701,7 +18701,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251059.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5668,
@@ -18729,7 +18729,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_20251049.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5669,
@@ -18757,7 +18757,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20251066.pdf"
             }
         ],
-        tags: ["manufacturing", "cepu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cepu", "fwc-ballot"]
     },
     {
         id: 5670,
@@ -18785,7 +18785,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251065.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5671,
@@ -18813,7 +18813,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20251063.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5672,
@@ -18841,7 +18841,7 @@ const fwcBallotEntries = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2025942.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5673,
@@ -18869,7 +18869,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025974.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5674,
@@ -18897,7 +18897,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025967.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5675,
@@ -18925,7 +18925,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025968.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5676,
@@ -18953,7 +18953,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025964.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5677,
@@ -18981,7 +18981,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025958.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5678,
@@ -19009,7 +19009,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025809.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5679,
@@ -19037,7 +19037,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025937.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5680,
@@ -19065,7 +19065,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025943.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5681,
@@ -19093,7 +19093,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_2025959.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "rtbu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "rtbu", "fwc-ballot"]
     },
     {
         id: 5682,
@@ -19121,7 +19121,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025960.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "cepu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "cepu", "fwc-ballot"]
     },
     {
         id: 5683,
@@ -19149,7 +19149,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025953.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5684,
@@ -19177,7 +19177,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025930.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5685,
@@ -19205,7 +19205,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025938.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5686,
@@ -19233,7 +19233,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025939.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5687,
@@ -19261,7 +19261,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025935.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5688,
@@ -19289,7 +19289,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025940.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5689,
@@ -19317,7 +19317,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025928.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5690,
@@ -19345,7 +19345,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025920.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5691,
@@ -19373,7 +19373,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025897.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5692,
@@ -19401,7 +19401,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025923.pdf"
             }
         ],
-        tags: ["maritime", "amwu", "fwc-ballot"]
+        tags: ["labour union","maritime", "amwu", "fwc-ballot"]
     },
     {
         id: 5693,
@@ -19429,7 +19429,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025909.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5694,
@@ -19457,7 +19457,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025922.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5695,
@@ -19485,7 +19485,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025924.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5696,
@@ -19513,7 +19513,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025918.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5697,
@@ -19541,7 +19541,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025917.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5698,
@@ -19569,7 +19569,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025892.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5699,
@@ -19597,7 +19597,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/afap_2025891.pdf"
             }
         ],
-        tags: ["other", "afap", "fwc-ballot"]
+        tags: ["labour union","other", "afap", "fwc-ballot"]
     },
     {
         id: 5700,
@@ -19625,7 +19625,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aipa_2025900.pdf"
             }
         ],
-        tags: ["other", "aipa", "fwc-ballot"]
+        tags: ["labour union","other", "aipa", "fwc-ballot"]
     },
     {
         id: 5701,
@@ -19653,7 +19653,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025908.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5702,
@@ -19681,7 +19681,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025774.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5703,
@@ -19709,7 +19709,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025903.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5704,
@@ -19737,7 +19737,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025905.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5705,
@@ -19765,7 +19765,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025768.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5706,
@@ -19793,7 +19793,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025893.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5707,
@@ -19821,7 +19821,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025894.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5708,
@@ -19849,7 +19849,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025883.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5709,
@@ -19877,7 +19877,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025886.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5710,
@@ -19905,7 +19905,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025885.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5711,
@@ -19933,7 +19933,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025906.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5712,
@@ -19961,7 +19961,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025873.pdf"
             }
         ],
-        tags: ["manufacturing", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5713,
@@ -19989,7 +19989,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025866.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5714,
@@ -20017,7 +20017,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025865.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5715,
@@ -20045,7 +20045,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025867.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5716,
@@ -20073,7 +20073,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025863.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5717,
@@ -20101,7 +20101,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025732.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5718,
@@ -20129,7 +20129,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025875.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5719,
@@ -20157,7 +20157,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025827.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5720,
@@ -20185,7 +20185,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025676.pdf"
             }
         ],
-        tags: ["energy", "asu", "fwc-ballot"]
+        tags: ["labour union","energy", "asu", "fwc-ballot"]
     },
     {
         id: 5721,
@@ -20213,7 +20213,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025804.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5722,
@@ -20241,7 +20241,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025821.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5723,
@@ -20269,7 +20269,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_2025825.pdf"
             }
         ],
-        tags: ["mining", "meu", "fwc-ballot"]
+        tags: ["labour union","mining", "meu", "fwc-ballot"]
     },
     {
         id: 5724,
@@ -20297,7 +20297,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_2025819.pdf"
             }
         ],
-        tags: ["other", "amou", "fwc-ballot"]
+        tags: ["labour union","other", "amou", "fwc-ballot"]
     },
     {
         id: 5725,
@@ -20325,7 +20325,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpe_2025818.pdf"
             }
         ],
-        tags: ["other", "aimpe", "fwc-ballot"]
+        tags: ["labour union","other", "aimpe", "fwc-ballot"]
     },
     {
         id: 5726,
@@ -20353,7 +20353,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025813.pdf"
             }
         ],
-        tags: ["manufacturing", "cepu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "cepu", "fwc-ballot"]
     },
     {
         id: 5727,
@@ -20381,7 +20381,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_2025651.pdf"
             }
         ],
-        tags: ["other", "meu", "fwc-ballot"]
+        tags: ["labour union","other", "meu", "fwc-ballot"]
     },
     {
         id: 5728,
@@ -20409,7 +20409,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025814.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5729,
@@ -20437,7 +20437,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025803.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5730,
@@ -20465,7 +20465,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_2025653.pdf"
             }
         ],
-        tags: ["mining", "meu", "fwc-ballot"]
+        tags: ["labour union","mining", "meu", "fwc-ballot"]
     },
     {
         id: 5731,
@@ -20493,7 +20493,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025639.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5732,
@@ -20521,7 +20521,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025631.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5733,
@@ -20549,7 +20549,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025794.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5734,
@@ -20577,7 +20577,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025781.pdf"
             }
         ],
-        tags: ["other", "anmf", "fwc-ballot"]
+        tags: ["labour union","other", "anmf", "fwc-ballot"]
     },
     {
         id: 5735,
@@ -20605,7 +20605,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025773.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5736,
@@ -20633,7 +20633,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025772.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5737,
@@ -20661,7 +20661,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025769.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5738,
@@ -20689,7 +20689,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_2025765.pdf"
             }
         ],
-        tags: ["healthcare", "hsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hsu", "fwc-ballot"]
     },
     {
         id: 5739,
@@ -20717,7 +20717,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025686.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5740,
@@ -20745,7 +20745,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025775.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5741,
@@ -20773,7 +20773,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025760.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5742,
@@ -20801,7 +20801,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025673.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5743,
@@ -20829,7 +20829,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025731.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5744,
@@ -20857,7 +20857,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025587.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5745,
@@ -20885,7 +20885,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025583.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5746,
@@ -20913,7 +20913,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025735.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5747,
@@ -20941,7 +20941,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025729.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5748,
@@ -20969,7 +20969,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_2025688.pdf"
             }
         ],
-        tags: ["other", "amou", "fwc-ballot"]
+        tags: ["labour union","other", "amou", "fwc-ballot"]
     },
     {
         id: 5749,
@@ -20997,7 +20997,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_2025666.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5750,
@@ -21025,7 +21025,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025664.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5751,
@@ -21053,7 +21053,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025665.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5752,
@@ -21081,7 +21081,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025662.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5753,
@@ -21109,7 +21109,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025663.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5754,
@@ -21137,7 +21137,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025659.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5755,
@@ -21165,7 +21165,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ufu_2025652.pdf"
             }
         ],
-        tags: ["other", "ufu", "fwc-ballot"]
+        tags: ["labour union","other", "ufu", "fwc-ballot"]
     },
     {
         id: 5756,
@@ -21193,7 +21193,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025505.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5757,
@@ -21221,7 +21221,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025667.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5758,
@@ -21249,7 +21249,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025669.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5759,
@@ -21277,7 +21277,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025641.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5760,
@@ -21305,7 +21305,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025501.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5761,
@@ -21333,7 +21333,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025638.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5762,
@@ -21361,7 +21361,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025644.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5763,
@@ -21389,7 +21389,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025637.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5764,
@@ -21417,7 +21417,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_2025620.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5765,
@@ -21445,7 +21445,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025647.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5766,
@@ -21473,7 +21473,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025636.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5767,
@@ -21501,7 +21501,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025626.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5768,
@@ -21529,7 +21529,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025628.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5769,
@@ -21557,7 +21557,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025627.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5770,
@@ -21585,7 +21585,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025475.pdf"
             }
         ],
-        tags: ["mining", "cepu", "fwc-ballot"]
+        tags: ["labour union","mining", "cepu", "fwc-ballot"]
     },
     {
         id: 5771,
@@ -21613,7 +21613,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025618.pdf"
             }
         ],
-        tags: ["utilities", "awu", "fwc-ballot"]
+        tags: ["labour union","utilities", "awu", "fwc-ballot"]
     },
     {
         id: 5772,
@@ -21641,7 +21641,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu&awu_2025611.pdf"
             }
         ],
-        tags: ["other", "cfmeu-&-awu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu-&-awu", "fwc-ballot"]
     },
     {
         id: 5773,
@@ -21669,7 +21669,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025474.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5774,
@@ -21697,7 +21697,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025608.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5775,
@@ -21725,7 +21725,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025591.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5776,
@@ -21753,7 +21753,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025590.pdf"
             }
         ],
-        tags: ["energy", "amwu", "fwc-ballot"]
+        tags: ["labour union","energy", "amwu", "fwc-ballot"]
     },
     {
         id: 5777,
@@ -21781,7 +21781,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025592.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5778,
@@ -21809,7 +21809,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025602.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5779,
@@ -21837,7 +21837,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025571.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5780,
@@ -21865,7 +21865,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025548.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5781,
@@ -21893,7 +21893,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025313.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5782,
@@ -21921,7 +21921,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025520.pdf"
             }
         ],
-        tags: ["local-government", "asu", "fwc-ballot"]
+        tags: ["labour union","local-government", "asu", "fwc-ballot"]
     },
     {
         id: 5783,
@@ -21949,7 +21949,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025600.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5784,
@@ -21977,7 +21977,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aeawa_2025512.pdf"
             }
         ],
-        tags: ["other", "aeawa", "fwc-ballot"]
+        tags: ["labour union","other", "aeawa", "fwc-ballot"]
     },
     {
         id: 5785,
@@ -22005,7 +22005,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025503.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5786,
@@ -22033,7 +22033,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025519.pdf"
             }
         ],
-        tags: ["manufacturing", "amwu", "fwc-ballot"]
+        tags: ["labour union","manufacturing", "amwu", "fwc-ballot"]
     },
     {
         id: 5787,
@@ -22061,7 +22061,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025268.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5788,
@@ -22089,7 +22089,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025521.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5789,
@@ -22117,7 +22117,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025516.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5790,
@@ -22145,7 +22145,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025297.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5791,
@@ -22173,7 +22173,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025502.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5792,
@@ -22201,7 +22201,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/nteu_2025335.pdf"
             }
         ],
-        tags: ["education", "nteu", "fwc-ballot"]
+        tags: ["labour union","education", "nteu", "fwc-ballot"]
     },
     {
         id: 5793,
@@ -22229,7 +22229,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025270.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5794,
@@ -22257,7 +22257,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025268.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5795,
@@ -22285,7 +22285,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025267.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5796,
@@ -22313,7 +22313,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025490.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5797,
@@ -22341,7 +22341,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025497.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5798,
@@ -22369,7 +22369,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025495.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5799,
@@ -22397,7 +22397,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025492.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5800,
@@ -22425,7 +22425,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025483.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5801,
@@ -22453,7 +22453,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025471.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5802,
@@ -22481,7 +22481,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025476.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5803,
@@ -22509,7 +22509,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025478.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5804,
@@ -22537,7 +22537,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025236.pdf"
             }
         ],
-        tags: ["utilities", "amwu", "fwc-ballot"]
+        tags: ["labour union","utilities", "amwu", "fwc-ballot"]
     },
     {
         id: 5805,
@@ -22565,7 +22565,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025237.pdf"
             }
         ],
-        tags: ["utilities", "amwu", "fwc-ballot"]
+        tags: ["labour union","utilities", "amwu", "fwc-ballot"]
     },
     {
         id: 5806,
@@ -22593,7 +22593,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hascu_2025468.pdf"
             }
         ],
-        tags: ["healthcare", "hascu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hascu", "fwc-ballot"]
     },
     {
         id: 5807,
@@ -22621,7 +22621,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ieu_2025420.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5808,
@@ -22649,7 +22649,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025212.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5809,
@@ -22677,7 +22677,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025211.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5810,
@@ -22705,7 +22705,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025360.pdf"
             }
         ],
-        tags: ["utilities", "cepu", "fwc-ballot"]
+        tags: ["labour union","utilities", "cepu", "fwc-ballot"]
     },
     {
         id: 5811,
@@ -22733,7 +22733,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_2025296.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5812,
@@ -22761,7 +22761,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025312.pdf"
             }
         ],
-        tags: ["energy", "awu", "fwc-ballot"]
+        tags: ["labour union","energy", "awu", "fwc-ballot"]
     },
     {
         id: 5813,
@@ -22789,7 +22789,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_2025300.pdf"
             }
         ],
-        tags: ["rail-transport", "rtbu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "rtbu", "fwc-ballot"]
     },
     {
         id: 5814,
@@ -22817,7 +22817,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025298.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5815,
@@ -22845,7 +22845,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025299.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5816,
@@ -22873,7 +22873,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025291.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5817,
@@ -22901,7 +22901,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025306.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5818,
@@ -22929,7 +22929,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025285.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5819,
@@ -22957,7 +22957,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ieu_2025264.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5820,
@@ -22985,7 +22985,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025166.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5821,
@@ -23013,7 +23013,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025295.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5822,
@@ -23041,7 +23041,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025266.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5823,
@@ -23069,7 +23069,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025259.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5824,
@@ -23097,7 +23097,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025257.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5825,
@@ -23125,7 +23125,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025159.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5826,
@@ -23153,7 +23153,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025287.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5827,
@@ -23181,7 +23181,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025276.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5828,
@@ -23209,7 +23209,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/rtbu_2025265.pdf"
             }
         ],
-        tags: ["other", "rtbu", "fwc-ballot"]
+        tags: ["labour union","other", "rtbu", "fwc-ballot"]
     },
     {
         id: 5829,
@@ -23237,7 +23237,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025258.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5830,
@@ -23265,7 +23265,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025263.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5831,
@@ -23293,7 +23293,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_2025262.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5832,
@@ -23321,7 +23321,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025271.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5833,
@@ -23349,7 +23349,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025241.pdf"
             }
         ],
-        tags: ["maritime", "cepu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cepu", "fwc-ballot"]
     },
     {
         id: 5834,
@@ -23377,7 +23377,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025260.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5835,
@@ -23405,7 +23405,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025244.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5836,
@@ -23433,7 +23433,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025103.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5837,
@@ -23461,7 +23461,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/ieu_2025216.pdf"
             }
         ],
-        tags: ["maritime", "ieu", "fwc-ballot"]
+        tags: ["labour union","maritime", "ieu", "fwc-ballot"]
     },
     {
         id: 5838,
@@ -23489,7 +23489,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025238.pdf"
             }
         ],
-        tags: ["maritime", "amwu", "fwc-ballot"]
+        tags: ["labour union","maritime", "amwu", "fwc-ballot"]
     },
     {
         id: 5839,
@@ -23517,7 +23517,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_2025240.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     },
     {
         id: 5840,
@@ -23545,7 +23545,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025247.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5841,
@@ -23573,7 +23573,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025225.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5842,
@@ -23601,7 +23601,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpe_2025221.pdf"
             }
         ],
-        tags: ["other", "aimpe", "fwc-ballot"]
+        tags: ["labour union","other", "aimpe", "fwc-ballot"]
     },
     {
         id: 5843,
@@ -23629,7 +23629,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hsu_2025205.pdf"
             }
         ],
-        tags: ["other", "hsu", "fwc-ballot"]
+        tags: ["labour union","other", "hsu", "fwc-ballot"]
     },
     {
         id: 5844,
@@ -23657,7 +23657,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_202514.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5845,
@@ -23685,7 +23685,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025210.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5846,
@@ -23713,7 +23713,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025200.pdf"
             }
         ],
-        tags: ["other", "twu-wa", "fwc-ballot"]
+        tags: ["labour union","other", "twu-wa", "fwc-ballot"]
     },
     {
         id: 5847,
@@ -23741,7 +23741,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025203.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5848,
@@ -23769,7 +23769,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_2025201.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5849,
@@ -23797,7 +23797,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025192.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5850,
@@ -23825,7 +23825,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025198.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5851,
@@ -23853,7 +23853,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025189.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5852,
@@ -23881,7 +23881,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025186.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5853,
@@ -23909,7 +23909,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025185.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5854,
@@ -23937,7 +23937,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025184.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5855,
@@ -23965,7 +23965,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025183.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5856,
@@ -23993,7 +23993,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025182.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5857,
@@ -24021,7 +24021,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025181.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5858,
@@ -24049,7 +24049,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025180.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5859,
@@ -24077,7 +24077,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025179.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5860,
@@ -24105,7 +24105,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025178.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5861,
@@ -24133,7 +24133,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025177.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5862,
@@ -24161,7 +24161,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025176.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5863,
@@ -24189,7 +24189,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025174.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5864,
@@ -24217,7 +24217,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025175.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5865,
@@ -24245,7 +24245,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025169.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5866,
@@ -24273,7 +24273,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025173.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5867,
@@ -24301,7 +24301,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025172.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5868,
@@ -24329,7 +24329,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025170.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5869,
@@ -24357,7 +24357,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20241706.pdf"
             }
         ],
-        tags: ["construction", "cepu", "fwc-ballot"]
+        tags: ["labour union","construction", "cepu", "fwc-ballot"]
     },
     {
         id: 5870,
@@ -24385,7 +24385,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025168.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5871,
@@ -24413,7 +24413,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20241705.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5872,
@@ -24441,7 +24441,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20241704.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5873,
@@ -24469,7 +24469,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_2025163.pdf"
             }
         ],
-        tags: ["energy", "cepu", "fwc-ballot"]
+        tags: ["labour union","energy", "cepu", "fwc-ballot"]
     },
     {
         id: 5874,
@@ -24497,7 +24497,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025193.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5875,
@@ -24525,7 +24525,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amacsu_2025194.pdf"
             }
         ],
-        tags: ["other", "amacsu", "fwc-ballot"]
+        tags: ["labour union","other", "amacsu", "fwc-ballot"]
     },
     {
         id: 5876,
@@ -24553,7 +24553,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025138.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5877,
@@ -24581,7 +24581,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amacsu_20241640.pdf"
             }
         ],
-        tags: ["other", "amacsu", "fwc-ballot"]
+        tags: ["labour union","other", "amacsu", "fwc-ballot"]
     },
     {
         id: 5878,
@@ -24609,7 +24609,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/hacsu_2025142.pdf"
             }
         ],
-        tags: ["healthcare", "hacsu", "fwc-ballot"]
+        tags: ["labour union","healthcare", "hacsu", "fwc-ballot"]
     },
     {
         id: 5879,
@@ -24637,7 +24637,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_2025153.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5880,
@@ -24665,7 +24665,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/anmf_2025151.pdf"
             }
         ],
-        tags: ["local-government", "anmf-(victoria)", "fwc-ballot"]
+        tags: ["labour union","local-government", "anmf-(victoria)", "fwc-ballot"]
     },
     {
         id: 5881,
@@ -24693,7 +24693,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025144.pdf"
             }
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5882,
@@ -24721,7 +24721,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_2025146.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5883,
@@ -24749,7 +24749,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_2025145.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5884,
@@ -24777,7 +24777,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_20241650.pdf"
             }
         ],
-        tags: ["energy", "meu", "fwc-ballot"]
+        tags: ["labour union","energy", "meu", "fwc-ballot"]
     },
     {
         id: 5885,
@@ -24805,7 +24805,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_2025111.pdf"
             }
         ],
-        tags: ["maritime", "twu", "fwc-ballot"]
+        tags: ["labour union","maritime", "twu", "fwc-ballot"]
     },
     {
         id: 5886,
@@ -24833,7 +24833,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20241645.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5887,
@@ -24861,7 +24861,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpe_202544.pdf"
             }
         ],
-        tags: ["maritime", "aimpe", "fwc-ballot"]
+        tags: ["labour union","maritime", "aimpe", "fwc-ballot"]
     },
     {
         id: 5888,
@@ -24889,7 +24889,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cfmeu_202530.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5889,
@@ -24917,7 +24917,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_202526.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5890,
@@ -24945,7 +24945,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_202531.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5891,
@@ -24973,7 +24973,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_202528.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5892,
@@ -25001,7 +25001,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_202548.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5893,
@@ -25029,7 +25029,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_202521.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5894,
@@ -25057,7 +25057,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20241612.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5895,
@@ -25085,7 +25085,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_202513.pdf"
             }
         ],
-        tags: ["construction", "amwu", "fwc-ballot"]
+        tags: ["labour union","construction", "amwu", "fwc-ballot"]
     },
     {
         id: 5896,
@@ -25113,7 +25113,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/asu_20254.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5897,
@@ -25141,7 +25141,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20252.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5898,
@@ -25169,7 +25169,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20253.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5899,
@@ -25197,7 +25197,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/meu_20255.pdf"
             }
         ],
-        tags: ["other", "meu", "fwc-ballot"]
+        tags: ["labour union","other", "meu", "fwc-ballot"]
     },
     {
         id: 5900,
@@ -25225,7 +25225,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/afap_20241686.pdf"
             }
         ],
-        tags: ["other", "afap", "fwc-ballot"]
+        tags: ["labour union","other", "afap", "fwc-ballot"]
     },
     {
         id: 5901,
@@ -25253,7 +25253,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20241554.pdf"
             }
         ],
-        tags: ["construction", "awu", "fwc-ballot"]
+        tags: ["labour union","construction", "awu", "fwc-ballot"]
     },
     {
         id: 5902,
@@ -25281,7 +25281,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20241628.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5903,
@@ -25309,7 +25309,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20241661.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5904,
@@ -25337,7 +25337,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20241654.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5905,
@@ -25365,7 +25365,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20241684.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5906,
@@ -25393,7 +25393,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amwu_20241662.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5907,
@@ -25421,7 +25421,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20251.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5908,
@@ -25449,7 +25449,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/uwu_20241593.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5909,
@@ -25477,7 +25477,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20241646.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
     {
         id: 5910,
@@ -25505,7 +25505,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20241637.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5911,
@@ -25533,7 +25533,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20241667.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5912,
@@ -25561,7 +25561,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/amou_20241636.pdf"
             }
         ],
-        tags: ["other", "amou", "fwc-ballot"]
+        tags: ["labour union","other", "amou", "fwc-ballot"]
     },
     {
         id: 5913,
@@ -25589,7 +25589,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/aimpe_20241634.pdf"
             }
         ],
-        tags: ["other", "aimpe", "fwc-ballot"]
+        tags: ["labour union","other", "aimpe", "fwc-ballot"]
     },
     {
         id: 5914,
@@ -25617,7 +25617,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/twu_20241638.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5915,
@@ -25645,7 +25645,7 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/cepu_20241652.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5916,
@@ -25673,6 +25673,6 @@ const fwcBallotEntries = [
                 url: "/documents/ballot-results/awu_20241608.pdf"
             }
         ],
-        tags: ["other", "awu", "fwc-ballot"]
+        tags: ["labour union","other", "awu", "fwc-ballot"]
     },
 ];

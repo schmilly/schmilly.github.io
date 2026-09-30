@@ -220,7 +220,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Green Left - Uni of Melb NTEU strike for sick leave for casuals, safe workloads", url: "https://www.greenleft.org.au/2026/1461/news/uni-melb-nteu-strike-sick-leave-casuals-safe-workloads" }
         ],
-        tags: ["education", ""]
+        tags: ["labour union","education", ""]
     },
 
     {
@@ -333,7 +333,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
         ],
-        tags: ["education", "stall", "negotiation", "rally"]
+        tags: ["labour union","education", "stall", "negotiation", "rally"]
     },
 
     // RTBU NSW - Keolis Downer (action paused)
@@ -700,7 +700,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
         ],
-        tags: ["stall", "negotiation"]
+        tags: ["labour union","stall", "negotiation"]
     },
 
     // Professionals Australia - ACT Forensic Scientists
@@ -919,7 +919,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
         ],
-        tags: ["negotiation", "stall", "education"]
+        tags: ["labour union","negotiation", "stall", "education"]
     },
 
     // HACSU Vic - Scope (initial action cancelled by FWC)
@@ -1472,7 +1472,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" }
         ],
-        tags: ["Support Needed!"]
+        tags: ["labour union","Support Needed!"]
     },
 
     // Sydney Ferries update
@@ -1948,7 +1948,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/hsu_20261044.pdf"
             }
         ],
-        tags: ["other", "fwc-ballot"]
+        tags: ["labour union","other", "fwc-ballot"]
     },
     {
         id: 5001,
@@ -1976,7 +1976,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/asu_20261041.pdf"
             }
         ],
-        tags: ["other", "asu", "fwc-ballot"]
+        tags: ["labour union","other", "asu", "fwc-ballot"]
     },
     {
         id: 5002,
@@ -2004,7 +2004,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_20261008.pdf"
             }
         ],
-        tags: ["maritime", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","maritime", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5003,
@@ -2032,7 +2032,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261050.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5004,
@@ -2051,7 +2051,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/meu_20261039.pdf"
             }
         ],
-        tags: ["mining", "meu", "fwc-ballot"]
+        tags: ["labour union","mining", "meu", "fwc-ballot"]
     },
     {
         id: 5006,
@@ -2070,7 +2070,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/aimpe_20261035.pdf"
             }
         ],
-        tags: ["rail-transport", "aimpe", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "aimpe", "fwc-ballot"]
     },
     /* Commented out because it has no votes in the result (??)
     {
@@ -2099,7 +2099,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amou_20261029.pdf"
             }
         ],
-        tags: ["maritime", "amou", "fwc-ballot"]
+        tags: ["labour union","maritime", "amou", "fwc-ballot"]
     }, */
     {
         id: 5008,
@@ -2118,7 +2118,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261030.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5009,
@@ -2146,7 +2146,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261028.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5010,
@@ -2174,7 +2174,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261027.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5011,
@@ -2202,7 +2202,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261026.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5012,
@@ -2230,7 +2230,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieu_20261010.pdf"
             }
         ],
-        tags: ["education", "ieu", "fwc-ballot"]
+        tags: ["labour union","education", "ieu", "fwc-ballot"]
     },
     {
         id: 5013,
@@ -2258,7 +2258,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/uwu_20261015.pdf"
             }
         ],
-        tags: ["other", "uwu", "fwc-ballot"]
+        tags: ["labour union","other", "uwu", "fwc-ballot"]
     },
     {
         id: 5014,
@@ -2286,7 +2286,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261016.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5015,
@@ -2314,7 +2314,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261014.pdf"
             }
         ],
-        tags: ["other", "twu", "fwc-ballot"]
+        tags: ["labour union","other", "twu", "fwc-ballot"]
     },
     {
         id: 5016,
@@ -2342,7 +2342,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_2026926.pdf"
             }
         ],
-        tags: ["other", "cfmeu", "fwc-ballot"]
+        tags: ["labour union","other", "cfmeu", "fwc-ballot"]
     },
     {
         id: 5017,
@@ -2370,7 +2370,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_20261006.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 5018,
@@ -2389,7 +2389,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/anmf_20261011.pdf"
             }
         ],
-        tags: ["healthcare", "anmf", "fwc-ballot"]
+        tags: ["labour union","healthcare", "anmf", "fwc-ballot"]
     },
     {
         id: 5019,
@@ -2417,7 +2417,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026986.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5020,
@@ -2445,7 +2445,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/vau_2026996.pdf"
             }
         ],
-        tags: ["maritime", "vau", "fwc-ballot"]
+        tags: ["labour union","maritime", "vau", "fwc-ballot"]
     },
     {
         id: 5021,
@@ -2473,7 +2473,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261000.pdf"
             }
         ],
-        tags: ["transport-/-logistics", "twu", "fwc-ballot"]
+        tags: ["labour union","transport-/-logistics", "twu", "fwc-ballot"]
     },
     {
         id: 5022,
@@ -2501,7 +2501,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/awu_2026992.pdf"
             }
         ],
-        tags: ["other", "fwc-ballot"]
+        tags: ["labour union","other", "fwc-ballot"]
     },
     {
         id: 5023,
@@ -2528,7 +2528,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026977.pdf"
             }
         ],
-        tags: ["mining", "amwu", "fwc-ballot"]
+        tags: ["labour union","mining", "amwu", "fwc-ballot"]
     },
     {
         id: 5024,
@@ -2556,7 +2556,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ieu_2026997.pdf"
             }
         ],
-        tags: ["education", "fwc-ballot"]
+        tags: ["labour union","education", "fwc-ballot"]
     },
     {
         id: 5293,
@@ -2601,7 +2601,7 @@ const STRIKE_DATA = [
             },
 
         ],
-        tags: ["rail-transport", "amwu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "amwu", "fwc-ballot"]
     },
     {
         id: 5297,
@@ -2629,7 +2629,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/CEPU_2026209.pdf"
             }
         ],
-        tags: ["rail-transport", "cepu", "fwc-ballot"]
+        tags: ["labour union","rail-transport", "cepu", "fwc-ballot"]
     },
     {
         id: 5171,
@@ -2657,7 +2657,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/amwu_2026568.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
     {
         id: 5178,
@@ -2685,7 +2685,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/ppteu_2026553.pdf"
             }
         ],
-        tags: ["other", "ppteu", "fwc-ballot"]
+        tags: ["labour union","other", "ppteu", "fwc-ballot"]
     },
     {
         id: 5179,
@@ -2713,7 +2713,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026552.pdf"
             }
         ],
-        tags: ["other", "cepu", "fwc-ballot"]
+        tags: ["labour union","other", "cepu", "fwc-ballot"]
     },
     {
         id: 7001,
@@ -3367,7 +3367,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "MUA WA Branch - Facebook post, 29 August 2026", url: "https://www.facebook.com/muawabranch/posts/mua-members-at-the-port-of-broome-met-at-6am-on-friday-28th-to-hear-a-full-repor/1624928089639196/" }
         ],
-        tags: ["maritime",]
+        tags: ["labour union","maritime",]
     },
     {
         id: 8503,
@@ -3387,7 +3387,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "The DCN - MUA urges members to back new Broome Port agreement", url: "https://www.thedcn.com.au/news/mua-urges-members-to-back-new-broome-port-agreement" }
         ],
-        tags: ["maritime"]
+        tags: ["labour union","maritime"]
     },
     {
         id: 8015,
@@ -4704,7 +4704,7 @@ const STRIKE_DATA = [
             url: "https://2hd.com.au/articles/wambo-workers-and-peabody-energy-strike-deal/"
         }
     ],
-    tags: ["mining", "meu"]
+    tags: ["labour union","mining", "meu"]
 },
     {
         id: 8408,
@@ -4778,7 +4778,7 @@ const STRIKE_DATA = [
                 url: "https://www.fwc.gov.au/documents/ballot-results/cepu_2026487.pdf"
             }
         ],
-        tags: ["other", "amwu", "fwc-ballot"]
+        tags: ["labour union","other", "amwu", "fwc-ballot"]
     },
 
     {
@@ -4838,7 +4838,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "HWU - Statement from the Administrator Charlie Donnelly, 3 June 2026", url: "https://hwu.org.au/statement-from-the-administrator-charlie-donnelly/" }
         ],
-        tags: ["healthcare"]
+        tags: ["labour union","healthcare"]
     },
     {
         id: 8601,
@@ -4879,7 +4879,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
         ],
-        tags: ["education"]
+        tags: ["labour union","education"]
     },
     {
         id: 8603,
@@ -4899,7 +4899,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
         ],
-        tags: ["mining", "stall", "negotiations"]
+        tags: ["labour union","mining", "stall", "negotiations"]
     },
     {
         id: 8604,
@@ -4919,7 +4919,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
         ],
-        tags: ["education", "nteu"]
+        tags: ["labour union","education", "nteu"]
     },
     {
         id: 8605,
@@ -4961,7 +4961,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
         ],
-        tags: ["education", "nteu"]
+        tags: ["labour union","education", "nteu"]
     },
     {
         id: 8607,
@@ -5348,7 +5348,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "ASU Proud SA/NT - Instagram post, 20 August 2026", url: "https://www.instagram.com/p/DcP6rj4Gvon/" }
         ],
-        tags: ["local-government", "asu"]
+        tags: ["labour union","local-government", "asu"]
     },
     {
         id: 8512,
@@ -5369,7 +5369,7 @@ const STRIKE_DATA = [
             { name: "MUA - QUANTEM DISPUTE UPDATE, 15 September 2026", url: "https://www.facebook.com/reel/904260922550490" },
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
         ],
-        tags: ["maritime", "mua"]
+        tags: ["labour union","maritime", "mua"]
     },
     {
         id: 8507,
@@ -5389,7 +5389,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "IEU Victoria Tasmania - VCEA's latest offer unpacked", url: "https://www.ieuvictas.org.au/news/vceaoffer" }
         ],
-        tags: ["education", "ieu"]
+        tags: ["labour union","education", "ieu"]
     },
     {
         id: 8509,
@@ -5409,7 +5409,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "AWU Queensland & NT Branch - Facebook post, 1 July 2026", url: "https://www.facebook.com/AWUqueensland/posts/the-awu-and-amwu-qld-nt-hosted-a-bbq-for-union-members-at-isis-central-sugar-mil/1344596671195987/" }
         ],
-        tags: ["food-manufacturing"]
+        tags: ["labour union","food-manufacturing"]
     },
     {
         id: 8510,
@@ -5433,7 +5433,7 @@ const STRIKE_DATA = [
             { name: "ABC News - Queensland Rail and unions reach agreement, ending months-long pay dispute", url: "https://newsapp.abc.net.au/news/2026-09-18/qld-rail-dispute-resolved/107170016" },
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
         ],
-        tags: ["rail-transport", "amwu", "rtbu", "etu", "tsu"]
+        tags: ["labour union","rail-transport", "amwu", "rtbu", "etu", "tsu"]
     },
     // ============================================
     // Disputes Report - 23 September 2026
@@ -6793,7 +6793,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 15 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-january" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 10002,
@@ -6813,7 +6813,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["healthcare", "asmoF"]
+        tags: ["labour union","healthcare", "asmoF"]
     },
     {
         id: 10003,
@@ -6833,7 +6833,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["manufacturing", "awu"]
+        tags: ["labour union","manufacturing", "awu"]
     },
     {
         id: 10004,
@@ -6853,7 +6853,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["manufacturing", "cfmeu", "lockout"]
+        tags: ["labour union","manufacturing", "cfmeu", "lockout"]
     },
         {
         id: 100041,
@@ -6873,7 +6873,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Print21 - Feb 19 2026", url: "https://print21.com.au/packaging/lockout-ends-as-maryvale-dispute-over/" }
         ],
-        tags: ["manufacturing", "cfmeu", "lockout"]
+        tags: ["labour union","manufacturing", "cfmeu", "lockout"]
     },
     {
         id: 10005,
@@ -6893,7 +6893,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["rail-transport", "rtbu", "etu"]
+        tags: ["labour union","rail-transport", "rtbu", "etu"]
     },
     {
         id: 10006,
@@ -6913,7 +6913,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["healthcare", "hsu"]
+        tags: ["labour union","healthcare", "hsu"]
     },
     {
         id: 10007,
@@ -6933,7 +6933,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["transport", "twu"]
+        tags: ["labour union","transport", "twu"]
     },
     {
         id: 10008,
@@ -6953,7 +6953,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["manufacturing", "awu"]
+        tags: ["labour union","manufacturing", "awu"]
     },
     {
         id: 10009,
@@ -6973,7 +6973,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["emergency-services", "awu"]
+        tags: ["labour union","emergency-services", "awu"]
     },
     {
         id: 10010,
@@ -6993,7 +6993,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 15 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-january" }
         ],
-        tags: ["maritime", "amou", "aimpe"]
+        tags: ["labour union","maritime", "amou", "aimpe"]
     },
     {
         id: 10011,
@@ -7013,7 +7013,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
-        tags: ["retail", "uwu"]
+        tags: ["labour union","retail", "uwu"]
     },
     {
         id: 10012,
@@ -7033,7 +7033,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["education", "aeu"]
+        tags: ["labour union","education", "aeu"]
     },
     {
         id: 10013,
@@ -7054,7 +7054,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["public-sector", "aeu", "cpsu", "hacsu"]
+        tags: ["labour union","public-sector", "aeu", "cpsu", "hacsu"]
     },
     {
         id: 10014,
@@ -7074,7 +7074,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["healthcare", "hwu"]
+        tags: ["labour union","healthcare", "hwu"]
     },
     {
         id: 10015,
@@ -7092,7 +7092,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["retail", "raffwu"]
+        tags: ["labour union","retail", "raffwu"]
     },
     {
         id: 10016,
@@ -7112,7 +7112,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 10017,
@@ -7132,7 +7132,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["manufacturing", "etu"]
+        tags: ["labour union","manufacturing", "etu"]
     },
     {
         id: 10018,
@@ -7153,7 +7153,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["aviation", "awu", "amwu", "alaea"]
+        tags: ["labour union","aviation", "awu", "amwu", "alaea"]
     },
     {
         id: 10019,
@@ -7173,7 +7173,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["manufacturing", "amwu", "cpsu", "uwu"]
+        tags: ["labour union","manufacturing", "amwu", "cpsu", "uwu"]
     },
     {
         id: 10020,
@@ -7193,7 +7193,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["hospitality", "uwu"]
+        tags: ["labour union","hospitality", "uwu"]
     },
     {
         id: 10021,
@@ -7213,7 +7213,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["oil-gas", "construction"]
+        tags: ["labour union","oil-gas", "construction"]
     },
     {
         id: 10022,
@@ -7233,7 +7233,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
         ],
-        tags: ["public-sector", "psa"]
+        tags: ["labour union","public-sector", "psa"]
     },
     {
         id: 20001,
@@ -7253,7 +7253,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["energy", "services-union", "meu"]
+        tags: ["labour union","energy", "services-union", "meu"]
     },
     {
         id: 20002,
@@ -7273,7 +7273,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["education", "aeu"]
+        tags: ["labour union","education", "aeu"]
     },
     {
         id: 20003,
@@ -7293,7 +7293,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["construction", "awu"]
+        tags: ["labour union","construction", "awu"]
     },
     {
         id: 20004,
@@ -7313,7 +7313,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["local-government", "rtbu"]
+        tags: ["labour union","local-government", "rtbu"]
     },
     {
         id: 20005,
@@ -7333,7 +7333,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["healthcare", "asmoF"]
+        tags: ["labour union","healthcare", "asmoF"]
     },
     {
         id: 20006,
@@ -7353,7 +7353,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["legal-services", "asu"]
+        tags: ["labour union","legal-services", "asu"]
     },
     {
         id: 20007,
@@ -7373,7 +7373,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["energy", "cfmeu", "amwu"]
+        tags: ["labour union","energy", "cfmeu", "amwu"]
     },
     {
         id: 20008,
@@ -7393,7 +7393,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["detention-services", "uwu"]
+        tags: ["labour union","detention-services", "uwu"]
     },
     {
         id: 20009,
@@ -7412,7 +7412,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["aviation", "twu"]
+        tags: ["labour union","aviation", "twu"]
     },
     {
         id: 20010,
@@ -7432,7 +7432,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
         ],
-        tags: ["healthcare", "anmf", "hacsu"]
+        tags: ["labour union","healthcare", "anmf", "hacsu"]
     },
 
     // ---------- 5 MARCH 2025 ----------
@@ -7454,7 +7454,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["healthcare", "hacsu", "anmf"]
+        tags: ["labour union","healthcare", "hacsu", "anmf"]
     },
     {
         id: 20012,
@@ -7474,7 +7474,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["manufacturing", "amwu"]
+        tags: ["labour union","manufacturing", "amwu"]
     },
     {
         id: 20013,
@@ -7494,7 +7494,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 20014,
@@ -7514,7 +7514,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["manufacturing", "defence", "amwu", "cepu"]
+        tags: ["labour union","manufacturing", "defence", "amwu", "cepu"]
     },
     {
         id: 20015,
@@ -7534,7 +7534,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["healthcare", "hsu"]
+        tags: ["labour union","healthcare", "hsu"]
     },
     {
         id: 20016,
@@ -7555,7 +7555,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["manufacturing", "food", "amwu", "etu", "ppteu"]
+        tags: ["labour union","manufacturing", "food", "amwu", "etu", "ppteu"]
     },
     {
         id: 20017,
@@ -7575,7 +7575,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["local-government", "usu"]
+        tags: ["labour union","local-government", "usu"]
     },
     {
         id: 20018,
@@ -7595,7 +7595,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["rail-manufacturing", "amwu", "etu"]
+        tags: ["labour union","rail-manufacturing", "amwu", "etu"]
     },
     {
         id: 20019,
@@ -7615,7 +7615,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["maritime", "mua"]
+        tags: ["labour union","maritime", "mua"]
     },
     {
         id: 20020,
@@ -7635,7 +7635,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["rail-transport", "etu"]
+        tags: ["labour union","rail-transport", "etu"]
     },
     {
         id: 20021,
@@ -7655,7 +7655,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
         ],
-        tags: ["local-government", "services-union", "rtbu"]
+        tags: ["labour union","local-government", "services-union", "rtbu"]
     },
 
     // ---------- 12 MARCH 2025 ----------
@@ -7677,7 +7677,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 12 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-12-march" }
         ],
-        tags: ["manufacturing", "amwu", "etu"]
+        tags: ["labour union","manufacturing", "amwu", "etu"]
     },
     {
         id: 20023,
@@ -7697,7 +7697,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 12 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-12-march" }
         ],
-        tags: ["legal-services", "asu", "usu"]
+        tags: ["labour union","legal-services", "asu", "usu"]
     },
     {
         id: 20024,
@@ -7717,7 +7717,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 25 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-25-march" }
         ],
-        tags: ["manufacturing", "uwu"]
+        tags: ["labour union","manufacturing", "uwu"]
     },
     {
         id: 20025,
@@ -7736,7 +7736,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 25 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-25-march" }
         ],
-        tags: ["aviation", "twu"]
+        tags: ["labour union","aviation", "twu"]
     },
     {
         id: 20026,
@@ -7756,7 +7756,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
         ],
-        tags: ["construction", "etu"]
+        tags: ["labour union","construction", "etu"]
     },
     {
         id: 20027,
@@ -7776,7 +7776,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
         ],
-        tags: ["education", "nteu"]
+        tags: ["labour union","education", "nteu"]
     },
     {
         id: 20028,
@@ -7796,7 +7796,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
         ],
-        tags: ["oil-gas", "awu", "mua"]
+        tags: ["labour union","oil-gas", "awu", "mua"]
     },
     {
         id: 20029,
@@ -7816,7 +7816,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
         ],
-        tags: ["corrections", "cpsu"]
+        tags: ["labour union","corrections", "cpsu"]
     },
     {
         id: 20030,
@@ -7836,7 +7836,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
         ],
-        tags: ["education", "aeu"]
+        tags: ["labour union","education", "aeu"]
     },
 
     // ---------- 14 MAY 2025 ----------
@@ -7858,7 +7858,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["transport", "amwu"]
+        tags: ["labour union","transport", "amwu"]
     },
     {
         id: 20032,
@@ -7878,7 +7878,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["emergency-services", "aeawa"]
+        tags: ["labour union","emergency-services", "aeawa"]
     },
     {
         id: 20033,
@@ -7898,7 +7898,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["utilities", "usu"]
+        tags: ["labour union","utilities", "usu"]
     },
     {
         id: 20034,
@@ -7918,7 +7918,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["local-government", "services-union", "awu"]
+        tags: ["labour union","local-government", "services-union", "awu"]
     },
     {
         id: 20035,
@@ -7938,7 +7938,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["emergency-services", "awu"]
+        tags: ["labour union","emergency-services", "awu"]
     },
     {
         id: 20036,
@@ -7958,7 +7958,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["maritime", "cfmeu"]
+        tags: ["labour union","maritime", "cfmeu"]
     },
     {
         id: 20037,
@@ -7978,7 +7978,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["local-government", "usu"]
+        tags: ["labour union","local-government", "usu"]
     },
     {
         id: 20038,
@@ -7998,7 +7998,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["manufacturing", "amwu", "etu", "uwu"]
+        tags: ["labour union","manufacturing", "amwu", "etu", "uwu"]
     },
     {
         id: 20039,
@@ -8018,7 +8018,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "hacsu"]
+        tags: ["labour union","healthcare", "hacsu"]
     },
     {
         id: 20040,
@@ -8038,7 +8038,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 20041,
@@ -8058,7 +8058,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "hacsu"]
+        tags: ["labour union","healthcare", "hacsu"]
     },
     {
         id: 20042,
@@ -8079,7 +8079,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 20043,
@@ -8099,7 +8099,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "hsu"]
+        tags: ["labour union","healthcare", "hsu"]
     },
     {
         id: 30001,
@@ -8119,7 +8119,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["oil-gas", "etu"]
+        tags: ["labour union","oil-gas", "etu"]
     },
     {
         id: 30002,
@@ -8139,7 +8139,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "qnmu"]
+        tags: ["labour union","healthcare", "qnmu"]
     },
     {
         id: 30003,
@@ -8159,7 +8159,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "hsu"]
+        tags: ["labour union","healthcare", "hsu"]
     },
     {
         id: 30004,
@@ -8179,7 +8179,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "professionals-australia"]
+        tags: ["labour union","healthcare", "professionals-australia"]
     },
     {
         id: 30005,
@@ -8199,7 +8199,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "hacsu"]
+        tags: ["labour union","healthcare", "hacsu"]
     },
     {
         id: 30006,
@@ -8220,7 +8220,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 30007,
@@ -8240,7 +8240,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["manufacturing", "etu"]
+        tags: ["labour union","manufacturing", "etu"]
     },
     {
         id: 30008,
@@ -8260,7 +8260,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["education", "qtu"]
+        tags: ["labour union","education", "qtu"]
     },
     {
         id: 30009,
@@ -8280,7 +8280,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "qnmu"]
+        tags: ["labour union","healthcare", "qnmu"]
     },
     {
         id: 30010,
@@ -8300,7 +8300,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["rail-transport", "cru", "etu"]
+        tags: ["labour union","rail-transport", "cru", "etu"]
     },
     {
         id: 30011,
@@ -8320,7 +8320,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["healthcare", "hacsu"]
+        tags: ["labour union","healthcare", "hacsu"]
     },
     {
         id: 30012,
@@ -8340,7 +8340,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["education", "aeu"]
+        tags: ["labour union","education", "aeu"]
     },
     {
         id: 30013,
@@ -8360,7 +8360,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
         ],
-        tags: ["construction", "awu", "amwu", "cfmeu", "etu", "ppteu"]
+        tags: ["labour union","construction", "awu", "amwu", "cfmeu", "etu", "ppteu"]
     },
 
     // ---------- 17 JUNE 2025 ----------
@@ -8383,7 +8383,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 18 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-18-june" }
         ],
-        tags: ["manufacturing", "amwu"]
+        tags: ["labour union","manufacturing", "amwu"]
     },
     {
         id: 30015,
@@ -8403,7 +8403,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 18 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-18-june" }
         ],
-        tags: ["healthcare", "sasmoa"]
+        tags: ["labour union","healthcare", "sasmoa"]
     },
     {
         id: 30016,
@@ -8423,7 +8423,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "uwu"]
+        tags: ["labour union","healthcare", "uwu"]
     },
     {
         id: 30017,
@@ -8443,7 +8443,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "anmf"]
+        tags: ["labour union","healthcare", "anmf"]
     },
     {
         id: 30018,
@@ -8463,7 +8463,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "hwu"]
+        tags: ["labour union","healthcare", "hwu"]
     },
     {
         id: 30019,
@@ -8483,7 +8483,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["oil-gas", "amwu", "cfmeu", "etu"]
+        tags: ["labour union","oil-gas", "amwu", "cfmeu", "etu"]
     },
     {
         id: 30020,
@@ -8503,7 +8503,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["tourism", "awiu"]
+        tags: ["labour union","tourism", "awiu"]
     },
     {
         id: 30021,
@@ -8523,7 +8523,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["emergency-services", "professionals-australia", "uwu"]
+        tags: ["labour union","emergency-services", "professionals-australia", "uwu"]
     },
     {
         id: 30022,
@@ -8543,7 +8543,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["manufacturing", "amwu", "cpsu", "uwu"]
+        tags: ["labour union","manufacturing", "amwu", "cpsu", "uwu"]
     },
     {
         id: 30023,
@@ -8563,7 +8563,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["education", "aeu"]
+        tags: ["labour union","education", "aeu"]
     },
     {
         id: 30024,
@@ -8583,7 +8583,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["energy", "amwu", "cfmeu"]
+        tags: ["labour union","energy", "amwu", "cfmeu"]
     },
     {
         id: 30025,
@@ -8603,7 +8603,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["corrections", "psa"]
+        tags: ["labour union","corrections", "psa"]
     },
     {
         id: 30026,
@@ -8623,7 +8623,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["rail-manufacturing", "amwu"]
+        tags: ["labour union","rail-manufacturing", "amwu"]
     },
     {
         id: 30027,
@@ -8643,7 +8643,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["rail-transport", "cepu", "rtbu"]
+        tags: ["labour union","rail-transport", "cepu", "rtbu"]
     },
     {
         id: 30028,
@@ -8664,7 +8664,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["healthcare", "hacsu"]
+        tags: ["labour union","healthcare", "hacsu"]
     },
     {
         id: 30029,
@@ -8684,7 +8684,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["utilities", "services-union"]
+        tags: ["labour union","utilities", "services-union"]
     },
     {
         id: 30030,
@@ -8704,7 +8704,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["construction", "cfmeu"]
+        tags: ["labour union","construction", "cfmeu"]
     },
     {
         id: 30031,
@@ -8724,7 +8724,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["mining", "meu"]
+        tags: ["labour union","mining", "meu"]
     },
     {
         id: 30032,
@@ -8744,7 +8744,7 @@ const STRIKE_DATA = [
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
-        tags: ["manufacturing", "etu"]
+        tags: ["labour union","manufacturing", "etu"]
     },
     {
         id: 201001,
@@ -8760,7 +8760,7 @@ const STRIKE_DATA = [
         description: "CFMEU running a rally in support of negotiations for the 2027 EBA. Start time: 13:00, End time:  14:00 Rally open to all",
         locations: [{ city: "Perth", state: "WA", lat: LIB["WA State"][0], lng: LIB["WA State"][1], name: "WA State Library" }], 
         sources: [{ name: "Tip off", url: "mailto:schmilly@proton.me" }],
-        tags: ["rally", "protest", "supporters welcome"]                     
+        tags: ["labour union","rally", "protest", "supporters welcome"]                     
     },
     {
     id: 8706,
@@ -8785,7 +8785,7 @@ const STRIKE_DATA = [
         { name: "Defence Connect — WA passes special police powers to protect Land Forces 2026", url: "https://www.defenceconnect.com.au/industry/18877-western-australia-passes-special-police-powers-to-protect-land-forces-2026" },
         { name: "WA Government — Temporary Special Powers in Place for Land Forces 2026", url: "https://www.wa.gov.au/government/announcements/temporary-special-powers-place-land-forces-2026" }
     ],
-    tags: ["defence", "anti-war", "protest", "supporters welcome"]
+    tags: ["labour union","defence", "anti-war", "protest", "supporters welcome"]
 },
 {
     id: 6013,
@@ -8808,7 +8808,28 @@ const STRIKE_DATA = [
         { name: "ASU Vic/Tas — Melton's Disgraceful Decision to Exit Aged Care – Fair Work Dispute Update", url: "https://www.asuvictas.com.au/VICTAS/News/Melton%E2%80%99s_Disgraceful_Decision_to_Exit_Aged_Care.aspx" },
         { name: "Melton City Council — 2026 Council Meetings Dates", url: "https://www.linkedin.com/company/meltoncitycouncil" }
     ],
-    tags: ["aged-care", "local-government", ]
+    tags: ["labour union","aged-care", "local-government", ]
+},
+{
+    id: 6014,
+    actionId: "rahu-thornbury-rent-win",
+    title: "Tenants Fights Off 11% Rent Increase in Thornbury",
+    union: "RAHU",
+    industry: "Tenants",
+    type: "resolved",
+    startDate: "2026-08-05",
+    endDate: "2026-08-26",
+    workers: null,
+    state: "VIC",
+    description: "RAHU members in Thornbury, Melbourne, successfully fought off an 11% rent increase through collective bargaining. After tenants attempted good-faith negotiations and the landlord refused to engage, the property manager notified tenants on 26 August that the increase had been withdrawn 'effective immediately.' ",
+    locations: [
+        { city: "Thornbury", state: "VIC", lat: VIC["Thornbury"][0], lng: VIC["Thornbury"][1], name: "Thornbury, VIC 3071" },
+    ],
+    sources: [
+        { name: "RAHU — Union Fights Off 11% Rent Increase", url: "https://rahu.org.au/union-fight-off-11-rent-increase/" },
+        { name: "The Guardian (CPA) — Renters win as union fights off 11% rent increase", url: "https://cpa.org.au/renters-win-as-union-fights-off-11-rent-increase/" }
+    ],
+    tags: ["tenant union", "renters", "win","collective-bargaining", "victoria"]
 }
 ];
 
