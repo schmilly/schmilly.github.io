@@ -262,7 +262,7 @@ const HOSP = {
         "Royal Children's": [-37.7920, 144.9500],
         "Peter MacCallum Cancer Centre": [-37.8003, 144.9567],
         "The Alfred": [-37.8460, 144.9810],
-        "St Vincent's Hospital Melbourne": [-37.8090, 144.9780],
+        "St Vincents Melbourne": [-37.80793205474873, 144.9760853627314 ],
         "Austin": [-37.7570, 145.0570],
         "Olivia Newton John Cancer Wellness Centre": [-37.7580, 145.0670],
         "Monash Medical Centre": [-37.9080, 145.1300],
