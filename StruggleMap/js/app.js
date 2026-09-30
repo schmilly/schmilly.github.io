@@ -349,6 +349,31 @@ const TYPE_INFO = {
         </div>`;
     }
 
+                // ─── Upcoming helpers ───
+    function isUpcomingEntry(entry) {
+        if (!entry || !entry.startDate) return false;
+        const start = new Date(entry.startDate + 'T00:00:00');
+        if (isNaN(start)) return false;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return start > today;
+    }
+
+    function daysUntil(entry) {
+        const start = new Date(entry.startDate + 'T00:00:00');
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return Math.round((start - today) / MS_PER_DAY);
+    }
+
+    function getUpcomingBadgeHtml(entry) {
+        if (!isUpcomingEntry(entry)) return '';
+        const days = daysUntil(entry);
+        const label = days === 1 ? 'Tomorrow' : `in ${days} days`;
+        return `<span class="meta-tag upcoming"
+            title="Upcoming: starts ${formatDate(entry.startDate)}">📅 Upcoming · ${label}</span>`;
+    }
+
     // ─── Union helpers ───
     function splitUnions(unionStr) {
         if (!unionStr) return [];
@@ -666,7 +691,7 @@ function buildLegend() {
         const locations = latest.locations && latest.locations.length > 0
             ? latest.locations
             : [{ city: latest.city, lat: latest.lat, lng: latest.lng, name: latest.city, state: latest.state }];
-        const markers = locations.map(location => createMarker(latest, location, action.actionId));
+        const markers = locations.map(location => createMarker(latest, location, action.actionId, action));
         markerCache.set(action.actionId, { entry: latest, markers });
         return markers;
     }
@@ -696,7 +721,7 @@ function buildLegend() {
 
         let popupHtml = `<div style="text-align:center;">
         <strong>${escapeHtml(entry.title)}</strong><br>
-        <span style="font-size:12px;">${location.name || location.city}</span><br>
+        <span style="font-size:12px;">${location.name || location.city} · ${formatDate(entry.startDate)}</span><br>
         <span style="font-size:11px; color:#aaa;">${entry.union} · ${entry.industry}</span><br>
         <button class="btn" style="margin-top:8px;" onclick="openDetailFromPopup('${actionId}')">Details</button>
         </div>`;
@@ -912,6 +937,7 @@ if (activeStateFilter !== 'all') {
             const updateCount = action.entries.length > 1 ? ` <span class="meta-tag" style="background:#58a6ff33; color:#58a6ff;">${action.entries.length} updates</span>` : '';
             const staleBadge = getStaleBadgeHtml(action);
             const staleNotice = getStaleNoticeHtml(action);
+            const upcomingBadge = getUpcomingBadgeHtml(latest);   //
 
             item.innerHTML = `
             <div style="flex-shrink:0;">${getEmojiHtml(latest.type, 18)}</div> 
@@ -919,6 +945,7 @@ if (activeStateFilter !== 'all') {
             <div class="event-title">${escapeHtml(latest.title)}</div>
             <div class="event-meta">
             <span class="meta-tag">${getLabelHTML(latest.type, 10)}</span>
+            ${upcomingBadge}
             <span class="meta-tag">${latest.union || 'N/A'}</span>
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
@@ -1009,14 +1036,14 @@ if (activeStateFilter !== 'all') {
             historyHtml = `
             <div class="detail-section">
             <div class="detail-label">Update History</div>
-            <div style="border-left: 2px solid #444; padding-left: 12px; margin-top: 6px;">
+            <div style="border-left: 2px solid var(--bg-alt); padding-left: 12px; margin-top: 6px;">
             ${action.entries.map(entry => `
                 <div style="margin-bottom: 12px;">
                 <div style="font-weight: 700; color:var(--text-heading); font-size: 13px;">${escapeHtml(entry.title)}</div>
                 <div style="font-size: 11px; color:var(--text-heading);">Union: ${escapeHtml(entry.union || 'Unknown')} · ${formatDate(entry.startDate)}</div>
                 <div style="font-size: 12px; color:var(--text-quaternary); margin-top: 4px;">${escapeHtml(entry.description)}</div>
                 ${entry.sources && entry.sources.length > 0 ? `
-                    <div style="font-size: 11px; margin-top: 4px; color: #58a6ff;">
+                    <div style="font-size: 11px; margin-top: 4px; color: var(--accent-alt);">
                     ${entry.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener noreferrer" class="source-link" style="font-size:11px;">${src.name || src.url}</a>`).join(' · ')}
                     </div>` : ''}
                     </div>

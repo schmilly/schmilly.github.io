@@ -262,7 +262,7 @@ const HOSP = {
         "Royal Children's": [-37.7920, 144.9500],
         "Peter MacCallum Cancer Centre": [-37.8003, 144.9567],
         "The Alfred": [-37.8460, 144.9810],
-        "St Vincents Melbourne": [-37.80793205474873, 144.9760853627314 ],
+        "St Vincent's Hospital Melbourne": [-37.8090, 144.9780],
         "Austin": [-37.7570, 145.0570],
         "Olivia Newton John Cancer Wellness Centre": [-37.7580, 145.0670],
         "Monash Medical Centre": [-37.9080, 145.1300],
@@ -582,7 +582,7 @@ const TWU_TRANSPORT_STRIKE_LOCATIONS = [
     { city: "Sydney", state: "NSW", lat: -33.9386, lng: 151.1853, name: "FedEx Sydney (Botany)" },
     { city: "Melbourne", state: "VIC", lat: -37.6773, lng: 144.8400, name: "FedEx Melbourne (Melbourne Airport)" },
     { city: "Brisbane", state: "QLD", lat: -27.4188, lng: 153.0893, name: "FedEx Brisbane (Brisbane Airport)" },
-    { city: "Perth", state: "WA", lat: -31.9923, lng: 115.9198, name: "FedEx Perth (Welshpool)" },
+    { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng: COMPANY["FedEx"]["PER"][1], name: "FedEx Perth (Welshpool)" },
 
     // ============================================
     // BORDEREXPRESS
@@ -3787,7 +3787,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "The TWU reached an in-principle agreement with Kinetic covering all Kinetic bus drivers across Tasmania in a single agreement for the first time. Workers achieved an immediate 6.65% wage increase, with 4% increases in the next 2 years, greater roster certainty, increased shift loadings and other improvements.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Kinetic Hobart" },
+            { city: "Hobart", state: "TAS", lat: COMPANY["Kinetic"]["TAS"][0], lng: COMPANY["Kinetic"]["TAS"][1], name: "Kinetic Hobart Depot" },
             { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Kinetic Launceston" },
             { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "Kinetic Burnie" },
             { city: "Devonport", state: "TAS", lat: CITY_COORDS["Devonport"][0], lng: CITY_COORDS["Devonport"][1], name: "Kinetic Devonport" }
@@ -6760,26 +6760,6 @@ const STRIKE_DATA = [
     ]
 },
 {
-    id: 9030,
-    actionId: "stowe-etu",
-    title: "Stowe Workers Strike, Shutting Down Microsoft Data Centre Build",
-    union: "ETU NSW",
-    industry: "Construction",
-    type: "strike",
-    startDate: "2026-06-11",
-    endDate: "",
-    workers: null,
-    state: "NSW",
-    description: "On 11 June ETU members at Stowe voted to commence strike action with 24-hour stoppages for the rest of the week. Workers met again on 15 June and voted to continue striking for another 48 hours. The stoppages are causing significant disruption including shutting down construction of the $1.3 billion Microsoft data centre in Kemps Creek. Workers are fighting for a better offer with higher wages and improved conditions.",
-    locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Stowe" },
-        { city: "Kemps Creek", state: "NSW", lat: -33.8500, lng: 150.8000, name: "Microsoft data centre, Kemps Creek" }
-    ],
-    sources: [
-        { name: "Disputes Report - 17 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
-    ]
-},
-{
     id: 9031,
     actionId: "cleanco-barron-gorge",
     title: "Cleanco Barron Gorge Workers Take Industrial Action",
@@ -7068,25 +7048,6 @@ const STRIKE_DATA = [
         { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
     ]
 },
-{
-    id: 9046,
-    actionId: "stowe-etu",
-    title: "Stowe Workers Vote Up In-Principle Agreement",
-    union: "ETU NSW",
-    industry: "Construction / Manufacturing",
-    type: "resolved",
-    startDate: "2026-06-24",
-    endDate: "2026-06-24",
-    workers: null,
-    state: "NSW",
-    description: "After two weeks of industrial action, ETU members at Stowe have voted up an in-principle agreement. The agreement includes wage increases of 23.25% over 4 years (6%/6%/6%/5.25%), 5 weeks annual leave, improved parental leave, improvements to allowances and May Day guaranteed as a paid day off.",
-    locations: [
-        { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Stowe" }
-    ],
-    sources: [
-        { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
-    ]
-},
 
 // --- 2025 ENTRIES (selected) ---
 {
@@ -7179,7 +7140,7 @@ const STRIKE_DATA = [
     state: "NSW",
     description: "The ABC is putting its proposed agreement out to vote with the ballot opening on 14 November. The proposed agreement includes a 3.5% wage increase in the first year and 3.25% increases in years 2 & 3. This is 1% more than the last offer rejected by staff. The MEAA has characterised the offer as 'insulting' and that it fails to address job security and career progression as well as pay increases that don't keep up with inflation.",
     locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "ABC" }
+        { city: "Sydney", state: "NSW", lat: COMPANY["ABC"]["NSW"][0], lng: COMPANY["ABC"]["NSW"][1], name: "ABC" }
     ],
     sources: [
         { name: "Disputes Report - 19 November 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-19-november" }
@@ -7287,9 +7248,9 @@ const STRIKE_DATA = [
         title: "NSW Public Sector Psychiatrists Resign En Masse",
         union: "ASMOF NSW",
         industry: "Healthcare",
-        type: "action",
+        type: "update",
         startDate: "2025-01-21",
-        endDate: "",
+        endDate: "2025-01-21",
         workers: 200,
         state: "NSW",
         description: "Over 200 of 295 public psychiatrists sent in resignations effective 21 January over a 30% pay gap and severe staffing crisis. Mental health wards closed. NSW IRC agreed to expedited arbitration. ASMOF frustrated with government refusing to consider any wage increase over 3%.",
@@ -7341,9 +7302,29 @@ const STRIKE_DATA = [
         ],
         tags: ["manufacturing", "cfmeu", "lockout"]
     },
+        {
+        id: 100041,
+        actionId: "opal-maryvale-cfmeu-2025",
+        title: "Opal Maryvale Mill Locks Out Resolves after 4 weeks",
+        union: "CFMEU Manufacturing",
+        industry: "Manufacturing / Paper",
+        type: "ballotpass",
+        startDate: "2025-01-16",
+        endDate: "2026-02-16",
+        workers: 300,
+        state: "VIC",
+        description: "The 4 week lock out of workers draws to a close. 'The workers voted late Saturday,15 February, to accept an improved deal, and were back at work at 6am this morning (Sunday 16 February), a full month after the lockout was first instigated.'",
+        locations: [
+            { city: "Maryvale", state: "VIC", lat: -38.2, lng: 146.4, name: "Opal Maryvale Mill" }
+        ],
+        sources: [
+            { name: "Print21 - Feb 19 2026", url: "https://print21.com.au/packaging/lockout-ends-as-maryvale-dispute-over/" }
+        ],
+        tags: ["manufacturing", "cfmeu", "lockout"]
+    },
     {
         id: 10005,
-        actionId: "sydney-trains-cru-2025",
+        actionId: "sydney-trains-2025",
         title: "Sydney Trains Industrial Action Suspended by FWC",
         union: "ASU / AMWU / ETU / RTBU / PA",
         industry: "Rail Transport",
@@ -7414,7 +7395,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "580 AWU members at Tomago Aluminium in Newcastle commenced industrial action. The company is refusing workers a 15% pay increase over 5 years, refusing to budge from a 10% offer. The action coincided with a visit from the Prime Minister announcing $2 billion of investment into the Australian-made aluminium industry.",
         locations: [
-            { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Tomago Aluminium" }
+            { city: "Newcastle", state: "NSW", lat: COMPANY["Tomago"][0], lng: COMPANY["Tomago"][1], name: "Tomago Aluminium" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -7423,7 +7404,7 @@ const STRIKE_DATA = [
     },
     {
         id: 10009,
-        actionId: "ffmv-awu-2025",
+        actionId: "forest-firefighters-awu",
         title: "Forest Fire Management Victoria Workers Continue Action",
         union: "AWU Victoria",
         industry: "Emergency Services / Forestry",
@@ -7593,7 +7574,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "An update from the ETU confirmed that workers at Dynelec were still on strike. Workers are fighting for improved wages and conditions in a new EBA. Dynelec initially offered 11.5%, but then dropped that back to 10.5%.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Dynelec" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["DYNELEC"][0], lng: COMPANY["DYNELEC"][1], name: "Dynelec" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7612,7 +7593,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Engineers, safety trainers and technicians at Qantas coordinated a national 4-hour stoppage. Workers are fighting for a new agreement with fair wages and conditions. Qantas attempted to shut the stoppage down, but was unsuccessful. In Brisbane, workers rallied outside Hangar 3.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Qantas" },
+            { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas" },
             { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Qantas" },
             { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Qantas" }
         ],
@@ -7629,7 +7610,7 @@ const STRIKE_DATA = [
         industry: "Manufacturing / Pharmaceutical",
         type: "strike",
         startDate: "2025-02-03",
-        endDate: "",
+        endDate: "2025-02-03",
         workers: null,
         state: "VIC",
         description: "Members of three unions at CSL struck for 24 hours. Workers are fighting back as the company threatens to extend working hours, cut conditions and move office-based employees off an enterprise agreement onto individual contracts. Workers seek at least 14% over 3 years; CSL offered 10.5%.",
@@ -7689,7 +7670,7 @@ const STRIKE_DATA = [
         industry: "Public Sector",
         type: "resolved",
         startDate: "2025-01-30",
-        endDate: "",
+        endDate: "2025-01-30",
         workers: null,
         state: "SA",
         description: "An in-principle agreement was reached between the PSA and the SA state government for salaried public sector workers. The new EBA includes a 10.8% cumulative wage increase: 3.75% backdated to 1 August 2025, 3.5% on 1 July 2026 and 3.25% on 1 July 2027. Additional $4000 increase to base wages for historically low paid employees. Correctional officers included after striking for 4 days in December.",
@@ -7709,12 +7690,12 @@ const STRIKE_DATA = [
         industry: "Energy",
         type: "strike",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2025-02-04",
         workers: null,
         state: "QLD",
         description: "Workers commenced a 24-hour stoppage after management failed to address key claims including a cost of living adjustment. Bans were also put in place including a ban on operating units above 110MW, indefinite overtime bans, call-out/recall bans, technology bans, and bans on higher duties. A successful outcome was reached in less than 24 hours.",
         locations: [
-            { city: "Gladstone", state: "QLD", lat: -23.842, lng: 151.255, name: "Gladstone Power Station" }
+            { city: "Gladstone", state: "QLD", lat: POWER["Gladstone"][0], lng: POWER["Gladstone"][1], name: "Gladstone Power Station" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7743,7 +7724,7 @@ const STRIKE_DATA = [
     },
     {
         id: 20003,
-        actionId: "snowy-2-safety-awu-2025",
+        actionId: "snowy-2-2025",
         title: "Snowy 2.0 Workers Walk Off Over Safety Concerns",
         union: "AWU",
         industry: "Construction / Infrastructure",
@@ -7809,7 +7790,7 @@ const STRIKE_DATA = [
         industry: "Legal Services",
         type: "ballot",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2026-02-18",
         workers: null,
         state: "VIC",
         description: "Another protected action ballot order was granted for lawyers at Maurice Blackburn. The ballot was set to close on 18 February. Workers are fighting for a decent pay increase, 10 days reproductive leave, and measures to improve the gender pay gap.",
@@ -7995,7 +7976,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Pathology workers at Young Hospital struck for 24 hours over the closure of the Cootamundra Pathology Lab. Workers are concerned the closure will increase wait times for results and put more pressure on pathology services. Workers rallied outside the hospital for a press conference.",
         locations: [
-            { city: "Young", state: "NSW", lat: -34.314, lng: 148.297, name: "Young Hospital" }
+            { city: "Young", state: "NSW", lat: HOSP["NSW"]["Cootamundra"][0], lng: HOSP["NSW"]["Cootamundra"][1], name: "Cootamundra Pathology Lab." }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -8056,7 +8037,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Workers at Alstom Metronet in Bellevue walked off the job. Unions have been in negotiations for an EBA. The last bargaining meeting was held on 24 February where Alstom wouldn't agree to the union's claims, and subsequently lodged a dispute in the FWC. Unions are seeking a 23% wage increase over 3 years, but Alstom's best offer is only 12% over 3 years. Workers are also fighting for a 36-hour week.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Alstom Metronet Bellevue" }
+            { city: "Perth", state: "WA", lat: COMPANY["ALSTOM"][0], lng: COMPANY["ALSTOM"][1], name: "Alstom Metronet Bellevue" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -8076,7 +8057,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Bunkering operations at Fremantle Port were impacted by industrial action from 7 March until 4 April. MUA members voted to take industrial action against Teekay due to their use of cheap, exploited labour. Workers participated in a range of bans including a ban on operating cranes between 6am and 5pm, a ban on operating winches, a ban on bunkering cruise ships unless tied up to a wharf for at least 72 hours, a ban on training employees and contractors, and a ban on sending emails. Workers are fighting for a fair deal.",
         locations: [
-            { city: "Fremantle", state: "WA", lat: -32.056, lng: 115.748, name: "Fremantle Port" }
+            { city: "Fremantle", state: "WA", lat: PORT["Freo"][0], lng: PORT["Freo"][1], name: "Fremantle Port" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -8085,7 +8066,7 @@ const STRIKE_DATA = [
     },
     {
         id: 20020,
-        actionId: "sydney-trains-etu-2025",
+        actionId: "sydney-trains-2025",
         title: "ETU Challenges FWC Suspension of Sydney Trains Industrial Action",
         union: "ETU NSW",
         industry: "Rail Transport",
@@ -8193,11 +8174,11 @@ const STRIKE_DATA = [
         industry: "Aviation",
         type: "protest",
         startDate: "2025-03-24",
-        endDate: "",
+        endDate: "2025-03-24",
         workers: null,
         description: "TWU members at Swissport rallied at airports around the country as bargaining for a new EBA commences. A recent safety blitz revealed multiple issues including damaged ground equipment, unsafe staffing levels, heat based injuries and psychosocial hazards from intrusive worker surveillance.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Swissport" }
+            { city: "Sydney", state: "NSW", lat: SYD["Airport"][0], lng:  SYD["Airport"][1], name: "Swissport" }
         ],
         sources: [
             { name: "Disputes Report - 25 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-25-march" }
@@ -8217,7 +8198,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "ETU members at Stowe overwhelmingly voted in favour of taking industrial action. Stowe is NSW's biggest electrical contractor. Current offer from Stowe is a 5% wage increase on a 12-month extension of the current agreement and a $15 per day travel allowance from May. The ETU's list of claims includes a 6% wage increase.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Stowe" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Stowe" }
         ],
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
@@ -8237,7 +8218,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Workers at the University of Tasmania have been in bargaining for 6 months and bosses are yet to provide a wage increase offer. NTEU members voted in favour of industrial action. Key issues include wages (seeking 20% over 4 years), UTAS's rejection of AI guardrails, and avoiding flexible working arrangements being included in the agreement. UTAS staff are the lowest paid university workers in the country.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "University of Tasmania" }
+            { city: "Hobart", state: "TAS", lat: UNI["TAS"][0], lng: UNI["TAS"][1], name: "University of Tasmania" }
         ],
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
@@ -8339,7 +8320,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Members of the Ambulance Employees Association of Western Australia commenced industrial action following an 'overwhelming' rejection of a proposed EBA. Paramedics are concerned about the ramping crisis and forced overtime. Workers will not take strike action but will be painting campaign messages on ambulance vehicles, wearing union T-shirts, prioritising personal fatigue management, ceasing work communications outside hours, and starting vehicle and equipment checks only during paid hours.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "St John's Ambulance" }
+            { city: "Perth", state: "WA", lat: COMPANY["St John"]["WA"][0], lng: COMPANY["St John"]["WA"][1], name: "St John's Headquaters" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8399,7 +8380,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "AWU members employed as firefighters by the Department of Biodiversity, Conservation and Action commenced industrial action limited to working to rule, including no overtime or working on public holidays. This industrial action has already caused the state's prescribed burns program to fall behind schedule. Firefighters have been in negotiations for a new agreement for two years and are paid approximately 15-20% less than other comparable government workers.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "DBCA" }
+            { city: "Perth", state: "WA", lat: PER["DBCA"][0], lng: PER["DBCA"][1], name: "DBCA" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8412,14 +8393,14 @@ const STRIKE_DATA = [
         title: "Qube Crane Crews Commence Industrial Action",
         union: "CFMEU QLD",
         industry: "Maritime / Construction",
-        type: "strike",
+        type: "action",
         startDate: "2025-05-14",
         endDate: "",
         workers: null,
         state: "QLD",
         description: "Qube's crane crew commenced industrial action after negotiations since February. Workers are demanding a fair deal and that Qube pay market rates. Qube has also announced a restructure of its mobile crane division and advised there will be redundancies, and stood down a CFMEU delegate - seen as punishment for industrial action.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Qube" }
+            { city: "Brisbane", state: "QLD", lat: PORT["Brisbane"][0], lng: PORT["Brisbane"][1], name: "Qube" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8479,7 +8460,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Mental health workers at Tolosa Street mental health service walked off the job for 1 hour in response to the state government's proposal to the sale and privatisation of the facility. Tolosa Street is one of only six public mental health facilities in Tasmania. Workers are calling for the cancellation of the sale of the facility and for the government to commit to maintaining and expanding public mental health care.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tolosa Street" }
+            { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Tolosa Street Mental Health Service"][0], lng: HOSP["TAS"]["Tolosa Street Mental Health Service"][1], name: "Tolosa Street" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8519,7 +8500,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Perioperative technicians at the Royal Hobart Hospital walked off the job for one hour. The stop work action is part of a campaign to increase staffing to improve workload and safety. HACSU members have been calling for an exemption from the state government's hiring freeze and to increase staffing for almost a year.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Royal Hobart Hospital" }
+            { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Royal Hobart Hospital" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8549,16 +8530,16 @@ const STRIKE_DATA = [
     },
     {
         id: 20043,
-        actionId: "cootamundra-pathology-2025",
-        title: "Cootamundra Hospital Pathology Lab Saved After Campaign",
+        actionId: "cootamundra-pathology-hsu-2025",
+        title: "Cootamundra Hospital Pathology Lab Saved After Action",
         union: "HSU NSW",
         industry: "Healthcare",
         type: "resolved",
         startDate: "2025-04-30",
-        endDate: "",
+        endDate: "2025-04-30",
         workers: null,
         state: "NSW",
-        description: "Following industrial action by HSU members in February alongside a community campaign, NSW Minister for Health reversed his decision to close the Cootamundra Hospital's Pathology Laboratory. The lab will now remain open. John Setka - FWC: The Fair Work Ombudsman commenced legal action against former CFMEU Victorian Secretary John Setka for allegedly taking adverse action against former head of the ABCC Stephen McBurney.",
+        description: "Following industrial action by HSU members in February alongside a community campaign, NSW Minister for Health reversed his decision to close the Cootamundra Hospital's Pathology Laboratory. The lab will now remain open.",
         locations: [
             { city: "Cootamundra", state: "NSW", lat: -34.640, lng: 148.030, name: "Cootamundra Hospital" }
         ],
@@ -8701,7 +8682,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Sparkies who maintain and repair medical equipment used to sterilise surgical tools and other medical supplies have been locked out by their employer Getinge for 2 weeks. Getinge is contracted by Queensland Health to provide this vital maintenance work at a number of Queensland hospitals. Workers are fighting for 5% annual wage increases to bring them in line with their Victorian counterparts.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Getinge" }
+            { city: "Brisbane", state: "QLD", lat: COMPANY["Getinge"][0], lng: COMPANY["Getinge"][1], name: "Getinge" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8750,7 +8731,7 @@ const STRIKE_DATA = [
     },
     {
         id: 30010,
-        actionId: "sydney-trains-cru-2025-2",
+        actionId: "sydney-trains-2025",
         title: "Sydney Trains Industrial Action in Three-Cornered Legal Stoush",
         union: "CRU / ETU NSW",
         industry: "Rail Transport",
@@ -8781,7 +8762,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Mental health workers at the Roy Fagan Centre in Hobart walked off the job for 1 hour. After more than a year of negotiations, an in-principle agreement was reached over 2 months ago, but no formal offer has been made. The main issue in the dispute is the conditions for ward aides who work 12 or 12.5 hour shifts, but unlike the nurses they work alongside - do not receive paid meal breaks and receive significantly lower shift penalties.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Roy Fagan Centre" }
+            { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Roy Fagan Centre"][0], lng: HOSP["TAS"]["Roy Fagan Centre"][1], name: "Roy Fagan Centre" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -9093,7 +9074,7 @@ const STRIKE_DATA = [
     },
     {
         id: 30027,
-        actionId: "tasrail-2025",
+        actionId: "tasrail-rtbu",
         title: "TasRail Workers Commence Industrial Action",
         union: "CEPU / RTBU Tasmania",
         industry: "Rail Transport",
@@ -9145,7 +9126,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Urban Utilities workers walked off the job again after management forced a second Enterprise Agreement to a ballot. The Services Union is urging workers to vote no on the agreement as it is largely unchanged from the proposed EBA workers voted down in September aside from being longer and some short term incentives. Workers are fighting for a fair pay deal to keep up with the cost of living, and to achieve parity with workers at Brisbane City Council - the largest shareholder of Urban Utilities.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Urban Utilities" }
+            { city: "Brisbane", state: "QLD", lat: COMPANY["Urban Utilities"][0], lng: COMPANY["Urban Utilities"][1], name: "Urban Utilities" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -9165,7 +9146,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "CFMEU members at Freo Cranes in the Pilbara walked off the job for 24 hours commencing at 6am. 150 workers participated in the action, with more industrial action likely before Christmas.",
         locations: [
-            { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Freo Cranes" }
+            { city: "Pilbara", state: "WA", lat: -22.0, lng: 119.0, name: "Freo Cranes operations Pilbara" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -9205,16 +9186,88 @@ const STRIKE_DATA = [
         state: "WA",
         description: "ETU members at TK Elevators in Perth have been participating in work bans for several weeks - working full shifts, but with bans in place. Management decided to refuse to pay workers if they continued the partial work bans. In response to this overreach from the employer, workers have withdrawn their labour. The ETU has an important reminder for anyone inconvenienced: 'The responsibility for disruption sits squarely with management. Pay workers for the work they do. It is not complicated.'",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "TK Elevators" }
+            { city: "Perth", state: "WA", lat: PER["TK Elev"][0], lng: PER["TK Elev"][1], name: "TK Elevators" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
         ],
         tags: ["manufacturing", "etu"]
-    }
+    },
+    {
+        id: 201001,
+        actionId: "cfmeuwa-eba27-rally", 
+        title: "CFMEU WA 2027 EBA rally", 
+        union: "CFMEU WA", 
+        industry: "Construction", 
+        type: "planned", 
+        startDate: "2026-10-15", 
+        endDate: "2026-10-15", 
+        workers: null, 
+        state: "WA", 
+        description: "CFMEU running a rally in support of negotiations for the 2027 EBA. Start time: 13:00, End time:  14:00 Rally open to all",
+        locations: [{ city: "Perth", state: "WA", lat: LIB["WA State"][0], lng: LIB["WA State"][1], name: "WA State Library" }], 
+        sources: [{ name: "Tip off", url: "mailto:schmilly@proton.me" }],
+        tags: ["rally", "protest", "supporters welcome"]                     
+    },
+    {
+    id: 8706,
+    actionId: "land-forces-expo-protest",
+    title: "Land Forces 2026 Protests",
+    union: null,
+    industry: '"Defence"',
+    type: "protest",
+    startDate: "2026-10-06",
+    endDate: "2026-10-08",
+    workers: null,
+    state: "WA",
+    description: "A coalition of anti-war, Palestine solidarity and community groups has called a major demonstration against the Land Forces International Land Defence Exposition 2026, to be held at the Perth Convention & Exhibition Centre from 6–8 October. The protest is scheduled for 5:00 PM on 6 October at Yagan Square in the Perth CBD. Land Forces is described by organisers as \"the region's premier national and regional security event for the land defence sector\" and is expected to attract more than 20,000 weapons company executives, politicians and military personnel from around the world, with over 650 exhibitors including Lockheed Martin, Elbit Systems, BAE Systems, Anduril and Northrop Grumman. Organisers are protesting against the military-industrial complex, defence spending at the expense of climate action and public services, the WA government's push to make defence the state's second-largest industry (including a proposed missile manufacturing hub in Collie), AUKUS and the US alliance, and Land Forces exhibitors accused of aiding Israel's actions in Gaza. The WA government has allocated $11.5 million in the 2026–27 state budget for security and passed the Land Forces (Special Powers) Bill 2026, giving WA Police additional powers including checkpoints, stop-and-search and exclusion zones across a significant section of Perth's CBD from 1–10 October.",
+    locations: [
+        { city: "Perth", state: "WA", lat: PER["Yagan Square"][0], lng: PER["Yagan Square"][1], name: "Yagan Square" },
+    ],
+    sources: [
+        { name: "Green Left — Protest Landforces 2026", url: "https://www.greenleft.org.au/2026-10/event/protest-landforces-2026" },
+        { name: "Red Flag — Protest called against October arms fair in Perth", url: "https://redflag.org.au/article/protest-called-against-october-arms-fair-in-perth/" },
+        { name: "Socialism.com — Protest Land Forces 2026: Money for people and the planet", url: "https://socialism.com/event/protest-land-forces-2026-money-for-people-and-the-planet-not-weapons-and-war-no-warmongers-in-boorloo/" },
+        { name: "AllEvents — PROTEST LAND FORCES 2026", url: "https://allevents.in/perth/protest-land-forces-2026/200030608505531" },
+        { name: "Defence Connect — WA passes special police powers to protect Land Forces 2026", url: "https://www.defenceconnect.com.au/industry/18877-western-australia-passes-special-police-powers-to-protect-land-forces-2026" },
+        { name: "WA Government — Temporary Special Powers in Place for Land Forces 2026", url: "https://www.wa.gov.au/government/announcements/temporary-special-powers-place-land-forces-2026" }
+    ],
+    tags: ["defence", "anti-war", "protest", "supporters welcome"]
+},
+{
+    id: 6013,
+    actionId: "save-melton-aged-care",
+    title: "Save Melton Aged Care Rally",
+    union: "ASU",
+    industry: "Aged Care / Local Government",
+    type: "protest",
+    startDate: "2026-09-28",
+    endDate: "2026-09-28",
+    workers: 80,
+    state: "VIC",
+    description: "Rally of workers and community to protest against Melton City Council's decision to exit aged care services. Council voted in a confidential session on 22 June 2026 to cease delivering aged care services under the federal government's new Support at Home program, effective 30 June 2027. Workers and the ASU were not notified of the decision until more than three weeks later. Approximately 80 dedicated workers are at risk — many of whom are women and part-time employees. The ASU has taken the matter to the Fair Work Commission, alleging Council breached its industrial obligation to consult with affected workers. The FWC has since ordered Council to produce documents which appear to indicate a catastrophic governance failure: the report provided to Councillors before the vote was misleading and contained information Council knew to be incorrect. Aged Care Minister Sam Rae wrote to Council prior to the vote advising that the concerns used to justify the exit were being addressed by the federal government, and has since confirmed an extension of the Commonwealth Home Support Program.  Petition at megaphone.org.au/petitions/save-melton-aged-care.",
+    locations: [
+        { city: "Melton", state: "VIC", lat: VIC["Melton Civic Centre"][0], lng: VIC["Melton Civic Centre"][1], name: "Melton Civic Centre, 232 High St, Melton" }
+    ],
+    sources: [
+        { name: "Green Left — Save Melton Aged Care Rally", url: "https://www.greenleft.org.au/2026-09/event/save-melton-aged-care-rally" },
+        { name: "ASU Vic/Tas — FWC Orders Melton to Produce Documents Which Appear to Indicate a Catastrophic Governance Failure over Aged Care Exit", url: "https://www.asuvictas.com.au/VICTAS/News/FWC_Orders_Melton_to_Produce_Documents_Which_Appear_to_Indicate_a_Catastrophic_Governance_Failure_ov.aspx" },
+        { name: "ASU Vic/Tas — Melton's Disgraceful Decision to Exit Aged Care – Fair Work Dispute Update", url: "https://www.asuvictas.com.au/VICTAS/News/Melton%E2%80%99s_Disgraceful_Decision_to_Exit_Aged_Care.aspx" },
+        { name: "Melton City Council — 2026 Council Meetings Dates", url: "https://www.linkedin.com/company/meltoncitycouncil" }
+    ],
+    tags: ["aged-care", "local-government", ]
+}
 ];
 
 // Export globally
 window.STRIKE_DATA = STRIKE_DATA;
 window.CITY_COORDS = CITY_COORDS;
-window.PUBLIC_HOSPITALS = PUBLIC_HOSPITALS;
+
+// Make variables accessible to the CSV utility
+Object.assign(window, {
+  CITY_COORDS, COMPANY,
+  MELB, BRIS, PER, SYD, MINE, REF, CAN,
+  SA, WA, QLD, TAS, VIC, PORT, UNI, POWER, HOSP,
+  RAFFWUBOOKSTORE_LOCATIONS, TWU_TRANSPORT_STRIKE_LOCATIONS,
+  STRIKE_DATA
+});
