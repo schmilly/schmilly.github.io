@@ -5600,7 +5600,7 @@ const STRIKE_DATA = [
     {
         id: 8710,
         actionId: "certis-twu",
-        title: "Certis Security Workers at Sydney Airport Commence Action",
+        title: " Sydney Airport Security Workers Commence Action",
         union: "TWU NSW",
         industry: "Aviation / Security",
         type: "stoppage",
