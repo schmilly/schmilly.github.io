@@ -5485,7 +5485,7 @@ const STRIKE_DATA = [
     {
         id: 8703,
         actionId: "qantas-twu",
-        title: "TWU Industrial Action Set to Commence at Qantas Subsidiaries",
+        title: "Industrial Action to Commence at Qantas Subsidiaries",
         union: "TWU",
         industry: "Aviation",
         type: "stoppage",
@@ -5554,7 +5554,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Nurses and midwives in WA are furious that the Cook government has delayed the next major stage of the rollout of nurse/patient ratios in WA. The next stage was due to happen in September and was meant to extend ratios to remaining metropolitan emergency departments and many specialist wards. No revised timeline has been provided. ANMF WA Secretary Romina Raschilla said 'Our nurses and midwives are really quite angry, and they are calling for industrial action. They want to strike.' WA's public sector nurses and midwives last went on strike in 2022 in their EBA campaign that included a demand for ratios.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Various public hospitals" }
+            { city: "Perth", state: "WA", lat: PER["ANMF WA"][0], lng: PER["ANMF WA"][1], name: "ANMF WA Office" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5600,7 +5600,7 @@ const STRIKE_DATA = [
     {
         id: 8710,
         actionId: "certis-twu",
-        title: "Certis Security Workers at Sydney Airport to Commence Industrial Action",
+        title: "Certis Security Workers at Sydney Airport Commence Action",
         union: "TWU NSW",
         industry: "Aviation / Security",
         type: "stoppage",
@@ -5638,7 +5638,7 @@ const STRIKE_DATA = [
     {
         id: 8712,
         actionId: "usyd-nteu",
-        title: "University of Sydney NTEU Members to Vote on Further Stop Work Action",
+        title: "University of Sydney Workers to Vote on Further Work Stoppages",
         union: "NTEU",
         industry: "Education",
         type: "ballot",
@@ -5657,7 +5657,7 @@ const STRIKE_DATA = [
     {
         id: 8713,
         actionId: "sydney-water-professionals-australia",
-        title: "Sydney Water Professionals Australia Members Endorse Protected Action Ballot",
+        title: "Sydney Water Workers Endorse Protected Action Ballot",
         union: "Professionals Australia",
         industry: "Utilities",
         type: "ballotpass",
@@ -5714,7 +5714,7 @@ const STRIKE_DATA = [
     {
         id: 8716,
         actionId: "aeu-vic-teachers",
-        title: "Victorian Teachers Endorse New Agreement in Whole-Workforce Ballot",
+        title: "Victorian Teachers Endorse New Agreement",
         union: "AEU Victoria",
         industry: "Education",
         type: "resolved",
@@ -6901,20 +6901,41 @@ const STRIKE_DATA = [
         title: "WA Public Sector Health Workers Reject Fourth Offer",
         union: "HSU WA",
         industry: "Healthcare",
-        type: "strike",
-        startDate: "2025-01-22",
-        endDate: "",
+        type: "update",
+        startDate: "2024-04-1",
+        endDate: "2025-01-22",
         workers: null,
         state: "WA",
         description: "77% of HSU WA members rejected the fourth offer from the WA government. The union relaunched the Your Voice In Health survey. Workers are steadfast in demanding improved wages and conditions.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "WA public health services" }
+            { city: "Perth", state: "WA", lat: PER["HSU WA"][0], lng: PER["HSU WA"][1], name: "HSU WA Office" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
         ],
         tags: ["labour union","healthcare", "hsu"]
     },
+    {
+    id: 6015,
+    actionId: "hsu-wa-public-health-2025",
+    title: "HSUWA Public Sector Workers Accept Offer After 18-Month Campaign",
+    union: "HSUWA",
+    industry: "Healthcare / Public Sector",
+    type: "resolved",
+    startDate: "2025-01-22",
+    endDate: "2025-02-11",
+    workers: 22000,
+    state: "WA",
+    description: "HSUWA members voted 90% yes to accept the Fifth Offer for the Public Sector Union Agreement 2024, with a record number of votes received. The 18-month campaign pushed the State Government to remove the pay cap from its wages policy and improved the offer five times in response to members' claims. The agreement delivers 5% in Year 1, 4% in Year 2 and 3.75% in Year 3, along with improved rostering, long service leave access after 7 years, increased night shift penalties, a $1,200 lead apron allowance for MITs, and commitments to modern career pathways for allied health and health science professionals.",
+    locations: [
+            { city: "Perth", state: "WA", lat: PER["HSU WA"][0], lng: PER["HSU WA"][1], name: "HSU WA Office" }
+    ],
+    sources: [
+        { name: "HSUWA — Fifth Offer Accepted", url: "https://hsuwa.com.au/news/hsuwa-fifth-offer-accepted/" },
+        { name: "HSUWA — Union Agreement 2024 Summary of Improvements", url: "https://hsuwa.com.au/wp-content/uploads/2025/03/2024-HSUWA-Union-Agreement-Summary.pdf" }
+    ],
+    tags: ["labour union","healthcare", "public-sector"]
+},
     {
         id: 10007,
         actionId: "ks-fuels-twu-2025",
@@ -7082,7 +7103,7 @@ const STRIKE_DATA = [
         title: "Booksellers Strike at Harry Hartog and Berkelouw",
         union: "RAFFWU",
         industry: "Retail / Books",
-        type: "stoppage",
+        type: "update",
         startDate: "2025-01-31",
         endDate: "",
         workers: null,
@@ -7094,6 +7115,25 @@ const STRIKE_DATA = [
         ],
         tags: ["labour union","retail", "raffwu"]
     },
+    {
+    id: 6016,
+    actionId: "raffwu-booksellers-2025",
+    title: "RAFFWU Takes Strike-Breaking Bookshop Owners to Court",
+    union: "RAFFWU",
+    industry: "Retail",
+    type: "update",
+    startDate: "2025-12-13",
+    endDate: "2026-02-20",
+    workers: 100,
+    state: "NSW",
+    description: "RAFFWU has launched legal action against Berkelouw Books and Harry Hartog after management allegedly stripped shifts from more than 100 workers during protected industrial action in December 2025. ",
+    locations: RAFFWUBOOKSTORE_LOCATIONS,
+    sources: [
+        { name: "Green Left — RAFFWU takes strike-breaking bookshop owners to court", url: "https://www.greenleft.org.au/2026/1448/news/raffwu-takes-strike-breaking-bookshop-owners-court" },
+        { name: "RAFFWU — MR RAFFWU TAKES HARRY HARTOG TO COURT", url: "https://raffwu.org.au/mr-raffwu-takes-harryhartog-to-court/" }
+    ],
+    tags: ["retail", "books", "strike-breaking"]
+},
     {
         id: 10016,
         actionId: "anmf-sa-nurses-2025",
@@ -7183,7 +7223,7 @@ const STRIKE_DATA = [
         industry: "Hospitality / Gaming",
         type: "resolved",
         startDate: "2025-02-04",
-        endDate: "",
+        endDate: "2025-02-04",
         workers: null,
         state: "NSW",
         description: "UWU announced a new EBA at Crown Casino in Sydney after workers took industrial action including their first ever stoppage and work bans. The new agreement includes wage increases of 3.25% from 1 July 2025; 3.25% in July 2026 and 3% in July 2027. Workers had rejected an earlier offer.",

@@ -119,8 +119,6 @@ const TYPE_INFO = {
 
     // ─── Initialization ───
     function init() {
-        injectStyles();
-
         const defaultDateFrom = new Date();
         defaultDateFrom.setDate(defaultDateFrom.getDate() - STALE_DAYS);
         activeDateFrom = toDateInputValue(defaultDateFrom);
@@ -196,73 +194,6 @@ const TYPE_INFO = {
         if (!sidebarToggleBtn) return;
         const expanded = !sidebarEl.classList.contains('collapsed');
         sidebarToggleBtn.setAttribute('aria-expanded', String(expanded));
-    }
-
-    // ─── Injected CSS for the stale badge / notice ───
-    function injectStyles() {
-        if (document.getElementById('stale-styles')) return;
-        const style = document.createElement('style');
-        style.id = 'stale-styles';
-        style.textContent = `
-            .stale-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: .35em;
-                padding: .1em .55em;
-                font-size: 11px;
-                font-weight: 600;
-                line-height: 1.6;
-                color: #7a4a00;
-                background: #fff3d6;
-                border: 1px solid #e6c069;
-                border-radius: 999px;
-                cursor: pointer;
-                vertical-align: middle;
-                font-family: inherit;
-            }
-            .stale-badge:hover { background: #ffe9b3; }
-            .stale-badge[aria-expanded="true"] {
-                background: #ffe1a0;
-                border-color: #d9a83c;
-            }
-            .stale-badge:focus-visible {
-                outline: 2px solid #7a4a00;
-                outline-offset: 2px;
-            }
-            .stale-notice {
-                margin-top: 6px;
-                padding: 6px 10px;
-                font-size: 11.5px;
-                color: #6b4a00;
-                background: #fffaf0;
-                border-left: 3px solid #e6c069;
-                border-radius: 4px;
-                animation: stale-in .2s ease-out;
-            }
-            .stale-notice[hidden] { display: none; }
-            @keyframes stale-in {
-                from { opacity: 0; transform: translateY(-.25rem); }
-                to   { opacity: 1; transform: none; }
-            }
-            @media (prefers-reduced-motion: reduce) {
-                .stale-notice { animation: none; }
-            }
-            @media (prefers-color-scheme: dark) {
-                .stale-badge {
-                    color: #ffd98a;
-                    background: #3a2d10;
-                    border-color: #7a5c1e;
-                }
-                .stale-badge:hover,
-                .stale-badge[aria-expanded="true"] { background: #4a3a15; }
-                .stale-notice {
-                    color: #ffd98a;
-                    background: #2a2110;
-                    border-left-color: #7a5c1e;
-                }
-            }
-        `;
-        document.head.appendChild(style);
     }
 
     // ─── Group entries by actionId ───
@@ -921,10 +852,14 @@ if (activeStateFilter !== 'all') {
     }
 
     function updateEventList() {
-        eventListEl.innerHTML = '';
+        const fragment = document.createDocumentFragment();
 
         if (filteredActions.length === 0) {
-            eventListEl.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-quaternary);">No events match your filters.</div>';
+            const emptyState = document.createElement('div');
+            emptyState.className = 'event-list-empty';
+            emptyState.textContent = 'No events match your filters.';
+            fragment.appendChild(emptyState);
+            eventListEl.replaceChildren(fragment);
             return;
         }
 
@@ -940,9 +875,14 @@ if (activeStateFilter !== 'all') {
             const upcomingBadge = getUpcomingBadgeHtml(latest);   //
 
             item.innerHTML = `
-            <div style="flex-shrink:0;">${getEmojiHtml(latest.type, 18)}</div> 
-            <div class="event-info">
-            <div class="event-title">${escapeHtml(latest.title)}</div>
+            <div class="event-heading">
+            <div class="event-type-icon">${getEmojiHtml(latest.type, 18)}</div>
+            <button type="button" class="event-title">${escapeHtml(latest.title)}</button>
+            <div class="event-date">
+                ${formatDate(latest.startDate)}
+                <a class="event-link" href="${actionUrl(action.actionId)}" aria-label="Open link for ${escapeHtml(latest.title)}" title="Copy or share this dispute link">#</a>
+            </div>
+            </div>
             <div class="event-meta">
             <span class="meta-tag">${getLabelHTML(latest.type, 10)}</span>
             ${upcomingBadge}
@@ -953,35 +893,12 @@ if (activeStateFilter !== 'all') {
             ${staleBadge}
             </div>
             ${staleNotice}
-            </div>
-            <div class="event-date">
-                ${formatDate(latest.startDate)}
-                <a class="event-link" href="${actionUrl(action.actionId)}" aria-label="Open link for ${escapeHtml(latest.title)}" title="Copy or share this dispute link">#</a>
-            </div>
             `;
 
-            item.addEventListener('click', () => {
-                selectAction(action.actionId);
-            });
-
-            item.querySelector('.event-link').addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-
-            // Wire up the stale badge toggle so it doesn't open the detail modal.
-            const staleBtn = item.querySelector('.stale-badge');
-            if (staleBtn) {
-                staleBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const notice = item.querySelector('.stale-notice');
-                    const isOpen = staleBtn.getAttribute('aria-expanded') === 'true';
-                    staleBtn.setAttribute('aria-expanded', String(!isOpen));
-                    if (notice) notice.hidden = isOpen;
-                });
-            }
-
-            eventListEl.appendChild(item);
+            fragment.appendChild(item);
         });
+
+        eventListEl.replaceChildren(fragment);
     }
 
     function updateTicker() {
@@ -1210,6 +1127,23 @@ if (activeStateFilter !== 'all') {
     // ─── UI Event Binding ───
     function bindUIEvents() {
         window.addEventListener('hashchange', selectActionFromHash);
+
+        eventListEl.addEventListener('click', (event) => {
+            const item = event.target.closest('.event-item');
+            if (!item || !eventListEl.contains(item)) return;
+
+            const staleBtn = event.target.closest('.stale-badge');
+            if (staleBtn) {
+                const notice = item.querySelector('.stale-notice');
+                const isOpen = staleBtn.getAttribute('aria-expanded') === 'true';
+                staleBtn.setAttribute('aria-expanded', String(!isOpen));
+                if (notice) notice.hidden = isOpen;
+                return;
+            }
+
+            if (event.target.closest('.event-link')) return;
+            selectAction(item.dataset.actionId);
+        });
 
         if (tagToggleBtn) {
             tagToggleBtn.addEventListener('click', () => {
