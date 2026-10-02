@@ -1576,7 +1576,7 @@ details[open] .chevron {
   /* Upcoming-event chip in the sidebar list */
 .meta-tag.upcoming {
     background: rgba(52, 152, 219, 0.18);
-    color: #3498db;
+    color: #ffef03;
     border: 1px solid rgba(52, 152, 219, 0.45);
     font-weight: 600;
 }

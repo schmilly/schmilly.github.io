@@ -5382,9 +5382,9 @@ const STRIKE_DATA = [
         endDate: "",
         workers: null,
         state: "VIC",
-        description: "IEU press release reveals conditions and changes offered to the IEU from the Victorian Catholic Education Authority (VCEU)",
+        description: "IEU press release reveals conditions and changes offered to the IEU members working in Catholic schools across Victoria from the Victorian Catholic Education Authority (VCEU)",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Catholic schools across Victoria" }
+            VICLoc["IEU HQ"],
         ],
         sources: [
             { name: "IEU Victoria Tasmania - VCEA's latest offer unpacked", url: "https://www.ieuvictas.org.au/news/vceaoffer" }
@@ -6206,7 +6206,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "The IEU in Victoria is pursuing a Single Interest Application to bargain across the whole Catholic sector in Victoria. While awaiting a Fair Work Commission ruling, the union launched a term of action. Catholic teachers across the state held before or after school rallies on 29 May and will wear IEU t-shirts on Fridays going forward. The IEU has put forward 113 claims, of which 100 have been rejected outright. Members are fighting for decent pay, improved conditions and union rights.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Catholic schools across Victoria" }
+        VICLoc["IEU HQ"],
     ],
     sources: [
         { name: "Disputes Report - 3 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }

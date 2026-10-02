@@ -1,6 +1,11 @@
 //Stored here a defined locations and co-ordinates for use in data.js
 //Actual 
 
+const VICLoc = {
+    "IEU HQ": {city: "Melbourne", state: "VIC", lat:-37.82909, lng: 144.9583, name:"IEU Victoria HQ"},
+}
+
+
 const CITY_COORDS = {
     "Sydney": [-33.8688, 151.2093],
     "Melbourne": [-37.8136, 144.9631],
