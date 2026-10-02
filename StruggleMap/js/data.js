@@ -8870,6 +8870,38 @@ const STRIKE_DATA = [
         { name: "The Guardian (CPA) — Renters win as union fights off 11% rent increase", url: "https://cpa.org.au/renters-win-as-union-fights-off-11-rent-increase/" }
     ],
     tags: ["tenant union", "renters", "win","collective-bargaining", "victoria"]
+},
+{
+    id: 6017,
+    actionId: "global-day-gaza-2026",
+    title: "Global Day for Gaza & Palestine",
+    union: "ETU",
+    industry: "N/A",
+    type: "protest",
+    startDate: "2026-10-11",
+    endDate: "2026-10-11",
+    workers: null,
+    state: "",
+    description: "Nationwide rallies on Sunday 11 October marking three years since the start of Israel's genocide in Gaza. Demands include sanctions on Israel, an end to the two-way arms trade, and support for Red Lines laws in Federal Parliament. The Electrical Trades Union (ETU) has endorsed the action, with branches and other unions participating in solidarity.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "King George Square, Magan-djin/Brisbane" },
+        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Hyde Park North, Gadigal/Sydney" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "State Library, Naarm/Melbourne" },
+        { city: "Adelaide", state: "SA", lat: ADL["Parliament"][0], lng: ADL["Parliament"][1], name: "Parliament House North Terrace, Kaurna Yerta/Adelaide" },
+        { city: "Perth", state: "WA", lat: PER["Forrest Place"][0], lng: PER["Forrest Place"][1], name: "Forrest Place, Boorloo/Perth" },
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Garema Place, Canberra" },
+        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "1 Davey St, Nipaluna/Hobart" },
+        { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Civic Park, Muloobinba/Newcastle" },
+        { city: "Cairns", state: "QLD", lat: CITY_COORDS["Cairns"][0], lng: CITY_COORDS["Cairns"][1], name: "The Esplanade North, Gimuy/Cairns" }
+    ],
+    sources: [
+        { name: "Facebook — Justice for Palestine Magan-djin", url: "https://www.facebook.com/justiceforpalestinebrisbane/posts/global-day-for-gaza-palestine-3-years-of-genocide-resistance-sunday-11th-october/1482872460552617/" },
+        { name: "Green Left — Global Day for Gaza: 3 Years of Genocide and Resistance – Magan-djin", url: "https://www.greenleft.org.au/2026-10/event/global-day-gaza-3-years-genocide-and-resistance-magan-djin" },
+        { name: "Green Left — Global Day for Gaza: 3 Years of Genocide and Resistance – Gadigal Country", url: "https://www.greenleft.org.au/2026-10/event/global-day-gaza-3-years-genocide-and-resistance-gadigal-country" },
+        { name: "APAN — Global Day for Gaza", url: "https://apan.org.au/event/global-day-for-gaza/" },
+        { name: "CPA — Australian unions support Palestine", url: "https://cpa.org.au/australian-unions-support-palestine/" }
+    ],
+    tags: ["palestine", "solidarity", "rally", "global-day", "etu"]
 }
 ];
 
