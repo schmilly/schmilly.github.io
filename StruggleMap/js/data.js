@@ -5638,7 +5638,7 @@ const STRIKE_DATA = [
     {
         id: 8712,
         actionId: "usyd-nteu",
-        title: "University of Sydney Workers to Vote on Further Work Stoppages",
+        title: "University of Sydney Workers Vote on Work Stoppages",
         union: "NTEU",
         industry: "Education",
         type: "ballot",
