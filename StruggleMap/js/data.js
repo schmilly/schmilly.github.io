@@ -8904,27 +8904,25 @@ const STRIKE_DATA = [
     tags: ["palestine", "solidarity", "rally"]
 },
 {
-    id: 6018,
-    actionId: "bimberi-youth-workers-strike",
-    title: "Bimberi Youth Justice Workers Strike Over Systemic Underpayment",
-    union: "CPSU ACT",
-    industry: "Youth Justice / Public Sector",
-    type: "stoppage",
-    startDate: "2026-09-29",
-    endDate: "2026-09-29",
+    id: 6019,
+    actionId: "downer-wheatstone-bwi-vote",
+    title: "BWI and Wheatstone Downer Workers to vote on agreement; ETU endorses 'No' Campaign",
+    union: "ETU / PPTEU",
+    industry: "Oil & Gas",
+    type: "ballot",
+    startDate: "2026-10-03",
+    endDate: "2026-10-05",
     workers: null,
-    state: "ACT",
-    description: "Youth workers at Bimberi Youth Justice Centre walked off the job for one hour on 29 September and will take ongoing industrial action until the ACT Government engages in meaningful negotiations over pay and conditions. The CPSU says workers have faced severe and systemic underpayment for years, losing hours of pay each week for essential security checks and equipment checks required before and after shifts. Some workers have accrued more than 480 unpaid hours, equivalent to over 12 weeks of full-time work. Members rejected as inadequate a government offer to pay for part of the security check time. The CPSU has also lodged paperwork with the Fair Work Commission for members at the Alexander Maconochie Centre to vote on protected industrial action.",
+    state: "WA",
+    description: "ETU claims Downer is putting essentially the same rejected agreement back to workers at the BWI and Wheatstone facilities for a second vote, with only minor changes: an extra 0.5% on the first wage increase (to 5.5%) and HVAC moved from Level 5 to Level 6. Workers have already rejected the previous offer and commenced protected industrial action, fighting for industry-standard rates and parity. Downer has refused to release the full results of the last ballot, and the matter is heading to an FWC hearing in November over keeping those results confidential. The company has openly stated it wants to pay employees 14% less than its nearest competitor. Ballot opens 3rd of October, and closes on the 5th at 5pm",
     locations: [
-       CANLoc["Bimberi Youth Justice Centre"]
+        WALoc["Wheatstone LNG Facility"],
+        WALoc["Barrow Island BWI"]
     ],
     sources: [
-        { name: "CPSU — Bimberi youth workers strike", url: "https://www.cpsu.org.au/CPSU/Content/Media_releases/Bimberi_youth_workers_strike_.aspx" },
-        { name: "Canberra Times — Inside Bimberi youth jail: staff fed up with assaults, working 'for free'", url: "https://www.inkl.com/news/inside-bimberi-youth-jail-staff-fed-up-with-assaults-working-for-free" },
-        { name: "Canberra Times — Union says these ACT govt staff have suffered 'severe and systemic' underpayments", url: "https://www.canberratimes.com.au/story/9117276/bimberi-youth-detention-centre-staff-systemically-underpaid-cpsu-says/" },
-        { name: "Region Canberra — CPSU members vote to strike, Housing ACT first service impacted", url: "https://region.com.au/cpsu-members-vote-to-strike-housing-act-first-service-impacted/964141/" }
+        { name: "Facebook — ETU/PPTEU post on Downer BWI & Wheatstone vote", url: "https://www.facebook.com/share/p/1GayxqS3Wn/" }
     ],
-    tags: ["youth-justice", "public-sector", "underpayment"]
+    tags: ["labour union", "oil-gas", "facilities-maintenance", "ballot", "downer"]
 }
 ];
 
