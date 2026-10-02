@@ -10,6 +10,11 @@ const CANLoc = {
     "Bimberi Youth Justice Centre": {city: "Canberra", state: "ACT", lat: -35.222441967085516, lng: 149.1558066409663, name: "Bimberi Youth Justice Centre"},
 }
 
+const WALoc = {
+    "Wheatstone LNG Facility": {city: "Onslow", state: "WA", lat: -21.6978845, lng: 115.001141, name: "Wheatstone LNG Facility, Ashburton North, Onslow WA 6710"},
+    "Barrow Island BWI": {city: "Barrow Island", state: "WA", lat: -20.79785, lng: 115.4063, name: "Barrow Island (BWI) Facilities, WA 6712"},
+    "Downer WA Office": {city: "High Wycombe", state: "WA", lat: -31.9453, lng: 116.0011, name: "Downer WA Office, 959 Abernethy Rd, High Wycombe WA 6057"},
+}
 
 const CITY_COORDS = {
     "Sydney": [-33.8688, 151.2093],
