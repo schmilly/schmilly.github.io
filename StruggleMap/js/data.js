@@ -8875,7 +8875,7 @@ const STRIKE_DATA = [
     id: 6017,
     actionId: "global-day-gaza-2026",
     title: "Global Day for Gaza & Palestine",
-    union: "ETU",
+    union: "ETU and others",
     industry: "N/A",
     type: "protest",
     startDate: "2026-10-11",
