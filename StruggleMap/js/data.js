@@ -8902,6 +8902,29 @@ const STRIKE_DATA = [
         { name: "CPA — Australian unions support Palestine", url: "https://cpa.org.au/australian-unions-support-palestine/" }
     ],
     tags: ["palestine", "solidarity", "rally"]
+},
+{
+    id: 6018,
+    actionId: "bimberi-youth-workers-strike",
+    title: "Bimberi Youth Justice Workers Strike Over Systemic Underpayment",
+    union: "CPSU ACT",
+    industry: "Youth Justice / Public Sector",
+    type: "stoppage",
+    startDate: "2026-09-29",
+    endDate: "2026-09-29",
+    workers: null,
+    state: "ACT",
+    description: "Youth workers at Bimberi Youth Justice Centre walked off the job for one hour on 29 September and will take ongoing industrial action until the ACT Government engages in meaningful negotiations over pay and conditions. The CPSU says workers have faced severe and systemic underpayment for years, losing hours of pay each week for essential security checks and equipment checks required before and after shifts. Some workers have accrued more than 480 unpaid hours, equivalent to over 12 weeks of full-time work. Members rejected as inadequate a government offer to pay for part of the security check time. The CPSU has also lodged paperwork with the Fair Work Commission for members at the Alexander Maconochie Centre to vote on protected industrial action.",
+    locations: [
+       CANLoc["Bimberi Youth Justice Centre"]
+    ],
+    sources: [
+        { name: "CPSU — Bimberi youth workers strike", url: "https://www.cpsu.org.au/CPSU/Content/Media_releases/Bimberi_youth_workers_strike_.aspx" },
+        { name: "Canberra Times — Inside Bimberi youth jail: staff fed up with assaults, working 'for free'", url: "https://www.inkl.com/news/inside-bimberi-youth-jail-staff-fed-up-with-assaults-working-for-free" },
+        { name: "Canberra Times — Union says these ACT govt staff have suffered 'severe and systemic' underpayments", url: "https://www.canberratimes.com.au/story/9117276/bimberi-youth-detention-centre-staff-systemically-underpaid-cpsu-says/" },
+        { name: "Region Canberra — CPSU members vote to strike, Housing ACT first service impacted", url: "https://region.com.au/cpsu-members-vote-to-strike-housing-act-first-service-impacted/964141/" }
+    ],
+    tags: ["youth-justice", "public-sector", "underpayment"]
 }
 ];
 

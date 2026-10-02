@@ -5,6 +5,11 @@ const VICLoc = {
     "IEU HQ": {city: "Melbourne", state: "VIC", lat:-37.82909, lng: 144.9583, name:"IEU Victoria HQ"},
 }
 
+const CANLoc = {
+    "Alexander Maconochie Centre": {city: "Canberra", state: "ACT", lat: -35.37000836961026, lng: 149.17070135129882, name: "Alexander Maconochie Centre"},
+    "Bimberi Youth Justice Centre": {city: "Canberra", state: "ACT", lat: -35.222441967085516, lng: 149.1558066409663, name: "Bimberi Youth Justice Centre"},
+}
+
 
 const CITY_COORDS = {
     "Sydney": [-33.8688, 151.2093],
