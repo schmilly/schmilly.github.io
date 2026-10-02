@@ -8901,7 +8901,7 @@ const STRIKE_DATA = [
         { name: "APAN — Global Day for Gaza", url: "https://apan.org.au/event/global-day-for-gaza/" },
         { name: "CPA — Australian unions support Palestine", url: "https://cpa.org.au/australian-unions-support-palestine/" }
     ],
-    tags: ["palestine", "solidarity", "rally", "global-day", "etu"]
+    tags: ["palestine", "solidarity", "rally"]
 }
 ];
 
