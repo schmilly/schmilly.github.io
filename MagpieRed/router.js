@@ -130,8 +130,8 @@ const pages = {
       <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-headset" style="color: #d93f4c;"></i> Support</h1>
       <p style="font-size: 1.2rem; color: #3f3a53; margin-bottom: 1.5rem;">We're here to help. Reach out anytime.</p>
       <div style="background: white; border-radius: 32px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #f0ebf5;">
-        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> (+61) 0487 178 768</p>
-        <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> support@magpie.red</p>
+        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> <a href="tel:+61487178768">(+61) 0487 178 768</a></p>
+        <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> <a href="mailto:schmilly@proton.me">schmilly@proton.me</a></p>
 
       </div>
     </section>
@@ -143,8 +143,8 @@ const pages = {
       <p style="font-size: 1.2rem; color: #3f3a53; margin-bottom: 1.5rem;">Let's talk about your IT needs.</p>
       <div style="background: white; border-radius: 32px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.02); border: 1px solid #f0ebf5;">
         <p><i class="fas fa-map-pin" style="color: #d93f4c; width: 2rem;"></i> Australia wide</p>
-        <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> hello@magpie.red</p>
-        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> (+61) 0487 178 768</p>
+        <p><i class="fas fa-envelope" style="color: #d93f4c; width: 2rem;"></i> <a href="mailto:schmilly@proton.me">schmilly@proton.me</a></p>
+        <p><i class="fas fa-phone" style="color: #d93f4c; width: 2rem;"></i> <a href="tel:+61487178768">(+61) 0487 178 768</a></p>
       </div>
     </section>
   `

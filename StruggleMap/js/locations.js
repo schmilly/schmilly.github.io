@@ -1,5 +1,5 @@
-//Stored here a defined locations and co-ordinates for use in data.js
-//Actual 
+// Stored here are defined locations and co-ordinates for use in data.js
+// Actual 
 
 const VICLoc = {
     "IEU HQ": {city: "Melbourne", state: "VIC", lat:-37.82909, lng: 144.9583, name:"IEU Victoria HQ"},
@@ -91,7 +91,11 @@ const COMPANY = {
     "NRMA": [-33.8459, 151.0699],
     "Stowe": [-33.8119, 151.03241],
     "Bega Dairy": [-36.6661, 149.8231],
-    "Bridgestone": [-34.9406, 138.6170],
+    "SCT Logistics":[-31.96318, 115.9876],
+    "Bridgestone": {
+        "HQ": [-34.9406, 138.6170],
+        "Kewdale": [-31.979755860247437, 115.95795684999182], 
+    },
     "Ceva Logistics": [-37.8064, 144.7371],
     "Valmet": {
         "NSW": [-33.7650, 151.2755]
@@ -166,7 +170,7 @@ const PER = {
     "Yagan Square": [-31.95047140130995, 115.85833823031554],
     "ANMF WA": [-31.949586251782964, 115.86587675582653],
     "HSU WA": [-31.94611621466486, 115.87272625396254],
-    "Forrest Place": [-31.95206567826836, 115.85939905898098]
+    "Forrest Place": [-31.95206567826836, 115.85939905898098],
 }
 
 const SYD = {
@@ -497,3 +501,203 @@ const HOSP = {
 const LIB = {
     "WA State":[-31.9490, 115.8605],
 }//Libraries
+
+
+// Additional specific locations added for data.js
+const SPECIFIC = {
+    // VIC
+    "Department of Education": { city: "Melbourne", state: "VIC", lat: -37.8150, lng: 144.9743, name: "Department of Education" },
+    "Victorian Parliament": { city: "Melbourne", state: "VIC", lat: -37.8110, lng: 144.9730, name: "Parliament House" },
+    "Trades Hall": { city: "Melbourne", state: "VIC", lat: -37.8065, lng: 144.9663, name: "Trades Hall" },
+    "Melbourne Town Hall": { city: "Melbourne", state: "VIC", lat: -37.8161, lng: 144.9671, name: "Melbourne Town Hall" },
+    "Coburg Town Hall": { city: "Coburg", state: "VIC", lat: -37.7430, lng: 144.9660, name: "Coburg Town Hall" },
+    "Hadfield Depot": { city: "Hadfield", state: "VIC", lat: -37.7430, lng: 144.9660, name: "Hadfield Depot" },
+    "Merri-bek Council": { city: "Coburg", state: "VIC", lat: -37.7430, lng: 144.9660, name: "Merri-bek Council" },
+    "Hume City Council": { city: "Broadmeadows", state: "VIC", lat: -37.6820, lng: 144.9183, name: "Hume City Council" },
+    "Greater Dandenong Council": { city: "Dandenong", state: "VIC", lat: -37.9830, lng: 145.2150, name: "Greater Dandenong Council" },
+    "Yarra City Council": { city: "Richmond", state: "VIC", lat: -37.8000, lng: 144.9800, name: "Yarra City Council" },
+    "Maribyrnong Council": { city: "Footscray", state: "VIC", lat: -37.7800, lng: 144.9000, name: "Maribyrnong Council" },
+    "Darebin Council": { city: "Preston", state: "VIC", lat: -37.7500, lng: 145.0000, name: "Darebin Council" },
+    "Hobsons Bay Council": { city: "Altona", state: "VIC", lat: -37.8600, lng: 144.8800, name: "Hobsons Bay Council" },
+    "Melbourne City Council": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Melbourne City Council" },
+    "Bendigo Hospital": { city: "Bendigo", state: "VIC", lat: -36.7580, lng: 144.2803, name: "Bendigo Hospital" },
+    "Ballarat Base Hospital": { city: "Ballarat", state: "VIC", lat: -37.5622, lng: 143.8503, name: "Ballarat Base Hospital" },
+    "Footscray Hospital": { city: "Footscray", state: "VIC", lat: -37.7965, lng: 144.8990, name: "Footscray Hospital" },
+    "Northern Health": { city: "Epping", state: "VIC", lat: -37.6760, lng: 144.9300, name: "Northern Health" },
+    "St Vincent's Hospital Melbourne": { city: "Fitzroy", state: "VIC", lat: -37.8090, lng: 144.9780, name: "St Vincent's Hospital Melbourne" },
+    "Peter MacCallum Cancer Centre": { city: "Melbourne", state: "VIC", lat: -37.8003, lng: 144.9567, name: "Peter MacCallum Cancer Centre" },
+    "Royal Melbourne Hospital": { city: "Parkville", state: "VIC", lat: -37.7990, lng: 144.9560, name: "Royal Melbourne Hospital" },
+    "Royal Women's Hospital": { city: "Parkville", state: "VIC", lat: -37.7980, lng: 144.9560, name: "Royal Women's Hospital" },
+    "Royal Children's Hospital": { city: "Parkville", state: "VIC", lat: -37.7920, lng: 144.9500, name: "Royal Children's Hospital" },
+    "Monash Medical Centre": { city: "Clayton", state: "VIC", lat: -37.9080, lng: 145.1300, name: "Monash Medical Centre" },
+    "Eastern Health Box Hill": { city: "Box Hill", state: "VIC", lat: -37.8180, lng: 145.1250, name: "Eastern Health Box Hill" },
+    "The Alfred": { city: "Melbourne", state: "VIC", lat: -37.8460, lng: 144.9810, name: "The Alfred" },
+    "Austin Hospital": { city: "Heidelberg", state: "VIC", lat: -37.7570, lng: 145.0570, name: "Austin Hospital" },
+    "Olivia Newton John Cancer Wellness Centre": { city: "Heidelberg", state: "VIC", lat: -37.7580, lng: 145.0670, name: "Olivia Newton John Cancer Wellness Centre" },
+    "Frankston Hospital": { city: "Frankston", state: "VIC", lat: -38.1440, lng: 145.1220, name: "Frankston Hospital" },
+    "Dandenong Hospital": { city: "Dandenong", state: "VIC", lat: -37.9830, lng: 145.2150, name: "Dandenong Hospital" },
+    "Casey Hospital": { city: "Berwick", state: "VIC", lat: -38.0910, lng: 145.3020, name: "Casey Hospital" },
+    "Sandringham Hospital": { city: "Sandringham", state: "VIC", lat: -37.9550, lng: 145.0050, name: "Sandringham Hospital" },
+    "Williamstown Hospital": { city: "Williamstown", state: "VIC", lat: -37.8580, lng: 144.8920, name: "Williamstown Hospital" },
+    "Heidelberg Repatriation Hospital": { city: "Heidelberg", state: "VIC", lat: -37.7580, lng: 145.0470, name: "Heidelberg Repatriation Hospital" },
+    "Royal Victorian Eye and Ear Hospital": { city: "East Melbourne", state: "VIC", lat: -37.8100, lng: 144.9730, name: "Royal Victorian Eye and Ear Hospital" },
+    "Geelong University Hospital": { city: "Geelong", state: "VIC", lat: -38.1499, lng: 144.3617, name: "Geelong University Hospital" },
+    "Warrnambool Base Hospital": { city: "Warrnambool", state: "VIC", lat: -38.3830, lng: 142.4830, name: "Warrnambool Base Hospital" },
+    "Mildura Base Hospital": { city: "Mildura", state: "VIC", lat: -34.1850, lng: 142.1620, name: "Mildura Base Hospital" },
+    "Shepparton GV Health": { city: "Shepparton", state: "VIC", lat: -36.3833, lng: 145.4000, name: "Shepparton GV Health" },
+    "Wodonga Hospital": { city: "Wodonga", state: "VIC", lat: -36.1200, lng: 146.8900, name: "Wodonga Hospital" },
+    "Wangaratta Base Hospital": { city: "Wangaratta", state: "VIC", lat: -36.3550, lng: 146.3200, name: "Wangaratta Base Hospital" },
+    "Sale Hospital": { city: "Sale", state: "VIC", lat: -38.1100, lng: 147.0700, name: "Sale Hospital" },
+    "Traralgon Hospital": { city: "Traralgon", state: "VIC", lat: -38.1950, lng: 146.5400, name: "Traralgon Hospital" },
+    "Hamilton Base Hospital": { city: "Hamilton", state: "VIC", lat: -37.7450, lng: 142.0230, name: "Hamilton Base Hospital" },
+    "Horsham Base Hospital": { city: "Horsham", state: "VIC", lat: -36.7150, lng: 142.2000, name: "Horsham Base Hospital" },
+    "Swan Hill District Hospital": { city: "Swan Hill", state: "VIC", lat: -35.3400, lng: 143.5580, name: "Swan Hill District Hospital" },
+    "Echuca Regional Health": { city: "Echuca", state: "VIC", lat: -36.1280, lng: 144.7500, name: "Echuca Regional Health" },
+    "Scope Head Office": { city: "Hawthorn", state: "VIC", lat: -37.8220, lng: 145.0350, name: "Scope Head Office" },
+    "RLA Polymers": { city: "Melbourne", state: "VIC", lat: -37.8176, lng: 145.3056, name: "RLA Polymers" },
+    "Acciona Office": { city: "South Melbourne", state: "VIC", lat: -37.8330, lng: 144.9670, name: "Acciona Office" },
+    "Pakenham Depot": { city: "Pakenham", state: "VIC", lat: -38.0812, lng: 145.4870, name: "Pakenham Depot" },
+    "Cleanaway Dandenong": { city: "Dandenong", state: "VIC", lat: -37.9830, lng: 145.2150, name: "Cleanaway Dandenong" },
+    "Coliban Water": { city: "Bendigo", state: "VIC", lat: -36.7580, lng: 144.2803, name: "Coliban Water" },
+    "Campbell's Soup Shepparton": { city: "Shepparton", state: "VIC", lat: -36.3833, lng: 145.4000, name: "Campbell's Soup Shepparton" },
+    "Crown Melbourne": { city: "Melbourne", state: "VIC", lat: -37.8226, lng: 144.9580, name: "Crown Melbourne" },
+    "AEMO": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "AEMO" },
+    "Note Printing Australia": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Note Printing Australia" },
+    "Mazda Australia Epping": { city: "Epping", state: "VIC", lat: -37.6500, lng: 145.0300, name: "Mazda Australia Epping" },
+    "Air Radiators Lara": { city: "Lara", state: "VIC", lat: -38.1499, lng: 144.3617, name: "Air Radiators Lara" },
+    "Vindex Sunshine": { city: "Sunshine", state: "VIC", lat: -37.7900, lng: 144.8300, name: "Vindex Sunshine" },
+    "Bucher Municipal": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Bucher Municipal" },
+    "CSR Yarraville": { city: "Yarraville", state: "VIC", lat: -37.8167, lng: 144.8833, name: "CSR Yarraville" },
+    "Healthscope Facilities": { city: "Melbourne", state: "VIC", lat: -37.7965, lng: 144.9570, name: "Healthscope Facilities" },
+    "Healthscope Geelong": {city: "Geelong", state: "VIC", lat: -38.18241397617918, lng: 144.39337957616232, name: "Healthscope Geelong" },
+    "Aurora Healthcare": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Aurora Healthcare" },
+    "Epworth Medical Imaging": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Epworth Medical Imaging" },
+    "Infrabuild Wire Mill": { city: "Geelong", state: "VIC", lat: -38.1499, lng: 144.3617, name: "Infrabuild Wire Mill" },
+    "Opal Maryvale Mill": { city: "Maryvale", state: "VIC", lat: -38.2000, lng: 146.4000, name: "Opal Maryvale Mill" },
+    "Victoria University": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Victoria University" },
+    "Maurice Blackburn": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Maurice Blackburn" },
+    "Ravenhall Correctional Centre": { city: "Ravenhall", state: "VIC", lat: -37.7600, lng: 144.7500, name: "Ravenhall Correctional Centre" },
+    "Fulham Correctional Centre": { city: "Fulham", state: "VIC", lat: -38.1000, lng: 147.0000, name: "Fulham Correctional Centre" },
+    "Department of Health": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Department of Health" },
+    "Kinetic Depots": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Kinetic Depots" },
+    "NPT Depot": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "NPT Depot" },
+    "Lumus Imaging": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Lumus Imaging" },
+    "DFFH": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "DFFH" },
+    "Education Minister's Office": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Education Minister's Office" },
+    "Ambulance Victoria": { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Ambulance Victoria" },
+    "Treasury Gardens": { city: "Melbourne", state: "VIC", lat: -37.8150, lng: 144.9730, name: "Treasury Gardens" },
+    "Parliament House": { city: "Melbourne", state: "VIC", lat: -37.8110, lng: 144.9730, name: "Parliament House" },
+    "Arts Centre Melbourne": { city: "Melbourne", state: "VIC", lat: -37.8215, lng: 144.9688, name: "Arts Centre Melbourne" },
+    "Hamer Hall": { city: "Melbourne", state: "VIC", lat: -37.8180, lng: 144.9670, name: "Hamer Hall" },
+    "Melton Civic Centre": { city: "Melton", state: "VIC", lat: -37.6821, lng: 144.5871, name: "Melton Civic Centre" },
+    "Thornbury": { city: "Thornbury", state: "VIC", lat: -37.7552, lng: 144.9987, name: "Thornbury" },
+    // NSW
+    "Sydney Trains": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Sydney Trains" },
+    "NSW Parliament": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "NSW Parliament" },
+    "Sydney Airport": { city: "Sydney", state: "NSW", lat: -33.9411, lng: 151.1746, name: "Sydney Airport" },
+    "Port Botany": { city: "Sydney", state: "NSW", lat: -33.9674, lng: 151.2204, name: "Port Botany" },
+    "Woolworths DC": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Woolworths Distribution Centre" },
+    "Wingecarribee Shire Council": { city: "Bowral", state: "NSW", lat: -34.4800, lng: 150.4200, name: "Wingecarribee Shire Council" },
+    "Kiama Council": { city: "Kiama", state: "NSW", lat: -34.6700, lng: 150.8550, name: "Kiama Council" },
+    "Riverina Water": { city: "Wagga Wagga", state: "NSW", lat: -35.1080, lng: 147.3590, name: "Riverina Water" },
+    "Coca-Cola Northmead": { city: "Northmead", state: "NSW", lat: -33.7830, lng: 151.0000, name: "Coca-Cola Northmead" },
+    "Downer Engineering": { city: "Newcastle", state: "NSW", lat: -32.9283, lng: 151.7817, name: "Downer Engineering" },
+    "Vales Point Power Station": { city: "Lake Macquarie", state: "NSW", lat: -33.1400, lng: 151.5400, name: "Vales Point Power Station" },
+    "Progress Rail": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Progress Rail" },
+    "Ulan Underground Mine": { city: "Mudgee", state: "NSW", lat: -32.6000, lng: 149.5900, name: "Ulan Underground Mine" },
+    "Snowy 2.0": { city: "Cooma", state: "NSW", lat: -36.2350, lng: 148.5900, name: "Snowy 2.0 Project" },
+    "Royal Newcastle Centre": { city: "Newcastle", state: "NSW", lat: -32.9283, lng: 151.7817, name: "Royal Newcastle Centre" },
+    "Immigration Detention Centres": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Immigration Detention Centres" },
+    "Dnata": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Dnata" },
+    "Concrite": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "Concrite" },
+    "NSW public hospitals": { city: "Sydney", state: "NSW", lat: -33.8688, lng: 151.2093, name: "NSW public hospitals" },
+    // QLD
+    "Queensland Rail": { city: "Brisbane", state: "QLD", lat: -27.4663, lng: 153.0253, name: "Queensland Rail" },
+    "Queensland Parliament": { city: "Brisbane", state: "QLD", lat: -27.4755, lng: 153.0274, name: "Queensland Parliament" },
+    "Brisbane City Council": { city: "Brisbane", state: "QLD", lat: -27.4698, lng: 153.0251, name: "Brisbane City Council" },
+    "Brisbane Youth Detention Centre": { city: "Brisbane", state: "QLD", lat: -27.4698, lng: 153.0251, name: "Brisbane Youth Detention Centre" },
+    "Cairns Youth Detention Centre": { city: "Cairns", state: "QLD", lat: -16.9186, lng: 145.7781, name: "Cairns Youth Detention Centre" },
+    "Western Downs Council": { city: "Dalby", state: "QLD", lat: -27.1833, lng: 151.2667, name: "Western Downs Council" },
+    "Isis Sugar Mill": { city: "Cordalba", state: "QLD", lat: -25.1667, lng: 152.2333, name: "Isis Sugar Mill" },
+    "Noosa City Council": { city: "Noosa", state: "QLD", lat: -26.4000, lng: 153.0900, name: "Noosa City Council" },
+    "Queensland Fertility Group": { city: "Brisbane", state: "QLD", lat: -27.4698, lng: 153.0251, name: "Queensland Fertility Group" },
+    "UGL Townsville": { city: "Townsville", state: "QLD", lat: -19.2589, lng: 146.8169, name: "UGL Townsville" },
+    "Gladstone Port": { city: "Gladstone", state: "QLD", lat: -23.8420, lng: 151.2550, name: "Gladstone Port" },
+    "Department of Transport and Main Roads": { city: "Cairns", state: "QLD", lat: -16.9186, lng: 145.7781, name: "Department of Transport and Main Roads" },
+    "Queensland public hospitals": { city: "Brisbane", state: "QLD", lat: -27.4698, lng: 153.0251, name: "Queensland public hospitals" },
+    "TAFEs across Queensland": { city: "Brisbane", state: "QLD", lat: -27.4698, lng: 153.0251, name: "TAFEs across Queensland" },
+    // WA
+    "BHP Port Hedland": { city: "Port Hedland", state: "WA", lat: -20.3107, lng: 118.5876, name: "BHP Port Hedland" },
+    "Fremantle Port": { city: "Fremantle", state: "WA", lat: -32.0443, lng: 115.7429, name: "Fremantle Port" },
+    "Perth Airport": { city: "Perth", state: "WA", lat: -31.9391, lng: 115.9666, name: "Perth Airport" },
+    "Curtin University": { city: "Perth", state: "WA", lat: -32.0064, lng: 115.8940, name: "Curtin University" },
+    "BP Refinery Kwinana": { city: "Kwinana", state: "WA", lat: -32.2333, lng: 115.7833, name: "BP Refinery Kwinana" },
+    "Mining Area C": { city: "Pilbara", state: "WA", lat: -22.0000, lng: 119.0000, name: "Mining Area C" },
+    "Pluto 2 LNG": { city: "Karratha", state: "WA", lat: -20.7360, lng: 116.8460, name: "Pluto 2 LNG Project" },
+    "Premier Coal Mine": { city: "Collie", state: "WA", lat: -33.3600, lng: 116.1500, name: "Premier Coal Mine" },
+    "Barrow Island": { city: "Barrow Island", state: "WA", lat: -20.8000, lng: 115.4000, name: "Barrow Island" },
+    "Ventia custodial services": { city: "Perth", state: "WA", lat: -31.9505, lng: 115.8605, name: "Ventia custodial services" },
+    "SCT Logistics Perth": { city: "Perth", state: "WA", lat: COMPANY["SCT Logistics"][0], lng: COMPANY["SCT Logistics"][1], name: "SCT Logistics Perth" },
+    "Freo Cranes Pilbara": { city: "Pilbara", state: "WA", lat: -22.0000, lng: 119.0000, name: "Freo Cranes Pilbara" },
+    // SA
+    "SA Health": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "SA Health" },
+    "SA Parliament": { city: "Adelaide", state: "SA", lat: -34.9213, lng: 138.5989, name: "SA Parliament" },
+    "Osborne Naval Shipyard": { city: "Adelaide", state: "SA", lat: -34.7900, lng: 138.5000, name: "Osborne Naval Shipyard" },
+    "Catholic Education Office": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "Catholic Education Office" },
+    "PepsiCo": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "PepsiCo" },
+    "SA public hospitals": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "SA public hospitals" },
+    "SA prisons": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "SA prisons" },
+    "Aurizon SA": { city: "Adelaide", state: "SA", lat: -34.9285, lng: 138.6007, name: "Aurizon SA" },
+    // TAS
+    "TasRail": { city: "Hobart", state: "TAS", lat: -42.8821, lng: 147.3272, name: "TasRail" },
+    "Tasmanian Parliament": { city: "Hobart", state: "TAS", lat: -42.8821, lng: 147.3272, name: "Tasmanian Parliament" },
+    "Launceston Reception Prison": { city: "Launceston", state: "TAS", lat: -41.4332, lng: 147.1441, name: "Launceston Reception Prison" },
+    "TasWater": { city: "Hobart", state: "TAS", lat: -42.8821, lng: 147.3272, name: "TasWater" },
+    "Ambulance Tasmania": { city: "Hobart", state: "TAS", lat: -42.8821, lng: 147.3272, name: "Ambulance Tasmania" },
+    "Department of Premier and Cabinet": { city: "Hobart", state: "TAS", lat: -42.8821, lng: 147.3272, name: "Department of Premier and Cabinet" },
+    // ACT
+    "ACT Government": { city: "Canberra", state: "ACT", lat: -35.2809, lng: 149.1300, name: "ACT Government" },
+    "ACT Parliament": { city: "Canberra", state: "ACT", lat: -35.3075, lng: 149.1244, name: "ACT Legislative Assembly" },
+    "Tuggeranong": { city: "Tuggeranong", state: "ACT", lat: -35.4150, lng: 149.0700, name: "Tuggeranong" },
+    "ACT public schools": { city: "Canberra", state: "ACT", lat: -35.2809, lng: 149.1300, name: "ACT public schools" },
+    // NT
+    "Darwin Correctional Centre": { city: "Darwin", state: "NT", lat: -12.4700, lng: 130.9700, name: "Darwin Correctional Centre" },
+    "Berrimah Correctional Centre": { city: "Darwin", state: "NT", lat: -12.4500, lng: 130.9300, name: "Berrimah Correctional Centre" },
+    "Darwin public hospitals": { city: "Darwin", state: "NT", lat: -12.4634, lng: 130.8456, name: "Darwin public hospitals" },
+};
+
+// Export globally
+window.CITY_COORDS = CITY_COORDS;
+window.VICLoc = VICLoc;
+window.CANLoc = CANLoc;
+window.WALoc = WALoc;
+window.COMPANY = COMPANY;
+window.ADL = ADL;
+window.MELB = MELB;
+window.BRIS = BRIS;
+window.PER = PER;
+window.SYD = SYD;
+window.MINE = MINE;
+window.REF = REF;
+window.CAN = CAN;
+window.SA = SA;
+window.WA = WA;
+window.QLD = QLD;
+window.TAS = TAS;
+window.VIC = VIC;
+window.PORT = PORT;
+window.UNI = UNI;
+window.POWER = POWER;
+window.HOSP = HOSP;
+window.LIB = LIB;
+window.SPECIFIC = SPECIFIC;
+
+// Make variables accessible to the CSV utility
+/* Object.assign(window, {
+  CITY_COORDS, COMPANY,
+  MELB, BRIS, PER, SYD, MINE, REF, CAN,
+  SA, WA, QLD, TAS, VIC, PORT, UNI, POWER, HOSP,
+  RAFFWUBOOKSTORE_LOCATIONS, TWU_TRANSPORT_STRIKE_LOCATIONS,
+  STRIKE_DATA,
+  VICLoc, CANLoc, WALoc, ADL, LIB, SPECIFIC
+}); */

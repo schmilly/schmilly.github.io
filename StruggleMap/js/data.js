@@ -236,7 +236,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Talks between BHP and the Combined BHP Ports Unions ended without a deal, with further negotiations scheduled for next Tuesday (15 Sept), facilitated by the Fair Work Commission. BHP tabled an updated proposal offering a 17% pay increase over four years for most workers, a A$25,000 transition payment paid over two years, and an increase to roster allowances. The three unions rejected the offer, saying it leaves about 40% of the workforce in a worse position and keeps wage inequalities alive, and pointing to BHP's ~$13 billion underlying profit for fiscal 2026. Workers are seeking pay that recognises extreme remote heat, long hours and time away from families. Port Hedland is the world's largest iron ore loading port, with BHP shipping around $80 million worth of iron ore daily through the facility.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Reuters - BHP, union talks for Port Hedland iron ore workers to stretch on into next week", url: "https://www.reuters.com/business/world-at-work/bhp-union-talks-port-hedland-iron-ore-workers-stretch-into-next-week-2026-09-08/" },
@@ -286,7 +286,7 @@ const STRIKE_DATA = [
         description: "Unions reject 9% over 3 years offer. 66% CPSU members voted no; CFMEU GSOs unanimous rejection. Vote no campaign to be run.",
 
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "ACT Government" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -328,7 +328,7 @@ const STRIKE_DATA = [
         description: "Second 24-hour strike this year. Rally at Bourke Street Mall then Parliament House. Negotiations stalled.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -393,7 +393,7 @@ const STRIKE_DATA = [
         description: "Around 1000 workers across public hospitals stopped work for 3 hours. Rejected 19-21% offer; demand 36% over 3 years.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -478,7 +478,7 @@ const STRIKE_DATA = [
         description: "24-hour strike planned for 30 July. Originally targeting Bendigo, may shift to Premier Carroll's electorate of Niddrie.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various locations" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Various locations" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -499,7 +499,7 @@ const STRIKE_DATA = [
         description: "4-hour stoppage (10am-2pm) with rally at Parliament. Demands: 10% first year, 4% annual, rate capping reform.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian Parliament" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Victorian Parliament" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -540,7 +540,7 @@ const STRIKE_DATA = [
         description: "After 18 months bargaining, members voting on action. Claims: non-contact hours, minimum shift lengths, fair rostering.",
 
         locations: [
-            { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
+            { city: "Hawthorn", state: "VIC", lat: SPECIFIC["Scope Head Office"].lat, lng: SPECIFIC["Scope Head Office"].lng, name: "Scope Head Office" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -629,7 +629,7 @@ const STRIKE_DATA = [
         description: "Protected action ballot currently underway. Workers ready to fight for above 3% wage cap.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Arts Centre Melbourne" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Arts Centre Melbourne"].lat, lng: SPECIFIC["Arts Centre Melbourne"].lng, name: "Arts Centre Melbourne" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -652,7 +652,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Doctors to strike 12:30-4pm on 13 Aug. 76% voted, 97% in favour. Claims: 30% over 4 years, 12.5h shift cap, doctor-to-patient ratios. Phase one work bans commenced this week.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Various Melbourne hospitals" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -695,7 +695,7 @@ const STRIKE_DATA = [
         description: "24-hour ship loading ban on 8 Aug, 24-hour stoppage from 5:30am on 9 Aug. ETU high voltage electricians striking 12 hours on 9 Aug. Negotiations stalled.",
 
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -739,8 +739,8 @@ const STRIKE_DATA = [
         description: "4-hour stoppage by workers from 8 councils. Rally outside Parliament House. Demands: 10% first year, then 4% annual; rate capping reform.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parliament House" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various councils" }
+            { city: "Melbourne", state: "VIC", lat: -34.9213, lng: 138.5989, name: "Parliament House" },
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Coburg Town Hall"].lat, lng: SPECIFIC["Coburg Town Hall"].lng, name: "Various councils" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -848,7 +848,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Members rejected offer despite leadership recommendation. 67% voted no. Matter referred to SA Employment Tribunal.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Various hospitals" }
+            { city: "Adelaide", state: "SA", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various hospitals" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -914,7 +914,7 @@ const STRIKE_DATA = [
         description: "Third strike planned on 19 Aug. Negotiations stalled with new Education Minister.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -937,7 +937,7 @@ const STRIKE_DATA = [
         description: "Planned action from 4 Aug to 4 Sep cancelled due to FWC s.418 order. Action not going ahead.",
 
         locations: [
-            { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
+            { city: "Hawthorn", state: "VIC", lat: SPECIFIC["Scope Head Office"].lat, lng: SPECIFIC["Scope Head Office"].lng, name: "Scope Head Office" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1003,7 +1003,7 @@ const STRIKE_DATA = [
         description: "Indefinite strike after Acciona refused to finalise bargaining. Rally outside South Melbourne office on 3 Aug.",
 
         locations: [
-            { city: "South Melbourne", state: "VIC", lat: CITY_COORDS["South Melbourne"][0], lng: CITY_COORDS["South Melbourne"][1], name: "Acciona Office" }
+            { city: "South Melbourne", state: "VIC", lat: SPECIFIC["Acciona Office"].lat, lng: SPECIFIC["Acciona Office"].lng, name: "Acciona Office" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1027,7 +1027,7 @@ const STRIKE_DATA = [
         description: "Rolling stoppages at Pakenham and Calder Park depots. Seeking parity with Metro Trains and V/Line.",
 
         locations: [
-            { city: "Pakenham", state: "VIC", lat: CITY_COORDS["Pakenham"][0], lng: CITY_COORDS["Pakenham"][1], name: "Pakenham Depot" }
+            { city: "Pakenham", state: "VIC", lat: SPECIFIC["Pakenham Depot"].lat, lng: SPECIFIC["Pakenham Depot"].lng, name: "Pakenham Depot" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1049,7 +1049,7 @@ const STRIKE_DATA = [
         description: "Ballot opened 29 July, closes 5 August. Key claims: wages, allowances, leave. MEAA calls for increased government funding.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Arts Centre Melbourne" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Arts Centre Melbourne"].lat, lng: SPECIFIC["Arts Centre Melbourne"].lng, name: "Arts Centre Melbourne" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1071,7 +1071,7 @@ const STRIKE_DATA = [
         description: "Unanimous vote for industrial action. Concerns over intrusive surveillance and safety record (8 deaths since 2022).",
 
         locations: [
-            { city: "Dandenong", state: "VIC", lat: CITY_COORDS["Dandenong"][0], lng: CITY_COORDS["Dandenong"][1], name: "Cleanaway Dandenong" }
+            { city: "Dandenong", state: "VIC", lat: SPECIFIC["Cleanaway Dandenong"].lat, lng: SPECIFIC["Cleanaway Dandenong"].lng, name: "Cleanaway Dandenong" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -1093,7 +1093,7 @@ const STRIKE_DATA = [
         description: "Unanimous vote for action; contract ending 2027, no pay rise since 2024. Considering bans and stop works.",
 
         locations: [
-            { city: "Bendigo", state: "VIC", lat: CITY_COORDS["Bendigo"][0], lng: CITY_COORDS["Bendigo"][1], name: "Coliban Water" }
+            { city: "Bendigo", state: "VIC", lat: SPECIFIC["Coliban Water"].lat, lng: SPECIFIC["Coliban Water"].lng, name: "Coliban Water" }
         ],
         sources: [
             { name: "Disputes Report - August 5th", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-august" }
@@ -2021,8 +2021,8 @@ const STRIKE_DATA = [
             {
                 city: "Unknown",
                 state: "",
-                lat: COMPANY["Bridgestone"][0],
-                lng: COMPANY["Bridgestone"][1],
+                lat: COMPANY["Bridgestone"]["HQ"][0],
+                lng: COMPANY["Bridgestone"]["HQ"][1],
                 name: "Bridgestone Australia Ltd"
             }
         ],
@@ -2727,7 +2727,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "AEU members rejected government offer (51.81% to 48.82%). 50,677 members voted in straw poll. Strike on 23 July with rally at Bourke Street Mall then Parliament House. Demands include action on workload and class sizes.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Bourke Street Mall / Parliament House" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Bourke Street Mall / Parliament House" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2767,7 +2767,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Historic strike at BHP Port Hedland. Union members walked off at 2pm. Solidarity rallies in Melbourne and Brisbane. Negotiations resumed in FWC; talks described as 'constructive'. More action if negotiations stall.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2787,7 +2787,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Aviation screening officers walked off on 17 and 20 July. Paid 13-19% less than interstate counterparts. Insecure rosters (16 hrs/week guaranteed, 4-hr shifts). One proposal already voted down. Demands: pay parity, secure jobs, respectful rostering.",
         locations: [
-            { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth Airport" }
+            { city: "Perth", state: "WA", lat: -31.9391, lng: 115.9666, name: "Perth Airport" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2807,7 +2807,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Work bans from 18-27 July: entrance gates may not unlock, bins not emptied, toilets not cleaned. Pay grades now below minimum wage. Campaign for fair pay.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various parks across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Various parks across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2847,7 +2847,7 @@ const STRIKE_DATA = [
         workers: 350,
         description: "School nurses taking action for over 80 days. Fighting for pay parity with public sector colleagues. Actions include community engagement, media comment, wearing union shirts, displaying campaign messages.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public schools" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Various public schools" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" },
@@ -2868,7 +2868,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "New offer: 9% over 3 years, $600 cost of living payment (or $1000 if CPI hits 4%), super to 13%, AI clause, personal leave cap from 7 to 10 days. CPSU polling members until 27 July. Ballot in August.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "ACT Government" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2888,7 +2888,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Second action in 3 months. Refused additional prisoners from Hobart, only essential welfare, cancelled non-essential movements. Protesting chronic overcrowding and pest issues (rats in cells).",
         locations: [
-            { city: "Launceston", state: "TAS", lat: CITY_COORDS["Launceston"][0], lng: CITY_COORDS["Launceston"][1], name: "Launceston Reception Prison" }
+            { city: "Launceston", state: "TAS", lat: SPECIFIC["Launceston Reception Prison"].lat, lng: SPECIFIC["Launceston Reception Prison"].lng, name: "Launceston Reception Prison" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2908,7 +2908,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Survey sent to members to gauge appetite for action. No revised offer from government despite being advised to expect one. Union signalling escalation.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various public health sites" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Various public health sites" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -2928,7 +2928,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "AMWU members at Kinetic buses in Melbourne commenced industrial action after breakdown in negotiations.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Kinetic depots" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Kinetic Depots"].lat, lng: SPECIFIC["Kinetic Depots"].lng, name: "Kinetic depots" }
         ],
         sources: [
             { name: "Disputes Report - July 22", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-july" }
@@ -3147,7 +3147,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "AEU members at ACT public schools continue work bans. The Education Directorate sent an after-hours direction for teachers to detail industrial action in timesheets; it was withdrawn after the AEU lodged a dispute. Bans include no written comments on student reports; no staff meetings after 3:30pm; talking to parents about industrial action; not participating in Directorate surveys; and wearing AEU t-shirts on Fridays.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT public schools" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT public schools"].lat, lng: SPECIFIC["ACT public schools"].lng, name: "ACT public schools" }
         ],
         sources: [
             { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -3226,7 +3226,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Second 24-hour strike at Parks Victoria. Workers rallied outside the Environment Minister's office at 8 Nicholson Street, Melbourne from 12 noon. Workers are fighting for a fair deal from the state government, including pay parity with public sector colleagues.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Environment Minister's Office, 8 Nicholson Street" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Environment Minister's Office, 8 Nicholson Street" }
         ],
         sources: [
             { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -3302,7 +3302,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "AWU members employed by BHP at Port Hedland endorsed protected industrial action, with 97% voting yes, following strong protected action ballot results from AMWU and ETU members. The three unions met BHP on 7 July, with a strong indication industrial action would follow if it did not go well.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 8 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-8-july" }
@@ -3421,7 +3421,7 @@ const STRIKE_DATA = [
         description: "Victorian public school teachers, principals, and education support staff have overwhelming endorsed the latest pay and conditions offer. 79% of Australian Education Union members working in Victorian public schools have voted to accept the government’s offer of pay rises between 28.3% and 32.4% over four years, and a lump sum payment of $2,000 at the start of the agreement. ",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "AEU Vic. - AEU members vote to accept pay and conditions offer", url: "https://www.aeuvic.asn.au/aeu-members-vote-accept-pay-and-conditions-offer" }
@@ -3440,7 +3440,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "ANMF reached an in-principle agreement with the SA government for public sector nurses and midwives. The deal includes a 16% wage increase: 3% in January 2027, 3% in July 2027, 4% in July 2028, plus the 6% already agreed in February (4% backdated to 1 January and 2% from 26 October). This falls short of the 23% sought but improves on the 10.75% over 3 years rejected earlier. Industrial action is suspended while members vote.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Various public hospitals" }
+            { city: "Adelaide", state: "SA", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3478,7 +3478,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "The AEU announced that at the start of Term 3 all bans and limitations will recommence. Expected bans include: no attending one hour of meetings per week; no principal members attending principal area forum meetings; no responding to Department of Education emails; no implementing new Department programs and initiatives; and no written comments on student reports. Term 2 reports were already missing comments due to previous bans.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3535,7 +3535,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "Professionals Australia members across the ACT public sector, including forensic scientists, medical physicists, pharmacists and engineers, commenced indefinite industrial action on 29 June. They are dissatisfied with the territory government's below-inflation offer of 3% annual wage increases, delayed superannuation improvements and no backpay. The indefinite action includes bans on correspondence, electronic messaging, phone calls, out-of-hours work and external meetings.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "ACT Government" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3554,8 +3554,8 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Industrial action continues at all 8 metropolitan Melbourne councils fighting for a multi-employer agreement. This includes low-level bans like wearing union campaign t-shirts and stopping work to share information about the dispute. ASU members at Maribyrnong and Merri-Bek have implemented additional bans including street cleaning and library bans. Some Merri-Bek workers have received pay docking notices, which the union is examining.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan Melbourne councils" },
-            { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Melbourne Town Hall"].lat, lng: SPECIFIC["Melbourne Town Hall"].lng, name: "Various metropolitan Melbourne councils" },
+            { city: "Coburg", state: "VIC", lat: SPECIFIC["Merri-bek Council"].lat, lng: SPECIFIC["Merri-bek Council"].lng, name: "Merri-bek Council" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3614,7 +3614,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "The CEPU formally lodged a dispute with TasWater over a plan to reduce the presence of operators at water and sewerage treatment plants. TasWater's plan would shift monitoring to remote systems and automation. The dispute was lodged as Environment Tasmania demonstrated TasWater released more than half a billion litres of improperly treated sewage into state waterways in 2024-2025.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "TasWater" }
+            { city: "Hobart", state: "TAS", lat: SPECIFIC["TasWater"].lat, lng: SPECIFIC["TasWater"].lng, name: "TasWater" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3671,7 +3671,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "Canberra's General Service Officers overwhelmingly endorsed industrial action. Of the 300 who voted in a protected action ballot, 99% were in favour. These CFMEU members are part of the broader ACT public sector negotiations. GSOs manage maintenance, waste management, parks and sports grounds in the ACT and are seeking a 12% wage increase over 3 years.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "ACT Government" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3690,7 +3690,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "A meeting of more than 2000 ASMOF members endorsed the union applying for a protected action ballot, with only 12 members voting against. The last major industrial action by doctors in Victoria, a stop work meeting, was over 20 years ago. ASMOF has been negotiating for a new agreement for 10 months and has reached a stalemate. Key issues include high workloads, unsafe hours and poor pay.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Various Melbourne hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 1 July", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-july" }
@@ -3709,8 +3709,8 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "ASU members from 8 metropolitan Melbourne councils went on strike for 24 hours on 17 June, the second such strike in pursuit of a multi-employer agreement. Workers have been negotiating for 6 months without an offer. The ASU demands 10% in the first year and 4% annually after. Workers rallied at Trades Hall then marched to Parliament House. Services disrupted including closed libraries and uncollected bins. The ASU launched Federal Court action against Hume City Council for docking pay despite withdrawn bans; members voted to reinstate partial work bans.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Trades Hall / Parliament House" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan councils" }
+            { city: "Melbourne", state: "VIC", lat: -37.8065, lng: 144.9663, name: "Trades Hall / Parliament House" },
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Melbourne Town Hall"].lat, lng: SPECIFIC["Melbourne Town Hall"].lng, name: "Various metropolitan councils" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3729,7 +3729,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "On 19 June Victorian AEU members rejected an offer recommended by their union. 57.7% voted against the proposed agreement. The AEU Joint Primary and Secondary Council met and rejected motions to recommence industrial action, instead voting to survey members. AEU Vic Branch President Justin Mullaly stated 'we need to move swiftly towards industrial action' and panned calls for an August strike as 'too late'. Council meets again on 17 July.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3786,7 +3786,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "HSU members at Canberra Hospital in medical imaging, sonography and pathology participated in industrial action. After 6 months of negotiations without a meaningful offer from the Territory Government, on 17 June members wore campaign t-shirts and implemented bans on answering telephone calls, responding to voicemail messages and responding to electronic messages. Other administrative bans took place on 18 June, culminating in a 1-hour stoppage on 19 June.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Canberra Hospital" }
+            { city: "Canberra", state: "ACT", lat: HOSP["ACT"]["Canberra"][0], lng: HOSP["ACT"]["Canberra"][1], name: "Canberra Hospital" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3881,7 +3881,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Patrol Officers at RACQ held another stoppage on 23 June. Workers are fighting for a fair deal and want the bosses to come back to the negotiating table.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "RACQ" }
+            { city: "Brisbane", state: "QLD", lat: COMPANY["RACQ"][0], lng: COMPANY["RACQ"][1], name: "RACQ" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3919,7 +3919,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "The dispute at Parks Victoria continues. CPSU members walked off the job and rallied outside Parks Victoria's Board meeting on 24 June. Work bans also remain in place.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria Board meeting" }
+            { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria Board meeting" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3960,7 +3960,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "The Western Mine Workers Association (AWU and MEU) applied for a protected action ballot for members at BHP's Port Hedland operations, following successful ballots of AMWU and ETU members. Secretaries of the AMWU, ETU and AWU met on 19 June to plan leverage. BHP put forward a draft enterprise agreement on 23 June. A bargaining meeting is scheduled for 7 July, and strike action is not anticipated before then.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -3979,7 +3979,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "ETU members at 12 construction companies in Sydney have won a 5.25% pay increase for the first year of their new agreement. While negotiations for the rest of the agreement continue, workers will benefit from the increase in their next pay packet with backpay to 1 May.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney construction sites" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Sydney construction sites" }
         ],
         sources: [
             { name: "Disputes Report - 24 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -4111,7 +4111,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "CPSU members at Parks Victoria walked off the job for 24 hours on 11 June as an escalation in the campaign. ASU members held a one-hour stopwork rally on 8 June at Brimbank Park. CPSU altered long-weekend plans due to legal technicalities raised by Parks Victoria over 'closing' vs not opening parks, and instead escalated to a 24-hour strike. Indefinite bans remain on rubbish collection, cleaning facilities and fireplaces, and taking meal breaks in the field. Ballot membership: AWU 55, ASU 43, CPSU 304.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" },
+            { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria" },
             { city: "Melbourne", state: "VIC", lat: -37.7500, lng: 144.8500, name: "Brimbank Park" }
         ],
         sources: [
@@ -4150,7 +4150,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "On 16 June MSAV and VAHPA members joined forces for a combined rally during joint 24-hour strike action. Workers gathered in front of the Department of Health building before marching to Parliament House, with rally estimates of 2500-5000 people. MSAV has been negotiating for 14 months seeking 28% over 4 years; VAHPA has been negotiating for 8 months seeking 38.16% over 3 years.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Department of Health / Parliament House" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Department of Health"].lat, lng: SPECIFIC["Department of Health"].lng, name: "Department of Health / Parliament House" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4169,7 +4169,7 @@ const STRIKE_DATA = [
         state: "NT",
         description: "On 9 June correctional officers at Darwin Correctional Centre and Berrimah Correctional Centre walked off the job for 12 hours. The NT Government and Department of Corrections applied to the FWC to stop the action, but the application was dismissed and the strike went ahead. Prisoners were stuck in their cells and court proceedings were disrupted. A revised offer of 13% over 4 years is out to ballot, closing 29 June; UWU recommends a no vote.",
         locations: [
-            { city: "Darwin", state: "NT", lat: CITY_COORDS["Darwin"][0], lng: CITY_COORDS["Darwin"][1], name: "Darwin Correctional Centre / Berrimah Correctional Centre" }
+            { city: "Darwin", state: "NT", lat: -12.47, lng: 130.97, name: "Darwin Correctional Centre / Berrimah Correctional Centre" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4207,7 +4207,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "AEU members in Victoria are voting on whether to accept the in-principle agreement recommended by the branch council and executive. The ratification process takes place at sub-branch (school) level, with voting closing 5pm 18 June. If supported, the agreement goes to a ballot of all employees under the FWA. If rejected, the state government will withdraw its offer and negotiations will recommence. Socialists in Schools reported no votes at 17 schools, a small snapshot of over 1500 schools statewide.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4267,7 +4267,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "On 11 June ACT school teachers went on strike for 24 hours, the first full-day strike by teachers in the Territory in more than 15 years. All public schools were closed with no on-site supervision. The action followed a 2-hour strike in May. AEU members are fighting for wage increases plus action on workload and staff shortages. Teachers and supporters met in Civic Square before marching to Glebe Park.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Civic Square / Glebe Park" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "Civic Square / Glebe Park" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4363,7 +4363,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "On 11 June ETU members at Stowe voted to commence strike action with 24-hour stoppages for the rest of the week. Workers met again on 15 June and voted to continue striking for another 48 hours. The stoppages are causing significant disruption including shutting down construction of the $1.3 billion Microsoft data centre in Kemps Creek. Workers are fighting for a better offer with higher wages and improved conditions.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Stowe" },
+            { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Stowe" },
             { city: "Kemps Creek", state: "NSW", lat: -33.8500, lng: 150.8000, name: "Microsoft data centre, Kemps Creek" }
         ],
         sources: [
@@ -4402,8 +4402,8 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "ASU members from 8 metropolitan Melbourne city councils walked off the job on 17 June, the second strike in pursuit of a decent multi-employer agreement. Workers from Merri-bek Council rallied outside council chambers in Coburg before the previous week's Council meeting urging increased budget allocation for labour costs.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan councils" },
-            { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Melbourne Town Hall"].lat, lng: SPECIFIC["Melbourne Town Hall"].lng, name: "Various metropolitan councils" },
+            { city: "Coburg", state: "VIC", lat: SPECIFIC["Merri-bek Council"].lat, lng: SPECIFIC["Merri-bek Council"].lng, name: "Merri-bek Council" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4422,7 +4422,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "The dispute between workers at the state government Department of Transport and Main Roads continues. ETU members in Cairns participated in industrial action on 8 June. Industrial action commenced at TMR in September last year.",
         locations: [
-            { city: "Cairns", state: "QLD", lat: CITY_COORDS["Cairns"][0], lng: CITY_COORDS["Cairns"][1], name: "Department of Transport and Main Roads" }
+            { city: "Cairns", state: "QLD", lat: SPECIFIC["Department of Transport and Main Roads"].lat, lng: SPECIFIC["Department of Transport and Main Roads"].lng, name: "Department of Transport and Main Roads" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4518,7 +4518,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "90% of AMWU members and 100% of ETU members at BHP's Port Hedland operation voted in favour of taking strike action. The unions accuse BHP of progressively ripping away conditions including rent subsidies, transport to and from work, meals while on shift and healthcare support. Workers are fighting for clear classification criteria, enforceable conditions and parity for workers at the port with the same skills and experience. Negotiations have been underway for 6 months but BHP has not been cooperative, and had already started trying to recruit scabs before the ballots were counted. No notice of industrial action has been given yet.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4537,7 +4537,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "87% of HACSU members endorsed a new agreement with Ambulance Tasmania, bringing a long dispute to an end after industrial action commenced 9 months ago. The agreement includes the standard 8.75% wage increase over 3 years, plus structural adjustments, a modernised classification structure and improved conditions. HACSU state secretary Robbie Moore confirmed the agreement addresses key issues around rostering and single officer responses. It will soon be lodged with the Tasmanian Industrial Commission.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Ambulance Tasmania" }
+            { city: "Hobart", state: "TAS", lat: SPECIFIC["Ambulance Tasmania"].lat, lng: SPECIFIC["Ambulance Tasmania"].lng, name: "Ambulance Tasmania" }
         ],
         sources: [
             { name: "Disputes Report - 17 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -4594,7 +4594,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Industrial action at Parks Victoria continues by ASU, AWU and CPSU members. ASU members are writing slogans on PV vehicles, displaying campaign signs, and have bans on rubbish collection, cleaning facilities and fireplaces, travelling between work centres, and meal breaks in the field. AWU members are calling for reclassification and pay uplift for rangers, displaying campaign material, making media statements, placing signage at parks and on PV vehicles, and adding campaign email signatures and auto-replies. CPSU members have stoppages and indefinite bans on online tasks, responding to Ministerial enquiries, rubbish collection, cleaning, meal breaks in the field, plus campaign material, media statements and email signatures. More action is likely over the long weekend. All union members are calling for pay parity with public sector colleagues.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" }
+            { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
@@ -4632,7 +4632,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Queensland Rail issued a press release announcing regional trains would move to a reduced timetable from 1 June due to 'impacts from union protected industrial action'. The Courier Mail picked this up close to verbatim. No mention was made that maintenance disruption could have been minimised by accepting partial work bans or by making a decent offer. The disruptions in this protracted dispute lie with the bosses and state government, not the workers.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland Rail Network" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Queensland Rail"].lat, lng: SPECIFIC["Queensland Rail"].lng, name: "Queensland Rail Network" }
         ],
         sources: [
             { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
@@ -4794,7 +4794,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Both the AMWU and ETU applied for protected action ballot orders at BHP's port operations at Port Hedland. Negotiations have been underway for 6 months but fruitless. Media reports claim AMWU and ETU members make up just under half of BHP's workforce at the port and could cause serious disruption. High-voltage electricians at BHP are already taking industrial action in a separate pay dispute. A proposed offer for South Flank and Mining Area C was described by the ETU as 'a pile of snot', by the AMWU as full of 'vague classifications, management discretion and salary absorption clauses', and by the AWU as a 'significant step forward'.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
@@ -4813,7 +4813,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Public sector health and allied services, manager and administrative workers voted up a new agreement. 91.3% of HWU members endorsed the deal, with 94% of workers who voted in the final ballot saying yes. The deal includes a 12.5% wage increase over 2.5 years, backpay from December 2025, a $1500 pro-rata cash payment, and improvements including enforceable workload protections, reproductive health leave, an increase in personal days without evidence and more.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian public health services" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Victorian public health services" }
         ],
         sources: [
             { name: "Disputes Report - 3 June", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" },
@@ -4833,7 +4833,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Victorian health workers emphatically endorsed their new Public Sector Enterprise Agreement, with 93.5% voting in favour and more than 22,000 workers taking part. A total of 20,832 healthcare workers voted yes, with fifteen health services returning a unanimous 100% endorsement. The deal delivers significant wage increases and workplace improvements for tens of thousands of workers. The vote coincided with Administrator Charlie Donnelly certifying that the HWU is functioning effectively and ready to be returned to democratic control, following a turnaround in finances and membership growth from 10,674 to more than 14,500 since administration began in December 2024.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian health services" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Victorian health services" }
         ],
         sources: [
             { name: "HWU - Statement from the Administrator Charlie Donnelly, 3 June 2026", url: "https://hwu.org.au/statement-from-the-administrator-charlie-donnelly/" }
@@ -4894,7 +4894,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "On 8 September, BHP and unions with members at Port Hedland met at the FWC but no agreement was reached. BHP offered a $25,000 transition payment and a 17% wage increase over the proposed 4-year agreement. According to ETU WA Branch secretary Adam Woodage, under the proposal 40% of the workforce would be 'going backwards'. Woodage said: 'There were two major tiers of conditions, we want everyone on the good tier… they want everyone on the shit tier.' The sticking point is that BHP's base wages are below what most workers are currently paid and rely on performance payments to top up take-home pay. Unions do not want existing wage inequalities resolved by cutting some workers' wages. The AMWU, AWU and ETU are applying to the FWC for an intractable bargaining declaration, which if granted would kick off an arbitration process.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -4976,7 +4976,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "On Friday 11 September, workers from 35 disability housing homes walked off the job and rallied outside Scope's headquarters. Workers and their union have been in negotiations for a new EBA for 2 years. The dispute centres on public services being outsourced to private providers, resulting in worse wages for workers and likely worse standards of care for people with disabilities.",
         locations: [
-            { city: "Hawthorn", state: "VIC", lat: CITY_COORDS["Hawthorn"][0], lng: CITY_COORDS["Hawthorn"][1], name: "Scope Head Office" }
+            { city: "Hawthorn", state: "VIC", lat: SPECIFIC["Scope Head Office"].lat, lng: SPECIFIC["Scope Head Office"].lng, name: "Scope Head Office" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" },
@@ -5015,7 +5015,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Public hospital doctors were planning to strike for 24 hours on 15 September, but the action was called off on Monday 14 September. According to ASMOF: 'On Friday, the Government advised us that if it did not believe hospitals could be sufficiently staffed during the stoppage, it would use technical and patient safety mechanisms available to it to seek to stop the action. That has occurred. Following legal advice and discussions in the Commission today, ASMOF Victoria has withdrawn the planned 24-hour stoppage on Sep 17.' Patient safety was enough of an issue for the state government to suspend industrial action, but not enough to address key claims including banning shifts longer than 12.5 hours, capping consecutive night shifts at four in a row and introducing doctor-to-patient ratios.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Melbourne hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Various Melbourne hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5034,7 +5034,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "The dispute between River City Ferries and the MUA continues with more stoppages on CityCat ferries. A 24-hour stoppage was held from 4am on Thursday 10 September. Two 2-hour stoppages were held on 16 and 17 September targeting peak hours of 8am-10am and 4pm-6pm. Workers are fighting for a 6% wage increase in the first year of a new agreement followed by 4.75% or the FWC increase, whichever is greater, as well as backpay from the expiry of the current agreement and improvements to conditions.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane River" }
+            { city: "Brisbane", state: "QLD", lat: PORT["Brisbane"][0], lng: PORT["Brisbane"][1], name: "Brisbane River" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5053,7 +5053,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "Workers in the ACT public sector rejected the Territory Government's most recent pay offer. Unions ran a vote no campaign on the offer, which included top-up payments if inflation hit certain levels but did not budge from the base 9% pay increase over 3 years. 63% of those who participated rejected the offer. Several unions including the CPSU and AEU have threatened to escalate industrial action. Professionals Australia were first out of the barriers, with ACT pharmacists striking for two hours on 15 September.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT Government" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "ACT Government" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5072,10 +5072,10 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Industrial action continues across 8 Melbourne metropolitan councils. Harder-hitting bans are back on, including street cleaning through the City of Yarra and residential bin collection in Hume and Merri-bek. Merri-bek is docking workers wages up to 15% if they participate in industrial action, and Hume has commenced docking wages by up to 11.5%. The ASU had been pressuring the state government to amend rate capping legislation, but with the election fast approaching this is no longer a live option, though the union is still lobbying the government to contribute to a solution. An update from the ASU on 8 September reported that conversations with the State Government continue to progress positively but noted there was no firm commitment from the government, nor a pay offer from councils.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan councils" },
-            { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" },
-            { city: "Broadmeadows", state: "VIC", lat: CITY_COORDS["Broadmeadows"][0], lng: CITY_COORDS["Broadmeadows"][1], name: "Hume City Council" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "City of Yarra" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Melbourne Town Hall"].lat, lng: SPECIFIC["Melbourne Town Hall"].lng, name: "Various metropolitan councils" },
+            { city: "Coburg", state: "VIC", lat: SPECIFIC["Merri-bek Council"].lat, lng: SPECIFIC["Merri-bek Council"].lng, name: "Merri-bek Council" },
+            { city: "Broadmeadows", state: "VIC", lat: -37.682, lng: 144.9183, name: "Hume City Council" },
+            { city: "Melbourne", state: "VIC", lat: -37.8, lng: 144.98, name: "City of Yarra" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5132,8 +5132,8 @@ const STRIKE_DATA = [
         locations: [{
             city: "Unknown",
             state: "",
-            lat: COMPANY["Bridgestone"][0],
-            lng: COMPANY["Bridgestone"][1],
+            lat: COMPANY["Bridgestone"]["HQ"][0],
+            lng: COMPANY["Bridgestone"]["HQ"][1],
             name: "Bridgestone Australia Ltd"
         }],
         sources: [
@@ -5153,7 +5153,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "PSA members working in Immunology at SA Pathology have taken industrial action. Workers are fighting back against increasing workloads that are affecting staff wellbeing and service quality.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA Pathology" }
+            { city: "Adelaide", state: "SA", lat: -34.9197, lng: 138.608, name: "SA Pathology" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5172,7 +5172,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Week 2 of VAHPA's 'Four Weeks To Fix It' campaign is encouraging members to put up campaign posters, chalk messages and distribute campaign materials at the start of shifts.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5324,7 +5324,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "After fighting for more than 12 months, unions at Parks Victoria have reached an in-principle agreement. According to the CPSU, the deal includes a 3% pay increase, a $5000 one-off payment and a structural wages uplift that will boost base levels of pay. The ASU shared that their members will get a boost to their pay of between 4.5% and 6% depending on grade. When workers commenced industrial action in May, it was the first time in 15 years. Actions included 24-hour strikes (including one the previous week), closure of parks and various work bans.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" }
+            { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5474,9 +5474,9 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "HACSU member nurses in Tasmania's public sector commenced industrial action on 21 September. HACSU had set a deadline of 14 September for the government to present an offer, but no offer has been tabled. HACSU's bargaining team have participated in 50 hours of negotiations. Industrial action has kicked off with a round of workplace bans, including wearing campaign materials, placing campaign materials on patient care boards, speaking to media and the public about the campaign, working to rule by taking all breaks on time, not participating in audit-related activities, not attending non-patient related meetings, and not filing RFAs or taking late files to admissions. Meanwhile, ANMF members at the Royal Hobart Hospital endorsed industrial action at a mass meeting on 22 September, with further mass meetings in the north and north-west later this week. Public sector nurses are fighting for a fair deal with decent wages and conditions and safer staffing levels.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Royal Hobart Hospital" },
+            { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Royal Hobart Hospital" },
             { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
-            { city: "Burnie", state: "TAS", lat: CITY_COORDS["Burnie"][0], lng: CITY_COORDS["Burnie"][1], name: "North West Regional Hospital" }
+            { city: "Burnie", state: "TAS", lat: HOSP["TAS"]["North West Regional"][0], lng: HOSP["TAS"]["North West Regional"][1], name: "North West Regional Hospital" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5516,7 +5516,7 @@ const STRIKE_DATA = [
         description: "Union members at Arts Centre Melbourne held a second 24-hour strike on 18 September. The first 24-hour strike on 11 September resulted in two shows being cancelled and one postponed. It was anticipated that Friday's strike would disrupt programming and venue operations. Workers are fighting for a decent wage increase to keep up with the cost of living, while Arts Centre Melbourne management is refusing anything more than the 3% referenced in the state government's wages policy. It is worth noting that other state government employees, most notably nurses and teachers, fought for and won wage increases well above the wages policy. Unions have warned that further industrial action will occur if negotiations stall, and that this could include disruption to the opening of the Ian Potter State Theatre in October.",
         locations: [
             { city: "Melbourne", state: "VIC", lat: MELB["Arts Centre"][0], lng: MELB["Arts Centre"][1], name: "Arts Centre Melbourne" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Hamer Hall"][0], lng: CITY_COORDS["Hamer Hall"][1], name: "Hamer Hall" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Hamer Hall"].lat, lng: SPECIFIC["Hamer Hall"].lng, name: "Hamer Hall" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5535,7 +5535,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "On 17 September, the unions in dispute with BHP at Port Hedland all posted identical statements on social media. The statement notes that workers rejected a proposal from BHP that would leave half the workforce worse off, and that unions want to resolve inequality in conditions by lifting everyone to the same standards. It goes on to say that negotiations have reached an impasse, there is no reasonable chance an agreement will be reached without the intervention of the FWC, and that is why they are applying for an intractable bargaining declaration.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5573,7 +5573,7 @@ const STRIKE_DATA = [
         state: "ACT",
         description: "After rejecting the territory government's latest offer, public school teachers in the ACT have called another stoppage. Teachers will stop work from 8:30am-10:30am on 24 September. In response, ACT Education Directorate has announced all public schools, preschools and specialist schools will close from 8:30-10:30am with the school day starting from 10:30am. In addition to their demands around pay, the AEU is also putting a spotlight on resourcing and workload issues in schools where a shortage of teachers is causing schools to regularly split and collapse classes.",
         locations: [
-            { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "ACT public schools" }
+            { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT public schools"].lat, lng: SPECIFIC["ACT public schools"].lng, name: "ACT public schools" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5629,7 +5629,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "For Week 3 of the 'Four Weeks To Fix It Campaign', VAHPA members will be participating in rolling lunchtime rallies. Rallies kicked off on 21 September at the Royal Women's Hospital, and on 22 September at Northern Health and Monash Health. On 23 September rallies took place at the Alfred, Western Health, Austin Health and Bendigo Health. On 24 September, workers will rally at Grampians Health.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5686,7 +5686,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Professionals Australia members at AEMO have voted in favour of taking industrial action. AEMO has put a subpar offer to workers for a third time, with 68% voting it down. Professionals Australia members are set to commence industrial action next week.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "AEMO" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["AEMO"].lat, lng: SPECIFIC["AEMO"].lng, name: "AEMO" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5724,7 +5724,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "The whole workforce ballot for the new agreement for public school teachers in Victoria has concluded with 93.1% of those who participated endorsing the deal. 79% of AEU members had previously endorsed the agreement.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Schools across Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Schools across Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -5749,7 +5749,7 @@ const STRIKE_DATA = [
     state: "SA",
     description: "Nurses to hold a planned demonstration on February 5th, rallying at Parliament House before marching to SA Health at Hindmarsh Square. The ANMF wrote to the state government on 10 December outlining an acceptable offer and requested a response by 22 December. The government requested an extension until 23 January, which the ANMF agreed to. The due date has now passed and the ANMF has not received a response.",
     locations: [
-        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Parliament House / SA Health" }
+        { city: "Adelaide", state: "SA", lat: -34.9213, lng: 138.5989, name: "Parliament House / SA Health" }
     ],
     sources: [
         { name: "Disputes Report - 28 January 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-january" }
@@ -5787,7 +5787,7 @@ const STRIKE_DATA = [
     state: "TAS",
     description: "Tasmanian Premier Jeremy Rockliff put forward a 'take it or leave it' offer of a 3% one-year agreement. Unions commenced industrial action in response. In the lead up to Christmas, HACSU was holding stoppages almost every day, the AEU held two half-day strikes, and the CPSU participated in stoppages and work bans. In addition to fighting for a better pay increase, public sector workers have concerns about workloads, occupational violence, and recruitment and retention issues. The lead negotiator for multiple public sector agreements, Norm McIlfatrick, resigned effective immediately on 20 January.",
     locations: [
-        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tasmanian State Government" }
+        { city: "Hobart", state: "TAS", lat: SPECIFIC["Tasmanian Parliament"].lat, lng: SPECIFIC["Tasmanian Parliament"].lng, name: "Tasmanian State Government" }
     ],
     sources: [
         { name: "Disputes Report - 28 January 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-january" },
@@ -5807,7 +5807,7 @@ const STRIKE_DATA = [
     state: "TAS",
     description: "TasRail workers took industrial action in late January. Further details pending.",
     locations: [
-        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "TasRail" }
+        { city: "Hobart", state: "TAS", lat: SPECIFIC["TasRail"].lat, lng: SPECIFIC["TasRail"].lng, name: "TasRail" }
     ],
     sources: [
         { name: "Disputes Report - 28 January 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-january" }
@@ -5866,7 +5866,7 @@ const STRIKE_DATA = [
     state: "SA",
     description: "On 4 February, the ANMF rejected a fourth offer from the state government. The offer included a pay increase of 10.75% over 3 years. The next day (5/2), nurses and midwives went ahead with their planned mass stopwork rally in Adelaide. The ANMF has endorsed a 'staged and sustainable site-based engagement process for the implementation of heightened Industrial Action'. First cab off the rank is a 24-hour stoppage on 19 February at the Lyell McEwin Hospital.",
     locations: [
-        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Parliament House" },
+        { city: "Adelaide", state: "SA", lat: -34.9213, lng: 138.5989, name: "Parliament House" },
         { city: "Adelaide", state: "SA", lat: -34.7500, lng: 138.6000, name: "Lyell McEwin Hospital" }
     ],
     sources: [
@@ -5945,7 +5945,7 @@ const STRIKE_DATA = [
     state: "TAS",
     description: "Three unions remain in dispute with the Tasmanian State Government after intensive negotiations did not result in acceptable offers. The AEU announced a number of work bans on 4 March, including not reporting staff participation in industrial action, wearing union t-shirts and distributing union materials, and not administering or supporting NAPLAN assessments or NAPLAN practice. On Friday 6 March, the state government provided an offer for a new agreement to the AEU at 5:01pm along with a request to withdraw industrial action.",
     locations: [
-        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tasmanian State Government" }
+        { city: "Hobart", state: "TAS", lat: SPECIFIC["Tasmanian Parliament"].lat, lng: SPECIFIC["Tasmanian Parliament"].lng, name: "Tasmanian State Government" }
     ],
     sources: [
         { name: "Disputes Report - 11 March 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-march" }
@@ -5966,7 +5966,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "MSAV members across the Victorian public health sector took strike action and rallied in Treasury Gardens at 11am before marching to Parliament House. It's been over a year since the state government offered MSAV members a 3% pay rise, and they have refused to budge. Stage 1 protected industrial action started on 10 March with workers wearing union t-shirts and putting up posters. Stage 2 commenced on 23 March with a range of bans including bans on answering telephones, administrative bans including billing, invoicing and processing PBS claims, and bans on non-clinical and non-patient facing duties.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Treasury Gardens / Parliament House" }
+        { city: "Melbourne", state: "VIC", lat: -37.815, lng: 144.973, name: "Treasury Gardens / Parliament House" }
     ],
     sources: [
         { name: "Disputes Report - 1 April 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-april" }
@@ -6004,7 +6004,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "On 25 March, union members at Coliban Water downed tools for 2 hours. The bosses at Coliban are refusing to give workers a decent pay rise, despite their real wages plummeting by 13% since 2021. Bosses have also been threatening to stand workers down or dock their pay.",
     locations: [
-        { city: "Bendigo", state: "VIC", lat: CITY_COORDS["Bendigo"][0], lng: CITY_COORDS["Bendigo"][1], name: "Coliban Water" }
+        { city: "Bendigo", state: "VIC", lat: SPECIFIC["Coliban Water"].lat, lng: SPECIFIC["Coliban Water"].lng, name: "Coliban Water" }
     ],
     sources: [
         { name: "Disputes Report - 1 April 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-1-april" }
@@ -6044,7 +6044,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "Industrial action at 8 Melbourne councils kicked off on 7 April. Waste workers at Darebin, Hume and Merri-bek councils and parking officers at Yarra, Maribyrnong and Melbourne struck for 24 hours. ASU members at those 6 councils, plus Greater Dandenong and Hobsons Bay commenced a variety of work bans on 8 April. Workers are fighting for decent pay increases after real wages have declined during the cost of living crisis. The ASU is asking for a 10% wage increase in the first year of the agreement, and a 4% increase in the second.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various metropolitan Melbourne councils" }
+        { city: "Melbourne", state: "VIC", lat: SPECIFIC["Melbourne Town Hall"].lat, lng: SPECIFIC["Melbourne Town Hall"].lng, name: "Various metropolitan Melbourne councils" }
     ],
     sources: [
         { name: "Disputes Report - 15 April 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-april" }
@@ -6065,9 +6065,9 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "ASU members at the 8 Melbourne metropolitan councils negotiating a multi-employer agreement are set to strike for 24 hours on 5 May. Workers will rally at Trades Hall in Melbourne from 10:30am before marching to Parliament House. The decision to strike was made by a mass meeting of ASU members on 17 April. Merri-bek Council has been docking the wages of Home Support Workers and Home Maintenance Workers for participating in work bans; Hume City Council has contracted scab labour to collect bins and docked workers' wages.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Trades Hall / Parliament House" },
-        { city: "Coburg", state: "VIC", lat: CITY_COORDS["Coburg"][0], lng: CITY_COORDS["Coburg"][1], name: "Merri-bek Council" },
-        { city: "Broadmeadows", state: "VIC", lat: CITY_COORDS["Broadmeadows"][0], lng: CITY_COORDS["Broadmeadows"][1], name: "Hume City Council" }
+        { city: "Melbourne", state: "VIC", lat: -37.8065, lng: 144.9663, name: "Trades Hall / Parliament House" },
+        { city: "Coburg", state: "VIC", lat: SPECIFIC["Merri-bek Council"].lat, lng: SPECIFIC["Merri-bek Council"].lng, name: "Merri-bek Council" },
+        { city: "Broadmeadows", state: "VIC", lat: -37.682, lng: 144.9183, name: "Hume City Council" }
     ],
     sources: [
         { name: "Disputes Report - 22 April 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-april" }
@@ -6088,7 +6088,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "Over 1000 workers from 8 metropolitan Melbourne city councils rallied outside Trades Hall on 5 May before marching to Parliament House. ASU members at the 8 councils struck for 24 hours, missing bin collections, closing libraries and disrupting council services. Workers are fighting for their first multi-employer agreement. They are demanding a fair pay rise (10%/4%/4%/4%), locking in and protecting all existing conditions, as well as improving a range of common conditions such as dispute resolution, discipline, replacement of vacancies and parental leave.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Trades Hall / Parliament House" }
+        { city: "Melbourne", state: "VIC", lat: -37.8065, lng: 144.9663, name: "Trades Hall / Parliament House" }
     ],
     sources: [
         { name: "Disputes Report - 6 May 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-6-may" }
@@ -6107,7 +6107,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "Having still not received an offer from the state government, MSAV members commenced 'Stage 3' industrial action on 29 April. Stage 3 means working to rule and several new bans being instituted. Indefinite bans include starting work earlier or later than rostered; working outside of duties/responsibilities listed on position descriptions including 'acting up' or 'filling in'; covering unfilled absences; commissioning or testing new software, instruments or equipment; performing work associated with projects; taking inventory or performing other stock or supplies management; and the performance of certain non-urgent and/or non-critical clinical work.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Victorian public health sites" }
+        { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Various Victorian public health sites" }
     ],
     sources: [
         { name: "Disputes Report - 6 May 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-6-may" }
@@ -6128,7 +6128,7 @@ const STRIKE_DATA = [
     state: "SA",
     description: "The ANMF announced that members would recommence industrial action in the public sector on Monday 18 May. Industrial action was suspended in February when the government made an offer of a 6% 'interim administrative increase' in the lead up to the state election. Following the election, negotiations resumed over the ANMF's full wage claim and demands for improved conditions. These negotiations have now stalled. On Monday, ANMF members started wearing campaign t-shirts to work as well as only fulfilling roles strictly within their job requirements. Next week industrial action will escalate to bans on non-clinical duties. If a decent offer has not been made by June, nurses will move to strike action - most likely starting with a strike at the Lyell McEwin Hospital.",
     locations: [
-        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Various public hospitals" }
+        { city: "Adelaide", state: "SA", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various public hospitals" }
     ],
     sources: [
         { name: "Disputes Report - 20 May 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-20-may" }
@@ -6187,7 +6187,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "Industrial action at Parks Victoria continues by ASU, AWU and CPSU members. ASU members are writing slogans on PV vehicles, displaying campaign signs, and have bans on rubbish collection, cleaning facilities and fireplaces, travelling between work centres, and meal breaks in the field. AWU members are calling for reclassification and pay uplift for rangers, displaying campaign material, making media statements, placing signage at parks and on PV vehicles, and adding campaign email signatures and auto-replies. CPSU members have stoppages and indefinite bans on online tasks, responding to Ministerial enquiries, rubbish collection, cleaning, meal breaks in the field. All union members are calling for pay parity with public sector colleagues.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" }
+        { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria" }
     ],
     sources: [
         { name: "Disputes Report - 3 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-3-june" }
@@ -6227,7 +6227,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "CPSU members at Parks Victoria walked off the job for 24 hours on 11 June as an escalation in the campaign. ASU members held a one-hour stopwork rally on 8 June at Brimbank Park. CPSU altered long-weekend plans due to legal technicalities raised by Parks Victoria over 'closing' vs not opening parks, and instead escalated to a 24-hour strike. Indefinite bans remain on rubbish collection, cleaning facilities and fireplaces, and taking meal breaks in the field.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Parks Victoria" },
+        { city: "Melbourne", state: "VIC", lat: VIC["Parks Vic"][0], lng: VIC["Parks Vic"][1], name: "Parks Victoria" },
         { city: "Melbourne", state: "VIC", lat: -37.7500, lng: 144.8500, name: "Brimbank Park" }
     ],
     sources: [
@@ -6267,7 +6267,7 @@ const STRIKE_DATA = [
     state: "ACT",
     description: "On 11 June ACT school teachers went on strike for 24 hours, the first full-day strike by teachers in the Territory in more than 15 years. All public schools were closed with no on-site supervision. The action followed a 2-hour strike in May. AEU members are fighting for wage increases plus action on workload and staff shortages. Teachers and supporters met in Civic Square before marching to Glebe Park.",
     locations: [
-        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Civic Square / Glebe Park" }
+        { city: "Canberra", state: "ACT", lat: SPECIFIC["ACT Government"].lat, lng: SPECIFIC["ACT Government"].lng, name: "Civic Square / Glebe Park" }
     ],
     sources: [
         { name: "Disputes Report - 17 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -6382,7 +6382,7 @@ const STRIKE_DATA = [
     state: "WA",
     description: "90% of AMWU members and 100% of ETU members at BHP's Port Hedland operation voted in favour of taking strike action. The unions accuse BHP of progressively ripping away conditions including rent subsidies, transport to and from work, meals while on shift and healthcare support. Workers are fighting for clear classification criteria, enforceable conditions and parity for workers at the port with the same skills and experience. Negotiations have been underway for 6 months but BHP has not been cooperative, and had already started trying to recruit scabs before the ballots were counted.",
     locations: [
-        { city: "Port Hedland", state: "WA", lat: CITY_COORDS["Port Hedland"][0], lng: CITY_COORDS["Port Hedland"][1], name: "BHP Port Hedland" }
+        { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
     ],
     sources: [
         { name: "Disputes Report - 17 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -6401,7 +6401,7 @@ const STRIKE_DATA = [
     state: "TAS",
     description: "87% of HACSU members endorsed a new agreement with Ambulance Tasmania, bringing a long dispute to an end after industrial action commenced 9 months ago. The agreement includes the standard 8.75% wage increase over 3 years, plus structural adjustments, a modernised classification structure and improved conditions. HACSU state secretary Robbie Moore confirmed the agreement addresses key issues around rostering and single officer responses.",
     locations: [
-        { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Ambulance Tasmania" }
+        { city: "Hobart", state: "TAS", lat: SPECIFIC["Ambulance Tasmania"].lat, lng: SPECIFIC["Ambulance Tasmania"].lng, name: "Ambulance Tasmania" }
     ],
     sources: [
         { name: "Disputes Report - 17 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-17-june" }
@@ -6441,7 +6441,7 @@ const STRIKE_DATA = [
     state: "ACT",
     description: "HSU members at Canberra Hospital in medical imaging, sonography and pathology participated in industrial action. After 6 months of negotiations without a meaningful offer from the Territory Government, on 17 June members wore campaign t-shirts and implemented bans on answering telephone calls, responding to voicemail messages and responding to electronic messages. Other administrative bans took place on 18 June, culminating in a 1-hour stoppage on 19 June.",
     locations: [
-        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Canberra Hospital" }
+        { city: "Canberra", state: "ACT", lat: HOSP["ACT"]["Canberra"][0], lng: HOSP["ACT"]["Canberra"][1], name: "Canberra Hospital" }
     ],
     sources: [
         { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -6498,7 +6498,7 @@ const STRIKE_DATA = [
     state: "QLD",
     description: "Patrol Officers at RACQ held another stoppage on 23 June. Workers are fighting for a fair deal and want the bosses to come back to the negotiating table.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "RACQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY["RACQ"][0], lng: COMPANY["RACQ"][1], name: "RACQ" }
     ],
     sources: [
         { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -6557,7 +6557,7 @@ const STRIKE_DATA = [
     state: "NSW",
     description: "ETU members at 12 construction companies in Sydney have won a 5.25% pay increase for the first year of their new agreement. While negotiations for the rest of the agreement continue, workers will benefit from the increase in their next pay packet with backpay to 1 May.",
     locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney construction sites" }
+        { city: "Sydney", state: "NSW", lat: COMPANY["Stowe"][0], lng: COMPANY["Stowe"][1], name: "Sydney construction sites" }
     ],
     sources: [
         { name: "Disputes Report - 24 June 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-24-june" }
@@ -6616,7 +6616,7 @@ const STRIKE_DATA = [
     state: "SA",
     description: "Nurses and midwives in SA kicked off industrial action on 30 October with a stop work rally on the steps of Parliament House. ANMF members rejected the state government's offer of a 13% pay increase over 4 years, and the government failed to provide an improved offer by the union's deadline of 17 September.",
     locations: [
-        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Parliament House" }
+        { city: "Adelaide", state: "SA", lat: -34.9213, lng: 138.5989, name: "Parliament House" }
     ],
     sources: [
         { name: "Disputes Report - 15 October 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-october" }
@@ -6635,8 +6635,8 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "ANMF members at Healthscope facilities stopped work for 4 hours on 20 November, rallying at the Melbourne Private Hospital and Geelong Clinic. Healthscope was putting their proposed agreement out to a ballot without the ANMF's agreement. The ANMF advised members to vote no, primarily because the proposed agreement does not achieve parity with public sector wages until July 2027.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: -37.7965, lng: 144.9570, name: "Melbourne Private Hospital" },
-        { city: "Geelong", state: "VIC", lat: -38.1499, lng: 144.3617, name: "Geelong Clinic" }
+        { city: "Melbourne", state: "VIC", lat: SPECIFIC["Healthscope Facilities"].lat, lng: SPECIFIC["Healthscope Facilities"].lng, name: "Melbourne Private Hospital" },
+        { city: "Geelong", state: "VIC", lat: SPECIFIC["Healthscope Geelong"].lat, lng: SPECIFIC["Healthscope Geelong"].lng, name: "Geelong Clinic" }
     ],
     sources: [
         { name: "Disputes Report - 19 November 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-19-november" }
@@ -6655,7 +6655,7 @@ const STRIKE_DATA = [
     state: "NSW",
     description: "AMWU & ETU members who work for Downer Engineering around Newcastle and the Hunter Valley commenced industrial action on 12 November. Workers at sites including Bayswater Power station, Port Waratah Coal Services, Kooragang Bulk Facilities and the Downer Haxham workshop have been taking 8 x 1-hour stoppages each day. 80% of workers rejected Downer's last offer, and 95% endorsed taking industrial action.",
     locations: [
-        { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Downer Engineering sites" }
+        { city: "Newcastle", state: "NSW", lat: SPECIFIC["Downer Engineering"].lat, lng: SPECIFIC["Downer Engineering"].lng, name: "Downer Engineering sites" }
     ],
     sources: [
         { name: "Disputes Report - 19 November 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-19-november" }
@@ -6712,7 +6712,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "Workers at Bucher Municipal took industrial action for the second time on 9 October. Workers are demanding improved working conditions and paths for reclassification and progression, but management is refusing to come to the negotiation table.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Bucher Municipal" }
+        { city: "Melbourne", state: "VIC", lat: SPECIFIC["Bucher Municipal"].lat, lng: SPECIFIC["Bucher Municipal"].lng, name: "Bucher Municipal" }
     ],
     sources: [
         { name: "Disputes Report - 15 October 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-october" }
@@ -6731,7 +6731,7 @@ const STRIKE_DATA = [
     state: "WA",
     description: "On 2 October, WA firefighters marched through the streets of Perth as part of their industrial campaign for a new EBA. Negotiations for the EBA have been underway since last October, with the union participating in over 20 bargaining meetings. Firies are fighting for an increase to their base rate as well as a comprehensive health and wellness program and other improvements to conditions. A key issue is a large shortfall in firefighters, with the gaps being plugged with overtime.",
     locations: [
-        { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth CBD" }
+        { city: "Perth", state: "WA", lat: PER["Forrest Place"][0], lng: PER["Forrest Place"][1], name: "Perth CBD" }
     ],
     sources: [
         { name: "Disputes Report - 15 October 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-october" }
@@ -6750,7 +6750,7 @@ const STRIKE_DATA = [
     state: "SA",
     description: "On 10 October, workers at Aurizon walked off the job. Workers have voted down an unacceptable EBA that did not address cost of living pressures or working conditions. This has left workers with no option but to pursue industrial action to demonstrate to the bosses that they need a better deal.",
     locations: [
-        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Aurizon SA" }
+        { city: "Adelaide", state: "SA", lat: SPECIFIC["Aurizon SA"].lat, lng: SPECIFIC["Aurizon SA"].lng, name: "Aurizon SA" }
     ],
     sources: [
         { name: "Disputes Report - 15 October 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-15-october" }
@@ -6808,7 +6808,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Over 200 of 295 public psychiatrists sent in resignations effective 21 January over a 30% pay gap and severe staffing crisis. Mental health wards closed. NSW IRC agreed to expedited arbitration. ASMOF frustrated with government refusing to consider any wage increase over 3%.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "NSW public hospitals" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["NSW public hospitals"].lat, lng: SPECIFIC["NSW public hospitals"].lng, name: "NSW public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -6828,7 +6828,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Workers at the Infrabuild Wire Mill in Geelong participated in a 24-hour stoppage. The union held rallies at 6am and 1pm to cover all shifts. Workers are fighting for a fair deal.",
         locations: [
-            { city: "Geelong", state: "VIC", lat: CITY_COORDS["Geelong"][0], lng: CITY_COORDS["Geelong"][1], name: "Infrabuild Wire Mill" }
+            { city: "Geelong", state: "VIC", lat: SPECIFIC["Infrabuild Wire Mill"].lat, lng: SPECIFIC["Infrabuild Wire Mill"].lng, name: "Infrabuild Wire Mill" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -6888,7 +6888,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "FWC suspended all industrial action until July. The CRU filed for a Good Faith Bargaining order. The unions presented a counteroffer including an 11% pay rise over 3 years, less than their original 32% claim. Section 35A risk assessment clause remained a major sticking point.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney Trains Network" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Sydney Trains"].lat, lng: SPECIFIC["Sydney Trains"].lng, name: "Sydney Trains Network" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -7029,7 +7029,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Following the UWU strike at Woolworths distribution centres, 2 workers were sacked and many others across NSW and Victoria were investigated for their conduct during the strike. Management alleged unlawful picketing. The union and sacked workers declined to comment.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Woolworths distribution centres" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Woolworths DC"].lat, lng: SPECIFIC["Woolworths DC"].lng, name: "Woolworths distribution centres" }
         ],
         sources: [
             { name: "Disputes Report - 22 January 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-22-january" }
@@ -7049,7 +7049,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Kindergarten teachers who are members of the AEU planned a second day of strike action on 26 February. Educators also struck for 24 hours in September 2025. The AEU has been in talks with the state government for more than 18 months, but an offer that increases salaries and addresses excessive workload has not been forthcoming.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian kindergartens" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Victorian kindergartens" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7090,7 +7090,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "98% of HWU members rejected an offer from the Victorian Government. The offer included 5% pay increases in the first 2 years but no wage increase in the third year. Work bans continue, resulting in cancellations and delays to Category 1 and 2 elective surgeries.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian public hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Victorian public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7147,7 +7147,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Nurses and midwives across South Australia walked off the job and marched through Adelaide demanding a fair new agreement. In addition to strike action, nurses and midwives participated in work bans including refusing to clean beds and mental health nurses refusing to complete NOCC forms.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Adelaide CBD" }
+            { city: "Adelaide", state: "SA", lat: -34.9213, lng: 138.5989, name: "Adelaide CBD" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -7308,7 +7308,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Teachers in the vocational education part of Victoria University commenced industrial action. Workers are fighting for action on workload and for pay parity with RMIT and Swinburne.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victoria University" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victoria University"].lat, lng: SPECIFIC["Victoria University"].lng, name: "Victoria University" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7348,7 +7348,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "The RTBU commenced 30 days of industrial action at Brisbane City Council including work to rule and a uniform ban.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane City Council" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Brisbane City Council"].lat, lng: SPECIFIC["Brisbane City Council"].lng, name: "Brisbane City Council" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7368,7 +7368,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Doctors rallied at the Royal Newcastle Centre in response to a leaked email where a hospital administrator called junior doctors 'clinical marshmallows'. Junior Doctors in NSW last year won a class action against the NSW Government in relation to unpaid overtime with NSW Health paying out $230 million. Award negotiations have stalled.",
         locations: [
-            { city: "Newcastle", state: "NSW", lat: CITY_COORDS["Newcastle"][0], lng: CITY_COORDS["Newcastle"][1], name: "Royal Newcastle Centre" }
+            { city: "Newcastle", state: "NSW", lat: SPECIFIC["Royal Newcastle Centre"].lat, lng: SPECIFIC["Royal Newcastle Centre"].lng, name: "Royal Newcastle Centre" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7388,7 +7388,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Another protected action ballot order was granted for lawyers at Maurice Blackburn. The ballot was set to close on 18 February. Workers are fighting for a decent pay increase, 10 days reproductive leave, and measures to improve the gender pay gap.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Maurice Blackburn" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Maurice Blackburn"].lat, lng: SPECIFIC["Maurice Blackburn"].lng, name: "Maurice Blackburn" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7428,7 +7428,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Serco lost its contract with the Federal Government to provide security at immigration detention centres, creating uncertainty for the workforce. Not one Serco employee had been offered a job with the new contractor Secure Journeys. UWU also criticised Serco for sending misleading letters advising workers that they would need to resign to get a job with Secure Journeys, which would rob them of redundancy payments. Strike action was endorsed by 96% of members.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Immigration Detention Centres" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Immigration Detention Centres"].lat, lng: SPECIFIC["Immigration Detention Centres"].lng, name: "Immigration Detention Centres" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7447,7 +7447,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "The TWU reached an in-principle agreement with Dnata following recent strike action. The deal includes a 12% pay increase over 2 years, improvements to rosters and rest periods, and increased shift penalty rates. An earlier in-principle agreement from December was for 11% over 2 years.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Dnata" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Dnata"].lat, lng: SPECIFIC["Dnata"].lng, name: "Dnata" }
         ],
         sources: [
             { name: "Disputes Report - 5 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-february" }
@@ -7489,7 +7489,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "HACSU members stopped work for 2 hours at Northern Health and at St Vincent's as an escalation of their EBA campaign. The union says there has been 'no meaningful movement' from the Victorian Hospitals Industry Association or the government. Both HACSU and the ANMF have implemented a range of work bans. Negotiations have been underway for 7 months.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Northern Health / St Vincent's" }
+            { city: "Melbourne", state: "VIC", lat: -37.676, lng: 144.93, name: "Northern Health / St Vincent's" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7509,7 +7509,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Workers at UGL in Townsville struck again in pursuit of a better deal from the boss.",
         locations: [
-            { city: "Townsville", state: "QLD", lat: CITY_COORDS["Townsville"][0], lng: CITY_COORDS["Townsville"][1], name: "UGL Townsville" }
+            { city: "Townsville", state: "QLD", lat: SPECIFIC["UGL Townsville"].lat, lng: SPECIFIC["UGL Townsville"].lng, name: "UGL Townsville" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7529,7 +7529,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "At a mass meeting, ANMF members at St Vincent's Private Hospital voted to put the revised offer from management to a formal vote. This followed 100 days of protected industrial action. Wins include an extra week of annual leave for part-time shift workers, 5 days compassionate leave, 5 uncertified personal leave days, recognition of unpaid parental leave for long service leave accrual, and a Consultative Committee.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "St Vincent's Private Hospital" }
+            { city: "Melbourne", state: "VIC", lat: -37.809, lng: 144.978, name: "St Vincent's Private Hospital" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7549,7 +7549,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Over 400 workers at BAE Osborne walked off the job. Both morning and afternoon shifts held 1-hour stop work meetings to discuss their EBA campaign. Workers struck again on 4 March. Workers are seeking pay parity with ASC - this would look like ~10% annual wage increases. BAE is refusing to budge from their offer of 12% over 3 years.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Osborne Naval Shipyard" }
+            { city: "Adelaide", state: "SA", lat: -34.79, lng: 138.5, name: "Osborne Naval Shipyard" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7670,7 +7670,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "The ETU applied to the Federal Court to have the FWC's decision to suspend all industrial action thrown out. The ETU contends that the CRU did not adequately represent the ETU's interests and that the decision to suspend all industrial action until July gives the government an unfair advantage in negotiations. The case was before the Federal Court on March 7.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney Trains Network" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Sydney Trains"].lat, lng: SPECIFIC["Sydney Trains"].lng, name: "Sydney Trains Network" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7690,7 +7690,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "After The Services Union members at Brisbane City Council took industrial action, RTBU members shelved their planned peak hour strike as a deal was made. The deal is a 7.35% wage increase over 2 years, only a fraction above the 7.25% offer originally made, and short of the 8.6% demand. The deal includes backpay, improvements to conditions including reproductive leave, more personal leave, and improved redundancy and redeployment clauses.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane City Council" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Brisbane City Council"].lat, lng: SPECIFIC["Brisbane City Council"].lng, name: "Brisbane City Council" }
         ],
         sources: [
             { name: "Disputes Report - 5 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-5-march" }
@@ -7732,7 +7732,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Lawyers at Maurice Blackburn were due to implement a historic work ban on time recording but when faced with the choice between servicing clients but being unable to bill them, or just not servicing them at all - MB chose to not service clients at all and instead essentially locked out its lawyers. Lawyers rallied in the Flagstaff Gardens, and support staff nationally also stopped work for up to 3 hours. Workers are fighting for a decent pay increase and 10 days reproductive leave.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Maurice Blackburn" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Maurice Blackburn"].lat, lng: SPECIFIC["Maurice Blackburn"].lng, name: "Maurice Blackburn" }
         ],
         sources: [
             { name: "Disputes Report - 12 March 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-12-march" }
@@ -7851,7 +7851,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "CPSU members at Ravenhall and Fulham are set to vote in a ballot for protected industrial action. The Victorian state government has outsourced the running of these prisons to GEO Group. One key issue is that correctional officers employed by GEO Group are only entitled to 2 weeks paid parental leave as a primary caregiver. CPSU members want 8 weeks; GEO Group refuses to budge past 4 weeks.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Ravenhall and Fulham Correctional Centres" }
+            { city: "Melbourne", state: "VIC", lat: -37.76, lng: 144.75, name: "Ravenhall and Fulham Correctional Centres" }
         ],
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
@@ -7871,7 +7871,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "72% of AEU members voted in favour of the latest offer from the state government. The agreement includes pay rises of 8.75%-9.01% over the life of the agreement, improved reproductive leave and family and domestic violence leave, 5 'personal impact days' to manage the impact of critical incidents and vicarious trauma, and other improvements.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tasmanian public schools" }
+            { city: "Hobart", state: "TAS", lat: SPECIFIC["Tasmanian Parliament"].lat, lng: SPECIFIC["Tasmanian Parliament"].lng, name: "Tasmanian public schools" }
         ],
         sources: [
             { name: "Disputes Report - 29 April 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-april" }
@@ -8033,7 +8033,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Union workers at PepsiCo in South Australia commenced rolling four-hour stoppages. Workers are fighting for a decent pay increase to keep up with the cost of living. PepsiCo workers in South Australia are paid 12% less than their colleagues in Queensland. The agreement South Australian workers are paid under expired in February - it included only 2.6% annual wage increases leaving workers struggling to keep pace with inflation.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "PepsiCo" }
+            { city: "Adelaide", state: "SA", lat: SPECIFIC["PepsiCo"].lat, lng: SPECIFIC["PepsiCo"].lng, name: "PepsiCo" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8073,7 +8073,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "ANMF members at two Aurora Healthcare hospitals commenced industrial action - Brunswick Private and South Eastern Private hospitals. Workers are participating in a range of activities including a uniform ban, a ban on undertaking administrative or food service duties, a ban on overtime, a ban on attending management meetings unless fully backfilled, a refusal to implement any workplace or system changes proposed by management, and adding information about the industrial action to all emails. Bed closures may also take place. The current EBA for these nurses expired in July 2024.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Aurora Healthcare" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Aurora Healthcare"].lat, lng: SPECIFIC["Aurora Healthcare"].lng, name: "Aurora Healthcare" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8113,8 +8113,8 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "ANMF members at Epworth medical imaging commenced 'stage one' industrial action - wearing union t-shirts, putting up posters, talking to patients and potentially some administrative bans. Workers are fighting for 4.5% annual wage increases as well as improved entitlements including a $9 lead apron allowance. Nurses in Geelong stopped work for 4 hours and nurses in Richmond stopped work for 4 hours.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Epworth Medical Imaging" },
-            { city: "Geelong", state: "VIC", lat: CITY_COORDS["Geelong"][0], lng: CITY_COORDS["Geelong"][1], name: "Epworth Medical Imaging Geelong" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Epworth Medical Imaging"].lat, lng: SPECIFIC["Epworth Medical Imaging"].lng, name: "Epworth Medical Imaging" },
+            { city: "Geelong", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Epworth Medical Imaging Geelong" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8174,7 +8174,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Nurses and midwives in Queensland's public hospitals commenced industrial action for the first time in 23 years. QNMU Secretary Sarah Beaman said: 'The government promised us nation-leading wages and conditions, and we are taking action to make them deliver their promise.' In 'Stage One' industrial action, nurses and midwives will wear pink campaign tshirts and distribute campaign materials.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland public hospitals" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Queensland public hospitals"].lat, lng: SPECIFIC["Queensland public hospitals"].lng, name: "Queensland public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8194,7 +8194,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Allied health workers in SA have been fighting for a dedicated EBA for better wages and conditions for over 9 months. HSU members from Central Adelaide rallied at the RAH Amphitheatre, from Southern Adelaide rallied at the Flinders Medical Centre, and regional members walked off the job for an hour at 12 noon. A rally was held at the Lyell McEwin Hospital in Elizabeth Vale for Northern Adelaide members.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA public hospitals" }
+            { city: "Adelaide", state: "SA", lat: SPECIFIC["SA public hospitals"].lat, lng: SPECIFIC["SA public hospitals"].lng, name: "SA public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8214,7 +8214,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Medical physicists and radio pharmaceutical scientists employed by SA Health walked off the job for an hour and a half. Workers have been taking industrial action in the form of work bans for some months. They are seeking a 30 to 40% wage increase to have pay parity with interstate colleagues.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA Health" }
+            { city: "Adelaide", state: "SA", lat: SPECIFIC["SA Health"].lat, lng: SPECIFIC["SA Health"].lng, name: "SA Health" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8254,8 +8254,8 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Nurses at Epworth Medical Imaging walked off the job. Nurses in Geelong stopped work for 4 hours followed by nurses in Richmond stopping work for 4 hours. Nurses at Epworth Medical Imaging commenced protected industrial action in April, but the stopwork actions are an escalation in tactics. The nurses are fighting for 4.5% annual pay increases and a lead apron allowance.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Epworth Medical Imaging Richmond" },
-            { city: "Geelong", state: "VIC", lat: CITY_COORDS["Geelong"][0], lng: CITY_COORDS["Geelong"][1], name: "Epworth Medical Imaging Geelong" }
+            { city: "Melbourne", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Epworth Medical Imaging Richmond" },
+            { city: "Geelong", state: "VIC", lat: -37.8136, lng: 144.9631, name: "Epworth Medical Imaging Geelong" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8315,7 +8315,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "A management wage offer at Queensland Fertility Group has been voted down. 90% of nurses who voted said NO to the offer. Nurses will instead commence Stage 1 industrial action this week (campaign t-shirts and sharing campaign materials). The offer from the boss was less than interstate colleagues earn.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland Fertility Group" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Queensland Fertility Group"].lat, lng: SPECIFIC["Queensland Fertility Group"].lng, name: "Queensland Fertility Group" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8335,7 +8335,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Both the Combined Rail Unions and Sydney Trains have applied for a voting request order arguing that the ETU's refusal to agree to the in-principle agreement is 'unreasonable'. Meanwhile, the ETU has applied for good faith bargaining orders against Sydney Trains at the RTBU. The FWC cooling off period that suspended all industrial action ends on 1 July, and that by August, Sydney Trains could apply for intractable bargaining declaration.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Sydney Trains Network" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Sydney Trains"].lat, lng: SPECIFIC["Sydney Trains"].lng, name: "Sydney Trains Network" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8375,7 +8375,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "AEU members rallied outside the Victorian Education Minister Ben Carroll's office. The rally is in response to the government's decision to 'strip $2.4 billion out of public schools by pushing back its commitment to fully fund the Gonski reforms by three years.' The 2025-26 Victorian state budget has made Victoria's public schools the lowest funded, and its teachers the lowest paid in the country.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Education Minister's Office" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Education Minister's Office"].lat, lng: SPECIFIC["Education Minister's Office"].lng, name: "Education Minister's Office" }
         ],
         sources: [
             { name: "Disputes Report - 11 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-11-june" }
@@ -8438,7 +8438,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "SA doctors walked off the job. Approximately 2500-3000 doctors stopped work for one hour from 8:30am. This escalation followed a prolonged stalemate in negotiations that have been underway for eight months. SASMOA is seeking a 10% annual wage increase over three years. In addition to improved wages and conditions, doctors are also seeking the government to provide them with an appropriate workforce plan.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA public hospitals" }
+            { city: "Adelaide", state: "SA", lat: SPECIFIC["SA public hospitals"].lat, lng: SPECIFIC["SA public hospitals"].lng, name: "SA public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 18 June 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-18-june" }
@@ -8458,7 +8458,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "Hundreds of radiation therapists and nuclear medicine scientists from Queensland's public hospitals walked off the job for two hours. The latest offer from Queensland Health includes proposals that would see some workers lose up to $30,000 in take home pay due to the scrapping of a retention bonus introduced in recognition of radiation therapy skills. Queensland Health is refusing to budge from its offer of an 8% pay increase over 3 years, and applied to the QIRC for conciliation after stalling negotiations for months.",
         locations: [
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Queensland public hospitals" }
+            { city: "Brisbane", state: "QLD", lat: SPECIFIC["Queensland public hospitals"].lat, lng: SPECIFIC["Queensland public hospitals"].lng, name: "Queensland public hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8467,7 +8467,7 @@ const STRIKE_DATA = [
     },
     {
         id: 30017,
-        actionId: "healthscope-anmf-2025-2",
+        actionId: "healthscope-anmf",
         title: "Healthscope Nurses Vote Down Offer and Escalate Action",
         union: "ANMF Vic",
         industry: "Healthcare",
@@ -8478,7 +8478,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Over 2,500 nurses and midwives at 12 Healthscope facilities participated in the campaign. Following nurses and midwives voting down the last offer from Healthscope, the ANMF has been eager to get back to negotiations but Healthscope has not yet agreed to meet. In addition to theatre stoppages, ANMF members continue wearing campaign t-shirts, talking to patients and media about the dispute, ensuring to take all breaks and a number of work bans.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Healthscope facilities" }
+            { city: "Melbourne", state: "VIC", lat: -37.7965, lng: 144.957, name: "Healthscope facilities" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8498,7 +8498,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "HWU members who work as cooks, cleaners, orderlies, ward clerks, theatre technicians, phlebotomists and allied health assistants walked off the job and marched to Parliament House in Melbourne. It was the first industrial action taken by HWU members in the public sector for 25 years and involved workers from 80 public health services. 20 meetings with the Victorian Hospital Industrial Association resulted in broad agreement on many 'non-cost' items, but wages remain the major sticking point.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian Parliament" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Victorian Parliament"].lat, lng: SPECIFIC["Victorian Parliament"].lng, name: "Victorian Parliament" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8558,7 +8558,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Industrial action at Ambulance Victoria, including 'deferring and delaying' the processing of invoices is causing Ambulance Victoria to lose out on $1 million a day. Both corporate staff who are members of Ambulance Managers and Professionals Association (a division of Professionals Australia) and maintenance staff with UWU are currently undertaking a range of work bans and industrial action.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Ambulance Victoria" }
+            { city: "Melbourne", state: "VIC", lat: SPECIFIC["Ambulance Victoria"].lat, lng: SPECIFIC["Ambulance Victoria"].lng, name: "Ambulance Victoria" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8578,7 +8578,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "Workers at CSL in Broadmeadows went on strike for 24 hours. Members of the AMWU, CPSU and UWU participated in the strike. Workers have already voted down one offer from CSL, but the bosses have put a 'revised' offer out to vote. The revised offer includes a 10.5% wage increase over 3 years. Unions are fighting for at least a 13% wage increase to achieve parity with CSL Seqirus. In addition to a fair wage increase workers are also pursuing improved rostering rights, working from home rights, improved career progression and the trialling of a 4 day work week.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "CSL Broadmeadows" }
+            { city: "Melbourne", state: "VIC", lat: COMPANY["CSL"]["VIC"][0], lng: COMPANY["CSL"]["VIC"][1], name: "CSL Broadmeadows" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8598,7 +8598,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "For the second time in two months, public school teachers in Tasmania took strike action to demand fair pay, workload relief and solutions to what the union calls 'the growing school violence crisis'. Teachers did not commence work until 12 noon, instead spending the morning at AEU stop work actions across the state. Rallies were held in Hobart (St David's Park), Launceston (Royal Park) and Burnie (South Burnie Foreshore).",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Tasmanian public schools" }
+            { city: "Hobart", state: "TAS", lat: SPECIFIC["Tasmanian Parliament"].lat, lng: SPECIFIC["Tasmanian Parliament"].lng, name: "Tasmanian public schools" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8638,7 +8638,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "Correctional officers at 7 prisons across South Australia commenced a 24 hour stoppage and voted for another 24 hour stoppage with reports that PSA members had resolved to continue strike action 'indefinitely'. The stoppages are in response to several violent incidents in prisons, the most recent at the Yatala Labour Prison. Concerns include violence, low pay and a 'recruitment emergency'. Two prisons in SA - Mt Gambier and the Adelaide Remand Centre - are run privately and are not affected by the strike action.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "SA prisons" }
+            { city: "Adelaide", state: "SA", lat: SPECIFIC["SA prisons"].lat, lng: SPECIFIC["SA prisons"].lng, name: "SA prisons" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8658,7 +8658,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "AMWU members at Progress Rail have held two 24 hour stoppages in the last fortnight. The most recent stoppage was held on Friday (5/12). Workers are fighting for a fair wage increase.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "Progress Rail" }
+            { city: "Sydney", state: "NSW", lat: SPECIFIC["Progress Rail"].lat, lng: SPECIFIC["Progress Rail"].lng, name: "Progress Rail" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8678,7 +8678,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "Workers at TasRail commenced industrial action. Unions have been in negotiations with TasRail for 8 months, but attempts to improve wages and conditions have failed at the negotiation table. Workers are fighting for a fair deal, for themselves and to improve the attraction and retention issues at TasRail.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "TasRail" }
+            { city: "Hobart", state: "TAS", lat: SPECIFIC["TasRail"].lat, lng: SPECIFIC["TasRail"].lng, name: "TasRail" }
         ],
         sources: [
             { name: "Disputes Report - 14 May 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-may" }
@@ -8698,7 +8698,7 @@ const STRIKE_DATA = [
         state: "TAS",
         description: "HACSU members in Tasmania continued their industrial campaign demanding a fair deal from the state government. Pharmacy staff, podiatry staff and medical physicists at the Royal Hobart Hospital stopped work for 1 hour. Workers at the Roy Fagan Centre stopped work for 1 hour. Cleaners, food services workers, trades staff, administration staff, hospital aides and theatre support staff at the Launceston General Hospital stopped work for 1 hour over the government's lousy wages offer.",
         locations: [
-            { city: "Hobart", state: "TAS", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1], name: "Royal Hobart Hospital" },
+            { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Royal Hobart Hospital" },
             { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
         ],
         sources: [
@@ -8923,7 +8923,430 @@ const STRIKE_DATA = [
         { name: "Facebook — ETU/PPTEU post on Downer BWI & Wheatstone vote", url: "https://www.facebook.com/share/p/1GayxqS3Wn/" }
     ],
     tags: ["labour union", "oil-gas", "facilities-maintenance", "ballot", "downer"]
-}
+},
+{
+    id: 6020,
+    actionId: "unimelb-nteu",
+    title: "University of Melbourne NTEU Members Strike and Ban Teaching",
+    union: "NTEU",
+    industry: "Education",
+    type: "strike",
+    startDate: "2026-10-12",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "NTEU members at the University of Melbourne walked off the job for a full day on 12 October and are undertaking a teaching ban from 13 to 16 October, cancelling tutorials, labs, lectures and seminars. After almost 12 months of negotiations, workers are seeking a 20% wage increase, improved workload and job security protections, paid sick leave for casuals, equal superannuation rates for casual and permanent staff at 17%, improved leave and weekly working-hour limits that could enable overtime payments. Workers have also raised concerns that managing AI-related academic integrity issues is increasing already heavy workloads.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: UNI["MELB"][0], lng:  UNI["MELB"][1], name: "University of Melbourne" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "education", "strike", "teaching ban", "wages", "workloads"]
+},
+{
+    id: 6021,
+    actionId: "qantas-engineers-professionals-australia-october-2026",
+    title: "Qantas Engineers Escalate Industrial Action Over Pay",
+    union: "Professionals Australia",
+    industry: "Aviation",
+    type: "stoppage",
+    startDate: "2026-10-12",
+    endDate: "",
+    workers: 120,
+    state: "NSW",
+    description: "Around 120 Professionals Australia members employed as engineers at Qantas in Mascot imposed a two-hour total work ban on 12 October, escalating partial work bans that have been underway since August. Workers are seeking a 13% wage increase in the first year of a new agreement to recover losses from years of wage freezes and below-CPI increases. Qantas has maintained its offer of 3% annual increases. Members are considering further industrial action.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas, Mascot" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "aviation", "engineers", "work ban", "wages"]
+},
+{
+    id: 6022,
+    actionId: "tas-nurses-midwives-anmf-hacsu-october-2026",
+    title: "Tasmanian Public Nurses and Midwives Continue Stop-Work Action",
+    union: "ANMF / HACSU",
+    industry: "Healthcare",
+    type: "stoppage",
+    startDate: "2026-10-07",
+    endDate: "2026-10-13",
+    workers: null,
+    state: "TAS",
+    description: "Public-sector nurses and midwives in Tasmania continued industrial action amid negotiations for a new agreement that have lasted more than six months. ANMF members stopped work at Launceston General Hospital on 7 October, HACSU members took stop-work action at Beaconsfield District Health Service, and members of both unions participated in stoppages at the North West Regional Hospital and Mersey Community Hospital on 8 October and the Repatriation General Hospital in Hobart on 13 October. Workers are seeking safe staffing levels, decent wages and conditions, and fair penalty rates.",
+    locations: [
+        { city: "Hobart", state: "TAS", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Royal Hobart Hospital" },
+        { city: "Launceston", state: "TAS", lat: HOSP["TAS"]["Launceston General"][0], lng: HOSP["TAS"]["Launceston General"][1], name: "Launceston General Hospital" },
+        { city: "Burnie", state: "TAS", lat: HOSP["TAS"]["North West Regional"][0], lng: HOSP["TAS"]["North West Regional"][1], name: "North West Regional Hospital" },
+        { city: "Beaconsfield", state: "TAS", lat: -41.19391, lng: 146.80606, name: "Beaconsfield District Health Service" },
+        { city: "Latrobe", state: "TAS", lat: -41.22916, lng: 146.42225, name: "Mersey Community Hospital" },
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "healthcare", "nurses", "midwives", "stoppage", "staffing", "wages"]
+},
+{
+    id: 6023,
+    actionId: "asmof-victoria-doctors-october-2026",
+    title: "Victorian Public Hospital Doctors Reject Interim Deal and Schedule Stoppage",
+    union: "ASMOF",
+    industry: "Healthcare",
+    type: "planned",
+    startDate: "2026-10-21",
+    endDate: "2026-10-21",
+    workers: null,
+    state: "VIC",
+    description: "Victorian public hospital doctors represented by ASMOF rejected the state government's proposed interim arrangement, with 89% of participating members voting against it in a ballot involving more than half of the union's 10,500 members. The union said the proposal failed to provide a robust solution to pay, unsustainable working hours, fatigue and understaffing. A statewide 12-hour stoppage is scheduled to begin at 7am on 21 October.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: HOSP["VIC"]["Royal Melbourne"][0], lng: HOSP["VIC"]["Royal Melbourne"][1], name: "Victorian public hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "healthcare", "doctors", "planned stoppage", "wages", "staffing"]
+},
+{
+    id: 6024,
+    actionId: "cpsu-building-tasmania-dpac-october-2026",
+    title: "Tasmanian Public Servants Stop Work Over Planned Job Cuts",
+    union: "CPSU",
+    industry: "Public Sector",
+    type: "stoppage",
+    startDate: "2026-10-09",
+    endDate: "2026-10-09",
+    workers: null,
+    state: "TAS",
+    description: "CPSU members from Building Tasmania and the Department of Premier and Cabinet stopped work and rallied on 9 October in protest against planned job cuts. The union lodged an application with the Tasmanian Industrial Commission over alleged failures to consult on the restructure and redundancies. Workers held a vote of no confidence in the Premier at the rally. Around 200 jobs are set to be cut, leaving workers concerned about their futures.",
+    locations: [
+        { city: "Hobart", state: "TAS", name: "Department of Premier and Cabinet and Building Tasmania", lat: CITY_COORDS["Hobart"][0], lng: CITY_COORDS["Hobart"][1]}
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "public sector", "job cuts", "stoppage", "restructure"]
+},
+{
+    id: 6025,
+    actionId: "usyd-nteu-october-2026",
+    title: "University of Sydney NTEU Members Plan 24-Hour Strike",
+    union: "NTEU",
+    industry: "Education",
+    type: "planned",
+    startDate: "2026-10-22",
+    endDate: "2026-10-22",
+    workers: null,
+    state: "NSW",
+    description: "NTEU members at the University of Sydney held a two-hour stop-work meeting on 13 October and announced a 24-hour strike for 22 October, following a previous 24-hour strike on 2 September. Bargaining began in April after a six-week delay by university management. Key unresolved issues include academic and intellectual freedom, change management, AI and teaching associate positions. The parties have made some progress on measures for Aboriginal and Torres Strait Islander staff and initiatives concerning disability and chronic health conditions, but industrial action will proceed while other contentious issues remain unresolved.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "University of Sydney" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "education", "planned strike", "academic freedom", "AI", "bargaining"]
+},
+{
+    id: 6026,
+    actionId: "merri-bek-asu-october-2026",
+    title: "Merri-bek Council Workers Strike Over Multi-Council Agreement",
+    union: "ASU",
+    industry: "Local Government",
+    type: "strike",
+    startDate: "2026-10-14",
+    endDate: "2026-10-15",
+    workers: null,
+    state: "VIC",
+    description: "ASU members at Merri-bek City Council are taking strike action as part of a campaign for a multi-employer agreement covering eight metropolitan Melbourne councils. Workers at the Hadfield depot began a 48-hour strike at 5am on 14 October, while all ASU members at Merri-bek are scheduled to strike for 24 hours on 15 October. Workers have been campaigning for more than a year and are seeking a fair agreement that protects penalty rates and existing conditions after receiving what the union described as a dismal employer offer. Supporters were invited to a picket at the Hadfield depot and a rally at Coburg Town Hall.",
+    locations: [
+        { city: "Hadfield", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Merri-bek Council, Hadfield Depot" },
+        { city: "Coburg", state: "VIC", lat: SPECIFIC["Coburg Town Hall"].lat, lng: SPECIFIC["Coburg Town Hall"].lng, name: "Coburg Town Hall" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "local government", "strike", "council workers", "penalty rates"]
+},
+{
+    id: 6027,
+    actionId: "jetstar-asu-october-2026",
+    title: "Jetstar Makes Improved Offer as Industrial Action Is Paused",
+    union: "ASU",
+    industry: "Aviation",
+    type: "update",
+    startDate: "2026-10-12",
+    endDate: "",
+    workers: null,
+    description: "Following escalating industrial action over two major weekends, Jetstar made an improved offer to ASU members. The offer includes a 5% pay increase in the first year, backdated to 1 October, followed by 3% annual increases; service increments after three, five and seven years; increased staffing; and improvements to allowances, health and wellbeing. Members were scheduled to discuss the offer on 12 and 13 October and vote on whether to accept it. All industrial action has been paused while members consider the proposal.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Jetstar operations" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "aviation", "pay offer", "industrial action paused", "bargaining"]
+},
+{
+    id: 6028,
+    actionId: "air-radiators-amwu-october-2026",
+    title: "Air Radiators Workers Strike Again Over Hours and Pay",
+    union: "AMWU",
+    industry: "Manufacturing",
+    type: "strike",
+    startDate: "2026-10-11",
+    endDate: "2026-10-11",
+    workers: null,
+    state: "VIC",
+    description: "AMWU members at Air Radiators in Lara went on strike for a full day on 11 October, marking their third strike in three weeks. Workers are seeking a 36-hour working week and 4% annual pay increases. Union membership has grown during the dispute. Further strikes were considered likely on Friday and the following week if management failed to make an acceptable offer. Air Radiators manufactures heat-transfer and air-movement solutions, including cooling systems for data centres.",
+    locations: [
+        { city: "Lara", state: "VIC", lat: SPECIFIC["Air Radiators Lara"].lat, lng: SPECIFIC["Air Radiators Lara"].lng, name: "Air Radiators, Lara" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "manufacturing", "strike", "working hours", "wages"]
+},
+{
+    id: 6029,
+    actionId: "aemo-professionals-australia-october-2026",
+    title: "AEMO Workers Introduce Indefinite Bans on Non-Critical Work",
+    union: "Professionals Australia",
+    industry: "Energy",
+    type: "stoppage",
+    startDate: "2026-10-13",
+    endDate: "",
+    workers: null,
+    description: "Professionals Australia members at the Australian Energy Market Operator escalated their industrial campaign on 13 October by imposing indefinite bans on approvals for non-critical planned outages, processing non-critical software and system upgrades, and other non-critical work. These actions supplement existing bans, mainly involving meetings and administrative duties. Workers are seeking wages that keep pace with inflation, protections against AI-related job losses, and the option to work condensed hours over a four-day week.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Australian Energy Market Operator" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "energy", "work ban", "AI", "four-day week", "wages"]
+},
+{
+    id: 6030,
+    actionId: "vahpa-allied-health-october-2026",
+    title: "Victorian Public Allied Health Workers Escalate Industrial Action",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "stoppage",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "VAHPA escalated industrial action by notifying 43 employers of new bans affecting NDIS referrals, elective surgery data, coding and actions intended to delay some scans. These bans supplement existing industrial action. The union expects the measures to disrupt hospital operations, particularly patient bed flow and discharge processes. VAHPA said there remained time to reach an acceptable agreement before the Victorian state government enters caretaker mode.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian public hospitals and health services" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "healthcare", "allied health", "work ban", "public sector"]
+},
+{
+    id: 6031,
+    actionId: "note-printing-australia-amwu-etu-october-2026",
+    title: "Note Printing Australia Workers Commence Work Bans",
+    union: "AMWU / ETU",
+    industry: "Manufacturing",
+    type: "stoppage",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    description: "Union members at Note Printing Australia have commenced a series of work bans in an ongoing enterprise bargaining dispute. Note Printing Australia is owned by the Reserve Bank of Australia and prints Australian banknotes. Workers have been offered a 9.5% wage increase over three years, which unions consider inadequate in the current economic climate.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: SPECIFIC["Note Printing Australia"].lat, lng: SPECIFIC["Note Printing Australia"].lng, name: "Note Printing Australia" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "manufacturing", "banknotes", "work ban", "wages"]
+},
+{
+    id: 6032,
+    actionId: "sct-logistics-twu-wa-october-2026",
+    title: "SCT Logistics Workers in WA Hold Two-Hour Strike",
+    union: "TWU WA",
+    industry: "Transport and Logistics",
+    type: "strike",
+    startDate: "2026-10-08",
+    endDate: "2026-10-08",
+    workers: null,
+    state: "WA",
+    description: "TWU WA members at SCT Logistics stopped work for two hours on 8 October after negotiations with the company broke down the previous day. The stop-work meeting was intended to discuss the company's proposal with workers. Employees are seeking a wage increase that closes the gap with other transport companies, improved superannuation and stronger job security protections.",
+    locations: [
+        { city: "Perth", state: "WA", lat: SPECIFIC["SCT Logistics Perth"].lat, lng: SPECIFIC["SCT Logistics Perth"].lng, name: "SCT Logistics, Perth" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "logistics", "strike", "superannuation", "job security"]
+},
+{
+    id: 6033,
+    actionId: "concrite-twu-nsw-october-2026",
+    title: "Concrite Workers Walk Off the Job",
+    union: "TWU",
+    industry: "Transport and Logistics",
+    type: "strike",
+    startDate: "2026-10-06",
+    endDate: "2026-10-06",
+    workers: null,
+    state: "NSW",
+    description: "TWU members at concrete supplier Concrite walked off the job on 6 October. Workers are seeking improved employment conditions, including stronger job security and full utilisation.",
+    locations: [
+        { city: "Sydney", state: "NSW", lat: SPECIFIC["Concrite"].lat, lng: SPECIFIC["Concrite"].lng, name: "Concrite operations, NSW" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "concrete", "strike", "job security"]
+},
+{
+    id: 6034,
+    actionId: "mazda-amwu-epping-october-2026",
+    title: "Mazda Warehouse Workers Take First Industrial Action",
+    union: "AMWU",
+    industry: "Warehousing and Logistics",
+    type: "strike",
+    startDate: "2026-10-06",
+    endDate: "2026-10-06",
+    workers: null,
+    state: "VIC",
+    description: "AMWU members at the Mazda Australia warehouse in Epping walked off the job for one hour on 6 October, marking their first industrial action since the warehouse opened in 2021. Negotiations had been underway for seven months, with management making no movement on wages and only minimal improvements to conditions. Workers are seeking a better agreement and a stronger voice in their workplace.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: -37.65, lng: 145.03, name: "Mazda Australia warehouse, Epping" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "warehousing", "automotive", "strike", "wages", "bargaining"]
+},
+{
+    id: 6035,
+    actionId: "bridgestone-twu-wa-october-2026",
+    title: "Bridgestone Workers Begin 96-Hour Strike",
+    union: "TWU WA",
+    industry: "Manufacturing and Logistics",
+    type: "strike",
+    startDate: "2026-10-09",
+    endDate: "2026-10-13",
+    workers: null,
+    state: "WA",
+    description: "TWU members at Bridgestone began a 96-hour strike on 9 October, following a rally at the company's Kewdale site on 8 October. Workers are seeking stronger fatigue protections, a living wage, improved allowances and superannuation, better parental leave and decent working conditions.",
+    locations: [
+        { city: "Perth", state: "WA", lat: COMPANY["Bridgestone"]["Kewdale"][0], lng: COMPANY["Bridgestone"]["Kewdale"][1], name: "Bridgestone, Kewdale" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "strike", "fatigue protections", "wages", "superannuation"]
+},
+{
+    id: 6036,
+    actionId: "overnewton-ieu-victoria-october-2026",
+    title: "Overnewton Teachers Take Campaign Action at School Presentation Night",
+    union: "IEU",
+    industry: "Education",
+    type: "protest",
+    startDate: "2026-10-06",
+    endDate: "2026-10-06",
+    workers: null,
+    state: "VIC",
+    description: "IEU members at Overnewton Anglican Community College took industrial campaign action during the school's annual Presentation Night on 6 October. Teachers wore campaign T-shirts and distributed flyers to parents. Workers are seeking competitive wages, clear classifications for Education Support staff and workload limits for teachers.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Overnewton Anglican Community College" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "education", "protest", "wages", "workloads"]
+},
+{
+    id: 6037,
+    actionId: "qtu-tafe-october-2026",
+    title: "Queensland TAFE Workers Vote on Protected Industrial Action",
+    union: "QTU",
+    industry: "Education",
+    type: "ballot",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    state: "QLD",
+    description: "Queensland Teachers' Union members working in TAFEs across Queensland are voting in a protected action ballot. Their agreement expired in June. Workers are seeking an agreement that addresses workloads, supports wellbeing and respects professional autonomy.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: SPECIFIC["TAFEs across Queensland"].lat, lng: SPECIFIC["TAFEs across Queensland"].lng, name: "TAFEs across Queensland" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "education", "TAFE", "protected action ballot", "workloads"]
+},
+{
+    id: 6038,
+    actionId: "fedex-lock-out-transport-strike",
+    title: "FedEx Workers Reach In-Principle Agreement After Strikes",
+    union: "TWU",
+    industry: "Transport and Logistics",
+    type: "resolved",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    description: "After two strikes, three rejected votes and three legal cases, the TWU reached an in-principle agreement with FedEx. The reported offer includes an additional $1,000 sign-on bonus, 10.75% wage increases over three years, 15% superannuation, 20 days of domestic and family violence leave, and consultation on automation and job-security threats through consultative committee meetings. TWU members are to vote on whether to accept the union-recommended offer.",
+    locations: [
+            { city: "Sydney", state: "NSW", lat: COMPANY["FedEx"]["SYD"][0], lng: COMPANY["FedEx"]["SYD"][1], name: "FedEx Sydney" },
+            { city: "Melbourne", state: "VIC", lat: COMPANY["FedEx"]["MELB"][0], lng: COMPANY["FedEx"]["MELB"][1], name: "FedEx Melbourne" },
+            { city: "Brisbane", state: "QLD", lat: COMPANY["FedEx"]["BRIS"][0], lng: COMPANY["FedEx"]["BRIS"][1], name: "FedEx Brisbane" },
+            { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng: COMPANY["FedEx"]["PER"][1], name: "FedEx Perth" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "agreement", "wages", "superannuation", "job security"]
+},
+{
+    id: 6039,
+    actionId: "ventia-twu-wa-october-2026-resolution",
+    title: "Ventia Custodial Officers Secure Improved Pay and Conditions",
+    union: "TWU WA",
+    industry: "Custodial Services",
+    type: "resolved",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "Following 29 months of negotiations and industrial action, TWU members employed by Ventia as custodial officers received a Fair Work Commission decision in their intractable bargaining case. Workers did not win pay parity with G4S contractors doing the same work, but secured significant improvements to pay and conditions. The minimum wage increase equates to more than $17,000 per year, future wage rises will be tied to CPI, and the decision includes stronger workplace allowances, better protections for labour-hire workers and paid union yard meetings.",
+    locations: [
+        { city: "Perth", state: "WA", lat: SPECIFIC["Ventia custodial services"].lat, lng: SPECIFIC["Ventia custodial services"].lng, name: "Ventia custodial services, WA" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "custodial services", "wages", "CPI", "job security"]
+},
+{
+    id: 6040,
+    actionId: "ceva-twu-victoria-october-2026-resolution",
+    title: "CEVA Workers Reach Improved Agreement After Threat of Strike Action",
+    union: "TWU",
+    industry: "Transport and Logistics",
+    type: "resolved",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    description: "The threat of strike action was sufficient to bring CEVA back to the negotiating table with an improved offer. The TWU reported that a strong agreement had been reached, including protections relating to job security, AI and automation.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "CEVA Logistics" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "job security", "AI", "automation"]
+},
 ];
 
 // Export globally
