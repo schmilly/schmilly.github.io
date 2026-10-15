@@ -1536,7 +1536,7 @@ RECORD TABLE
 ================================================================ */
 const PRIORITY_COLS = [
   'id', 'title', 'name', 'union', 'type', 'industry', 'state', 'city',
-  'startDate', 'endDate', 'workers', 'lat', 'lng', 'url', 'actionId'
+  'startDate', 'endDate', 'workers', 'lat', 'lng', 'url', 'actionId', 'adddate'
 ];
 function getColValue(rec, col) {
   if (!rec || rec.kind !== 'object') return undefined;
@@ -1665,13 +1665,22 @@ function renderRecordTable(node, path, ctx) {
       if (state.coordMode === 'raw' && cls !== 'raw') return false;
       if (state.coordMode === 'ref' && cls !== 'ref') return false;
     }
-    if (Object.keys(state.colFilters).length) {
-      for (const [col, set] of Object.entries(state.colFilters)) {
-        if (!set.size) continue;
-        const repr = valueRepr(getColValue(rec, col));
-        if (!set.has(repr)) return false;
+  if (Object.keys(state.colFilters).length) {
+    for (const [col, filter] of Object.entries(state.colFilters)) {
+      if (!isFilterActive(filter)) continue;
+      const repr = valueRepr(getColValue(rec, col));
+      if (filter.type === 'set') {
+        if (!filter.values.has(repr)) return false;
+      } else if (filter.type === 'contains') {
+        if (!repr.toLowerCase().includes(filter.value.toLowerCase())) return false;
+      } else if (filter.type === 'equals') {
+        if (repr !== filter.value) return false;
+      } else if (filter.type === 'date') {
+        // Substring match handles both "2026-09-10" and "2026-09-10T…"
+        if (!repr.startsWith(filter.value)) return false;
       }
     }
+  }
     return true;
   });
   if (state.locationFilter) {
@@ -1765,7 +1774,7 @@ function renderRecordTable(node, path, ctx) {
   htr.appendChild(delTh);
   visibleCols.forEach(c => {
     const th = document.createElement('th');
-    if (state.colFilters[c]?.size) th.classList.add('filtered');
+    if (isFilterActive(state.colFilters[c])) th.classList.add('filtered');
     const inner = document.createElement('div'); inner.className = 'th-inner';
     const label = document.createElement('button');
     label.className = 'th-label';
@@ -1783,8 +1792,16 @@ function renderRecordTable(node, path, ctx) {
       renderMain();
     };
     const fbtn = document.createElement('button');
-    fbtn.className = 'filter-btn'; fbtn.textContent = '▾';
-    fbtn.title = `Filter by ${c}`;
+    fbtn.className = 'filter-btn';
+    const fmode = inferColFilterMode(c);
+    if (fmode === 'checkboxes') fbtn.textContent = '▾';
+    else if (fmode === 'date')  fbtn.textContent = '📅';
+    else                        fbtn.textContent = '🔍';
+    fbtn.title =
+      fmode === 'date' ? `Filter by ${c} (date)`
+      : fmode === 'number' ? `Filter by ${c} (exact value)`
+      : fmode === 'text' ? `Search ${c}`
+      : `Filter by ${c}`;
     fbtn.onclick = (e) => { e.stopPropagation(); openColFilter(c, node, e.currentTarget); };
     inner.appendChild(label); inner.appendChild(fbtn);
     th.appendChild(inner); htr.appendChild(th);
@@ -2115,20 +2132,28 @@ function valueRepr(v) {
   return JSON.stringify(v);
 }
 function renderActiveFiltersSummary() {
-  const entries = Object.entries(state.colFilters).filter(([, s]) => s.size);
+  const entries = Object.entries(state.colFilters).filter(([, f]) => isFilterActive(f));
   const coord = state.coordMode !== 'all';
   const loc = !!state.locationFilter;
   if (!entries.length && !coord && !loc) return null;
   if (!entries.length && !coord) return null;
+
   const wrap = document.createElement('div'); wrap.className = 'filter-summary';
   wrap.innerHTML = `<span style="opacity:.7">Filters:</span>`;
-  for (const [col, set] of entries) {
+
+  for (const [col, filter] of entries) {
     const chip = document.createElement('span');
     chip.className = 'filter-chip';
-    chip.innerHTML = `${esc(col)}: ${set.size} value${set.size === 1 ? '' : 's'} <span class="x">×</span>`;
+    let label;
+    if (filter.type === 'set')           label = `${filter.values.size} value${filter.values.size === 1 ? '' : 's'}`;
+    else if (filter.type === 'contains') label = `~"${filter.value}"`;
+    else if (filter.type === 'equals')   label = `= ${filter.value}`;
+    else if (filter.type === 'date')     label = filter.value;
+    chip.innerHTML = `${esc(col)}: ${esc(label)} <span class="x">×</span>`;
     chip.querySelector('.x').onclick = () => { delete state.colFilters[col]; renderMain(); };
     wrap.appendChild(chip);
   }
+
   if (coord) {
     const chip = document.createElement('span'); chip.className = 'filter-chip';
     chip.innerHTML = `coords: ${state.coordMode} <span class="x">×</span>`;
@@ -2167,67 +2192,115 @@ COLUMN FILTER POPOVER
 ================================================================ */
 function openColFilter(col, tree, anchorEl) {
   closeFilterPopover();
-  const values = new Map();
-  for (const rec of tree.children) {
-    if (rec.kind !== 'object') continue;
-    const v = getColValue(rec, col);
-    if (v === undefined) continue;
-    const repr = valueRepr(v);
-    if (repr.length > 120) continue;
-    if (!values.has(repr)) values.set(repr, { count: 0 });
-    values.get(repr).count++;
-  }
-  if (!values.size) { toast('No filterable values in this column'); return; }
+  const mode = inferColFilterMode(col);
+
   const pop = document.createElement('div');
   pop.className = 'filter-popover';
-  const current = state.colFilters[col] || new Set();
-  let working = new Set(current);
+
   const header = document.createElement('div'); header.className = 'fp-header';
-  const search = document.createElement('input');
-  search.type = 'text'; search.placeholder = 'Search values…'; search.autofocus = true;
-  header.appendChild(search); pop.appendChild(header);
-  const list = document.createElement('div'); list.className = 'fp-list';
-  const sorted = [...values.entries()].sort((a, b) => b[1].count - a[1].count);
-  const renderList = (filterText) => {
-    list.innerHTML = '';
-    const f = filterText.trim().toLowerCase();
-    for (const [repr, meta] of sorted) {
-      if (f && !repr.toLowerCase().includes(f)) continue;
-      const item = document.createElement('label'); item.className = 'fp-item';
-      const cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.checked = working.has(repr);
-      cb.onchange = () => {
-        if (cb.checked) working.add(repr); else working.delete(repr);
-      };
-      const val = document.createElement('span'); val.className = 'fp-val';
-      val.textContent = repr === '' ? '(empty)' : repr;
-      const count = document.createElement('span'); count.className = 'fp-count';
-      count.textContent = meta.count;
-      item.appendChild(cb); item.appendChild(val); item.appendChild(count);
-      list.appendChild(item);
-    }
-  };
-  renderList('');
-  search.oninput = () => renderList(search.value);
-  pop.appendChild(list);
   const footer = document.createElement('div'); footer.className = 'fp-footer';
-  const clearBtn = document.createElement('button');
-  clearBtn.textContent = 'Clear';
-  clearBtn.onclick = () => {
-    delete state.colFilters[col];
-    closeFilterPopover(); renderMain();
-  };
+  const clearBtn = document.createElement('button'); clearBtn.textContent = 'Clear';
   const applyBtn = document.createElement('button');
   applyBtn.className = 'primary'; applyBtn.textContent = 'Apply';
-  applyBtn.onclick = () => {
-    if (working.size === 0) delete state.colFilters[col];
-    else state.colFilters[col] = working;
-    closeFilterPopover(); renderMain();
-  };
   footer.appendChild(clearBtn); footer.appendChild(applyBtn);
-  pop.appendChild(footer);
+
+  const current = state.colFilters[col];
+  let focusTarget = null;
+
+  const closeAndRender = (f) => {
+    if (isFilterActive(f)) state.colFilters[col] = f;
+    else delete state.colFilters[col];
+    closeFilterPopover();
+    renderMain();
+  };
+
+  if (mode === 'checkboxes') {
+    /* ----- legacy checkbox list ----- */
+    const values = new Map();
+    for (const rec of tree.children) {
+      if (rec.kind !== 'object') continue;
+      const v = getColValue(rec, col);
+      if (v === undefined) continue;
+      const repr = valueRepr(v);
+      if (repr.length > 120) continue;
+      if (!values.has(repr)) values.set(repr, { count: 0 });
+      values.get(repr).count++;
+    }
+    if (!values.size) { toast('No filterable values in this column'); return; }
+
+    const currentSet = (current && current.type === 'set') ? current.values : new Set();
+    const working = new Set(currentSet);
+    const search = document.createElement('input');
+    search.type = 'text'; search.placeholder = 'Search values…'; search.autofocus = true;
+    header.appendChild(search); pop.appendChild(header);
+
+    const list = document.createElement('div'); list.className = 'fp-list';
+    const sorted = [...values.entries()].sort((a, b) => b[1].count - a[1].count);
+    const renderList = (filterText) => {
+      list.innerHTML = '';
+      const f = filterText.trim().toLowerCase();
+      for (const [repr, meta] of sorted) {
+        if (f && !repr.toLowerCase().includes(f)) continue;
+        const item = document.createElement('label'); item.className = 'fp-item';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox'; cb.checked = working.has(repr);
+        cb.onchange = () => { if (cb.checked) working.add(repr); else working.delete(repr); };
+        const val = document.createElement('span'); val.className = 'fp-val';
+        val.textContent = repr === '' ? '(empty)' : repr;
+        const count = document.createElement('span'); count.className = 'fp-count';
+        count.textContent = meta.count;
+        item.appendChild(cb); item.appendChild(val); item.appendChild(count);
+        list.appendChild(item);
+      }
+    };
+    renderList('');
+    search.oninput = () => renderList(search.value);
+    pop.appendChild(list); pop.appendChild(footer);
+
+    clearBtn.onclick = () => closeAndRender(null);
+    applyBtn.onclick = () => closeAndRender({ type: 'set', values: working });
+    focusTarget = search;
+
+  } else {
+    /* ----- search / number / date input ----- */
+    let input;
+    if (mode === 'date') {
+      input = document.createElement('input');
+      input.type = 'date';
+      input.title = 'Match records with this date';
+      if (current && current.type === 'date') input.value = current.value;
+    } else if (mode === 'number') {
+      input = document.createElement('input');
+      input.type = 'number'; input.step = 'any';
+      input.placeholder = `Filter ${col} (exact value)…`;
+      if (current && current.type === 'equals') input.value = current.value;
+    } else {
+      input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = `Search ${col}…`;
+      if (current && current.type === 'contains') input.value = current.value;
+    }
+    input.autofocus = true;
+    header.appendChild(input); pop.appendChild(header); pop.appendChild(footer);
+
+    const commit = () => {
+      const v = input.value.trim();
+      if (!v) { closeAndRender(null); return; }
+      if (mode === 'date')        closeAndRender({ type: 'date',     value: v });
+      else if (mode === 'number') closeAndRender({ type: 'equals',   value: v });
+      else                        closeAndRender({ type: 'contains', value: v });
+    };
+    input.onkeydown = (e) => {
+      if (e.key === 'Enter')  { e.preventDefault(); commit(); }
+      if (e.key === 'Escape') { closeFilterPopover(); }
+    };
+    clearBtn.onclick = () => closeAndRender(null);
+    applyBtn.onclick = commit;
+    focusTarget = input;
+  }
+
   document.body.appendChild(pop);
+
   const rect = anchorEl.getBoundingClientRect();
   const popRect = pop.getBoundingClientRect();
   let left = rect.left;
@@ -2235,9 +2308,10 @@ function openColFilter(col, tree, anchorEl) {
   if (left + popRect.width > window.innerWidth - 8) left = window.innerWidth - popRect.width - 8;
   if (top + popRect.height > window.innerHeight - 8) top = rect.top - popRect.height - 4;
   pop.style.left = Math.max(8, left) + 'px';
-  pop.style.top = Math.max(8, top) + 'px';
+  pop.style.top  = Math.max(8, top)  + 'px';
   state.filterPopover = pop;
-  setTimeout(() => search.focus(), 0);
+  setTimeout(() => focusTarget && focusTarget.focus(), 0);
+
   const onDocClick = (e) => {
     if (!pop.contains(e.target) && !anchorEl.contains(e.target)) {
       closeFilterPopover();
@@ -2398,6 +2472,29 @@ function isCoordinateKey(key) {
   if (!key) return false;
   const k = String(key).toLowerCase();
   return LAT_KEYS.has(k) || LNG_KEYS.has(k);
+}
+/* Columns that should use a search-style filter instead of a checkbox list */
+const SEARCH_FILTER_COLS = new Set([
+  'id', 'actionId', 'title', 'name', 'city', 'url', 'description',
+  'workers', 'startDate', 'endDate', 'addDate',
+]);
+
+function inferColFilterMode(col) {
+  if (isDateKey(col)) return 'date';
+  const k = String(col).toLowerCase();
+  if (k === 'workers' || /(count|number|amount|total|size|index)$/.test(k))
+    return 'number';
+  if (SEARCH_FILTER_COLS.has(col) || k === 'id' ) return 'text';
+  return 'checkboxes';
+}
+
+function isFilterActive(f) {
+  if (!f) return false;
+  if (f.type === 'set')      return !!(f.values && f.values.size);
+  if (f.type === 'contains') return !!f.value;
+  if (f.type === 'equals')   return !!f.value;
+  if (f.type === 'date')     return !!f.value;
+  return false;
 }
 function isDateKey(key) {
   if (!key) return false;

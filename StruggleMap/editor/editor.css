@@ -1984,3 +1984,24 @@ input[type=date]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
   padding: 2px 6px;
   color: var(--text);
 }
+
+/* Search/date filter popover is narrower and input-only */
+.filter-popover .fp-header input[type=date],
+.filter-popover .fp-header input[type=number] {
+  font-variant-numeric: tabular-nums;
+}
+.filter-popover .fp-header input[type=date] {
+  min-height: 26px;
+  width: 100%;
+}
+.filter-popover .fp-header input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(0.72);
+  cursor: pointer;
+  opacity: .85;
+}
+.filter-popover .fp-header input[type=date]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Distinguish active search/date filters on the header */
+table.data th.filtered .filter-btn { color: var(--accent); }
