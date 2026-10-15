@@ -3625,8 +3625,8 @@ $('#linkBtn')?.addEventListener('click', async () => {
 REMOTE PULL — fetch live data from struggle-map.schmilly.xyz
 ================================================================ */
 const REMOTE_SOURCES = {
-  'data.js':      'https://struggle-map.schmilly.xyz/js/data.js',
-  'locations.js': 'https://struggle-map.schmilly.xyz/js/locations.js',
+  'data.js':      '/js/data.js',
+  'locations.js': '/js/locations.js',
 };
 
 let _remoteAbort = null;
