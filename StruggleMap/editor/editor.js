@@ -402,7 +402,8 @@ function clearCache() {
 function renderCacheBanner() {
   let banner = $('#cacheBanner');
   const hasCache = !!localStorage.getItem(CACHE_KEY);
-  if (!hasCache) {
+  const last = getLastPull();
+  if (!hasCache && !last) {
     if (banner) banner.remove();
     return;
   }
@@ -413,24 +414,49 @@ function renderCacheBanner() {
     document.body.insertBefore(banner, document.querySelector('.app') || document.body.firstChild);
   }
   banner.innerHTML = '';
-  const lbl = document.createElement('span');
-  lbl.textContent = '💾 Cached data available in browser';
-  banner.appendChild(lbl);
-  const spacer = document.createElement('span'); spacer.className = 'spacer';
-  banner.appendChild(spacer);
-  const loadBtn = document.createElement('button');
-  loadBtn.textContent = 'Load from cache';
-  loadBtn.onclick = () => {
-    if (loadFromCache()) toast('Loaded from cache', 'ok');
-    else toast('Cache was empty', '');
-  };
-  const clrBtn = document.createElement('button');
-  clrBtn.textContent = 'Clear cache';
-  clrBtn.onclick = () => {
-    if (confirm('Clear cached data? This cannot be undone.')) clearCache();
-  };
-  banner.appendChild(loadBtn);
-  banner.appendChild(clrBtn);
+
+  if (last) {
+    const when = new Date(last.at).toLocaleString();
+    const sizes = Object.entries(last.sizes || {})
+      .map(([n, s]) => `${n} (${(s / 1024).toFixed(1)} kB)`)
+      .join(' · ');
+    const lbl = document.createElement('span');
+    lbl.textContent = `🌐 Last pulled ${when} — ${sizes}`;
+    banner.appendChild(lbl);
+    const spacer = document.createElement('span'); spacer.className = 'spacer';
+    banner.appendChild(spacer);
+    const refresh = document.createElement('button');
+    refresh.textContent = 'Pull again';
+    refresh.onclick = () => pullFromRemote();
+    banner.appendChild(refresh);
+  } else {
+    const lbl = document.createElement('span');
+    lbl.textContent = '💾 Cached data available in browser';
+    banner.appendChild(lbl);
+    const spacer = document.createElement('span'); spacer.className = 'spacer';
+    banner.appendChild(spacer);
+  }
+
+  if (hasCache) {
+    const loadBtn = document.createElement('button');
+    loadBtn.textContent = 'Load from cache';
+    loadBtn.onclick = () => {
+      if (loadFromCache()) toast('Loaded from cache', 'ok');
+      else toast('Cache was empty', '');
+    };
+    const clrBtn = document.createElement('button');
+    clrBtn.textContent = 'Clear cache';
+    clrBtn.onclick = () => {
+      if (confirm('Clear cached data? This cannot be undone.')) {
+        localStorage.removeItem(CACHE_KEY);
+        localStorage.removeItem('strike-editor-last-pull');
+        clearCache();
+        renderCacheBanner();
+      }
+    };
+    banner.appendChild(loadBtn);
+    banner.appendChild(clrBtn);
+  }
 }
 /* ================================================================
 SIDEBAR
@@ -3417,6 +3443,8 @@ $('#saveAsBtn').onclick = downloadAll;
 $('#fileInput').onchange = e => { handleFiles(e.target.files); e.target.value = ''; };
 $('#searchBox').oninput = e => { state.search = e.target.value; renderMain(); };
 $$('#viewToggle button').forEach(b => b.onclick = () => { state.viewMode = b.dataset.view; renderMain(); });
+$('#pullBtn')?.addEventListener('click', () => pullFromRemote());
+$('#pullCustomBtn')?.addEventListener('click', promptCustomPull);
 window.addEventListener('dragover', e => e.preventDefault());
 window.addEventListener('drop', async e => {
   e.preventDefault();
@@ -3592,3 +3620,118 @@ $('#linkBtn')?.addEventListener('click', async () => {
     prompt('Copy this link:', location.href);
   }
 });
+
+/* ================================================================
+REMOTE PULL — fetch live data from struggle-map.schmilly.xyz
+================================================================ */
+const REMOTE_SOURCES = {
+  'data.js':      'https://struggle-map.schmilly.xyz/js/data.js',
+  'locations.js': 'https://struggle-map.schmilly.xyz/js/locations.js',
+};
+
+let _remoteAbort = null;
+
+async function pullFromRemote(opts = {}) {
+  const urls = opts.urls || REMOTE_SOURCES;
+  const names = Object.keys(urls);
+  const btn = $('#pullBtn');
+  const originalLabel = btn ? btn.textContent : '';
+
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Pulling…'; }
+  if (_remoteAbort) _remoteAbort.abort();
+  _remoteAbort = new AbortController();
+
+  const results = {};
+  const errors = [];
+
+  for (const name of names) {
+    try {
+      const resp = await fetch(urls[name], {
+        cache: 'no-store',
+        signal: _remoteAbort.signal,
+      });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} ${resp.statusText}`);
+      const text = await resp.text();
+      if (!text || text.length < 10) throw new Error('Empty response');
+      results[name] = text;
+    } catch (e) {
+      if (e.name === 'AbortError') return;
+      errors.push(`${name}: ${e.message}`);
+    }
+  }
+
+  if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+
+  if (!Object.keys(results).length) {
+    toast('Pull failed — ' + errors.join('; '), 'err');
+    showPullErrorDialog(errors);
+    return;
+  }
+
+  // Load each fetched file into the editor (replacing any current version).
+  let loaded = 0;
+  for (const [name, text] of Object.entries(results)) {
+    if (loadFileText(name, text, null)) loaded++;
+  }
+
+  rebuildAll();
+  saveToCache();
+  toast(
+    `Pulled ${loaded} file(s) from live site` +
+    (errors.length ? ` · ${errors.length} failed` : ''),
+    'ok'
+  );
+
+  // Persist the remote URL + timestamp so we can show "last pulled".
+  try {
+    localStorage.setItem('strike-editor-last-pull', JSON.stringify({
+      at: Date.now(),
+      urls,
+      sizes: Object.fromEntries(
+        Object.entries(results).map(([n, t]) => [n, t.length])
+      ),
+    }));
+  } catch {}
+  renderCacheBanner();
+}
+
+function showPullErrorDialog(errors) {
+  const isCors = errors.some(e =>
+    /failed to fetch|networkerror|cors/i.test(e));
+  const msg = isCors
+    ? 'The browser blocked the fetch (likely CORS).\n\n' +
+      'Options:\n' +
+      '  1. Open DevTools → Network, right-click each file → "Save as", then use Open files…\n' +
+      '  2. Ask the host to add `Access-Control-Allow-Origin: *`\n' +
+      '  3. Run the editor from the same origin (e.g. copy it to struggle-map.schmilly.xyz)\n\n' +
+      'Details:\n' + errors.join('\n')
+    : errors.join('\n');
+  console.warn('[pull] errors', errors);
+  // Non-blocking: toast + console, plus an alert for visibility.
+  setTimeout(() => alert(msg), 50);
+}
+
+/* Prompt for custom URLs (useful for staging or local dev). */
+function promptCustomPull() {
+  const dataUrl = prompt(
+    'URL for data.js:',
+    REMOTE_SOURCES['data.js']
+  );
+  if (dataUrl === null) return;
+  const locUrl = prompt(
+    'URL for locations.js:',
+    REMOTE_SOURCES['locations.js']
+  );
+  if (locUrl === null) return;
+  const urls = {};
+  if (dataUrl.trim())      urls['data.js']      = dataUrl.trim();
+  if (locUrl.trim())       urls['locations.js'] = locUrl.trim();
+  if (!Object.keys(urls).length) return;
+  pullFromRemote({ urls });
+}
+
+/* Show a "last pulled" line in the cache banner. */
+function getLastPull() {
+  try { return JSON.parse(localStorage.getItem('strike-editor-last-pull') || 'null'); }
+  catch { return null; }
+}

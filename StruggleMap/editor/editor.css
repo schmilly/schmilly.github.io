@@ -2005,3 +2005,15 @@ input[type=date]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
 
 /* Distinguish active search/date filters on the header */
 table.data th.filtered .filter-btn { color: var(--accent); }
+
+/* Remote pull buttons in header */
+header #pullBtn,
+header #pullCustomBtn {
+  font-size: 12px;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+header #pullBtn:disabled {
+  opacity: .6;
+  cursor: progress;
+}
