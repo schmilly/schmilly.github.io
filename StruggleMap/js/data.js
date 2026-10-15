@@ -151,7 +151,7 @@ const TWU_TRANSPORT_STRIKE_LOCATIONS = [
     { city: "Sydney", state: "NSW", lat: -33.8500, lng: 151.0000, name: "K&S Freighters Sydney (Enfield)" },
     { city: "Melbourne", state: "VIC", lat: -37.8400, lng: 144.7300, name: "K&S Freighters/Chemtrans Melbourne (Truganina)" },
     { city: "Brisbane", state: "QLD", lat: -27.5700, lng: 153.0300, name: "K&S Freighters/Chemtrans Brisbane (Coopers Plains)" },
-    { city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "K&S Freighters Perth (Kewdale)" },
+    { city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "K&S Freighters Perth (Kewdale), Goldstar Transport Perth (Kewdale)" },
 
     // ============================================
     // SCT LOGISTICS
@@ -183,7 +183,8 @@ const TWU_TRANSPORT_STRIKE_LOCATIONS = [
     { city: "Sydney", state: "NSW", lat: -33.9100, lng: 150.9500, name: "Goldstar Transport Sydney (Depot)" },
     { city: "Melbourne", state: "VIC", lat: -37.8100, lng: 144.8000, name: "Goldstar Transport Melbourne (Depot)" },
     { city: "Brisbane", state: "QLD", lat: -27.5000, lng: 153.0000, name: "Goldstar Transport Brisbane (Depot)" },
-    { city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "Goldstar Transport Perth (Kewdale)" },
+    //{ city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "Goldstar Transport Perth (Kewdale)" },
+    //Entry is same as K&S so combined
 
     // ============================================
     // QUBE LOGISTICS
@@ -561,8 +562,8 @@ const STRIKE_DATA = [
         description: "FWC granted PABO; ballot closes 20 Aug. Workers voted down offer without job security. Amazon Effect concerns.",
 
         locations: [
-            { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "FedEx Sydney" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "FedEx Melbourne" }
+            { city: "Sydney", state: "NSW", lat: COMPANY["FedEx"]["SYD"][0], lng: COMPANY["FedEx"]["SYD"][1], name: "FedEx Sydney" },
+            { city: "Melbourne", state: "VIC", lat: COMPANY["FedEx"]["MELB"][0], lng: COMPANY["FedEx"]["MELB"][1], name: "FedEx Melbourne" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -2449,7 +2450,7 @@ const STRIKE_DATA = [
     },
     {
         id: 5021,
-        actionId: "twu-ceva-logistics-australia-pty-ltd",
+        actionId: "ceva-twu-victoria-october-2026-resolution",
         title: "TWU and Ceva Logistics (Australia) Pty Ltd - Protected Action Ballot",
         union: "TWU",
         industry: "Transport / Logistics",
@@ -5675,7 +5676,7 @@ const STRIKE_DATA = [
     },
     {
         id: 8714,
-        actionId: "aemo-professionals-australia",
+        actionId: "aemo-professionals-australia-october-2026",
         title: "AEMO Workers Vote in Favour of Industrial Action",
         union: "Professionals Australia",
         industry: "Energy",
@@ -8800,7 +8801,7 @@ const STRIKE_DATA = [
         description: "CFMEU running a rally in support of negotiations for the 2027 EBA. Start time: 13:00, End time:  14:00 Rally open to all",
         locations: [{ city: "Perth", state: "WA", lat: LIB["WA State"][0], lng: LIB["WA State"][1], name: "WA State Library" }], 
         sources: [{ name: "Tip off", url: "mailto:schmilly@proton.me" }],
-        tags: ["labour union","rally", "protest", "supporters welcome"]                     
+        tags: ["labour union","rally", "protest", "supporters wanted"]                     
     },
     {
     id: 8706,
@@ -8825,7 +8826,7 @@ const STRIKE_DATA = [
         { name: "Defence Connect — WA passes special police powers to protect Land Forces 2026", url: "https://www.defenceconnect.com.au/industry/18877-western-australia-passes-special-police-powers-to-protect-land-forces-2026" },
         { name: "WA Government — Temporary Special Powers in Place for Land Forces 2026", url: "https://www.wa.gov.au/government/announcements/temporary-special-powers-place-land-forces-2026" }
     ],
-    tags: ["labour union","defence", "anti-war", "protest", "supporters welcome"]
+    tags: ["labour union","defence", "anti-war", "protest", "supporters wanted"]
 },
 {
     id: 6013,
@@ -9061,13 +9062,13 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "ASU members at Merri-bek City Council are taking strike action as part of a campaign for a multi-employer agreement covering eight metropolitan Melbourne councils. Workers at the Hadfield depot began a 48-hour strike at 5am on 14 October, while all ASU members at Merri-bek are scheduled to strike for 24 hours on 15 October. Workers have been campaigning for more than a year and are seeking a fair agreement that protects penalty rates and existing conditions after receiving what the union described as a dismal employer offer. Supporters were invited to a picket at the Hadfield depot and a rally at Coburg Town Hall.",
     locations: [
-        { city: "Hadfield", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Merri-bek Council, Hadfield Depot" },
-        { city: "Coburg", state: "VIC", lat: SPECIFIC["Coburg Town Hall"].lat, lng: SPECIFIC["Coburg Town Hall"].lng, name: "Coburg Town Hall" }
+        SPECIFIC["Hadfield Depot"],
+        SPECIFIC["Coburg Town Hall"]
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
     ],
-    tags: ["labour union", "local government", "strike", "council workers", "penalty rates"]
+    tags: ["labour union", "supporters wanted", "local government", "council workers", "penalty rates"]
 },
 {
     id: 6027,
@@ -9120,7 +9121,7 @@ const STRIKE_DATA = [
     workers: null,
     description: "Professionals Australia members at the Australian Energy Market Operator escalated their industrial campaign on 13 October by imposing indefinite bans on approvals for non-critical planned outages, processing non-critical software and system upgrades, and other non-critical work. These actions supplement existing bans, mainly involving meetings and administrative duties. Workers are seeking wages that keep pace with inflation, protections against AI-related job losses, and the option to work condensed hours over a four-day week.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Australian Energy Market Operator" }
+        SPECIFIC["AEMO"]
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
@@ -9340,7 +9341,7 @@ const STRIKE_DATA = [
     workers: null,
     description: "The threat of strike action was sufficient to bring CEVA back to the negotiating table with an improved offer. The TWU reported that a strong agreement had been reached, including protections relating to job security, AI and automation.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "CEVA Logistics" }
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Ceva Logistics"][0], lng: COMPANY["Ceva Logistics"][1], name: "CEVA Logistics" }
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }

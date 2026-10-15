@@ -37,6 +37,27 @@ const TYPE_INFO = {
         return TYPE_INFO[type] || TYPE_INFO.default;
     }
 
+    // ─── Tag helpers ───
+// Tag to highlight in the event list. Normalised so "supporters wanted",
+// "supporters-wanted" and "supporters_welcome" all count.
+const HIGHLIGHT_TAG = 'supporters-wanted';
+
+function normalizeTag(tag) {
+    return String(tag).trim().toLowerCase().replace(/[\s_]+/g, '-');
+}
+
+function hasTag(entry, tag) {
+    if (!entry || !Array.isArray(entry.tags)) return false;
+    const target = normalizeTag(tag);
+    return entry.tags.some(t => normalizeTag(t) === target);
+}
+
+function hasHighlightTag(entry) {
+    return hasTag(entry, HIGHLIGHT_TAG);
+}
+
+
+
     function getEmojiHtml(type, size = 20) {
         const info = getTypeInfo(type);
         const fontSize = size;
@@ -866,7 +887,10 @@ if (activeStateFilter !== 'all') {
         filteredActions.forEach(action => {
             const latest = action.latestEntry;
             const item = document.createElement('div');
-            item.className = 'event-item' + (selectedActionId === action.actionId ? ' selected' : '');
+            const isSupporters = hasHighlightTag(latest);
+            item.className = 'event-item'
+            + (selectedActionId === action.actionId ? ' selected' : '')
+            + (isSupporters ? ' supporters-wanted' : '');
             item.dataset.actionId = action.actionId;
 
             const updateCount = action.entries.length > 1 ? ` <span class="meta-tag" style="background:#58a6ff33; color:#58a6ff;">${action.entries.length} updates</span>` : '';
@@ -889,7 +913,10 @@ if (activeStateFilter !== 'all') {
             <span class="meta-tag">${latest.union || 'N/A'}</span>
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
-            ${latest.tags ? latest.tags.map(t => `<span class="meta-tag" style="background:var(--bg-alt);">#${t}</span>`).join('') : ''}
+${latest.tags ? latest.tags.map(t => {
+    const cls = normalizeTag(t) === HIGHLIGHT_TAG ? 'meta-tag hash tag-supporters' : 'meta-tag hash';
+    return `<span class="${cls}">${t}</span>`;
+}).join('') : ''}
             ${staleBadge}
             </div>
             ${staleNotice}
