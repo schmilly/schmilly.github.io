@@ -237,7 +237,7 @@ const STRIKE_DATA = [
         state: "WA",
         description: "Talks between BHP and the Combined BHP Ports Unions ended without a deal, with further negotiations scheduled for next Tuesday (15 Sept), facilitated by the Fair Work Commission. BHP tabled an updated proposal offering a 17% pay increase over four years for most workers, a A$25,000 transition payment paid over two years, and an increase to roster allowances. The three unions rejected the offer, saying it leaves about 40% of the workforce in a worse position and keeps wage inequalities alive, and pointing to BHP's ~$13 billion underlying profit for fiscal 2026. Workers are seeking pay that recognises extreme remote heat, long hours and time away from families. Port Hedland is the world's largest iron ore loading port, with BHP shipping around $80 million worth of iron ore daily through the facility.",
         locations: [
-            { city: "Port Hedland", state: "WA", lat: SPECIFIC["BHP Port Hedland"].lat, lng: SPECIFIC["BHP Port Hedland"].lng, name: "BHP Port Hedland" }
+            SPECIFIC["BHP Port Hedland"]
         ],
         sources: [
             { name: "Reuters - BHP, union talks for Port Hedland iron ore workers to stretch on into next week", url: "https://www.reuters.com/business/world-at-work/bhp-union-talks-port-hedland-iron-ore-workers-stretch-into-next-week-2026-09-08/" },
@@ -469,10 +469,10 @@ const STRIKE_DATA = [
     {
         id: 209,
         actionId: "msav-public-health",
-        title: "MSAV 24-Hour Strike Planned",
+        title: "MSAV 24-Hour Strike",
         union: "MSAV",
         industry: "Healthcare",
-        type: "planned",
+        type: "strike",
         startDate: "2026-07-30",
         endDate: "2026-07-30",
         workers: null,
@@ -5154,7 +5154,7 @@ const STRIKE_DATA = [
         state: "SA",
         description: "PSA members working in Immunology at SA Pathology have taken industrial action. Workers are fighting back against increasing workloads that are affecting staff wellbeing and service quality.",
         locations: [
-            { city: "Adelaide", state: "SA", lat: -34.9197, lng: 138.608, name: "SA Pathology" }
+            SPECIFIC["SA Pathaology"]
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5287,7 +5287,7 @@ const STRIKE_DATA = [
         state: "QLD",
         description: "An in-principle agreement has been made between unions and the Western Downs Regional Council. A formal ballot on the agreement opened on 15 September and closes on 17 September. An AWU organiser described it as a 'significant agreement' with wage increases of up to 16% over 3 years and a new increment scheme that will see workers properly remunerated for their skills and experience. The Services Union noted the agreement includes wage increases of 3% more than the original offer as well as improved conditions and benefits.",
         locations: [
-            { city: "Dalby", state: "QLD", lat: -27.1833, lng: 151.2667, name: "Western Downs Regional Council" }
+            { city: "Dalby", state: "QLD", lat: SPECIFIC.WESTDOWN.lat, lng: SPECIFIC.WESTDOWN.lng, name: "Western Downs Regional Council" }
         ],
         sources: [
             { name: "Disputes Report - 16 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-16-september" }
@@ -5496,7 +5496,7 @@ const STRIKE_DATA = [
         state: "NSW",
         description: "Negotiations between the TWU and Qantas in the FWC on 18 September did not progress significantly, so industrial action is set to commence this week. TWU members employed at Qantas Ground Services are expected to strike for 24 hours on 24 September, while TWU members at Australia Air Express are expected to strike on 23 September. The TWU has been in negotiations with Qantas for 11 months seeking decent pay and conditions. Workers also have concerns about safety, the splintering of workers into multiple subsidiaries, and the outsourcing of permanent jobs. The TWU posted a video late on 22 September saying Qantas was trying legal manoeuvres to stop industrial action.",
         locations: [
-            { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas" },
+            { city: "Sydney", state: "NSW", lat: SYD.QANTAS[0], lng: SYD.QANTAS[1], name: "Qantas" },
             { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Qantas" }
         ],
         sources: [
@@ -7188,8 +7188,8 @@ const STRIKE_DATA = [
         description: "Engineers, safety trainers and technicians at Qantas coordinated a national 4-hour stoppage. Workers are fighting for a new agreement with fair wages and conditions. Qantas attempted to shut the stoppage down, but was unsuccessful. In Brisbane, workers rallied outside Hangar 3.",
         locations: [
             { city: "Sydney", state: "NSW", lat: SYD["QANTAS"][0], lng: SYD["QANTAS"][1], name: "Qantas" },
-            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Qantas" },
-            { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Qantas" }
+            { city: "Melbourne", state: "VIC", lat: COMPANY.QANTAS.MELB[0], lng: COMPANY.QANTAS.MELB[1], name: "Qantas" },
+            { city: "Brisbane", state: "QLD", lat: COMPANY.QANTAS.QLD[0], lng: COMPANY.QANTAS.QLD[1], name: "Qantas" }
         ],
         sources: [
             { name: "Disputes Report - 4 February 2025", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-4-february" }
@@ -8948,7 +8948,7 @@ const STRIKE_DATA = [
 {
     id: 6021,
     actionId: "qantas-engineers-professionals-australia-october-2026",
-    title: "Qantas Engineers Escalate Industrial Action Over Pay",
+    title: "Qantas Engineers Escalate Industrial Action",
     union: "Professionals Australia",
     industry: "Aviation",
     type: "stoppage",
@@ -8991,14 +8991,14 @@ const STRIKE_DATA = [
 },
 {
     id: 6023,
-    actionId: "asmof-victoria-doctors-october-2026",
+    actionId: "vic-doctors-strike",
     title: "Victorian Public Hospital Doctors Reject Interim Deal and Schedule Stoppage",
     union: "ASMOF",
     industry: "Healthcare",
     type: "planned",
     startDate: "2026-10-21",
-    endDate: "2026-10-21",
-    workers: null,
+    endDate: "",
+    workers: 10500,
     state: "VIC",
     description: "Victorian public hospital doctors represented by ASMOF rejected the state government's proposed interim arrangement, with 89% of participating members voting against it in a ballot involving more than half of the union's 10,500 members. The union said the proposal failed to provide a robust solution to pay, unsustainable working hours, fatigue and understaffing. A statewide 12-hour stoppage is scheduled to begin at 7am on 21 October.",
     locations: [
@@ -9042,7 +9042,7 @@ const STRIKE_DATA = [
     state: "NSW",
     description: "NTEU members at the University of Sydney held a two-hour stop-work meeting on 13 October and announced a 24-hour strike for 22 October, following a previous 24-hour strike on 2 September. Bargaining began in April after a six-week delay by university management. Key unresolved issues include academic and intellectual freedom, change management, AI and teaching associate positions. The parties have made some progress on measures for Aboriginal and Torres Strait Islander staff and initiatives concerning disability and chronic health conditions, but industrial action will proceed while other contentious issues remain unresolved.",
     locations: [
-        { city: "Sydney", state: "NSW", lat: CITY_COORDS["Sydney"][0], lng: CITY_COORDS["Sydney"][1], name: "University of Sydney" }
+        { city: "Sydney", state: "NSW", lat: UNI["SYD"][0], lng: UNI["SYD"][1], name: "University of Sydney" }
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
@@ -9082,7 +9082,7 @@ const STRIKE_DATA = [
     workers: null,
     description: "Following escalating industrial action over two major weekends, Jetstar made an improved offer to ASU members. The offer includes a 5% pay increase in the first year, backdated to 1 October, followed by 3% annual increases; service increments after three, five and seven years; increased staffing; and improvements to allowances, health and wellbeing. Members were scheduled to discuss the offer on 12 and 13 October and vote on whether to accept it. All industrial action has been paused while members consider the proposal.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Jetstar operations" }
+        { city: "Melbourne", state: "VIC", lat: COMPANY.Jetstar[0], lng: COMPANY.Jetstar[1], name: "Jetstar operations" }
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
@@ -9136,7 +9136,7 @@ const STRIKE_DATA = [
     industry: "Healthcare",
     type: "stoppage",
     startDate: "2026-10-14",
-    endDate: "",
+    endDate: " 10,500",
     workers: null,
     state: "VIC",
     description: "VAHPA escalated industrial action by notifying 43 employers of new bans affecting NDIS referrals, elective surgery data, coding and actions intended to delay some scans. These bans supplement existing industrial action. The union expects the measures to disrupt hospital operations, particularly patient bed flow and discharge processes. VAHPA said there remained time to reach an acceptable agreement before the Victorian state government enters caretaker mode.",
@@ -9220,7 +9220,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "AMWU members at the Mazda Australia warehouse in Epping walked off the job for one hour on 6 October, marking their first industrial action since the warehouse opened in 2021. Negotiations had been underway for seven months, with management making no movement on wages and only minimal improvements to conditions. Workers are seeking a better agreement and a stronger voice in their workplace.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: -37.65, lng: 145.03, name: "Mazda Australia warehouse, Epping" }
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Mazda"]["Warehouse Epping"][0], lng: COMPANY["Mazda"]["Warehouse Epping"][1], name: "Mazda Australia warehouse, Epping" }
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
@@ -9249,7 +9249,7 @@ const STRIKE_DATA = [
 },
 {
     id: 6036,
-    actionId: "overnewton-ieu-victoria-october-2026",
+    actionId: "overnewton-college",
     title: "Overnewton Teachers Take Campaign Action at School Presentation Night",
     union: "IEU",
     industry: "Education",
@@ -9260,7 +9260,7 @@ const STRIKE_DATA = [
     state: "VIC",
     description: "IEU members at Overnewton Anglican Community College took industrial campaign action during the school's annual Presentation Night on 6 October. Teachers wore campaign T-shirts and distributed flyers to parents. Workers are seeking competitive wages, clear classifications for Education Support staff and workload limits for teachers.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Overnewton Anglican Community College" }
+        { city: "Melbourne", state: "VIC", lat: MELB["Overnewton College"][0], lng: MELB["Overnewton College"][1], name: "Overnewton Anglican Community College" }
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }

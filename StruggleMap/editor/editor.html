@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strike Data Editor</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="https://struggle-map.schmilly.xyz/">Struggle Map</a> Data Editor</h1>
+  <button id="openBtn">Open files…</button>
+  <button id="saveBtn" disabled>Save changes</button>
+  <button id="saveAsBtn" disabled>Download copies</button>
+  <div class="spacer"></div>
+  <div class="status" id="status">No files loaded</div>
+  <input type="file" id="fileInput" multiple accept=".js" class="hidden">
+</header>
+<div id="banner" class="banner hidden"></div>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main">
+    <div class="main-toolbar" id="mainToolbar">
+      <div class="title" id="mainTitle">—</div>
+      <button class="uses-chip-btn hidden" id="usesChip">
+        <span class="uses-chip-dot"></span>
+        <span id="usesChipCount">0</span>
+        <span class="uses-chip-label">uses</span>
+      </button>
+      <div class="badge" id="mainBadge"></div>
+      <div class="view-toggle" id="viewToggle">
+        <button data-view="edit" class="active">Edit</button>
+        <button data-view="source">Source</button>
+      </div>
+      <button id="linkBtn" title="Copy a shareable link to this view">🔗</button>
+      <div class="coord-mode hidden" id="coordMode">
+        <button data-mode="all" class="active">All coords</button>
+        <button data-mode="raw" class="raw">Raw only</button>
+        <button data-mode="ref" class="ref">Refs only</button>
+      </div>
+      <div class="spacer" style="flex:1"></div>
+      <button id="addEntryBtn" class="hidden">+ Add entry</button>
+      <input type="search" id="searchBox" placeholder="Filter rows…" style="width:200px">
+    </div>
+    <div class="main-body" id="mainBody"></div>
+  </main>
+</div>
+
+<div id="mapModal" class="modal hidden">
+  <div class="modal-backdrop" id="mapBackdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <strong>Pick coordinates</strong>
+      <div class="spacer"></div>
+      <span class="readout" id="mapReadout">—</span>
+      <button id="mapCancelBtn">Cancel</button>
+      <button id="mapSaveBtn" class="primary">Apply</button>
+    </div>
+    <div id="mapContainer"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

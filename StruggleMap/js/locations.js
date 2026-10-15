@@ -72,6 +72,12 @@ const CITY_COORDS = {
 };
 
 const COMPANY = {
+    QANTAS: {
+        QLD: [-27.409384485807134, 153.0999336812067],"SYD":[-33.92548617476988,151.18660150979397],"MELB":[-37.66684762449579,144.85497791041078]},
+    Mazda: {
+        "Warehouse Epping": [-37.64455476631474, 144.98892953573073]
+    },
+    
     "Jetstar": [-37.8089, 144.9860],
     "Lummus Imaging": {
         "Birdge Road": [-37.8167, 144.9936],
@@ -240,7 +246,8 @@ const PORT = { //Ports
     "Brisbane": [-27.375799326716095, 153.1789399621756],
 }
 
-const UNI = { //Unis
+const UNI = {
+    SYD: [-33.88850160140012, 151.1874526756167], //Unis
     "QLD": [-27.4977, 153.0128],
     "Griffith": [-27.5531, 153.0510],
     "QLD Uni Tech": [-27.4779, 153.0274],
@@ -505,6 +512,8 @@ const LIB = {
 
 // Additional specific locations added for data.js
 const SPECIFIC = {
+    WESTDOWN: { name: "Western Down Reigonal Council", state: "QLD", city: "Western Downs", lat: -27.1833, lng: 151.2667 },
+    "SA Pathaology": { city: "Adelaide", state: "SA", lat: SA["SA Pathology"][0], lng: SA["SA Pathology"][1], name: "SA Pathology" },
     // VIC
     "Department of Education": { city: "Melbourne", state: "VIC", lat: -37.8150, lng: 144.9743, name: "Department of Education" },
     "Victorian Parliament": { city: "Melbourne", state: "VIC", lat: -37.8110, lng: 144.9730, name: "Parliament House" },
