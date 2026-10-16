@@ -84,7 +84,7 @@ function hasHighlightTag(entry) {
     let activeStateFilter = 'all';
     let activeDateFrom = '';
     let activeDateTo = '';
-    let dateFilterEnabled = false;
+    let dateFilterEnabled = true;
     let includeStaleEntries = false;
     let includeOngoingEntries = true;
     let activeUpcomingFilter = false;

@@ -942,10 +942,16 @@ function renderArray(node, path, depth, ctx) {
   const sum = document.createElement('summary');
   const n = node.children.filter(c => c.kind !== 'hole').length;
   sum.innerHTML = `<span class="pill">Array(${n})</span>`;
-  if (isObjectArray(node)) {
+  {
     const addBtn = document.createElement('button');
-    addBtn.className = 'arr-add'; addBtn.textContent = '+ Add'; addBtn.title = 'Append a new entry';
-    addBtn.onclick = (e) => { e.preventDefault(); e.stopPropagation(); addArrayEntry(node, path); };
+    addBtn.className = 'arr-add';
+    addBtn.textContent = '+ Add';
+    addBtn.title = 'Append a new entry';
+    addBtn.onclick = (e) => {
+      e.preventDefault(); e.stopPropagation();
+      if (isObjectArray(node)) addArrayEntry(node, path);
+      else                     addPrimitiveArrayEntry(node, path);
+    };
     sum.appendChild(addBtn);
   }
   details.appendChild(sum);
@@ -1498,6 +1504,40 @@ function showVariableAutocomplete(anchor, options, onSelect) {
 function closeAutocomplete() {
   const p = $('#acPop');
   if (p) p.remove();
+}
+
+function showAddArrayChoice(anchor, onObject, onPrimitive) {
+  closeAutocomplete();          // reuse the popup slot so only one is open
+  const pop = document.createElement('div');
+  pop.className = 'ac-pop'; pop.id = 'acPop';
+  const list = document.createElement('div'); list.className = 'ac-list';
+
+  const mk = (label, onClick) => {
+    const el = document.createElement('div');
+    el.className = 'ac-item';
+    el.textContent = label;
+    el.onclick = () => { pop.remove(); onClick(); };
+    return el;
+  };
+
+  list.appendChild(mk('Add object entry (schema-based)', onObject));
+  list.appendChild(mk('Add primitive value (string / number / boolean)', onPrimitive));
+  pop.appendChild(list);
+  document.body.appendChild(pop);
+
+  const r = anchor.getBoundingClientRect();
+  pop.style.left = Math.max(8, r.left) + 'px';
+  pop.style.top  = Math.max(8, r.bottom + 4) + 'px';
+
+  setTimeout(() => {
+    const close = (e) => {
+      if (!pop.contains(e.target)) {
+        pop.remove();
+        document.removeEventListener('mousedown', close);
+      }
+    };
+    document.addEventListener('mousedown', close);
+  }, 0);
 }
 
 function convertNodeToRef(childNode, anchorEl) {
@@ -2499,6 +2539,7 @@ function isCoordinateKey(key) {
   const k = String(key).toLowerCase();
   return LAT_KEYS.has(k) || LNG_KEYS.has(k);
 }
+
 /* Columns that should use a search-style filter instead of a checkbox list */
 const SEARCH_FILTER_COLS = new Set([
   'id', 'actionId', 'title', 'name', 'city', 'url', 'description',
@@ -2552,46 +2593,60 @@ function findCoordSiblings(parentObj, currentKey, currentNode) {
 /* ================================================================
 ADD ARRAY ENTRY (uses schema)
 ================================================================ */
-function addArrayEntry(arrayTree, arrayPath) {
+function addPrimitiveArrayEntry(arrayTree, arrayPath) {
   const file = state.files[arrayTree.file];
   if (!file) return;
   const arr = arrayTree.node;
-  const els = (arr.elements || []).filter(Boolean);
-  const schema = computeSchema(arrayTree);
-  if (!schema.includes('addDate')) schema.push('addDate');
-  const first = els[0];
+
+  // Find last non-hole element
   let last = null;
-  for (let i = arr.elements.length - 1; i >= 0; i--) if (arr.elements[i]) { last = arr.elements[i]; break; }
-  if (!last && !first) { toast('Empty array — cannot infer template', 'err'); return; }
-  const refObj = first || last;
-  const lastLineStart = last ? file.source.lastIndexOf('\n', last.start) + 1
-    : file.source.lastIndexOf('\n', arr.start) + 1;
-  const lastIndent = last
-    ? file.source.slice(lastLineStart, last.start).match(/^\s*/)[0]
-    : (file.source.slice(lastLineStart, arr.start).match(/^\s*/)[0] || '') + '    ';
-  // Always prefix a comma when we're inserting after an existing element.
-  // (The old logic incorrectly skipped it when there was a trailing comma,
-  //  which produced `...}  {...}` → "Unexpected token".)
-  const sep = last ? ',' : '';
-  const nextId = computeNextId(els);
-  const template = buildEntryTemplateFromSchema(schema, refObj, lastIndent, nextId);
-  const insertion = `${sep}\n${lastIndent}${template}`;
-  const insertAt = last ? last.end : arr.start + 1;
-  if (!commitEdit(arrayTree.file, [{
-    start: insertAt,
-    end: insertAt,
-    text: insertion,
-  }])) return;
+  for (let i = arr.elements.length - 1; i >= 0; i--) {
+    if (arr.elements[i]) { last = arr.elements[i]; break; }
+  }
+
+  // Infer the literal kind from siblings so we don't drop a "" among numbers.
+  let literal = '""';
+  if (last && last.type === 'Literal') {
+    if (typeof last.value === 'number')       literal = '0';
+    else if (typeof last.value === 'boolean') literal = 'false';
+    else if (last.value === null)             literal = 'null';
+  } else if (last && last.type === 'Identifier') {
+    literal = 'null';   // sibling is a ref; default to null so we don't corrupt types
+  }
+
+  if (last) {
+    const between = file.source.slice(last.end, arr.end);
+    const multiline = /\n/.test(between);
+    const hasTrailingComma = /^\s*,/.test(between);
+
+    let text;
+    if (multiline) {
+      const lls = file.source.lastIndexOf('\n', last.start) + 1;
+      const indent = file.source.slice(lls, last.start).match(/^\s*/)[0];
+      text = (hasTrailingComma ? '' : ',') + `\n${indent}${literal}`;
+    } else {
+      // Keep single-line arrays on one line
+      text = (hasTrailingComma ? ' ' : ', ') + literal;
+    }
+    const insertAt = last.end;
+    if (!commitEdit(arrayTree.file, [{ start: insertAt, end: insertAt, text }])) return;
+  } else {
+    // Empty array — replace the region between `[` and `]`
+    const lls = file.source.lastIndexOf('\n', arr.start) + 1;
+    const baseIndent = file.source.slice(lls, arr.start).match(/^\s*/)[0] || '';
+    const innerIndent = baseIndent + '    ';
+    const text = `\n${innerIndent}${literal}\n${baseIndent}`;
+    if (!commitEdit(arrayTree.file, [{ start: arr.start + 1, end: arr.end - 1, text }])) return;
+  }
+
   const newIndex = arr.elements.length;
   rebuildAll();
-  toast('Entry added (schema-based)', 'ok');
-  state.expandedRows.add(`${arrayPath}[${newIndex}]`);
-  renderMain();
+  toast('Element added', 'ok');
   requestAnimationFrame(() => {
-    const el = document.querySelector(`[data-row-path="${cssEsc(arrayPath + '[' + newIndex + ']')}"]`);
+    const el = document.querySelector(`[data-leaf-path="${cssEsc(arrayPath + '[' + newIndex + ']')}"]`);
     if (el) {
-      el.scrollIntoView({ block: 'center' });
-      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      el.classList.remove('flash-leaf'); void el.offsetWidth; el.classList.add('flash-leaf');
     }
   });
 }

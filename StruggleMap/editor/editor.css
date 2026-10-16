@@ -2017,3 +2017,18 @@ header #pullBtn:disabled {
   opacity: .6;
   cursor: progress;
 }
+
+.coord-array-label {
+  font-family: ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--warn);
+  background: rgba(245, 165, 36, .08);
+  border: 1px solid rgba(245, 165, 36, .3);
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.coord-array-label:hover {
+  background: rgba(245, 165, 36, .16);
+  border-color: rgba(245, 165, 36, .55);
+}
