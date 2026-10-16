@@ -143,7 +143,7 @@ function hasHighlightTag(entry) {
         const defaultDateFrom = new Date();
         defaultDateFrom.setDate(defaultDateFrom.getDate() - STALE_DAYS);
         activeDateFrom = toDateInputValue(defaultDateFrom);
-        activeDateTo = toDateInputValue(new Date());
+        activeDateTo = '';
         dateFromInput.value = activeDateFrom;
         dateToInput.value = activeDateTo;
         enableDateFilterInput.checked = dateFilterEnabled;
