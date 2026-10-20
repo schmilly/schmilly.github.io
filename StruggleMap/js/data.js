@@ -1182,7 +1182,7 @@ const STRIKE_DATA = [
         workers: null,
         description: "Multiple stoppages on Brisbane's CityCat ferries. Demands: 6% wage increase, backpay, improved leave and break conditions.",
         locations: [
-            { city: "Brisbane", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane River" }
+            { city: "Brisbane", lat: CITY_COORDS.Brisbane[0], lng: CITY_COORDS.Brisbane[1], name: "Brisbane River" }
         ],
         sources: [
             { name: "Disputes Report - 2nd of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-2-september" },
@@ -8794,7 +8794,7 @@ const STRIKE_DATA = [
         title: "CFMEU WA 2027 EBA rally", 
         union: "CFMEU WA", 
         industry: "Construction", 
-        type: "planned", 
+        type: "protest", 
         startDate: "2026-10-15", 
         endDate: "2026-10-15", 
         workers: null, 
@@ -8906,6 +8906,7 @@ const STRIKE_DATA = [
     tags: ["palestine", "solidarity", "rally"]
 },
 {
+    adddate: "2026-10-15",
     id: 6019,
     actionId: "downer-wheatstone-bwi-vote",
     title: "BWI and Wheatstone Downer Workers to vote on agreement; ETU endorses 'No' Campaign",
@@ -8927,7 +8928,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "oil-gas", "facilities-maintenance", "ballot", "downer"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6020,
     actionId: "unimelb-nteu",
     title: "University of Melbourne NTEU Members Strike and Ban Teaching",
@@ -8948,7 +8949,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "education", "strike", "teaching ban", "wages", "workloads"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6021,
     actionId: "qantas-engineers-professionals-australia-october-2026",
     title: "Qantas Engineers Escalate Industrial Action",
@@ -8969,7 +8970,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "aviation", "engineers", "work ban", "wages"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6022,
     actionId: "tas-nurses-midwives-anmf-hacsu-october-2026",
     title: "Tasmanian Public Nurses and Midwives Continue Stop-Work Action",
@@ -8994,13 +8995,13 @@ const STRIKE_DATA = [
     tags: ["labour union", "healthcare", "nurses", "midwives", "stoppage", "staffing", "wages"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6023,
     actionId: "vic-doctors-strike",
-    title: "Victorian Public Hospital Doctors Reject Interim Deal and Schedule Stoppage",
+    title: "Victorian Public Hospital Doctors Schedule Stoppage",
     union: "ASMOF",
     industry: "Healthcare",
-    type: "planned",
+    type: "stoppage",
     startDate: "2026-10-21",
     endDate: "",
     workers: 10500,
@@ -9015,7 +9016,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "healthcare", "doctors", "planned stoppage", "wages", "staffing"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6024,
     actionId: "cpsu-building-tasmania-dpac-october-2026",
     title: "Tasmanian Public Servants Stop Work Over Planned Job Cuts",
@@ -9036,13 +9037,13 @@ const STRIKE_DATA = [
     tags: ["labour union", "public sector", "job cuts", "stoppage", "restructure"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6025,
     actionId: "usyd-nteu-october-2026",
     title: "University of Sydney NTEU Members Plan 24-Hour Strike",
     union: "NTEU",
     industry: "Education",
-    type: "planned",
+    type: "strike",
     startDate: "2026-10-22",
     endDate: "2026-10-22",
     workers: null,
@@ -9057,7 +9058,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "education", "planned strike", "academic freedom", "AI", "bargaining"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6026,
     actionId: "merri-bek-asu-october-2026",
     title: "Merri-bek Council Workers Strike Over Multi-Council Agreement",
@@ -9079,7 +9080,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "supporters wanted", "local government", "council workers", "penalty rates"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6027,
     actionId: "jetstar-asu-october-2026",
     title: "Jetstar Makes Improved Offer as Industrial Action Is Paused",
@@ -9099,7 +9100,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "aviation", "pay offer", "industrial action paused", "bargaining"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6028,
     actionId: "air-radiators-amwu-october-2026",
     title: "Air Radiators Workers Strike Again Over Hours and Pay",
@@ -9120,7 +9121,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "manufacturing", "strike", "working hours", "wages"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6029,
     actionId: "aemo-professionals-australia-october-2026",
     title: "AEMO Workers Introduce Indefinite Bans on Non-Critical Work",
@@ -9140,7 +9141,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "energy", "work ban", "AI", "four-day week", "wages"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6030,
     actionId: "vahpa-allied-health-october-2026",
     title: "Victorian Public Allied Health Workers Escalate Industrial Action",
@@ -9161,7 +9162,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "healthcare", "allied health", "work ban", "public sector"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     state: "VIC",
     id: 6031,
     actionId: "note-printing-australia-amwu-etu-october-2026",
@@ -9182,7 +9183,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "manufacturing", "banknotes", "work ban", "wages"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6032,
     actionId: "sct-logistics-twu-wa-october-2026",
     title: "SCT Logistics Workers in WA Hold Two-Hour Strike",
@@ -9203,7 +9204,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "transport", "logistics", "strike", "superannuation", "job security"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6033,
     actionId: "concrite-twu-nsw-october-2026",
     title: "Concrite Workers Walk Off the Job",
@@ -9224,7 +9225,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "transport", "concrete", "strike", "job security"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6034,
     actionId: "mazda-amwu-epping-october-2026",
     title: "Mazda Warehouse Workers Take First Industrial Action",
@@ -9245,7 +9246,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "warehousing", "automotive", "strike", "wages", "bargaining"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6035,
     actionId: "bridgestone-twu-wa-october-2026",
     title: "Bridgestone Workers Begin 96-Hour Strike",
@@ -9266,7 +9267,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "transport", "strike", "fatigue protections", "wages", "superannuation"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6036,
     actionId: "overnewton-college",
     title: "Overnewton Teachers Take Campaign Action at School Presentation Night",
@@ -9287,7 +9288,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "education", "protest", "wages", "workloads"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6037,
     actionId: "qtu-tafe-october-2026",
     title: "Queensland TAFE Workers Vote on Protected Industrial Action",
@@ -9308,7 +9309,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "education", "TAFE", "protected action ballot", "workloads"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6038,
     actionId: "fedex-lock-out-transport-strike",
     title: "FedEx Workers Reach In-Principle Agreement After Strikes",
@@ -9331,7 +9332,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "transport", "agreement", "wages", "superannuation", "job security"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6039,
     actionId: "ventia-twu-wa-october-2026-resolution",
     title: "Ventia Custodial Officers Secure Improved Pay and Conditions",
@@ -9352,7 +9353,7 @@ const STRIKE_DATA = [
     tags: ["labour union", "custodial services", "wages", "CPI", "job security"]
 },
 {
-    addDate: "2026-10-15",
+    adddate: "2026-10-15",
     id: 6040,
     actionId: "ceva-twu-victoria-october-2026-resolution",
     title: "CEVA Workers Reach Improved Agreement After Threat of Strike Action",

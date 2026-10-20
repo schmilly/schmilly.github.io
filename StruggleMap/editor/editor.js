@@ -1655,7 +1655,7 @@ function renderRecordTable(node, path, ctx) {
     wq.appendChild(lbl); wq.appendChild(inp); wq.appendChild(go);
     bar.appendChild(wq);
   }
-    if (allKeysSet.has('addDate') || state.selectedRows.size > 0) {
+    if (allKeysSet.has('adddate') || state.selectedRows.size > 0) {
     const aq = document.createElement('span');
     aq.className = 'workers-quick adddate-quick';
     const lbl = document.createElement('label');
@@ -1663,7 +1663,7 @@ function renderRecordTable(node, path, ctx) {
     const inp = document.createElement('input');
     inp.type = 'date';
     inp.value = todayIso();
-    inp.title = 'Set addDate on all visible (or selected) rows';
+    inp.title = 'Set adddate on all visible (or selected) rows';
     const go = document.createElement('button');
     go.className = 'go'; go.textContent = 'Apply';
     go.onclick = () => {
@@ -2028,7 +2028,7 @@ function applyAddDateQuick(arrayTree, arrayPath, value) {
     const idx = parseInt(rp.slice(arrayPath.length + 1, -1), 10);
     const rec = arrayTree.children[idx];
     if (!rec || rec.kind !== 'object') { skipped++; continue; }
-    const kv = rec.children.find(c => c.key === 'addDate');
+    const kv = rec.children.find(c => c.key === 'adddate');
 
     if (kv) {
       const leaf = kv.value;
@@ -2053,7 +2053,7 @@ function applyAddDateQuick(arrayTree, arrayPath, value) {
         const objIndent = f.source.slice(ols, rn.start).match(/^\s*/)[0] || '';
         innerIndent = objIndent + '    ';
       }
-      const text = `\n${innerIndent}addDate: ${lit},`;
+      const text = `\n${innerIndent}adddate: ${lit},`;
       const pos = rn.start + 1;
       const key = pos + ':ins';
       if (seen.has(key)) continue;
@@ -2070,7 +2070,7 @@ function applyAddDateQuick(arrayTree, arrayPath, value) {
   if (updated)  bits.push(`${updated} updated`);
   if (inserted) bits.push(`${inserted} inserted`);
   if (skipped)  bits.push(`${skipped} skipped`);
-  toast(`addDate → ${value} (${bits.join(', ')})`, 'ok');
+  toast(`adddate → ${value} (${bits.join(', ')})`, 'ok');
   state.selectedRows = new Set();
   renderMain();
 }
@@ -2543,7 +2543,7 @@ function isCoordinateKey(key) {
 /* Columns that should use a search-style filter instead of a checkbox list */
 const SEARCH_FILTER_COLS = new Set([
   'id', 'actionId', 'title', 'name', 'city', 'url', 'description',
-  'workers', 'startDate', 'endDate', 'addDate',
+  'workers', 'startDate', 'endDate', 'adddate',
 ]);
 
 function inferColFilterMode(col) {
@@ -2682,7 +2682,7 @@ function buildEntryTemplateFromSchema(schema, refObj, indent, nextId) {
   for (const key of schema) {
     const keyRepr = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : JSON.stringify(key);
     let def;
-    if (key === 'addDate') {
+    if (key === 'adddate') {
       def = JSON.stringify(todayIso());
     } else {
       const refNode = existingDefaults.get(key);

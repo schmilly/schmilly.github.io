@@ -1027,7 +1027,7 @@ ${latest.tags ? latest.tags.map(t => {
         ${historyHtml}
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
-        <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;"> <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);"> ${latest.adddate || 'Date added missing'}</span>
+        <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;"> <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);">Added: ${latest.adddate || 'Date added missing'}</span>
         </div>
         `;
 
