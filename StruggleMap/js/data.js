@@ -395,7 +395,7 @@ const STRIKE_DATA = [
         description: "Around 1000 workers across public hospitals stopped work for 3 hours. Rejected 19-21% offer; demand 36% over 3 years.",
 
         locations: [
-            { city: "Melbourne", state: "VIC", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various public hospitals" }
+            { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian public hospitals and health services" }
         ],
         sources: [
             { name: "Disputes Report - July 29", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-29-july" }
@@ -5631,7 +5631,7 @@ const STRIKE_DATA = [
         state: "VIC",
         description: "For Week 3 of the 'Four Weeks To Fix It Campaign', VAHPA members will be participating in rolling lunchtime rallies. Rallies kicked off on 21 September at the Royal Women's Hospital, and on 22 September at Northern Health and Monash Health. On 23 September rallies took place at the Alfred, Western Health, Austin Health and Bendigo Health. On 24 September, workers will rally at Grampians Health.",
         locations: [
-            { city: "Melbourne", state: "VIC", lat: HOSP["TAS"]["Royal Hobart"][0], lng: HOSP["TAS"]["Royal Hobart"][1], name: "Various hospitals" }
+            { city: "Melbourne", state: "VIC", lat: HOSP.VIC["Royal Melbourne"][0], lng: HOSP.VIC["Royal Melbourne"][1], name: "Various hospitals" }
         ],
         sources: [
             { name: "Disputes Report - 23 September 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-23-september" }
@@ -9310,7 +9310,7 @@ const STRIKE_DATA = [
 },
 {
     adddate: "2026-10-15",
-    id: 6038,
+    id: 6054,
     actionId: "fedex-lock-out-transport-strike",
     title: "FedEx Workers Reach In-Principle Agreement After Strikes",
     union: "TWU",
@@ -9333,7 +9333,7 @@ const STRIKE_DATA = [
 },
 {
     adddate: "2026-10-15",
-    id: 6039,
+    id: 6052,
     actionId: "ventia-twu-wa-october-2026-resolution",
     title: "Ventia Custodial Officers Secure Improved Pay and Conditions",
     union: "TWU WA",
@@ -9372,9 +9372,389 @@ const STRIKE_DATA = [
     ],
     tags: ["labour union", "transport", "job security", "AI", "automation"]
 },
+{
+    state: "VIC",
+    adddate: "2026-10-23",
+    id: 604011,
+    actionId: "vahpa-allied-health",
+    title: "Public Sector Health Workers reject Victoria Government Offer",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "ballotfail",
+    startDate: "2026-10-20",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "The Victorian government provided a memorandum to VAHPA on the 16th. Member meetings were held, with the offer being finally rejected on 20th with 92% of participating members voting to rejecting the memorandum. The memorandum of understanding included a 6% pay rise October 2027 and $2000 one off payment to workers,. However, it included the provision of no industrial action allowed until October 2027. The government now claims it can do no further work on EBA negotiations due to entering \"Care taker mode\" in the upcoming election.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Victorian public hospitals and health services" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "healthcare", "rejected offer", "public sector"]
+},
+{
+    adddate: "2026-10-15",
+    id: 60402,
+    actionId: "ceva-twu-victoria-october-2026-resolution",
+    title: "Victoria Doctors  narrowly endorse new deal",
+    union: "ASMOF",
+    industry: "Healthcare",
+    type: "ballotpass",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    description: "The threat of strike action was sufficient to bring CEVA back to the negotiating table with an improved offer. The TWU reported that a strong agreement had been reached, including protections relating to job security, AI and automation.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Ceva Logistics"][0], lng: COMPANY["Ceva Logistics"][1], name: "CEVA Logistics" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "job security", "AI", "automation"]
+},
+{
+    adddate: "2026-10-15",
+    id: 60403,
+    actionId: "ceva-twu-victoria-october-2026-resolution",
+    title: "DRAFT",
+    union: "TWU",
+    industry: "Transport and Logistics",
+    type: "resolved",
+    startDate: "2026-10-14",
+    endDate: "",
+    workers: null,
+    description: "The threat of strike action was sufficient to bring CEVA back to the negotiating table with an improved offer. The TWU reported that a strong agreement had been reached, including protections relating to job security, AI and automation.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Ceva Logistics"][0], lng: COMPANY["Ceva Logistics"][1], name: "CEVA Logistics" }
+    ],
+    sources: [
+        { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
+    ],
+    tags: ["labour union", "transport", "job security", "AI", "automation"]
+},
+{
+    id: 6055,
+    actionId: "act-public-sector",
+    title: "ACT Public Sector Workers Strike and Rally at Legislative Assembly",
+    union: "ASMOF / CFMEU / CPSU / PA / AEU / ANMF",
+    industry: "Public Sector",
+    type: "stoppage",
+    startDate: "2026-10-29",
+    endDate: "2026-10-29",
+    workers: null,
+    state: "ACT",
+    description: "Members of ASMOF, CFMEU, CPSU and Professionals Australia struck for 2 hours on 29 October and rallied outside the Legislative Assembly from 10:30–11:30am, after rejecting the ACT Government's offer in September. AEU members held rolling stoppages at public schools the previous week and have threatened a 24-hour strike this term if no decent offer emerges. On 23 October, the ANMF ACT Branch Council endorsed an Extraordinary Resolution condemning the Government's failure to bargain genuinely.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "Legislative Assembly, Canberra ACT" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "Region Canberra — Union members reject ACT government's latest pay and conditions offer", url: "https://region.com.au/not-enough-union-members-reject-act-governments-latest-pay-and-conditions-offer/997827/" }
+    ],
+    tags: ["public-sector", "act", "multi-union"]
+},
+{
+    id: 6039,
+    actionId: "vic-doctors-strike",
+    title: "ASMOF Vic MOU Backlash; Industrial Action Can Resume March 2027",
+    union: "ASMOF Vic",
+    industry: "Healthcare",
+    type: "update",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "Following the narrow 51.73% vote in favour of the revised MOU, doctors expressed anger over the 22-hour voting window. AMA Vic President Dr Simon Judkins issued a statement addressing the 'anger and vitriol'. The revised MOU allows industrial action to recommence in March 2027 (not October, as initially reported), and ASMOF intends to conduct a new protected action ballot in early 2027 to expand its range of activities.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Victorian hospitals" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "AMA Victoria — EBA bargaining news", url: "https://tek.amavic.com.au/eba#group-section-Bargaining-news-6U0K4vkwZc" }
+    ],
+    tags: ["healthcare", "asmoF", "victoria", "mou"]
+},
+{
+    id: 6051,
+    actionId: "qantas-twu-ground-strike",
+    title: "Qantas Ground Workers Strike for 24 Hours Across Five Airports",
+    union: "TWU",
+    industry: "Aviation",
+    type: "strike",
+    startDate: "2026-10-28",
+    endDate: "2026-10-28",
+    workers: null,
+    state: "",
+    description: "TWU members at Qantas Airways Limited, Qantas Ground Services and Australian Air Express struck for 24 hours on 28 October at Sydney, Melbourne, Adelaide, Brisbane and Perth airports. Workers are fighting for fair pay in line with industry standards, more full-time jobs and better hours, and the reconsolidation of workers under one Qantas entity rather than multiple subsidiaries. TWU national secretary Michael Kaine said Qantas had turned 'beloved careers into scraps of poorly-paid, unsafe work'.",
+    locations: [
 
-
-
+        { city: "Sydney", state: "NSW", lat: SYD["Airport"][0], lng:  SYD["Airport"][1], name: "Sydney Airport" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Melbourne Airport" },
+        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "Adelaide Airport" },
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Brisbane Airport" },
+        { city: "Perth", state: "WA", lat: CITY_COORDS["Perth"][0], lng: CITY_COORDS["Perth"][1], name: "Perth Airport" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "Australian Aviation — Qantas ground workers kick off another 24-hour strike", url: "https://australianaviation.com.au/2026/10/qantas-ground-workers-kick-off-another-24-hour-strike/" },
+        { name: "Qantas Freight — Industrial action notice", url: "https://freight.qantas.com" }
+    ],
+    tags: ["aviation", "twu", "qantas"]
+},
+{
+    id: 6053,
+    actionId: "vahpa-allied-health",
+    title: "VAHPA Says Government Won't Increase MOU Wage Terms; Action Continues",
+    union: "VAHPA",
+    industry: "Healthcare",
+    type: "update",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "After members rejected the government's MOU offer by 92.31%, VAHPA met with the government on 22 October. The government confirmed it would not increase the total wages terms of the MOU, though it offered alternatives that had not been provided in writing by 26 October. Protected industrial action continues across Victorian hospitals.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Various Victorian public health services" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["healthcare", "vahpa", "victoria"]
+},
+{
+    id: 6056,
+    actionId: "healthe-care-nswnma",
+    title: "Healthe Care Nurses Commence Industrial Action After 6 Months of Bargaining",
+    union: "NSWNMA",
+    industry: "Healthcare / Private Hospitals",
+    type: "strike",
+    startDate: "2026-10-22",
+    endDate: "",
+    workers: null,
+    state: "NSW",
+    description: "NSWNMA members at Healthe Care facilities commenced industrial action after 6 months of bargaining. The protected action ballot passed with 96.5% yes. On 22 October, members at Lingard and Maitland Private Hospitals began wearing union scrub tops and talking to patients; members at Wollongong Day Surgery and Shellharbour Private Hospital held a 2-hour stoppage. Healthe Care, owned by Pacific Equity Partners, operates 13 private hospitals and day surgeries and has refused to move from an 8.4% wage increase over 3 years, well below expected inflation. Nurses are demanding enforceable ratios and pay parity for Waratah Private Hospital staff on the lower Federal Nurses Award.",
+    locations: [
+        { city: "Newcastle", state: "NSW", lat: 0, lng: 0, name: "Lingard Private Hospital, Merewether NSW" },
+        { city: "Maitland", state: "NSW", lat: HOSP["NSW"]["Maitland"][0], lng: HOSP["NSW"]["Maitland"][1], name: "Maitland Private Hospital" },
+        { city: "Wollongong", state: "NSW", lat: HOSP["NSW"]["Wollongong"][0], lng: HOSP["NSW"]["Wollongong"][1], name: "Wollongong Day Surgery" },
+        { city: "Shellharbour", state: "NSW", lat: HOSP["NSW"]["Shellharbour"][0], lng: HOSP["NSW"]["Shellharbour"][1], name: "Shellharbour Private Hospital" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "The Lamp — Private hospital nurses and midwives kick start industrial action", url: "https://thelamp.com.au/specialities/privatesector/private-hospital-nurses-and-midwives-kick-start-industrial-action/" },
+        { name: "Newcastle Herald — 'Insulting offer': industrial action launched at two Hunter private hospitals", url: "https://www.newcastleherald.com.au" }
+    ],
+    tags: ["healthcare", "private-hospitals", "nswnma", "new-south-wales"]
+},
+{
+    id: 6041,
+    actionId: "crown-melbourne-uwu",
+    title: "Crown Workers Vote Down Third Agreement Despite Sign-On Bonus",
+    union: "UWU Vic",
+    industry: "Hospitality / Gaming",
+    type: "ballotfail",
+    startDate: "2026-10-27",
+    endDate: "2026-10-27",
+    workers: null,
+    state: "VIC",
+    description: "UWU members at Crown Melbourne voted down a third proposed agreement, with more workers voting no than on the previous deal despite Crown offering a sign-on bonus. The third agreement retained a dual wage structure with new employees on lower pay for 10 years. UWU and Crown are due before the FWC on Friday to determine whether bargaining is intractable. The previous two agreements were rejected by approximately 87% and 70% of voters.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: -37.8226, lng: 144.9580, name: "Crown Melbourne" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "On Notice — Crown Melbourne fails to stop UWU 'vote no' claims before a third ballot", url: "https://onnotice.com.au/news/crown-melbourne-fails-to-stop-uwu-vote-no-claims/" }
+    ],
+    tags: ["hospitality", "gaming", "uwu", "victoria"]
+},
+{
+    id: 6042,
+    actionId: "cleanaway-twu",
+    title: "Cleanaway Dandenong Workers Strike for 4 Hours",
+    union: "TWU Vic",
+    industry: "Waste Management",
+    type: "strike",
+    startDate: "2026-10-23",
+    endDate: "2026-10-23",
+    workers: null,
+    state: "VIC",
+    description: "TWU members at Cleanaway Dandenong struck for 4 hours on Friday 23 October, following a 1-hour stoppage in September — the first ever strike at the depot. Workers are fighting for a fair deal as wages have not kept pace with inflation, and major safety concerns remain: 5 Cleanaway workers have died on the job in the last two years, and 8 since 2022. Last week, Queensland union members rallied outside a Queensland Media Club event sponsored by Cleanaway where Premier David Crisafulli was speaking.",
+    locations: [
+        { city: "Dandenong", state: "VIC", lat: CITY_COORDS["Dandenong"][0], lng: CITY_COORDS["Dandenong"][1], name: "Cleanaway Dandenong" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "TWU — Waste workers at deadly waste company Cleanaway vote in favour of industrial action", url: "https://www.twu.com.au" }
+    ],
+    tags: ["waste-management", "twu", "victoria", "safety"]
+},
+{
+    id: 6043,
+    actionId: "quantem-mua",
+    title: "Quantem MUA Members Resume Industrial Action at Coode Island",
+    union: "MUA Vic",
+    industry: "Fuel Port Operations",
+    type: "strike",
+    startDate: "2026-10-27",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "MUA members at Quantem's Coode Island Bulk Liquids facility resumed industrial action on the night of 27 October after Quantem failed to reach a satisfactory agreement. The union warned in September that action would resume if no deal was reached. Workers are seeking 4% or inflation-linked pay rises, rostering protections and safety improvements. A picket was deployed near the site entrance, supported by members of other unions; workers also raised concerns about non-union labour being used during the dispute.",
+    locations: [
+        { city: "Port Melbourne", state: "VIC", lat: MELB["Quantem"][0], lng: MELB["Quantem"][1], name: "Quantem Coode Island Bulk Liquids Facility" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "The DCN — Strike at Coode Island as dispute escalates", url: "https://www.thedcn.com.au/news/strike-at-coode-island-as-dispute-escalates" },
+        { name: "ITF — Vessel owners warned to respect rights of Quantem workers", url: "https://www.itfglobal.org" }
+    ],
+    tags: ["maritime", "mua", "victoria", "fuel"]
+},
+{
+    id: 6044,
+    actionId: "unimelb-nteu",
+    title: "University of Melbourne NTEU Members to Vote on Proposed Agreement",
+    union: "NTEU",
+    industry: "Education",
+    type: "ballot",
+    startDate: "2026-11-01",
+    endDate: "",
+    workers: null,
+    state: "VIC",
+    description: "NTEU members at the University of Melbourne will vote in November on a proposed agreement endorsed by the Branch Council. The deal includes 3.5% annual wage increases, 17% superannuation for casual employees (bringing them in line with permanent staff), AI protections and other improvements. The NTEU acknowledges not all claims were achieved and is planning an enforcement campaign while building membership density for the next bargaining round.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: MELB["Uni"][0], lng: MELB["Uni"][1], name: "University of Melbourne" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["education", "nteu", "victoria"]
+},
+{
+    id: 6045,
+    actionId: "virgin-asu-twu",
+    title: "Virgin Australia Workers Vote for Industrial Action; TWU Cabin Crew Apply for PABO",
+    union: "ASU / TWU",
+    industry: "Aviation",
+    type: "ballotpass",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "",
+    description: "99.38% of ASU members at Virgin Australia voted in favour of industrial action, and TWU cabin crew at Virgin have applied for a protected action ballot order.",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia (national)" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["aviation", "asu", "twu", "virgin-australia"]
+},
+{
+    id: 6046,
+    actionId: "cfmeu-act-cranes",
+    title: "CFMEU ACT Crane Crews Vote for Industrial Action",
+    union: "CFMEU ACT",
+    industry: "Construction",
+    type: "ballotpass",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "ACT",
+    description: "CFMEU members at DP Cranes have voted in favour of industrial action. Members at Level 80 Cranes and RAR are also set to vote in protected action ballots.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: CITY_COORDS["Canberra"][0], lng: CITY_COORDS["Canberra"][1], name: "DP Cranes / Level 80 Cranes / RAR (ACT)" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["construction", "cfmeu", "act", "cranes"]
+},
+{
+    id: 6047,
+    actionId: "phi-aviation-offshore-alliance",
+    title: "PHI Aviation Broome Workers Vote in Protected Action Ballot",
+    union: "Offshore Alliance (AWU / MUA)",
+    industry: "Aviation / Offshore Services",
+    type: "ballot",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "WA",
+    description: "Licensed aircraft maintenance engineers (LAMEs) and ramp staff at PHI Aviation at Broome Airport are voting in a protected action ballot this week.",
+    locations: [
+        { city: "Broome", state: "WA", lat: CITY_COORDS["Broome"][0], lng: CITY_COORDS["Broome"][1], name: "Broome International Airport" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["aviation", "offshore-alliance", "western-australia"]
+},
+{
+    id: 6048,
+    actionId: "national-pharmacies-pa",
+    title: "National Pharmacies Workers Vote 92% for Industrial Action",
+    union: "Professionals Australia (SA & Vic)",
+    industry: "Pharmacy / Retail",
+    type: "ballotpass",
+    startDate: "2026-10-28",
+    endDate: "",
+    workers: null,
+    state: "",
+    description: "92% of union members at National Pharmacies voted in favour of taking industrial action. Pharmacists are fighting for safe staffing levels and an 18% pay increase over 3 years.",
+    locations: [
+        { city: "Adelaide", state: "SA", lat: CITY_COORDS["Adelaide"][0], lng: CITY_COORDS["Adelaide"][1], name: "National Pharmacies (SA)" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "National Pharmacies (VIC)" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["pharmacy", "professionals-australia", "south-australia", "victoria"]
+},
+{
+    id: 6049,
+    actionId: "lumus-imaging-strike",
+    title: "Lumus Imaging Workers Win 22% Pay Rise After 43 Days of Action",
+    union: "ANMF Vic",
+    industry: "Healthcare",
+    type: "resolved",
+    startDate: "2026-10-28",
+    endDate: "2026-10-28",
+    workers: null,
+    state: "VIC",
+    description: "ANMF members at Lumus Imaging voted up an in-principle agreement after 43 days of protected industrial action, including a stop-work the day before the improved offer was made. The new deal includes a 22% pay rise over 4 years.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Lummus Imaging"]["Birdge Road"][0], lng: COMPANY["Lummus Imaging"]["Birdge Road"][1], name: "Lumus Imaging (various Victorian sites)" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "ANMF Vic — Bargaining updates: school nurses, Lumus Imaging, AHPRA and Lifeblood", url: "https://otr.anmfvic.asn.au" }
+    ],
+    tags: ["healthcare", "anmf", "victoria", "resolved"]
+},
+{
+    id: 6050,
+    actionId: "curtin-uwa-nteu",
+    title: "Curtin and UWA NTEU Members Endorse In-Principle Agreements",
+    union: "NTEU WA",
+    industry: "Education",
+    type: "resolved",
+    startDate: "2026-10-28",
+    endDate: "2026-10-28",
+    workers: null,
+    state: "WA",
+    description: "NTEU members at Curtin University endorsed an in-principle agreement with a 16.35% wage increase over the life of the agreement, following a 24-hour strike in March and a stoppage in November 2025. NTEU members at the University of Western Australia also endorsed an in-principle agreement — the first single agreement at UWA covering academic and professional staff — with a 14.7% wage increase. Both agreements include better flexible work rights, new AI clauses, improved Indigenous employment targets and recognition of cultural load. Members have already pivoted to opposing a potential merger between Curtin, UWA and Murdoch.",
+    locations: [
+        { city: "Bently", state: "WA", lat: UNI.Curtin[0], lng: UNI.Curtin[1], name: "Curtin University" },
+        { city: "Crawly", state: "WA", lat: UNI.UWA[0], lng: UNI.UWA[1], name: "University of Western Australia" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
+    ],
+    tags: ["education", "nteu", "western-australia", "resolved"]
+}
 
 ];
 

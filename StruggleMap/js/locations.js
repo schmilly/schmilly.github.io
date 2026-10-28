@@ -16,6 +16,10 @@ const WALoc = {
     "Downer WA Office": {city: "High Wycombe", state: "WA", lat: -31.9453, lng: 116.0011, name: "Downer WA Office, 959 Abernethy Rd, High Wycombe WA 6057"},
 }
 
+const DISPUTES28OCTLoc = {
+    
+}
+
 const CITY_COORDS = {
     "Sydney": [-33.8688, 151.2093],
     "Melbourne": [-37.8136, 144.9631],
@@ -69,6 +73,7 @@ const CITY_COORDS = {
     "Tuggeranong": [-35.4150, 149.0700],
     "Collie": [-33.3600, 116.1500],
     "South Melbourne": [-37.8330, 144.9670],
+    "Broome": [-17.961952828044733, 122.23511148707894]
 };
 
 const COMPANY = {
@@ -247,7 +252,9 @@ const PORT = { //Ports
 }
 
 const UNI = {
-    SYD: [-33.88850160140012, 151.1874526756167], //Unis
+    Curtin: [-32.005728646410304, 115.89366624971079],
+    UWA: [-31.97894700638039, 115.8177931498079],
+    SYD: [-33.88850160140012, 151.1874526756167], 
     "QLD": [-27.4977, 153.0128],
     "Griffith": [-27.5531, 153.0510],
     "QLD Uni Tech": [-27.4779, 153.0274],
