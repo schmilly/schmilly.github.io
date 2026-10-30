@@ -9734,6 +9734,29 @@ const STRIKE_DATA = [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
     ],
     tags: ["education", "nteu", "western-australia", "resolved"]
+},
+{
+    id: 6057,
+    actionId: "global-dockworkers-arms-shipments-oct-2026",
+    title: "Global Dockworkers Strike Against Arms Shipments",
+    union: "MUA",
+    industry: "Maritime",
+    type: "strike",
+    startDate: "2026-10-30",
+    endDate: "2026-10-30",
+    workers: null,
+    state: "VIC",
+    description: "Dockworkers at 113 ports across 22 countries and regions staged coordinated strikes, stoppages and demonstrations on 30 October 2026 as part of the International Day of Action of Dockworkers and Port Workers against war and militarisation. In Australia, the Maritime Union of Australia (MUA) joined the action at the Port of Melbourne. The action was initiated by dockworkers' unions in Italy, France, Greece, Spain's Basque Country, Türkiye and Morocco and grew to be backed by more than 25 unions The core demand was that civilian ports not be used to move weapons and military cargo to war zones, alongside calls for better pay, working conditions and opposition to automation. Unions said the action could affect over 40% of Mediterranean cargo and disrupt more than US$2 billion worth of freight.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: MELB["Port"][0], lng: MELB["Port"][1], name: "Port of Melbourne" }
+    ],
+    sources: [
+        { name: "Reuters — Dockworkers at more than 100 ports strike against arms shipments", url: "https://www.reuters.com/business/world-at-work/dockworkers-more-than-100-ports-strike-against-arms-shipments-friday-2026-10-29/" },
+        { name: "World Cargo News — Dockworkers strike against arms shipments across 113 ports", url: "https://www.worldcargonews.com/news/2026/10/dockworkers-strike-against-arms-shipments-across-113-ports/" },
+        { name: "X (Twitter) — Peter Cronau", url: "https://x.com/PeterCronau/status/2115768092932665498" },
+        { name: "Facebook — Maritime Union of Australia", url: "https://www.facebook.com/MaritimeUnionAustralia/posts/the-maritime-union-of-australia-expresses-its-solidarity-with-dockworkers-and-po/1568112738674365/" }
+    ],
+    tags: ["labour union", "maritime", "solidarity strike", "anti-war", "global", "supporters welcome"]
 }
 
 ];
