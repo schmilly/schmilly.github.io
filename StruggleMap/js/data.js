@@ -9756,7 +9756,7 @@ const STRIKE_DATA = [
         { name: "X (Twitter) — Peter Cronau", url: "https://x.com/PeterCronau/status/2115768092932665498" },
         { name: "Facebook — Maritime Union of Australia", url: "https://www.facebook.com/MaritimeUnionAustralia/posts/the-maritime-union-of-australia-expresses-its-solidarity-with-dockworkers-and-po/1568112738674365/" }
     ],
-    tags: ["labour union", "maritime", "solidarity strike", "anti-war", "global", "supporters welcome"]
+    tags: ["labour union", "maritime", "solidarity strike", "anti-war", "global", "supporters wanted"]
 }
 
 ];
