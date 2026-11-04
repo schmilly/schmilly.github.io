@@ -9614,23 +9614,46 @@ const STRIKE_DATA = [
 },
 {
     id: 6045,
-    actionId: "virgin-asu-twu",
-    title: "Virgin Australia Workers Vote for Industrial Action; TWU Cabin Crew Apply for PABO",
-    union: "ASU / TWU",
+    actionId: "virgin-asu",
+    title: "Virgin Australia Workers vote for non-disruptive Action",
+    union: "ASU",
     industry: "Aviation",
-    type: "ballotpass",
+    type: "action",
+    startDate: "2026-10-28",
+    endDate: "2026-11-04",
+    workers: null,
+    state: "",
+    description: "99.38% of ASU members at Virgin Australia voted in favour of industrial action. For the next week Virgin workers will wear union material and shoes “of their choosing” while leaving off some uniform items, as well as handing out flyers and talking to passengers in customer-facing areas about the reasons for the action. ",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia National HQ" }
+    ],
+    sources: [
+        { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
+        { name: "Australian Aviation - Virgin Australia airport workers launch industrial action", URL: "https://australianaviation.com.au/2026/10/virgin-australia-airport-workers-launch-industrial-action/"},
+        { name: "My flight back to Perth - 4 November 2026", url: "https://x.com/Schmilly2/status/2117794596977815824?a=aYVjXf2fq4SdLzMSDq0"
+        }
+    ],
+    tags: ["aviation", "asu", "virgin-australia"]
+},
+{
+    id: 60451,
+    actionId: "virgin-twu",
+    title: "TWU Virgin Australia Workers apply for ballot",
+    union: "TWU",
+    industry: "Aviation",
+    type: "ballot",
     startDate: "2026-10-28",
     endDate: "",
     workers: null,
     state: "",
-    description: "99.38% of ASU members at Virgin Australia voted in favour of industrial action, and TWU cabin crew at Virgin have applied for a protected action ballot order.",
+    description: "TWU cabin crew at Virgin have applied for a protected action ballot order.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia (national)" }
+        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia National HQ" }
     ],
     sources: [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
     ],
-    tags: ["aviation", "asu", "twu", "virgin-australia"]
+    tags: ["aviation", "twu", "virgin-australia"]
 },
 {
     id: 6046,

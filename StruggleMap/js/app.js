@@ -559,10 +559,6 @@ function buildLegend() {
             attributionControl: true,
         });
 
-        L.control.zoom({
-        position: 'topright'
-        }).addTo(map);
-
         L.tileLayer(TILE_LAYER_URL, {
             attribution: TILE_LAYER_ATTRIBUTION,
             maxZoom: 20
