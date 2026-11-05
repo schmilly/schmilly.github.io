@@ -1014,14 +1014,17 @@ ${latest.tags ? latest.tags.map(t => {
         </div>
         <h3 style="margin-bottom: 8px;">${escapeHtml(latest.title)}</h3>
         ${staleHtml}
-        <div class="detail-section"><div class="detail-label">Union</div><div class="detail-value">${escapeHtml(latest.union || 'Not specified')}</div></div>
-        <div class="detail-section"><div class="detail-label">Industry</div><div class="detail-value">${escapeHtml(latest.industry || 'Not specified')}</div></div>
+        <div style="display:flex;width:100%;">
+            <div style="flex:1;" class="detail-section"><div class="detail-label">Union</div><div class="detail-value">${escapeHtml(latest.union || 'Not specified')}</div></div>
+            <div style="flex:1;" class="detail-section"><div class="detail-label">Industry</div><div class="detail-value">${escapeHtml(latest.industry || 'Not specified')}</div></div>
+            <div style="flex:1;" class="detail-section"><div class="detail-label">Workers Involved</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
+        </div>
         <div class="detail-section"><div class="detail-label">Locations</div><div class="detail-value">${locationsHtml}</div></div>
-        <div class="detail-section"><div class="detail-label">Workers Involved</div><div class="detail-value">${latest.workers ? latest.workers.toLocaleString() : 'Unknown'}</div></div>
+        
         <div class="detail-section"><div class="detail-label">Duration</div><div class="detail-value">${formatDate(firstStart)} — ${latest.endDate ? formatDate(latest.endDate) : 'Ongoing'}</div></div>
         <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: var(--text-tertiary);">${latest.description}</div></div>
         ${historyHtml}
-        <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `#${t}`).join(' ') : 'None'}</div></div>
+        <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value">${latest.tags ? latest.tags.map(t => `<a class="chip">${t}</a>`).join(' ') : 'None'}</div></div>
         <div class="detail-section"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
         <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;"> <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);">Added: ${latest.adddate || 'Date added missing'}</span>
         </div>

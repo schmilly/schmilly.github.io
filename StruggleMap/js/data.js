@@ -9615,7 +9615,7 @@ const STRIKE_DATA = [
 {
     id: 6045,
     actionId: "virgin-asu",
-    title: "Virgin Australia Workers vote for non-disruptive Action",
+    title: "Virgin Australia Workers begin non-disruptive Action",
     union: "ASU",
     industry: "Aviation",
     type: "action",
@@ -9623,9 +9623,9 @@ const STRIKE_DATA = [
     endDate: "2026-11-04",
     workers: null,
     state: "",
-    description: "99.38% of ASU members at Virgin Australia voted in favour of industrial action. For the next week Virgin workers will wear union material and shoes “of their choosing” while leaving off some uniform items, as well as handing out flyers and talking to passengers in customer-facing areas about the reasons for the action. ",
+    description: "After a overwhelming 99.38% of ASU members at Virgin Australia voted in favour of industrial action; For the next week Virgin workers will wear union material and shoes “of their choosing” while leaving off some uniform items, as well as handing out flyers and talking to passengers in customer-facing areas about the reasons for the action. ",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia National HQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }
     ],
     sources: [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
@@ -9646,9 +9646,9 @@ const STRIKE_DATA = [
     endDate: "",
     workers: null,
     state: "",
-    description: "TWU cabin crew at Virgin have applied for a protected action ballot order.",
+    description: "TWU cabin crew at Virgin have applied for a protected action ballot.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: CITY_COORDS["Brisbane"][0], lng: CITY_COORDS["Brisbane"][1], name: "Virgin Australia National HQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }
     ],
     sources: [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }

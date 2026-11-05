@@ -6,6 +6,7 @@
     /*padding */
     --side-bar-padding: 6px;
 
+    /* Primary Colours */
     --bg-dark: #222327;
     --bg-panel: #150b0d;
     --bg-elevated: #5454cb;
@@ -236,6 +237,8 @@ body {
     color: var(--text-secondary);
     flex:1;
     border-top:solid;
+    border-bottom: solid;
+    border-right: solid;
     border-color:var(--border);
     border-width:5px;
     
@@ -957,6 +960,8 @@ html[data-theme="light"] .map-legend {
     background: var(--bg-panel);
     border: 1px solid var(--border);
     border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     padding: 20px 24px;
     width: 90%;
     max-width: 560px;
@@ -1750,19 +1755,24 @@ html[data-theme="light"] .meta-tag.upcoming {
 
 .chip {
     background-color: var(--text-heading);
-    display:block;
-    font-size:14px;
     color:var(--accent);
     border-radius: 10px;
     border-color: var(--accent);
     text-decoration: none;
-    padding:3px 10px;
-    margin: 2px;
+    padding:3px 5px;
+    margin: 3px;
     text-align: center;
-    font-weight: bold;
+
 }
 
-.chip:hover{
+.header .chip{
+    font-size:14px;
+    display:block;
+        font-weight: bold;
+            padding:3px 10px;
+}
+
+.header .chip:hover{
     background-color: var(--accent);
     color:var(--text-muted)
 }
