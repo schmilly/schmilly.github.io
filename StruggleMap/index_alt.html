@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Struggle Map</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
+
     <!-- Set theme before first paint to avoid a flash -->
     <script src="js/lightmode.js"></script>
+
+    <!-- Preload Fonts (Update paths if your font files are named differently) -->
+    <link rel="preload" href="fonts/UnionSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UnionSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -20,249 +25,285 @@
 
 <body>
 
-
     <!-- ═══ MAIN LAYOUT ═══ -->
     <div id="main">
         <!-- Sidebar -->
         <aside id="sidebar">
-            <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-            <div class="header">
-                <span class="minor">
-                    <div>
-                        <h1 style="padding:0;"><strong>Work in progress</strong>
-                        </h1>
+
+            <div class="sidebar-top">
+                <div class="header">
+                    <span class="minor">
                         <div>
-                            This map is experimental and may contain errors or omissions. Do not
-                            rely on it as a definitive source of factual information.
+                            <h1 style="padding:0;"><strong>Work in progress</strong></h1>
+                            <div>
+                                This map is experimental and may contain errors or omissions. Do not
+                                rely on it as a definitive source of factual information.
+                            </div>
                         </div>
-                    </div>
-                </span>
-                <span class="minor minoralt">
-                    <div>
-                        <h1 style="padding:0;"><strong>Credit</strong>
-                        </h1>
+                    </span>
+                    <span class="minor minoralt">
                         <div>
-                            Vast majority of information and details on this site comes from the incredible <a
-                                href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a
-                                href="https://disputesreport.substack.com">Disputes Report</a></div>
+                            <h1 style="padding:0;"><strong>Credit</strong></h1>
+                            <div>
+                                Vast majority of information and details on this site comes from the incredible <a
+                                    href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a
+                                    href="https://disputesreport.substack.com">Disputes Report</a>
+                            </div>
+                        </div>
+                    </span>
+                    <div class="chipcontainer">
+                        <div style="display:flex;">
+                            <a style="flex:1" class="chip" href="">?</a>
+                            <a style="flex:2" class="chip" href="./about.html">About</a>
+                        </div>
+                        <a style="flex:1" class="chip" href="./roadmap.html">Road Map</a>
                     </div>
-                </span>
-                <div class="chipcontainer">
-                    <div style="display:flex;">
-                        <a style="flex:1" class="chip" href="">?</a> <br>
-                        <a style="flex:2" class="chip" href="./about.html">About</a> <br>
+                </div>
+                <div style="display:flex;" class="row">
+                    <div class="buttonsContainer">
+                        <button class="icon-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+                        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to light mode"
+                            aria-pressed="false" title="Switch to light mode">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </button>
+
+                        <button class="icon-btn" type="button" aria-label="Search" title="Search">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                        </button>
+
+                        <button class="icon-btn" type="button" aria-label="Filters" title="Filters">
+<svg   width="24.825378" height="24.80839" viewBox="0 0 6.5683814 6.5638863"   version="1.1"   id="svg1"   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><g id="layer1" transform="translate(-28.926082,-27.176671)"><path
+       style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0485075"
+       d="m 31.472506,33.729238 c -0.01412,-0.0058 -0.03722,-0.02334 -0.05134,-0.03903 -0.02527,-0.02808 -0.02576,-0.05122 -0.03209,-1.493491 l -0.0064,-1.464965 -0.0363,-0.07393 c -0.03355,-0.06833 -0.118095,-0.146655 -1.116574,-1.034446 -0.59415,-0.528286 -1.104491,-0.986886 -1.134091,-1.019112 -0.06802,-0.07406 -0.126947,-0.190173 -0.152566,-0.300643 -0.01616,-0.06966 -0.01915,-0.156336 -0.01586,-0.458823 l 0.004,-0.372937 0.03529,-0.06695 c 0.04482,-0.08503 0.107915,-0.148121 0.192942,-0.192943 l 0.06695,-0.0353 h 2.983954 2.983954 l 0.06695,0.0353 c 0.08901,0.04692 0.153665,0.113709 0.194614,0.201029 0.03347,0.07137 0.03364,0.07337 0.03754,0.438823 0.0043,0.408953 -0.0036,0.474253 -0.07533,0.616316 -0.02183,0.04325 -0.06667,0.107663 -0.09965,0.143148 -0.03298,0.03549 -0.543191,0.493834 -1.13381,1.018553 -0.992912,0.882126 -1.076588,0.959607 -1.110159,1.027974 l -0.03631,0.07394 -0.0064,1.001067 -0.0064,1.00107 -0.03458,0.06555 c -0.01902,0.03605 -0.04989,0.08375 -0.06861,0.105989 -0.04593,0.05459 -1.348868,0.836233 -1.392097,0.835133 -0.01759,-4.09e-4 -0.04353,-0.0055 -0.05765,-0.01132 z"
+       /></g></svg>
+
+                        </button>
+
+                        <button class="icon-btn" type="button" id="upcoming-filter-btn" aria-label="Show upcoming"
+                            aria-pressed="false" title="Show only upcoming">
+<svg
+   width="28.193359"
+   height="25.132603"
+   viewBox="0 0 7.459493 6.6496677"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><path
+     id="path13"
+     style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0968041"
+     d="m 5.680103,4.18e-4 c -0.04,0 -0.07,0.01 -0.12,0.03 -0.1,0.04 -0.14,0.15 -0.14,0.33 v 0.16 h -1.28 -1.28 v -0.16 c 0,-0.09 -0.02,-0.19 -0.04,-0.23 -0.09,-0.17 -0.35,-0.17 -0.44,0 -0.02,0.04 -0.04,0.14 -0.04,0.22 v 0.15 l -0.49,0.01 c -0.45,0.01 -0.5,0.01 -0.6,0.07 -0.16,0.09 -0.27,0.19 -0.35,0.34 l -0.08,0.14 v 1.05 h 0.5 v -0.47 c 0,-0.62 0,-0.62 0.61,-0.62 h 0.41 v 0.12 c 0.08,-0.04 0.17,-0.06 0.26,-0.06 0.09,0 0.17,0.01 0.25,0.04 v -0.09 h 1.28 1.28 v 0.16 c 0,0.18 0.04,0.28 0.14,0.33 0.08,0.04 0.15,0.04 0.23,0 0.1,-0.04 0.14,-0.15 0.14,-0.33 v -0.16 h 0.41 c 0.61,0 0.61,0 0.61,0.62 v 0.41 h -2.82 -0.25 l 0.51,0.51 h 2.56 v 1.69 c 0,1.26 -0.01,1.71 -0.03,1.76 -0.02,0.04 -0.06,0.08 -0.1,0.1 -0.1,0.05 -5.28,0.05 -5.37,0 -0.11,-0.06 -0.13,-0.04 -0.13,-1.04 h -0.49 c 0,0.64 0.01,0.99 0.02,1.03 0.06,0.22 0.3,0.47 0.52,0.54 0.05,0.01 1.22,0.02 2.82,0.02 h 2.74 l 0.14,-0.08 c 0.15,-0.08 0.26,-0.19 0.34,-0.35 l 0.06,-0.11 v -2.55 -2.52 l -0.06,-0.11 c -0.09,-0.16 -0.19,-0.27 -0.34,-0.35 -0.14,-0.08 -0.14,-0.08 -0.63,-0.08 l -0.49,-0.01 v -0.15 c 0,-0.18 -0.04,-0.28 -0.14,-0.33 -0.04,-0.02 -0.08,-0.03 -0.12,-0.03 z m -3.06,1.44 c -0.18,0.01 -0.33,0.16 -0.33,0.34 v 0.69 h -1.95 c -0.19,0 -0.34,0.15 -0.34,0.34 v 1.55 c 0,0.19 0.15,0.34 0.34,0.34 h 1.96 v 0.69 c 0,0.3 0.37,0.46 0.58,0.24 l 2.02,-2.05 -2.02,-2.04 c -0.07,-0.07 -0.16,-0.1 -0.26,-0.1 z m 2.54,1.63 c -0.08,0 -0.14,0.03 -0.18,0.08 l 0.18,0.18 c 0.06,0.06 0.1,0.14 0.1,0.23 0.09,-0.04 0.16,-0.13 0.16,-0.23 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -1.02,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -2.05,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z" /></svg>
+                        </button>
                     </div>
-                    <a style="flex:1" class="chip" href="./roadmap.html">Road Map</a>
+
+                    <div class="stats-bar" id="stats-bar">
+                        <div class="stat"><span class="number" id="stat-active">0</span><span
+                                class="label">Active</span></div>
+                        <div class="stat"><span class="number" id="stat-planned">0</span><span
+                                class="label">Planned</span></div>
+                        <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers
+                                Tracked</span></div>
+                        <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total
+                                Entries</span></div>
+                    </div>
+
                 </div>
             </div>
-            <div style="display:flex">
-
-                <div class="buttonsContainer">
-                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode"
-                        aria-pressed="false" title="Switch to light mode">
-                        <span class="theme-icon" aria-hidden="true">☀</span>
-                    </button>
-                    <div class="theme-toggle" aria-label="Show upcoming" aria-pressed="false"
-                        title="Show only Upcoming">
-                        <span class="theme-icon" id="upcoming-filter"><img src="assets/Upcoming_Calender.svg"></span>
-                    </div>
-                </div>
-                <div class="stats-bar" id="stats-bar">
-
-                    <div class="stat"><span class="number" id="stat-active">0</span><span class="label">Active</span>
-                    </div>
-                    <div class="stat"><span class="number" id="stat-planned">0</span><span class="label">Planned</span>
-                    </div>
-                    <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers <br>
-                            Tracked</span>
-                    </div>
-                    <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total <br>
-                            Entries</span>
-                    </div>
-                </div>
+            <div class="sidebar-header">
+                <h2>🔍 Search Struggles</h2>
+                <input type="text" id="search-input" class="search-box"
+                    placeholder="Search by union, industry, location…" autocomplete="off">
             </div>
-            <details>
-                <summary class="filter-header filter-label">Filter and Search<span class="chevron"
-                        aria-hidden="true"></span></summary>
-                <div>
-                    <!-- Search -->
-                    <div class="sidebar-header">
-                        <h2>🔍 Search Struggles</h2>
-                        <input type="text" id="search-input" class="search-box"
-                            placeholder="Search by union, industry, location…" autocomplete="off">
-                    </div>
-
-                    <!-- Event Type filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="type">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
-                            <span class="filter-label">Event Type</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-type">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips" id="type-filters">
-                                    <!-- Dynamically populated from TYPE_INFO in app.js -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- State filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="state">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-state">
-                            <span class="filter-label">State / Territory</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-state">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips" id="state-filters">
-                                    <!-- Dynamically populated from STRIKE_DATA in app.js -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Industry filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="industry">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-industry">
-                            <span class="filter-label">Industry</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-industry">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips tag-filters" id="industry-filters">
-                                    <!-- Dynamically populated from STRIKE_DATA -->
-                                </div>
-                                <button type="button" class="tag-toggle" id="industry-toggle" aria-expanded="false">Show
-                                    all
-                                    industries</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Union filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="union">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-union">
-                            <span class="filter-label">Union</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-union">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips tag-filters" id="union-filters">
-                                    <!-- Dynamically populated -->
-                                </div>
-                                <button type="button" class="tag-toggle" id="union-toggle" aria-expanded="false">Show
-                                    all unions</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Date range filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="date">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-date">
-                            <span class="filter-label">Date Range</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-date">
-                            <div class="filter-panel-inner">
-                                <div class="date-enable">
-                                    <label class="checkbox-label" for="enable-date-filter">
-                                        <input type="checkbox" id="enable-date-filter">
-                                        <span>Enable date filter</span>
-                                    </label>
-                                </div>
-                                <div class="date-inputs">
-                                    <div class="date-field">
-                                        <label for="date-from">Include from</label>
-                                        <input type="date" id="date-from" aria-label="Include events from">
-                                    </div>
-                                    <div class="date-field">
-                                        <label for="date-to">Include through</label>
-                                        <input type="date" id="date-to" aria-label="Include events through">
+            <div class="sidebar-scroll">
+                <details>
+                    <summary class="filter-header filter-label">Filter and Search<span class="chevron"
+                            aria-hidden="true"></span></summary>
+                    <div>
+                        <!-- Event Type filter -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="type">
+                            <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
+                                <span class="filter-label">Event Type</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-type">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips" id="type-filters">
                                     </div>
                                 </div>
-                                <div class="date-options">
-                                    <label class="checkbox-label" for="include-stale">
-                                        <input type="checkbox" id="include-stale">
-                                        <span>Include stale entries (30+ days without update)</span>
-                                    </label>
-                                    <label class="checkbox-label" for="include-ongoing">
-                                        <input type="checkbox" id="include-ongoing">
-                                        <span>Include ongoing / no end date</span>
-                                    </label>
-                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Upcoming filter -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="upcoming">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-upcoming">
-                            <span class="filter-label">Upcoming</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-upcoming">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips">
-                                    <div class="filter-chip" id="upcoming-filter">📅 Show only upcoming</div>
+                        <!-- State filter -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="state">
+                            <button type="button" class="filter-header" aria-expanded="true"
+                                aria-controls="panel-state">
+                                <span class="filter-label">State / Territory</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-state">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips" id="state-filters">
+                                        <!-- Dynamically populated from STRIKE_DATA in app.js -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Tag filters -->
-                    <div class="filter-section collapsible collapsed" data-filter-section="tags">
-                        <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-tags">
-                            <span class="filter-label">Tags</span>
-                            <span class="filter-header-right">
-                                <span class="filter-summary"></span>
-                                <span class="chevron" aria-hidden="true"></span>
-                            </span>
-                        </button>
-                        <div class="filter-panel" id="panel-tags">
-                            <div class="filter-panel-inner">
-                                <div class="filter-chips tag-filters" id="tag-filters">
-                                    <!-- Dynamically populated -->
+                        <!-- Industry filter -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="industry">
+                            <button type="button" class="filter-header" aria-expanded="true"
+                                aria-controls="panel-industry">
+                                <span class="filter-label">Industry</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-industry">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips tag-filters" id="industry-filters">
+                                        <!-- Dynamically populated from STRIKE_DATA -->
+                                    </div>
+                                    <button type="button" class="tag-toggle" id="industry-toggle"
+                                        aria-expanded="false">Show all industries</button>
                                 </div>
-                                <button type="button" class="tag-toggle" id="tag-toggle" aria-expanded="false">Show all
-                                    tags</button>
+                            </div>
+                        </div>
+
+                        <!-- Union filter -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="union">
+                            <button type="button" class="filter-header" aria-expanded="true"
+                                aria-controls="panel-union">
+                                <span class="filter-label">Union</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-union">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips tag-filters" id="union-filters">
+                                        <!-- Dynamically populated -->
+                                    </div>
+                                    <button type="button" class="tag-toggle" id="union-toggle"
+                                        aria-expanded="false">Show all unions</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date range filter -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="date">
+                            <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-date">
+                                <span class="filter-label">Date Range</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-date">
+                                <div class="filter-panel-inner">
+                                    <div class="date-enable">
+                                        <label class="checkbox-label" for="enable-date-filter">
+                                            <input type="checkbox" id="enable-date-filter">
+                                            <span>Enable date filter</span>
+                                        </label>
+                                    </div>
+                                    <div class="date-inputs">
+                                        <div class="date-field">
+                                            <label for="date-from">Include from</label>
+                                            <input type="date" id="date-from" aria-label="Include events from">
+                                        </div>
+                                        <div class="date-field">
+                                            <label for="date-to">Include through</label>
+                                            <input type="date" id="date-to" aria-label="Include events through">
+                                        </div>
+                                    </div>
+                                    <div class="date-options">
+                                        <label class="checkbox-label" for="include-stale">
+                                            <input type="checkbox" id="include-stale">
+                                            <span>Include stale entries (30+ days without update)</span>
+                                        </label>
+                                        <label class="checkbox-label" for="include-ongoing">
+                                            <input type="checkbox" id="include-ongoing">
+                                            <span>Include ongoing / no end date</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section collapsible collapsed" data-filter-section="upcoming">
+                            <button type="button" class="filter-header" aria-expanded="true"
+                                aria-controls="panel-upcoming">
+                                <span class="filter-label">Upcoming</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-upcoming">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips">
+                                        <div class="filter-chip" id="upcoming-filter">📅 Show only upcoming</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tag filters -->
+                        <div class="filter-section collapsible collapsed" data-filter-section="tags">
+                            <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-tags">
+                                <span class="filter-label">Tags</span>
+                                <span class="filter-header-right">
+                                    <span class="filter-summary"></span>
+                                    <span class="chevron" aria-hidden="true"></span>
+                                </span>
+                            </button>
+                            <div class="filter-panel" id="panel-tags">
+                                <div class="filter-panel-inner">
+                                    <div class="filter-chips tag-filters" id="tag-filters">
+                                    </div>
+                                    <button type="button" class="tag-toggle" id="tag-toggle" aria-expanded="false">Show
+                                        all tags</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </details>
-            <details open>
-                <summary class="filter-header filter-label"><span class="chevron" aria-hidden="true"></span></summary>
-                Use source links to verify details.
-                <strong> Get YOUR workplace on the map</strong> <a
-                    href="https://www.australianunions.org.au/landing-page/for-the-workers/">Join your Union</a> Make it
-                millitant, support struggle, get involved with <a
-                    href="https://www.victoriansocialists.org.au/news/launching-the-socialist-workers-caucus">the
-                    Socialist
-                    Workers Caucus (SWC)</a>, <a href="https://www.instagram.com/tradeunionistsforall/">TUFA</a> or the
-                <a href="https://ancomfed.org/">Anarcho Communist Federation</a> Site is in no way endorsed or affialted
-                with anyone mentioned
-            </details>
-            <!-- Event list -->
-             <div>
-            <div id="event-list"></div>
+                </details>
+
+                <div id="event-list"></div>
+            </div>
+
+            <div class="notice-bar" id="notice-bar">
+                <button id="notice-close" class="notice-close" type="button" aria-label="Dismiss notice">−</button>
+                <p>
+                    Use source links to verify details. <br> <strong>Get YOUR workplace on the map.</strong>
+                    <a href="https://www.australianunions.org.au/landing-page/for-the-workers/">Join your Union</a>.
+                    Make it
+                    militant, support struggle, get involved with <a
+                        href="https://www.victoriansocialists.org.au/news/launching-the-socialist-workers-caucus">the
+                        Socialist Workers Caucus (SWC)</a>, <a
+                        href="https://www.instagram.com/tradeunionistsforall/">TUFA</a> or the
+                    <a href="https://ancomfed.org/">Anarcho Communist Federation</a>. Site is in no way endorsed or
+                    affiliated
+                    with anyone mentioned.
+                </p>
             </div>
         </aside>
 
@@ -392,7 +433,7 @@
     <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script defer src="js/locations.js"></script>
     <script defer src="js/data.js"></script>
-    <script defer src="js/app.js"></script>
+    <script defer src="js/app_alt.js"></script>
 </body>
 
 </html>
