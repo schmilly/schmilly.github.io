@@ -9615,7 +9615,7 @@ const STRIKE_DATA = [
 {
     id: 6045,
     actionId: "virgin-asu",
-    title: "Virgin Australia Workers begin non-disruptive Action",
+    title: "Virgin Airport Gate Workers begin non-disruptive Action",
     union: "ASU",
     industry: "Aviation",
     type: "action",
@@ -9638,7 +9638,7 @@ const STRIKE_DATA = [
 {
     id: 60451,
     actionId: "virgin-twu",
-    title: "TWU Virgin Australia Workers apply for ballot",
+    title: "TWU Virgin Cabin Crew apply for ballot",
     union: "TWU",
     industry: "Aviation",
     type: "ballot",
@@ -9801,6 +9801,94 @@ const STRIKE_DATA = [
     tags: [
         "labour union"
     ]
+},
+{
+    id: 701203,
+    title: " Virgin Gate Staff continue industrial action ",
+    union: "ASU",
+    type: "action",
+    industry: "Aviation",
+    state: "",
+    startDate: "2026-11-10",
+    endDate: "",
+    workers: null,
+    actionId: "virgin-asu",
+    adddate: "2026-11-11",
+    description: "Virgin Australia staff represented by the ASU continued industrial action, withdrawing gate boarding services including priority boarding, refusing to accept baggage at gates, and waiving some sales-related fees amid stalled enterprise agreement negotiations. The union accuses Virgin of demanding a premium service on budget resources after years of cuts. <a href='https://struggle-map.schmilly.xyz/#virgin-twu'>Virgin cabin crew were also voting on protected industrial action over pay and conditions.</a>",
+    locations: [        { city: "Brisbane", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }],
+    sources: [
+        {name: "HR Media - Virgin staff continue industrial action ", url: "https://www.hrleader.com.au/people/28890-virgin-staff-continue-industrial-action"}
+    ],
+    tags: ["aviation", "asu", "virgin-australia"],
+    see_also: null,
+},
+{
+    "id": 9101,
+    "actionId": "virgin-twu",
+    "title": "Virgin Australia Cabin Crew to Vote on Protected Industrial Action",
+    "union": "FAAA / TWU",
+    "industry": "Aviation",
+    "type": "ballot",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-19",
+    adddate: "2026-11-11",
+    "workers": null,
+    "state": "",
+    "description": "Virgin Australia cabin crew are voting on protected industrial action in a Fair Work Commission ballot closing on 19 November 2026. The Flight Attendants' Association of Australia (FAAA) was granted a protected action ballot order after Virgin effectively neither consented nor objected. A separate TWU ballot covering the same proposed enterprise agreement is also underway, with that vote closing on 11 November. Workers are seeking pay and conditions that have 'still not returned to pre-pandemic levels', including fairer rostering, meaningful pay progression and better fatigue protections. Virgin's current offer reportedly includes pay increases of 14% to 29% over three years, weekend loadings and reduced maximum hours, but the union argues the company continues to refuse to commit to fair rostering arrangements to reduce increasingly fatiguing duties.",
+    "locations": [  { city: "Brisbane", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }],
+    "sources": [
+        { "name": "On Notice - Virgin Australia cabin crew to vote on industrial action in FAAA ballot closing 19 November", "url": "https://onnotice.com.au/news/virgin-australia-cabin-crew-to-vote-on-industrial-action/" },
+        { "name": "HR Leader - Virgin Australia cabin crew to vote on industrial action", "url": "https://www.hrleader.com.au/business/28835-virgin-australia-cabin-crew-to-vote-on-industrial-action" },
+        { "name": "Travel Weekly - Virgin Australia cabin crew prepare to vote on strike action", "url": "https://travelweekly.com.au/virgin-australia-cabin-crew-prepare-to-vote-on-strike-action/" }
+    ],
+    "tags": ["labour union", "aviation", "ballot", "FAAA", "TWU"]
+},
+{
+    "id": 9102,
+    "actionId": "palm-beach-ferries-mua",
+    "title": "Palm Beach Ferries Crew Begin Industrial Action Over 30% Pay Gap",
+    "union": "MUA",
+    "industry": "Maritime",
+    "type": "action",
+    adddate: "2026-11-11",
+    "startDate": "2026-11-09",
+    "endDate": "",
+    "workers": null,
+    "state": "NSW",
+    "description": "Crew on Palm Beach Ferries began industrial action on 9 November 2026, seeking pay parity with Sydney Harbour ferry workers. The Maritime Union of Australia (MUA) says the crew are paid 30% less for the same work and that Central Coast commuters pay $5,000 more in fares. Opening measures were low-level: crew wore union uniforms, displayed union flags and made onboard announcements. The union is calling for the NSW Government to extend the Opal Card system to these private ferry services to 'put an end to the baked-in inequality'. The action will escalate if no agreement is reached, with the union warning it will do what it has to do, though it does not want to see strike action affecting passengers.",
+    "locations": [
+        { "city": "Palm Beach", "state": "NSW", "lat": SYD.PalmBeach[0], "lng": SYD.PalmBeach[1], "name": "Palm Beach Ferries" }
+    ],
+    "sources": [
+        { "name": "On Notice - Palm Beach Ferries crew take industrial action over pay gap with Sydney Harbour", "url": "https://onnotice.com.au/news/palm-beach-ferries-crew-start-action-over-30-pay-gap-claim/" },
+        { "name": "ABC News - Central Coast local news briefing (10 November 2026)", "url": "https://www.abc.net.au/news/2026-11-10/central-coast-local-news-briefing/107366922" },
+        { "name": "Mirage News - Palm Beach Ferries To Strike: We Will Do What We Have To Do", "url": "https://www.miragenews.com/palm-beach-ferries-to-strike-we-will-do-what-we-have-to-do-1559075/" }
+    ],
+    "tags": ["labour union", "maritime", "ferries", "pay parity", "MUA"]
+},
+{
+    "id": 9104,
+    "actionId": "darwin-port-mua",
+    "title": "Darwin Port Workers Vote Unanimously for Strike Action",
+    "union": "MUA",
+    "industry": "Ports",
+    "type": "ballotpass",
+    "startDate": "2026-11-07",
+    adddate: "2026-11-11",
+    "endDate": "",
+    "workers": null,
+    "state": "NT",
+    "description": "Workers at Darwin Port have voted unanimously in favour of protected industrial action, with strikes possible within about a week. The result of the protected action ballot was returned on 30 October 2026. The Maritime Union of Australia (MUA) is seeking pay rises of 5% in each year of a four-year agreement, a one-off $5,000 sign-on payment, and superannuation contributions set two percentage points above the statutory minimum. The union says it has already accepted a four-year term ending 30 June 2030 and a number of other bargaining items, but negotiations have stalled due to 'management belligerence and ego'. Darwin Port recorded EBITDA of $42.4 million, up from $34 million the previous year, and consumer price inflation in Darwin was 5.2% over the year to September 2026. MUA Deputy National Secretary Warren Smith said: 'Darwin Port are penny pinching on the back of a 25% increase in revenue. Port workers keep Darwin Port operating. They deserve a fair agreement.'",
+    "locations": [
+        { "city": "Darwin", "state": "NT", "lat": PORT.Darwin[0], "lng": PORT.Darwin[1], "name": "Darwin Port" }
+    ],
+    "sources": [
+        { "name": "On Notice - Darwin Port workers vote unanimously for strike action", "url": "https://onnotice.com.au/news/darwin-port-workers-vote-unanimously-for-strike-action/" },
+        { "name": "The DCN - Darwin Port workers endorse industrial action", "url": "https://www.thedcn.com.au/news/darwin-port-workers-endorse-industrial-action" },
+        { "name": "MUA - Darwin Port faces strike action as workers unanimously endorse industrial action", "url": "https://www.mua.org.au/Content/News_Articles/2026/Darwin_Port_faces_strike_action_as_workers_unanimously_endorse_industrial_action.aspx" },
+        { "name": "National Tribune - Darwin Port faces strike action as workers unanimously endorse industrial action", "url": "https://www.nationaltribune.com.au/darwin-port-faces-strike-action-as-workers-unanimously-endorse-industrial-action/" }
+    ],
+    "tags": ["labour union", "ports", "maritime", "strike ballot", "MUA"]
 }
 
 ];

@@ -1146,7 +1146,7 @@ ${latest.tags ? latest.tags.map(t => {
         <div class="detail-section"><div class="detail-label">Duration</div><div class="detail-value">${formatDate(firstStart)} — ${latest.endDate ? formatDate(latest.endDate) : 'Ongoing'}</div></div>
         <div class="detail-section"><div class="detail-label">Description</div><div class="detail-value" style="font-size: 13px; color: var(--text-tertiary);">${latest.description}</div></div>
         <div class="detail-section"><div class="detail-label">Tags</div><div class="detail-value alt">${latest.tags ? latest.tags.map(t => `<a class="tag">${t}</a>`).join(' ') : 'None'}</div></div>
-        <div class="detail-section" style="display:flex;width:100%"><div style="flex:1;"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
+        <div class="detail-section" style="display:flex;width:100%"><div style="flex:2;"><div class="detail-label">Sources</div><div class="detail-value">${sourcesHtml || 'No sources provided'}</div></div>
         <div style="flex:1;margin-top: 16px; display: flex; gap: 8px; justify-content: flex-end;"> <span style="margin-left: auto; font-size: 12px; color: var(--text-really-muted);">Added: ${latest.adddate || 'Date added missing'}</span>
         </div>
         </div>

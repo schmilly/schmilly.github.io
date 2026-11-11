@@ -268,6 +268,81 @@ function buildTree(node, value, source, file) {
   return { kind: 'ref', node, value, source, file, text: source.slice(node.start, node.end) };
 }
 /* ================================================================
+PATH-BASED LEAF LOOKUP (so DOM handlers survive tree rebuilds)
+================================================================ */
+function getLeafByPath(path) {
+  const sep = path.indexOf('::');
+  if (sep < 0) return null;
+  const file = path.slice(0, sep);
+  let rest = path.slice(sep + 2);
+  let varEnd = rest.length;
+  const dotIdx = rest.indexOf('.');
+  const bracketIdx = rest.indexOf('[');
+  if (dotIdx >= 0) varEnd = Math.min(varEnd, dotIdx);
+  if (bracketIdx >= 0) varEnd = Math.min(varEnd, bracketIdx);
+  const varName = rest.slice(0, varEnd);
+  rest = rest.slice(varEnd);
+  let tree = state.trees[file + '::' + varName];
+  if (!tree) return null;
+  let i = 0;
+  while (i < rest.length) {
+    const ch = rest[i];
+    if (ch === '[') {
+      const close = rest.indexOf(']', i);
+      if (close < 0) return null;
+      const idx = parseInt(rest.slice(i + 1, close), 10);
+      if (tree.kind !== 'array' || !tree.children[idx]) return null;
+      tree = tree.children[idx];
+      i = close + 1;
+    } else if (ch === '.') {
+      let j = i + 1;
+      while (j < rest.length && rest[j] !== '.' && rest[j] !== '[') j++;
+      const key = rest.slice(i + 1, j);
+      if (tree.kind !== 'object') return null;
+      const child = tree.children.find(c => c.key === key);
+      if (!child) return null;
+      tree = child.value;
+      i = j;
+    } else return null;
+  }
+  return tree;
+}
+
+function updateLeafDOM(path, leaf) {
+  const wrap = document.querySelector(`[data-leaf-path="${cssEsc(path)}"]`);
+  if (!wrap) return false;
+  const input = wrap.querySelector('input, select');
+  if (!input) return false;
+  const v = leaf.value;
+  if (input.tagName === 'SELECT') {
+    input.value = String(v);
+  } else if (input.type === 'date') {
+    const iso = v == null ? '' : String(v);
+    const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    input.value = m ? `${m[1]}-${m[2]}-${m[3]}` : '';
+  } else if (input.type === 'number') {
+    input.value = (v === null || v === undefined) ? '' : String(v);
+  } else {
+    input.value = v === undefined ? '' : String(v);
+  }
+  return true;
+}
+
+/* Find a sibling array with the same key that has objects, to derive
+   a schema for empty arrays (e.g. sources:[] on a fresh entry). */
+function findSiblingArraySchema(parentArray, keyName) {
+  if (!parentArray || parentArray.kind !== 'array') return null;
+  for (const sibling of parentArray.children) {
+    if (sibling.kind !== 'object') continue;
+    const kv = sibling.children.find(c => c.key === keyName);
+    if (!kv || kv.value.kind !== 'array') continue;
+    const nonHole = kv.value.children.filter(c => c.kind !== 'hole');
+    if (nonHole.some(c => c.kind === 'object')) return kv.value;
+  }
+  return null;
+}
+
+/* ================================================================
 COORD HELPERS
 ================================================================ */
 const LAT_KEYS = new Set(['lat', 'latitude']);
@@ -306,13 +381,12 @@ function classifyCoordRecord(rec) {
 /* ================================================================
 EVALUATION / REBUILD
 ================================================================ */
-function rebuildAll() {
+function rebuildAll(opts = {}) {
   const present = FILES.filter(n => state.files[n]);
   if (!present.length) {
     state.runtime = {}; state.trees = {}; state.usages = {}; state.usageCounts = {};
     state.evalError = null; state.schemaCache.clear();
     renderSidebar(); renderMain(); updateStatus();
-
     return;
   }
   const body = $('#mainBody');
@@ -323,35 +397,44 @@ function rebuildAll() {
   const combined = present.map(n => `/* ==== ${n} ==== */\n${state.files[n].source}`).join('\n;\n');
   const sandbox = {};
   state.evalError = null;
+  let evalFailed = false;
   try { new Function('window', 'self', 'globalThis', combined)(sandbox, sandbox, sandbox); }
   catch (e) {
     state.evalError = e.message;
     console.error(e);
-    updateStatus();
-    return;
+    evalFailed = true;
   }
-  state.runtime = sandbox;
+  if (!evalFailed) state.runtime = sandbox;
+
+  // Rebuild trees — on eval failure reuse last known runtime values
   state.trees = {};
   for (const name of present) {
     const f = state.files[name];
     for (const v of f.vars) {
-      state.trees[name + '::' + v.name] = buildTree(v.node, sandbox[v.name], f.source, name);
+      const val = evalFailed ? (state.runtime?.[v.name]) : sandbox[v.name];
+      state.trees[name + '::' + v.name] = buildTree(v.node, val, f.source, name);
     }
   }
-  state.usages = {};
-  for (const name of present) {
-    const f = state.files[name];
-    const list = collectUsages(name, f.ast, f.source, f.lineIndex);
-    for (const u of list) (state.usages[u.name] ||= []).push(u);
+
+  if (!evalFailed && !opts.skipUsages) {
+    state.usages = {};
+    for (const name of present) {
+      const f = state.files[name];
+      const list = collectUsages(name, f.ast, f.source, f.lineIndex);
+      for (const u of list) (state.usages[u.name] ||= []).push(u);
+    }
+    state.usageCounts = {};
+    for (const [varName, list] of Object.entries(state.usages)) {
+      const files = {};
+      for (const u of list) files[u.file] = (files[u.file] || 0) + 1;
+      state.usageCounts[varName] = { total: list.length, files };
+    }
   }
-  state.usageCounts = {};
-  for (const [varName, list] of Object.entries(state.usages)) {
-    const files = {};
-    for (const u of list) files[u.file] = (files[u.file] || 0) + 1;
-    state.usageCounts[varName] = { total: list.length, files };
-  }
+
   state.schemaCache.clear();
-  renderSidebar(); renderMain(); updateStatus();
+  if (!opts.skipSidebar) renderSidebar();
+  if (!opts.skipMain)    renderMain();
+  updateStatus();
 }
 function updateStatus() {
   const loaded = Object.keys(state.files);
@@ -843,7 +926,10 @@ function renderLeaf(node, path, opts = {}) {
     control = document.createElement('select');
     control.innerHTML = `<option value="true">true</option><option value="false">false</option>`;
     control.value = String(v); control.style.maxWidth = '100px';
-    control.onchange = () => applyLeafEdit(node, control.value);
+    control.onchange = () => {
+      const leaf = getLeafByPath(path) || node;
+      applyLeafEdit(leaf, control.value, path);
+    };
   } else if (v === null) {
     control = document.createElement('input');
     control.type = 'text'; control.value = 'null'; control.disabled = true;
@@ -855,15 +941,24 @@ function renderLeaf(node, path, opts = {}) {
     const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})/);
     control.value = m ? `${m[1]}-${m[2]}-${m[3]}` : '';
     control.style.maxWidth = '170px';
-    control.onchange = () => applyDateEdit(node, control.value);
+    control.onchange = () => {
+      const leaf = getLeafByPath(path) || node;
+      applyDateEdit(leaf, control.value, path);
+    };
   } else if (typeof v === 'number') {
     control = document.createElement('input');
     control.type = 'number'; control.step = 'any'; control.value = String(v);
-    control.onchange = () => applyLeafEdit(node, control.value);
+    control.onchange = () => {
+      const leaf = getLeafByPath(path) || node;
+      applyLeafEdit(leaf, control.value, path);
+    };
   } else {
     control = document.createElement('input');
     control.type = 'text'; control.value = v === undefined ? '' : String(v);
-    control.onchange = () => applyLeafEdit(node, control.value);
+    control.onchange = () => {
+      const leaf = getLeafByPath(path) || node;
+      applyLeafEdit(leaf, control.value, path);
+    };
   }
   wrap.appendChild(control);
   const toRefBtn = document.createElement('button');
@@ -894,7 +989,10 @@ function renderLeaf(node, path, opts = {}) {
       } else {
         const inp = document.createElement('input');
         inp.type = 'text'; inp.value = String(node.value);
-        inp.onchange = () => applyLeafEdit(node, inp.value);
+        inp.onchange = () => {
+          const leaf = getLeafByPath(path) || node;
+          applyLeafEdit(leaf, inp.value, path);
+        };
         preview.replaceWith(inp);
         btn.textContent = '👁'; btn.title = 'Preview HTML';
       }
@@ -953,11 +1051,18 @@ function renderArray(node, path, depth, ctx) {
     const addBtn = document.createElement('button');
     addBtn.className = 'arr-add';
     addBtn.textContent = '+ Add';
-    addBtn.title = 'Append a new entry';
+    addBtn.title = 'Add a new entry at the top';
     addBtn.onclick = (e) => {
       e.preventDefault(); e.stopPropagation();
-      if (isObjectArray(node)) addArrayEntry(node, path);
-      else                     addPrimitiveArrayEntry(node, path);
+      if (isObjectArray(node)) {
+        addArrayEntry(node, path);
+      } else if (n === 0 && ctx.parentArray && ctx.key) {
+        const sibling = findSiblingArraySchema(ctx.parentArray, ctx.key);
+        if (sibling) addArrayEntry(node, path, sibling);
+        else         addPrimitiveArrayEntry(node, path);
+      } else {
+        addPrimitiveArrayEntry(node, path);
+      }
     };
     sum.appendChild(addBtn);
   }
@@ -1012,7 +1117,8 @@ function renderArray(node, path, depth, ctx) {
         k.appendChild(exBtn);
       }
       const v = document.createElement('div');
-      v.appendChild(renderNode(child, path + '[' + i + ']', depth + 1, ctx));
+      v.appendChild(renderNode(child, path + '[' + i + ']', depth + 1,
+        { ...ctx, parentArray: node }));
       row.appendChild(k); row.appendChild(v);
       list.appendChild(row);
     });
@@ -1133,7 +1239,8 @@ function renderObject(node, path, depth, ctx) {
     }
     const v = document.createElement('div');
     v.appendChild(renderNode(child.value, path + '.' + child.key, depth + 1,
-      { varName: ctx.varName, logicPath: childPath, key: child.key, parentObj: node }));
+      { varName: ctx.varName, logicPath: childPath, key: child.key,
+        parentObj: node, parentArray: ctx.parentArray }));
     row.appendChild(k); row.appendChild(v);
     grid.appendChild(row);
   }
@@ -2036,6 +2143,7 @@ function renderRecordTable(node, path, ctx) {
           varName: ctx.varName,
           logicPath: [idx],
           recordRoot: rec,
+          parentArray: node,
         }));
         built = true;
       }
@@ -2565,7 +2673,7 @@ function jumpToUsage(u) {
 /* ================================================================
 EDITING
 ================================================================ */
-function applyLeafEdit(node, raw) {
+function applyLeafEdit(node, raw, path) {
   const file = state.files[node.file];
   if (!file) return;
   const original = node.value;
@@ -2583,9 +2691,18 @@ function applyLeafEdit(node, raw) {
     end: node.node.end,
     text: literal,
   }])) return;
-  rebuildAll();
+
+  if (path) {
+    rebuildAll({ skipMain: true, skipSidebar: true, skipUsages: true });
+    if (!state.evalError) {
+      const newLeaf = getLeafByPath(path);
+      if (newLeaf) updateLeafDOM(path, newLeaf);
+    }
+  } else {
+    rebuildAll();
+  }
 }
-function applyDateEdit(node, value) {
+function applyDateEdit(node, value, path) {
   const file = state.files[node.file];
   if (!file) return;
   const v = String(value || '').trim();
@@ -2594,7 +2711,16 @@ function applyDateEdit(node, value) {
   if (!commitEdit(node.file, [{
     start: node.node.start, end: node.node.end, text: literal,
   }])) return;
-  rebuildAll();
+
+  if (path) {
+    rebuildAll({ skipMain: true, skipSidebar: true, skipUsages: true });
+    if (!state.evalError) {
+      const newLeaf = getLeafByPath(path);
+      if (newLeaf) updateLeafDOM(path, newLeaf);
+    }
+  } else {
+    rebuildAll();
+  }
 }
 function applyCoordEdit(latNode, lngNode, lat, lng) {
   const fileName = latNode.file;
@@ -2667,55 +2793,102 @@ function findCoordSiblings(parentObj, currentKey, currentNode) {
 /* ================================================================
 ADD ARRAY ENTRY (schema-based + primitive fallback)
 ================================================================ */
-function addArrayEntry(arrayTree, arrayPath) {
+/* Shift expanded/selected/details paths so they still point at the
+   same logical record after a new entry is prepended to `arrayPath`. */
+function shiftIndicesAfterPrepend(arrayPath, count = 1) {
+  const prefix = arrayPath + '[';
+  const remapSet = (set) => {
+    const out = new Set();
+    for (const item of set) {
+      if (item.startsWith(prefix)) {
+        const rest = item.slice(prefix.length);
+        const m = rest.match(/^(\d+)(.*)$/);
+        if (m) {
+          out.add(prefix + (parseInt(m[1], 10) + count) + m[2]);
+          continue;
+        }
+      }
+      out.add(item);
+    }
+    return out;
+  };
+  state.expandedRows = remapSet(state.expandedRows);
+  state.selectedRows = remapSet(state.selectedRows);
+  const newDetails = new Map();
+  for (const [k, v] of state.detailsOpen) {
+    if (k.startsWith(prefix)) {
+      const rest = k.slice(prefix.length);
+      const m = rest.match(/^(\d+)(.*)$/);
+      if (m) {
+        newDetails.set(prefix + (parseInt(m[1], 10) + count) + m[2], v);
+        continue;
+      }
+    }
+    newDetails.set(k, v);
+  }
+  state.detailsOpen = newDetails;
+}
+
+function addArrayEntry(arrayTree, arrayPath, siblingArrayTree) {
   const file = state.files[arrayTree.file];
   if (!file) return;
 
-  const schema = computeSchema(arrayTree);
+  const sourceTree = siblingArrayTree || arrayTree;
+  const schema = computeSchema(sourceTree);
   if (!schema.length) {
-    // No object entries to derive a schema from — fall back to primitive.
     return addPrimitiveArrayEntry(arrayTree, arrayPath);
   }
 
   const arr = arrayTree.node;
-  let last = null;
-  for (let i = arr.elements.length - 1; i >= 0; i--) {
-    if (arr.elements[i]) { last = arr.elements[i]; break; }
-  }
-
-  const refChild = arrayTree.children.find(c => c.kind === 'object' && c.node);
+  const first = arr.elements.find(el => el);
+  const refChild = sourceTree.children.find(c => c.kind === 'object' && c.node);
   const nextId = computeNextId(arr.elements);
 
   let insertAt, text;
 
-  if (last) {
-    const lls = file.source.lastIndexOf('\n', last.start) + 1;
-    const indent = file.source.slice(lls, last.start).match(/^\s*/)[0];
-    const entryText = buildEntryTemplateFromSchema(schema, refChild?.node || null, indent, nextId);
-    // Always emit our own leading comma. If the source already had a
-    // trailing comma after `last`, ours sits before it and both stay valid.
-    text = `,\n${indent}${entryText}`;
-    insertAt = last.end;
+  if (first) {
+    // Prepend before the current first element.
+    const between = file.source.slice(arr.start, first.start);
+    const multiline = /\n/.test(between);
+    if (multiline) {
+      const lls = file.source.lastIndexOf('\n', first.start) + 1;
+      const indent = file.source.slice(lls, first.start).match(/^\s*/)[0];
+      const entryText = buildEntryTemplateFromSchema(schema, refChild?.node || null, indent, nextId);
+      text = `${entryText},\n${indent}`;
+    } else {
+      const entryText = buildEntryTemplateFromSchema(schema, refChild?.node || null, '', nextId);
+      text = `${entryText}, `;
+    }
+    insertAt = first.start;
   } else {
     const lls = file.source.lastIndexOf('\n', arr.start) + 1;
     const baseIndent = file.source.slice(lls, arr.start).match(/^\s*/)[0] || '';
     const innerIndent = baseIndent + '    ';
-    const entryText = buildEntryTemplateFromSchema(schema, null, innerIndent, nextId);
+    const entryText = buildEntryTemplateFromSchema(schema, refChild?.node || null, innerIndent, nextId);
     text = `\n${innerIndent}${entryText}\n${baseIndent}`;
     insertAt = arr.start + 1;
   }
 
   if (!commitEdit(arrayTree.file, [{ start: insertAt, end: insertAt, text }])) return;
 
-  const newIndex = arr.elements.length;
+  // Shift existing state so expansions stay attached to the same records.
+  shiftIndicesAfterPrepend(arrayPath);
+  // Open the new entry so it's visible immediately.
+  state.expandedRows.add(`${arrayPath}[0]`);
+  state.detailsOpen.set(arrayPath, true);
+
   rebuildAll();
-  toast('Entry added', 'ok');
+  toast('Entry added at top', 'ok');
 
   requestAnimationFrame(() => {
-    const el = document.querySelector(`[data-leaf-path="${cssEsc(arrayPath + '[' + newIndex + ']')}"]`);
+    const newPath = `${arrayPath}[0]`;
+    let el = document.querySelector(`[data-row-path="${cssEsc(newPath)}"]`)
+          || document.querySelector(`details[data-path="${cssEsc(newPath)}"]`);
     if (el) {
       el.scrollIntoView({ block: 'center', behavior: 'smooth' });
-      el.classList.remove('flash-leaf'); void el.offsetWidth; el.classList.add('flash-leaf');
+      el.classList.remove('flash', 'flash-leaf');
+      void el.offsetWidth;
+      el.classList.add(el.classList.contains('row-item') ? 'flash' : 'flash-leaf');
     }
   });
 }
@@ -2725,38 +2898,31 @@ function addPrimitiveArrayEntry(arrayTree, arrayPath) {
   if (!file) return;
   const arr = arrayTree.node;
 
-  // Find last non-hole element
-  let last = null;
-  for (let i = arr.elements.length - 1; i >= 0; i--) {
-    if (arr.elements[i]) { last = arr.elements[i]; break; }
-  }
+  const first = arr.elements.find(el => el);
 
   // Infer the literal kind from siblings so we don't drop a "" among numbers.
   let literal = '""';
-  if (last && last.type === 'Literal') {
-    if (typeof last.value === 'number')       literal = '0';
-    else if (typeof last.value === 'boolean') literal = 'false';
-    else if (last.value === null)             literal = 'null';
-  } else if (last && last.type === 'Identifier') {
-    literal = 'null';   // sibling is a ref; default to null so we don't corrupt types
+  if (first && first.type === 'Literal') {
+    if (typeof first.value === 'number')       literal = '0';
+    else if (typeof first.value === 'boolean') literal = 'false';
+    else if (first.value === null)             literal = 'null';
+  } else if (first && first.type === 'Identifier') {
+    literal = 'null';
   }
 
-  if (last) {
-    const between = file.source.slice(last.end, arr.end);
+  if (first) {
+    // Prepend.
+    const between = file.source.slice(arr.start, first.start);
     const multiline = /\n/.test(between);
-
     let text;
     if (multiline) {
-      const lls = file.source.lastIndexOf('\n', last.start) + 1;
-      const indent = file.source.slice(lls, last.start).match(/^\s*/)[0];
-      // Always emit our own comma: if the source has a trailing comma,
-      // ours just becomes the trailing comma of the new last element.
-      text = `,\n${indent}${literal}`;
+      const lls = file.source.lastIndexOf('\n', first.start) + 1;
+      const indent = file.source.slice(lls, first.start).match(/^\s*/)[0];
+      text = `${literal},\n${indent}`;
     } else {
-      text = `, ${literal}`;
+      text = `${literal}, `;
     }
-    const insertAt = last.end;
-    if (!commitEdit(arrayTree.file, [{ start: insertAt, end: insertAt, text }])) return;
+    if (!commitEdit(arrayTree.file, [{ start: first.start, end: first.start, text }])) return;
   } else {
     // Empty array — replace the region between `[` and `]`
     const lls = file.source.lastIndexOf('\n', arr.start) + 1;
@@ -2766,11 +2932,12 @@ function addPrimitiveArrayEntry(arrayTree, arrayPath) {
     if (!commitEdit(arrayTree.file, [{ start: arr.start + 1, end: arr.end - 1, text }])) return;
   }
 
-  const newIndex = arr.elements.length;
+  shiftIndicesAfterPrepend(arrayPath);
+  state.detailsOpen.set(arrayPath, true);
   rebuildAll();
-  toast('Element added', 'ok');
+  toast('Element added at top', 'ok');
   requestAnimationFrame(() => {
-    const el = document.querySelector(`[data-leaf-path="${cssEsc(arrayPath + '[' + newIndex + ']')}"]`);
+    const el = document.querySelector(`[data-leaf-path="${cssEsc(arrayPath + '[0]')}"]`);
     if (el) {
       el.scrollIntoView({ block: 'center', behavior: 'smooth' });
       el.classList.remove('flash-leaf'); void el.offsetWidth; el.classList.add('flash-leaf');
