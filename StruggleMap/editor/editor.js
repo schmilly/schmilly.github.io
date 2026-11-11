@@ -572,8 +572,15 @@ function renderMain() {
   const wrap = document.createElement('div');
   body.appendChild(wrap);
   const ctx = { varName: name, logicPath: [] };
-  if (isObjArr) wrap.appendChild(renderRecordTable(tree, file + '::' + name, ctx));
-  else wrap.appendChild(renderNode(tree, file + '::' + name, 0, ctx));
+  if (isObjArr) {
+    const tableWrap = document.createElement('div');
+    tableWrap.id = 'recordTableContainer';
+    tableWrap.dataset.treePath = file + '::' + name;
+    tableWrap.appendChild(renderRecordTable(tree, file + '::' + name, ctx));
+    wrap.appendChild(tableWrap);
+  } else {
+    wrap.appendChild(renderNode(tree, file + '::' + name, 0, ctx));
+  }
   requestAnimationFrame(() => { body.scrollTop = state.viewScroll; });
 }
 function isObjectArray(node) {
@@ -1108,7 +1115,7 @@ function renderObject(node, path, depth, ctx) {
       };
       k.appendChild(toRefBtn);
     }
-    // FIX 2 (part 1): Add ↗loc button next to keys whose value is an array with coord pairs
+    // Add ↗loc button next to keys whose value is an array with coord pairs
     const childPairs = findCoordPairsInTree(child.value);
     if (childPairs.length) {
       const exBtn = document.createElement('button');
@@ -1198,9 +1205,6 @@ function deleteArrayEntry(arrTree, index) {
   if (!commitEdit(arrTree.file, [{ start, end, text: '' }])) return false;
   rebuildAll();
   return true;
-}
-function deleteTableRow(arrTree, index) {
-  return deleteArrayEntry(arrTree, index);
 }
 function changeRefTarget(node, newVarName) {
   if (!commitEdit(node.file, [{
@@ -1506,40 +1510,6 @@ function closeAutocomplete() {
   if (p) p.remove();
 }
 
-function showAddArrayChoice(anchor, onObject, onPrimitive) {
-  closeAutocomplete();          // reuse the popup slot so only one is open
-  const pop = document.createElement('div');
-  pop.className = 'ac-pop'; pop.id = 'acPop';
-  const list = document.createElement('div'); list.className = 'ac-list';
-
-  const mk = (label, onClick) => {
-    const el = document.createElement('div');
-    el.className = 'ac-item';
-    el.textContent = label;
-    el.onclick = () => { pop.remove(); onClick(); };
-    return el;
-  };
-
-  list.appendChild(mk('Add object entry (schema-based)', onObject));
-  list.appendChild(mk('Add primitive value (string / number / boolean)', onPrimitive));
-  pop.appendChild(list);
-  document.body.appendChild(pop);
-
-  const r = anchor.getBoundingClientRect();
-  pop.style.left = Math.max(8, r.left) + 'px';
-  pop.style.top  = Math.max(8, r.bottom + 4) + 'px';
-
-  setTimeout(() => {
-    const close = (e) => {
-      if (!pop.contains(e.target)) {
-        pop.remove();
-        document.removeEventListener('mousedown', close);
-      }
-    };
-    document.addEventListener('mousedown', close);
-  }, 0);
-}
-
 function convertNodeToRef(childNode, anchorEl) {
   if (!childNode || !childNode.node) {
     toast('Cannot convert this node', 'err');
@@ -1620,6 +1590,99 @@ function compareValues(a, b) {
   if (typeof a === 'boolean' && typeof b === 'boolean') return (a ? 1 : 0) - (b ? 1 : 0);
   return String(a).localeCompare(String(b), undefined, { numeric: true, sensitivity: 'base' });
 }
+
+/* ---- fast in-place refresh helpers ---- */
+function refreshRecordTable() {
+  const wrap = $('#recordTableContainer');
+  if (!wrap) { renderMain(); return; }
+  const path = wrap.dataset.treePath;
+  if (!path) { renderMain(); return; }
+  const tree = state.trees[path];
+  if (!tree) { renderMain(); return; }
+  const [, varName] = path.split('::');
+  const ctx = { varName, logicPath: [] };
+  wrap.innerHTML = '';
+  wrap.appendChild(renderRecordTable(tree, path, ctx));
+}
+
+function sortTableInPlace() {
+  const container = $('#recordTableContainer');
+  if (!container || !state.sort) { renderMain(); return; }
+  const table = container.querySelector('table.data');
+  if (!table) { renderMain(); return; }
+  const tbody = table.querySelector('tbody');
+  if (!tbody) { renderMain(); return; }
+  const { col, dir } = state.sort;
+  const mul = dir === 'desc' ? -1 : 1;
+
+  // Pair up row/detail rows so reordering doesn't break linkage.
+  const pairs = [];
+  const kids = [...tbody.children];
+  for (let i = 0; i < kids.length; i++) {
+    const tr = kids[i];
+    if (!tr.classList.contains('row-item')) continue;
+    const next = kids[i + 1];
+    const detail = next && next.classList.contains('detail-row') ? next : null;
+    pairs.push({ tr, detail });
+    if (detail) i++;
+  }
+
+  // Sort using values cached on each <td data-sort-value / data-sort-type>.
+  const selector = `td.cell[data-col="${cssEsc(col)}"]`;
+  pairs.sort((a, b) => {
+    const aTd = a.tr.querySelector(selector);
+    const bTd = b.tr.querySelector(selector);
+    const aType = aTd?.dataset.sortType ?? 'undefined';
+    const bType = bTd?.dataset.sortType ?? 'undefined';
+    const aVal = aTd?.dataset.sortValue ?? '';
+    const bVal = bTd?.dataset.sortValue ?? '';
+
+    if (aType === 'undefined' && bType !== 'undefined') return 1;
+    if (bType === 'undefined' && aType !== 'undefined') return -1;
+    if (aType === 'null' && bType !== 'null') return 1;
+    if (bType === 'null' && aType !== 'null') return -1;
+    if (aType === 'number' && bType === 'number')
+      return mul * (Number(aVal) - Number(bVal));
+    if (aType === 'boolean' && bType === 'boolean')
+      return mul * ((aVal === 'true' ? 1 : 0) - (bVal === 'true' ? 1 : 0));
+    return mul * String(aVal).localeCompare(String(bVal), undefined,
+      { numeric: true, sensitivity: 'base' });
+  });
+
+  const frag = document.createDocumentFragment();
+  for (const { tr, detail } of pairs) {
+    frag.appendChild(tr);
+    if (detail) frag.appendChild(detail);
+  }
+  tbody.innerHTML = '';
+  tbody.appendChild(frag);
+
+  // Update header arrows only.
+  table.querySelectorAll('th .th-label').forEach(label => {
+    const thCol = label.dataset.col;
+    if (!thCol) return;
+    if (thCol === col) {
+      label.classList.add('sorted');
+      label.innerHTML = `${esc(thCol)} <span class="sort-arrow">${dir === 'asc' ? '▲' : '▼'}</span>`;
+    } else {
+      label.classList.remove('sorted');
+      label.innerHTML = esc(thCol);
+    }
+  });
+
+  // Update the note (record counts / sorted-by badge).
+  const note = container.querySelector('.table-note');
+  if (note) {
+    const total = note.dataset.totalRecords;
+    const vis = note.dataset.visibleColsCount;
+    const all = note.dataset.totalColsCount;
+    const filt = note.dataset.filteredCount;
+    note.textContent = `${filt} of ${total} records · showing ${vis} of ${all} columns` +
+      ` · sorted by ${col} ${dir === 'asc' ? '▲' : '▼'}` +
+      (Number(all) > Number(vis) ? ' · expand a row to edit every field' : '');
+  }
+}
+
 function renderRecordTable(node, path, ctx) {
   const container = document.createElement('div');
   const schemaBar = renderSchemaBar(node);
@@ -1708,7 +1771,7 @@ function renderRecordTable(node, path, ctx) {
       if (!state.locationFilter) optAll.selected = true;
       sel.onchange = () => {
         state.locationFilter = sel.value || null;
-        renderMain();
+        refreshRecordTable();
       };
       wrap.appendChild(lbl); wrap.appendChild(sel);
       bar.appendChild(wrap);
@@ -1779,7 +1842,7 @@ function renderRecordTable(node, path, ctx) {
       if (c === state.bulkCol) opt.selected = true;
       colSel.appendChild(opt);
     }
-    colSel.onchange = () => { state.bulkCol = colSel.value; renderMain(); };
+    colSel.onchange = () => { state.bulkCol = colSel.value; refreshRecordTable(); };
     bulkBar.appendChild(colSel);
     const typeHint = getBulkTypeHint(node, path, state.bulkCol);
     const valInp = document.createElement('input');
@@ -1795,7 +1858,7 @@ function renderRecordTable(node, path, ctx) {
     goBtn.onclick = () => applyBulkEditNow(valInp.value, typeHint);
     const clrBtn = document.createElement('button');
     clrBtn.textContent = 'Clear selection';
-    clrBtn.onclick = () => { state.selectedRows = new Set(); renderMain(); };
+    clrBtn.onclick = () => { state.selectedRows = new Set(); refreshRecordTable(); };
     const delBtn = document.createElement('button');
     delBtn.textContent = '🗑 Delete selected';
     delBtn.style.color = 'var(--err)';
@@ -1830,7 +1893,7 @@ function renderRecordTable(node, path, ctx) {
   selAll.onchange = () => {
     if (selAll.checked) visibleRowPaths.forEach(rp => state.selectedRows.add(rp));
     else visibleRowPaths.forEach(rp => state.selectedRows.delete(rp));
-    renderMain();
+    refreshRecordTable();
   };
   selTh.appendChild(selAll);
   htr.appendChild(selTh);
@@ -1844,6 +1907,7 @@ function renderRecordTable(node, path, ctx) {
     const inner = document.createElement('div'); inner.className = 'th-inner';
     const label = document.createElement('button');
     label.className = 'th-label';
+    label.dataset.col = c;
     const isSorted = state.sort && state.sort.col === c;
     if (isSorted) label.classList.add('sorted');
     label.innerHTML = isSorted
@@ -1855,7 +1919,7 @@ function renderRecordTable(node, path, ctx) {
       if (state.sort && state.sort.col === c) {
         state.sort = { col: c, dir: state.sort.dir === 'asc' ? 'desc' : 'asc' };
       } else state.sort = { col: c, dir: 'asc' };
-      renderMain();
+      sortTableInPlace();
     };
     const fbtn = document.createElement('button');
     fbtn.className = 'filter-btn';
@@ -1886,7 +1950,7 @@ function renderRecordTable(node, path, ctx) {
     cb.onchange = () => {
       if (cb.checked) state.selectedRows.add(rowPath);
       else state.selectedRows.delete(rowPath);
-      renderMain();
+      refreshRecordTable();
     };
     selTd.appendChild(cb); tr.appendChild(selTd);
     const tdExp = document.createElement('td');
@@ -1903,10 +1967,23 @@ function renderRecordTable(node, path, ctx) {
       }
     };
     tdDel.appendChild(rowDel); tr.appendChild(tdDel);
-    // FIX 2 (part 2): Render each cell, adding ↗loc button for array columns with coord pairs
+    // Render each cell and cache sort values for fast in-place sorting.
     for (const col of visibleCols) {
       const kv = rec.children.find(c => c.key === col);
       const td = document.createElement('td'); td.className = 'cell';
+      td.dataset.col = col;
+      {
+        const cv = getColValue(rec, col);
+        if (cv === undefined) { td.dataset.sortValue = ''; td.dataset.sortType = 'undefined'; }
+        else if (cv === null) { td.dataset.sortValue = ''; td.dataset.sortType = 'null'; }
+        else if (typeof cv === 'number' || typeof cv === 'boolean') {
+          td.dataset.sortValue = String(cv);
+          td.dataset.sortType = typeof cv;
+        } else {
+          td.dataset.sortValue = String(cv);
+          td.dataset.sortType = 'string';
+        }
+      }
       if (kv && (kv.value.kind === 'leaf' || kv.value.kind === 'ref')) {
         td.appendChild(renderLeaf(kv.value, rowPath + '.' + col, { key: col, parentObj: rec, ctx }));
       } else if (kv && kv.value.kind === 'array') {
@@ -1976,6 +2053,10 @@ function renderRecordTable(node, path, ctx) {
   }
   container.appendChild(table);
   const note = document.createElement('div'); note.className = 'table-note';
+  note.dataset.totalRecords = String(node.children.length);
+  note.dataset.visibleColsCount = String(visibleCols.length);
+  note.dataset.totalColsCount = String(cols.length);
+  note.dataset.filteredCount = String(records.length);
   note.textContent = `${records.length} of ${node.children.length} records · showing ${visibleCols.length} of ${cols.length} columns` +
     (state.sort ? ` · sorted by ${state.sort.col} ${state.sort.dir === 'asc' ? '▲' : '▼'}` : '') +
     (cols.length > visibleCols.length ? ' · expand a row to edit every field' : '');
@@ -2006,10 +2087,9 @@ function applyWorkersQuick(arrayTree, arrayPath, value) {
   }
   if (!splices.length) { toast('No workers fields to update', 'err'); return; }
   if (!commitEdit(file, splices)) return;
+  state.selectedRows = new Set();
   rebuildAll();
   toast(`Set workers=${value} on ${applied} row${applied === 1 ? '' : 's'}${skipped ? ` (${skipped} skipped)` : ''}`, 'ok');
-  state.selectedRows = new Set();
-  renderMain();
 }
 function applyAddDateQuick(arrayTree, arrayPath, value) {
   const { file } = state.selection;
@@ -2065,14 +2145,13 @@ function applyAddDateQuick(arrayTree, arrayPath, value) {
 
   if (!splices.length) { toast('Nothing to update', 'err'); return; }
   if (!commitEdit(file, splices)) return;
+  state.selectedRows = new Set();
   rebuildAll();
   const bits = [];
   if (updated)  bits.push(`${updated} updated`);
   if (inserted) bits.push(`${inserted} inserted`);
   if (skipped)  bits.push(`${skipped} skipped`);
   toast(`adddate → ${value} (${bits.join(', ')})`, 'ok');
-  state.selectedRows = new Set();
-  renderMain();
 }
 function deleteSelectedRows(arrayTree, arrayPath) {
   const indices = [...state.selectedRows]
@@ -2107,8 +2186,8 @@ function deleteSelectedRows(arrayTree, arrayPath) {
   if (!splices.length) { toast('Nothing to delete', 'err'); return; }
   if (!commitEdit(arrayTree.file, splices)) return;
   const n = splices.length;
-  rebuildAll();
   state.selectedRows = new Set();
+  rebuildAll();
   toast(`Deleted ${n} row${n === 1 ? '' : 's'}`, 'ok');
 }
 function getBulkTypeHint(tree, path, col) {
@@ -2126,10 +2205,6 @@ function getBulkTypeHint(tree, path, col) {
 }
 function applyBulkEditNow(rawInput, typeHint) {
   if (!state.selectedRows.size) { toast('No rows selected', 'err'); return; }
-  const { file, name } = state.selection;
-  const treePath = file + '::' + name;
-  const tree = state.trees[treePath];
-  if (!tree) return;
   const col = state.bulkCol;
   if (!col) { toast('Pick a column', 'err'); return; }
   const raw = (rawInput ?? '').trim();
@@ -2185,10 +2260,9 @@ function runBulkSplices(col, literalGen) {
   if (!splices.length) { toast('Nothing to edit in those rows', 'err'); return; }
   if (!commitEdit(file, splices)) return;
   const n = splices.length;
+  state.selectedRows = new Set();
   rebuildAll();
   toast(`Updated ${col} on ${n} row${n === 1 ? '' : 's'}${skipped ? ` (${skipped} skipped)` : ''}`, 'ok');
-  state.selectedRows = new Set();
-  renderMain();
 }
 function valueRepr(v) {
   if (v === undefined) return '';
@@ -2216,7 +2290,7 @@ function renderActiveFiltersSummary() {
     else if (filter.type === 'equals')   label = `= ${filter.value}`;
     else if (filter.type === 'date')     label = filter.value;
     chip.innerHTML = `${esc(col)}: ${esc(label)} <span class="x">×</span>`;
-    chip.querySelector('.x').onclick = () => { delete state.colFilters[col]; renderMain(); };
+    chip.querySelector('.x').onclick = () => { delete state.colFilters[col]; refreshRecordTable(); };
     wrap.appendChild(chip);
   }
 
@@ -2229,7 +2303,7 @@ function renderActiveFiltersSummary() {
   if (state.locationFilter) {
     const chip = document.createElement('span'); chip.className = 'filter-chip';
     chip.innerHTML = `location: ${esc(state.locationFilter)} <span class="x">×</span>`;
-    chip.querySelector('.x').onclick = () => { state.locationFilter = null; renderMain(); };
+    chip.querySelector('.x').onclick = () => { state.locationFilter = null; refreshRecordTable(); };
     wrap.appendChild(chip);
   }
   const clear = document.createElement('button');
@@ -2277,7 +2351,7 @@ function openColFilter(col, tree, anchorEl) {
     if (isFilterActive(f)) state.colFilters[col] = f;
     else delete state.colFilters[col];
     closeFilterPopover();
-    renderMain();
+    refreshRecordTable();
   };
 
   if (mode === 'checkboxes') {
@@ -2591,8 +2665,61 @@ function findCoordSiblings(parentObj, currentKey, currentNode) {
   return null;
 }
 /* ================================================================
-ADD ARRAY ENTRY (uses schema)
+ADD ARRAY ENTRY (schema-based + primitive fallback)
 ================================================================ */
+function addArrayEntry(arrayTree, arrayPath) {
+  const file = state.files[arrayTree.file];
+  if (!file) return;
+
+  const schema = computeSchema(arrayTree);
+  if (!schema.length) {
+    // No object entries to derive a schema from — fall back to primitive.
+    return addPrimitiveArrayEntry(arrayTree, arrayPath);
+  }
+
+  const arr = arrayTree.node;
+  let last = null;
+  for (let i = arr.elements.length - 1; i >= 0; i--) {
+    if (arr.elements[i]) { last = arr.elements[i]; break; }
+  }
+
+  const refChild = arrayTree.children.find(c => c.kind === 'object' && c.node);
+  const nextId = computeNextId(arr.elements);
+
+  let insertAt, text;
+
+  if (last) {
+    const lls = file.source.lastIndexOf('\n', last.start) + 1;
+    const indent = file.source.slice(lls, last.start).match(/^\s*/)[0];
+    const entryText = buildEntryTemplateFromSchema(schema, refChild?.node || null, indent, nextId);
+    // Always emit our own leading comma. If the source already had a
+    // trailing comma after `last`, ours sits before it and both stay valid.
+    text = `,\n${indent}${entryText}`;
+    insertAt = last.end;
+  } else {
+    const lls = file.source.lastIndexOf('\n', arr.start) + 1;
+    const baseIndent = file.source.slice(lls, arr.start).match(/^\s*/)[0] || '';
+    const innerIndent = baseIndent + '    ';
+    const entryText = buildEntryTemplateFromSchema(schema, null, innerIndent, nextId);
+    text = `\n${innerIndent}${entryText}\n${baseIndent}`;
+    insertAt = arr.start + 1;
+  }
+
+  if (!commitEdit(arrayTree.file, [{ start: insertAt, end: insertAt, text }])) return;
+
+  const newIndex = arr.elements.length;
+  rebuildAll();
+  toast('Entry added', 'ok');
+
+  requestAnimationFrame(() => {
+    const el = document.querySelector(`[data-leaf-path="${cssEsc(arrayPath + '[' + newIndex + ']')}"]`);
+    if (el) {
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      el.classList.remove('flash-leaf'); void el.offsetWidth; el.classList.add('flash-leaf');
+    }
+  });
+}
+
 function addPrimitiveArrayEntry(arrayTree, arrayPath) {
   const file = state.files[arrayTree.file];
   if (!file) return;
@@ -2617,16 +2744,16 @@ function addPrimitiveArrayEntry(arrayTree, arrayPath) {
   if (last) {
     const between = file.source.slice(last.end, arr.end);
     const multiline = /\n/.test(between);
-    const hasTrailingComma = /^\s*,/.test(between);
 
     let text;
     if (multiline) {
       const lls = file.source.lastIndexOf('\n', last.start) + 1;
       const indent = file.source.slice(lls, last.start).match(/^\s*/)[0];
-      text = (hasTrailingComma ? '' : ',') + `\n${indent}${literal}`;
+      // Always emit our own comma: if the source has a trailing comma,
+      // ours just becomes the trailing comma of the new last element.
+      text = `,\n${indent}${literal}`;
     } else {
-      // Keep single-line arrays on one line
-      text = (hasTrailingComma ? ' ' : ', ') + literal;
+      text = `, ${literal}`;
     }
     const insertAt = last.end;
     if (!commitEdit(arrayTree.file, [{ start: insertAt, end: insertAt, text }])) return;
@@ -2971,7 +3098,6 @@ function findCoordPairsInTree(rootTree) {
   return results;
 }
 /* ---- targets: any array-of-objects OR object-of-objects (in any loaded file) ---- */
-/* FIX 1: Now also includes objects whose values are arrays (like CITY_COORDS, MELB, etc.) */
 function collectExtractTargets() {
   const results = [];
   for (const fname of Object.keys(state.files)) {
@@ -3496,7 +3622,18 @@ $('#openBtn').onclick = openWithPicker;
 $('#saveBtn').onclick = saveAll;
 $('#saveAsBtn').onclick = downloadAll;
 $('#fileInput').onchange = e => { handleFiles(e.target.files); e.target.value = ''; };
-$('#searchBox').oninput = e => { state.search = e.target.value; renderMain(); };
+
+/* Search box — debounced so typing doesn't rebuild the whole app. */
+let _searchTimer;
+$('#searchBox').oninput = e => {
+  state.search = e.target.value;
+  clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(() => {
+    if ($('#recordTableContainer')) refreshRecordTable();
+    else renderMain();
+  }, 120);
+};
+
 $$('#viewToggle button').forEach(b => b.onclick = () => { state.viewMode = b.dataset.view; renderMain(); });
 $('#pullBtn')?.addEventListener('click', () => pullFromRemote());
 $('#pullCustomBtn')?.addEventListener('click', promptCustomPull);

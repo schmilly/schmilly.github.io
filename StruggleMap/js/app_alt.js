@@ -5,7 +5,7 @@
 // sections, union-based filtering, stale-entry detection.
 // ============================================
 
-(function() {
+(function () {
     'use strict';
 
     // ─── Configuration ───
@@ -17,44 +17,44 @@
     const TILE_LAYER_ATTRIBUTION = 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community';
 
     // ─── Type definitions ───
-const TYPE_INFO = {
-    strike:     { emoji: '⚒',   color: 'var(--type-strike-color)',     label: 'Strike',                       showInFilter: true },
-    stoppage:   { emoji: '✖',   color: 'var(--type-stoppage-color)',   label: 'Intermittent Strike/Stoppage', showInFilter: true },
-    action:     { emoji: '⚒',   color: 'var(--type-action-color)',     label: 'Action',                       showInFilter: true },
-    lockout:    { emoji: '⛔︎',  color: 'var(--type-lockout-color)',    label: 'Lockout',                      showInFilter: true },
-    protest:    { emoji: '⚑',   color: 'var(--type-protest-color)',    label: 'Protest',                      showInFilter: true },
-    planned:    { emoji: '⛶',   color: 'var(--type-planned-color)',    label: 'Planned',                      showInFilter: true },
-    update:     { emoji: '⚠',   color: 'var(--type-update-color)',     label: 'Update',                       showInFilter: true },
-    resolved:   { emoji: '✔',   color: 'var(--type-resolved-color)',   label: 'Resolved',                     showInFilter: true },
-    ballot:     { emoji: '☐',   color: 'var(--type-ballot-color)',     label: 'Ballot',                       showInFilter: true },
-    scab:       { emoji: '⚠',   color: 'var(--type-scab-color)',       label: 'Scab Alert',                   showInFilter: true },
-    ballotpass: { emoji: '☑',   color: 'var(--type-ballotpass-color)', label: 'Ballot Success',                showInFilter: true },
-    ballotfail: { emoji: '☒',   color: 'var(--type-ballotfail-color)', label: 'Ballot Failed',                showInFilter: true },
-    default:    { emoji: '?',   color: 'var(--type-default-color)',    label: 'Other',                        showInFilter: false },
-    unkown:     { emoji: '?',   color: 'var(--type-unkown-color)',     label: 'Unknown',                      showInFilter: false },
-};
+    const TYPE_INFO = {
+        strike: { emoji: '⚒', color: 'var(--type-strike-color)', label: 'Strike', showInFilter: true },
+        stoppage: { emoji: '✖', color: 'var(--type-stoppage-color)', label: 'Intermittent Strike/Stoppage', showInFilter: true },
+        action: { emoji: '⚒', color: 'var(--type-action-color)', label: 'Action', showInFilter: true },
+        lockout: { emoji: '⛔︎', color: 'var(--type-lockout-color)', label: 'Lockout', showInFilter: true },
+        protest: { emoji: '⚑', color: 'var(--type-protest-color)', label: 'Protest', showInFilter: true },
+        planned: { emoji: '⛶', color: 'var(--type-planned-color)', label: 'Planned', showInFilter: true },
+        update: { emoji: '⚠', color: 'var(--type-update-color)', label: 'Update', showInFilter: true },
+        resolved: { emoji: '✔', color: 'var(--type-resolved-color)', label: 'Resolved', showInFilter: true },
+        ballot: { emoji: '☐', color: 'var(--type-ballot-color)', label: 'Ballot', showInFilter: true },
+        scab: { emoji: '⚠', color: 'var(--type-scab-color)', label: 'Scab Alert', showInFilter: true },
+        ballotpass: { emoji: '☑', color: 'var(--type-ballotpass-color)', label: 'Ballot Success', showInFilter: true },
+        ballotfail: { emoji: '☒', color: 'var(--type-ballotfail-color)', label: 'Ballot Failed', showInFilter: true },
+        default: { emoji: '?', color: 'var(--type-default-color)', label: 'Other', showInFilter: false },
+        unkown: { emoji: '?', color: 'var(--type-unkown-color)', label: 'Unknown', showInFilter: false },
+    };
     function getTypeInfo(type) {
         return TYPE_INFO[type] || TYPE_INFO.default;
     }
 
     // ─── Tag helpers ───
-// Tag to highlight in the event list. Normalised so "supporters wanted",
-// "supporters-wanted" and "supporters_welcome" all count.
-const HIGHLIGHT_TAG = 'supporters-wanted';
+    // Tag to highlight in the event list. Normalised so "supporters wanted",
+    // "supporters-wanted" and "supporters_welcome" all count.
+    const HIGHLIGHT_TAG = 'supporters-wanted';
 
-function normalizeTag(tag) {
-    return String(tag).trim().toLowerCase().replace(/[\s_]+/g, '-');
-}
+    function normalizeTag(tag) {
+        return String(tag).trim().toLowerCase().replace(/[\s_]+/g, '-');
+    }
 
-function hasTag(entry, tag) {
-    if (!entry || !Array.isArray(entry.tags)) return false;
-    const target = normalizeTag(tag);
-    return entry.tags.some(t => normalizeTag(t) === target);
-}
+    function hasTag(entry, tag) {
+        if (!entry || !Array.isArray(entry.tags)) return false;
+        const target = normalizeTag(tag);
+        return entry.tags.some(t => normalizeTag(t) === target);
+    }
 
-function hasHighlightTag(entry) {
-    return hasTag(entry, HIGHLIGHT_TAG);
-}
+    function hasHighlightTag(entry) {
+        return hasTag(entry, HIGHLIGHT_TAG);
+    }
 
     function getEmojiHtml(type, size = 20) {
         const info = getTypeInfo(type);
@@ -62,12 +62,12 @@ function hasHighlightTag(entry) {
         return `<span style="font-size: ${fontSize}px; line-height: 1; color: ${info.color}">${info.emoji}</span>`;
     }
 
-    function getLabelText(type){
+    function getLabelText(type) {
         const info = getTypeInfo(type);
         return `${info.label}`;
     }
 
-    function getLabelHTML(type, size = 20){
+    function getLabelHTML(type, size = 20) {
         const info = getTypeInfo(type);
         const fontSize = size;
         return `<span style="font-size: ${fontSize}px; line-height: 1; color: ${info.color}">${info.label}</span>`;
@@ -108,6 +108,10 @@ function hasHighlightTag(entry) {
     const mapContainer = document.getElementById('map');
     const eventListEl = document.getElementById('event-list');
     const searchInput = document.getElementById('search-input');
+    const searchToggleBtn = document.getElementById('search-toggle');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const filterToggleBtn = document.getElementById('filter-toggle');
+    const filterDropdown  = document.getElementById('filter-dropdown');
     const typeFilterContainer = document.getElementById('type-filters');
     const stateFilterContainer = document.getElementById('state-filters');
     const dateFromInput = document.getElementById('date-from');
@@ -135,7 +139,10 @@ function hasHighlightTag(entry) {
     const addCancelBtn = document.getElementById('add-cancel');
     const sidebarToggleBtn = document.getElementById('sidebar-toggle');
     const sidebarEl = document.getElementById('sidebar');
-    
+    const listIndicatorEl   = document.getElementById('list-indicator');
+const listFilterSummary = document.getElementById('list-filter-summary');
+const listCountEl       = document.getElementById('list-count');
+
     // New UI Elements
     const upcomingFilterChip = document.getElementById('upcoming-filter');
     const upcomingFilterBtn = document.getElementById('upcoming-filter-btn');
@@ -169,11 +176,12 @@ function hasHighlightTag(entry) {
         buildGroupedActions();
         buildActivityIndex();
         initMap();
-        buildTypeFilters();     
-        buildStateFilters();    
-        buildLegend();          
+        buildTypeFilters();
+        buildStateFilters();
+        buildLegend();
         initCollapsibleSections();
         initSidebarState();
+        syncSidebarToggle();  
         bindUIEvents();
         buildTagFilters();
         buildUnionFilters();
@@ -233,12 +241,22 @@ function hasHighlightTag(entry) {
         syncSidebarToggle();
     }
 
-    function syncSidebarToggle() {
-        if (!sidebarToggleBtn) return;
-        const expanded = !sidebarEl.classList.contains('collapsed');
-        sidebarToggleBtn.setAttribute('aria-expanded', String(expanded));
+function syncSidebarToggle() {
+    if (!sidebarToggleBtn) return;
+    const expanded = !sidebarEl.classList.contains('collapsed');
+
+    // Sync the internal sidebar close button
+    sidebarToggleBtn.setAttribute('aria-expanded', String(expanded));
+
+    // Sync the external reopen tab
+    const mapChromeToggle = document.getElementById('map-chrome-toggle');
+    if (mapChromeToggle) {
+        mapChromeToggle.setAttribute('aria-expanded', String(expanded));
     }
 
+    // Toggle body class so CSS can show/hide the reopen tab
+    document.body.classList.toggle('sidebar-collapsed', !expanded);
+}
     // ─── Group entries by actionId ───
     function buildGroupedActions() {
         const actionMap = new Map();
@@ -323,7 +341,7 @@ function hasHighlightTag(entry) {
         </div>`;
     }
 
-                // ─── Upcoming helpers ───
+    // ─── Upcoming helpers ───
     function isUpcomingEntry(entry) {
         if (!entry || !entry.startDate) return false;
         const start = new Date(entry.startDate + 'T00:00:00');
@@ -465,101 +483,101 @@ function hasHighlightTag(entry) {
     }
 
     // ─── Build event-type filter chips dynamically ───
-function buildTypeFilters() {
-    if (!typeFilterContainer) return;
-    typeFilterContainer.innerHTML = '';
+    function buildTypeFilters() {
+        if (!typeFilterContainer) return;
+        typeFilterContainer.innerHTML = '';
 
-    const makeChip = (value, html, isActive) => {
-        const chip = document.createElement('div');
-        chip.className = 'filter-chip' + (isActive ? ' active' : '');
-        chip.dataset.type = value;
-        chip.innerHTML = html;
-        chip.addEventListener('click', () => {
-            activeTypeFilter = value;
-            buildTypeFilters();
-            applyFilters();
+        const makeChip = (value, html, isActive) => {
+            const chip = document.createElement('div');
+            chip.className = 'filter-chip' + (isActive ? ' active' : '');
+            chip.dataset.type = value;
+            chip.innerHTML = html;
+            chip.addEventListener('click', () => {
+                activeTypeFilter = value;
+                buildTypeFilters();
+                applyFilters();
+            });
+            return chip;
+        };
+
+        typeFilterContainer.appendChild(makeChip('all', 'All', activeTypeFilter === 'all'));
+
+        Object.entries(TYPE_INFO).forEach(([key, info]) => {
+            if (info.showInFilter === false) return;
+            const html = `<span aria-hidden="true" style="color:${info.color}">${info.emoji}</span> ${escapeHtml(info.label)}`;
+            typeFilterContainer.appendChild(makeChip(key, html, activeTypeFilter === key));
         });
-        return chip;
-    };
-
-    typeFilterContainer.appendChild(makeChip('all', 'All', activeTypeFilter === 'all'));
-
-    Object.entries(TYPE_INFO).forEach(([key, info]) => {
-        if (info.showInFilter === false) return;
-        const html = `<span aria-hidden="true" style="color:${info.color}">${info.emoji}</span> ${escapeHtml(info.label)}`;
-        typeFilterContainer.appendChild(makeChip(key, html, activeTypeFilter === key));
-    });
-}
-
-// ─── Collect states present in the data (normalised to upper-case) ───
-function collectStates() {
-    const set = new Set();
-    const add = (s) => { if (s) set.add(s.toUpperCase()); };
-    allEntries.forEach(entry => {
-        add(entry.state);
-        if (Array.isArray(entry.locations)) entry.locations.forEach(loc => add(loc.state));
-    });
-    const preferred = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];
-    const known = preferred.filter(s => set.has(s));
-    const extra = [...set].filter(s => !preferred.includes(s)).sort();
-    return [...known, ...extra];
-}
-
-// ─── Build state filter chips dynamically ───
-function buildStateFilters() {
-    if (!stateFilterContainer) return;
-    stateFilterContainer.innerHTML = '';
-
-    const makeChip = (value, label, isActive) => {
-        const chip = document.createElement('div');
-        chip.className = 'filter-chip' + (isActive ? ' active' : '');
-        chip.dataset.state = value;
-        chip.textContent = label;
-        chip.addEventListener('click', () => {
-            activeStateFilter = value;
-            buildStateFilters();
-            applyFilters();
-        });
-        return chip;
-    };
-
-    stateFilterContainer.appendChild(makeChip('all', 'All', activeStateFilter === 'all'));
-    collectStates().forEach(state => {
-        stateFilterContainer.appendChild(makeChip(state, state, activeStateFilter === state));
-    });
-}
-
-// ─── Build the map legend from TYPE_INFO, showing only types in use ───
-function buildLegend() {
-    const container = document.getElementById('map-container');
-    if (!container) return;
-
-    let legend = container.querySelector('.map-legend');
-    if (!legend) {
-        legend = document.createElement('div');
-        legend.className = 'map-legend';
-        container.appendChild(legend);
     }
 
-    const present = new Set();
-    groupedActions.forEach(action => present.add(action.latestEntry.type));
+    // ─── Collect states present in the data (normalised to upper-case) ───
+    function collectStates() {
+        const set = new Set();
+        const add = (s) => { if (s) set.add(s.toUpperCase()); };
+        allEntries.forEach(entry => {
+            add(entry.state);
+            if (Array.isArray(entry.locations)) entry.locations.forEach(loc => add(loc.state));
+        });
+        const preferred = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];
+        const known = preferred.filter(s => set.has(s));
+        const extra = [...set].filter(s => !preferred.includes(s)).sort();
+        return [...known, ...extra];
+    }
 
-    const rows = [];
-    Object.entries(TYPE_INFO).forEach(([key, info]) => {
-        if (info.showInFilter === false) return;
-        if (!present.has(key)) return;
-        rows.push(
-            `<div class="legend-row">
+    // ─── Build state filter chips dynamically ───
+    function buildStateFilters() {
+        if (!stateFilterContainer) return;
+        stateFilterContainer.innerHTML = '';
+
+        const makeChip = (value, label, isActive) => {
+            const chip = document.createElement('div');
+            chip.className = 'filter-chip' + (isActive ? ' active' : '');
+            chip.dataset.state = value;
+            chip.textContent = label;
+            chip.addEventListener('click', () => {
+                activeStateFilter = value;
+                buildStateFilters();
+                applyFilters();
+            });
+            return chip;
+        };
+
+        stateFilterContainer.appendChild(makeChip('all', 'All', activeStateFilter === 'all'));
+        collectStates().forEach(state => {
+            stateFilterContainer.appendChild(makeChip(state, state, activeStateFilter === state));
+        });
+    }
+
+    // ─── Build the map legend from TYPE_INFO, showing only types in use ───
+    function buildLegend() {
+        const container = document.getElementById('map-container');
+        if (!container) return;
+
+        let legend = container.querySelector('.map-legend');
+        if (!legend) {
+            legend = document.createElement('div');
+            legend.className = 'map-legend';
+            container.appendChild(legend);
+        }
+
+        const present = new Set();
+        groupedActions.forEach(action => present.add(action.latestEntry.type));
+
+        const rows = [];
+        Object.entries(TYPE_INFO).forEach(([key, info]) => {
+            if (info.showInFilter === false) return;
+            if (!present.has(key)) return;
+            rows.push(
+                `<div class="legend-row">
                 <span class="legend-emoji" aria-hidden="true" style="color:${info.color}">${info.emoji}</span>
                 <span>${escapeHtml(info.label)}</span>
             </div>`
-        );
-    });
+            );
+        });
 
-    legend.innerHTML =
-        `<div class="legend-title">Legend</div>` +
-        (rows.length ? rows.join('') : '<div class="legend-row">No entries</div>');
-}
+        legend.innerHTML =
+            `<div class="legend-title">Legend</div>` +
+            (rows.length ? rows.join('') : '<div class="legend-row">No entries</div>');
+    }
 
     // ─── Collapsible filter sections ───
     function initCollapsibleSections() {
@@ -590,7 +608,7 @@ function buildLegend() {
             chunkedLoading: true,
             showCoverageOnHover: false,
             maxClusterRadius: 25,
-            iconCreateFunction: function(cluster) {
+            iconCreateFunction: function (cluster) {
                 const count = cluster.getChildCount();
                 return L.divIcon({
                     html: `<div style="background-color: var(--map-background); border: 1px solid var(--map-border); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--map-centre); font-weight: 700; font-size: 13px;">${count}</div>`,
@@ -601,7 +619,7 @@ function buildLegend() {
         });
 
         map.addLayer(markerClusterGroup);
-        
+
         // Ensure map resizes correctly on window resize
         window.addEventListener('resize', () => {
             if (map) map.invalidateSize();
@@ -717,7 +735,7 @@ function buildLegend() {
         });
     }
 
-    window.openDetailFromPopup = function(actionId) {
+    window.openDetailFromPopup = function (actionId) {
         selectAction(actionId);
     };
 
@@ -769,6 +787,101 @@ function buildLegend() {
         return Number.isNaN(timestamp) ? NaN : timestamp;
     }
 
+    // ─── Filter status header (window-title style) ───
+function updateListHeader() {
+    if (!listFilterSummary || !listCountEl) return;
+
+    // Collect every currently-active filter as a {label, kind} pair
+    const chips = [];
+
+    if (searchQuery.trim()) {
+        chips.push({ label: `“${searchQuery.trim()}”`, kind: 'search' });
+    }
+    if (activeTypeFilter !== 'all') {
+        chips.push({ label: getTypeInfo(activeTypeFilter).label, kind: 'type' });
+    }
+    if (activeStateFilter !== 'all') {
+        chips.push({ label: activeStateFilter, kind: 'state' });
+    }
+    if (activeIndustryFilter) {
+        chips.push({ label: activeIndustryFilter, kind: 'industry' });
+    }
+    if (activeUnionFilter) {
+        chips.push({ label: activeUnionFilter, kind: 'union' });
+    }
+    if (activeTagFilter) {
+        chips.push({ label: `#${activeTagFilter}`, kind: 'tag' });
+    }
+    if (activeUpcomingFilter) {
+        chips.push({ label: 'Upcoming', kind: 'upcoming' });
+    }
+
+    // Date filter is on by default (last 30 days). Always show it —
+// it genuinely narrows the list, so it deserves a chip either way.
+if (dateFilterEnabled) {
+    // Match init()'s DST-safe calendar arithmetic instead of the
+    // millisecond subtraction that drifts across clock changes.
+    const defaultFromDate = new Date();
+    defaultFromDate.setDate(defaultFromDate.getDate() - STALE_DAYS);
+    const defaultFrom = toDateInputValue(defaultFromDate);
+
+    const isDefaultWindow =
+        activeDateFrom === defaultFrom &&
+        activeDateTo === '' &&
+        !includeStaleEntries &&
+        includeOngoingEntries;
+
+    if (isDefaultWindow) {
+        // Friendly label for the untouched default
+        chips.push({ label: `Last ${STALE_DAYS} days`, kind: 'date' });
+    } else {
+        // Custom window — show the exact values + sub-toggles
+        const parts = [];
+        if (activeDateFrom) parts.push(activeDateFrom);
+        if (activeDateTo) parts.push(activeDateTo);
+        if (includeStaleEntries) parts.push('+stale');
+        if (!includeOngoingEntries) parts.push('−ongoing');
+        chips.push({ label: parts.join(' → '), kind: 'date' });
+    }
+}
+    // Render either the empty state or the chips (with +N overflow)
+    if (chips.length === 0) {
+        listFilterSummary.innerHTML = `<span class="list-filter-none">All entries</span>`;
+        if (listIndicatorEl) listIndicatorEl.classList.remove('active');
+    } else {
+        const MAX_VISIBLE = 3;
+        let visibleChips = chips;
+        let overflowCount = 0;
+
+        if (chips.length > MAX_VISIBLE) {
+            visibleChips = chips.slice(0, MAX_VISIBLE - 1);
+            overflowCount = chips.length - (MAX_VISIBLE - 1);
+        }
+
+        let html = visibleChips
+            .map(c =>
+                `<span class="list-filter-chip" data-kind="${c.kind}" ` +
+                `title="${escapeHtml(c.label)}">${escapeHtml(c.label)}</span>`
+            )
+            .join('');
+
+        if (overflowCount > 0) {
+            const fullList = chips
+                .slice(MAX_VISIBLE - 1)
+                .map(c => c.label)
+                .join(' · ');
+            html += `<span class="list-filter-chip" data-kind="overflow" ` +
+                    `title="${escapeHtml(fullList)}">+${overflowCount}</span>`;
+        }
+
+        listFilterSummary.innerHTML = html;
+        if (listIndicatorEl) listIndicatorEl.classList.add('active');
+    }
+
+    // Update the count badge
+    listCountEl.textContent = filteredActions.length;
+}
+
     function applyFilters() {
         let result = [...groupedActions];
 
@@ -793,15 +906,15 @@ function buildLegend() {
             result = result.filter(action => action.latestEntry.type === activeTypeFilter);
         }
 
-if (activeStateFilter !== 'all') {
-    const target = activeStateFilter.toUpperCase();
-    result = result.filter(action => {
-        const e = action.latestEntry;
-        if ((e.state || '').toUpperCase() === target) return true;
-        if (e.locations && e.locations.some(loc => (loc.state || '').toUpperCase() === target)) return true;
-        return false;
-    });
-}
+        if (activeStateFilter !== 'all') {
+            const target = activeStateFilter.toUpperCase();
+            result = result.filter(action => {
+                const e = action.latestEntry;
+                if ((e.state || '').toUpperCase() === target) return true;
+                if (e.locations && e.locations.some(loc => (loc.state || '').toUpperCase() === target)) return true;
+                return false;
+            });
+        }
 
         const rangeStart = parseDateOnly(activeDateFrom);
         const rangeEnd = parseDateOnly(activeDateTo);
@@ -848,6 +961,7 @@ if (activeStateFilter !== 'all') {
         }
 
         filteredActions = result;
+        updateListHeader();
         updateFilterSummaries();
         updateStats();
         updateEventList();
@@ -912,8 +1026,8 @@ if (activeStateFilter !== 'all') {
             const item = document.createElement('div');
             const isSupporters = hasHighlightTag(latest);
             item.className = 'event-item'
-            + (selectedActionId === action.actionId ? ' selected' : '')
-            + (isSupporters ? ' supporters-wanted' : '');
+                + (selectedActionId === action.actionId ? ' selected' : '')
+                + (isSupporters ? ' supporters-wanted' : '');
             item.dataset.actionId = action.actionId;
 
             const updateCount = action.entries.length > 1 ? ` <span class="meta-tag updates">${action.entries.length} updates</span>` : '';
@@ -937,9 +1051,9 @@ if (activeStateFilter !== 'all') {
             <span class="meta-tag">${latest.industry || 'N/A'}</span>
             ${updateCount}
 ${latest.tags ? latest.tags.map(t => {
-    const cls = normalizeTag(t) === HIGHLIGHT_TAG ? 'meta-tag hash tag-supporters' : 'meta-tag hash';
-    return `<span class="${cls}">${t}</span>`;
-}).join('') : ''}
+                const cls = normalizeTag(t) === HIGHLIGHT_TAG ? 'meta-tag hash tag-supporters' : 'meta-tag hash';
+                return `<span class="${cls}">${t}</span>`;
+            }).join('') : ''}
             ${staleBadge}
             </div>
             ${staleNotice}
@@ -1159,13 +1273,62 @@ ${latest.tags ? latest.tags.map(t => {
         buildGroupedActions();
         buildActivityIndex();
         buildTagFilters();
-        buildStateFilters();   
-        buildLegend();         
+        buildStateFilters();
+        buildLegend();
         buildUnionFilters();
         buildIndustryFilters();
         closeAddModal();
         applyFilters();
     }
+
+    // ─── Search / Filter dropdown controllers ───
+function openSearch() {
+    if (!searchDropdown || !searchToggleBtn) return;
+    searchDropdown.classList.add('open');
+    searchToggleBtn.setAttribute('aria-expanded', 'true');
+    // Mutual exclusivity: close filter panel if it's open
+    if (filterDropdown && filterDropdown.classList.contains('open')) {
+        filterDropdown.classList.remove('open');
+        if (filterToggleBtn) filterToggleBtn.setAttribute('aria-expanded', 'false');
+    }
+    // Focus after the animation kicks off so the input doesn't jump mid-transition
+    setTimeout(() => searchInput && searchInput.focus(), 150);
+}
+
+function closeSearch() {
+    if (!searchDropdown || !searchToggleBtn) return;
+    searchDropdown.classList.remove('open');
+    searchToggleBtn.setAttribute('aria-expanded', 'false');
+}
+
+function toggleSearch() {
+    if (!searchDropdown) return;
+    if (searchDropdown.classList.contains('open')) closeSearch();
+    else openSearch();
+}
+
+function openFilters() {
+    if (!filterDropdown || !filterToggleBtn) return;
+    filterDropdown.classList.add('open');
+    filterToggleBtn.setAttribute('aria-expanded', 'true');
+    // Mutual exclusivity: close search panel if it's open
+    if (searchDropdown && searchDropdown.classList.contains('open')) {
+        searchDropdown.classList.remove('open');
+        if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
+    }
+}
+
+function closeFilters() {
+    if (!filterDropdown || !filterToggleBtn) return;
+    filterDropdown.classList.remove('open');
+    filterToggleBtn.setAttribute('aria-expanded', 'false');
+}
+
+function toggleFilters() {
+    if (!filterDropdown) return;
+    if (filterDropdown.classList.contains('open')) closeFilters();
+    else openFilters();
+}
 
     // ─── UI Event Binding ───
     function bindUIEvents() {
@@ -1218,12 +1381,25 @@ ${latest.tags ? latest.tags.map(t => {
             });
         }
 
+        const mapChromeToggleBtn = document.getElementById('map-chrome-toggle');
+if (mapChromeToggleBtn) {
+    mapChromeToggleBtn.addEventListener('click', () => {
+        sidebarEl.classList.remove('collapsed');
+        sidebarAutoCollapsed = false; // user made an explicit choice
+        syncSidebarToggle();
+        setTimeout(() => map && map.invalidateSize(), 300);
+    });
+}
+
         let searchTimeout;
         if (searchInput) {
             searchInput.addEventListener('input', () => {
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => {
                     searchQuery = searchInput.value;
+                    if (searchToggleBtn) {
+                        searchToggleBtn.classList.toggle('has-query', searchQuery.trim().length > 0);
+                    }
                     applyFilters();
                 }, 250);
             });
@@ -1276,7 +1452,7 @@ ${latest.tags ? latest.tags.map(t => {
             if (upcomingFilterBtn) upcomingFilterBtn.setAttribute('aria-pressed', String(activeUpcomingFilter));
             applyFilters();
         }
-        
+
         if (upcomingFilterChip) upcomingFilterChip.addEventListener('click', toggleUpcoming);
         if (upcomingFilterBtn) upcomingFilterBtn.addEventListener('click', toggleUpcoming);
 
@@ -1290,6 +1466,9 @@ ${latest.tags ? latest.tags.map(t => {
         if (addForm) {
             addForm.addEventListener('submit', handleAddSubmit);
         }
+
+if (searchToggleBtn) searchToggleBtn.addEventListener('click', toggleSearch);
+if (filterToggleBtn) filterToggleBtn.addEventListener('click', toggleFilters);
 
         document.getElementById('add-location-btn')?.addEventListener('click', () => {
             const container = document.getElementById('locations-container');
@@ -1336,12 +1515,28 @@ ${latest.tags ? latest.tags.map(t => {
             }
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (addModal && addModal.classList.contains('visible')) closeAddModal();
-                if (detailModal && detailModal.classList.contains('visible')) detailModal.classList.remove('visible');
-            }
-        });
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+
+    // Priority order: dropdowns → modals
+    if (searchDropdown && searchDropdown.classList.contains('open')) {
+        closeSearch();
+        if (searchToggleBtn) searchToggleBtn.focus();
+        return;
+    }
+    if (filterDropdown && filterDropdown.classList.contains('open')) {
+        closeFilters();
+        if (filterToggleBtn) filterToggleBtn.focus();
+        return;
+    }
+    if (addModal && addModal.classList.contains('visible')) {
+        closeAddModal();
+        return;
+    }
+    if (detailModal && detailModal.classList.contains('visible')) {
+        detailModal.classList.remove('visible');
+    }
+});
     }
 
     // ─── Utility Functions ───

@@ -9516,7 +9516,7 @@ const STRIKE_DATA = [
     state: "NSW",
     description: "NSWNMA members at Healthe Care facilities commenced industrial action after 6 months of bargaining. The protected action ballot passed with 96.5% yes. On 22 October, members at Lingard and Maitland Private Hospitals began wearing union scrub tops and talking to patients; members at Wollongong Day Surgery and Shellharbour Private Hospital held a 2-hour stoppage. Healthe Care, owned by Pacific Equity Partners, operates 13 private hospitals and day surgeries and has refused to move from an 8.4% wage increase over 3 years, well below expected inflation. Nurses are demanding enforceable ratios and pay parity for Waratah Private Hospital staff on the lower Federal Nurses Award.",
     locations: [
-        { city: "Newcastle", state: "NSW", lat: 0, lng: 0, name: "Lingard Private Hospital, Merewether NSW" },
+        { city: "Newcastle", state: "NSW", lat: HOSP["NSW"]["Lingard"][0], lng: HOSP["NSW"]["Lingard"][1], name: "Lingard Private Hospital, Merewether NSW" },
         { city: "Maitland", state: "NSW", lat: HOSP["NSW"]["Maitland"][0], lng: HOSP["NSW"]["Maitland"][1], name: "Maitland Private Hospital" },
         { city: "Wollongong", state: "NSW", lat: HOSP["NSW"]["Wollongong"][0], lng: HOSP["NSW"]["Wollongong"][1], name: "Wollongong Day Surgery" },
         { city: "Shellharbour", state: "NSW", lat: HOSP["NSW"]["Shellharbour"][0], lng: HOSP["NSW"]["Shellharbour"][1], name: "Shellharbour Private Hospital" }
@@ -9780,6 +9780,27 @@ const STRIKE_DATA = [
         { name: "Facebook — Maritime Union of Australia", url: "https://www.facebook.com/MaritimeUnionAustralia/posts/the-maritime-union-of-australia-expresses-its-solidarity-with-dockworkers-and-po/1568112738674365/" }
     ],
     tags: ["labour union", "maritime", "solidarity strike", "anti-war", "global", "supporters wanted"]
+},
+{
+    id: 701202,
+    title: "Worsley Alumina Refinery Workers go on strike",
+    union: "ETU / AMWU",
+    type: "strike",
+    industry: "Mining",
+    state: "WA",
+    startDate: "2026-11-10",
+    endDate: "2026-11-12",
+    workers: 100,
+    actionId: "Worsley-Alumina-Strike",
+    adddate: "2026-11-11",
+    description: "Workers organised by the ETU and the AMWU went on strike for 48 hours on Wednesday the 11th of November, at the Worsley Alumina Refinery in Western Australia. The refinery is set to be taken over by Alcoa, which currently is run by South32. dispute arises from signifigant differences between working conditions for South32 Employees compared to those working for Alcoa. Pay is less and hours greater. ",
+    locations: [ SPCFC_COMP.SOUTH32["Worsley Alumina"]], 
+    sources: [
+        {name: "ABC News - South32 Worsley Alumina refinery workers strike ahead of Alcoa takeover", url: "https://www.abc.net.au/news/2026-11-10/south32-worsley-alumina-refinery-workers-strike/107369256"},
+    ],
+    tags: [
+        "labour union"
+    ]
 }
 
 ];

@@ -299,6 +299,7 @@ const HOSP = {
         "John Hunter": [-32.9210, 151.6940],
         "Maitland": [-32.7400, 151.5500],
         "Cessnock District": [-32.8330, 151.3550],
+        "Lingard":[-32.94071152459056, 151.7557935807379],
         // Illawarra / South
         "Wollongong": [-34.4250, 150.8880],
         "Shellharbour": [-34.5750, 150.8700],
@@ -516,6 +517,11 @@ const LIB = {
     "WA State":[-31.9490, 115.8605],
 }//Libraries
 
+const SPCFC_COMP = {
+    SOUTH32:
+    {"Worsley Alumina": {city:"Worsley",state:"WA", lat: -33.1345, lng: 116.0436, name:"Worsley Alumina"}
+    }
+}
 
 // Additional specific locations added for data.js
 const SPECIFIC = {

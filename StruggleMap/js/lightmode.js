@@ -24,7 +24,7 @@
             var t = window.__dmTheme.get();
             var icon = btn.querySelector('.theme-icon');
             if (icon) icon.textContent = t === 'light' ? '☽' : '☀';
-            btn.setAttribute('aria-pressed', String(t === 'light'));
+            btn.setAttribute('aria-pressed', String(t === 'dark'));
             var label = t === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
             btn.setAttribute('aria-label', label);
             btn.title = label;

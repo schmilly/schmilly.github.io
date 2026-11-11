@@ -32,18 +32,18 @@
 
             <div class="sidebar-top">
                 <div class="header">
-                    <span class="minor">
+                    <span class="minor" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
                         <div>
-                            <h1 style="padding:0;"><strong>Work in progress</strong></h1>
+                            <h1><strong>Work in progress</strong></h1>
                             <div>
                                 This map is experimental and may contain errors or omissions. Do not
                                 rely on it as a definitive source of factual information.
                             </div>
                         </div>
                     </span>
-                    <span class="minor minoralt">
+                    <span class="minor alt" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">
                         <div>
-                            <h1 style="padding:0;"><strong>Credit</strong></h1>
+                            <h1><strong>Credit</strong></h1>
                             <div>
                                 Vast majority of information and details on this site comes from the incredible <a
                                     href="https://substack.com/@sarahmissen">Sarah Missen</a> and their substack <a
@@ -61,48 +61,81 @@
                 </div>
                 <div style="display:flex;" class="row">
                     <div class="buttonsContainer">
-                        <button class="icon-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+                        <button class="icon-btn" id="sidebar-toggle" aria-label="Toggle sidebar">
+                            <svg width="20.900787" height="21.27874" viewBox="0 0 5.53 5.6299999">
+                                <defs id="defs1" />
+                                <path d="m 1.37 1.04
+c -0.18 0 -0.32 0.14 -0.32 0.31
+v 0.55
+c 0 0.18 0.14 0.32 0.32 0.32
+h 3.62
+c 0.18 0 0.32 -0.14 0.32 -0.32
+V 1.35
+c 0 -0.17 -0.14 -0.31 -0.32 -0.31
+z
+m 0 1.58
+c -0.18 0 -0.32 0.14 -0.32 0.32
+v 0.55
+c 0 0.17 0.14 0.31 0.32 0.31
+h 3.62
+c 0.18 0 0.32 -0.14 0.32 -0.31
+V 2.93
+c 0 -0.18 -0.14 -0.32 -0.32 -0.32
+z
+m 0 1.58
+c -0.18 0 -0.32 0.14 -0.32 0.32
+v 0.54
+c 0 0.18 0.14 0.32 0.32 0.32
+h 3.62
+c 0.18 0 0.32 -0.14 0.32 -0.32
+V 4.52
+c 0 -0.18 -0.14 -0.32 -0.32 -0.32
+z" />
+                            </svg>
+                        </button>
                         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to light mode"
-                            aria-pressed="false" title="Switch to light mode">
+                            aria-pressed="true" title="Switch to light mode">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                             </svg>
                         </button>
 
-                        <button class="icon-btn" type="button" aria-label="Search" title="Search">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <button id="search-toggle" class="icon-btn" type="button" aria-label="Toggle search"
+                            aria-expanded="false" aria-controls="search-dropdown" title="Search">
+
+                            <svg width="26.066572" height="26.070105" viewBox="0 0 6.8967806 6.8977151" version="1.1"
+                                id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:svg="http://www.w3.org/2000/svg">
+                                <defs id="defs1" />
+                                <path id="path3"
+                                    d="M 4.14,0 C 2.72,0 1.54,1.18 1.54,2.6 1.54,3 1.63,3.38 1.8,3.72 1.77,3.74 1.73,3.77 1.71,3.8 L 0.31,5.33 C 0.1,5.56 0.11,5.92 0.35,6.13 l 0.67,0.62 c 0.23,0.21 0.6,0.2 0.81,-0.04 L 3.22,5.19 C 3.26,5.15 3.28,5.11 3.31,5.06 3.57,5.15 3.85,5.2 4.14,5.2 5.56,5.2 6.74,4.02 6.74,2.6 6.74,1.18 5.56,0 4.14,0 Z m 0,1.07 c 0.92,0 1.53,0.61 1.53,1.53 0,0.92 -0.61,1.53 -1.53,1.53 C 3.22,4.13 2.6,3.52 2.6,2.6 2.6,1.68 3.22,1.07 4.14,1.07 Z" />
                             </svg>
                         </button>
 
-                        <button class="icon-btn" type="button" aria-label="Filters" title="Filters">
-<svg   width="24.825378" height="24.80839" viewBox="0 0 6.5683814 6.5638863"   version="1.1"   id="svg1"   xml:space="preserve"
-   xmlns="http://www.w3.org/2000/svg"   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs1" /><g id="layer1" transform="translate(-28.926082,-27.176671)"><path
-       style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0485075"
-       d="m 31.472506,33.729238 c -0.01412,-0.0058 -0.03722,-0.02334 -0.05134,-0.03903 -0.02527,-0.02808 -0.02576,-0.05122 -0.03209,-1.493491 l -0.0064,-1.464965 -0.0363,-0.07393 c -0.03355,-0.06833 -0.118095,-0.146655 -1.116574,-1.034446 -0.59415,-0.528286 -1.104491,-0.986886 -1.134091,-1.019112 -0.06802,-0.07406 -0.126947,-0.190173 -0.152566,-0.300643 -0.01616,-0.06966 -0.01915,-0.156336 -0.01586,-0.458823 l 0.004,-0.372937 0.03529,-0.06695 c 0.04482,-0.08503 0.107915,-0.148121 0.192942,-0.192943 l 0.06695,-0.0353 h 2.983954 2.983954 l 0.06695,0.0353 c 0.08901,0.04692 0.153665,0.113709 0.194614,0.201029 0.03347,0.07137 0.03364,0.07337 0.03754,0.438823 0.0043,0.408953 -0.0036,0.474253 -0.07533,0.616316 -0.02183,0.04325 -0.06667,0.107663 -0.09965,0.143148 -0.03298,0.03549 -0.543191,0.493834 -1.13381,1.018553 -0.992912,0.882126 -1.076588,0.959607 -1.110159,1.027974 l -0.03631,0.07394 -0.0064,1.001067 -0.0064,1.00107 -0.03458,0.06555 c -0.01902,0.03605 -0.04989,0.08375 -0.06861,0.105989 -0.04593,0.05459 -1.348868,0.836233 -1.392097,0.835133 -0.01759,-4.09e-4 -0.04353,-0.0055 -0.05765,-0.01132 z"
-       /></g></svg>
+                        <button id="filter-toggle" class="icon-btn" type="button" aria-label="Toggle filters"
+                            aria-expanded="false" aria-controls="filter-dropdown" title="Filters">
+                            <svg width="24.825378" height="24.80839" viewBox="0 0 6.5683814 6.5638863" version="1.1"
+                                id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:svg="http://www.w3.org/2000/svg">
+                                <defs id="defs1" />
+                                <g id="layer1" transform="translate(-28.926082,-27.176671)">
+                                    <path style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0485075"
+                                        d="m 31.472506,33.729238 c -0.01412,-0.0058 -0.03722,-0.02334 -0.05134,-0.03903 -0.02527,-0.02808 -0.02576,-0.05122 -0.03209,-1.493491 l -0.0064,-1.464965 -0.0363,-0.07393 c -0.03355,-0.06833 -0.118095,-0.146655 -1.116574,-1.034446 -0.59415,-0.528286 -1.104491,-0.986886 -1.134091,-1.019112 -0.06802,-0.07406 -0.126947,-0.190173 -0.152566,-0.300643 -0.01616,-0.06966 -0.01915,-0.156336 -0.01586,-0.458823 l 0.004,-0.372937 0.03529,-0.06695 c 0.04482,-0.08503 0.107915,-0.148121 0.192942,-0.192943 l 0.06695,-0.0353 h 2.983954 2.983954 l 0.06695,0.0353 c 0.08901,0.04692 0.153665,0.113709 0.194614,0.201029 0.03347,0.07137 0.03364,0.07337 0.03754,0.438823 0.0043,0.408953 -0.0036,0.474253 -0.07533,0.616316 -0.02183,0.04325 -0.06667,0.107663 -0.09965,0.143148 -0.03298,0.03549 -0.543191,0.493834 -1.13381,1.018553 -0.992912,0.882126 -1.076588,0.959607 -1.110159,1.027974 l -0.03631,0.07394 -0.0064,1.001067 -0.0064,1.00107 -0.03458,0.06555 c -0.01902,0.03605 -0.04989,0.08375 -0.06861,0.105989 -0.04593,0.05459 -1.348868,0.836233 -1.392097,0.835133 -0.01759,-4.09e-4 -0.04353,-0.0055 -0.05765,-0.01132 z" />
+                                </g>
+                            </svg>
 
                         </button>
 
                         <button class="icon-btn" type="button" id="upcoming-filter-btn" aria-label="Show upcoming"
                             aria-pressed="false" title="Show only upcoming">
-<svg
-   width="28.193359"
-   height="25.132603"
-   viewBox="0 0 7.459493 6.6496677"
-   version="1.1"
-   id="svg1"
-   xml:space="preserve"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs1" /><path
-     id="path13"
-     style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0968041"
-     d="m 5.680103,4.18e-4 c -0.04,0 -0.07,0.01 -0.12,0.03 -0.1,0.04 -0.14,0.15 -0.14,0.33 v 0.16 h -1.28 -1.28 v -0.16 c 0,-0.09 -0.02,-0.19 -0.04,-0.23 -0.09,-0.17 -0.35,-0.17 -0.44,0 -0.02,0.04 -0.04,0.14 -0.04,0.22 v 0.15 l -0.49,0.01 c -0.45,0.01 -0.5,0.01 -0.6,0.07 -0.16,0.09 -0.27,0.19 -0.35,0.34 l -0.08,0.14 v 1.05 h 0.5 v -0.47 c 0,-0.62 0,-0.62 0.61,-0.62 h 0.41 v 0.12 c 0.08,-0.04 0.17,-0.06 0.26,-0.06 0.09,0 0.17,0.01 0.25,0.04 v -0.09 h 1.28 1.28 v 0.16 c 0,0.18 0.04,0.28 0.14,0.33 0.08,0.04 0.15,0.04 0.23,0 0.1,-0.04 0.14,-0.15 0.14,-0.33 v -0.16 h 0.41 c 0.61,0 0.61,0 0.61,0.62 v 0.41 h -2.82 -0.25 l 0.51,0.51 h 2.56 v 1.69 c 0,1.26 -0.01,1.71 -0.03,1.76 -0.02,0.04 -0.06,0.08 -0.1,0.1 -0.1,0.05 -5.28,0.05 -5.37,0 -0.11,-0.06 -0.13,-0.04 -0.13,-1.04 h -0.49 c 0,0.64 0.01,0.99 0.02,1.03 0.06,0.22 0.3,0.47 0.52,0.54 0.05,0.01 1.22,0.02 2.82,0.02 h 2.74 l 0.14,-0.08 c 0.15,-0.08 0.26,-0.19 0.34,-0.35 l 0.06,-0.11 v -2.55 -2.52 l -0.06,-0.11 c -0.09,-0.16 -0.19,-0.27 -0.34,-0.35 -0.14,-0.08 -0.14,-0.08 -0.63,-0.08 l -0.49,-0.01 v -0.15 c 0,-0.18 -0.04,-0.28 -0.14,-0.33 -0.04,-0.02 -0.08,-0.03 -0.12,-0.03 z m -3.06,1.44 c -0.18,0.01 -0.33,0.16 -0.33,0.34 v 0.69 h -1.95 c -0.19,0 -0.34,0.15 -0.34,0.34 v 1.55 c 0,0.19 0.15,0.34 0.34,0.34 h 1.96 v 0.69 c 0,0.3 0.37,0.46 0.58,0.24 l 2.02,-2.05 -2.02,-2.04 c -0.07,-0.07 -0.16,-0.1 -0.26,-0.1 z m 2.54,1.63 c -0.08,0 -0.14,0.03 -0.18,0.08 l 0.18,0.18 c 0.06,0.06 0.1,0.14 0.1,0.23 0.09,-0.04 0.16,-0.13 0.16,-0.23 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -1.02,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -2.05,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z" /></svg>
+                            <svg width="28.193359" height="25.132603" viewBox="0 0 7.459493 6.6496677" version="1.1"
+                                id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:svg="http://www.w3.org/2000/svg">
+                                <defs id="defs1" />
+                                <path id="path13" style="fill:#f3f3f6;fill-opacity:1;stroke-width:0.0968041"
+                                    d="m 5.680103,4.18e-4 c -0.04,0 -0.07,0.01 -0.12,0.03 -0.1,0.04 -0.14,0.15 -0.14,0.33 v 0.16 h -1.28 -1.28 v -0.16 c 0,-0.09 -0.02,-0.19 -0.04,-0.23 -0.09,-0.17 -0.35,-0.17 -0.44,0 -0.02,0.04 -0.04,0.14 -0.04,0.22 v 0.15 l -0.49,0.01 c -0.45,0.01 -0.5,0.01 -0.6,0.07 -0.16,0.09 -0.27,0.19 -0.35,0.34 l -0.08,0.14 v 1.05 h 0.5 v -0.47 c 0,-0.62 0,-0.62 0.61,-0.62 h 0.41 v 0.12 c 0.08,-0.04 0.17,-0.06 0.26,-0.06 0.09,0 0.17,0.01 0.25,0.04 v -0.09 h 1.28 1.28 v 0.16 c 0,0.18 0.04,0.28 0.14,0.33 0.08,0.04 0.15,0.04 0.23,0 0.1,-0.04 0.14,-0.15 0.14,-0.33 v -0.16 h 0.41 c 0.61,0 0.61,0 0.61,0.62 v 0.41 h -2.82 -0.25 l 0.51,0.51 h 2.56 v 1.69 c 0,1.26 -0.01,1.71 -0.03,1.76 -0.02,0.04 -0.06,0.08 -0.1,0.1 -0.1,0.05 -5.28,0.05 -5.37,0 -0.11,-0.06 -0.13,-0.04 -0.13,-1.04 h -0.49 c 0,0.64 0.01,0.99 0.02,1.03 0.06,0.22 0.3,0.47 0.52,0.54 0.05,0.01 1.22,0.02 2.82,0.02 h 2.74 l 0.14,-0.08 c 0.15,-0.08 0.26,-0.19 0.34,-0.35 l 0.06,-0.11 v -2.55 -2.52 l -0.06,-0.11 c -0.09,-0.16 -0.19,-0.27 -0.34,-0.35 -0.14,-0.08 -0.14,-0.08 -0.63,-0.08 l -0.49,-0.01 v -0.15 c 0,-0.18 -0.04,-0.28 -0.14,-0.33 -0.04,-0.02 -0.08,-0.03 -0.12,-0.03 z m -3.06,1.44 c -0.18,0.01 -0.33,0.16 -0.33,0.34 v 0.69 h -1.95 c -0.19,0 -0.34,0.15 -0.34,0.34 v 1.55 c 0,0.19 0.15,0.34 0.34,0.34 h 1.96 v 0.69 c 0,0.3 0.37,0.46 0.58,0.24 l 2.02,-2.05 -2.02,-2.04 c -0.07,-0.07 -0.16,-0.1 -0.26,-0.1 z m 2.54,1.63 c -0.08,0 -0.14,0.03 -0.18,0.08 l 0.18,0.18 c 0.06,0.06 0.1,0.14 0.1,0.23 0.09,-0.04 0.16,-0.13 0.16,-0.23 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -1.02,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m -2.05,1.02 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z m 1.02,0 c -0.25,0 -0.35,0.35 -0.13,0.48 0.17,0.09 0.38,-0.03 0.38,-0.22 0,-0.13 -0.13,-0.25 -0.26,-0.25 z" />
+                            </svg>
                         </button>
                     </div>
 
@@ -112,23 +145,27 @@
                         <div class="stat"><span class="number" id="stat-planned">0</span><span
                                 class="label">Planned</span></div>
                         <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers
-                                Tracked</span></div>
+                                <div>Tracked</div>
+                            </span></div>
                         <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total
-                                Entries</span></div>
+                                <div>Entries</div>
+                            </span></div>
                     </div>
 
                 </div>
             </div>
-            <div class="sidebar-header">
-                <h2>🔍 Search Struggles</h2>
-                <input type="text" id="search-input" class="search-box"
-                    placeholder="Search by union, industry, location…" autocomplete="off">
+            <div class="search-dropdown" id="search-dropdown">
+                <div class="search-dropdown-inner">
+                    <div class="sidebar-header">
+                        <input type="text" id="search-input" class="search-box" placeholder="Enter Search Text Here"
+                            autocomplete="off">
+                    </div>
+                </div>
             </div>
-            <div class="sidebar-scroll">
-                <details>
-                    <summary class="filter-header filter-label">Filter and Search<span class="chevron"
-                            aria-hidden="true"></span></summary>
-                    <div>
+
+            <div class="filter-dropdown" id="filter-dropdown">
+                <div class="filter-dropdown-inner">
+                    <div class="filter-dropdown-scroll">
                         <!-- Event Type filter -->
                         <div class="filter-section collapsible collapsed" data-filter-section="type">
                             <button type="button" class="filter-header" aria-expanded="true" aria-controls="panel-type">
@@ -140,8 +177,7 @@
                             </button>
                             <div class="filter-panel" id="panel-type">
                                 <div class="filter-panel-inner">
-                                    <div class="filter-chips" id="type-filters">
-                                    </div>
+                                    <div class="filter-chips" id="type-filters"></div>
                                 </div>
                             </div>
                         </div>
@@ -158,9 +194,7 @@
                             </button>
                             <div class="filter-panel" id="panel-state">
                                 <div class="filter-panel-inner">
-                                    <div class="filter-chips" id="state-filters">
-                                        <!-- Dynamically populated from STRIKE_DATA in app.js -->
-                                    </div>
+                                    <div class="filter-chips" id="state-filters"></div>
                                 </div>
                             </div>
                         </div>
@@ -177,9 +211,7 @@
                             </button>
                             <div class="filter-panel" id="panel-industry">
                                 <div class="filter-panel-inner">
-                                    <div class="filter-chips tag-filters" id="industry-filters">
-                                        <!-- Dynamically populated from STRIKE_DATA -->
-                                    </div>
+                                    <div class="filter-chips tag-filters" id="industry-filters"></div>
                                     <button type="button" class="tag-toggle" id="industry-toggle"
                                         aria-expanded="false">Show all industries</button>
                                 </div>
@@ -198,9 +230,7 @@
                             </button>
                             <div class="filter-panel" id="panel-union">
                                 <div class="filter-panel-inner">
-                                    <div class="filter-chips tag-filters" id="union-filters">
-                                        <!-- Dynamically populated -->
-                                    </div>
+                                    <div class="filter-chips tag-filters" id="union-filters"></div>
                                     <button type="button" class="tag-toggle" id="union-toggle"
                                         aria-expanded="false">Show all unions</button>
                                 </div>
@@ -248,6 +278,7 @@
                             </div>
                         </div>
 
+                        <!-- Upcoming filter -->
                         <div class="filter-section collapsible collapsed" data-filter-section="upcoming">
                             <button type="button" class="filter-header" aria-expanded="true"
                                 aria-controls="panel-upcoming">
@@ -277,17 +308,28 @@
                             </button>
                             <div class="filter-panel" id="panel-tags">
                                 <div class="filter-panel-inner">
-                                    <div class="filter-chips tag-filters" id="tag-filters">
-                                    </div>
+                                    <div class="filter-chips tag-filters" id="tag-filters"></div>
                                     <button type="button" class="tag-toggle" id="tag-toggle" aria-expanded="false">Show
                                         all tags</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </details>
+                </div>
+            </div>
+            <div class="sidebar-scroll">
+                <div class="sidebar-list-header" id="list-header" aria-live="polite">
+                    <span class="list-indicator" id="list-indicator" aria-hidden="true"></span>
+                    <span class="list-filter-summary" id="list-filter-summary">
+                        <span class="list-filter-none">All entries</span>
+                    </span>
+                    <span class="list-count" id="list-count" title="Matching entries">0</span>
+                </div>
 
-                <div id="event-list"></div>
+
+                <div class="sidebar-scroll">
+                    <div id="event-list"></div>
+                </div>
             </div>
 
             <div class="notice-bar" id="notice-bar">
@@ -310,12 +352,14 @@
         <!-- Map Container -->
         <div id="map-container">
             <div id="map"></div>
-            <!-- Mobile only: toggles the sidebar + footer so the map can go full-bleed -->
-            <button id="map-chrome-toggle" type="button" aria-controls="sidebar" aria-expanded="true"
-                title="Show / hide the filters and event list">
-                <span class="toggle-icon" aria-hidden="true">✕</span>
-                <span class="toggle-label" aria-hidden="true">Hide list</span>
-            </button>
+            <button id="map-chrome-toggle" type="button" aria-controls="sidebar" aria-expanded="false"
+                title="Show filters and event list" aria-label="Open sidebar">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
         </div>
     </div>
 

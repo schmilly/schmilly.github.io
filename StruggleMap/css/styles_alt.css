@@ -1,28 +1,32 @@
-/* ============================================
-   AU Strike Watch - Custom Styles
-   ============================================ */
+@font-face {
+    font-family: 'Union Gothic';
+    src: url('../fonts/union_gothic-variable.ttf') format('truetype');
+    font-weight: 100 1000; 
+    font-style: normal;
+    font-display: swap;
+}
 
-/* 1. Fonts setup (Replace with your actual font files, or use a Google Font) */
 @font-face {
-    font-family: 'Union Sans';
-    src: url('../fonts/UnionSans-Regular.woff2') format('woff2'),
-         url('../fonts/UnionSans-Regular.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Mort';
+    src: url('../fonts/mort-variable.ttf') format('truetype');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
-    font-family: 'Union Sans';
-    src: url('../fonts/UnionSans-Bold.woff2') format('woff2'),
-         url('../fonts/UnionSans-Bold.woff') format('woff');
-    font-weight: 700;
+    font-family: 'Folsom';
+    src: url('../fonts/folsom-black-web.ttf') format('truetype');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
+
+
 
 :root {
     /* Custom Font - Falls back to system fonts */
-    --font-sans: 'Union Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+    --font-sans: 'Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
 
     /*padding */
@@ -56,7 +60,7 @@
     --resolved: #2ecc71;
     --other: #95a5a6;
     --glow: rgba(231, 76, 60, 0.4);
-    --sidebar-width: 530px;
+    --sidebar-width: 500px;
     --topbar-height: 52px;
     --ticker-height: 32px;
     --selected: #383975;
@@ -116,6 +120,7 @@ html[data-theme="light"] {
     --accent: #db222a;
     --strike: #c0392b;
     --glow: rgba(231, 76, 60, 0.22);
+    --selected: #fcd5d5;
 
     --stale-text: #7a4a00;
     --stale-bg: #fff3d6;
@@ -199,9 +204,9 @@ a { color: var(--link); }
 
 .sidebar-scroll {
     flex: 1 1 auto;
-    min-height: 0; /* The magic line that makes it scrollable */
+    min-height: 120px;              
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
 }
@@ -239,6 +244,9 @@ a { color: var(--link); }
     align-items: center;
     justify-content: center;
 }
+.notice-close:hover{
+    background-color: var(--accent);
+}
 
 /* Header / Stats / Buttons */
 .header {
@@ -253,29 +261,31 @@ a { color: var(--link); }
 }
 
 .minor {
-    border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: 6px;
     background: var(--bg-elevated);
     color: var(--text-secondary);
     font-weight: 400;
     font-size: 10px;
-    line-height: 1.45;
+    line-height: 1;
     overflow-wrap: anywhere;
+    padding:6px;
 }
-.minoralt {
+.minor.alt {
     background: var(--bg-alt);
     color: var(--text-secondary);
     border-color: var(--bg-alt);
 }
-.minor h1 { font-size: 12px; text-transform: uppercase; }
+.minor h1 { font-family: "Folsom"; font-size: 12px; text-transform: uppercase; padding-bottom: 3px;}
 .minor strong { color: var(--text-primary); }
+.minor div {font-family:"Mort"; font-weight: 350;}
 
 .chipcontainer {
     min-width: 100px;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: var(--side-bar-padding);
     line-height: 2;
+    display:grid;
 }
 .chip {
     background-color: var(--text-heading);
@@ -284,7 +294,7 @@ a { color: var(--link); }
     border-color: var(--accent);
     text-decoration: none;
     padding: 3px 5px;
-    margin: 3px;
+    margin: 2px;
     text-align: center;
 }
 .header .chip {
@@ -305,49 +315,36 @@ a { color: var(--link); }
     gap: 6px;
     width: 100%;
     flex: 1;
-    padding: 12px 6px 6px 6px;
+    padding: 6px 6px 6px 6px;
     border-width: 5px;
     border-right-style: solid;
 }
 
 /* ─── Icon Buttons ─── */
-.icon-btn {
-    width: 34px;
-    height: 34px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    background: rgba(255,255,255,.06);
-    color: var(--accent);
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-}
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
   border-radius: 8px;
-  background: rgba(255,255,255,.06);
+  background: var(--bg-dark);
   color: var(--text-heading);
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 
 }
 .icon-btn:hover {
-  background: rgba(139,92,246,.25);
+  background: var(--accent-alt);
   color: var(--text-primary);
 }
 .icon-btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
-.icon-btn svg { display: block; }
+.icon-btn svg { display: block; fill:var(--text-heading)}
 .row{
     border-top: solid;
     border-bottom: solid;
@@ -368,8 +365,8 @@ a { color: var(--link); }
 
 }
 .stats-bar .stat { text-align: center; white-space: nowrap; }
-.stats-bar .stat .number { font-weight: 700; font-size: 16px; color: var(--text-primary); display: block; font-family: var(--font-mono); }
-.stats-bar .stat .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); line-height: 1; }
+.stats-bar .stat .number { font-weight: 700; font-size: 20px; font-family:'Mort';color: var(--text-primary); display: block; }
+.stats-bar .stat .label { font-size: 8px; font-family:'Union Gothic';text-transform: uppercase; letter-spacing: 0; color: var(--text-muted); line-height: 1; }
 
 /* ─── Sidebar Headers & Search ─── */
 .sidebar-header {
@@ -388,10 +385,11 @@ a { color: var(--link); }
 .search-box {
     width: 100%;
     padding: 8px 12px;
-    background: var(--bg-dark);
+    background: var(--bg-active);
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text-primary);
+    font-family:"Folsom";
     font-size: 13px;
     outline: none;
     transition: border-color 0.2s;
@@ -407,10 +405,10 @@ a { color: var(--link); }
     align-items: center;
     gap: 8px;
     padding: 10px 14px;
-    background: transparent;
+    background: var(--bg-panel);
     border: 0;
     color: var(--text-muted);
-    font-family: var(--font-sans);
+    font-family: "Folsom";
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
@@ -450,8 +448,12 @@ a { color: var(--link); }
     display: grid;
     grid-template-rows: 1fr;
     transition: grid-template-rows 0.22s ease;
+    overflow: clip;
 }
-.filter-section.collapsed .filter-panel { grid-template-rows: 0fr; }
+.filter-section.collapsed .filter-panel {     grid-template-rows: 0fr;
+    visibility: hidden;}
+.filter-section.collapsed .filter-panel-inner {
+    overflow: clip;}
 .filter-panel-inner { overflow: hidden; min-height: 0; }
 .filter-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 14px 12px; }
 .filter-chip {
@@ -510,8 +512,6 @@ a { color: var(--link); }
     display: flex;
     flex-direction: column;
     gap: 6px;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 112px;
 }
 .event-item:hover { background: var(--bg-elevated); }
 .event-item.selected { background: var(--selected); border-left: 3px solid var(--accent); }
@@ -647,7 +647,7 @@ a { color: var(--link); }
 .btn.primary:hover { background: #4c8fd0; }
 
 .detail-section { margin-bottom: 12px; }
-.detail-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 600; }
+.detail-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; font-family:"Union Gothic";color: var(--text-muted); font-weight: 600; }
 .detail-value { font-size: 14px; color: var(--text-primary); }
 .source-link { color: var(--accent); text-decoration: none; font-size: 12px; word-break: break-all; }
 .source-link:hover { text-decoration: underline; }
@@ -774,4 +774,318 @@ details[open] .chevron { transform: rotate(45deg); }
     :root { --sidebar-width: 260px; --topbar-height: 44px; --ticker-height: 24px; }
     .modal-overlay { left: 0; }
     .stats-bar .stat .number { font-size: 11px; }
+}
+
+/* ─── Animated Search Dropdown ─── */
+.search-dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-panel);
+}
+
+.search-dropdown.open {
+    grid-template-rows: 1fr;
+    border-bottom-color: var(--border);
+}
+
+.search-dropdown-inner {
+    overflow: hidden;
+    min-height: 0;
+    background-color: var(--accent);
+}
+
+/* The search box's existing `.sidebar-header` styles still apply —
+   we only strip the border-bottom so the wrapper owns the edge. */
+.search-dropdown .sidebar-header {
+    border-bottom: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* Active state on the search button */
+.icon-btn[aria-expanded="true"] {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.icon-btn[aria-expanded="true"]:hover {
+    background: var(--accent);
+    color: #ffffff;
+    filter: brightness(1.1);
+}
+
+/* Red dot indicator when a query is active but the dropdown is closed */
+.icon-btn.has-query {
+    position: relative;
+}
+
+.icon-btn.has-query::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 7px;
+    height: 7px;
+    background: var(--strike);
+    border-radius: 50%;
+    border: 1.5px solid var(--bg-active);
+    pointer-events: none;
+}
+
+/* ─── Animated Filter Dropdown ─── */
+.filter-dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-panel);
+}
+
+.filter-dropdown.open {
+    grid-template-rows: 1fr;
+    border-bottom-color: var(--border);
+}
+
+.filter-dropdown-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Internal scroll so tall filter lists (many unions/tags) don't push the
+   event list off screen entirely. Capped at 55% of viewport height. */
+.filter-dropdown-scroll {
+    max-height: min(40vh, 340px); ;
+    overflow-y: auto;
+    border-top: 1px solid var(--border);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    overscroll-behavior: contain;
+}
+
+.filter-dropdown-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+.filter-dropdown-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.filter-dropdown-scroll::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+/* The very last filter section shouldn't have a trailing border inside
+   the scrollable area — cleaner edge against the scroll boundary. */
+.filter-dropdown-scroll > .filter-section:last-child {
+    border-bottom: none;
+}
+
+/* ─── Lit-up state for toggle buttons ─── */
+.icon-btn[aria-pressed="true"],
+.icon-btn[aria-expanded="true"] {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 0 0 1px var(--accent),
+                0 0 12px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.icon-btn[aria-pressed="true"]:hover,
+.icon-btn[aria-expanded="true"]:hover {
+    background: var(--accent);
+    color: #ffffff;
+    filter: brightness(1.12);
+}
+
+/* When the button is already lit, the "has query" red dot is redundant */
+.icon-btn[aria-pressed="true"].has-query::after,
+.icon-btn[aria-expanded="true"].has-query::after {
+    display: none;
+}
+
+/* ─── Reopen sidebar tab ─── */
+/* Hidden by default. Only shown when the sidebar is collapsed,
+   via sibling selector — no JS body class required. */
+#map-chrome-toggle {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 36px;
+    height: 76px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    background: var(--bg-panel);
+    color: var(--text-primary);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+    transition: width 0.15s ease, background 0.15s ease;
+}
+
+#map-chrome-toggle:hover {
+    background: var(--bg-elevated);
+    width: 44px;
+}
+
+#map-chrome-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+#map-chrome-toggle svg {
+    display: block;
+    flex-shrink: 0;
+    stroke: currentColor;
+}
+
+
+#sidebar.collapsed ~ #map-container #map-chrome-toggle {
+    display: flex;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+    #map-chrome-toggle {
+        width: 32px;
+        height: 64px;
+        border-radius: 0 8px 8px 0;
+    }
+    #map-chrome-toggle:hover {
+        width: 38px;
+    }
+}
+
+/* ─── Filter status header (window-title style) ─── */
+.sidebar-list-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--text-muted);
+    min-height: 24px;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Status dot */
+.list-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-really-muted);
+    flex-shrink: 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.list-indicator.active {
+    background: var(--accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent),
+                0 0 6px var(--accent);
+}
+
+/* Chip container */
+.list-filter-summary {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.list-filter-none {
+    color: var(--text-really-muted);
+    font-style: italic;
+    font-size: 10px;
+    letter-spacing: 0.2px;
+}
+
+/* Individual filter chip */
+.list-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    background: var(--accent);
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    flex-shrink: 0;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Different chip tints per filter kind */
+.list-filter-chip[data-kind="search"] {
+    background: var(--accent-alt);
+}
+.list-filter-chip[data-kind="tag"] {
+    background: var(--supporters-accent);
+    color: #1e1736;
+}
+.list-filter-chip[data-kind="date"] {
+    background: var(--bg-alt);
+}
+.list-filter-chip[data-kind="overflow"] {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0 5px;
+    font-weight: 600;
+}
+
+/* Count badge on the right */
+.list-count {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 1px 7px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    min-width: 26px;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Light theme — keep the strip readable but softer */
+html[data-theme="light"] .sidebar-list-header {
+    background: var(--bg-elevated);
+}
+html[data-theme="light"] .list-count {
+    background: var(--bg-panel);
+}
+
+/* Mobile: trim padding so it doesn't steal vertical space */
+@media (max-width: 768px) {
+    .sidebar-list-header {
+        padding: 3px 8px;
+        min-height: 22px;
+        font-size: 9px;
+    }
+    .list-filter-chip {
+        font-size: 8px;
+        padding: 1px 5px;
+    }
+    .list-count {
+        font-size: 9px;
+        padding: 1px 5px;
+        min-width: 22px;
+    }
 }
