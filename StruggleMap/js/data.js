@@ -2507,7 +2507,7 @@ const STRIKE_DATA = [
     },
     {
         id: 5023,
-        actionId: "amwu-south32-worsley-alumina-pty-ltd",
+        actionId: "Worsley-Alumina-Strike",
         title: "AMWU and South32 Worsley Alumina Pty Ltd - Protected Action Ballot",
         union: "AMWU",
         industry: "Mining",

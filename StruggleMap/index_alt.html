@@ -140,16 +140,16 @@ z" />
                     </div>
 
                     <div class="stats-bar" id="stats-bar">
-                        <div class="stat"><span class="number" id="stat-active">0</span><span
-                                class="label">Active</span></div>
-                        <div class="stat"><span class="number" id="stat-planned">0</span><span
-                                class="label">Planned</span></div>
-                        <div class="stat"><span class="number" id="stat-workers">0</span><span class="label">Workers
+                        <div class="stat"><div class="number" id="stat-active">0</div><div
+                                class="label">Active</div></div>
+                        <div class="stat"><div class="number" id="stat-planned">0</div><div
+                                class="label">Planned</div></div>
+                        <div class="stat"><div class="number" id="stat-workers">0</div><div class="label">Workers
                                 <div>Tracked</div>
-                            </span></div>
-                        <div class="stat"><span class="number" id="stat-total">0</span><span class="label">Total
+                            </div></div>
+                        <div class="stat"><div class="number" id="stat-total">0</div><div class="label">Total
                                 <div>Entries</div>
-                            </span></div>
+                            </div></div>
                     </div>
 
                 </div>
@@ -352,6 +352,10 @@ z" />
         <!-- Map Container -->
         <div id="map-container">
             <div id="map"></div>
+             <div class="map-title" aria-hidden="true">
+        <span>Struggle</span>
+        <span>Map</span>
+    </div>
             <button id="map-chrome-toggle" type="button" aria-controls="sidebar" aria-expanded="false"
                 title="Show filters and event list" aria-label="Open sidebar">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
