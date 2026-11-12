@@ -24,7 +24,7 @@ const STRIKE_DATA = [
     ],
     tags: ["education", "nteu", "act", "job security","ballot","FWC"]
 },
-{
+/* {
     id: 9107,
     actionId: "cfmeu-2026-1457",
     title: "CFMEU Members Authorise Industrial Action in FWC Ballot",
@@ -43,7 +43,8 @@ const STRIKE_DATA = [
         { name: "FWC – B2026/1457 Protected Action Ballot Report (CFMEU)", url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_20261457.pdf" }
     ],
     tags: ["construction", "cfmeu", "ballot","FWC"]
-},
+}, */ 
+/** Commented out until I can get more specific details about this entry  */
 {
     id: 9108,
     actionId: "tftu-kewco-2026",
@@ -212,7 +213,8 @@ const STRIKE_DATA = [
     ],
     sources: [
         { name: "TWU – Virgin workers ready to take strike action after private equity owners siphon billions and refuse to pay it forward", url: "https://www.twu.com.au/press/virgin-workers-ready-to-take-strike-action-after-private-equity-owners-siphon-billions-and-refuse-to-pay-it-forward/" },
-        { name: "FWC - B2026/1416 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Virgin)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261416.pdf" }
+        { name: "FWC - B2026/1416 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Virgin)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261416.pdf" },
+                { name: "KarryOn – Virgin Australia staff begin protected action Fri; 98% of cabin crew vote to take action", url: "https://karryon.com.au/" }
     ],
     tags: ["aviation", "twu", "virgin-australia","faaa"],
 },
