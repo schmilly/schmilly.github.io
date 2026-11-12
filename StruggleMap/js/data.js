@@ -3,6 +3,51 @@
 
 const STRIKE_DATA = [
     {
+    id: 9110,
+    actionId: "quantem-mua",
+    title: "Quantem Workers Authorise Vessel Loading Bans in UWU Ballot",
+    union: "UWU",
+    industry: "Maritime",
+    type: "ballotpass",
+    startDate: "2026-11-05",
+    endDate: "",
+    workers: 18,
+    adddate: "2026-11-12",
+    description: "UWU members at Quantem (Terminals Pty Ltd) have voted unanimously in favour of protected industrial action, with 17 of 18 eligible voters participating. The ballot authorised unlimited 4-hour bans on loading/unloading nominated vessels (100% yes), unlimited 24-hour vessel bans (100% yes), indefinite vessel bans (100% yes), and bans on loading/unloading nominated trucks and trucking lines (100% yes). This ballot relates to the ongoing dispute at Quantem's Coode Island Bulk Liquids facility, where MUA members have also been taking industrial action. <a href='#quantem-mua'>See existing entry for MUA action at Quantem</a>.",
+    locations: [
+        { city: "Port Melbourne", state: "VIC", lat: MELB["Quantem"][0], lng: MELB["Quantem"][1], name: "Quantem Coode Island Bulk Liquids Facility" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1466 PROTECTED ACTION BALLOT NOTICE OF RESULTS (UWU vs Quantem)", url: "https://www.fwc.gov.au/documents/ballot-results/uwu_20261466.pdf" },
+        { name: "The DCN – Strike at Coode Island as dispute escalates", url: "https://www.thedcn.com.au/news/strike-at-coode-island-as-dispute-escalates" }
+    ],
+    tags: ["maritime", "uwu", "victoria", "fuel"]
+},
+{
+    id: 9111,
+    actionId: "cleanaway-twu",
+    title: "Cleanaway Workers Authorise Industrial Action in Two TWU Ballots",
+    union: "TWU",
+    industry: "Waste",
+    type: "ballotpass",
+    startDate: "2026-11-05",
+    endDate: "",
+    workers: 142,
+    adddate: "2026-11-12",
+    description: "TWU members at Cleanaway Operations Pty Ltd have authorised protected industrial action in two separate ballots covering different agreements. In B2026/1452 (106 eligible voters, 91 participated), workers approved 1-hour stoppages (94.5% yes), 24-hour stoppages (97.8% yes), overtime bans (96.7% yes), and a range of other actions. In B2026/1453 (44 eligible voters, 36 participated), workers approved similar measures with 100% support for 1-hour and 24-hour stoppages. The ballots relate to the ongoing dispute at Cleanaway's Dandenong site, where workers have been fighting for a fair deal amid safety concerns following multiple worker deaths.",
+    locations: [
+        { city: "Dandenong", state: "VIC", lat: CITY_COORDS["Dandenong"][0], lng: CITY_COORDS["Dandenong"][1], name: "Cleanaway Dandenong" },
+        { city: "Melbourne", state: "VIC", lat: CITY_COORDS["Melbourne"][0], lng: CITY_COORDS["Melbourne"][1], name: "Cleanaway (various Victorian sites)" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1452 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Cleanaway)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261452.pdf" },
+        { name: "FWC – B2026/1453 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Cleanaway)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261453.pdf" },
+        { name: "On Notice – Cleanaway fails to exclude truck fatigue monitoring from TWU industrial action ballot", url: "https://onnotice.com.au/news/cleanaway-fails-to-exclude-fatigue-monitoring-from-ballot/" },
+        { name: "TWU – Waste workers at deadly waste company Cleanaway vote in favour of industrial action", url: "https://www.twu.com.au/" }
+    ],
+    tags: ["waste-management", "twu", "victoria", "safety"]
+},
+    {
     id: 9115,
     actionId: "jetstar-asu",
     title: "Jetstar Workers Vote Up New Enterprise Agreement",
