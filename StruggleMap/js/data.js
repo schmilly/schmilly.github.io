@@ -3,6 +3,27 @@
 
 const STRIKE_DATA = [
     {
+    id: 9115,
+    actionId: "jetstar-asu",
+    title: "Jetstar Workers Vote Up New Enterprise Agreement",
+    union: "ASU",
+    industry: "Aviation",
+    type: "resolved",
+    startDate: "2026-11-12",
+    endDate: "2026-11-12",
+    workers: 900,
+    adddate: "2026-11-12",
+    description: "A majority of Jetstar employees have voted to support the new     Jetstar/ASU Enterprise Agreement, concluding the bargaining campaign that started with action in September and a series of escalating work bans. The ASU said members at all ports broke through the Qantas Group's 'insidious 3% wages policy', delivering a 5% upfront increase with backpay, additional service-based increments, a cost-of-living payment, and improved shift penalties and overtime. Jetstar will seek FWC approval of the new agreement.",
+    locations: [
+        { city: "Melbourne", state: "VIC", lat: COMPANY["Jetstar"][0], lng: COMPANY["Jetstar"][1], name: "Jetstar HQ" },
+        ...AIRPORT_ARRAY
+    ],
+    sources: [
+        { name: "ASU Facebook – Jetstar agreement voted up", url: "https://www.facebook.com/story.php?story_fbid=1595741785903719&id=100064037379388&rdid=lHPpnsCsC4NcGJAG" },
+    ],
+    tags: ["aviation", "asu", "jetstar", "resolved", "wages"]
+},
+    {
     id: 9106,
     actionId: "nteu-anu-2026",
     title: "ANU Staff Vote for Industrial Action",
