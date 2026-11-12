@@ -14,7 +14,7 @@ const STRIKE_DATA = [
     workers: 133,
     actionId: "virgin-twu",
     adddate: "2026-11-12",
-    description: "Virgin Australia cabin crew have voted 98% in favour of protected industrial action, with Guest Services crew commencing action on Friday 13 and Monday 16 November. <a href='#virgin-asu'>With simultaneous action being taken by ASU organised gate staff</a>  now means both Gate staff and Cabin Crew are currently taking industrial action. Virgin Ground Crew will also be voting on taking action soon according to the TWU. The results of the simultaneous FAAA ballot on the matter is still yet to be released",
+    description: "Virgin Australia cabin crew have voted 98% in favour of protected industrial action, with Guest Services crew commencing action on Friday 13 and Monday 16 November. <a href='#virgin-asu'>Ongoing action by ASU gate staff </a> means both Virgin Gate staff and Cabin Crew are currently taking industrial action. Virgin Ground Crew will also be voting on taking action soon according to the TWU. The results of the simultaneous FAAA Cabin Crew ballot on the matter is still yet to be released",
     locations: [
         { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
         ...AIRPORT_ARRAY
