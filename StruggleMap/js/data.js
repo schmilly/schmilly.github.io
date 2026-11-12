@@ -1,208 +1,31 @@
-const RAFFWUBOOKSTORE_LOCATIONS = [
-    // ============================================
-    // HARRY HARTOG - NEW SOUTH WALES
-    // ============================================
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.891626,
-        lng: 151.250738,
-        name: "Harry Hartog Bondi Junction"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.7962,
-        lng: 151.1832,
-        name: "Harry Hartog Chatswood Chase"
-    },
-    {
-        city: "East Maitland",
-        state: "NSW",
-        lat: -32.7345,
-        lng: 151.5800,
-        name: "Harry Hartog Green Hills"
-    },
-    {
-        city: "Newcastle",
-        state: "NSW",
-        lat: -32.9420,
-        lng: 151.7050,
-        name: "Harry Hartog Kotara"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.7775,
-        lng: 151.1195,
-        name: "Harry Hartog Macquarie"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -34.035012,
-        lng: 151.100249,
-        name: "Harry Hartog Miranda"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.8280,
-        lng: 151.2440,
-        name: "Harry Hartog Mosman"
-    },
-    {
-        city: "Narellan",
-        state: "NSW",
-        lat: -34.0400,
-        lng: 150.7400,
-        name: "Harry Hartog Narellan"
-    },
-    {
-        city: "Penrith",
-        state: "NSW",
-        lat: -33.7510,
-        lng: 150.6940,
-        name: "Harry Hartog Penrith"
-    },
-    {
-        city: "Shellharbour",
-        state: "NSW",
-        lat: -34.5600,
-        lng: 150.8400,
-        name: "Harry Hartog Shellharbour"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.7620,
-        lng: 151.2490,
-        name: "Harry Hartog Warringah"
-    },
 
-    // ============================================
-    // BERKELOUW BOOKS - NEW SOUTH WALES
-    // ============================================
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.7960,
-        lng: 151.2540,
-        name: "Berkelouw Balgowlah"
-    },
-    {
-        city: "Berrima",
-        state: "NSW",
-        lat: -34.46915,
-        lng: 150.36089,
-        name: "Berkelouw Book Barn Berrima"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.7040,
-        lng: 151.0990,
-        name: "Berkelouw Hornsby"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.8830,
-        lng: 151.1570,
-        name: "Berkelouw Leichhardt"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.8840,
-        lng: 151.2230,
-        name: "Berkelouw Paddington"
-    },
-    {
-        city: "Sydney",
-        state: "NSW",
-        lat: -33.88266,
-        lng: 151.22014,
-        name: "Berkelouw Rose Bay"
-    }
-];
-
-const TWU_TRANSPORT_STRIKE_LOCATIONS = [
-
-    // ============================================
-    // FEDEX
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.9386, lng: 151.1853, name: "FedEx Sydney (Botany)" },
-    { city: "Melbourne", state: "VIC", lat: -37.6773, lng: 144.8400, name: "FedEx Melbourne (Melbourne Airport)" },
-    { city: "Brisbane", state: "QLD", lat: -27.4188, lng: 153.0893, name: "FedEx Brisbane (Brisbane Airport)" },
-    { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng: COMPANY["FedEx"]["PER"][1], name: "FedEx Perth (Welshpool)" },
-
-    // ============================================
-    // BORDEREXPRESS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.8507, lng: 150.9130, name: "BorderExpress Sydney (Wetherill Park)" },
-    { city: "Melbourne", state: "VIC", lat: -37.6990, lng: 144.8400, name: "BorderExpress Melbourne (Melbourne Airport)" },
-    { city: "Brisbane", state: "QLD", lat: -27.5900, lng: 153.0900, name: "BorderExpress Brisbane (Underwood)" },
-    { city: "Perth", state: "WA", lat: -31.9400, lng: 115.9600, name: "BorderExpress Perth (Perth Airport)" },
-
-    // ============================================
-    // K&S FREIGHTERS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.8500, lng: 151.0000, name: "K&S Freighters Sydney (Enfield)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8400, lng: 144.7300, name: "K&S Freighters/Chemtrans Melbourne (Truganina)" },
-    { city: "Brisbane", state: "QLD", lat: -27.5700, lng: 153.0300, name: "K&S Freighters/Chemtrans Brisbane (Coopers Plains)" },
-    { city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "K&S Freighters Perth (Kewdale), Goldstar Transport Perth (Kewdale)" },
-
-    // ============================================
-    // SCT LOGISTICS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.7900, lng: 150.8700, name: "SCT Logistics Sydney (Minchinbury)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8500, lng: 144.7900, name: "SCT Logistics Melbourne (Laverton North)" },
-    { city: "Brisbane", state: "QLD", lat: -27.7800, lng: 152.9900, name: "SCT Logistics Brisbane (Bromelton)" },
-    { city: "Perth", state: "WA", lat: -31.9900, lng: 115.9900, name: "SCT Logistics Perth (Forrestfield)" },
-
-    // ============================================
-    // PFD FOOD SERVICES
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.8900, lng: 151.0600, name: "PFD Food Services Sydney (Chullora)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8900, lng: 145.2500, name: "PFD Food Services Melbourne (Knoxfield)" },
-    { city: "Brisbane", state: "QLD", lat: -27.4100, lng: 153.1400, name: "PFD Food Services Brisbane (Lytton)" },
-    { city: "Perth", state: "WA", lat: -32.0900, lng: 115.8900, name: "PFD Food Services Perth (Jandakot)" },
-
-    // ============================================
-    // SADLIERS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.8900, lng: 151.0900, name: "Sadliers Sydney (Belfield)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8300, lng: 144.8800, name: "Sadliers Melbourne (Spotswood)" },
-    { city: "Brisbane", state: "QLD", lat: -27.4500, lng: 153.0600, name: "Sadliers Brisbane (Eagle Farm)" },
-    { city: "Perth", state: "WA", lat: -31.9700, lng: 115.9500, name: "Sadliers Perth (Kewdale)" },
-
-    // ============================================
-    // GOLDSTAR TRANSPORT
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.9100, lng: 150.9500, name: "Goldstar Transport Sydney (Depot)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8100, lng: 144.8000, name: "Goldstar Transport Melbourne (Depot)" },
-    { city: "Brisbane", state: "QLD", lat: -27.5000, lng: 153.0000, name: "Goldstar Transport Brisbane (Depot)" },
-    //{ city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "Goldstar Transport Perth (Kewdale)" },
-    //Entry is same as K&S so combined
-
-    // ============================================
-    // QUBE LOGISTICS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.9491, lng: 150.9223, name: "Qube Logistics Sydney (Moorebank)" },
-    { city: "Melbourne", state: "VIC", lat: -37.8100, lng: 144.9200, name: "Qube Logistics Melbourne (West Melbourne)" },
-    { city: "Brisbane", state: "QLD", lat: -27.3735, lng: 153.1500, name: "Qube Logistics Brisbane (Port of Brisbane)" },
-    { city: "Perth", state: "WA", lat: -32.0500, lng: 115.7500, name: "Qube Logistics Perth (Fremantle)" },
-
-    // ============================================
-    // K&S CHEMTRANS
-    // ============================================
-    { city: "Sydney", state: "NSW", lat: -33.9000, lng: 151.1000, name: "K&S ChemTrans Sydney (Botany)" },
-    { city: "Perth", state: "WA", lat: -31.8800, lng: 116.0000, name: "K&S ChemTrans Perth (Hazelmere)" }
-];
 
 
 const STRIKE_DATA = [
+{
+    id: 701204,
+    title: "Virgin Cabin Crew Workers Vote for Industrial Action",
+    union: "TWU",
+    type: "ballotpass",
+    industry: "Aviation",
+    state: "",
+    startDate: "2026-11-12",
+    endDate: "",
+    workers: 133,
+    actionId: "virgin-twu",
+    adddate: "2026-11-12",
+    description: "Virgin Australia cabin crew have voted 98% in favour of protected industrial action, with Guest Services crew commencing action on Friday 13 and Monday 16 November. <a href='#virgin-asu'>With simultaneous action being taken by ASU organised gate staff</a>  now means both Gate staff and Cabin Crew are currently taking industrial action. Virgin Ground Crew will also be voting on taking action soon according to the TWU. The results of the simultaneous FAAA ballot on the matter is still yet to be released",
+    locations: [
+        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
+        ...AIRPORT_ARRAY
+    ],
+    sources: [
+        { name: "TWU – Virgin workers ready to take strike action after private equity owners siphon billions and refuse to pay it forward", url: "https://www.twu.com.au/press/virgin-workers-ready-to-take-strike-action-after-private-equity-owners-siphon-billions-and-refuse-to-pay-it-forward/" },
+        { name: "FWC - B2026/1416 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Virgin)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261416.pdf" }
+    ],
+    tags: ["aviation", "twu", "virgin-australia"],
+    see_also: "test",
+},
     {
         id: 315,
         actionId: "unimelb-nteu",
@@ -9625,7 +9448,8 @@ const STRIKE_DATA = [
     state: "",
     description: "After a overwhelming 99.38% of ASU members at Virgin Australia voted in favour of industrial action; For the next week Virgin workers will wear union material and shoes “of their choosing” while leaving off some uniform items, as well as handing out flyers and talking to passengers in customer-facing areas about the reasons for the action. ",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
+        ...AIRPORT_ARRAY
     ],
     sources: [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" },
@@ -9648,7 +9472,8 @@ const STRIKE_DATA = [
     state: "",
     description: "TWU cabin crew at Virgin have applied for a protected action ballot.",
     locations: [
-        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }
+        { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
+        ...AIRPORT_ARRAY
     ],
     sources: [
         { name: "Disputes Report - 28 October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-28-october" }
@@ -9814,8 +9639,9 @@ const STRIKE_DATA = [
     workers: null,
     actionId: "virgin-asu",
     adddate: "2026-11-11",
-    description: "Virgin Australia staff represented by the ASU continued industrial action, withdrawing gate boarding services including priority boarding, refusing to accept baggage at gates, and waiving some sales-related fees amid stalled enterprise agreement negotiations. The union accuses Virgin of demanding a premium service on budget resources after years of cuts. <a href='https://struggle-map.schmilly.xyz/#virgin-twu'>Virgin cabin crew were also voting on protected industrial action over pay and conditions.</a>",
-    locations: [        { city: "Brisbane", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" }],
+    description: "Virgin Australia staff represented by the ASU continued industrial action, withdrawing gate boarding services including priority boarding, refusing to accept baggage at gates, and waiving some sales-related fees amid stalled enterprise agreement negotiations. The union accuses Virgin of demanding a premium service on budget resources after years of cuts. <a href='#virgin-twu'>Virgin cabin crew were also voting on protected industrial action over pay and conditions.</a>",
+    locations: [                { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
+        ...AIRPORT_ARRAY],
     sources: [
         {name: "HR Media - Virgin staff continue industrial action ", url: "https://www.hrleader.com.au/people/28890-virgin-staff-continue-industrial-action"}
     ],

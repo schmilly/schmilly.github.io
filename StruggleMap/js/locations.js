@@ -525,6 +525,7 @@ const SPCFC_COMP = {
     }
 }
 
+
 // Additional specific locations added for data.js
 const SPECIFIC = {
     WESTDOWN: { name: "Western Down Reigonal Council", state: "QLD", city: "Western Downs", lat: -27.1833, lng: 151.2667 },
@@ -690,6 +691,221 @@ const SPECIFIC = {
     "Darwin public hospitals": { city: "Darwin", state: "NT", lat: -12.4634, lng: 130.8456, name: "Darwin public hospitals" },
 };
 
+const AIRPORT_ARRAY = [
+    { city: "Sydney",    state: "NSW", lat: SYD["Airport"][0], lng: SYD["Airport"][1], name: "Sydney Airport" },
+    { city: "Melbourne", state: "VIC", lat: -37.6690, lng: 144.8410, name: "Melbourne Airport" },
+    { city: "Brisbane",  state: "QLD", lat: -27.3842, lng: 153.1175, name: "Brisbane Airport" },
+    { city: "Perth",     state: "WA",  lat: SPECIFIC["Perth Airport"].lat, lng: SPECIFIC["Perth Airport"].lng, name: "Perth Airport" },
+    { city: "Adelaide",  state: "SA",  lat: -34.9450, lng: 138.5306, name: "Adelaide Airport" },
+    { city: "Hobart",    state: "TAS", lat: -42.8361, lng: 147.5103, name: "Hobart Airport" },
+    { city: "Darwin",    state: "NT",  lat: -12.4147, lng: 130.8767, name: "Darwin Airport" },
+    { city: "Canberra",  state: "ACT", lat: -35.3069, lng: 149.1950, name: "Canberra Airport" }
+];
+
+
+const RAFFWUBOOKSTORE_LOCATIONS = [
+    // ============================================
+    // HARRY HARTOG - NEW SOUTH WALES
+    // ============================================
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.891626,
+        lng: 151.250738,
+        name: "Harry Hartog Bondi Junction"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.7962,
+        lng: 151.1832,
+        name: "Harry Hartog Chatswood Chase"
+    },
+    {
+        city: "East Maitland",
+        state: "NSW",
+        lat: -32.7345,
+        lng: 151.5800,
+        name: "Harry Hartog Green Hills"
+    },
+    {
+        city: "Newcastle",
+        state: "NSW",
+        lat: -32.9420,
+        lng: 151.7050,
+        name: "Harry Hartog Kotara"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.7775,
+        lng: 151.1195,
+        name: "Harry Hartog Macquarie"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -34.035012,
+        lng: 151.100249,
+        name: "Harry Hartog Miranda"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.8280,
+        lng: 151.2440,
+        name: "Harry Hartog Mosman"
+    },
+    {
+        city: "Narellan",
+        state: "NSW",
+        lat: -34.0400,
+        lng: 150.7400,
+        name: "Harry Hartog Narellan"
+    },
+    {
+        city: "Penrith",
+        state: "NSW",
+        lat: -33.7510,
+        lng: 150.6940,
+        name: "Harry Hartog Penrith"
+    },
+    {
+        city: "Shellharbour",
+        state: "NSW",
+        lat: -34.5600,
+        lng: 150.8400,
+        name: "Harry Hartog Shellharbour"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.7620,
+        lng: 151.2490,
+        name: "Harry Hartog Warringah"
+    },
+
+    // ============================================
+    // BERKELOUW BOOKS - NEW SOUTH WALES
+    // ============================================
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.7960,
+        lng: 151.2540,
+        name: "Berkelouw Balgowlah"
+    },
+    {
+        city: "Berrima",
+        state: "NSW",
+        lat: -34.46915,
+        lng: 150.36089,
+        name: "Berkelouw Book Barn Berrima"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.7040,
+        lng: 151.0990,
+        name: "Berkelouw Hornsby"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.8830,
+        lng: 151.1570,
+        name: "Berkelouw Leichhardt"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.8840,
+        lng: 151.2230,
+        name: "Berkelouw Paddington"
+    },
+    {
+        city: "Sydney",
+        state: "NSW",
+        lat: -33.88266,
+        lng: 151.22014,
+        name: "Berkelouw Rose Bay"
+    }
+];
+
+const TWU_TRANSPORT_STRIKE_LOCATIONS = [
+
+    // ============================================
+    // FEDEX
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.9386, lng: 151.1853, name: "FedEx Sydney (Botany)" },
+    { city: "Melbourne", state: "VIC", lat: -37.6773, lng: 144.8400, name: "FedEx Melbourne (Melbourne Airport)" },
+    { city: "Brisbane", state: "QLD", lat: -27.4188, lng: 153.0893, name: "FedEx Brisbane (Brisbane Airport)" },
+    { city: "Perth", state: "WA", lat: COMPANY["FedEx"]["PER"][0], lng: COMPANY["FedEx"]["PER"][1], name: "FedEx Perth (Welshpool)" },
+
+    // ============================================
+    // BORDEREXPRESS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.8507, lng: 150.9130, name: "BorderExpress Sydney (Wetherill Park)" },
+    { city: "Melbourne", state: "VIC", lat: -37.6990, lng: 144.8400, name: "BorderExpress Melbourne (Melbourne Airport)" },
+    { city: "Brisbane", state: "QLD", lat: -27.5900, lng: 153.0900, name: "BorderExpress Brisbane (Underwood)" },
+    { city: "Perth", state: "WA", lat: -31.9400, lng: 115.9600, name: "BorderExpress Perth (Perth Airport)" },
+
+    // ============================================
+    // K&S FREIGHTERS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.8500, lng: 151.0000, name: "K&S Freighters Sydney (Enfield)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8400, lng: 144.7300, name: "K&S Freighters/Chemtrans Melbourne (Truganina)" },
+    { city: "Brisbane", state: "QLD", lat: -27.5700, lng: 153.0300, name: "K&S Freighters/Chemtrans Brisbane (Coopers Plains)" },
+    { city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "K&S Freighters Perth (Kewdale), Goldstar Transport Perth (Kewdale)" },
+
+    // ============================================
+    // SCT LOGISTICS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.7900, lng: 150.8700, name: "SCT Logistics Sydney (Minchinbury)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8500, lng: 144.7900, name: "SCT Logistics Melbourne (Laverton North)" },
+    { city: "Brisbane", state: "QLD", lat: -27.7800, lng: 152.9900, name: "SCT Logistics Brisbane (Bromelton)" },
+    { city: "Perth", state: "WA", lat: -31.9900, lng: 115.9900, name: "SCT Logistics Perth (Forrestfield)" },
+
+    // ============================================
+    // PFD FOOD SERVICES
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.8900, lng: 151.0600, name: "PFD Food Services Sydney (Chullora)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8900, lng: 145.2500, name: "PFD Food Services Melbourne (Knoxfield)" },
+    { city: "Brisbane", state: "QLD", lat: -27.4100, lng: 153.1400, name: "PFD Food Services Brisbane (Lytton)" },
+    { city: "Perth", state: "WA", lat: -32.0900, lng: 115.8900, name: "PFD Food Services Perth (Jandakot)" },
+
+    // ============================================
+    // SADLIERS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.8900, lng: 151.0900, name: "Sadliers Sydney (Belfield)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8300, lng: 144.8800, name: "Sadliers Melbourne (Spotswood)" },
+    { city: "Brisbane", state: "QLD", lat: -27.4500, lng: 153.0600, name: "Sadliers Brisbane (Eagle Farm)" },
+    { city: "Perth", state: "WA", lat: -31.9700, lng: 115.9500, name: "Sadliers Perth (Kewdale)" },
+
+    // ============================================
+    // GOLDSTAR TRANSPORT
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.9100, lng: 150.9500, name: "Goldstar Transport Sydney (Depot)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8100, lng: 144.8000, name: "Goldstar Transport Melbourne (Depot)" },
+    { city: "Brisbane", state: "QLD", lat: -27.5000, lng: 153.0000, name: "Goldstar Transport Brisbane (Depot)" },
+    //{ city: "Perth", state: "WA", lat: -31.9800, lng: 115.9500, name: "Goldstar Transport Perth (Kewdale)" },
+    //Entry is same as K&S so combined
+
+    // ============================================
+    // QUBE LOGISTICS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.9491, lng: 150.9223, name: "Qube Logistics Sydney (Moorebank)" },
+    { city: "Melbourne", state: "VIC", lat: -37.8100, lng: 144.9200, name: "Qube Logistics Melbourne (West Melbourne)" },
+    { city: "Brisbane", state: "QLD", lat: -27.3735, lng: 153.1500, name: "Qube Logistics Brisbane (Port of Brisbane)" },
+    { city: "Perth", state: "WA", lat: -32.0500, lng: 115.7500, name: "Qube Logistics Perth (Fremantle)" },
+
+    // ============================================
+    // K&S CHEMTRANS
+    // ============================================
+    { city: "Sydney", state: "NSW", lat: -33.9000, lng: 151.1000, name: "K&S ChemTrans Sydney (Botany)" },
+    { city: "Perth", state: "WA", lat: -31.8800, lng: 116.0000, name: "K&S ChemTrans Perth (Hazelmere)" }
+];
+
 // Export globally
 window.CITY_COORDS = CITY_COORDS;
 window.VICLoc = VICLoc;
@@ -725,3 +941,6 @@ window.SPECIFIC = SPECIFIC;
   STRIKE_DATA,
   VICLoc, CANLoc, WALoc, ADL, LIB, SPECIFIC
 }); */
+
+
+
