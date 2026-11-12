@@ -2,6 +2,197 @@
 
 
 const STRIKE_DATA = [
+    {
+    id: 9106,
+    actionId: "nteu-anu-2026",
+    title: "ANU Staff Vote for Industrial Action",
+    union: "NTEU",
+    industry: "Education",
+    type: "ballotpass",
+    startDate: "2026-11-03",
+    endDate: "",
+    workers: 996,
+    adddate: "2026-11-12",
+    description: "NTEU members at the Australian National University have voted in favour of protected industrial action, with 770 of 996 eligible voters participating. The ballot authorised stoppages of up to 24 hours (96.5% yes), indefinite stoppages (79.9% yes), bans on attending campus (80.3% yes), and bans on performing duties outside position descriptions (93.4% yes). The ANU did not oppose the ballot order. Workers are fighting for job security and against forced redundancies, with the NTEU scoring a major victory when ANU announced no forced redundancies.",
+    locations: [
+        { city: "Canberra", state: "ACT", lat: UNI.ANU[0], lng: UNI.ANU[1], name: "Australian National University" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1444 Protected Action Ballot Report (NTEU vs ANU)", url: "https://www.fwc.gov.au/documents/ballot-results/nteu_20261444.pdf" },
+        { name: "On Notice – ANU staff to vote on industrial action by 3 November after NTEU wins ballot order", url: "https://onnotice.com.au/news/anu-staff-to-vote-on-industrial-action/" },
+        { name: "NTEU ACT (@NTEUACT) – Members have unanimously endorsed a vote to enable strike action at ANU", url: "https://x.com/NTEUACT" }
+    ],
+    tags: ["education", "nteu", "act", "job security","ballot","FWC"]
+},
+{
+    id: 9107,
+    actionId: "cfmeu-2026-1457",
+    title: "CFMEU Members Authorise Industrial Action in FWC Ballot",
+    union: "CFMEU",
+    industry: "Construction",
+    type: "ballotpass",
+    startDate: "2026-11-03",
+    endDate: "",
+    workers: 51,
+    adddate: "2026-11-12",
+    description: "CFMEU members have overwhelmingly authorised protected industrial action, with 50 of 51 eligible voters participating. The ballot approved an unlimited number of stoppages between 30 minutes and 24 hours (96% yes), indefinite strikes (96% yes), indefinite or periodic bans on overtime (96% yes), and indefinite or periodic partial work bans (96% yes). The specific employer covered by this ballot was not detailed in the notice of results.",
+    locations: [
+        SPECIFIC["CFMEU Unknown Ballot"]
+    ],
+    sources: [
+        { name: "FWC – B2026/1457 Protected Action Ballot Report (CFMEU)", url: "https://www.fwc.gov.au/documents/ballot-results/cfmeu_20261457.pdf" }
+    ],
+    tags: ["construction", "cfmeu", "ballot","FWC"]
+},
+{
+    id: 9108,
+    actionId: "tftu-kewco-2026",
+    title: "Workers at Kewco Products Vote for Industrial Action",
+    union: "TFTU",
+    industry: "Manufacturing",
+    type: "ballotpass",
+    startDate: "2026-11-04",
+    endDate: "",
+    workers: 5,
+    adddate: "2026-11-12",
+    description: "TFTU members at Kewco Products Pty Ltd have voted in favour of protected industrial action, though the ballot did not achieve the requisite 50% participation threshold. Two of five eligible voters returned postal votes. The ballot authorised an unlimited number of stoppages of up to 24 hours, indefinite or periodic bans on overtime, dispatch work, housekeeping, and a range of other duties. Kewco Products is a South Australian family-owned manufacturer of shower screens, mirrors, and bathroom accessories established in 1954.",
+    locations: [
+        { city: "Hove", state: "SA", lat: COMPANY["Kewco Products"][0], lng: COMPANY["Kewco Products"][1], name: "Kewco Products Pty Ltd" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1259 Declaration of Results (TFTU vs Kewco Products)", url: "https://www.fwc.gov.au/documents/ballot-results/tftu_20261259.pdf" }
+    ],
+    tags: ["manufacturing", "tftu", "south-australia", "ballot","FWC"]
+},
+{
+    id: 9109,
+    actionId: "amwu-asahi-2026",
+    title: "Asahi Beverages Workers Unanimously Vote for Industrial Action",
+    union: "AMWU",
+    industry: "Manufacturing",
+    type: "ballotpass",
+    startDate: "2026-11-04",
+    endDate: "",
+    workers: 42,
+    adddate: "2026-11-12",
+    description: "AMWU members at Asahi Beverages Pty Ltd have voted overwhelmingly in favour of protected industrial action, with 34 of 42 eligible voters participating. All 34 voters approved 1-hour stoppages (100% yes) and 24-hour stoppages (100% yes), while 97.1% approved bans on overtime. The FWC granted the ballot order on the papers after Asahi effectively did not object. Workers are bargaining for a new enterprise agreement.",
+    locations: [
+        { city: "Southbank", state: "VIC", lat: COMPANY["Asahi Beverages"][0], lng: COMPANY["Asahi Beverages"][1], name: "Asahi Beverages (national HQ, site not specified in ballot)" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1471 Declaration of Result (AMWU vs Asahi Beverages)", url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261471.pdf" },
+        { name: "On Notice – Asahi Beverages workers to vote on industrial action by 4 November after AMWU wins ballot order", url: "https://onnotice.com.au/news/asahi-beverages-workers-to-vote-on-industrial-action/" }
+    ],
+    tags: ["manufacturing", "amwu", "beverages", "ballot","FWC"]
+},
+{
+    id: 9112,
+    actionId: "apesma-kogan-creek-2026",
+    title: "Kogan Creek Power Station Workers Vote for Industrial Action",
+    union: "APESMA / Professionals Australia",
+    industry: "Energy",
+    type: "ballotpass",
+    startDate: "2026-11-05",
+    endDate: "",
+    workers: 7,
+    adddate: "2026-11-12",
+    description: "APESMA members at Kogan Creek Power Pty Ltd (CS Energy) have authorised an extensive suite of protected industrial action measures. All 7 eligible voters participated, approving 32 separate questions covering stoppages of up to 24 hours (100% yes), indefinite stoppages (100% yes), bans on confined space work (100% yes), bans on working at heights (100% yes), bans on issuing permits (100% yes), and bans on exceeding various megawatt output thresholds including a ban on exceeding 0 MW (6 of 7 voted yes). This is a significant escalation in the bargaining dispute at the state-owned power station.",
+    locations: [
+        { city: "Brigalow", state: "QLD", lat: POWER["Kogan Creek"][0], lng: POWER["Kogan Creek"][1], name: "Kogan Creek Power Station" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1473 PROTECTED ACTION BALLOT NOTICE OF RESULTS (APESMA vs Kogan Creek Power)", url: "https://www.fwc.gov.au/documents/ballot-results/apesma_20261473.pdf" },
+        { name: "Energy News Bulletin – Kogan Creek power station workers to vote on protected action", url: "https://www.energynewsbulletin.net/" }
+    ],
+    tags: ["energy", "professionals-australia", "queensland", "power station", "ballot","FWC"]
+},
+{
+    id: 9113,
+    actionId: "amwu-bureau-veritas-2026",
+    title: "Bureau Veritas Minerals Workers Unanimously Vote for Industrial Action",
+    union: "AMWU",
+    industry: "Mining Services",
+    type: "ballotpass",
+    startDate: "2026-11-06",
+    endDate: "",
+    workers: 45,
+    adddate: "2026-11-12",
+    description: "AMWU members at Bureau Veritas Minerals Pty Ltd have voted unanimously in favour of protected industrial action, with 29 of 45 eligible voters participating. All 29 voters approved stop work meetings of up to 8 hours (100% yes), stoppages between 30 minutes and 24 hours (100% yes), stoppages up to 7 days (100% yes), and bans on overtime and call-outs (100% yes). Workers are bargaining for a new enterprise agreement.",
+    locations: [
+        { city: "Perth", state: "WA", lat: COMPANY["Bureau Veritas"]["WA"][0], lng: COMPANY["Bureau Veritas"]["WA"][1], name: "Bureau Veritas Minerals (Canning Vale)" }
+    ],
+    sources: [
+        { name: "FWC – B2026/1479 PROTECTED ACTION BALLOT NOTICE OF RESULTS (AMWU vs Bureau Veritas Minerals)", url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261479.pdf" }
+    ],
+    tags: ["mining-services", "amwu", "laboratory", "ballot","FWC"]
+},
+{
+    id: 9114,
+    actionId: "amwu-gadaleta-2026",
+    title: "Gadaleta Steel Fabrication Workers Vote for Industrial Action",
+    union: "AMWU",
+    industry: "Manufacturing",
+    type: "ballotpass",
+    startDate: "2026-11-09",
+    endDate: "",
+    workers: 7,
+    adddate: "2026-11-12",
+    description: "AMWU members at Gadaleta Steel Fabrication Pty Ltd have voted on protected industrial action, with a mixed result. Four of seven eligible voters participated. Questions 1-6 were approved with 3 yes and 1 no vote, authorising stop work meetings of up to 4 hours, stoppages of up to 48 hours, bans on work outside ordinary hours, bans on staff relief, and bans on non-planned work. Question 7 (bans on filling in dockets) resulted in a tied vote of 2 yes and 2 no. Gadaleta Steel Fabrication is a South Australian heavy steel fabrication company based in Whyalla and Port Pirie.",
+    locations: [
+        SPECIFIC["Gadaleta Steel Fabrication Whyalla"],
+        SPECIFIC["Gadaleta Steel Fabrication Port Pirie"]
+    ],
+    sources: [
+        { name: "FWC – B2026/1303 Declaration of Results (AMWU vs Gadaleta Steel Fabrication)", url: "https://www.fwc.gov.au/documents/ballot-results/amwu_20261303.pdf" }
+    ],
+    tags: ["manufacturing", "amwu", "south-australia", "steel", "ballot","FWC"]
+},
+    {
+    id: 8711,
+    actionId: "certis-twu",
+    title: "Sydney Airport Security Workers Strike Again",
+    union: "UWU / TWU",
+    industry: "Aviation",
+    type: "stoppage",
+    startDate: "2026-10-30",
+    endDate: "2026-10-30",
+    adddate: "2026-11-12",
+    workers: 400,
+    state: "NSW",
+    description: "Hundreds of Certis security screening staff at Sydney Airport walked off the job for two stoppages on Friday 30 October, timed for the morning and afternoon travel peaks, after United Workers Union members rejected the company’s latest pay ofer. The stoppages disrupted baggage checks, body scanning, security checkpoints and general security monitoring across the domestic and international terminals. The union is seeking job security protections against AI and automation, an overhaul of the rostering system, a pay rise, and an “Airport Standard” setting minimum pay and conditions for all airport security workers  The dispute follows earlier industrial action at the airport: TWU-led stoppages in September 2026, in which around 400 security staff walked off the job for two hours",
+    locations: [
+            { city: "Sydney", state: "NSW", lat: SYD["Airport"][0], lng: SYD["Airport"][1], name: "Sydney Airport" }
+    ],
+    sources: [
+        {
+            name: "On Notice – Sydney Airport security workers to strike over pay, rosters and AI job security in Certis dispute",            url: "https://onnotice.com.au/news/sydney-airport-security-workers-to-strike-in-certis-dispute/"        },        {
+            name: "TWU – SYDNEY AIRPORT MUST STEP IN: SECURITY WORKERS TAKE FURTHER STRIKE ACTION FOR JOB SECURITY",            url: "https://www.twu.com.au/press/sydney-airport-must-step-in-security-workers-take-further-strike-action-for-job-security/"        },        {
+            name: "The Chronicle – ‘Outrageous’: Airport workers’ ‘frightening’ step",            url: "https://www.thechronicle.com.au/news/breaking-news/security-workers-protest-job-conditions-at-sydney-airport-causing-significant-delays/news-story/691d09c1c836a9abad61781e727e51b2"        },        {
+            name: "UWU – Sydney Airport workers strike, disruptions likely",            url: "https://unitedworkers.org.au/sydney-airport-workers-strike-disruptions-likely/"        }
+    ],
+    tags: [        "labour union",        "aviation",        "certis",        "uwu",        "twu",        "job security",        "AI",        "rostering"    ]
+},
+    {
+    id: 6038,
+    actionId: "aemo-professionals-australia-october-2026",
+    title: "AEMO Escalates Industrial Action as Pay Talks Turn Nasty",
+    Union: "PA",
+    industry: "Energy",
+    type: "stoppage",
+    startDate: "2026-10-30",
+    endDate: "",
+    workers: 100,
+    state: "VIC",
+    adddate: "2026-11-12",
+    description: "Specialised workers at the Australian Energy Market Operator (AEMO) have escalated industrial action after three rejected enterprise agreement offers. Control room staff managing sensitive market operations have voted for indefinite bans on assessing and approving non-critical planned outages, refused to attend daily meetings, and paused non-urgent responses to queries from generators and high-voltage line operators. In response, AEMO sought an order suspending the action, arguing the work stoppages could cause 'catastrophic' risks leading to blackouts and endangering lives. The Fair Work Commission agreed to a limited suspension of some actions. Professionals Australia is pushing for pay rises of 4.2% this financial year and next, with a floor linked to inflation; AEMO has capped its offer at 4.2% per year. The union has referred a bargaining application to the FWC for arbitration. More than 100 staff recently backed a suggestion that AEMO boss Daniel Westerman consider resigning, citing executive bonuses amid what staff called a 'substandard offer'. AEMO removed back pay dated to the beginning of July after the most recent rejection, which the union claimed was done as 'punishment'.",
+    locations: [
+        SPECIFIC["AEMO"]
+    ],
+    sources: [
+        { name: "ABC News – Claims of 'catastrophic' risks as AEMO pay talks short circuit", url: "https://www.abc.net.au/news/2026-10-30/claims-of-catastrophic-risks-as-aemo-pay-talks-turn-nasty/107290274" }
+    ],
+    tags: ["labour union", "energy", "industrial action", "AEMO", "Professionals Australia", "Fair Work Commission"]
+},
 {
     id: 701204,
     title: "Virgin Cabin Crew Workers Vote for Industrial Action",
@@ -14,7 +205,7 @@ const STRIKE_DATA = [
     workers: 133,
     actionId: "virgin-twu",
     adddate: "2026-11-12",
-    description: "Virgin Australia cabin crew have voted 98% in favour of protected industrial action, with Guest Services crew commencing action on Friday 13 and Monday 16 November. <a href='#virgin-asu'>Ongoing action by ASU gate staff </a> means both Virgin Gate staff and Cabin Crew are currently taking industrial action. Virgin Ground Crew will also be voting on taking action soon according to the TWU. The results of the simultaneous FAAA Cabin Crew ballot on the matter is still yet to be released",
+    description: "Virgin Australia cabin crew have voted 98% in favour of protected industrial action, with Guest Services crew commencing action on Friday 13 and Monday 16 November. <a href='#virgin-asu'>Ongoing action by ASU gate staff </a> means both Virgin Gate staff and Cabin Crew are currently taking industrial action. Virgin Ground Crew will also be voting on taking action soon according to the TWU. The results of a simultaneous FAAA organised Cabin Crew action ballot is still proceeding, with the ballot to close on the 19th of November",
     locations: [
         { city: "Brisbane", state: "QLD", lat: COMPANY.Virgin[0], lng: COMPANY.Virgin[1], name: "Virgin Australia National HQ" },
         ...AIRPORT_ARRAY
@@ -23,8 +214,7 @@ const STRIKE_DATA = [
         { name: "TWU – Virgin workers ready to take strike action after private equity owners siphon billions and refuse to pay it forward", url: "https://www.twu.com.au/press/virgin-workers-ready-to-take-strike-action-after-private-equity-owners-siphon-billions-and-refuse-to-pay-it-forward/" },
         { name: "FWC - B2026/1416 PROTECTED ACTION BALLOT NOTICE OF RESULTS (TWU vs Virgin)", url: "https://www.fwc.gov.au/documents/ballot-results/twu_20261416.pdf" }
     ],
-    tags: ["aviation", "twu", "virgin-australia"],
-    see_also: "test",
+    tags: ["aviation", "twu", "virgin-australia","faaa"],
 },
     {
         id: 315,
@@ -533,7 +723,7 @@ const STRIKE_DATA = [
         id: 103,
         actionId: "act-forensic-scientists",
         title: "ACT Forensic Scientists First Strike",
-        union: "Professionals Australia",
+        Union: "PA",
         industry: "Public Sector",
         type: "stoppage",
         startDate: "2026-07-29",
@@ -1720,7 +1910,8 @@ const STRIKE_DATA = [
         workers: 900,
         description: "82% turnout, 99% yes vote for action. No dates announced yet.",
         locations: [
-            { city: "Melbourne", lat: COMPANY["Jetstar"][0], lng: COMPANY["Jetstar"][1], name: "Jetstar HQ" }
+            { city: "Melbourne", lat: COMPANY["Jetstar"][0], lng: COMPANY["Jetstar"][1], name: "Jetstar HQ" },
+            ...AIRPORT_ARRAY
         ],
         sources: [
             { name: "Disputes Report - 9th of September", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-9-september" },
@@ -3351,7 +3542,7 @@ const STRIKE_DATA = [
         id: 8106,
         actionId: "act-public-sector",
         title: "ACT Public Sector Professionals Commence Indefinite Action",
-        union: "Professionals Australia",
+        Union: "PA",
         industry: "Public Sector",
         type: "strike",
         startDate: "2026-06-29",
@@ -5483,7 +5674,7 @@ const STRIKE_DATA = [
         id: 8713,
         actionId: "sydney-water-professionals-australia",
         title: "Sydney Water Workers Endorse Protected Action Ballot",
-        union: "Professionals Australia",
+        Union: "PA",
         industry: "Utilities",
         type: "ballotpass",
         startDate: "2026-09-23",
@@ -5502,7 +5693,7 @@ const STRIKE_DATA = [
         id: 8714,
         actionId: "aemo-professionals-australia-october-2026",
         title: "AEMO Workers Vote in Favour of Industrial Action",
-        union: "Professionals Australia",
+        Union: "PA",
         industry: "Energy",
         type: "ballotpass",
         startDate: "2026-09-23",
@@ -8030,7 +8221,7 @@ const STRIKE_DATA = [
         id: 30004,
         actionId: "professionals-australia-sa-health-2025",
         title: "SA Medical Physicists and Radio Pharmaceutical Scientists Strike",
-        union: "Professionals Australia",
+        Union: "PA",
         industry: "Healthcare",
         type: "strike",
         startDate: "2025-06-10",
@@ -8776,7 +8967,7 @@ const STRIKE_DATA = [
     id: 6021,
     actionId: "qantas-engineers-professionals-australia-october-2026",
     title: "Qantas Engineers Escalate Industrial Action",
-    union: "Professionals Australia",
+    Union: "PA",
     industry: "Aviation",
     type: "stoppage",
     startDate: "2026-10-12",
@@ -8862,7 +9053,7 @@ const STRIKE_DATA = [
 {
     adddate: "2026-10-15",
     id: 6025,
-    actionId: "usyd-nteu-october-2026",
+    actionId: "usyd-nteu",
     title: "University of Sydney NTEU Members Plan 24-Hour Strike",
     union: "NTEU",
     industry: "Education",
@@ -8905,7 +9096,7 @@ const STRIKE_DATA = [
 {
     adddate: "2026-10-15",
     id: 6027,
-    actionId: "jetstar-asu-october-2026",
+    actionId: "jetstar-asu",
     title: "Jetstar Makes Improved Offer as Industrial Action Is Paused",
     union: "ASU",
     industry: "Aviation",
@@ -8915,7 +9106,8 @@ const STRIKE_DATA = [
     workers: null,
     description: "Following escalating industrial action over two major weekends, Jetstar made an improved offer to ASU members. The offer includes a 5% pay increase in the first year, backdated to 1 October, followed by 3% annual increases; service increments after three, five and seven years; increased staffing; and improvements to allowances, health and wellbeing. Members were scheduled to discuss the offer on 12 and 13 October and vote on whether to accept it. All industrial action has been paused while members consider the proposal.",
     locations: [
-        { city: "Melbourne", state: "VIC", lat: COMPANY.Jetstar[0], lng: COMPANY.Jetstar[1], name: "Jetstar operations" }
+        { city: "Melbourne", state: "VIC", lat: COMPANY.Jetstar[0], lng: COMPANY.Jetstar[1], name: "Jetstar operations" },
+        ...AIRPORT_ARRAY
     ],
     sources: [
         { name: "Disputes Report - 14th October 2026", url: "https://disputesreport.substack.com/p/industrial-disputes-and-news-14-october" }
@@ -8948,7 +9140,7 @@ const STRIKE_DATA = [
     id: 6029,
     actionId: "aemo-professionals-australia-october-2026",
     title: "AEMO Workers Introduce Indefinite Bans on Non-Critical Work",
-    union: "Professionals Australia",
+    Union: "PA",
     industry: "Energy",
     type: "stoppage",
     startDate: "2026-10-13",

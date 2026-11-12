@@ -145,7 +145,12 @@ const COMPANY = {
     },
     "St John":{
         "WA": [-31.945074720566403, 115.92115051154337]
-    }
+    },
+    "Bureau Veritas": {
+    "WA": [-32.0745, 115.9275] // Canning Vale minerals lab
+},
+"Asahi Beverages": [-37.8225, 144.9645], // Southbank VIC HQ
+"Kewco Products": [-34.9997, 138.5200],  // Hove SA
 }
 
 const ADL = {
@@ -261,7 +266,8 @@ const UNI = {
     "Griffith": [-27.5531, 153.0510],
     "QLD Uni Tech": [-27.4779, 153.0274],
     "MELB": [-37.79840685767232, 144.96095388740878],
-    "TAS": [-42.880384430852374, 147.32736605510502]
+    "TAS": [-42.880384430852374, 147.32736605510502],
+    "ANU": [-35.2809, 149.1175], 
 }
 
 const POWER = { //Power plants
@@ -269,6 +275,7 @@ const POWER = { //Power plants
     "Barron Gorge":[-16.8513, 145.6468],
     "Loy Yang":[-38.2509684682121, 146.5776162036045],
     "Gladstone": [-23.84852306388098, 151.21830310883442],
+    "Kogan Creek": [-26.9167, 150.7333], 
 }
 
 const HOSP = {
@@ -528,6 +535,21 @@ const SPCFC_COMP = {
 
 // Additional specific locations added for data.js
 const SPECIFIC = {
+    "Gadaleta Steel Fabrication Whyalla": {
+    city: "Whyalla Norrie", state: "SA",
+    lat: -33.029615, lng: 137.539543,
+    name: "Gadaleta Steel Fabrication, 25 Jacobs Street, Whyalla Norrie SA 5608"
+},
+"Gadaleta Steel Fabrication Port Pirie": {
+    city: "Port Pirie", state: "SA",
+    lat: -33.185833, lng: 138.016944,
+    name: "Gadaleta Steel Fabrication, 12 Wattle Street, Port Pirie SA 5540"
+},
+"CFMEU Unknown Ballot": {
+    city: "Unknown", state: "",
+    lat: -25.5, lng: 134.0,
+    name: "CFMEU Ballot B2026/1457 (employer not specified)"
+},
     WESTDOWN: { name: "Western Down Reigonal Council", state: "QLD", city: "Western Downs", lat: -27.1833, lng: 151.2667 },
     "SA Pathaology": { city: "Adelaide", state: "SA", lat: SA["SA Pathology"][0], lng: SA["SA Pathology"][1], name: "SA Pathology" },
     // VIC

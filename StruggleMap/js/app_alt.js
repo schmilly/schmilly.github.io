@@ -1103,7 +1103,7 @@ ${latest.tags ? latest.tags.map(t => {
                 <div style="margin-bottom: 12px;">
                 <div style="font-weight: 700; color:var(--text-heading); font-size: 13px;">${escapeHtml(entry.title)}</div>
                 <div style="font-size: 11px; color:var(--text-heading);">Union: ${escapeHtml(entry.union || 'Unknown')} · ${formatDate(entry.startDate)}</div>
-                <div style="font-size: 12px; color:var(--text-quaternary); margin-top: 4px;">${escapeHtml(entry.description)}</div>
+                <div style="font-size: 12px; color:var(--text-quaternary); margin-top: 4px;">${entry.description}</div>
                 ${entry.sources && entry.sources.length > 0 ? `
                     <div style="font-size: 11px; margin-top: 4px; color: var(--accent-alt);">
                     ${entry.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener noreferrer" class="source-link" style="font-size:11px;">${src.name || src.url}</a>`).join(' · ')}
