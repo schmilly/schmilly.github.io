@@ -535,6 +535,11 @@ const SPCFC_COMP = {
 
 // Additional specific locations added for data.js
 const SPECIFIC = {
+    "Metcash Crestmead DC": {
+    city: "Crestmead", state: "QLD",
+    lat: -27.6865, lng: 153.0711,
+    name: "Metcash Crestmead Distribution Centre, Crestmead"
+},
     "Gadaleta Steel Fabrication Whyalla": {
     city: "Whyalla Norrie", state: "SA",
     lat: -33.029615, lng: 137.539543,

@@ -38,9 +38,6 @@
 
             <header class="page-head">
                 <h1 class="page-title"><span class="accent">About</span></h1>
-                <p class="page-lede">
-                    What is Struggle Map?
-                </p>
             </header>
 
             <!-- ═══════════ FAQ ═══════════ -->
@@ -103,6 +100,215 @@
                 <p class="quote">
                     Get in touch with me at <a href="mailto:schmilly@proton.me">schmilly@proton.me</a> if you have any thoughts, queries or questions.
                 </p>
+            </div>
+
+            <!-- ═══════════ Classification guide ═══════════ -->
+            <div class="section-head" style="margin-top: 40px;">
+                <h2>Action classification</h2>
+            </div>
+
+            <div class="card flowchart-card" style="padding-bottom: 20px;">
+                <h3 style="margin-bottom: 12px;">How entries are typed</h3>
+                <p class="quote" style="margin-bottom: 16px;">
+                    Every entry in the dataset has a <code>type</code> field that describes the main form of action. The chart below routes a new entry through seven questions into one of 13 possible types.
+                </p>
+
+                <div class="flowchart-wrap">
+                    <!-- ═══════════ FLOWCHART SVG ═══════════ -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1650" class="flowchart" role="img" aria-labelledby="fc-title fc-desc">
+                        <title id="fc-title">Flow Chart for Categorisation of Actions</title>
+                        <desc id="fc-desc">A decision tree classifying industrial actions into 13 categories.</desc>
+                        
+                        <style>
+                            .fc-text { font-family: 'DejaVu Sans', Verdana, sans-serif; }
+                            .fc-title { font-size: 26px; font-weight: bold; fill: #6b46c1; text-anchor: middle; }
+                            .fc-qbox { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5; }
+                            .fc-qtext { font-size: 14px; fill: #1e293b; text-anchor: middle; }
+                            .fc-obox { fill: #f0fdf4; stroke: #22c55e; stroke-width: 1.5; }
+                            .fc-otitle { font-size: 15px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+                            .fc-odesc { font-size: 13px; fill: #334155; text-anchor: middle; }
+                            .fc-note-box { fill: #fefce8; stroke: #ca8a04; stroke-width: 1; }
+                            .fc-note-text { font-size: 12px; fill: #451a03; }
+                            
+                            .fc-arrow-yes { stroke: #22c55e; stroke-width: 2; fill: none; marker-end: url(#fc-marker-yes); }
+                            .fc-arrow-no { stroke: #ef4444; stroke-width: 2; fill: none; marker-end: url(#fc-marker-no); }
+                            .fc-arrow-grey { stroke: #9ca3af; stroke-width: 2; fill: none; marker-end: url(#fc-marker-grey); }
+                            
+                            .fc-label-yes { font-size: 14px; font-weight: bold; fill: #22c55e; }
+                            .fc-label-no { font-size: 14px; font-weight: bold; fill: #ef4444; }
+                        </style>
+
+                        <defs>
+                            <marker id="fc-marker-yes" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#22c55e" />
+                            </marker>
+                            <marker id="fc-marker-no" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+                            </marker>
+                            <marker id="fc-marker-grey" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ca3af" />
+                            </marker>
+                        </defs>
+
+                        <!-- Title -->
+                        <text class="fc-text fc-title" x="620" y="50">Flow Chart for Categorisation of Actions</text>
+
+                        <!-- ═══════════ QUESTION BOXES ═══════════ -->
+                        <!-- Q1 -->
+                        <rect class="fc-qbox" x="100" y="100" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="135">Q1. Has the Struggle/dispute concluded</text>
+                        <text class="fc-text fc-qtext" x="380" y="155">(agreement endorsed / all action lifted)?</text>
+
+                        <!-- Q2 -->
+                        <rect class="fc-qbox" x="100" y="280" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="305">Q2. Does the entry only add information to an existing</text>
+                        <text class="fc-text fc-qtext" x="380" y="325">dispute, and doesn't include information on a new action</text>
+                        <text class="fc-text fc-qtext" x="380" y="345">(no new action or outcome described)?</text>
+
+                        <!-- Q3 -->
+                        <rect class="fc-qbox" x="100" y="460" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="505">Q3. Is the entry about a protected action ballot?</text>
+
+                        <!-- Q4 -->
+                        <rect class="fc-qbox" x="100" y="700" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="745">Q4. Is this an employer-side action?</text>
+
+                        <!-- Q5 -->
+                        <rect class="fc-qbox" x="100" y="880" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="910">Q5. Is this a rally / protest / march where participants</text>
+                        <text class="fc-text fc-qtext" x="380" y="930">are NOT withdrawing labour (workers still working)?</text>
+
+                        <!-- Q6 -->
+                        <rect class="fc-qbox" x="100" y="1060" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="1090">Q6. Has the industrial action been planned publicly,</text>
+                        <text class="fc-text fc-qtext" x="380" y="1110">but the specifics haven't been announced yet?</text>
+
+                        <!-- Q7 -->
+                        <rect class="fc-qbox" x="100" y="1240" width="560" height="80" rx="4" />
+                        <text class="fc-text fc-qtext" x="380" y="1285">Q7. What form is the industrial action taking?</text>
+
+                        <!-- ═══════════ OUTCOME BOXES ═══════════ -->
+                        <!-- resolved -->
+                        <rect class="fc-obox" x="720" y="100" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="135">resolved</text>
+                        <text class="fc-text fc-odesc" x="930" y="155">Agreement endorsed / all action lifted</text>
+
+                        <!-- update -->
+                        <rect class="fc-obox" x="720" y="280" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="315">update</text>
+                        <text class="fc-text fc-odesc" x="930" y="335">Context only — no new action or outcome</text>
+
+                        <!-- ballot -->
+                        <rect class="fc-obox" x="720" y="390" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="425">ballot</text>
+                        <text class="fc-text fc-odesc" x="930" y="445">Announced or underway — no result yet</text>
+
+                        <!-- ballotpass -->
+                        <rect class="fc-obox" x="720" y="480" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="515">ballotpass</text>
+                        <text class="fc-text fc-odesc" x="930" y="535">Majority YES — or union sought authorisation</text>
+
+                        <!-- ballotfail -->
+                        <rect class="fc-obox" x="720" y="570" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="605">ballotfail</text>
+                        <text class="fc-text fc-odesc" x="930" y="625">Majority NO / tie / &lt;50% — or union did not seek it</text>
+
+                        <!-- lockout -->
+                        <rect class="fc-obox" x="720" y="700" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="735">lockout</text>
+                        <text class="fc-text fc-odesc" x="930" y="755">Employer refuses work / locks workers out</text>
+
+                        <!-- scab -->
+                        <rect class="fc-obox" x="720" y="790" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="825">scab</text>
+                        <text class="fc-text fc-odesc" x="930" y="845">Replacement / scab labour brought in</text>
+
+                        <!-- protest -->
+                        <rect class="fc-obox" x="720" y="880" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="915">protest</text>
+                        <text class="fc-text fc-odesc" x="930" y="935">Rally / march — no labour withdrawn</text>
+
+                        <!-- planned -->
+                        <rect class="fc-obox" x="720" y="1060" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="1095">planned</text>
+                        <text class="fc-text fc-odesc" x="930" y="1115">Publicly announced — specifics pending</text>
+
+                        <!-- strike -->
+                        <rect class="fc-obox" x="720" y="1220" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="1255">strike</text>
+                        <text class="fc-text fc-odesc" x="930" y="1275">Sustained, indefinite, multi-day, or &#8805;24h</text>
+
+                        <!-- stoppage -->
+                        <rect class="fc-obox" x="720" y="1310" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="1345">stoppage</text>
+                        <text class="fc-text fc-odesc" x="930" y="1365">Short, bounded, rolling, or recurring &lt;24h</text>
+
+                        <!-- action -->
+                        <rect class="fc-obox" x="720" y="1400" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="1435">action</text>
+                        <text class="fc-text fc-odesc" x="930" y="1455">Bans, work-to-rule, uniform bans</text>
+
+                        <!-- other -->
+                        <rect class="fc-obox" x="720" y="1490" width="420" height="80" rx="20" />
+                        <text class="fc-text fc-otitle" x="930" y="1525">other</text>
+                        <text class="fc-text fc-odesc" x="930" y="1545">Nothing else fits</text>
+
+                        <!-- ═══════════ EDGES ═══════════ -->
+                        <!-- Q1 -->
+                        <path class="fc-arrow-yes" d="M 660 140 L 720 140" />
+                        <text class="fc-text fc-label-yes" x="670" y="130">YES</text>
+                        <path class="fc-arrow-no" d="M 380 180 L 380 280" />
+                        <text class="fc-text fc-label-no" x="395" y="235">NO</text>
+
+                        <!-- Q2 -->
+                        <path class="fc-arrow-yes" d="M 660 320 L 720 320" />
+                        <text class="fc-text fc-label-yes" x="670" y="310">YES</text>
+                        <path class="fc-arrow-no" d="M 380 360 L 380 460" />
+                        <text class="fc-text fc-label-no" x="395" y="415">NO</text>
+
+                        <!-- Q3 -->
+                        <path class="fc-arrow-grey" d="M 660 500 L 720 430" />
+                        <path class="fc-arrow-grey" d="M 660 500 L 720 520" />
+                        <path class="fc-arrow-grey" d="M 660 500 L 720 610" />
+                        <path class="fc-arrow-no" d="M 380 540 L 380 700" />
+                        <text class="fc-text fc-label-no" x="395" y="625">NO</text>
+
+                        <!-- Q4 -->
+                        <path class="fc-arrow-yes" d="M 660 740 L 720 740" />
+                        <path class="fc-arrow-yes" d="M 660 740 L 720 830" />
+                        <path class="fc-arrow-no" d="M 380 780 L 380 880" />
+                        <text class="fc-text fc-label-no" x="395" y="835">NO</text>
+
+                        <!-- Q5 -->
+                        <path class="fc-arrow-yes" d="M 660 920 L 720 920" />
+                        <text class="fc-text fc-label-yes" x="670" y="910">YES</text>
+                        <path class="fc-arrow-no" d="M 380 960 L 380 1060" />
+                        <text class="fc-text fc-label-no" x="395" y="1015">NO</text>
+
+                        <!-- Q6 -->
+                        <path class="fc-arrow-yes" d="M 660 1100 L 720 1100" />
+                        <text class="fc-text fc-label-yes" x="670" y="1090">YES</text>
+                        <path class="fc-arrow-no" d="M 380 1140 L 380 1240" />
+                        <text class="fc-text fc-label-no" x="395" y="1195">NO</text>
+
+                        <!-- Q7 -->
+                        <path class="fc-arrow-grey" d="M 660 1280 L 720 1260" />
+                        <path class="fc-arrow-grey" d="M 660 1280 L 720 1350" />
+                        <path class="fc-arrow-grey" d="M 660 1280 L 720 1440" />
+                        <path class="fc-arrow-grey" d="M 660 1280 L 720 1530" />
+
+                        <!-- ═══════════ NOTE BOX ═══════════ -->
+                        <rect class="fc-note-box" x="100" y="1400" width="560" height="150" rx="4" />
+                        
+                        <text class="fc-text fc-note-text" x="120" y="1425">Note – Q3 nuance: where a ballot fails but the union intended to authorise action (or</text>
+                        <text class="fc-text fc-note-text" x="120" y="1445">passes without union intent), classify by union intent. See Kewco (id 9108, 2/5</text>
+                        <text class="fc-text fc-note-text" x="120" y="1465">participation) and Gadaleta (id 9114, tied question) for split ballots.</text>
+                        
+                        <text class="fc-text fc-note-text" x="120" y="1495">Note - This is a rough guideline only put together recently. All entries may not always</text>
+                        <text class="fc-text fc-note-text" x="120" y="1515">be following these guidelines and may have been set incorrectly. Also may designate</text>
+                        <text class="fc-text fc-note-text" x="120" y="1535">something differently.</text>
+                    </svg>
+                </div>
             </div>
 
             <a class="next-link" href="roadmap.html">

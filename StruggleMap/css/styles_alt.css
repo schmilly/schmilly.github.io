@@ -104,24 +104,41 @@
 /* ─── Light theme overrides ─── */
 html[data-theme="light"] {
     color-scheme: light;
+
+    /* ── Surfaces ─────────────────────────────────────────── */
     --bg-dark: #d2cbcc;
     --bg-panel: #ffffff;
     --bg-elevated: #e7ecf2;
+    --bg-active: #d8e0f5;            
     --bg-ticker: #e3e7ee;
     --bg-footer: rgba(255, 255, 255, 0.96);
     --border: #ccd3db;
     --bg-alt: #e5e5e5;
-    --text-primary: #000;
+
+    /* ── Text ─────────────────────────────────────────────── */
+    --text-primary: #000000;
     --text-secondary: #333d47;
     --text-tertiary: #232426;
     --text-quaternary: #4b4e52;
     --text-heading: #222222;
     --text-muted: #3f4144;
+    --text-really-muted: #6a727a;    
+    --link: #5b3fa8;                 
+
+    /* ── Accents & status ─────────────────────────────────── */
     --accent: #db222a;
+    --accent-alt: #1a4fd6;           
+    --accent-alt-muted: #4f5ab8;     
     --strike: #c0392b;
+    --lockout: #b85c00;              
+    --protest: #8a7400;             
+    --planned: #1f6fa8;              
+    --resolved: #1e8449;            
+    --other: #5f6b6c;                
     --glow: rgba(231, 76, 60, 0.22);
     --selected: #fcd5d5;
 
+    /* ── Stale badge ──────────────────────────────────────── */
     --stale-text: #7a4a00;
     --stale-bg: #fff3d6;
     --stale-border: #e6c069;
@@ -130,24 +147,31 @@ html[data-theme="light"] {
     --stale-notice-text: #6b4a00;
     --stale-notice-border: #e6c069;
 
-    --type-strike-color: #ff0011;
-    --type-stoppage-color: #ff0011;
-    --type-action-color: #c1474f;
-    --type-lockout-color: #e67e22;
-    --type-protest-color: #b6a200;
-    --type-planned-color: #3498db;
-    --type-update-color: #b6a200;
-    --type-resolved-color: #2ecc71;
-    --type-ballot-color: #acbfa4;
-    --type-scab-color: #804f00;
-    --type-ballotpass-color: #b4dea3;
-    --type-ballotfail-color: #bfaea4;
-    --type-default-color: #95a5a6;
-    --type-unkown-color: #95a5a6;
+    /* ── Event type colours ───────────────────────────────── */
+    --type-strike-color: #d40010;    /* was #ff0011 – now ~5.5:1 */
+    --type-stoppage-color: #d40010;  /* was #ff0011 – now ~5.5:1 */
+    --type-action-color: #a83238;    /* was #c1474f – now ~6.6:1 */
+    --type-lockout-color: #b85c00;   /* was #e67e22 – now ~4.5:1 */
+    --type-protest-color: #7a6b00;   /* was #b6a200 – now ~5.4:1 */
+    --type-planned-color: #1f6fa8;   /* was #3498db – now ~4.7:1 */
+    --type-update-color: #7a6b00;    /* was #b6a200 – now ~5.4:1 */
+    --type-resolved-color: #1e8449;  /* was #2ecc71 – now ~4.4:1 */
+    --type-ballot-color: #5d6e56;    /* was #acbfa4 – now ~5.5:1 */
+    --type-scab-color: #804f00;      /* unchanged – already ~6.9:1 */
+    --type-ballotpass-color: #3d7a2a;/* was #b4dea3 – now ~5.3:1 */
+    --type-ballotfail-color: #7a5f4a;/* was #bfaea4 – now ~5.9:1 */
+    --type-default-color: #5f6b6c;   /* was #95a5a6 – now ~4.6:1 */
+    --type-unkown-color: #5f6b6c;    /* was #95a5a6 – now ~4.6:1 */
 
+    /* ── Supporters-wanted highlight ──────────────────────── */
     --supporters-bg: rgba(255, 176, 32, 0.16);
     --supporters-bg-hover: rgba(255, 176, 32, 0.28);
-    --supporters-accent: #c98a00;
+    --supporters-accent: #9a6a00;    /* was #c98a00 – now ~4.7:1 */
+
+    /* ── Map ──────────────────────────────────────────────── */
+    --map-background: rgba(248, 250, 252, 0.92); /* ADDED */
+    --map-border: #b8c0c8;                       /* ADDED */
+    --map-centre: #2a3038;                       /* ADDED – dark dot on light map */
 }
 
 * {
@@ -1032,7 +1056,7 @@ details[open] .chevron { transform: rotate(45deg); }
     align-items: center;
     padding: 1px 6px;
     background: var(--accent);
-    color: #ffffff;
+    color: var(--text-secondary);
     border-radius: 3px;
     font-size: 9px;
     font-weight: 700;

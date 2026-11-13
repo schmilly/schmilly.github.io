@@ -3,9 +3,34 @@
 
 const STRIKE_DATA = [
     {
+    id: 9116,
+    actionId: "metcash-crestmead-uwu",
+    title: "Metcash Crestmead Workers Strike for Interstate Pay Parity",
+    union: "UWU",
+    industry: "Logistics",
+    type: "strike",
+    startDate: "2026-11-06",
+    endDate: "2026-11-09",
+    workers: null,
+    state: "QLD",
+    adddate: "2026-11-13",
+    description: "UWU members at Metcash's Crestmead distribution centre in Logan stopped work for 24 hours, demanding pay parity with their interstate colleagues and a cost-of-living increase. The workers pick, pack and move goods that supply IGA supermarkets across Queensland. Metcash pays its Victorian distribution workers around 10 per cent more than Queensland workers for the same work. The 24-hour stoppage followed an earlier walkout on 6 November, when members voted to halt work supplying IGAs across Queensland from the following Monday if a fair offer was not made.",
+    locations: [
+        SPECIFIC["Metcash Crestmead DC"]
+    ],
+    sources: [
+        { name: "UWU – Metcash Crestmead members stop work for 24 hours (Facebook)", url: "https://www.facebook.com/UnitedWorkersOz/posts/yesterday-united-workers-union-members-at-metcashs-crestmead-distribution-centre/1453878086920292/" },
+        { name: "UWU – Metcash Crestmead members walk off the job (LinkedIn)", url: "https://www.linkedin.com/posts/united-workers-union_today-uwu-members-at-metcash-in-crestmead-activity-7524351671934615552-c3d8" },
+        { name: "On Notice – Metcash protected action ballot to proceed after question 17 reworded", url: "https://onnotice.com.au/news/metcash-strike-ballot-to-proceed-after-uwu-reword/" },
+        { name: "UWU – QLD workers paid less than other states for same work", url: "https://unitedworkers.org.au/" },
+        { name: "FWC – B2026/1392 Protected Action Ballot Notice of Results (UWU vs Metcash Trading Limited)", url: "https://www.fwc.gov.au/documents/ballot-results/uwu_20261392.pdf" }
+    ],
+    tags: ["labour union", "logistics", "warehousing", "uwu", "metcash", "pay parity"]
+},
+    {
     id: 9110,
     actionId: "quantem-mua",
-    title: "Quantem Workers Authorise Vessel Loading Bans in UWU Ballot",
+    title: "Quantem Workers Unanimousl Vote for Loading Bans",
     union: "UWU",
     industry: "Maritime",
     type: "ballotpass",
@@ -26,7 +51,7 @@ const STRIKE_DATA = [
 {
     id: 9111,
     actionId: "cleanaway-twu",
-    title: "Cleanaway Workers Authorise Industrial Action in Two TWU Ballots",
+    title: "Cleanaway Workers Vote for Industrial Action in Two Ballots",
     union: "TWU",
     industry: "Waste",
     type: "ballotpass",
@@ -114,7 +139,7 @@ const STRIKE_DATA = [
 {
     id: 9108,
     actionId: "tftu-kewco-2026",
-    title: "Workers at Kewco Products Vote for Industrial Action",
+    title: "Kewco Products Workers Vote for Industrial Action",
     union: "TFTU",
     industry: "Manufacturing",
     type: "ballotpass",
@@ -122,7 +147,7 @@ const STRIKE_DATA = [
     endDate: "",
     workers: 5,
     adddate: "2026-11-12",
-    description: "TFTU members at Kewco Products Pty Ltd have voted in favour of protected industrial action, though the ballot did not achieve the requisite 50% participation threshold. Two of five eligible voters returned postal votes. The ballot authorised an unlimited number of stoppages of up to 24 hours, indefinite or periodic bans on overtime, dispatch work, housekeeping, and a range of other duties. Kewco Products is a South Australian family-owned manufacturer of shower screens, mirrors, and bathroom accessories established in 1954.",
+    description: "Timber, Furnishing and Textiles Union (TFTU) members at Kewco Products Pty Ltd have voted in favour of protected industrial action, though the ballot did not achieve the requisite 50% participation threshold. Two of five eligible voters returned postal votes. The ballot authorised an unlimited number of stoppages of up to 24 hours, indefinite or periodic bans on overtime, dispatch work, housekeeping, and a range of other duties. Kewco Products is a South Australian family-owned manufacturer of shower screens, mirrors, and bathroom accessories established in 1954.",
     locations: [
         { city: "Hove", state: "SA", lat: COMPANY["Kewco Products"][0], lng: COMPANY["Kewco Products"][1], name: "Kewco Products Pty Ltd" }
     ],

@@ -274,3 +274,51 @@ html[data-theme="dark"] .pill.dream { color: #b07cd6; }
     .section-head h2 { font-size: 15px; }
     .card p, .sub-list li { font-size: 13px; }
 }
+
+/* ─── Flowchart card wrapper ─── */
+.flowchart-card {
+    padding: 16px 20px 20px;
+}
+.flowchart-card h3 + p { margin-top: 4px; }
+
+/* Horizontal scroll on narrow viewports, scales up on wide */
+.flowchart-wrap {
+    margin-top: 16px;
+    padding: 12px 4px 4px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Fade-in edge to hint at scrollability */
+    background-image:
+        linear-gradient(to right,
+            var(--bg-dark) 30%,
+            transparent 30%,
+            transparent 70%,
+            var(--bg-dark) 70%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: local, scroll;
+}
+
+/* The SVG itself: fluid up to a max width, min width to stay legible */
+.flowchart {
+    display: block;
+    width: 100%;
+    min-width: 720px;   /* anything narrower → horizontal scroll */
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    color: var(--text-primary);
+}
+
+/* Mobile: allow scroll but keep the wrapper tight */
+@media (max-width: 768px) {
+    .flowchart-wrap {
+        padding: 8px 2px 2px;
+    }
+    .flowchart {
+        min-width: 640px;
+    }
+}
